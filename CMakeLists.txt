@@ -123,7 +123,10 @@ find_package(HEPMC)
 # Check the compiler and set the compile and link flags
 check_compiler()
 
-#set(CMAKE_CXX_FLAGS -std=c++14)
+if(NOT DEFINED ENV{NO_WERROR})
+  message(STATUS "Will compile with -Werror. Set env NO_WERROR to disable.")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-error=sign-compare -Wno-error=reorder -Wno-error=unused-variable -Wno-error=unused-but-set-variable")
+endif()
 
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
@@ -218,6 +221,9 @@ find_package(ucesb)
 if(ucesb_FOUND)
     set(WITH_UCESB true)
     set(LD_LIBRARY_PATH ${ucesb_LIBRARY_DIR} ${LD_LIBRARY_PATH})
+else()
+  message(WARNING "${BMagenta}No UCESB configured. You will not be able to unpack lmd files. Set UCESB_DIR"
+    " to a ucesb installation to fix this.${CR}")
 endif(ucesb_FOUND)
 
 find_package(EPICS)
