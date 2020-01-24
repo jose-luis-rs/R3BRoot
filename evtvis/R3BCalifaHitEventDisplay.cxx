@@ -50,8 +50,6 @@
 #include "TH2F.h"
 #include "TStyle.h"
 
-#include <assert.h>
-
 using std::cout;
 using std::endl;
 
@@ -153,6 +151,7 @@ void R3BCalifaHitEventDisplay::Exec(Option_t* opt)
         Int_t caloHits = 0; // Nb of CaloHits in current event
         caloHits = fCaloHitCA->GetEntriesFast();
 
+        Int_t binx, biny;
         Double_t theta, phi, eta;
 
         //    TAxis *ax = hcalohit->GetXaxis();
@@ -164,7 +163,6 @@ void R3BCalifaHitEventDisplay::Exec(Option_t* opt)
         for (Int_t i = 0; i < caloHits; i++)
         {
 
-            Int_t binx = -1, biny = -1;
             caloHit = (R3BCalifaHitData*)fCaloHitCA->At(i);
             theta = caloHit->GetTheta();
             phi = caloHit->GetPhi();
@@ -188,8 +186,6 @@ void R3BCalifaHitEventDisplay::Exec(Option_t* opt)
                     break;
                 }
             }
-
-            assert(binx != -1 && biny != -1);
 
             // Filling histograms
 

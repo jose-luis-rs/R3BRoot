@@ -18,9 +18,7 @@ class R3BEventHeader;
 class TH1F;
 class TH2F;
 
-#ifdef __CINT__
 #pragma link C++ class R3BTofdHitModulePar + ;
-#endif
 class R3BTofdCal2HistoPar : public FairTask
 {
   public:

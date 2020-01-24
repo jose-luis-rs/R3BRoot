@@ -283,7 +283,7 @@ void R3BCalifaMapped2CrystalCalPar::SearchPeaks()
                     fleft = fMapHistos_leftp;
                 }
 
-                TF1* f1 = nullptr;
+                TF1* f1;
                 if (fNumParam)
                 {
 

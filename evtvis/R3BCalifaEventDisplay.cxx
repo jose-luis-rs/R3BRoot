@@ -55,8 +55,6 @@
 #include "TH2F.h"
 #include "TStyle.h"
 
-#include <assert.h>
-
 using std::cout;
 using std::endl;
 
@@ -158,12 +156,12 @@ void R3BCalifaEventDisplay::Exec(Option_t* opt)
 
         Reset();
 
-        R3BCalifaCrystalCalData* crystalHit = nullptr;
+        R3BCalifaCrystalCalData* crystalHit;
 
         Int_t crystalHits; // Nb of CrystalHits in current event
         crystalHits = fCrystalHitCA->GetEntriesFast();
 
-        Int_t binx = -1, biny = -1;
+        Int_t binx, biny;
         Double_t theta = 0., phi = 0., rho = 0., eta = 0.;
 
         // Loop in Crystal Hits
@@ -192,12 +190,6 @@ void R3BCalifaEventDisplay::Exec(Option_t* opt)
                 break;
             }
         }
-
-        assert(binx != -1 && biny != -1);
-
-        // crystalHit seems to point to whatever came last when looping over the TCA.
-        // Not sure why we want that, but at least make sure it exists.
-        assert(crystalHit);
 
         // Filling histograms
 
