@@ -146,7 +146,17 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     //------------------------------------------------------------------------
     // create histograms of all detectors
     //------------------------------------------------------------------------
-    cTofFromS2 = new TCanvas("Tof_Sci2_Los", "Tof_Sci2_Los", 10, 10, 800, 700);
+		cPos = new TCanvas("PosSci2_m1","PosSci2_m1",10,10,800,700);
+		cPos->Divide(1,2);
+		fh1_RawPos_m1 = new TH1F("RawPosS2_mult1","RawPosS2 mult=1",10000,-5000,5000);
+		cPos->cd(1);
+		fh1_RawPos_m1->Draw();	
+		fh1_CalPos_m1 = new TH1F("CalPosS2_mult1","CalPosS2 mm mult=1",3000,-150,150);	
+		cPos->cd(2);
+		fh1_CalPos_m1->Draw();
+    run->AddObject(cPos);
+
+		cTofFromS2 = new TCanvas("Tof_Sci2_Los", "Tof_Sci2_Los", 10, 10, 800, 700);
     fh1_RawTofFromS2_TcalMult1 =
         new TH1D("RawTofNs_Tcal_m1_Sci2_Los", "RawTofNs_Tcal_m1_Sci2_Los", 100000, -50000, 50000);
     fh1_RawTofFromS2_TcalMult1->GetXaxis()->SetTitle("Raw Tof [ns]");
@@ -409,6 +419,8 @@ void R3BOnlineSpectraLosVsSci2::Reset_LosVsSci2_Histo()
         {
             fh1_RawTofFromS2_TcalMult1->Reset();
 						fh1_Beta_m1->Reset();
+						fh1_RawPos_m1->Reset();
+						fh1_CalPos_m1->Reset();
 				}
     }
 
@@ -1050,6 +1062,8 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 								PosCal_m1 = fPos_p0 + fPos_p1*PosRaw; // [mm] at S2 
 								Brho_m1   = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
 								AoQ_m1    = Brho / (3.10716 * Beta * Gamma);	
+								fh1_RawPos_m1->Fill(PosRaw_m1);
+								fh1_CalPos_m1->Fill(PosCal_m1);
 								fh1_Beta_m1->Fill(Beta_m1);  
 								fh2_ZvsAoQ_m1->Fill(AoQ_m1,Zmusic);				
 						}
@@ -1106,6 +1120,8 @@ void R3BOnlineSpectraLosVsSci2::FinishTask()
     fhTrigger->Write();
 
     fh1_RawTofFromS2_TcalMult1->Write();
+		fh1_RawPos_m1->Write();
+		fh1_CalPos_m1->Write();
 
     cout << "FinishTask: All events: " << fNEvents << ", LOS events: " << nLosEvents << endl;
 }
