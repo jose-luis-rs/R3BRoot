@@ -286,18 +286,18 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
 	// --- TCanvas
   TCanvas* cTofFromS2;
   TCanvas* cBetaFromS2;
-  TCanvas* cAoQ;
+  TCanvas* cZvsAoQ;
   TCanvas* cTofFromS2vsZ;
 
-	// --- HISTOGRAMS  
+	// --- HISTOGRAMS for mult==1 
 	TH1D* fh1_RawTofFromS2_TcalMult1;
-  TH1D* fh1_RawTofFromS2;
-  TH1D* fh1_BetaFromS2;
   TH2F* fh1_RawTofFromS2_TcalMult1vsZ;
-  TH1F* fh1_beta;
-  TH2F* fh2_Aqvsq;
+  TH1F* fh1_Beta_m1;
+  TH2F* fh2_ZvsAoQ_m1;
 
-    // TH1D* fh1_BetaFromS2;
+	// --- HSITOGRAMS with the selection of the good hit
+  TH1D* fh1_RawTofFromS2;
+
 
   public:
     ClassDef(R3BOnlineSpectraLosVsSci2, 2)
