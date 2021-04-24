@@ -1,7 +1,7 @@
 #include "R3BOnlineSpectraSci2.h"
 #include "R3BEventHeader.h"
 #include "R3BSci2MappedData.h"
-//#include "R3BSci2TcalData.h"
+#include "R3BSci2TcalData.h"
 #include "THttpServer.h"
 
 #include "FairLogger.h"
@@ -454,27 +454,25 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
             fh1_finetime[iDet * fNbChannels + iCh]->Fill(hitmapped->GetTimeFine());
         } // end of loop over mapped data
 
-        /*
-                if (fTcal && fTcal->GetEntriesFast())
-                {
-                    // --- -------------- --- //
-                    // --- read tcal data --- //
-                    // --- -------------- --- //
-                    nHits = fTcal->GetEntriesFast();
-                    for (Int_t ihit = 0; ihit < nHits; ihit++)
-                    {
-                        R3BSciTcalData* hittcal = (R3BSciTcalData*)fTcal->At(ihit);
-                        if (!hittcal)
-                            continue;
-                        iDet = hittcal->GetDetector() - 1;
-                        iCh = hittcal->GetPmt() - 1;
-                        multTcal[iDet * fNbChannels + iCh]++;
-                        iRawTimeNs[iDet * fNbChannels + iCh] = hittcal->GetRawTimeNs();
-                    } // --- end of loop over Tcal data --- //
-
-                }//--- end of if Tcal data --- //
-        */
-        // --- ----------------------------------------- --- //
+        if (fTcal && fTcal->GetEntriesFast())
+        {
+            // --- -------------- --- //
+            // --- read tcal data --- //
+            // --- -------------- --- //
+            nHits = fTcal->GetEntriesFast();
+            for (Int_t ihit = 0; ihit < nHits; ihit++)
+            {
+                R3BSci2TcalData* hittcal = (R3BSci2TcalData*)fTcal->At(ihit);
+                if (!hittcal)
+                    continue;
+                iDet = hittcal->GetDetector() - 1;
+                iCh = hittcal->GetChannel() - 1;
+                multTcal[iDet * fNbChannels + iCh]++;
+                iRawTimeNs[iDet * fNbChannels + iCh] = hittcal->GetRawTimeNs();
+					} // --- end of loop over Tcal data --- //
+				}//--- end of if Tcal data --- //
+        
+				// --- ----------------------------------------- --- //
         // --- filling some histogramms outside the loop --- //
         // --- ----------------------------------------- --- //
         Float_t delta = 0;
@@ -549,13 +547,11 @@ void R3BOnlineSpectraSci2::FinishTask()
                 fh2_mult_TrefVsPmt_condTpat[i * (fNbChannels - 1) + j]->Write();
             }
         }
-/*
         if (fTcal)
         {
             cPos[i]->Write();
             fh1_RawPos_TcalMult1[i]->Write();
         }
-*/
         for (Int_t j = 0; j < fNbChannels; j++)
         {
             if (fMapped)
@@ -563,10 +559,10 @@ void R3BOnlineSpectraSci2::FinishTask()
                 fh1_finetime[i * fNbChannels + j]->Write();
                 fh1_multMap[i * fNbChannels + j]->Write();
             }
-  /*          if (fTcal)
+            if (fTcal)
             {
                 fh1_multTcal[i * fNbChannels + j]->Write();
-            }*/
+            }
         }
     } // end of loop over fNbDetectors
 }
