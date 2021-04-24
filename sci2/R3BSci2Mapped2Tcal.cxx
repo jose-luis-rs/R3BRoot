@@ -20,7 +20,7 @@
 
 // --- Default Constructor
 R3BSci2Mapped2Tcal::R3BSci2Mapped2Tcal()
-    : FairTask("Sci2Tcal", 1)
+    : FairTask("Sci2Map2Tcal", 1)
     , fMapped(NULL)
     , fTcal(NULL)
     , fNofTcalItems(0)

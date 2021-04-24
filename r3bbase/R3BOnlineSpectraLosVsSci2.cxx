@@ -55,6 +55,15 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
     , fHitItemsMus(NULL)
     , fNEvents(0)
     , fTcalSci2(NULL)
+	,	fToFmin(-5000)
+	,	fToFmax(5000)
+	, fTof2InvV_p0(-7.8)
+	, fTof2InvV_p1(0.0073)
+	, fL2(137)
+	, fPos_p0(-11)
+	, fPos_p1(54.7)
+	, fDispersionS2(7000)
+	, fBrho0_S2toCC(12)
 {
 }
 
@@ -66,6 +75,15 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2(const char* name, Int_t iVe
     , fHitItemsMus(NULL)
     , fNEvents(0)
     , fTcalSci2(NULL)
+	,	fToFmin(-5000)
+	,	fToFmax(5000)
+	, fTof2InvV_p0(-7.8)
+	, fTof2InvV_p1(0.0073)
+	, fL2(137)
+	, fPos_p0(-11)
+	, fPos_p1(54.7)
+	, fDispersionS2(7000)
+	, fBrho0_S2toCC(12)
 {
 }
 
@@ -432,12 +450,17 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
     // --- local variables --- //
     // --- --------------- --- //
     Int_t multTcal[3];
-    Double_t iRawTimeNs[3];
-    UInt_t nHits, iCh;
-    for (UShort_t pmt = 0; pmt < 3; pmt++)
+    Double_t iRawTimeNs[3][64];
+    UInt_t nHits, iCh, cpt=0;
+	  Double_t ToFraw=0., PosRaw=-10000., ToFcal=0., PosCal=-10000.;
+		Double_t Velo=0., Beta=0., Gamma=0.,  Brho=0., AoQ=0.;
+	  Double_t ToFraw_m1=0., PosRaw_m1=-10000., ToFcal_m1=0., PosCal_m1=-10000.;
+		Double_t Velo_m1=0., Beta_m1=0., Gamma_m1=0.,  Brho_m1=0., AoQ_m1=0.;
+		for (UShort_t pmt = 0; pmt < 3; pmt++)
     {
         multTcal[pmt] = 0;
-        iRawTimeNs[pmt] = 0;
+				for(UShort_t m=0; m<64; m++)
+					iRawTimeNs[pmt][m] = 0.;
     }
 
     // --- -------------- --- //
@@ -452,8 +475,8 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
             if (!hittcal)
                 continue;
             iCh = hittcal->GetChannel() - 1;
+            iRawTimeNs[iCh][multTcal[iCh]] = hittcal->GetRawTimeNs();
             multTcal[iCh]++;
-            iRawTimeNs[iCh] = hittcal->GetRawTimeNs();
         } // --- end of loop over Tcal data --- //
     }
 
@@ -982,13 +1005,32 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 // {
                 // cout<<"Wrong detector ID for LOS!"<<endl;
                 // }
+							if(iDet == 1)
+							{
+								for(Int_t multR=0; multR<64; multR++)
+								{
+									for(Int_t multL=0; multL<64; multL++)
+									{
+										ToFraw = timeLosV[0][iPart] - 0.5 *(iRawTimeNs[0][multR] + iRawTimeNs[1][multL]);
+										if(fToFmin<=ToFraw && ToFraw<=fToFmax)
+										{
+											cpt++;
+											Velo   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*ToFraw); // [m/ns] 
+											Beta   = Velo / 0.299792458;
+											Gamma  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta,2)));
+											PosRaw = iRawTimeNs[0][multR] - iRawTimeNs[1][multL]; // [ns]			
+											PosCal = fPos_p0 + fPos_p1*PosRaw; // [mm] at S2 
+											Brho   = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
+											AoQ    = Brho / (3.10716 * Beta * Gamma);	
+										}	
+									}
+								}
+							}
             } // for iPart
 
             // select multiplicity == 1 at Cave C and S2
             if (iDet == 1 && nPartc[0] == 1 && multTcal[0] == 1 && multTcal[1] == 1)
             {
-                fh1_RawTofFromS2_TcalMult1->Fill(timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]));
-                fh1_RawTofFromS2_TcalMult1vsZ->Fill(timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]), Zmusic);
 
                 // --- -----------------------------
                 // --- secondary beam identification
@@ -998,18 +1040,17 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 // in R3BRoot, X is increasing from right to left
                 //    Bro = fBrho0 * (1 + xMwpc0/fDCC - xS2/fDS2)
 
-  /*              double RawTofS2_Ns = timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]);
-                double CalVeloS2_MNs = 1. / (0.007332953848 + -7.976028838 * RawTofS2_Ns);
-                CalTofS2_Ns = 136.37 / CalVeloS2_MNs;
-
-                Double_t BetaS2 = CalVeloS2_MNs / (Double_t)SPEED_OF_LIGHT_MNS;
-                ;
-                Double_t Gamma = 1. / (TMath::Sqrt(1. - TMath::Power(BetaS2, 2)));
-
-                Double_t Brho = fBrho0 * (1. - xS2 / fDS2); // + X_mwpc0/fDCC
-                Double_t AoQraw = Brho / (3.10716 * Gamma * BetaS2);
-*/
-	    }
+                fh1_RawTofFromS2_TcalMult1vsZ->Fill(timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]), Zmusic);
+                ToFraw_m1 = timeLosV[0][0] - 0.5 * (iRawTimeNs[0][0] + iRawTimeNs[1][0]);
+                fh1_RawTofFromS2_TcalMult1->Fill(ToFraw_m1);
+								Velo_m1   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*ToFraw); // [m/ns] 
+								Beta_m1   = Velo / 0.299792458;
+								Gamma_m1  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta,2)));
+								PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]			
+								PosCal_m1 = fPos_p0 + fPos_p1*PosRaw; // [mm] at S2 
+								Brho_m1   = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
+								AoQ_m1    = Brho / (3.10716 * Beta * Gamma);	
+            }
         } // for iDet
 
     } // if fCallItems
