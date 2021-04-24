@@ -45,6 +45,8 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
+#define SPEED_OF_LIGHT_MNS 0.299792458
+
 R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
     : FairTask("OnlineSpectraLosVsSci2", 1)
     , fTrigger(-1)
@@ -160,14 +162,41 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_Mushit_z->SetLineColor(1);
     fh1_Mushit_z->Draw("");
 
+    TCanvas* cBetaFromS2 = new TCanvas("Beta_Sci2_Los", "Beta_Sci2_Los", 10, 10, 800, 700);
+    fh1_beta = new TH1F("fh1_betaS2", "BetaS2 to Cave-C", 1200, 0.05, 1.);
+    fh1_beta->GetXaxis()->SetTitle("Beta");
+    fh1_beta->GetYaxis()->SetTitle("Counts");
+    fh1_beta->GetYaxis()->SetTitleOffset(1.15);
+    fh1_beta->GetXaxis()->CenterTitle(true);
+    fh1_beta->GetYaxis()->CenterTitle(true);
+    fh1_beta->GetXaxis()->SetLabelSize(0.045);
+    fh1_beta->GetXaxis()->SetTitleSize(0.045);
+    fh1_beta->GetYaxis()->SetLabelSize(0.045);
+    fh1_beta->GetYaxis()->SetTitleSize(0.045);
+    fh1_beta->SetFillColor(2);
+    fh1_beta->SetLineColor(1);
+    fh1_beta->Draw("");
+    run->AddObject(cBetaFromS2);
+
+    TCanvas* cAoQ = new TCanvas("AoQ", "AoQ", 10, 10, 800, 700);
+    fh2_Aqvsq = new TH2F("fh2_AoQ", "AoQ vs Z-Music", 1200, 1., 2.7, 60 * 50, 10, 60.5);
+    fh2_Aqvsq->GetXaxis()->SetTitle("AoQ");
+    fh2_Aqvsq->GetYaxis()->SetTitle("Z [Charge units]");
+    fh2_Aqvsq->GetYaxis()->SetTitleOffset(1.1);
+    fh2_Aqvsq->GetXaxis()->CenterTitle(true);
+    fh2_Aqvsq->GetYaxis()->CenterTitle(true);
+    fh2_Aqvsq->GetXaxis()->SetLabelSize(0.045);
+    fh2_Aqvsq->GetXaxis()->SetTitleSize(0.045);
+    fh2_Aqvsq->GetYaxis()->SetLabelSize(0.045);
+    fh2_Aqvsq->GetYaxis()->SetTitleSize(0.045);
+    fh2_Aqvsq->Draw("colz");
+
     if (fHitItemsMus)
     {
         run->AddObject(cMus_Z);
         run->AddObject(cTofFromS2vsZ);
+        run->AddObject(cAoQ);
     }
-
-    // cBetaFromS2 = new TCanvas("Beta_Sci2_Los","Beta_Sci2_Los",10,10,800,700);
-    // cAoQ = new TCanvas("AoQ","AoQ",10,10,800,700);
 
     // Trigger and Tpat
     fhTpat = new TH1F("Tpat", "Tpat", 20, 0, 20);
@@ -364,9 +393,12 @@ void R3BOnlineSpectraLosVsSci2::Reset_LosVsSci2_Histo()
         }
     }
 
+    fh1_beta->Reset();
     if (fHitItemsMus)
     {
         fh1_Mushit_z->Reset();
+        fh1_RawTofFromS2_TcalMult1vsZ->Reset();
+        fh2_Aqvsq->Reset();
     }
 }
 
@@ -382,6 +414,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
         return;
     }
 
+    double Zmusic = 0.;
     if (fHitItemsMus && fHitItemsMus->GetEntriesFast() > 0)
     {
         Int_t nHits = fHitItemsMus->GetEntriesFast();
@@ -391,6 +424,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
             if (!hit)
                 continue;
             fh1_Mushit_z->Fill(hit->GetZcharge());
+            Zmusic = hit->GetZcharge();
         }
     }
 
@@ -954,6 +988,26 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
             if (iDet == 1 && nPartc[0] == 1 && multTcal[0] == 1 && multTcal[1] == 1)
             {
                 fh1_RawTofFromS2_TcalMult1->Fill(timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]));
+                fh1_RawTofFromS2_TcalMult1vsZ->Fill(timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]), Zmusic);
+
+                // --- -----------------------------
+                // --- secondary beam identification
+                // --- -----------------------------
+                // if X is increasing from left to right:
+                //    Brho = fBhro0 * (1 - xMwpc0/fDCC + xS2/fDS2)
+                // in R3BRoot, X is increasing from right to left
+                //    Bro = fBrho0 * (1 + xMwpc0/fDCC - xS2/fDS2)
+
+                double RawTofS2_Ns = timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]);
+                double CalVeloS2_MNs = 1. / (0.007332953848 + -7.976028838 * RawTofS2_Ns);
+                CalTofS2_Ns = 136.37 / CalVeloS2_MNs;
+
+                Double_t BetaS2 = CalVeloS2_MNs / (Double_t)SPEED_OF_LIGHT_MNS;
+                ;
+                Double_t Gamma = 1. / (TMath::Sqrt(1. - TMath::Power(BetaS2, 2)));
+
+                Double_t Brho = fBrho0 * (1. - xS2 / fDS2); // + X_mwpc0/fDCC
+                Double_t AoQraw = Brho / (3.10716 * Gamma * BetaS2);
             }
         } // for iDet
 
