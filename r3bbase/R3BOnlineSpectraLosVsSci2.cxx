@@ -998,7 +998,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 // in R3BRoot, X is increasing from right to left
                 //    Bro = fBrho0 * (1 + xMwpc0/fDCC - xS2/fDS2)
 
-                double RawTofS2_Ns = timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]);
+  /*              double RawTofS2_Ns = timeLosV[0][0] - 0.5 * (iRawTimeNs[0] + iRawTimeNs[1]);
                 double CalVeloS2_MNs = 1. / (0.007332953848 + -7.976028838 * RawTofS2_Ns);
                 CalTofS2_Ns = 136.37 / CalVeloS2_MNs;
 
@@ -1008,7 +1008,8 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 
                 Double_t Brho = fBrho0 * (1. - xS2 / fDS2); // + X_mwpc0/fDCC
                 Double_t AoQraw = Brho / (3.10716 * Gamma * BetaS2);
-            }
+*/
+	    }
         } // for iDet
 
     } // if fCallItems
