@@ -546,13 +546,11 @@ void R3BOnlineSpectraSci2::FinishTask()
                 fh2_mult_TrefVsPmt_condTpat[i * (fNbChannels - 1) + j]->Write();
             }
         }
-
         if (fTcal)
         {
             cPos[i]->Write();
             fh1_RawPos_TcalMult1[i]->Write();
         }
-
         for (Int_t j = 0; j < fNbChannels; j++)
         {
             if (fMapped)
@@ -567,5 +565,3 @@ void R3BOnlineSpectraSci2::FinishTask()
         }
     } // end of loop over fNbDetectors
 }
-
-ClassImp(R3BOnlineSpectraSci2)
