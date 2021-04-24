@@ -30,6 +30,7 @@ ${R3BROOT_SOURCE_DIR}/r3bdata/beammonitorData
 ${R3BROOT_SOURCE_DIR}/r3bdata/neulandData
 ${R3BROOT_SOURCE_DIR}/r3bdata/califaData
 ${R3BROOT_SOURCE_DIR}/r3bdata/startrackData
+${R3BROOT_SOURCE_DIR}/r3bdata/musicData
 ${R3BROOT_SOURCE_DIR}/los
 ${R3BROOT_SOURCE_DIR}/r3bdata/losData
 ${R3BROOT_SOURCE_DIR}/rolu
@@ -74,6 +75,7 @@ R3BOnlineSpillAnalysis.cxx
 R3BOnlineSpectraFiberTofds515.cxx
 R3BOnlineSpectraLosStandalone.cxx
 R3BOnlineSpectraSci2.cxx
+R3BOnlineSpectraLosVsSci2.cxx
 )
 
 # fill list of header files from list of source files
