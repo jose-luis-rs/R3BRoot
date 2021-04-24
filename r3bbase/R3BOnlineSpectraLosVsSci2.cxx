@@ -190,7 +190,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_Mushit_z->SetLineColor(1);
     fh1_Mushit_z->Draw("");
 
-    TCanvas* cBetaFromS2 = new TCanvas("Beta_Sci2_Los", "Beta_Sci2_Los", 10, 10, 800, 700);
+    cBeta = new TCanvas("Beta_Sci2_Los", "Beta_Sci2_Los", 10, 10, 800, 700);
     fh1_Beta_m1 = new TH1F("fh1_betaS2", "BetaS2 to Cave-C with mult==1", 1200, 0.05, 1.);
     fh1_Beta_m1->GetXaxis()->SetTitle("Beta");
     fh1_Beta_m1->GetYaxis()->SetTitle("Counts");
@@ -204,9 +204,9 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_Beta_m1->SetFillColor(2);
     fh1_Beta_m1->SetLineColor(1);
     fh1_Beta_m1->Draw("");
-    run->AddObject(cBetaFromS2);
+    run->AddObject(cBeta);
 
-    TCanvas* cZvsAoQ = new TCanvas("ZvsAoQ", "ZvsAoQ", 10, 10, 800, 700);
+    cZvsAoQ = new TCanvas("ZvsAoQ", "ZvsAoQ", 10, 10, 800, 700);
     fh2_ZvsAoQ_m1 = new TH2F("fh2_ZvsAoQ", "Z-Music vs AoQ with mult==1", 1200, 1., 2.7, 60 * 50, 10, 60.5);
     fh2_ZvsAoQ_m1->GetXaxis()->SetTitle("AoQ");
     fh2_ZvsAoQ_m1->GetYaxis()->SetTitle("Z [Charge units]");

@@ -292,7 +292,7 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
 
 	// --- TCanvas
   TCanvas* cTofFromS2;
-  TCanvas* cBetaFromS2;
+  TCanvas* cBeta;
   TCanvas* cZvsAoQ;
   TCanvas* cTofFromS2vsZ;
 	TCanvas* cPos;
