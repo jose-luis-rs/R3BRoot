@@ -73,6 +73,8 @@ R3BTrackerTestS454.cxx
 R3BOnlineSpillAnalysis.cxx
 R3BOnlineSpectraFiberTofds515.cxx
 R3BOnlineSpectraLosStandalone.cxx
+R3BOnlineSpectraSci2.cxx
+R3BOnlineSpectraLosVsSci2.cxx
 )
 
 # fill list of header files from list of source files
