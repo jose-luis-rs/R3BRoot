@@ -63,9 +63,11 @@ R3BOnlineSpectraLosStandalone::R3BOnlineSpectraLosStandalone(const char* name, I
 
 R3BOnlineSpectraLosStandalone::~R3BOnlineSpectraLosStandalone()
 {
-    //	delete fhTpat ;
-    //	delete fhTrigger;
-    //	delete fh_SEETRAM;
+    for (Int_t i = 0; i < fMappedItems.size(); i++)
+        delete fMappedItems[i];
+
+    for (Int_t i = 0; i < fCalItems.size(); i++)
+        delete fCalItems[i];
 }
 
 InitStatus R3BOnlineSpectraLosStandalone::Init()
@@ -85,8 +87,7 @@ InitStatus R3BOnlineSpectraLosStandalone::Init()
 
     header = (R3BEventHeader*)mgr->GetObject("R3BEventHeader");
     FairRunOnline* run = FairRunOnline::Instance();
-
-    run->GetHttpServer()->Register("/Tasks", this);
+    run->GetHttpServer()->Register("", this);
 
     // Get objects for detectors on all levels
 
@@ -121,6 +122,9 @@ InitStatus R3BOnlineSpectraLosStandalone::Init()
     gPad->SetLogy();
     fhTpat->Draw();
     cTrigg->cd(0);
+
+    // MAIN FOLDER-MWPC
+    TFolder* mainfol = new TFolder("LOS", "LOS info");
 
     //------------------------------------------------------------------------
     // Los detector
@@ -261,10 +265,11 @@ InitStatus R3BOnlineSpectraLosStandalone::Init()
             gPad->SetLogz();
             fh_los_ihit_ToT[iloscount]->Draw("colz");
             cLos[iloscount]->cd(0);
-            run->AddObject(cLos[iloscount]);
+            mainfol->Add(cLos[iloscount]);
         }
 
-        run->GetHttpServer()->RegisterCommand("Reset_LOS", Form("/Tasks/%s/->Reset_LOS_Histo()", GetName()));
+        run->AddObject(mainfol);
+        run->GetHttpServer()->RegisterCommand("Reset_LOS", Form("/Reset/%s/->Reset_LOS_Histo()", GetName()));
     }
 
     // -------------------------------------------------------------------------
@@ -340,7 +345,7 @@ void R3BOnlineSpectraLosStandalone::Exec(Option_t* option)
         tpatbin = (header->GetTpat() & (1 << i));
         if (tpatbin != 0)
         {
-            //if (i != 11)
+            // if (i != 11)
             //    cout << "Tpat = " << i + 1 << endl;
             fhTpat->Fill(i + 1);
         }
@@ -450,7 +455,10 @@ void R3BOnlineSpectraLosStandalone::Exec(Option_t* option)
         }
     }
     Int_t nPartLOS = 0;
-    Int_t nPartc[fNofLosDetectors] = { 0 };
+    Int_t nPartc[fNofLosDetectors];
+    for (Int_t d = 0; d < fNofLosDetectors; d++)
+        nPartc[d] = 0;
+
     Bool_t iLOSType[fNofLosDetectors][32];
     Bool_t iLOSPileUp[fNofLosDetectors][32];
     for (Int_t idet = 0; idet < fNofLosDetectors; idet++)

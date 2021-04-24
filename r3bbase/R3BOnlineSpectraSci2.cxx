@@ -80,12 +80,13 @@ InitStatus R3BOnlineSpectraSci2::Init()
     if (!fMapped)
     {
         LOG(ERROR) << "Sci2Mapped not found: is OK";
-				return(kFATAL);
-		}
-		else
-		{
+
+        return (kFATAL);
+    }
+    else
+    {
         LOG(INFO) << "Sci2Mapped found";
-		}
+    }
 
     // --- ------------------------ --- //
     // --- get access to tcal data  --- //
@@ -142,7 +143,7 @@ InitStatus R3BOnlineSpectraSci2::Init()
     // === TCanvas: 2D-MultMap === //
     sprintf(Name1, "MultMap2D");
     cMultMap2D = new TCanvas(Name1, Name1, 10, 10, 800, 700);
-    cMultMap2D->Divide(fNbDetectors,4);
+    cMultMap2D->Divide(fNbDetectors, 4);
 
     // === TCanvas: 2D-MultMap === //
     sprintf(Name1, "MultMap2D_RvsL");
@@ -447,7 +448,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
             R3BSci2MappedData* hitmapped = (R3BSci2MappedData*)fMapped->At(ihit);
             if (!hitmapped)
                 continue;
-            iDet = hitmapped->GetDetector() -1;
+            iDet = hitmapped->GetDetector() - 1;
             iCh = hitmapped->GetChannel() - 1;
             multMap[iDet * fNbChannels + iCh]++;
             fh1_finetime[iDet * fNbChannels + iCh]->Fill(hitmapped->GetTimeFine());
@@ -468,10 +469,10 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
                 iCh = hittcal->GetChannel() - 1;
                 multTcal[iDet * fNbChannels + iCh]++;
                 iRawTimeNs[iDet * fNbChannels + iCh] = hittcal->GetRawTimeNs();
-					} // --- end of loop over Tcal data --- //
-				}//--- end of if Tcal data --- //
-        
-				// --- ----------------------------------------- --- //
+            } // --- end of loop over Tcal data --- //
+        }     //--- end of if Tcal data --- //
+
+        // --- ----------------------------------------- --- //
         // --- filling some histogramms outside the loop --- //
         // --- ----------------------------------------- --- //
         Float_t delta = 0;

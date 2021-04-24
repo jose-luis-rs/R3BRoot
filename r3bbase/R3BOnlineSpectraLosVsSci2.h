@@ -173,12 +173,23 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
 
     void Reset_LosVsSci2_Histo();
 
+    // --- hard coded calibration
+    void SetToFmin(Double_t t) { fToFmin = t; }
+    void SetToFmax(Double_t t) { fToFmax = t; }
+    void SetTof2InvV_p0(Double_t p) { fTof2InvV_p0 = p; }
+    void SetTof2InvV_p1(Double_t p) { fTof2InvV_p1 = p; }
+    void SetFlightLength(Double_t L) { fL2 = L; }
+    void SetPos_p0(Double_t p) { fPos_p0 = p; }
+    void SetPos_p1(Double_t p) { fPos_p1 = p; }
+    void SetDispersionS2(Double_t DS2) { fDispersionS2 = DS2; }
+    void SetBrho0_S2toCC(Double_t Brho0) { fBrho0_S2toCC = Brho0; }
+
   private:
     std::vector<TClonesArray*> fMappedItems;
     std::vector<TClonesArray*> fCalItems;
+    TClonesArray* fHitItemsMus;
 
-    TClonesArray* fTcalSci2;    /**< Array with Tcal items. */
-    TClonesArray* fHitItemsMus; /**< Array with hit items. */
+    TClonesArray* fTcalSci2; /**< Array with Tcal items. */
 
     enum DetectorInstances
     {
@@ -232,7 +243,6 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
     TH1F* fhTpat;
     TH1F* fh_spill_length;
     TH1F* fhTrigger;
-    TH1F* fh1_Mushit_z;
 
     std::vector<TH1F*> fh_los_channels;
     std::vector<TH1F*> fh_los_tres_MCFD;
@@ -253,70 +263,50 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
     std::vector<TH2F*> fh_losMCFD_vs_Events;
     std::vector<TH1F*> fh_los_vftx_tamex;
 
+    // --- hard coded calibration
 
-	public:
+    // --- 1/ select the good hit from the ToF from S2 to Cave C:
+    Double_t fToFmin;
+    Double_t fToFmax;
 
-	// --- hard coded calibration 
-	void SetToFoffset(Double_t offset) {fToFoffset=offset;}
-	void SetToFmin(Double_t t) {fToFmin=t;}
-	void SetToFmax(Double_t t) {fToFmax=t;}
-	void SetTof2InvV_p0(Double_t p) {fTof2InvV_p0=p;}
-	void SetTof2InvV_p1(Double_t p) {fTof2InvV_p1=p;}
-	void SetFlightLength(Double_t L) {fL2 = L;}
-	void SetPos_p0(Double_t p) {fPos_p0 = p;}	
-	void SetPos_p1(Double_t p) {fPos_p1 = p;}	
-	void SetDispersionS2(Double_t DS2)    {fDispersionS2 = DS2;}		
-	void SetBrho0_S2toCC(Double_t Brho0)	{fBrho0_S2toCC = Brho0;}
+    // --- 2/ calibration in beta and ToF
+    Double_t fTof2InvV_p0;
+    Double_t fTof2InvV_p1;
+    Double_t fL2;
 
-  private:
+    // --- 3/ calibration in position
+    Double_t fPos_p0;
+    Double_t fPos_p1;
 
-	// --- hard coded calibration 
+    // --- 4/ AoQ calculation
+    Double_t fDispersionS2;
+    Double_t fBrho0_S2toCC;
 
-	// --- 0/ adjust the offset when a DAQ subsystem restarts
-	Double_t fToFoffset;
-	
-	// --- 1/ select the good hit from the ToF from S2 to Cave C:
-	Double_t fToFmin;
-	Double_t fToFmax;
-	
-	// --- 2/ calibration in beta and ToF
-	Double_t fTof2InvV_p0;
-	Double_t fTof2InvV_p1;
-	Double_t fL2;
+    // --- end of declaration of calibration parameters for AoQ
 
-	// --- 3/ calibration in position
-	Double_t fPos_p0;
-	Double_t fPos_p1;
+    // --- TCanvas
+    TCanvas* cTofFromS2;
+    TCanvas* cBeta;
+    TCanvas* cZvsAoQ;
+    TCanvas* cTofFromS2vsZ;
+    TCanvas* cPos;
 
-	// --- 4/ AoQ calculation
-	Double_t fDispersionS2;
-	Double_t fBrho0_S2toCC;
+    // --- HISTOGRAMS for mult==1
+    TH1D* fh1_RawTofFromS2_TcalMult1;
+    TH2F* fh1_RawTofFromS2_TcalMult1vsZ;
+    TH1F* fh1_Beta_m1;
+    TH2F* fh2_ZvsBeta_m1;
+    TH2F* fh2_ZvsAoQ_m1;
+    TH1F* fh1_RawPos_m1;
+    TH1F* fh1_CalPos_m1;
 
-	// --- end of declaration of calibration parameters for AoQ
-
-	// --- TCanvas
-  TCanvas* cTofFromS2;
-  TCanvas* cBeta;
-  TCanvas* cZvsAoQ;
-  TCanvas* cTofFromS2vsZ;
-	TCanvas* cPos;
-
-	// --- HISTOGRAMS for mult==1 
-	TH1D* fh1_RawTofFromS2_TcalMult1;
-  TH2F* fh1_RawTofFromS2_TcalMult1vsZ;
-  TH1F* fh1_Beta_m1;
-  TH2F* fh2_ZvsBeta_m1;
-  TH2F* fh2_ZvsAoQ_m1;
-	TH1F* fh1_RawPos_m1;
-	TH1F* fh1_CalPos_m1;
-
-	// --- HSITOGRAMS with the selection of the good hit
-  TH1D* fh1_RawTofFromS2;
-  TH1F* fh1_Beta;
-  TH2F* fh2_ZvsAoQ;
-	TH1F* fh1_RawPos;
-	TH1F* fh1_CalPos;
-
+    // --- HSITOGRAMS with the selection of the good hit
+    TH1D* fh1_RawTofFromS2;
+    TH1F* fh1_Mushit_z;
+    TH1F* fh1_Beta;
+    TH2F* fh2_ZvsAoQ;
+    TH1F* fh1_RawPos;
+    TH1F* fh1_CalPos;
 
   public:
     ClassDef(R3BOnlineSpectraLosVsSci2, 2)
