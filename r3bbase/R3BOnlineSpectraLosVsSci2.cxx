@@ -12,10 +12,7 @@
 #include "R3BOnlineSpectraLosVsSci2.h"
 #include "R3BLosCalData.h"
 #include "R3BLosMappedData.h"
-<<<<<<< HEAD
 #include "R3BMusicHitData.h"
-=======
->>>>>>> update SCI2 for s515 experiment
 #include "R3BSci2TcalData.h"
 
 #include "R3BEventHeader.h"
@@ -48,11 +45,8 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-<<<<<<< HEAD
 #define SPEED_OF_LIGHT_MNS 0.299792458
 
-=======
->>>>>>> update SCI2 for s515 experiment
 R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
     : FairTask("OnlineSpectraLosVsSci2", 1)
     , fTrigger(-1)
@@ -456,6 +450,7 @@ void R3BOnlineSpectraLosVsSci2::Reset_LosVsSci2_Histo()
         }
     }
 
+    fh1_beta->Reset();
     if (fHitItemsMus)
     {
         fh1_Mushit_z->Reset();
