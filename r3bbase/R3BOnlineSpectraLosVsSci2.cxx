@@ -12,7 +12,10 @@
 #include "R3BOnlineSpectraLosVsSci2.h"
 #include "R3BLosCalData.h"
 #include "R3BLosMappedData.h"
+<<<<<<< HEAD
 #include "R3BMusicHitData.h"
+=======
+>>>>>>> update SCI2 for s515 experiment
 #include "R3BSci2TcalData.h"
 
 #include "R3BEventHeader.h"
@@ -45,8 +48,11 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
+<<<<<<< HEAD
 #define SPEED_OF_LIGHT_MNS 0.299792458
 
+=======
+>>>>>>> update SCI2 for s515 experiment
 R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
     : FairTask("OnlineSpectraLosVsSci2", 1)
     , fTrigger(-1)
@@ -93,8 +99,6 @@ R3BOnlineSpectraLosVsSci2::~R3BOnlineSpectraLosVsSci2()
         delete fTcalSci2;
     if (fHitItemsMus)
         delete fHitItemsMus;
-    //	delete fhTrigger;
-    //	delete fh_SEETRAM;
 }
 
 InitStatus R3BOnlineSpectraLosVsSci2::Init()
@@ -486,10 +490,6 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
         }
     }
 
-    // --- --------------- --- //
-    // --- local variables --- //
-    // --- --------------- --- //
-    Int_t multTcal[3];
     Double_t iRawTimeNs[3][64];
     UInt_t nHits, iCh, cpt = 0;
     Double_t ToFraw = 0., PosRaw = -10000., ToFcal = 0., PosCal = -10000.;
