@@ -80,7 +80,6 @@ InitStatus R3BOnlineSpectraSci2::Init()
     if (!fMapped)
     {
         LOG(ERROR) << "Sci2Mapped not found: is OK";
-
         return (kFATAL);
     }
     else
