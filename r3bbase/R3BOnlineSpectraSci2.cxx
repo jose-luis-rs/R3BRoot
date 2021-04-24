@@ -68,7 +68,7 @@ InitStatus R3BOnlineSpectraSci2::Init()
     if (NULL == mgr)
         LOG(FATAL) << "R3BOnlineSpectraSci2::Init FairRootManager not found";
 
-    //fEventHeader = (R3BEventHeader*)mgr->GetObject("R3BEventHeader");
+    fEventHeader = (R3BEventHeader*)mgr->GetObject("R3BEventHeader");
 
     FairRunOnline* run = FairRunOnline::Instance();
     run->GetHttpServer()->Register("", this);
@@ -159,7 +159,6 @@ InitStatus R3BOnlineSpectraSci2::Init()
         // === TCanvas: position === //
         sprintf(Name1, "Sci2%i_Pos", i + 1);
         cPos[i] = new TCanvas(Name1, Name1, 10, 10, 800, 700);
-        cPos[i]->Divide(1, 3);
 
         for (Int_t j = 0; j < fNbChannels; j++)
         {
@@ -337,7 +336,7 @@ InitStatus R3BOnlineSpectraSci2::Init()
         fh1_RawPos_TcalMult1[i]->GetXaxis()->SetTitleSize(0.05);
         fh1_RawPos_TcalMult1[i]->GetYaxis()->SetLabelSize(0.05);
         fh1_RawPos_TcalMult1[i]->GetYaxis()->SetTitleSize(0.05);
-        cPos[i]->cd(1);
+        cPos[i]->cd();
         fh1_RawPos_TcalMult1[i]->Draw("");
 
     } // end of loop over fNbDetectors
@@ -351,7 +350,7 @@ InitStatus R3BOnlineSpectraSci2::Init()
     mainfolSciMult->Add(cMultMap2D);
     mainfolSciMult->Add(cMultMap2D_RvsL);
 
-    TFolder* mainfolSci = new TFolder("Sci2", "Sci2 info");
+    TFolder* mainfolSci = new TFolder("Sci2_SA", "Sci2 info");
     for (Int_t i = 0; i < fNbDetectors; i++)
     {
         mainfolSci->Add(cMapped[i]);
@@ -405,12 +404,12 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
     // --- TPAT CONDITION --- //
     // --- -------------- --- //
     Bool_t BeamOrFission = kFALSE;
-    //if (fEventHeader->GetTpat() > 0)
-    //{
-    //    if ((fEventHeader->GetTpat() & 0x1) == 1 || // beam
-    //        (fEventHeader->GetTpat() & 0x2) == 2)   // fission
-    //        BeamOrFission = kTRUE;
-    //}
+    if (fEventHeader->GetTpat() > 0)
+    {
+        if ((fEventHeader->GetTpat() & 0x1) == 1 || // beam
+            (fEventHeader->GetTpat() & 0x2) == 2)   // fission
+            BeamOrFission = kTRUE;
+    }
 
     // --- --------------- --- //
     // --- local variables --- //
