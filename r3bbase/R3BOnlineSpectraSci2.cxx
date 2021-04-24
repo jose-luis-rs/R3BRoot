@@ -68,7 +68,7 @@ InitStatus R3BOnlineSpectraSci2::Init()
     if (NULL == mgr)
         LOG(FATAL) << "R3BOnlineSpectraSci2::Init FairRootManager not found";
 
-    fEventHeader = (R3BEventHeader*)mgr->GetObject("R3BEventHeader");
+    //fEventHeader = (R3BEventHeader*)mgr->GetObject("R3BEventHeader");
 
     FairRunOnline* run = FairRunOnline::Instance();
     run->GetHttpServer()->Register("", this);
@@ -79,8 +79,13 @@ InitStatus R3BOnlineSpectraSci2::Init()
     fMapped = (TClonesArray*)mgr->GetObject("Sci2Mapped");
     if (!fMapped)
     {
-        LOG(INFO) << "Sci2Mapped not found: is OK";
-    }
+        LOG(ERROR) << "Sci2Mapped not found: is OK";
+				return(kFATAL);
+		}
+		else
+		{
+        LOG(INFO) << "Sci2Mapped found";
+		}
 
     // --- ------------------------ --- //
     // --- get access to tcal data  --- //
@@ -391,6 +396,7 @@ void R3BOnlineSpectraSci2::Reset_Histo()
 
 void R3BOnlineSpectraSci2::Exec(Option_t* option)
 {
+
     FairRootManager* mgr = FairRootManager::Instance();
     if (NULL == mgr)
         LOG(FATAL) << "R3BOnlineSpectraSci2::Exec FairRootManager not found";
@@ -399,12 +405,12 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
     // --- TPAT CONDITION --- //
     // --- -------------- --- //
     Bool_t BeamOrFission = kFALSE;
-    if (fEventHeader->GetTpat() > 0)
-    {
-        if ((fEventHeader->GetTpat() & 0x1) == 1 || // beam
-            (fEventHeader->GetTpat() & 0x2) == 2)   // fission
-            BeamOrFission = kTRUE;
-    }
+    //if (fEventHeader->GetTpat() > 0)
+    //{
+    //    if ((fEventHeader->GetTpat() & 0x1) == 1 || // beam
+    //        (fEventHeader->GetTpat() & 0x2) == 2)   // fission
+    //        BeamOrFission = kTRUE;
+    //}
 
     // --- --------------- --- //
     // --- local variables --- //
@@ -442,7 +448,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
             R3BSci2MappedData* hitmapped = (R3BSci2MappedData*)fMapped->At(ihit);
             if (!hitmapped)
                 continue;
-            iDet = hitmapped->GetDetector();
+            iDet = hitmapped->GetDetector() -1;
             iCh = hitmapped->GetChannel() - 1;
             multMap[iDet * fNbChannels + iCh]++;
             fh1_finetime[iDet * fNbChannels + iCh]->Fill(hitmapped->GetTimeFine());
@@ -543,13 +549,13 @@ void R3BOnlineSpectraSci2::FinishTask()
                 fh2_mult_TrefVsPmt_condTpat[i * (fNbChannels - 1) + j]->Write();
             }
         }
-
+/*
         if (fTcal)
         {
             cPos[i]->Write();
             fh1_RawPos_TcalMult1[i]->Write();
         }
-
+*/
         for (Int_t j = 0; j < fNbChannels; j++)
         {
             if (fMapped)
@@ -557,10 +563,10 @@ void R3BOnlineSpectraSci2::FinishTask()
                 fh1_finetime[i * fNbChannels + j]->Write();
                 fh1_multMap[i * fNbChannels + j]->Write();
             }
-            if (fTcal)
+  /*          if (fTcal)
             {
                 fh1_multTcal[i * fNbChannels + j]->Write();
-            }
+            }*/
         }
     } // end of loop over fNbDetectors
 }

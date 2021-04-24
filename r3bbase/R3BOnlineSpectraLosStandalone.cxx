@@ -340,8 +340,8 @@ void R3BOnlineSpectraLosStandalone::Exec(Option_t* option)
         tpatbin = (header->GetTpat() & (1 << i));
         if (tpatbin != 0)
         {
-            if (i != 11)
-                cout << "Tpat = " << i + 1 << endl;
+            //if (i != 11)
+            //    cout << "Tpat = " << i + 1 << endl;
             fhTpat->Fill(i + 1);
         }
     }
