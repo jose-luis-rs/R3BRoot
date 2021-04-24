@@ -253,35 +253,42 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
     std::vector<TH2F*> fh_losMCFD_vs_Events;
     std::vector<TH1F*> fh_los_vftx_tamex;
 
+
+	public:
+
+	// --- hard coded calibration 
+	void SetToFmin(Double_t t) {fToFmin=t;}
+	void SetToFmax(Double_t t) {fToFmax=t;}
+	void SetTof2InvV_p0(Double_t p) {fTof2InvV_p0=p;}
+	void SetTof2InvV_p1(Double_t p) {fTof2InvV_p1=p;}
+	void SetFlightLength(Double_t L) {fL2 = L;}
+	void SetPos_p0(Double_t p) {fPos_p0 = p;}	
+	void SetPos_p1(Double_t p) {fPos_p1 = p;}	
+	void SetDispersionS2(Double_t DS2)    {fDispersionS2 = DS2;}		
+	void SetBrho0_S2toCC(Double_t Brho0)	{fBrho0_S2toCC = Brho0;}
+
   private:
 
 	// --- hard coded calibration 
 	
-	// --- 1/ select the good hit :
+	// --- 1/ select the good hit from the ToF from S2 to Cave C:
 	Double_t fToFmin;
 	Double_t fToFmax;
-	void SetToFmin(Double_t t) {fToFmin=t;}
-	void SetToFmax(Double_t t) {fToFmax=t;}
 	
 	// --- 2/ calibration in beta and ToF
 	Double_t fTof2InvV_p0;
 	Double_t fTof2InvV_p1;
 	Double_t fL2;
-	void SetTof2InvV_p0(Double_t p) {fTof2InvV_p0=p;}
-	void SetTof2InvV_p1(Double_t p) {fTof2InvV_p1=p;}
-	void SetFlightLength(Double_t L) {fL2 = L;}
 
 	// --- 3/ calibration in position
 	Double_t fPos_p0;
 	Double_t fPos_p1;
-	void SetPos_p0(Double_t p) {fPos_p0 = p;}	
-	void SetPos_p1(Double_t p) {fPos_p1 = p;}	
 
 	// --- 4/ AoQ calculation
 	Double_t fDispersionS2;
 	Double_t fBrho0_S2toCC;
-	void SetDispersionS2(Double_t DS2)    {fDispersionS2 = DS2;}		
-	void SetBrho0_S2toCC(Double_t Brho0)	{fBrho0_S2toCC = Brho0;}
+
+	// --- end of declaration of calibration parameters for AoQ
 
 	// --- TCanvas
   TCanvas* cTofFromS2;
