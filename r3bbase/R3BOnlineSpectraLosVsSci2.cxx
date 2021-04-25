@@ -189,7 +189,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     cTofFromS2vsZ->cd(1);
     fh1_RawTofFromS2_TcalMult1vsZ->Draw("col");
 
-		fh2_ZvsBeta_m1 = new TH2F("ZvsBeta_m1", "Z Music vs Beta", 1000,0.8,0.9, 2000, 20, 60);
+		fh2_ZvsBeta_m1 = new TH2F("ZvsBeta_m1", "Z Music vs Beta", 1000,0.7,0.9, 2000, 42, 62);
     fh2_ZvsBeta_m1->GetXaxis()->SetTitle("Beta");
     fh2_ZvsBeta_m1->GetYaxis()->SetTitle("Z-Music");
     cTofFromS2vsZ->cd(2);
