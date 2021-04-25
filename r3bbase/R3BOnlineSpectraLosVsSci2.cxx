@@ -1095,13 +1095,13 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 
                 ToFraw_m1 = timeLosV[0][0] - 0.5 * (iRawTimeNs[0][0] + iRawTimeNs[1][0]);
                 fh1_RawTofFromS2_TcalMult1->Fill(ToFraw_m1);
-								Velo_m1   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*ToFraw); // [m/ns] 
-								Beta_m1   = Velo / 0.299792458;
-								Gamma_m1  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta,2)));
+								Velo_m1   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*ToFraw_m1); // [m/ns] 
+								Beta_m1   = Velo_m1 / 0.299792458;
+								Gamma_m1  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1,2)));
 								PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]			
-								PosCal_m1 = fPos_p0 + fPos_p1*PosRaw; // [mm] at S2 
-								Brho_m1   = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
-								AoQ_m1    = Brho / (3.10716 * Beta * Gamma);	
+								PosCal_m1 = fPos_p0 + fPos_p1*PosRaw_m1; // [mm] at S2 
+								Brho_m1   = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
+								AoQ_m1    = Brho_m1 / (3.10716 * Beta * Gamma);	
 								fh1_RawPos_m1->Fill(PosRaw_m1);
 								fh1_CalPos_m1->Fill(PosCal_m1);
 								fh1_Beta_m1->Fill(Beta_m1);  
