@@ -180,19 +180,12 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
 
     run->AddObject(cTofFromS2);
 
-    cTofFromS2vsZ = new TCanvas("Tof_Sci2_Los_vs_Z", "Tof_Sci2_Los vs Z", 10, 10, 800, 700);
-    cTofFromS2vsZ->Divide(1,2);
-		fh1_RawTofFromS2_TcalMult1vsZ = new TH2F(
-        "RawTofNs_Tcal_m1_Sci2_LosvsZ", "RawTofNs_Tcal_m1_Sci2_Los vs Z Music", 10*(fToFmax-fToFmin), fToFmin, fToFmax, 60 * 20, 6, 60);
-    fh1_RawTofFromS2_TcalMult1vsZ->GetXaxis()->SetTitle("Raw Tof [ns]");
-    fh1_RawTofFromS2_TcalMult1vsZ->GetYaxis()->SetTitle("Z-Music");
-    cTofFromS2vsZ->cd(1);
-    fh1_RawTofFromS2_TcalMult1vsZ->Draw("col");
+    cTofFromS2vsZ = new TCanvas("ZvsBeta_m1", "Z vs Beta", 10, 10, 800, 700);
 
-		fh2_ZvsBeta_m1 = new TH2F("ZvsBeta_m1", "Z Music vs Beta", 1000,0.7,0.9, 2000, 42, 62);
+		fh2_ZvsBeta_m1 = new TH2F("ZvsBeta_m1", "Z Music vs Beta", 1000,0.75,0.8, 2000, 42, 62);
     fh2_ZvsBeta_m1->GetXaxis()->SetTitle("Beta");
     fh2_ZvsBeta_m1->GetYaxis()->SetTitle("Z-Music");
-    cTofFromS2vsZ->cd(2);
+    cTofFromS2vsZ->cd();
     fh2_ZvsBeta_m1->Draw("col");
 
     // R3B-Music
@@ -468,7 +461,6 @@ void R3BOnlineSpectraLosVsSci2::Reset_LosVsSci2_Histo()
     if (fHitItemsMus)
     {
         fh1_Mushit_z->Reset();
-        fh1_RawTofFromS2_TcalMult1vsZ->Reset();
         fh2_ZvsAoQ_m1->Reset();
         fh2_ZvsBeta_m1->Reset();
     }
@@ -1115,7 +1107,6 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 								fh1_CalPos_m1->Fill(PosCal_m1);
 								fh1_Beta_m1->Fill(Beta_m1);  
                 if(fHitItemsMus){
-									fh1_RawTofFromS2_TcalMult1vsZ->Fill(ToFraw_m1, Zmusic);
 									fh2_ZvsAoQ_m1->Fill(AoQ_m1,Zmusic);				
 									fh2_ZvsBeta_m1->Fill(Beta_m1,Zmusic);
 								}
@@ -1182,7 +1173,6 @@ void R3BOnlineSpectraLosVsSci2::FinishTask()
 		fh1_Beta_m1->Write();
 		fh1_Mushit_z->Write();
 		fh2_ZvsAoQ_m1->Write();
-		fh1_RawTofFromS2_TcalMult1vsZ->Write();
 		fh2_ZvsBeta_m1->Write();
     cout << "FinishTask: All events: " << fNEvents << ", LOS events: " << nLosEvents << endl;
 }
