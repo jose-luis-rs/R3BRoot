@@ -55,6 +55,7 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
     , fHitItemsMus(NULL)
     , fNEvents(0)
     , fTcalSci2(NULL)
+	,	fToFoffset(0)
 	,	fToFmin(-5000)
 	,	fToFmax(5000)
 	, fTof2InvV_p0(-7.8)
@@ -75,6 +76,7 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2(const char* name, Int_t iVe
     , fHitItemsMus(NULL)
     , fNEvents(0)
     , fTcalSci2(NULL)
+	,	fToFoffset(0)
 	,	fToFmin(-5000)
 	,	fToFmax(5000)
 	, fTof2InvV_p0(-7.8)
@@ -1062,7 +1064,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 										if(fToFmin<=ToFraw && ToFraw<=fToFmax)
 										{
 											cpt++;
-											Velo   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*ToFraw); // [m/ns] 
+											Velo   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*(fToFoffset+ToFraw)); // [m/ns] 
 											Beta   = Velo / 0.299792458;
 											Gamma  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta,2)));
 											PosRaw = iRawTimeNs[0][multR] - iRawTimeNs[1][multL]; // [ns]			
@@ -1096,7 +1098,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 
                 ToFraw_m1 = timeLosV[0][0] - 0.5 * (iRawTimeNs[0][0] + iRawTimeNs[1][0]);
                 fh1_RawTofFromS2_TcalMult1->Fill(ToFraw_m1);
-								Velo_m1   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*ToFraw_m1); // [m/ns] 
+								Velo_m1   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*(fToFoffset+ToFraw_m1)); // [m/ns] 
 								Beta_m1   = Velo_m1 / 0.299792458;
 								Gamma_m1  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1,2)));
 								PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]			

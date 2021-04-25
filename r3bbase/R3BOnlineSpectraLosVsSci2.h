@@ -257,6 +257,7 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
 	public:
 
 	// --- hard coded calibration 
+	void SetToFoffset(Double_t offset) {fToFoffset=offset;}
 	void SetToFmin(Double_t t) {fToFmin=t;}
 	void SetToFmax(Double_t t) {fToFmax=t;}
 	void SetTof2InvV_p0(Double_t p) {fTof2InvV_p0=p;}
@@ -270,6 +271,9 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
   private:
 
 	// --- hard coded calibration 
+
+	// --- 0/ adjust the offset when a DAQ subsystem restarts
+	Double_t fToFoffset;
 	
 	// --- 1/ select the good hit from the ToF from S2 to Cave C:
 	Double_t fToFmin;
