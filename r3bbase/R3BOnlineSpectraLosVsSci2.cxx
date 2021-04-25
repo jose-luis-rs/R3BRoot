@@ -189,8 +189,8 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_RawTofFromS2_TcalMult1vsZ->Draw();
 
     // R3B-Music
-    TCanvas* cMus_Z = new TCanvas("Sci2Mus_charge_z", "Mus: Charge Z", 10, 10, 800, 700);
-    fh1_Mushit_z = new TH1F("fh1_Sci2Mus_charge_z", "Music: Charge Z", 60 * 20., 0, 60);
+    TCanvas* cMus_Z = new TCanvas("R3BMus_charge_z", "Mus: Charge Z", 10, 10, 800, 700);
+    fh1_Mushit_z = new TH1F("fh1_R3BMus_charge_z", "Music: Charge Z", 60 * 20., 0, 60);
     fh1_Mushit_z->GetXaxis()->SetTitle("Charge (Z)");
     fh1_Mushit_z->GetYaxis()->SetTitle("Counts");
     fh1_Mushit_z->GetYaxis()->SetTitleOffset(1.1);
@@ -206,7 +206,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
 
     cBeta = new TCanvas("Beta_Sci2_Los", "Beta_Sci2_Los", 10, 10, 800, 700);
     cBeta->Divide(1,2);
-		fh1_Beta_m1 = new TH1F("fh1_betaS2_m1", "BetaS2 to Cave-C with mult==1", 5000, 0.5, 1.);
+		fh1_Beta_m1 = new TH1F("fh1_betaS2_m1", "BetaS2 to Cave-C with mult==1", 6000, 0.6, 0.9);
     fh1_Beta_m1->GetXaxis()->SetTitle("Beta");
     fh1_Beta_m1->GetYaxis()->SetTitle("Counts");
     fh1_Beta_m1->GetYaxis()->SetTitleOffset(1.15);
@@ -220,7 +220,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_Beta_m1->SetLineColor(1);
 		cBeta->cd(1);
     fh1_Beta_m1->Draw("");
-		fh1_Beta = new TH1F("fh1_betaS2", "BetaS2 to Cave-C with mult==1", 5000, 0.5, 1.);
+		fh1_Beta = new TH1F("fh1_betaS2", "BetaS2 to Cave-C", 6000, 0.6, 0.9);
     fh1_Beta->GetXaxis()->SetTitle("Beta");
     fh1_Beta->GetYaxis()->SetTitle("Counts");
     fh1_Beta->GetYaxis()->SetTitleOffset(1.15);
@@ -489,7 +489,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 continue;
             fh1_Mushit_z->Fill(hit->GetZcharge());
             Zmusic = hit->GetZcharge();
-        }
+			}
     }
 
     // --- --------------- --- //
@@ -837,6 +837,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 
         for (iDet = 1; iDet <= fNofLosDetectors; iDet++)
         {
+						cpt=0;
             for (Int_t iPart = 0; iPart < nPartc[iDet - 1]; iPart++)
             {
                 Bool_t iLOSTypeMCFD = false;
@@ -1170,7 +1171,8 @@ void R3BOnlineSpectraLosVsSci2::FinishTask()
 		fh1_RawPos_m1->Write();
 		fh1_CalPos_m1->Write();
 		fh1_Beta_m1->Write();
-
+		fh1_Mushit_z->Write();
+		fh2_ZvsAoQ_m1->Write();
     cout << "FinishTask: All events: " << fNEvents << ", LOS events: " << nLosEvents << endl;
 }
 
