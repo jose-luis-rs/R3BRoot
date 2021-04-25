@@ -63,7 +63,7 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
 	, fPos_p0(-11)
 	, fPos_p1(54.7)
 	, fDispersionS2(7000)
-	, fBrho0_S2toCC(12)
+	, fBrho0_S2toCC(9.458)
 {
 }
 
@@ -82,8 +82,8 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2(const char* name, Int_t iVe
 	, fL2(137)
 	, fPos_p0(-11)
 	, fPos_p1(54.7)
-	, fDispersionS2(7000)
-	, fBrho0_S2toCC(12)
+	, fDispersionS2(7000.)
+	, fBrho0_S2toCC(9.458)
 {
 }
 
@@ -237,7 +237,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     run->AddObject(cBeta);
 
     cZvsAoQ = new TCanvas("ZvsAoQ", "ZvsAoQ", 10, 10, 800, 700);
-    fh2_ZvsAoQ_m1 = new TH2F("fh2_ZvsAoQ", "Z-Music vs AoQ with mult==1", 1200, 1., 2.7, 60 * 50, 10, 60.5);
+    fh2_ZvsAoQ_m1 = new TH2F("fh2_ZvsAoQ", "Z-Music vs AoQ with mult==1", 1200, 2.2, 2.8, 2000, 22, 62);
     fh2_ZvsAoQ_m1->GetXaxis()->SetTitle("AoQ");
     fh2_ZvsAoQ_m1->GetYaxis()->SetTitle("Z [Charge units]");
     fh2_ZvsAoQ_m1->GetYaxis()->SetTitleOffset(1.1);
@@ -1102,7 +1102,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 								PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]			
 								PosCal_m1 = fPos_p0 + fPos_p1*PosRaw_m1; // [mm] at S2 
 								Brho_m1   = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
-								AoQ_m1    = Brho_m1 / (3.10716 * Beta * Gamma);	
+								AoQ_m1    = Brho_m1 / (3.10716 * Beta_m1 * Gamma_m1);	
 								fh1_RawPos_m1->Fill(PosRaw_m1);
 								fh1_CalPos_m1->Fill(PosCal_m1);
 								fh1_Beta_m1->Fill(Beta_m1);  
@@ -1173,6 +1173,7 @@ void R3BOnlineSpectraLosVsSci2::FinishTask()
 		fh1_Beta_m1->Write();
 		fh1_Mushit_z->Write();
 		fh2_ZvsAoQ_m1->Write();
+		fh1_RawTofFromS2_TcalMult1vsZ->Write();
     cout << "FinishTask: All events: " << fNEvents << ", LOS events: " << nLosEvents << endl;
 }
 
