@@ -181,12 +181,19 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     run->AddObject(cTofFromS2);
 
     cTofFromS2vsZ = new TCanvas("Tof_Sci2_Los_vs_Z", "Tof_Sci2_Los vs Z", 10, 10, 800, 700);
-    fh1_RawTofFromS2_TcalMult1vsZ = new TH2F(
-        "RawTofNs_Tcal_m1_Sci2_LosvsZ", "RawTofNs_Tcal_m1_Sci2_Los vs Z Music", 1000000, -50000, 50000, 60 * 20, 6, 60);
+    cTofFromS2vsZ->Divide(1,2);
+		fh1_RawTofFromS2_TcalMult1vsZ = new TH2F(
+        "RawTofNs_Tcal_m1_Sci2_LosvsZ", "RawTofNs_Tcal_m1_Sci2_Los vs Z Music", 10*(fToFmax-fToFmin), fToFmin, fToFmax, 60 * 20, 6, 60);
     fh1_RawTofFromS2_TcalMult1vsZ->GetXaxis()->SetTitle("Raw Tof [ns]");
     fh1_RawTofFromS2_TcalMult1vsZ->GetYaxis()->SetTitle("Z-Music");
-    cTofFromS2vsZ->cd();
-    fh1_RawTofFromS2_TcalMult1vsZ->Draw();
+    cTofFromS2vsZ->cd(1);
+    fh1_RawTofFromS2_TcalMult1vsZ->Draw("col");
+
+		fh2_ZvsBeta_m1 = new TH2F("ZvsBeta_m1", "Z Music vs Beta", 1000,0.8,0.9, 2000, 20, 60);
+    fh2_ZvsBeta_m1->GetXaxis()->SetTitle("Beta");
+    fh2_ZvsBeta_m1->GetYaxis()->SetTitle("Z-Music");
+    cTofFromS2vsZ->cd(2);
+    fh2_ZvsBeta_m1->Draw("col");
 
     // R3B-Music
     TCanvas* cMus_Z = new TCanvas("R3BMus_charge_z", "Mus: Charge Z", 10, 10, 800, 700);
@@ -237,7 +244,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     run->AddObject(cBeta);
 
     cZvsAoQ = new TCanvas("ZvsAoQ", "ZvsAoQ", 10, 10, 800, 700);
-    fh2_ZvsAoQ_m1 = new TH2F("fh2_ZvsAoQ", "Z-Music vs AoQ with mult==1", 1200, 2.2, 2.8, 2000, 22, 62);
+    fh2_ZvsAoQ_m1 = new TH2F("fh2_ZvsAoQ", "Z-Music vs AoQ with mult==1", 1600, 2.3, 2.7, 2000, 42, 62);
     fh2_ZvsAoQ_m1->GetXaxis()->SetTitle("AoQ");
     fh2_ZvsAoQ_m1->GetYaxis()->SetTitle("Z [Charge units]");
     fh2_ZvsAoQ_m1->GetYaxis()->SetTitleOffset(1.1);
@@ -463,6 +470,7 @@ void R3BOnlineSpectraLosVsSci2::Reset_LosVsSci2_Histo()
         fh1_Mushit_z->Reset();
         fh1_RawTofFromS2_TcalMult1vsZ->Reset();
         fh2_ZvsAoQ_m1->Reset();
+        fh2_ZvsBeta_m1->Reset();
     }
 }
 
@@ -1109,6 +1117,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 if(fHitItemsMus){
 									fh1_RawTofFromS2_TcalMult1vsZ->Fill(ToFraw_m1, Zmusic);
 									fh2_ZvsAoQ_m1->Fill(AoQ_m1,Zmusic);				
+									fh2_ZvsBeta_m1->Fill(Beta_m1,Zmusic);
 								}
 					}
         } // for iDet
@@ -1174,6 +1183,7 @@ void R3BOnlineSpectraLosVsSci2::FinishTask()
 		fh1_Mushit_z->Write();
 		fh2_ZvsAoQ_m1->Write();
 		fh1_RawTofFromS2_TcalMult1vsZ->Write();
+		fh2_ZvsBeta_m1->Write();
     cout << "FinishTask: All events: " << fNEvents << ", LOS events: " << nLosEvents << endl;
 }
 

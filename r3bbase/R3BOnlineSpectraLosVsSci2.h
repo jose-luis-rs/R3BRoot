@@ -301,6 +301,7 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
 	TH1D* fh1_RawTofFromS2_TcalMult1;
   TH2F* fh1_RawTofFromS2_TcalMult1vsZ;
   TH1F* fh1_Beta_m1;
+  TH2F* fh2_ZvsBeta_m1;
   TH2F* fh2_ZvsAoQ_m1;
 	TH1F* fh1_RawPos_m1;
 	TH1F* fh1_CalPos_m1;
