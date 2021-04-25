@@ -307,6 +307,10 @@ class R3BOnlineSpectraLosVsSci2 : public FairTask
 
 	// --- HSITOGRAMS with the selection of the good hit
   TH1D* fh1_RawTofFromS2;
+  TH1F* fh1_Beta;
+  TH2F* fh2_ZvsAoQ;
+	TH1F* fh1_RawPos;
+	TH1F* fh1_CalPos;
 
 
   public:
