@@ -206,7 +206,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
 
     cBeta = new TCanvas("Beta_Sci2_Los", "Beta_Sci2_Los", 10, 10, 800, 700);
     cBeta->Divide(1,2);
-		fh1_Beta_m1 = new TH1F("fh1_betaS2_m1", "BetaS2 to Cave-C with mult==1", 1200, 0.05, 1.);
+		fh1_Beta_m1 = new TH1F("fh1_betaS2_m1", "BetaS2 to Cave-C with mult==1", 5000, 0.5, 1.);
     fh1_Beta_m1->GetXaxis()->SetTitle("Beta");
     fh1_Beta_m1->GetYaxis()->SetTitle("Counts");
     fh1_Beta_m1->GetYaxis()->SetTitleOffset(1.15);
@@ -220,7 +220,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_Beta_m1->SetLineColor(1);
 		cBeta->cd(1);
     fh1_Beta_m1->Draw("");
-		fh1_Beta = new TH1F("fh1_betaS2", "BetaS2 to Cave-C with mult==1", 1200, 0.05, 1.);
+		fh1_Beta = new TH1F("fh1_betaS2", "BetaS2 to Cave-C with mult==1", 5000, 0.5, 1.);
     fh1_Beta->GetXaxis()->SetTitle("Beta");
     fh1_Beta->GetYaxis()->SetTitle("Counts");
     fh1_Beta->GetYaxis()->SetTitleOffset(1.15);
