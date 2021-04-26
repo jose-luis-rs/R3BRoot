@@ -489,8 +489,8 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
             R3BMusicHitData* hit = (R3BMusicHitData*)fHitItemsMus->At(ihit);
             if (!hit)
                 continue;
-            fh1_Mushit_z->Fill(hit->GetZcharge());
-            Zmusic = hit->GetZcharge();
+            Zmusic = 0.927*hit->GetZcharge() + 0.98; //quick and dirty
+            fh1_Mushit_z->Fill(Zmusic);
 			}
     }
 
