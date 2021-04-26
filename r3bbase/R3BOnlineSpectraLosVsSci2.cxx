@@ -55,6 +55,7 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2()
     , fNEvents(0)
     , fTcalSci2(NULL)
     , fHitItemsMus(NULL)
+    , fToFoffset(0)
     , fToFmin(-5000)
     , fToFmax(5000)
     , fTof2InvV_p0(-7.8)
@@ -75,6 +76,7 @@ R3BOnlineSpectraLosVsSci2::R3BOnlineSpectraLosVsSci2(const char* name, Int_t iVe
     , fNEvents(0)
     , fTcalSci2(NULL)
     , fHitItemsMus(NULL)
+    , fToFoffset(0)
     , fToFmin(-5000)
     , fToFmax(5000)
     , fTof2InvV_p0(-7.8)
@@ -113,7 +115,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     header = (R3BEventHeader*)mgr->GetObject("R3BEventHeader");
     FairRunOnline* run = FairRunOnline::Instance();
 
-    run->GetHttpServer()->Register("/Tasks", this);
+    run->GetHttpServer()->Register("", this);
 
     // Get objects for detectors on all levels
 
@@ -140,29 +142,33 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     if (!fHitItemsMus)
         LOG(WARNING) << "R3BOnlineSpectraLosVsSci2: MusicHitData not found";
 
+    // MAIN FOLDER-ID
+    TFolder* mainfolId = new TFolder("FRS_ID", "FRS ID info");
+
     //------------------------------------------------------------------------
     // create histograms of all detectors
     //------------------------------------------------------------------------
-		cPos = new TCanvas("PosSci2_m1","PosSci2_m1",10,10,800,700);
-		cPos->Divide(2,2);
-		fh1_RawPos_m1 = new TH1F("RawPosS2_mult1","RawPosS2 mult=1",100000,-50,50);
-		cPos->cd(1);
-		fh1_RawPos_m1->Draw();	
-		fh1_CalPos_m1 = new TH1F("CalPosS2_mult1","CalPosS2 mm mult=1",30000,-150,150);	
-		cPos->cd(2);
-		fh1_CalPos_m1->Draw();
-    run->AddObject(cPos);
-		fh1_RawPos = new TH1F("RawPosS2","RawPosS2 ",100000,-50,50);
-		cPos->cd(3);
-		fh1_RawPos->Draw();	
-		fh1_CalPos = new TH1F("CalPosS2","CalPosS2 mm ",30000,-150,150);	
-		cPos->cd(4);
-		fh1_CalPos->Draw();
-    run->AddObject(cPos);
+    cPos = new TCanvas("PosSci2_m1", "PosSci2_m1", 10, 10, 800, 700);
+    cPos->Divide(2, 2);
+    fh1_RawPos_m1 = new TH1F("RawPosS2_mult1", "RawPosS2 mult=1", 100000, -50, 50);
+    cPos->cd(1);
+    fh1_RawPos_m1->Draw();
+    fh1_CalPos_m1 = new TH1F("CalPosS2_mult1", "CalPosS2 mm mult=1", 30000, -150, 150);
+    cPos->cd(2);
+    fh1_CalPos_m1->Draw();
+    // run->AddObject(cPos);
+    fh1_RawPos = new TH1F("RawPosS2", "RawPosS2 ", 100000, -50, 50);
+    cPos->cd(3);
+    fh1_RawPos->Draw();
+    fh1_CalPos = new TH1F("CalPosS2", "CalPosS2 mm ", 30000, -150, 150);
+    cPos->cd(4);
+    fh1_CalPos->Draw();
+    mainfolId->Add(cPos);
+    // run->AddObject(cPos);
 
-		cTofFromS2 = new TCanvas("Tof_Sci2_Los_m1", "Tof_Sci2_Los_m1", 10, 10, 800, 700);
-    cTofFromS2->Divide(1,2);
-		fh1_RawTofFromS2_TcalMult1 =
+    cTofFromS2 = new TCanvas("Tof_Sci2_Los_m1", "Tof_Sci2_Los_m1", 10, 10, 800, 700);
+    cTofFromS2->Divide(1, 2);
+    fh1_RawTofFromS2_TcalMult1 =
         new TH1D("RawTofNs_Tcal_m1_Sci2_Los", "RawTofNs_Tcal_m1_Sci2_Los", 10000000, -50000, 50000);
     fh1_RawTofFromS2_TcalMult1->GetXaxis()->SetTitle("Raw Tof [ns]");
     fh1_RawTofFromS2_TcalMult1->GetYaxis()->SetTitle("Counts");
@@ -173,11 +179,10 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_RawTofFromS2->GetYaxis()->SetTitle("Counts");
     cTofFromS2->cd(2);
     fh1_RawTofFromS2->Draw();
-
-    run->AddObject(cTofFromS2);
+    mainfolId->Add(cTofFromS2);
+    // run->AddObject(cTofFromS2);
 
     cTofFromS2vsZ = new TCanvas("ZvsBeta_m1", "Z vs Beta", 10, 10, 800, 700);
-
     fh2_ZvsBeta_m1 = new TH2F("ZvsBeta_m1", "Z Music vs Beta", 2000, 0.75, 0.85, 2000, 42, 62);
     fh2_ZvsBeta_m1->GetXaxis()->SetTitle("Beta");
     fh2_ZvsBeta_m1->GetYaxis()->SetTitle("Z-Music");
@@ -230,7 +235,8 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
     fh1_Beta->SetLineColor(1);
     cBeta->cd(2);
     fh1_Beta->Draw("");
-    run->AddObject(cBeta);
+    mainfolId->Add(cBeta);
+    // run->AddObject(cBeta);
 
     cZvsAoQ = new TCanvas("ZvsAoQ", "ZvsAoQ", 10, 10, 800, 700);
     fh2_ZvsAoQ_m1 = new TH2F("fh2_ZvsAoQ", "Z-Music vs AoQ with mult==1", 1600, 2.3, 2.7, 2000, 42, 62);
@@ -247,10 +253,13 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
 
     if (fHitItemsMus)
     {
-        run->AddObject(cMus_Z);
-        run->AddObject(cTofFromS2vsZ);
-        run->AddObject(cZvsAoQ);
+        // run->AddObject(cTofFromS2vsZ);
+        // run->AddObject(cZvsAoQ);
+        mainfolId->Add(cMus_Z);
+        mainfolId->Add(cTofFromS2vsZ);
+        mainfolId->Add(cZvsAoQ);
     }
+    run->AddObject(mainfolId);
 
     // Trigger and Tpat
     fhTpat = new TH1F("Tpat", "Tpat", 20, 0, 20);
@@ -271,6 +280,9 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
 
     //------------------------------------------------------------------------
     // Los detector
+
+    // MAIN FOLDER-LOS
+    TFolder* mainfol = new TFolder("LOS", "LOS info");
 
     TCanvas* cLos[fNofLosDetectors];
 
@@ -408,9 +420,10 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
             gPad->SetLogz();
             fh_los_ihit_ToT[iloscount]->Draw("colz");
             cLos[iloscount]->cd(0);
-            run->AddObject(cLos[iloscount]);
+            mainfol->Add(cLos[iloscount]);
         }
 
+        run->AddObject(mainfol);
         run->GetHttpServer()->RegisterCommand("Reset_LosVsSci2",
                                               Form("/Tasks/%s/->Reset_LosVsSci2_Histo()", GetName()));
     }
@@ -484,9 +497,9 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
             R3BMusicHitData* hit = (R3BMusicHitData*)fHitItemsMus->At(ihit);
             if (!hit)
                 continue;
-            Zmusic = 0.927*hit->GetZcharge() + 0.98; //quick and dirty
+            Zmusic = 0.927 * hit->GetZcharge() + 0.98; // quick and dirty
             fh1_Mushit_z->Fill(Zmusic);
-			}
+        }
     }
 
     // --- --------------- --- //
@@ -494,16 +507,16 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
     // --- --------------- --- //
     Int_t multTcal[3];
     Double_t iRawTimeNs[3][64];
-    UInt_t nHits, iCh, cpt=0;
-	  Double_t ToFraw=0., PosRaw=-10000., ToFcal=0., PosCal=-10000.;
-		Double_t Velo=0., Beta=0., Gamma=0.,  Brho=0., AoQ=0.;
-	  Double_t ToFraw_m1=0., PosRaw_m1=-10000., ToFcal_m1=0., PosCal_m1=-10000.;
-		Double_t Velo_m1=0., Beta_m1=0., Gamma_m1=0.,  Brho_m1=0., AoQ_m1=0.;
-		for (UShort_t pmt = 0; pmt < 3; pmt++)
+    UInt_t nHits, iCh, cpt = 0;
+    Double_t ToFraw = 0., PosRaw = -10000., ToFcal = 0., PosCal = -10000.;
+    Double_t Velo = 0., Beta = 0., Gamma = 0., Brho = 0., AoQ = 0.;
+    Double_t ToFraw_m1 = 0., PosRaw_m1 = -10000., ToFcal_m1 = 0., PosCal_m1 = -10000.;
+    Double_t Velo_m1 = 0., Beta_m1 = 0., Gamma_m1 = 0., Brho_m1 = 0., AoQ_m1 = 0.;
+    for (UShort_t pmt = 0; pmt < 3; pmt++)
     {
         multTcal[pmt] = 0;
-				for(UShort_t m=0; m<64; m++)
-					iRawTimeNs[pmt][m] = 0.;
+        for (UShort_t m = 0; m < 64; m++)
+            iRawTimeNs[pmt][m] = 0.;
     }
 
     // --- -------------- --- //
@@ -1049,35 +1062,35 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 // {
                 // cout<<"Wrong detector ID for LOS!"<<endl;
                 // }
-							if(iDet == 1)
-							{
-								for(Int_t multR=0; multR<64; multR++)
-								{
-									for(Int_t multL=0; multL<64; multL++)
-									{
-										ToFraw = timeLosV[0][iPart] - 0.5 *(iRawTimeNs[0][multR] + iRawTimeNs[1][multL]);
-										if(fToFmin<=ToFraw && ToFraw<=fToFmax)
-										{
-											cpt++;
-											Velo   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*(fToFoffset+ToFraw)); // [m/ns] 
-											Beta   = Velo / 0.299792458;
-											Gamma  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta,2)));
-											PosRaw = iRawTimeNs[0][multR] - iRawTimeNs[1][multL]; // [ns]			
-											PosCal = fPos_p0 + fPos_p1*PosRaw; // [mm] at S2 
-											Brho   = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
-											AoQ    = Brho / (3.10716 * Beta * Gamma);	
-										}	
-									}
-								}
-							}
+                if (iDet == 1)
+                {
+                    for (Int_t multR = 0; multR < 64; multR++)
+                    {
+                        for (Int_t multL = 0; multL < 64; multL++)
+                        {
+                            ToFraw = timeLosV[0][iPart] - 0.5 * (iRawTimeNs[0][multR] + iRawTimeNs[1][multL]);
+                            if (fToFmin <= ToFraw && ToFraw <= fToFmax)
+                            {
+                                cpt++;
+                                Velo = 1. / (fTof2InvV_p0 + fTof2InvV_p1 * (fToFoffset + ToFraw)); // [m/ns]
+                                Beta = Velo / 0.299792458;
+                                Gamma = 1. / (TMath::Sqrt(1. - TMath::Power(Beta, 2)));
+                                PosRaw = iRawTimeNs[0][multR] - iRawTimeNs[1][multL]; // [ns]
+                                PosCal = fPos_p0 + fPos_p1 * PosRaw;                  // [mm] at S2
+                                Brho = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
+                                AoQ = Brho / (3.10716 * Beta * Gamma);
+                            }
+                        }
+                    }
+                }
             } // for iPart
-						if(cpt==1)
-						{					
-							fh1_RawTofFromS2->Fill(ToFraw);
-							fh1_RawPos->Fill(PosRaw);
-							fh1_CalPos->Fill(PosCal);
-							fh1_Beta->Fill(Beta);  
-						}
+            if (cpt == 1)
+            {
+                fh1_RawTofFromS2->Fill(ToFraw);
+                fh1_RawPos->Fill(PosRaw);
+                fh1_CalPos->Fill(PosCal);
+                fh1_Beta->Fill(Beta);
+            }
 
             // select multiplicity == 1 at Cave C and S2
             if (iDet == 1 && nPartc[0] == 1 && multTcal[0] == 1 && multTcal[1] == 1)
@@ -1093,21 +1106,22 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 
                 ToFraw_m1 = timeLosV[0][0] - 0.5 * (iRawTimeNs[0][0] + iRawTimeNs[1][0]);
                 fh1_RawTofFromS2_TcalMult1->Fill(ToFraw_m1);
-								Velo_m1   = 1. / (fTof2InvV_p0 + fTof2InvV_p1*(fToFoffset+ToFraw_m1)); // [m/ns] 
-								Beta_m1   = Velo_m1 / 0.299792458;
-								Gamma_m1  = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1,2)));
-								PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]			
-								PosCal_m1 = fPos_p0 + fPos_p1*PosRaw_m1; // [mm] at S2 
-								Brho_m1   = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
-								AoQ_m1    = Brho_m1 / (3.10716 * Beta_m1 * Gamma_m1);	
-								fh1_RawPos_m1->Fill(PosRaw_m1);
-								fh1_CalPos_m1->Fill(PosCal_m1);
-								fh1_Beta_m1->Fill(Beta_m1);  
-                if(fHitItemsMus){
-									fh2_ZvsAoQ_m1->Fill(AoQ_m1,Zmusic);				
-									fh2_ZvsBeta_m1->Fill(Beta_m1,Zmusic);
-								}
-					}
+                Velo_m1 = 1. / (fTof2InvV_p0 + fTof2InvV_p1 * (fToFoffset + ToFraw_m1)); // [m/ns]
+                Beta_m1 = Velo_m1 / 0.299792458;
+                Gamma_m1 = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1, 2)));
+                PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]
+                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1;       // [mm] at S2
+                Brho_m1 = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
+                AoQ_m1 = Brho_m1 / (3.10716 * Beta_m1 * Gamma_m1);
+                fh1_RawPos_m1->Fill(PosRaw_m1);
+                fh1_CalPos_m1->Fill(PosCal_m1);
+                fh1_Beta_m1->Fill(Beta_m1);
+                if (fHitItemsMus)
+                {
+                    fh2_ZvsAoQ_m1->Fill(AoQ_m1, Zmusic);
+                    fh2_ZvsBeta_m1->Fill(Beta_m1, Zmusic);
+                }
+            }
         } // for iDet
 
     } // if fCallItems
@@ -1160,16 +1174,16 @@ void R3BOnlineSpectraLosVsSci2::FinishTask()
     fhTrigger->Write();
 
     fh1_RawTofFromS2->Write();
-		fh1_RawPos->Write();
-		fh1_CalPos->Write();
-		fh1_Beta->Write();
+    fh1_RawPos->Write();
+    fh1_CalPos->Write();
+    fh1_Beta->Write();
     fh1_RawTofFromS2_TcalMult1->Write();
-		fh1_RawPos_m1->Write();
-		fh1_CalPos_m1->Write();
-		fh1_Beta_m1->Write();
-		fh1_Mushit_z->Write();
-		fh2_ZvsAoQ_m1->Write();
-		fh2_ZvsBeta_m1->Write();
+    fh1_RawPos_m1->Write();
+    fh1_CalPos_m1->Write();
+    fh1_Beta_m1->Write();
+    fh1_Mushit_z->Write();
+    fh2_ZvsAoQ_m1->Write();
+    fh2_ZvsBeta_m1->Write();
     cout << "FinishTask: All events: " << fNEvents << ", LOS events: " << nLosEvents << endl;
 }
 

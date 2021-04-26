@@ -80,7 +80,7 @@ InitStatus R3BSci2Mapped2Tcal::Init()
     fMapped = (TClonesArray*)mgr->GetObject("Sci2Mapped");
     if (!fMapped)
     {
-        LOG(ERROR) << "R3BSci2Mapped2Tcal::Init() Couldn't get handle on Sci2Mappe container";
+        LOG(ERROR) << "R3BSci2Mapped2Tcal::Init() Couldn't get handle on Sci2Mapped data";
     }
     else
     {

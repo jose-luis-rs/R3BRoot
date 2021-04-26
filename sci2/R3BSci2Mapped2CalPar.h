@@ -102,10 +102,10 @@ class R3BSci2Mapped2CalPar : public FairTask
      */
     inline void SetNofModules(Int_t nDets, Int_t nCh)
     {
-        fNofDetectors = nDets;		
-        fNofChannels  = nCh;  // = 3 with Tref
-        fNofTypes     = 3;
-        fNofModules   = nDets * nCh * 3 ;
+        fNofDetectors = nDets;
+        fNofChannels = nCh; // = 3 with Tref
+        fNofTypes = 3;
+        fNofModules = nDets * nCh * 3;
     }
 
   private:

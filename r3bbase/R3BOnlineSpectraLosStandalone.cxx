@@ -123,7 +123,7 @@ InitStatus R3BOnlineSpectraLosStandalone::Init()
     fhTpat->Draw();
     cTrigg->cd(0);
 
-    // MAIN FOLDER-MWPC
+    // MAIN FOLDER-LOS
     TFolder* mainfol = new TFolder("LOS", "LOS info");
 
     //------------------------------------------------------------------------
@@ -269,7 +269,7 @@ InitStatus R3BOnlineSpectraLosStandalone::Init()
         }
 
         run->AddObject(mainfol);
-        run->GetHttpServer()->RegisterCommand("Reset_LOS", Form("/Reset/%s/->Reset_LOS_Histo()", GetName()));
+        run->GetHttpServer()->RegisterCommand("Reset_LOS", Form("/Objects/%s/->Reset_LOS_Histo()", GetName()));
     }
 
     // -------------------------------------------------------------------------
