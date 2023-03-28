@@ -4,8 +4,10 @@ test "$1" == "--ci" && AUTOFIX=1 && CI=1 && shift
 
 CLANG_FORMAT=${1:-clang-format}
 
+# Install clang-format-15 for the check
 sudo apt-get install clang-format-15
 
+# Starting
 echo -n "Running clang-format checks, version: "
 ${CLANG_FORMAT} --version
 
@@ -45,8 +47,6 @@ for f in $filesToCheck; do
 	fi
     fi
 done
-
-
 
 if  test -n "$CI"
 then
