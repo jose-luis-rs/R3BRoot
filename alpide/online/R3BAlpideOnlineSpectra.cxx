@@ -53,7 +53,7 @@ R3BAlpideOnlineSpectra::R3BAlpideOnlineSpectra(const TString& name, Int_t iVerbo
     : FairTask(name, iVerbose)
     , fTrigger(-1)
     , fTpat1(-1)
-    , fTpat2(-1)
+    , fTpat2(   -1)
     , fNEvents(0)
     , fNbSensors(1)
     , fMap_Par(NULL)
