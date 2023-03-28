@@ -74,70 +74,68 @@ class R3BFootStripCal2Hit : public FairTask
   private:
     void SetParameter();
 
+    TF1* fZ3;
+    TF1* fZ4;
+    TF1* fZ5;
+    TF1* fZ6;
+    TF1* fZ7;
+    TF1* fZ3NoOff;
+    TF1* fZ4NoOff;
+    TF1* fZ5NoOff;
+    TF1* fZ6NoOff;
+    TF1* fZ7NoOff;
 
-    TF1 *fZ3;
-    TF1 *fZ4;
-    TF1 *fZ5;
-    TF1 *fZ6;
-    TF1 *fZ7;
-    TF1 *fZ3NoOff;
-    TF1 *fZ4NoOff;
-    TF1 *fZ5NoOff;
-    TF1 *fZ6NoOff;
-    TF1 *fZ7NoOff;
+    TF1* fZ4_0;
+    TF1* fZ5_0;
+    TF1* fZ6_0;
+    TF1* fZ7_0;
+    TF1* fZ8_0;
+    TF1* fZ9_0;
+    TF1* fZ4NoOff_0;
+    TF1* fZ5NoOff_0;
+    TF1* fZ6NoOff_0;
+    TF1* fZ7NoOff_0;
+    TF1* fZ8NoOff_0;
+    TF1* fZ9NoOff_0;
 
-    TF1 *fZ4_0;
-    TF1 *fZ5_0;
-    TF1 *fZ6_0;
-    TF1 *fZ7_0;
-    TF1 *fZ8_0;
-    TF1 *fZ9_0;
-    TF1 *fZ4NoOff_0;
-    TF1 *fZ5NoOff_0;
-    TF1 *fZ6NoOff_0;
-    TF1 *fZ7NoOff_0;
-    TF1 *fZ8NoOff_0;
-    TF1 *fZ9NoOff_0;
+    TF1* fZ4_1;
+    TF1* fZ5_1;
+    TF1* fZ6_1;
+    TF1* fZ7_1;
+    TF1* fZ8_1;
+    TF1* fZ9_1;
+    TF1* fZ4NoOff_1;
+    TF1* fZ5NoOff_1;
+    TF1* fZ6NoOff_1;
+    TF1* fZ7NoOff_1;
+    TF1* fZ8NoOff_1;
+    TF1* fZ9NoOff_1;
 
-    TF1 *fZ4_1;
-    TF1 *fZ5_1;
-    TF1 *fZ6_1;
-    TF1 *fZ7_1;
-    TF1 *fZ8_1;
-    TF1 *fZ9_1;
-    TF1 *fZ4NoOff_1;
-    TF1 *fZ5NoOff_1;
-    TF1 *fZ6NoOff_1;
-    TF1 *fZ7NoOff_1;
-    TF1 *fZ8NoOff_1;
-    TF1 *fZ9NoOff_1;
+    TF1* fZ4_14;
+    TF1* fZ5_14;
+    TF1* fZ6_14;
+    TF1* fZ7_14;
+    TF1* fZ8_14;
+    TF1* fZ9_14;
+    TF1* fZ4NoOff_14;
+    TF1* fZ5NoOff_14;
+    TF1* fZ6NoOff_14;
+    TF1* fZ7NoOff_14;
+    TF1* fZ8NoOff_14;
+    TF1* fZ9NoOff_14;
 
-    TF1 *fZ4_14;
-    TF1 *fZ5_14;
-    TF1 *fZ6_14;
-    TF1 *fZ7_14;
-    TF1 *fZ8_14;
-    TF1 *fZ9_14;
-    TF1 *fZ4NoOff_14;
-    TF1 *fZ5NoOff_14;
-    TF1 *fZ6NoOff_14;
-    TF1 *fZ7NoOff_14;
-    TF1 *fZ8NoOff_14;
-    TF1 *fZ9NoOff_14;
-
-    TF1 *fZ4_15;
-    TF1 *fZ5_15;
-    TF1 *fZ6_15;
-    TF1 *fZ7_15;
-    TF1 *fZ8_15;
-    TF1 *fZ9_15;
-    TF1 *fZ4NoOff_15;
-    TF1 *fZ5NoOff_15;
-    TF1 *fZ6NoOff_15;
-    TF1 *fZ7NoOff_15;
-    TF1 *fZ8NoOff_15;
-    TF1 *fZ9NoOff_15;
-    
+    TF1* fZ4_15;
+    TF1* fZ5_15;
+    TF1* fZ6_15;
+    TF1* fZ7_15;
+    TF1* fZ8_15;
+    TF1* fZ9_15;
+    TF1* fZ4NoOff_15;
+    TF1* fZ5NoOff_15;
+    TF1* fZ6NoOff_15;
+    TF1* fZ7NoOff_15;
+    TF1* fZ8NoOff_15;
+    TF1* fZ9NoOff_15;
 
     Double_t EtaCorr_Lagni(TF1* ffZ3,
                            TF1* ffZ4,
@@ -152,22 +150,20 @@ class R3BFootStripCal2Hit : public FairTask
                            Double_t fEnergy,
                            Double_t fEta);
 
- Double_t EtaCorr_Barriere(TF1* ffZ4,
-                           TF1* ffZ5,
-                           TF1* ffZ6,
-                           TF1* ffZ7,
-                           TF1* ffZ8,
-			   TF1* ffZ9,
-                           TF1* ffZ4NoOff,
-                           TF1* ffZ5NoOff,
-                           TF1* ffZ6NoOff,
-                           TF1* ffZ7NoOff,
-                           TF1* ffZ8NoOff,
-			   TF1* ffZ9NoOff,
-                           Double_t fEnergy,
-                           Double_t fEta);
-
-
+    Double_t EtaCorr_Barriere(TF1* ffZ4,
+                              TF1* ffZ5,
+                              TF1* ffZ6,
+                              TF1* ffZ7,
+                              TF1* ffZ8,
+                              TF1* ffZ9,
+                              TF1* ffZ4NoOff,
+                              TF1* ffZ5NoOff,
+                              TF1* ffZ6NoOff,
+                              TF1* ffZ7NoOff,
+                              TF1* ffZ8NoOff,
+                              TF1* ffZ9NoOff,
+                              Double_t fEnergy,
+                              Double_t fEta);
 
     Double_t fPitch;
     Double_t fMiddle;
@@ -180,14 +176,14 @@ class R3BFootStripCal2Hit : public FairTask
     vector<Double_t> fOffsetY;
     vector<TH1F*> hssd;
 
-    vector<Int_t> ClusterMult;           // Cluster multiplicity
-    vector<vector<Double_t>> ClusterPos;    // Position of Cluster from Weighted Average
-    vector<vector<Double_t>> ClusterESum;   // Sum of Energies in the Cluster
-    vector<vector<Double_t>> Eta;            // Eta for Energy/Position correction
-    vector<vector<Int_t>> ClusterNStrip;    // Number of Strips in Cluster
+    vector<Int_t> ClusterMult;                 // Cluster multiplicity
+    vector<vector<Double_t>> ClusterPos;       // Position of Cluster from Weighted Average
+    vector<vector<Double_t>> ClusterESum;      // Sum of Energies in the Cluster
+    vector<vector<Double_t>> Eta;              // Eta for Energy/Position correction
+    vector<vector<Int_t>> ClusterNStrip;       // Number of Strips in Cluster
     vector<vector<vector<Double_t>>> ClusterI; // Id Strip in Cluster
-    vector<vector<vector<Double_t>>> ClusterE;; // Energy of Strip in Cluster
-
+    vector<vector<vector<Double_t>>> ClusterE;
+    ; // Energy of Strip in Cluster
 
     R3BFootMappingPar* fMap_Par; // Parameter container with mapping
     TClonesArray* fFootCalData;  // Array with FOOT Cal-input data
@@ -197,8 +193,10 @@ class R3BFootStripCal2Hit : public FairTask
     Double_t* fChannelPeaks;
 
     // Private method AddHitData
-//    R3BFootHitData* AddHitData(Int_t detid, Int_t numhit, Double_t s, TVector3 master, Double_t energy_s, Int_t mulS);
-    R3BFootHitData* AddHitData(Int_t detid, Int_t numhit, Double_t s, Double_t eta, TVector3 master, Double_t energy_s, Int_t mulS);
+    //    R3BFootHitData* AddHitData(Int_t detid, Int_t numhit, Double_t s, TVector3 master, Double_t energy_s, Int_t
+    //    mulS);
+    R3BFootHitData*
+        AddHitData(Int_t detid, Int_t numhit, Double_t s, Double_t eta, TVector3 master, Double_t energy_s, Int_t mulS);
 
   public:
     // Class definition
