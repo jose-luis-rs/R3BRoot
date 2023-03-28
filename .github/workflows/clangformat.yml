@@ -1,4 +1,4 @@
-name: clang-format Check
+name: clang-format check
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
@@ -7,24 +7,15 @@ on:
   pull_request:
     branches: [ dev , s522 , devfeb2023 ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-  
+# A workflow run is made up of one or more jobs that can run sequentially
 jobs:
-  formatting-dart:
-    name: Formatting - Dart
+  # This workflow contains a single job called "clang-format"
+  clang-format:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        path:
-          - check: ''
-            exclude: '(CMakeLists.txt|.C|.txt|.for|input|geometry|.hh|.f95|.proto|ext_h101_)' # Exclude file paths containing 
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Run clang-format style check for C/C++.
-      uses: jidicula/clang-format-action@v4.11.0
-      with:
-        clang-format-version: '15'
-        check-path: ${{ matrix.path['check'] }}
-        exclude-regex: ${{ matrix.path['exclude'] }}
-        fallback-style: 'Mozilla' # optional
+      - uses: actions/checkout@v3
+      - name: Code formatting
+        run: |
+          ././util/clang-format-check.sh clang-format-15
+        shell: bash
