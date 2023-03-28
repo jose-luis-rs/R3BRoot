@@ -4,7 +4,7 @@ test "$1" == "--ci" && AUTOFIX=1 && CI=1 && shift
 
 CLANG_FORMAT=${1:-clang-format}
 
-apt-get install clang-format-15
+sudo apt-get install clang-format-15
 
 echo -n "Running clang-format checks, version: "
 ${CLANG_FORMAT} --version
