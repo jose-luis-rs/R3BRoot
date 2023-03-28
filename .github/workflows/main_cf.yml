@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+name: Clang-test
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the dev branch
+  push:
+    branches: [ s522 ]
+  pull_request:
+    branches: [ s522 ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially
+jobs:
+  # This workflow contains a single job called "clang-format"
+  clang-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Code formatting
+        run: |
+          cd $GITHUB_WORKSPACE
+          . $PWD/util/clang-format-check.sh clang-format-15
