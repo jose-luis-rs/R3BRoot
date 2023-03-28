@@ -23,4 +23,4 @@ jobs:
       - name: Code formatting
         run: |
           cd $HOME
-          . ./util/clang-format-check.sh clang-format-15
+          . $HOME/util/clang-format-check.sh clang-format-15
