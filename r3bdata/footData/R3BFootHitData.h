@@ -40,7 +40,13 @@ class R3BFootHitData : public FairMultiLinkedData
      *@param fPhi       Master: Angle Phi [rad] (lab frame)
      *@param fEnergy    Total energy deposited by the hit ([GeV] in sim)
      **/
-    R3BFootHitData(Int_t detid, Int_t nbhit, Double_t pos, Double_t eta, TVector3 master, Double_t energy, Int_t mulstrip = 0);
+    R3BFootHitData(Int_t detid,
+                   Int_t nbhit,
+                   Double_t pos,
+                   Double_t eta,
+                   TVector3 master,
+                   Double_t energy,
+                   Int_t mulstrip = 0);
 
     /** Copy constructor **/
     R3BFootHitData(const R3BFootHitData&);

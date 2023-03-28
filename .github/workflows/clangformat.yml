@@ -18,7 +18,7 @@ jobs:
       matrix:
         path:
           - check: ''
-            exclude: '(CMakeLists.txt|.C|.txt|.for|input|geometry|.hh)' # Exclude file paths containing 
+            exclude: '(CMakeLists.txt|.C|.txt|.for|input|geometry|.hh|.f95)' # Exclude file paths containing 
     steps:
     - uses: actions/checkout@v3
     - name: Run clang-format style check for C/C++.
