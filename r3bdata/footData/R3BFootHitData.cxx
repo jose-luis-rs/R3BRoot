@@ -33,7 +33,13 @@ R3BFootHitData::R3BFootHitData()
 }
 
 // -----   Standard constructor   ---------------------------------------
-R3BFootHitData::R3BFootHitData(Int_t detid, Int_t nbhit, Double_t pos, Double_t eta, TVector3 master, Double_t energy, Int_t mulstrip)
+R3BFootHitData::R3BFootHitData(Int_t detid,
+                               Int_t nbhit,
+                               Double_t pos,
+                               Double_t eta,
+                               TVector3 master,
+                               Double_t energy,
+                               Int_t mulstrip)
     : FairMultiLinkedData()
     , fDetId(detid)
     , fNbHit(nbhit)
