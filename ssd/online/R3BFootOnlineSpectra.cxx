@@ -46,6 +46,8 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <vector>
+using namespace std;
 
 R3BFootOnlineSpectra::R3BFootOnlineSpectra()
     : R3BFootOnlineSpectra("FootOnlineSpectra", 1)
@@ -152,7 +154,7 @@ InitStatus R3BFootOnlineSpectra::Init()
     //============ CAL data ==================
 
     auto cCal = new TCanvas("FOOT_cal", "cal info", 10, 10, 500, 500);
-    cCal->Divide(2, 1);
+    cCal->Divide(2, 2);
     calfol->Add(cCal);
 
     if (fCalItems)
@@ -186,6 +188,30 @@ InitStatus R3BFootOnlineSpectra::Init()
                 i_pad++;
             }
         }
+    }
+
+    // ics
+    if (fCalItems)
+    {
+        fh2_StripVsStrip_cal = new TH2F("Strip_vs_Strip", "Strip_vs_Strip", 640, 1, 641, 640, 1, 641);
+        fh2_StripVsStrip_cal->GetXaxis()->SetTitle("Strip number X");
+        fh2_StripVsStrip_cal->GetYaxis()->SetTitle("Strip number Y");
+        fh2_StripVsStrip_cal->GetYaxis()->SetTitleOffset(1.4);
+        fh2_StripVsStrip_cal->GetXaxis()->CenterTitle(true);
+        fh2_StripVsStrip_cal->GetYaxis()->CenterTitle(true);
+        
+        fh2_EnergyVsEnergy_cal = new TH2F("Energy_vs_Energy", "Energy_vs_Energy", 500, 0, 500, 500, 0, 500);
+        fh2_EnergyVsEnergy_cal->GetXaxis()->SetTitle("Strip Energy foot16");
+        fh2_EnergyVsEnergy_cal->GetYaxis()->SetTitle("Strip Energy foot15");
+        fh2_EnergyVsEnergy_cal->GetYaxis()->SetTitleOffset(1.4);
+        fh2_EnergyVsEnergy_cal->GetXaxis()->CenterTitle(true);
+        fh2_EnergyVsEnergy_cal->GetYaxis()->CenterTitle(true);
+
+        cCal->cd(3);
+        fh2_StripVsStrip_cal->Draw("col");
+
+        cCal->cd(4);
+        fh2_EnergyVsEnergy_cal->Draw("col");
     }
 
     //================ HIT data ==========================
@@ -240,7 +266,6 @@ InitStatus R3BFootOnlineSpectra::Init()
         fh2_BeamSpot = new TH2F("BeamSpot", "BeamSpot", 600, -50., 50., 600, -50., 50.);
         fh2_BeamSpot->GetXaxis()->SetTitle("Position X [mm]");
         fh2_BeamSpot->GetYaxis()->SetTitle("Position Y [mm]");
-        fh2_BeamSpot->GetYaxis()->SetTitleOffset(1.4);
         fh2_BeamSpot->GetXaxis()->CenterTitle(true);
         fh2_BeamSpot->GetYaxis()->CenterTitle(true);
         cInBeam->cd(3);
@@ -261,34 +286,34 @@ InitStatus R3BFootOnlineSpectra::Init()
             fh1_mult[i] = new TH1F(Name1, Name2, 10, 0, 10);
             fh1_mult[i]->GetXaxis()->SetTitle("Multplicity");
             fh1_mult[i]->GetYaxis()->SetTitle("Counts");
-            fh1_mult[i]->GetYaxis()->SetTitleOffset(1.4);
-            fh1_mult[i]->GetXaxis()->CenterTitle(true);
-            fh1_mult[i]->GetYaxis()->CenterTitle(true);
-            fh1_mult[i]->SetFillColor(31);
-        }
-        cInBeam->cd(1);
-        fh1_mult[0]->Draw();
-        cInBeam->cd(2);
-        fh1_mult[1]->Draw();
+        fh1_mult[i]->GetYaxis()->SetTitleOffset(1.4);
+        fh1_mult[i]->GetXaxis()->CenterTitle(true);
+        fh1_mult[i]->GetYaxis()->CenterTitle(true);
+        fh1_mult[i]->SetFillColor(31);
     }
-    if (fCalItems)
-    {
-        mainfol->Add(calfol);
-    }
-    if (fHitItems)
-    {
-        mainfol->Add(hitfol);
-    }
+    cInBeam->cd(1);
+    fh1_mult[0]->Draw();
+    cInBeam->cd(2);
+    fh1_mult[1]->Draw();
+}
+if (fCalItems)
+{
+    mainfol->Add(calfol);
+}
+if (fHitItems)
+{
+    mainfol->Add(hitfol);
+}
 
-    // Looking for FairRunOnline
-    FairRunOnline* run = FairRunOnline::Instance();
-    run->GetHttpServer()->Register("", this);
-    run->AddObject(mainfol);
+// Looking for FairRunOnline
+FairRunOnline* run = FairRunOnline::Instance();
+run->GetHttpServer()->Register("", this);
+run->AddObject(mainfol);
 
-    // Register command to reset histograms
-    run->GetHttpServer()->RegisterCommand("Reset_FOOT", Form("/Objects/%s/->Reset_FOOT_Histo()", GetName()));
+// Register command to reset histograms
+run->GetHttpServer()->RegisterCommand("Reset_FOOT", Form("/Objects/%s/->Reset_FOOT_Histo()", GetName()));
 
-    return kSUCCESS;
+return kSUCCESS;
 }
 
 void R3BFootOnlineSpectra::Reset_FOOT_Histo()
@@ -303,10 +328,14 @@ void R3BFootOnlineSpectra::Reset_FOOT_Histo()
 
     // Cal data
     if (fCalItems)
+    {
         for (Int_t i = 0; i < fNbDet; i++)
         {
             fh2_EnergyVsStrip_cal[i]->Reset();
         }
+        fh2_StripVsStrip_cal->Reset();
+        fh2_EnergyVsEnergy_cal->Reset();
+    }
 
     // Hit data
     if (fHitItems)
@@ -345,6 +374,9 @@ void R3BFootOnlineSpectra::Exec(Option_t* option)
     // Fill cal data
     if (fCalItems && fCalItems->GetEntriesFast() > 0)
     {
+        std::vector<R3BFootCalData*> vfoot15;
+        std::vector<R3BFootCalData*> vfoot16;
+
         auto nHits = fCalItems->GetEntriesFast();
         for (Int_t ihit = 0; ihit < nHits; ihit++)
         {
@@ -352,39 +384,57 @@ void R3BFootOnlineSpectra::Exec(Option_t* option)
             if (!hit)
                 continue;
             fh2_EnergyVsStrip_cal[hit->GetDetId() - 1]->Fill(hit->GetStripId(), hit->GetEnergy());
+            if (hit->GetDetId() == 1) vfoot15.push_back(hit);
+            if (hit->GetDetId() == 2) vfoot16.push_back(hit);
         }
+        if(vfoot15.size()>0 && vfoot16.size()>0)
+        {
+            for(auto & hit15: vfoot15)
+            {
+                for(auto & hit16: vfoot16)
+                {
+                    fh2_StripVsStrip_cal->Fill(hit16->GetStripId(), hit15->GetStripId());
+                    fh2_EnergyVsEnergy_cal->Fill(hit16->GetEnergy(), hit15->GetEnergy());
+                }
+            }
+        }
+        vfoot15.clear();
+        vfoot16.clear();
     }
+
 
     // Fill hit data
     if (fHitItems && fHitItems->GetEntriesFast() > 0)
     {
         auto nHits = fHitItems->GetEntriesFast();
+        double xpos[2];
         for (Int_t ihit = 0; ihit < nHits; ihit++)
         {
             auto hit = dynamic_cast<R3BFootHitData*>(fHitItems->At(ihit));
             if (!hit)
                 continue;
             fh1_pos[hit->GetDetId() - 1]->Fill(hit->GetPos());
+            xpos[hit->GetDetId() - 1] = hit->GetPos();
             fh1_ene[hit->GetDetId() - 1]->Fill(hit->GetEnergy());
             fh1_mult[hit->GetDetId() - 1]->Fill(hit->GetNbHit());
         }
-        for (Int_t ihit = 0; ihit < nHits - 1; ihit++)
-        {
-            for (Int_t jhit = ihit + 1; jhit < nHits; jhit++)
-            {
-                R3BFootHitData* hitI = dynamic_cast<R3BFootHitData*>(fHitItems->At(ihit));
-                R3BFootHitData* hitJ = dynamic_cast<R3BFootHitData*>(fHitItems->At(jhit));
-                if (!hitI)
-                    continue;
-                if (!hitJ)
-                    continue;
-                if ((hitI->GetDetId() == 1 && hitJ->GetDetId() == 2))
-                {
-                    fh2_BeamSpot->Fill(hitJ->GetPos(), hitI->GetPos());
+        //for (Int_t ihit = 0; ihit < nHits - 1; ihit++)
+        //{
+           // for (Int_t jhit = ihit + 1; jhit < nHits; jhit++)
+           // {
+                R3BFootHitData* hitI = dynamic_cast<R3BFootHitData*>(fHitItems->At(0));
+                R3BFootHitData* hitJ = dynamic_cast<R3BFootHitData*>(fHitItems->At(1));
+//                if (!hitI)
+  //                  continue;
+    //            if (!hitJ)
+      //              continue;
+                //if ((hitI->GetDetId() == 1 && hitJ->GetDetId() == 2))
+                //{
+                    fh2_BeamSpot->Fill(xpos[0], xpos[1]);
                     fh2_BeamSpotE->Fill(hitJ->GetEnergy(), hitI->GetEnergy());
-                }
-            }
-        }
+                //}
+           // }
+        //}
     }
     fNEvents += 1;
     return;
@@ -415,11 +465,14 @@ void R3BFootOnlineSpectra::FinishTask()
             fh2_EnergyVsStrip[i]->Write();
     }
     if (fCalItems)
+    {
         for (Int_t i = 0; i < fNbDet; i++)
         {
             fh2_EnergyVsStrip_cal[i]->Write();
         }
-
+        fh2_StripVsStrip_cal->Write();
+        fh2_EnergyVsEnergy_cal->Write();
+    }
     if (fHitItems)
     {
         for (Int_t i = 0; i < fNbDet; i++)
