@@ -386,7 +386,7 @@ void R3BFootStripCal2Hit::Exec(Option_t* option)
                 z = fDistTarget[i];
                 TVector3 master(x, y, z);
                 energy = stripmaxenergy[i];
-                AddHitData(i + 1, 1, x, master, energy, 1);
+                AddHitData(i + 1, 1, y, master, energy, 1);
             }
             else if (i == 1)
             { // X-Foot (StripId numbered from left to right)

@@ -17,6 +17,7 @@
 #include "R3BFootMappedData.h"
 #include "R3BFootReader.h"
 #include "R3BLogger.h"
+#include "TRandom.h"
 
 #include "TClonesArray.h"
 #include "ext_data_struct_info.hh"
@@ -83,6 +84,9 @@ Bool_t R3BFootReader::R3BRead()
             {
                 new ((*fArray)[fArray->GetEntriesFast()]) R3BFootMappedData(d + 1, strip + 1, fData->FOOT[d].E[strip]);
             }
+           
+            
+            
         }
         else if (fData->FOOT[d]._ == 0)
         {

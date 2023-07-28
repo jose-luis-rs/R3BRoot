@@ -76,17 +76,31 @@ InitStatus R3BSingleAlpideCorrelationOnlineSpectra::Init()
     // Create histograms for detectors
     TString Name1;
     TString Name2;
-
-    cHit2D = new TCanvas(fNameDet1 + "-" + fNameDet2 + "_hit",
-                         "Alpide" + fNameDet1 + "-Alpide" + fNameDet2 + " hit info",
-                         10,
-                         10,
-                         800,
-                         700);
-    cHit2D->Divide(2, 2);
+    // char cn[450] = fNameDet1 + "_" + fNameDet2 + "_hit";
+    
+  /*  char cname[5];
+    
+    if(fId1==1&&fId2==2)
+         cname = "hita";
+    if(fId1==2&&fId2==3)
+         cname = "hitb";
+    if(fId1==3&&fId2==4)
+         cname = "hitc";
+    if(fId1==4&&fId2==5)
+         cname = "hitd";
+    if(fId1==5&&fId2==6)
+         cname = "hite";
+*/    
+    cHit2D = new TCanvas("ccfalse");
+                         //"Alpide" + fNameDet1 + "-Alpide" + fNameDet2 + " hit info");//,
+                         //10,
+                         //10,
+                         //800,
+                         //700);
+    //cHit2D->Divide(2, 2);
 
     // X Hit data
-    Name1 = "fh2_" + fNameDet1 + "-" + fNameDet2 + "_hitx";
+    Name1 = "fh2_" + fNameDet1 + "_" + fNameDet2 + "_hitx";
     Name2 = "Position-X: Alpide" + fNameDet1 + " vs Alpide" + fNameDet2;
     fh2_hitx = new TH2F(Name1, Name2, 200, -15, 15, 200, -15, 15);
     fh2_hitx->GetXaxis()->SetTitle("X" + fNameDet1 + " [mm]");
@@ -98,11 +112,11 @@ InitStatus R3BSingleAlpideCorrelationOnlineSpectra::Init()
     fh2_hitx->GetXaxis()->SetTitleSize(0.045);
     fh2_hitx->GetYaxis()->SetLabelSize(0.045);
     fh2_hitx->GetYaxis()->SetTitleSize(0.045);
-    cHit2D->cd(1);
+    //cHit2D->cd(1);
     fh2_hitx->Draw("col");
 
     // Y Hit data
-    Name1 = "fh2_" + fNameDet1 + "-" + fNameDet2 + "_hity";
+    Name1 = "fh2_" + fNameDet1 + "_" + fNameDet2 + "_hity";
     Name2 = "Position-Y: Alpide" + fNameDet1 + " vs Alpide" + fNameDet2;
     fh2_hity = new TH2F(Name1, Name2, 100, -7.5, 7.5, 100, -7.5, 7.5);
     fh2_hity->GetXaxis()->SetTitle("Y" + fNameDet1 + " [mm]");
@@ -114,11 +128,11 @@ InitStatus R3BSingleAlpideCorrelationOnlineSpectra::Init()
     fh2_hity->GetXaxis()->SetTitleSize(0.045);
     fh2_hity->GetYaxis()->SetLabelSize(0.045);
     fh2_hity->GetYaxis()->SetTitleSize(0.045);
-    cHit2D->cd(2);
+    //cHit2D->cd(2);
     fh2_hity->Draw("col");
 
     // X Hit diff. data
-    Name1 = "fh1_" + fNameDet1 + "-" + fNameDet2 + "_hitx_dif";
+    Name1 = "fh1_" + fNameDet1 + "_" + fNameDet2 + "_hitx_dif";
     Name2 = "Dif. position-X: Alpide" + fNameDet1 + " - Alpide" + fNameDet2;
     fh1_hitxdif = new TH1F(Name1, Name2, 1000, -5, 5);
     fh1_hitxdif->GetXaxis()->SetTitle("X" + fNameDet1 + " - X" + fNameDet2 + " [mm]");
@@ -129,12 +143,12 @@ InitStatus R3BSingleAlpideCorrelationOnlineSpectra::Init()
     fh1_hitxdif->GetYaxis()->SetTitleSize(0.045);
     fh1_hitxdif->GetYaxis()->SetTitle("Counts");
     fh1_hitxdif->GetYaxis()->SetTitleOffset(1.1);
-    cHit2D->cd(3);
+    //cHit2D->cd(3);
     fh1_hitxdif->SetFillColor(31);
-    fh1_hitxdif->Draw("hist");
+    fh1_hitxdif->Draw("");
 
     // Y Hit diff. data
-    Name1 = "fh1_" + fNameDet1 + "-" + fNameDet2 + "_hity_dif";
+    Name1 = "fh1_" + fNameDet1 + "_" + fNameDet2 + "_hity_dif";
     Name2 = "Dif. position-Y: Alpide" + fNameDet1 + " - Alpide" + fNameDet2;
     fh1_hitydif = new TH1F(Name1, Name2, 1000, -5, 5);
     fh1_hitydif->GetXaxis()->SetTitle("Y" + fNameDet1 + " - Y" + fNameDet2 + " [mm]");
@@ -145,16 +159,21 @@ InitStatus R3BSingleAlpideCorrelationOnlineSpectra::Init()
     fh1_hitydif->GetYaxis()->SetTitleSize(0.045);
     fh1_hitydif->GetYaxis()->SetTitle("Counts");
     fh1_hitydif->GetYaxis()->SetTitleOffset(1.1);
-    cHit2D->cd(4);
+    //cHit2D->cd(4);
     fh1_hitydif->SetFillColor(31);
-    fh1_hitydif->Draw("hist");
+    fh1_hitydif->Draw("");
 
     // MAIN FOLDER
     TFolder* mainfol = new TFolder("Alpide" + fNameDet1 + "-Alpide" + fNameDet2,
                                    "Alpide" + fNameDet1 + "-Alpide" + fNameDet2 + " info");
     if (fHitItems)
     {
-        mainfol->Add(cHit2D);
+        mainfol->Add(fh2_hitx);
+        mainfol->Add(fh2_hity);
+        mainfol->Add(fh1_hitxdif);
+        mainfol->Add(fh1_hitydif);
+        
+        
     }
     run->AddObject(mainfol);
 

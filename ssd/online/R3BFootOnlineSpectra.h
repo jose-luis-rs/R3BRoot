@@ -122,6 +122,8 @@ class R3BFootOnlineSpectra : public FairTask
     std::vector<TH2F*> fh2_EnergyVsStrip;
     // Histograms for cal data
     std::vector<TH2F*> fh2_EnergyVsStrip_cal;
+    TH2F* fh2_StripVsStrip_cal;//ics
+    TH2F* fh2_EnergyVsEnergy_cal;//ics
     // Histograms for hit data
     std::vector<TH1F*> fh1_pos;
     std::vector<TH1F*> fh1_ene;

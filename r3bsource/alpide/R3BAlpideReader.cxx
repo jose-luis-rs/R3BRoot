@@ -19,6 +19,7 @@
 #include "R3BLogger.h"
 
 #include "TClonesArray.h"
+#include "TRandom.h"
 #include "ext_data_struct_info.hh"
 
 /**
@@ -71,9 +72,24 @@ Bool_t R3BAlpideReader::Init(ext_data_struct_info* a_struct_info)
 Bool_t R3BAlpideReader::R3BRead()
 {
     R3BLOG(debug1, "Event data: " << fNEvent);
+    
+    double sig[6]={30,35,40,50,55,67};
+    double m[6]={20,35,-20,30,40,35};
 
     for (int d = 0; d < fNbDet; d++)
     {
+    
+    
+    new ((*fArray)[fArray->GetEntriesFast()]) R3BAlpideMappedData(d + 1,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              gRandom->Gaus(512/2.+m[d],sig[d]),
+                                                                              gRandom->Gaus(1024/2.-m[d],sig[d]));
+    
+    
+    
+    
         R3BLOG_IF(error,
                   fData->ALPIDE[d].REGION != fData->ALPIDE[d].ADDRESS,
                   "Region/Address sizes mismatch for detector " << d + 1 << ", Region: " << fData->ALPIDE[d].REGION
