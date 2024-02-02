@@ -11,12 +11,11 @@
  * or submit itself to any jurisdiction.                                      *
  ******************************************************************************/
 
+#include <TH1F.h>
+#include <TMath.h>
 #include <string>
 
-#include "TH1F.h"
-#include "TMath.h"
-
-#include "FairLogger.h"
+#include <FairLogger.h>
 
 #include "R3BLogger.h"
 #include "R3BTCalEngine.h"
