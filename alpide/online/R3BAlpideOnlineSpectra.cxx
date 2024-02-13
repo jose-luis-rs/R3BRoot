@@ -154,7 +154,7 @@ InitStatus R3BAlpideOnlineSpectra::Init()
 
             sprintf(Name1, "fh1_mulcal_sensor_%d", s + 1);
             sprintf(Name2, "Cal_mult for sensor: %d", s + 1);
-            fh1_Calmult[s] = R3B::root_owned<TH1F>(Name1, Name2, 1000, 0, 1000);
+            fh1_Calmult[s] = R3B::root_owned<TH1F>(Name1, Name2, 100, 0, 100);
             fh1_Calmult[s]->GetXaxis()->SetTitle("Pixel multiplicity");
             fh1_Calmult[s]->GetYaxis()->SetTitle("Counts");
             fh1_Calmult[s]->GetYaxis()->SetTitleOffset(1.1);
@@ -167,6 +167,15 @@ InitStatus R3BAlpideOnlineSpectra::Init()
             calfol->Add(cCal);
         }
         mainfol->Add(calfol);
+
+        fh1_Calmult_total = R3B::root_owned<TH1F>("fh1_mulcal_sensor_total", "Cal_mult for all sensors", 50, 0, 50);
+        fh1_Calmult_total->GetXaxis()->SetTitle("Pixel multiplicity");
+        fh1_Calmult_total->GetYaxis()->SetTitle("Counts");
+        fh1_Calmult_total->GetYaxis()->SetTitleOffset(1.1);
+        fh1_Calmult_total->GetXaxis()->CenterTitle(true);
+        fh1_Calmult_total->GetYaxis()->CenterTitle(true);
+        fh1_Calmult_total->SetLineColor(1);
+        fh1_Calmult_total->SetFillColor(31);
     }
 
     if (fHitItems)
@@ -181,7 +190,7 @@ InitStatus R3BAlpideOnlineSpectra::Init()
             cHit->Divide(2, 1);
             sprintf(Name1, "fh2_pos_hit_sensor_%d", s + 1);
             sprintf(Name2, "Hit-position for sensor: %d", s + 1);
-            fh2_PosHit[s] = R3B::root_owned<TH2F>(Name1, Name2, 600, -15.0, 15.0, 300, -7.5, 7.5);
+            fh2_PosHit[s] = R3B::root_owned<TH2F>(Name1, Name2, 200, -15.0, 15.0, 100, -7.5, 7.5);
             fh2_PosHit[s]->GetXaxis()->SetTitle("Posl [mm]");
             fh2_PosHit[s]->GetYaxis()->SetTitle("Post [mm]");
             fh2_PosHit[s]->GetYaxis()->SetTitleOffset(1.1);
@@ -222,6 +231,10 @@ InitStatus R3BAlpideOnlineSpectra::Init()
         }
         mainfol->Add(hitfol);
     }
+
+    if (fh1_Calmult_total)
+        mainfol->Add(fh1_Calmult_total);
+
     run->AddObject(mainfol);
 
     // Register command to reset histograms
@@ -260,6 +273,7 @@ void R3BAlpideOnlineSpectra::Reset_Histo()
         {
             hist->Reset();
         }
+        fh1_Calmult_total->Reset();
     }
 
     if (fHitItems)
@@ -312,6 +326,7 @@ void R3BAlpideOnlineSpectra::Exec(Option_t* /*option*/)
             auto hit = dynamic_cast<R3BAlpideMappedData*>(fMappedItems->At(ihit));
             if (!hit)
                 continue;
+            //	    std::cout << hit->GetSensorId() << std::endl;
             fh2_ColVsRow[hit->GetSensorId() - 1]->Fill(hit->GetCol(), hit->GetRow());
         }
     }
@@ -329,16 +344,19 @@ void R3BAlpideOnlineSpectra::Exec(Option_t* /*option*/)
                 if (!hit)
                     continue;
                 auto senid = hit->GetSensorId() - 1;
+                if (senid < 0)
+                    continue;
                 fh2_ColVsRowCal[senid]->Fill(hit->GetCol(), hit->GetRow());
                 mult[senid]++;
             }
             for (int s = 0; s < fNbSensors; s++)
-                fh1_Calmult[s]->Fill(mult[s]);
+                if (mult[s] > 0)
+                    fh1_Calmult[s]->Fill(mult[s]);
         }
         else
         {
-            for (int s = 0; s < fNbSensors; s++)
-                fh1_Calmult[s]->Fill(0);
+            //            for (int s = 0; s < fNbSensors; s++)
+            //        fh1_Calmult[s]->Fill(0);
         }
     }
 
@@ -382,4 +400,24 @@ void R3BAlpideOnlineSpectra::FinishEvent()
     }
 }
 
+void R3BAlpideOnlineSpectra::FinishTask()
+{
+    for (const auto& hist : fh2_ColVsRow)
+    {
+        hist->Write();
+    }
+
+    if (fCalItems)
+    {
+        for (const auto& hist : fh2_ColVsRowCal)
+        {
+            hist->Write();
+        }
+        for (const auto& hist : fh1_Calmult)
+        {
+            hist->Write();
+        }
+        fh1_Calmult_total->Write();
+    }
+}
 ClassImp(R3BAlpideOnlineSpectra)
