@@ -229,11 +229,24 @@ InitStatus R3BAlpideOnlineSpectra::Init()
             fh1_Clustermult[s]->Draw();
             hitfol->Add(cHitm);
         }
+
+        fh2_theta_phi = R3B::root_owned<TH2F>("fh2_theta_phi", "Correlation theta vs phi", 140, 10, 70, 660, -180, 180);
+        fh2_theta_phi->GetXaxis()->SetTitle("Theta [deg]");
+        fh2_theta_phi->GetYaxis()->SetTitle("Phi [deg]");
+        fh2_theta_phi->GetYaxis()->SetTitleOffset(1.1);
+        fh2_theta_phi->GetXaxis()->CenterTitle(true);
+        fh2_theta_phi->GetYaxis()->CenterTitle(true);
+        fh2_theta_phi->SetLineColor(1);
+        fh2_theta_phi->SetFillColor(31);
+
         mainfol->Add(hitfol);
     }
 
     if (fh1_Calmult_total)
         mainfol->Add(fh1_Calmult_total);
+
+    if (fh2_theta_phi)
+        mainfol->Add(fh2_theta_phi);
 
     run->AddObject(mainfol);
 
@@ -290,6 +303,7 @@ void R3BAlpideOnlineSpectra::Reset_Histo()
         {
             hist->Reset();
         }
+        fh2_theta_phi->Reset();
     }
 
     return;
@@ -373,6 +387,7 @@ void R3BAlpideOnlineSpectra::Exec(Option_t* /*option*/)
             auto senid = hit->GetSensorId() - 1;
             fh1_Clustersize[senid]->Fill(hit->GetClusterSize());
             fh2_PosHit[senid]->Fill(hit->GetPosl(), hit->GetPost());
+            fh2_theta_phi->Fill(hit->GetTheta() * TMath::RadToDeg(), hit->GetPhi() * TMath::RadToDeg());
             mult[senid]++;
         }
         for (int s = 0; s < fNbSensors; s++)
@@ -418,6 +433,10 @@ void R3BAlpideOnlineSpectra::FinishTask()
             hist->Write();
         }
         fh1_Calmult_total->Write();
+    }
+    if (fHitItems)
+    {
+        fh2_theta_phi->Write();
     }
 }
 ClassImp(R3BAlpideOnlineSpectra)

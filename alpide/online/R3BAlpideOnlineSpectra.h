@@ -120,6 +120,8 @@ class R3BAlpideOnlineSpectra : public FairTask
 
     TH1F* fh1_Calmult_total;
 
+    TH2F* fh2_theta_phi;
+
   public:
     ClassDefOverride(R3BAlpideOnlineSpectra, 1)
 };
