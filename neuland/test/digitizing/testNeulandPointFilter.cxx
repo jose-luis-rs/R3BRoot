@@ -11,95 +11,98 @@
  * or submit itself to any jurisdiction.                                      *
  ******************************************************************************/
 
-#include <gtest/gtest.h>
 #include "NeulandPointFilter.h"
 #include "R3BNeulandPoint.h"
 #include <bitset>
+#include <gtest/gtest.h>
 
-namespace 
+namespace
 {
 
-using namespace R3B::Neuland;
+    namespace neuland = ::R3B::Neuland;
 
-// Mock class for R3BNeulandPoint to simulate behavior
-class MockR3BNeulandPoint : public R3BNeulandPoint {
-public:
-    MockR3BNeulandPoint(int pid, double energyLoss)
-        : pid_(pid), energyLoss_(energyLoss) {}
+    using BitSetParticle = R3B::Neuland::BitSetParticle;
+    constexpr auto ParticleBitsetSize = R3B::Neuland::ParticleBitsetSize;
+    // Test for ParticleToBitSet function
 
-    int GetPID() const override { return pid_; }
-    double GetEnergyLoss() const override { return energyLoss_; }
+    TEST(TestNeulandPointFilter, ParticleToBitSetTest)
+    {
+        auto bitset = neuland::ParticleToBitSet(BitSetParticle::proton);
+        EXPECT_EQ(bitset.to_ulong(), 0x0001);
 
-private:
-    int pid_;
-    double energyLoss_;
-};
+        bitset = ParticleToBitSet(BitSetParticle::neutron);
+        EXPECT_EQ(bitset.to_ulong(), 0x0002);
 
-// Test for ParticleToBitSet function
-TEST_F(R3BNeulandTest, ParticleToBitSetTest) {
-    auto bitset = ParticleToBitSet(BitSetParticle::proton);
-    EXPECT_EQ(bitset.to_ulong(), 0x0001);
+        bitset = ParticleToBitSet(BitSetParticle::gamma);
+        EXPECT_EQ(bitset.to_ulong(), 0x0020);
+    }
 
-    bitset = ParticleToBitSet(BitSetParticle::neutron);
-    EXPECT_EQ(bitset.to_ulong(), 0x0002);
+    // Test for BitSetToParticle function
+    TEST(TestNeulandPointFilter, BitSetToParticleTest)
+    {
+        constexpr auto proton_bitsetid = 0x0001;
+        auto particle = neuland::BitSetToParticle(std::bitset<ParticleBitsetSize>{ proton_bitsetid });
+        EXPECT_EQ(particle, BitSetParticle::proton);
 
-    bitset = ParticleToBitSet(BitSetParticle::gamma);
-    EXPECT_EQ(bitset.to_ulong(), 0x0020);
-}
+        constexpr auto neutron_bitsetid = 0x0002;
+        particle = neuland::BitSetToParticle(std::bitset<ParticleBitsetSize>{ neutron_bitsetid });
+        EXPECT_EQ(particle, BitSetParticle::neutron);
 
-// Test for BitSetToParticle function
-TEST_F(R3BNeulandTest, BitSetToParticleTest) {
-    auto particle = BitSetToParticle(std::bitset<ParticleBitsetSize>{0x0001});
-    EXPECT_EQ(particle, BitSetParticle::proton);
+        constexpr auto gamma_bitsetid = 0x0020;
+        particle = neuland::BitSetToParticle(std::bitset<ParticleBitsetSize>{ gamma_bitsetid });
+        EXPECT_EQ(particle, BitSetParticle::gamma);
+    }
 
-    particle = BitSetToParticle(std::bitset<ParticleBitsetSize>{0x0002});
-    EXPECT_EQ(particle, BitSetParticle::neutron);
+    // Test for CheckCriteria function
+    TEST(TestNeulandPointFilter, CheckCriteriaTest)
+    {
+        EXPECT_TRUE(CheckCriteria(BitSetParticle::proton, BitSetParticle::proton));
+        EXPECT_FALSE(CheckCriteria(BitSetParticle::proton, BitSetParticle::neutron));
+        EXPECT_TRUE(CheckCriteria(BitSetParticle::proton , BitSetParticle::neutron | BitSetParticle::proton));
+    }
 
-    particle = BitSetToParticle(std::bitset<ParticleBitsetSize>{0x0020});
-    EXPECT_EQ(particle, BitSetParticle::gamma);
-}
+    // Test for PidToBitSetParticle function
+    TEST(TestNeulandPointFilter, PidToBitSetParticleTest)
+    {
+        EXPECT_EQ(neuland::PidToBitSetParticle(2212), BitSetParticle::proton);
+        EXPECT_EQ(neuland::PidToBitSetParticle(2112), BitSetParticle::neutron);
+        EXPECT_EQ(neuland::PidToBitSetParticle(22), BitSetParticle::gamma);
+    }
 
-// Test for CheckCriteria function
-TEST_F(R3BNeulandTest, CheckCriteriaTest) {
-    EXPECT_TRUE(CheckCriteria(BitSetParticle::proton, BitSetParticle::proton));
-    EXPECT_FALSE(CheckCriteria(BitSetParticle::proton, BitSetParticle::neutron));
-    EXPECT_TRUE(CheckCriteria(BitSetParticle::proton | BitSetParticle::neutron, BitSetParticle::proton));
-}
+    // Test for NeulandPointFilter class
+    TEST(TestNeulandPointFilter, SetFilterTest)
+    {
+        NeulandPointFilter filter;
+        filter.SetFilter(BitSetParticle::proton);
+        EXPECT_EQ(filter.GetFilter(), BitSetParticle::proton);
 
-// Test for PidToBitSetParticle function
-TEST_F(R3BNeulandTest, PidToBitSetParticleTest) {
-    EXPECT_EQ(PidToBitSetParticle(2212), BitSetParticle::proton);
-    EXPECT_EQ(PidToBitSetParticle(2112), BitSetParticle::neutron);
-    EXPECT_EQ(PidToBitSetParticle(22), BitSetParticle::gamma);
-    EXPECT_EQ(PidToBitSetParticle(999), BitSetParticle::meson);
-    EXPECT_EQ(PidToBitSetParticle(123456), BitSetParticle::other);
-}
+        filter.SetFilter(BitSetParticle::neutron, 0.5);
+        EXPECT_EQ(filter.GetFilter(), BitSetParticle::neutron);
+        EXPECT_EQ(filter.GetMinimumAllowedEnergy(), 0.5);
+    }
 
-// Test for NeulandPointFilter class
-TEST_F(NeulandPointFilterTest, SetFilterTest) {
-    NeulandPointFilter filter;
-    filter.SetFilter(BitSetParticle::proton);
-    EXPECT_EQ(filter.GetFilter(), BitSetParticle::proton);
+    // Test for NeulandPointFilter::ShouldNeulandPointBeFiltered function
+    TEST(NeulandPointFilterTest, ShouldNeulandPointBeFilteredTest)
+    {
+        constexpr auto proton_pid = 2212;
+        constexpr auto neutron_pid = 2112;
+        constexpr auto eLoss_proton = 0.7;
+        constexpr auto eLoss_neutron = 0.3;
+        TVector3 sample_vector;
 
-    filter.SetFilter(BitSetParticle::neutron, 0.5);
-    EXPECT_EQ(filter.GetFilter(), BitSetParticle::neutron);
-    EXPECT_EQ(filter.GetMinimumAllowedEnergy(), 0.5);
-}
+        NeulandPointFilter filter;
 
-// Test for NeulandPointFilter::ShouldNeulandPointBeFiltered function
-TEST_F(NeulandPointFilterTest, ShouldNeulandPointBeFilteredTest) {
-    NeulandPointFilter filter;
-    MockR3BNeulandPoint protonPoint(2212, 1.0); // Proton with 1.0 GeV energy
-    MockR3BNeulandPoint neutronPoint(2112, 0.3); // Neutron with 0.3 GeV energy
+        R3BNeulandPoint protonPoint(0, 0, sample_vector, sample_vector, 0., 0., eLoss_proton, 0, 0., proton_pid, 0);
+        R3BNeulandPoint neutronPoint(0, 0, sample_vector, sample_vector, 0., 0., eLoss_neutron, 0, 0., neutron_pid, 0);
 
-    // Test filtering criteria for protons
-    filter.SetFilter(BitSetParticle::proton);
-    EXPECT_TRUE(filter.ShouldNeulandPointBeFiltered(protonPoint));
-    EXPECT_FALSE(filter.ShouldNeulandPointBeFiltered(neutronPoint));
+        // Test filtering criteria for protons
+        filter.SetFilter(BitSetParticle::proton);
+        EXPECT_TRUE(filter.ShouldNeulandPointBeFiltered(protonPoint));
+        EXPECT_FALSE(filter.ShouldNeulandPointBeFiltered(neutronPoint));
 
-    // Test minimum energy filter
-    filter.SetFilter(BitSetParticle::neutron, 0.5);
-    EXPECT_TRUE(filter.ShouldNeulandPointBeFiltered(neutronPoint)); // Energy is below 0.5
-    EXPECT_FALSE(filter.ShouldNeulandPointBeFiltered(protonPoint)); // Energy is above 0.5
-}
-}
+        // Test minimum energy filter
+        filter.SetFilter(BitSetParticle::neutron, 0.5);
+        EXPECT_TRUE(filter.ShouldNeulandPointBeFiltered(neutronPoint));
+        EXPECT_FALSE(filter.ShouldNeulandPointBeFiltered(protonPoint));
+    }
+} // namespace

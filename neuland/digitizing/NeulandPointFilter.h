@@ -1,6 +1,4 @@
 #pragma once
-#include "FairTask.h"
-#include "R3BIOConnector.h"
 #include "R3BNeulandPoint.h"
 #include <bitset>
 
@@ -27,14 +25,58 @@ namespace R3B::Neuland
 
     constexpr auto ParticleBitsetSize = 32U;
 
-    constexpr auto ParticleToBitSet(BitSetParticle particle);
-    auto BitSetToParticle(std::bitset<ParticleBitsetSize> bits) -> BitSetParticle;
-    auto CheckCriteria(BitSetParticle particle, BitSetParticle criteria) -> bool;
-    auto PidToBitSetParticle(int pid) -> BitSetParticle;
+    using ParticleUType = std::underlying_type_t<BitSetParticle>;
 
-    auto operator|(BitSetParticle left, BitSetParticle right) -> BitSetParticle;
-    auto operator&(BitSetParticle left, BitSetParticle right) -> BitSetParticle;
-    auto operator~(BitSetParticle particle) -> BitSetParticle;
+    constexpr auto ParticleToBitSet(BitSetParticle particle)
+    {
+        return std::bitset<ParticleBitsetSize>{ static_cast<ParticleUType>(particle) };
+    }
+
+    inline auto BitSetToParticle(std::bitset<ParticleBitsetSize> bits) -> BitSetParticle
+    {
+        return static_cast<BitSetParticle>(static_cast<uint32_t>(bits.to_ulong()));
+    }
+
+    inline auto CheckCriteria(BitSetParticle particle, BitSetParticle criteria) -> bool
+    {
+        return (ParticleToBitSet(particle) & ParticleToBitSet(criteria)) == ParticleToBitSet(particle);
+    }
+
+    inline auto operator|(BitSetParticle left, BitSetParticle right) -> BitSetParticle
+    {
+        auto left_bitset = ParticleToBitSet(left);
+        auto right_bitset = ParticleToBitSet(right);
+        return BitSetToParticle(left_bitset | right_bitset);
+    }
+
+    inline auto operator&(BitSetParticle left, BitSetParticle right) -> BitSetParticle
+    {
+        auto left_bitset = ParticleToBitSet(left);
+        auto right_bitset = ParticleToBitSet(right);
+        return BitSetToParticle(left_bitset & right_bitset);
+    }
+
+    inline auto operator~(BitSetParticle particle) -> BitSetParticle
+    {
+        return BitSetToParticle(~ParticleToBitSet(particle));
+    }
+
+    inline auto PidToBitSetParticle(int pid) -> BitSetParticle
+    {
+        // mesons have three digit pdgs
+        if (pid > 99 and pid < 1000) // NOLINT
+        {
+            return BitSetParticle::meson;
+        }
+        auto pid_to_bitset_hash_iterator = PidToBitSetParticleHash.find(pid);
+
+        if (pid_to_bitset_hash_iterator == PidToBitSetParticleHash.end())
+        {
+            return BitSetParticle::other;
+        }
+
+        return pid_to_bitset_hash_iterator->second;
+    }
 
 } // namespace R3B::Neuland
 class NeulandPointFilter
