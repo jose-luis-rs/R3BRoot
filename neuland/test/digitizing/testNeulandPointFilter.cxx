@@ -97,12 +97,12 @@ namespace
 
         // Test filtering criteria for protons
         filter.SetFilter(BitSetParticle::proton);
-        EXPECT_TRUE(filter.ShouldNeulandPointBeFiltered(protonPoint));
-        EXPECT_FALSE(filter.ShouldNeulandPointBeFiltered(neutronPoint));
+        EXPECT_TRUE(filter.CheckFiltered(protonPoint));
+        EXPECT_FALSE(filter.CheckFiltered(neutronPoint));
 
         // Test minimum energy filter
         filter.SetFilter(BitSetParticle::neutron, 0.5);
-        EXPECT_TRUE(filter.ShouldNeulandPointBeFiltered(neutronPoint));
-        EXPECT_FALSE(filter.ShouldNeulandPointBeFiltered(protonPoint));
+        EXPECT_TRUE(filter.CheckFiltered(neutronPoint));
+        EXPECT_FALSE(filter.CheckFiltered(protonPoint));
     }
 } // namespace

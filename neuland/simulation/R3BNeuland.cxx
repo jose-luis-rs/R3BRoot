@@ -27,16 +27,16 @@
 
 // Initialize variables from Birk' s Law
 constexpr auto seconds_to_nanoseconds = 1e9;
-static constexpr double BirkdP = 1.032;
-static constexpr double BirkC1 = 0.013 / BirkdP;
-static constexpr double BirkC2 = 9.6e-6 / (BirkdP * BirkdP);
+constexpr auto BirkdP = 1.032;
+constexpr auto BirkC1 = 0.013 / BirkdP;
+constexpr auto BirkC2 = 9.6e-6 / (BirkdP * BirkdP);
 
 inline auto GetLightYield(const int charge, const double length, const double edep) -> double
 {
     // Apply Birk's law ( Adapted from G3BIRK/Geant3)
     if (charge != 0 && length > 0)
     {
-        double birkC1Mod = BirkC1;
+        constexpr auto birkC1Mod = BirkC1;
 
         // Apply correction for higher charge states
         if (TMath::Abs(charge) >= 2)

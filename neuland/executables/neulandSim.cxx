@@ -22,10 +22,6 @@ constexpr int DEFAULT_RUNID = 999;
 int main(int argc, const char** argv)
 {
     auto timer = TStopwatch{};
-    auto const neutron_PID = 2112;
-    auto const Sn_p = int{ 50 };
-    auto const Sn_z = int{ 123 };
-    auto const BeamEnergyAtTarget = 883.;
     auto const defaultEventNum = 10;
     timer.Start();
 
