@@ -36,7 +36,7 @@ inline auto GetLightYield(const int charge, const double length, const double ed
     // Apply Birk's law ( Adapted from G3BIRK/Geant3)
     if (charge != 0 && length > 0)
     {
-        constexpr auto birkC1Mod = BirkC1;
+        auto birkC1Mod = BirkC1;
 
         // Apply correction for higher charge states
         if (TMath::Abs(charge) >= 2)

@@ -110,7 +110,7 @@ void R3BNeulandDigitizer::Exec(Option_t* /*option*/)
     {
         if (((neuland_point_filter_.GetFilter() != R3B::Neuland::BitSetParticle::none) or
              (neuland_point_filter_.GetMinimumAllowedEnergy() != 0)) and
-            neuland_point_filter_.ShouldNeulandPointBeFiltered(point))
+            neuland_point_filter_.CheckFiltered(point))
         {
             continue;
         }
