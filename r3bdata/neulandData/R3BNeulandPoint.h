@@ -25,9 +25,9 @@ class R3BNeulandPoint : public FairMCPoint
   public:
     R3BNeulandPoint()
         : FairMCPoint{}
-        , fLightYield{0}
-        , particle_id_{0}
-        , parent_particle_id_{0}
+        , fLightYield{ 0 }
+        , particle_id_{ 0 }
+        , parent_particle_id_{ 0 }
     {
     }
 
@@ -42,10 +42,10 @@ class R3BNeulandPoint : public FairMCPoint
                     const Double_t lightYield,
                     const int particle_id,
                     const int parent_particle_id)
-        : FairMCPoint{trackID, detID, pos, mom, tof, length, eLoss, EventId}
-        , fLightYield{lightYield}
-        , particle_id_{particle_id}
-        , parent_particle_id_{parent_particle_id}
+        : FairMCPoint{ trackID, detID, pos, mom, tof, length, eLoss, EventId }
+        , fLightYield{ lightYield }
+        , particle_id_{ particle_id }
+        , parent_particle_id_{ parent_particle_id }
     {
     }
 
@@ -53,10 +53,10 @@ class R3BNeulandPoint : public FairMCPoint
                     const Double_t lightYield,
                     const int particle_id,
                     const int parent_particle_id)
-        : FairMCPoint{point}
-        , fLightYield{lightYield}
-        , particle_id_{particle_id}
-        , parent_particle_id_{parent_particle_id}
+        : FairMCPoint{ point }
+        , fLightYield{ lightYield }
+        , particle_id_{ particle_id }
+        , parent_particle_id_{ parent_particle_id }
     {
     }
 

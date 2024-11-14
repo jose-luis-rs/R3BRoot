@@ -90,5 +90,5 @@ class NeulandPointFilter
 
   private:
     R3B::Neuland::BitSetParticle filtered_particles_ = R3B::Neuland::BitSetParticle::none;
-    double minimum_allowed_energy_ = 0; //engergy in GeV
+    double minimum_allowed_energy_ = 0; // engergy in GeV
 };

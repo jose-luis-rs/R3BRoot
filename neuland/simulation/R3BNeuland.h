@@ -74,12 +74,12 @@ class R3BNeuland : public R3BDetector
 
     [[nodiscard]] auto GetCollection(Int_t /*iColl*/) const -> TClonesArray* override { return nullptr; }
 
-    void Register() override; 
+    void Register() override;
 
   private:
     R3B::OutputVectorConnector<R3BNeulandPoint> neuland_points_{ "NeulandPoints" }; //!
-    R3BNeulandGeoPar* neuland_geo_par_ = nullptr;                                     //!
-    std::map<int,int> trackid_pid_map_;
+    R3BNeulandGeoPar* neuland_geo_par_ = nullptr;                                   //!
+    std::map<int, int> trackid_pid_map_;
 
     /** Track information to be stored until the track leaves the active volume. */
     int track_id_ = 0;

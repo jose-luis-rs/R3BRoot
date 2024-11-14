@@ -58,7 +58,7 @@ namespace
     {
         EXPECT_TRUE(CheckCriteria(BitSetParticle::proton, BitSetParticle::proton));
         EXPECT_FALSE(CheckCriteria(BitSetParticle::proton, BitSetParticle::neutron));
-        EXPECT_TRUE(CheckCriteria(BitSetParticle::proton , BitSetParticle::neutron | BitSetParticle::proton));
+        EXPECT_TRUE(CheckCriteria(BitSetParticle::proton, BitSetParticle::neutron | BitSetParticle::proton));
     }
 
     // Test for PidToBitSetParticle function
