@@ -88,12 +88,14 @@ namespace
         constexpr auto neutron_pid = 2112;
         constexpr auto eLoss_proton = 0.7;
         constexpr auto eLoss_neutron = 0.3;
-        TVector3 sample_vector;
+        const TVector3 sample_vector;
 
         NeulandPointFilter filter;
 
-        R3BNeulandPoint protonPoint(0, 0, sample_vector, sample_vector, 0., 0., eLoss_proton, 0, 0., proton_pid, 0);
-        R3BNeulandPoint neutronPoint(0, 0, sample_vector, sample_vector, 0., 0., eLoss_neutron, 0, 0., neutron_pid, 0);
+        const R3BNeulandPoint protonPoint(
+            0, 0, sample_vector, sample_vector, 0., 0., eLoss_proton, 0, 0., proton_pid, 0);
+        const R3BNeulandPoint neutronPoint(
+            0, 0, sample_vector, sample_vector, 0., 0., eLoss_neutron, 0, 0., neutron_pid, 0);
 
         // Test filtering criteria for protons
         filter.SetFilter(BitSetParticle::proton);

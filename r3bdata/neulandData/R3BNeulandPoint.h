@@ -24,13 +24,12 @@ class R3BNeulandPoint : public FairMCPoint
 
   public:
     R3BNeulandPoint()
-        : FairMCPoint{}
-        , fLightYield{ 0 }
+        : fLightYield{ 0 }
         , particle_id_{ 0 }
         , parent_particle_id_{ 0 }
     {
     }
-
+    // NOLINTBEGIN
     R3BNeulandPoint(const Int_t trackID,
                     const Int_t detID,
                     const TVector3& pos,
@@ -41,7 +40,7 @@ class R3BNeulandPoint : public FairMCPoint
                     const UInt_t EventId,
                     const Double_t lightYield,
                     const int particle_id,
-                    const int parent_particle_id)
+                    const int parent_particle_id) // NOLINTEND
         : FairMCPoint{ trackID, detID, pos, mom, tof, length, eLoss, EventId }
         , fLightYield{ lightYield }
         , particle_id_{ particle_id }

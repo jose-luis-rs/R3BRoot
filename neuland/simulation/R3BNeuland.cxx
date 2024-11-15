@@ -44,8 +44,8 @@ inline auto GetLightYield(const int charge, const double length, const double ed
             birkC1Mod *= 7.2 / 12.6; // NOLINT
         }
 
-        double dedxcm = 1000. * edep / length;
-        double lightYield = edep / (1. + birkC1Mod * dedxcm + BirkC2 * dedxcm * dedxcm);
+        const double dedxcm = 1000. * edep / length;
+        const double lightYield = edep / (1. + birkC1Mod * dedxcm + BirkC2 * dedxcm * dedxcm);
         return lightYield;
     }
     return edep; // Rarely very small energy depositions have no length?
