@@ -225,7 +225,7 @@ InitStatus R3BTofDCal2Hit::ReInit()
     return kSUCCESS;
 }
 
-void R3BTofDCal2Hit::Exec(Option_t* option)
+void R3BTofDCal2Hit::Exec(Option_t* /*option*/)
 {
     static uint32_t counter = 0;
     ++counter;
@@ -418,9 +418,7 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
                 auto top_tot = fmod(top->GetTimeTrailing_ns() - top->GetTimeLeading_ns() + c_range_ns, c_range_ns);
                 auto bot_tot = fmod(bot->GetTimeTrailing_ns() - bot->GetTimeLeading_ns() + c_range_ns, c_range_ns);
 
-                auto THit_raw = (bot->GetTimeLeading_ns() + top->GetTimeLeading_ns()) / 2.; // needed for TOF for ROLUs
-
-                // std::cout<<"ToT: "<<top_tot << " "<<bot_tot<<"\n";
+                auto THit_raw = (bot->GetTimeLeading_ns() + top->GetTimeLeading_ns()) / 2.;
 
                 // register multi hits
                 vmultihits[iPlane][iBar] += 1;
@@ -574,8 +572,6 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
                     fhTsync[iPlane - 1]->Fill(iBar, THit);
                     fhTdiff[iPlane - 1]->Fill(iBar, tdiff);
                     fhQvsPos[iPlane - 1][iBar - 1]->Fill(pos, parz[0] * TMath::Power(qb, parz[2]) + parz[1]);
-                    // fhQvsTHit[iPlane - 1][iBar - 1]->Fill(qb, THit);
-                    // fhTvsTHit[iPlane - 1][iBar - 1]->Fill(dt_mod, THit);
                 }
 
                 for (Int_t e = 0; e < event.size(); e++)
@@ -601,7 +597,6 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
     }
 
     // Now all hits in this event are analyzed
-
     LOG(debug) << "Hits in this event: " << event.size();
     Bool_t tArrU[event.size() + 1];
     for (int i = 0; i < (event.size() + 1); i++)
@@ -615,7 +610,6 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
             {
                 bars_with_multihit++;
                 multihit += vmultihits[i][j] - 1;
-                // if(vmultihits[i][j]>3)cout<<vmultihits[i][j] - 1<<"\n";
             }
         }
     }
@@ -630,151 +624,9 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
         {
             LOG(debug) << event[hit].charge << " " << event[hit].time << " " << event[hit].xpos << " "
                        << event[hit].ypos << " " << event[hit].plane << " " << event[hit].bar;
-            // if (event[hit].plane == 2 && (event[hit].bar < 21 || event[hit].bar > 24)) fhTvsQ[event[hit].plane -
-            // 1]->Fill(event[hit].time-event[0].time,event[hit].charge);
+
             if (event[hit].plane == 2 && (event[hit].bar == 18))
                 fhTvsQ[event[hit].plane - 1]->Fill(event[hit].time - event[0].time, event[hit].charge);
-        }
-    }
-
-    // Now we can analyze the hits in this event
-
-    // select events with feasible times
-    Double_t hit_coinc = 20.; // coincidence window for hits in one event in ns. physics says max 250 ps
-    Double_t time0;
-    for (Int_t ihit = 0; ihit < event.size();)
-    { // loop over all hits in this event
-        LOG(debug) << "Set new coincidence window: " << event[ihit].plane << " " << event[ihit].bar << " "
-                   << event[ihit].time << " " << event[ihit].charge;
-        time0 = event[ihit].time;              // time of first hit in coincidence window
-        Double_t charge0 = event[ihit].charge; // charge of first hit in coincidence window
-        Int_t plane0 = event[ihit].plane;      // plane of first hit in coincidence window
-        std::vector<Double_t> goodcharge;
-        std::vector<Double_t> goodplane;
-        std::vector<Double_t> goodbar;
-        struct goodhit
-        {
-            Double_t goodq;
-            Double_t goodp;
-            Double_t goodb;
-        };
-        struct by_charge
-        {
-            bool operator()(goodhit const& a, goodhit const& b) const noexcept { return a.goodq < b.goodq; }
-        };
-        std::vector<goodhit> goodevents;
-
-        while (event[ihit].time < time0 + hit_coinc)
-        { // check if in coincidence window
-            if (fTofdHisto)
-            {
-                if (event[ihit].plane == plane0 && charge0 != event[ihit].charge)
-                {
-                    fhQ0Qt[event[ihit].plane - 1]->Fill(charge0, event[ihit].charge);
-                }
-            }
-
-            if ((event[ihit].charge > 5.5 && event[ihit].charge < 6.5) ||
-                (event[ihit].charge > 1.5 && event[ihit].charge < 2.5))
-            {
-                goodcharge.push_back(event[ihit].charge);
-                goodplane.push_back(event[ihit].plane);
-                goodbar.push_back(event[ihit].bar);
-            }
-
-            LOG(debug) << "Hit in coincidence window: " << event[ihit].plane << " " << event[ihit].bar << " "
-                       << event[ihit].time << " " << event[ihit].charge;
-
-            ihit++;
-            if (ihit >= event.size())
-                break;
-        }
-        if (goodcharge.size() > 3)
-        {
-            if (goodcharge.size() == 4)
-            {
-                if (std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) > 14. &&
-                    std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) < 18.)
-                {
-                    if (std::accumulate(goodplane.begin(), goodplane.end(), 0) == 6.)
-                    {
-                        LOG(debug) << "Found good pair 2 times in all planes";
-                        for (Int_t g = 0; g < goodcharge.size(); g++)
-                        {
-                            LOG(debug) << goodcharge.at(g);
-                            LOG(debug) << goodplane.at(g);
-                            LOG(debug) << goodbar.at(g);
-                            goodevents.push_back({ goodcharge.at(g), goodplane.at(g), goodbar.at(g) });
-                        }
-                        goodpair++;
-                        goodpair4++;
-                    }
-                    else
-                    {
-                        goodpair3++;
-                    }
-                }
-            }
-            else if (std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) > 14.)
-                goodpair6++;
-        }
-        if (goodcharge.size() == 3)
-        {
-            if (std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) > 8.5 &&
-                std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) < 15.5)
-            {
-                if (std::accumulate(goodplane.begin(), goodplane.end(), 0) == 4 ||
-                    std::accumulate(goodplane.begin(), goodplane.end(), 0) == 5)
-                {
-                    LOG(debug) << "Found good pair at least once in all planes";
-                    for (Int_t g = 0; g < goodcharge.size(); g++)
-                    {
-                        LOG(debug) << goodcharge.at(g);
-                    }
-                    goodpair++;
-                    goodpair5++;
-                }
-                else
-                {
-                    goodpair7++;
-                }
-            }
-        }
-        if (goodcharge.size() == 2)
-        {
-            if (std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) > 7. &&
-                std::accumulate(goodcharge.begin(), goodcharge.end(), 0.0) < 9.)
-            {
-                if (std::accumulate(goodplane.begin(), goodplane.end(), 0) == 2. ||
-                    std::accumulate(goodplane.begin(), goodplane.end(), 0) == 4.)
-                {
-                    LOG(debug) << "Found good pair in one plane";
-                    for (Int_t g = 0; g < goodcharge.size(); g++)
-                    {
-                        LOG(debug) << goodcharge.at(g);
-                    }
-                    goodpair++;
-                    goodpair1++;
-                }
-                if (std::accumulate(goodplane.begin(), goodplane.end(), 0) == 3.)
-                {
-                    LOG(debug) << "Found good pair in different planes";
-                    for (Int_t g = 0; g < goodcharge.size(); g++)
-                    {
-                        LOG(debug) << goodcharge.at(g);
-                    }
-                    goodpair++;
-                    goodpair2++;
-                }
-            }
-        }
-        std::sort(
-            goodevents.begin(), goodevents.end(), [](goodhit const& a, goodhit const& b) { return a.goodq < b.goodq; });
-        for (Int_t g = 0; g < goodevents.size(); g++)
-        {
-            LOG(debug) << goodevents[g].goodq;
-            LOG(debug) << goodevents[g].goodp;
-            LOG(debug) << goodevents[g].goodb;
         }
     }
 
@@ -812,15 +664,6 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
         }
     }
 
-    LOG(debug) << "Used up hits in this event:";
-    for (Int_t a = 0; a < event.size(); a++)
-    {
-        LOG(debug) << "Event " << a << " " << tArrU[a] << " ";
-        if (tArrU[a] != true)
-            LOG(fatal) << "Not all events analyzed!";
-    }
-
-    LOG(debug) << "------------------------------------------------------\n";
     fnEvents++;
 }
 
@@ -960,8 +803,6 @@ void R3BTofDCal2Hit::FinishTask()
 {
     if (fTofdHisto)
     {
-        //   if (fhTpat)
-        //     fhTpat->Write();
         if (fhNoTpat)
             fhNoTpat->Write();
         for (Int_t i = 0; i < fNofPlanes; i++)
@@ -982,18 +823,9 @@ void R3BTofDCal2Hit::FinishTask()
                 fhTvsQ[i]->Write();
             for (Int_t j = 0; j < N_TOFD_HIT_PADDLE_MAX; j++)
             {
-
                 // control histogram time particles
                 if (fhQvsPos[i][j])
                     fhQvsPos[i][j]->Write();
-                /*
-                if (fhQvsTHit[i][j])
-                    fhQvsTHit[i][j]->Write();
-                */
-                /*
-                if (fhTvsTHit[i][j])
-                    fhTvsTHit[i][j]->Write();
-                */
             }
         }
     }
@@ -1017,7 +849,6 @@ void R3BTofDCal2Hit::FinishTask()
     sprint << " (Events in bar coincidence)\n";
     sprint << "Events in single planes           " << singlehit;
     sprint << "\n";
-    //<< "Good events in total            " << eventstore << " <-> " << singlehit << " = singlehit \n";
     sprint << "Really good events                " << goodpair4 << " 2 particles 2 times in 2 planes \n";
     sprint << "Good events                       " << goodpair1 << " 2 particles in 1 plane \n";
     sprint << "Good events                       " << goodpair2 << " 2 particles in different planes \n";
