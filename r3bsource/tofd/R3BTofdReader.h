@@ -56,8 +56,10 @@ class R3BTofdReader : public R3BReader
     bool fOnline = false;
     // Skip trigger times
     bool fSkiptriggertimes = false;
+    bool fWalkCorrection = true;
     // Output array
     TClonesArray* fArray;        /**< Output array. */
+    TClonesArray* fArrayWalkC;   /**< Output array for special channels used for walk correction. */
     TClonesArray* fArrayTrigger; /**< Output array for triggers. */
 
   public:

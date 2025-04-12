@@ -35,6 +35,7 @@ R3BTofdReader::R3BTofdReader(EXT_STR_h101_TOFD_onion* data, size_t offset)
     , fData(data)
     , fOffset(offset)
     , fArray(new TClonesArray("R3BTofdMappedData"))
+    , fArrayWalkC(new TClonesArray("R3BTofdMappedData"))
     , fArrayTrigger(new TClonesArray("R3BTofdMappedData"))
 {
 }
@@ -44,6 +45,10 @@ R3BTofdReader::~R3BTofdReader()
     if (fArray)
     {
         delete fArray;
+    }
+    if (fArrayWalkC)
+    {
+        delete fArrayWalkC;
     }
     if (fArrayTrigger)
     {
@@ -64,6 +69,16 @@ Bool_t R3BTofdReader::Init(ext_data_struct_info* a_struct_info)
 
     // Register output array in tree
     FairRootManager::Instance()->Register("TofdMapped", "Tofd mapped data", fArray, !fOnline);
+
+    if (fWalkCorrection)
+    {
+        FairRootManager::Instance()->Register(
+            "TofdWalkCorMapped", "Tofd mapped data for walk correction", fArrayWalkC, !fOnline);
+    }
+    else
+    {
+        fArrayWalkC = nullptr;
+    }
 
     if (!fSkiptriggertimes)
     {
@@ -95,20 +110,15 @@ Bool_t R3BTofdReader::R3BRead()
     // Convert plain raw data to multi-dimensional array
     auto* data = reinterpret_cast<EXT_STR_h101_TOFD_onion*>(fData);
 
-    // puts("Event");
-    for (uint32_t d = 0; d < MAX_TOFD_PLANES; d++)
+    for (uint32_t plane = 0; plane < MAX_TOFD_PLANES; plane++)
     {
-        for (uint32_t t = 0; t < 2; t++)
+        for (uint32_t pmt = 0; pmt < 2; pmt++)
         {
-            auto const& side = data->TOFD_P[d].T[t];
+            auto const& side = data->TOFD_P[plane].T[pmt];
 
-            //
-            // TAMEX3.
-            //
+            // TAMEX3
 
-            // int32_t first = -1;
-            // bool do_print = false;
-            // Leading.
+            // Leading
             auto numChannels = side.TCLM;
             uint32_t curChannelStart = 0;
             for (uint32_t i = 0; i < numChannels; i++)
@@ -117,37 +127,21 @@ Bool_t R3BTofdReader::R3BRead()
                 uint32_t nextChannelStart = side.TCLME[i];
                 for (uint32_t j = curChannelStart; j < nextChannelStart; j++)
                 {
-                    // printf("Lead %8u %8u %8u %8u\n", d, t, channel, side.TCLv[j] * 5);
-                    new ((*fArray)[fArray->GetEntriesFast()])
-                        R3BTofdMappedData(d + 1, t + 1, channel, 1, side.TCLv[j], side.TFLv[j]);
-                    // if (-1 == first) { first = side.TCLv[j]; }
-                    // else if (fabs((int32_t)((side.TCLv[j] - first + 2048 + 1024) & 2047) - 1024) > 400) {
-                    //  std::cout << first << '\n';
-                    //  std::cout << side.TCLv[j] - first << '\n';
-                    //  std::cout << ((side.TCLv[j] - first + 2048 + 1024) & 2047) << '\n';
-                    //  std::cout << (int32_t)((side.TCLv[j] - first + 2048 + 1024) & 2047) - 1024 << '\n';
-                    //  std::cout << fabs((int32_t)((side.TCLv[j] - first + 2048 + 1024) & 2047) - 1024) << '\n';
-                    //  do_print = true;
-                    //}
+                    if (plane < 2 && pmt == 0 && channel == 48) // Walk correction
+                    {
+                        new ((*fArrayWalkC)[fArrayWalkC->GetEntriesFast()])
+                            R3BTofdMappedData(plane + 1, pmt + 1, channel, 1, side.TCLv[j], side.TFLv[j]);
+                    }
+                    else
+                    {
+                        new ((*fArray)[fArray->GetEntriesFast()])
+                            R3BTofdMappedData(plane + 1, pmt + 1, channel, 1, side.TCLv[j], side.TFLv[j]);
+                    }
                 }
                 curChannelStart = nextChannelStart;
             }
-            // if (do_print) {
-            // numChannels = side.TCLM;
-            // curChannelStart = 0;
-            // for (uint32_t i = 0; i < numChannels; i++)
-            //{
-            //    uint32_t channel = side.TCLMI[i];
-            //    uint32_t nextChannelStart = side.TCLME[i];
-            //    for (uint32_t j = curChannelStart; j < nextChannelStart; j++)
-            //    {
-            // printf("Lead %8u %8u %8u %8u\n", d, t, channel, side.TCLv[j]);
-            //    }
-            //    curChannelStart = nextChannelStart;
-            //}
-            //}
 
-            // Trailing.
+            // Trailing
             numChannels = side.TCTM;
             curChannelStart = 0;
             for (uint32_t i = 0; i < numChannels; i++)
@@ -156,9 +150,16 @@ Bool_t R3BTofdReader::R3BRead()
                 uint32_t nextChannelStart = side.TCTME[i];
                 for (uint32_t j = curChannelStart; j < nextChannelStart; j++)
                 {
-                    // printf("Tail %8u %8u %8u %8u\n", d, t, channel, side.TCTv[j] * 5);
-                    new ((*fArray)[fArray->GetEntriesFast()])
-                        R3BTofdMappedData(d + 1, t + 1, channel, 2, side.TCTv[j], side.TFTv[j]);
+                    if (plane < 2 && pmt == 0 && channel == 48) // Walk correction
+                    {
+                        new ((*fArrayWalkC)[fArrayWalkC->GetEntriesFast()])
+                            R3BTofdMappedData(plane + 1, pmt + 1, channel, 2, side.TCTv[j], side.TFTv[j]);
+                    }
+                    else
+                    {
+                        new ((*fArray)[fArray->GetEntriesFast()])
+                            R3BTofdMappedData(plane + 1, pmt + 1, channel, 2, side.TCTv[j], side.TFTv[j]);
+                    }
                 }
                 curChannelStart = nextChannelStart;
             }
@@ -166,7 +167,7 @@ Bool_t R3BTofdReader::R3BRead()
         } // for side
     }     // for planes
 
-    // TAMEX trigger times.
+    // TAMEX trigger times
     if (fArrayTrigger)
     {
         // Leading
@@ -187,7 +188,6 @@ Bool_t R3BTofdReader::R3BRead()
                 R3BTofdMappedData(MAX_TOFD_PLANES + 1, 1, channel, 2, data->TOFD_TRIGCTv[i], data->TOFD_TRIGFTv[i]);
         }
     }
-
     return kTRUE;
 }
 
@@ -195,6 +195,8 @@ void R3BTofdReader::Reset()
 {
     // Reset the output array
     fArray->Clear();
+    if (fArrayWalkC)
+        fArrayWalkC->Clear();
     if (fArrayTrigger)
         fArrayTrigger->Clear();
 }
