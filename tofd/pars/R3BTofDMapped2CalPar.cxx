@@ -16,17 +16,14 @@
 // -----    Created 31/03/22 by J.L. Rodriguez-Sanchez    -----
 // ------------------------------------------------------------
 
-#include "R3BTofDMapped2CalPar.h"
 #include <FairRootManager.h>
-
-#include "TClonesArray.h"
-
-#include "FairLogger.h"
-#include "FairRuntimeDb.h"
+#include <FairRuntimeDb.h>
+#include <TClonesArray.h>
 
 #include "R3BLogger.h"
 #include "R3BTCalEngine.h"
 #include "R3BTCalPar.h"
+#include "R3BTofDMapped2CalPar.h"
 #include "R3BTofdMappedData.h"
 
 R3BTofDMapped2CalPar::R3BTofDMapped2CalPar()
@@ -36,15 +33,6 @@ R3BTofDMapped2CalPar::R3BTofDMapped2CalPar()
 
 R3BTofDMapped2CalPar::R3BTofDMapped2CalPar(const char* name, Int_t iVerbose)
     : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(1)
-    , fNofPlanes(4)
-    , fPaddlesPerPlane(44)
-    , fNofModules(fNofPlanes * fPaddlesPerPlane * 4)
-    , fCalPar(nullptr)
-    , fMapped(nullptr)
-    , fMappedTrigger(nullptr)
-    , fEngine(nullptr)
 {
 }
 
@@ -72,6 +60,12 @@ InitStatus R3BTofDMapped2CalPar::Init()
         R3BLOG(fatal, "TofdMapped not found");
         return kFATAL;
     }
+    fMappedWC = dynamic_cast<TClonesArray*>(rm->GetObject("TofdWalkCorMapped"));
+    if (!fMappedWC)
+    {
+        R3BLOG(warn, "TofdWalkCorMapped not found");
+        fMappedWC = NULL;
+    }
     fMappedTrigger = dynamic_cast<TClonesArray*>(rm->GetObject("TofdTriggerMapped"));
     if (!fMappedTrigger)
     {
@@ -82,21 +76,15 @@ InitStatus R3BTofDMapped2CalPar::Init()
     fCalPar = dynamic_cast<R3BTCalPar*>(FairRuntimeDb::instance()->getContainer("TofdTCalPar"));
     if (!fCalPar)
     {
-        R3BLOG(error, "Couldn't get handle on TofdTCalPar. ");
-        return kFATAL;
-    }
-
-    if (!fNofModules)
-    {
-        R3BLOG(error, "Number of modules not set.");
+        R3BLOG(error, "Couldn't get handle on TofdTCalPar");
         return kFATAL;
     }
 
     fEngine = new R3BTCalEngine(fCalPar, fMinStats);
 
-    for (UInt_t d = 0; d < 5; d++)
-        for (UInt_t i = 0; i < 48; i++)
-            for (UInt_t k = 0; k < 4; k++)
+    for (UInt_t d = 0; d < (fNofPlanes + 1); d++)
+        for (UInt_t i = 0; i < fPaddlesPerPlane + 4; i++)
+            for (UInt_t k = 0; k < fNofPlanes; k++)
             {
                 Icount[d][i][k] = 0;
             }
@@ -132,6 +120,37 @@ void R3BTofDMapped2CalPar::Exec(Option_t* option)
         Icount[mapped->GetDetectorId() - 1][mapped->GetBarId() - 1][edge - 1]++;
     }
 
+    if (fMappedWC)
+    {
+        nHits = fMappedWC->GetEntriesFast();
+        // Loop over mapped hits for walk correction
+        for (Int_t i = 0; i < nHits; i++)
+        {
+            auto mapped = dynamic_cast<R3BTofdMappedData const*>(fMappedWC->At(i));
+
+            if (mapped->GetDetectorId() > 2)
+            {
+                R3BLOG(
+                    error,
+                    "Walk correction channel found for plane " << mapped->GetDetectorId() << ", allowed are 1 and 2");
+                continue;
+            }
+            if (mapped->GetBarId() != 48)
+            {
+                R3BLOG(error,
+                       "Walk correction channel found for paddle: " << mapped->GetBarId() << " allowed is only bar 48");
+                continue;
+            }
+
+            Int_t edge = mapped->GetSideId() * 2 + mapped->GetEdgeId() - 2; // 1..4
+            // std::cout << mapped->GetDetectorId() <<" "<< mapped->GetBarId() << " "<< mapped->GetTimeFine()
+            // <<std::endl;
+            fEngine->Fill(mapped->GetDetectorId(), mapped->GetBarId(), edge, mapped->GetTimeFine());
+
+            Icount[mapped->GetDetectorId() - 1][mapped->GetBarId() - 1][edge - 1]++;
+        }
+    }
+
     if (fMappedTrigger)
     {
         nHits = fMappedTrigger->GetEntriesFast();
@@ -159,19 +178,29 @@ void R3BTofDMapped2CalPar::FinishTask()
     fCalPar->printParams();
 
     R3BLOG(info, "Calibration of TofD detector");
-    for (Int_t p = 0; p < 5; p++)
-        for (Int_t i = 0; i < 48; i++)
-            for (Int_t k = 0; k < 4; k++)
+    for (Int_t p = 0; p < (fNofPlanes + 1); p++)
+        for (Int_t i = 0; i < fPaddlesPerPlane + 4; i++)
+            for (Int_t k = 0; k < fNofPlanes; k++)
                 if (Icount[p][i][k] > fMinStats)
                 {
-                    if (p < 4)
+                    if (p < fNofPlanes && i < fPaddlesPerPlane)
+                    {
                         R3BLOG(info,
                                "Plane: " << p + 1 << ", paddle: " << i + 1 << ", side: " << k + 1
                                          << ", Count: " << Icount[p][i][k]);
+                    }
+                    else if (p < fNofPlanes && i > fPaddlesPerPlane)
+                    {
+                        R3BLOG(info,
+                               "Walk correction, plane: " << p + 1 << ", paddle: " << i + 1 << ", side: " << k + 1
+                                                          << ", Count: " << Icount[p][i][k]);
+                    }
                     else
+                    {
                         R3BLOG(info,
                                "Trigger plane: " << p + 1 << ", paddle: " << i + 1 << ", side: " << k + 1
                                                  << ", Count: " << Icount[p][i][k]);
+                    }
                 }
 }
 
@@ -183,7 +212,6 @@ void R3BTofDMapped2CalPar::SetNofModules(Int_t nDets, Int_t nCh)
 {
     fNofPlanes = nDets;
     fPaddlesPerPlane = nCh;
-    fNofModules = nDets * nCh * 4;
 }
 
-ClassImp(R3BTofDMapped2CalPar);
+ClassImp(R3BTofDMapped2CalPar)

@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include "FairTask.h"
+#include <FairTask.h>
 
 class R3BTCalPar;
 class TClonesArray;
@@ -90,19 +90,19 @@ class R3BTofDMapped2CalPar : public FairTask
     void SetNofModules(Int_t, Int_t);
 
   private:
-    Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats;   /**< Minimum statistics required per module. */
+    Int_t fUpdateRate = 1000000; /**< An update rate. */
+    Int_t fMinStats = 100;       /**< Minimum statistics required per module. */
     Int_t Icount[5][48][4];
 
-    UInt_t fNofPlanes;       /**< Number of planes. */
-    UInt_t fPaddlesPerPlane; /**< Number of bars per plane. */
-    UInt_t fNofModules;      /**< Total number of modules (=edges) to calibrate */
+    UInt_t fNofPlanes = 4;        /**< Number of planes. */
+    UInt_t fPaddlesPerPlane = 44; /**< Number of bars per plane. */
 
-    R3BTCalPar* fCalPar;          /**< Parameter container. */
-    TClonesArray* fMapped;        /**< Array with mapped data - input data. */
-    TClonesArray* fMappedTrigger; /**< Array with mapped trigger data - input data. */
+    R3BTCalPar* fCalPar = nullptr;          /**< Parameter container. */
+    TClonesArray* fMapped = nullptr;        /**< Array with mapped data - input data. */
+    TClonesArray* fMappedWC = nullptr;      /**< Array with walk correction mapped data - input data. */
+    TClonesArray* fMappedTrigger = nullptr; /**< Array with mapped trigger data - input data. */
 
-    R3BTCalEngine* fEngine; /**< Instance of the TCAL engine. */
+    R3BTCalEngine* fEngine = nullptr; /**< Instance of the TCAL engine. */
 
   public:
     ClassDef(R3BTofDMapped2CalPar, 1)
