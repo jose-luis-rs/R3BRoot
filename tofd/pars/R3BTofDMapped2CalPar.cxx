@@ -143,8 +143,6 @@ void R3BTofDMapped2CalPar::Exec(Option_t* option)
             }
 
             Int_t edge = mapped->GetSideId() * 2 + mapped->GetEdgeId() - 2; // 1..4
-            // std::cout << mapped->GetDetectorId() <<" "<< mapped->GetBarId() << " "<< mapped->GetTimeFine()
-            // <<std::endl;
             fEngine->Fill(mapped->GetDetectorId(), mapped->GetBarId(), edge, mapped->GetTimeFine());
 
             Icount[mapped->GetDetectorId() - 1][mapped->GetBarId() - 1][edge - 1]++;
