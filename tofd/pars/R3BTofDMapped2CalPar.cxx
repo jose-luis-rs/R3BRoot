@@ -163,7 +163,7 @@ void R3BTofDMapped2CalPar::Exec(Option_t* option)
                        "Trigger plane incorrect! Plane: " << mapped->GetDetectorId() << " not " << fNofPlanes + 1);
                 continue;
             }
-            fEngine->Fill(mapped->GetDetectorId(), mapped->GetBarId(), 1, mapped->GetTimeFine());
+            fEngine->Fill(mapped->GetDetectorId(), mapped->GetBarId(), 2 * mapped->GetSideId() + mapped->GetEdgeId() - 2, mapped->GetTimeFine());
             Icount[mapped->GetDetectorId() - 1][mapped->GetBarId() - 1][0]++;
         }
     }

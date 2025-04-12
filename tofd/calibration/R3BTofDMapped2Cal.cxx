@@ -11,9 +11,13 @@
  * or submit itself to any jurisdiction.                                      *
  ******************************************************************************/
 
-#include "FairLogger.h"
-#include "FairRuntimeDb.h"
+#include <FairLogger.h>
+#include <FairRuntimeDb.h>
 #include <FairRootManager.h>
+
+#include <TClonesArray.h>
+#include <TMath.h>
+#include <assert.h>
 
 #include "R3BEventHeader.h"
 #include "R3BLogger.h"
@@ -23,10 +27,6 @@
 #include "R3BTofDMappingPar.h"
 #include "R3BTofdCalData.h"
 #include "R3BTofdMappedData.h"
-
-#include "TClonesArray.h"
-#include "TMath.h"
-#include <assert.h>
 
 #define IS_NAN(x) TMath::IsNaN(x)
 
@@ -42,19 +42,11 @@ R3BTofDMapped2Cal::R3BTofDMapped2Cal()
 
 R3BTofDMapped2Cal::R3BTofDMapped2Cal(const char* name, Int_t iVerbose)
     : FairTask(name, iVerbose)
-    , fMappedItems(NULL)
-    , fMappedTriggerItems(NULL)
     , fCalItems(new TClonesArray("R3BTofdCalData"))
+    , fCalWCItems(new TClonesArray("R3BTofdCalData"))
     , fCalTriggerItems(new TClonesArray("R3BTofdCalData"))
-    , fNofTcalPars(0)
-    , fNofPlanes(0)
-    , fPaddlesPerPlane(0)
-    , fMapPar(NULL)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
     , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
     , fCalLookup()
-    , fOnline(kFALSE)
 {
 }
 
@@ -62,6 +54,8 @@ R3BTofDMapped2Cal::~R3BTofDMapped2Cal()
 {
     if (fCalItems)
         delete fCalItems;
+    if (fCalWCItems)
+        delete fCalWCItems;
     if (fCalTriggerItems)
         delete fCalTriggerItems;
 }
@@ -125,12 +119,19 @@ InitStatus R3BTofDMapped2Cal::Init()
         R3BLOG(fatal, "TofdMapped not found");
         return kFATAL;
     }
+    
+    fMappedWCItems = dynamic_cast<TClonesArray*>(mgr->GetObject("TofdWalkCorMapped"));
+    R3BLOG_IF(warn, !fMappedWCItems, "TofdWalkCorMapped not found");
 
     fMappedTriggerItems = dynamic_cast<TClonesArray*>(mgr->GetObject("TofdTriggerMapped"));
     R3BLOG_IF(warn, !fMappedTriggerItems, "TofdTriggerMapped not found");
 
     // request storage of TCal data in output tree
     mgr->Register("TofdCal", "TofdCal data", fCalItems, !fOnline);
+    if (fMappedWCItems)
+    {
+        mgr->Register("TofdWalkCorCal", "TofdWalkCorCal data", fCalWCItems, !fOnline);
+    }
     if (fMappedTriggerItems)
     {
         mgr->Register("TofdTriggerCal", "TofdTriggerCal data", fCalTriggerItems, !fOnline);
@@ -148,7 +149,7 @@ InitStatus R3BTofDMapped2Cal::ReInit()
     return kSUCCESS;
 }
 
-void R3BTofDMapped2Cal::Exec(Option_t* option)
+void R3BTofDMapped2Cal::Exec(Option_t* /*option*/)
 {
     // check for requested trigger (Todo: should be done globablly / somewhere else)
     if ((fTrigger >= 0) && (header) && (header->GetTrigger() != fTrigger))
@@ -272,6 +273,42 @@ void R3BTofDMapped2Cal::Exec(Option_t* option)
             ++trail_i;
         }
     }
+    
+    // Calibrate walk correction channels
+    if (fCalWCItems)
+    {
+        Int_t wc_hits = fCalWCItems->GetEntriesFast();
+        for (Int_t mapped_i = 0; mapped_i < wc_hits; mapped_i++)
+        {
+            auto mapped = dynamic_cast<R3BTofdMappedData const*>(fCalWCItems->At(mapped_i));
+
+            if (mapped->GetDetectorId() > 2)
+            {
+                R3BLOG(debug, "Walk correction plane number out of range: " << mapped->GetDetectorId());
+                continue;
+            }
+            
+            if(2 * mapped->GetSideId() + mapped->GetEdgeId() - 2!=3)
+               continue;
+
+            // Tcal parameters.
+            auto* par = fTcalPar->GetModuleParAt(mapped->GetDetectorId(), mapped->GetBarId(), 2 * mapped->GetSideId() + mapped->GetEdgeId() - 2);
+            if (!par)
+            {
+                R3BLOG(warn,
+                       "Walk correction Tcal par not found, Plane: " << mapped->GetDetectorId()
+                                                             << ", Bar: " << mapped->GetBarId());
+                continue;
+            }
+
+            // Convert TDC to [ns] ...
+            Double_t time_ns = par->GetTimeVFTX(mapped->GetTimeFine());
+            // ... and subtract it from the next clock cycle.
+            time_ns = (mapped->GetTimeCoarse() + 1) * fClockFreq - time_ns;
+
+            AddWCTCalData(mapped->GetDetectorId(), mapped->GetBarId(), time_ns);
+        }
+    }
 
     // Calibrate trigger channels.
     if (fMappedTriggerItems)
@@ -286,6 +323,9 @@ void R3BTofDMapped2Cal::Exec(Option_t* option)
                 R3BLOG(debug, "Trigger plane number out of range: " << mapped->GetDetectorId());
                 continue;
             }
+            
+            if(2 * mapped->GetSideId() + mapped->GetEdgeId() - 2!=1)
+               continue;
 
             // Tcal parameters.
             auto* par = fTcalPar->GetModuleParAt(mapped->GetDetectorId(), mapped->GetBarId(), 1);
@@ -313,19 +353,23 @@ void R3BTofDMapped2Cal::FinishEvent()
     {
         fCalItems->Clear();
     }
+    if (fCalWCItems)
+    {
+        fCalWCItems->Clear();
+    }
     if (fCalTriggerItems)
     {
         fCalTriggerItems->Clear();
     }
 }
 
-void R3BTofDMapped2Cal::SetNofModules(Int_t planes, Int_t ppp)
+void R3BTofDMapped2Cal::SetNofModules(Int_t planes, Int_t paddles)
 {
     fNofPlanes = planes;
-    fPaddlesPerPlane = ppp;
+    fPaddlesPerPlane = paddles;
     // #planes * #bars * 2, each entry pair is a full bar,
     // i.e. merged sides + edges.
-    fCalLookup.resize(planes * ppp * 2);
+    fCalLookup.resize(planes * paddles * 2);
 }
 
 // -----   Private method AddTCalData  --------------------------------------------
@@ -340,6 +384,18 @@ R3BTofdCalData* R3BTofDMapped2Cal::AddTCalData(UInt_t detid,
     Int_t size = clref.GetEntriesFast();
     return new (clref[size]) R3BTofdCalData(detid, barid, sideid, lead_time, trail_time);
 }
+
+// -----   Private method AddWCTCalData  ------------------------------------------
+R3BTofdCalData* R3BTofDMapped2Cal::AddWCTCalData(UInt_t detid,
+                                               UInt_t barid,
+                                               Double_t lead_time)
+{
+    // It fills the R3BTofdCalData
+    TClonesArray& clref = *fCalWCItems;
+    Int_t size = clref.GetEntriesFast();
+    return new (clref[size]) R3BTofdCalData(detid, barid, 1, lead_time, 0.);
+}
+
 
 // -----   Private method AddTriggerTCalData  --------------------------------------------
 R3BTofdCalData* R3BTofDMapped2Cal::AddTriggerTCalData(UInt_t detid, UInt_t barid, Double_t lead_time)
