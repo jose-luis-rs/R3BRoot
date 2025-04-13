@@ -92,7 +92,7 @@ void R3BTofDOnlineSpectra::SetParameter()
     if (fMapPar)
     {
         fNofPlanes = fMapPar->GetNbPlanes();
-        fPaddlesPerPlane = fMapPar->GetNbPaddles();
+        //fPaddlesPerPlane = fMapPar->GetNbPaddles();
     }
 
     return;
@@ -376,6 +376,26 @@ InitStatus R3BTofDOnlineSpectra::Init()
         // Adding this canvas to the main folder
         maintofd->Add(cTofd_planes);
         maintofd->Add(cTofd_Y_per_planes);
+        
+        auto* cToFd_los_h2_wt =
+            new TCanvas("ToFD_Los_time_without_trigger", "ToFD time - Los time without trigger", 20, 20, 1120, 1020);
+        cToFd_los_h2_wt->Divide(2, 2);
+        fh2_tofd_time_los_cal.resize(fNofPlanes);
+
+        for (Int_t i = 0; i < fNofPlanes; i++)
+        {
+            char strNameLos_c2[255];
+            snprintf(strNameLos_c2, sizeof(strNameLos_c2), "tofd_los_time_without_trigger_%d", i + 1);
+            fh2_tofd_time_los_cal[i] = R3B::root_owned<TH2F>(strNameLos_c2, strNameLos_c2, 44, 1, 45, 20000, 0, 100);
+            fh2_tofd_time_los_cal[i]->GetXaxis()->SetTitle("Bar");
+            fh2_tofd_time_los_cal[i]->GetYaxis()->SetTitle("ToF [ns]");
+            fh2_tofd_time_los_cal[i]->GetXaxis()->CenterTitle(true);
+            fh2_tofd_time_los_cal[i]->GetYaxis()->CenterTitle(true);
+            cToFd_los_h2_wt->cd(i + 1);
+            gPad->SetLogz();
+            fh2_tofd_time_los_cal[i]->Draw("colz");
+        }
+        maintofd->Add(cToFd_los_h2_wt);
     }
 
     if (fHitItems)
@@ -543,10 +563,6 @@ InitStatus R3BTofDOnlineSpectra::Init()
         cToFd_los_h2->Divide(2, 2);
         fh_tofd_time_los_h2.resize(fNofPlanes);
 
-        auto* cToFd_los_h2_wt =
-            new TCanvas("ToFD_Los_time_without_trigger", "ToFD time - Los time without trigger", 20, 20, 1120, 1020);
-        cToFd_los_h2_wt->Divide(2, 2);
-        fh2_tofd_time_los_cal.resize(fNofPlanes);
 
         for (Int_t j = 0; j < fPaddlesPerPlane; j++)
             fh_tofd_time_los[j].resize(fNofPlanes);
@@ -563,17 +579,6 @@ InitStatus R3BTofDOnlineSpectra::Init()
             cToFd_los_h2->cd(i + 1);
             gPad->SetLogz();
             fh_tofd_time_los_h2[i]->Draw("colz");
-
-            char strNameLos_c2[255];
-            snprintf(strNameLos_c2, sizeof(strNameLos_c2), "tofd_los_time_without_trigger_%d", i + 1);
-            fh2_tofd_time_los_cal[i] = R3B::root_owned<TH2F>(strNameLos_c2, strNameLos_c2, 44, 1, 45, 10000, 40, 70);
-            fh2_tofd_time_los_cal[i]->GetXaxis()->SetTitle("Bar");
-            fh2_tofd_time_los_cal[i]->GetYaxis()->SetTitle("ToF [ns]");
-            fh2_tofd_time_los_cal[i]->GetXaxis()->CenterTitle(true);
-            fh2_tofd_time_los_cal[i]->GetYaxis()->CenterTitle(true);
-            cToFd_los_h2_wt->cd(i + 1);
-            gPad->SetLogz();
-            fh2_tofd_time_los_cal[i]->Draw("colz");
 
             auto cToFd_los = new TCanvas(strNameLos_c, strNameLos_c, 20, 20, 1120, 1020);
             cToFd_los->Divide(5, 9);
@@ -594,7 +599,6 @@ InitStatus R3BTofDOnlineSpectra::Init()
             maintofd->Add(cToFd_los);
         }
         maintofd->Add(cToFd_los_h2);
-        maintofd->Add(cToFd_los_h2_wt);
 
         auto cToFd_time_charge = new TCanvas("tofd_time_vs_charge", "", 20, 20, 1120, 1020);
         fh2_tofd_time_vs_charge =
@@ -723,6 +727,7 @@ void R3BTofDOnlineSpectra::Reset_Histo()
         fh_tofd_TotPm_coinc[i]->Reset();
         fh2_tofd_ypos_cal[i]->Reset();
         fh2_tofd_timedif_cal[i]->Reset();
+        fh2_tofd_time_los_cal[i]->Reset();
     }
     fh_tofd_dt[0]->Reset();
     fh_tofd_dt[1]->Reset();
@@ -737,7 +742,6 @@ void R3BTofDOnlineSpectra::Reset_Histo()
             fh_tofd_multihit_hit[i]->Reset();
             fh_tofd_bars[i]->Reset();
             fh_tofd_time_los_h2[i]->Reset();
-            fh2_tofd_time_los_cal[i]->Reset();
             for (Int_t j = 0; j < fPaddlesPerPlane; j++)
                 fh_tofd_time_los[j][i]->Reset();
         }
