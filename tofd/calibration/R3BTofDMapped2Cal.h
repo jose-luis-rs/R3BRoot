@@ -39,7 +39,7 @@ class R3BTofDMapped2Cal : public FairTask
      * @param name a name of the task.
      * @param iVerbose a verbosity level.
      */
-    R3BTofDMapped2Cal(const char*, Int_t = 1);
+    R3BTofDMapped2Cal(const TString& name, Int_t = 1);
 
     /**
      * Destructor.
@@ -53,33 +53,33 @@ class R3BTofDMapped2Cal : public FairTask
      * the event loop.
      * @return Initialization status. kSUCCESS, kERROR or kFATAL.
      */
-    InitStatus Init();
+    InitStatus Init() override;
 
     /**
      * Method for initialization of the parameter containers.
      * Called by the framework prior to Init() method.
      */
-    void SetParContainers();
+    void SetParContainers() override;
 
     /**
      * Method for re-initialization of parameter containers
      * in case the Run ID has changed.
      */
-    InitStatus ReInit();
+    InitStatus ReInit() override;
 
     /**
      * Method for event loop implementation.
      * Is called by the framework every time a new event is read.
      * @param option an execution option.
      */
-    void Exec(Option_t*);
+    void Exec(Option_t*) override;
 
     /**
      * A method for finish of processing of an event.
      * Is called by the framework for each event after executing
      * the tasks.
      */
-    void FinishEvent();
+    void FinishEvent() override;
 
     /**
      * Method for setting the trigger value.
@@ -93,40 +93,40 @@ class R3BTofDMapped2Cal : public FairTask
     void SetNofModules(Int_t, Int_t);
 
     // Method to setup online mode
-    inline void SetOnline(bool option=true) { fOnline = option; }
+    inline void SetOnline(bool option = true) { fOnline = option; }
 
   private:
     void SetParameter();
     size_t GetCalLookupIndex(R3BTofdMappedData const&) const;
 
-    R3BTofDMappingPar* fMapPar= nullptr;
+    R3BTofDMappingPar* fMapPar = nullptr;
 
     TClonesArray* fMappedItems = nullptr;        /**< Array with mapped items - input data. */
     TClonesArray* fMappedWCItems = nullptr;      /**< Array with mapped items - walk correction */
     TClonesArray* fMappedTriggerItems = nullptr; /**< Array with mapped items - trigger times */
     TClonesArray* fCalItems = nullptr;           /**< Array with cal items - output data. */
-    TClonesArray* fCalWCItems = nullptr;   /**< Array with cal items - walk correction */
+    TClonesArray* fCalWCItems = nullptr;         /**< Array with cal items - walk correction */
     TClonesArray* fCalTriggerItems = nullptr;    /**< Array with cal trigger items - output data. */
 
-    R3BTCalPar* fTcalPar= nullptr; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars=0;  /**< Number of modules in parameter file. */
+    R3BTCalPar* fTcalPar = nullptr; /**< TCAL parameter container. */
+    UInt_t fNofTcalPars = 0;        /**< Number of modules in parameter file. */
 
     UInt_t fNofPlanes = 4;
     UInt_t fPaddlesPerPlane = 44; /**< Number of paddles per plane. */
-    Double_t fClockFreq;     /**< Clock cycle in [ns]. */
-    R3BEventHeader* header;  /**< Event header. */
+    Double_t fClockFreq;          /**< Clock cycle in [ns]. */
+    R3BEventHeader* header;       /**< Event header. */
     Int_t fTrigger = -1;          /**< Trigger value. */
-    bool fOnline = false;          // Don't store data for online
+    bool fOnline = false;         // Don't store data for online
 
     // Fast lookup for matching mapped data.
     std::vector<std::vector<R3BTofdCalData*>> fCalLookup;
 
     R3BTofdCalData* AddTCalData(UInt_t detid, UInt_t barid, UInt_t sideid, Double_t lead_time, Double_t trail_time);
-    
+
     R3BTofdCalData* AddWCTCalData(UInt_t detid, UInt_t barid, Double_t lead_time);
 
     R3BTofdCalData* AddTriggerTCalData(UInt_t detid, UInt_t barid, Double_t lead_time);
 
   public:
-    ClassDef(R3BTofDMapped2Cal, 1)
+    ClassDefOverride(R3BTofDMapped2Cal, 1)
 };
