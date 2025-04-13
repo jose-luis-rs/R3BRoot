@@ -127,7 +127,7 @@ Bool_t R3BTofdReader::R3BRead()
                 uint32_t nextChannelStart = side.TCLME[i];
                 for (uint32_t j = curChannelStart; j < nextChannelStart; j++)
                 {
-                    if (plane < 2 && pmt == 1 && channel == 48) // Walk correction
+                    if (plane < 2 && pmt == 2 && channel == 48) // Walk correction
                     {
                         new ((*fArrayWalkC)[fArrayWalkC->GetEntriesFast()])
                             R3BTofdMappedData(plane + 1, pmt + 1, channel, 1, side.TCLv[j], side.TFLv[j]);
