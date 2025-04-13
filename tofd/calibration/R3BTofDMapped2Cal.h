@@ -114,7 +114,7 @@ class R3BTofDMapped2Cal : public FairTask
     UInt_t fNofPlanes = 4;
     UInt_t fPaddlesPerPlane = 44; /**< Number of paddles per plane. */
     Double_t fClockFreq;     /**< Clock cycle in [ns]. */
-    R3BEventHeader* header = nullptr;  /**< Event header. */
+    R3BEventHeader* header;  /**< Event header. */
     Int_t fTrigger = -1;          /**< Trigger value. */
     bool fOnline = false;          // Don't store data for online
 
