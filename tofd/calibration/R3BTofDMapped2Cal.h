@@ -90,7 +90,7 @@ class R3BTofDMapped2Cal : public FairTask
     /**
      * Method for setting the number of TofD modules.
      */
-    inline void SetNofModules(Int_t, Int_t);
+    void SetNofModules(Int_t, Int_t);
 
     // Method to setup online mode
     inline void SetOnline(bool option=true) { fOnline = option; }
