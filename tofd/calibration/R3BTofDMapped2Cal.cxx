@@ -275,12 +275,12 @@ void R3BTofDMapped2Cal::Exec(Option_t* /*option*/)
     }
     
     // Calibrate walk correction channels
-    if (fCalWCItems)
+    if (fMappedWCItems)
     {
-        Int_t wc_hits = fCalWCItems->GetEntriesFast();
+        Int_t wc_hits = fMappedWCItems->GetEntriesFast();
         for (Int_t mapped_i = 0; mapped_i < wc_hits; mapped_i++)
         {
-            auto mapped = dynamic_cast<R3BTofdMappedData const*>(fCalWCItems->At(mapped_i));
+            auto mapped = dynamic_cast<R3BTofdMappedData const*>(fMappedWCItems->At(mapped_i));
 
             if (mapped->GetDetectorId() > 2)
             {
