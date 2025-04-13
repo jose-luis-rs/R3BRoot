@@ -111,6 +111,9 @@ InitStatus R3BTofDMapped2Cal::Init()
         R3BLOG(fatal, "FairRootManager not found");
         return kFATAL;
     }
+    
+    header = dynamic_cast<R3BEventHeader*>(mgr->GetObject("EventHeader."));
+    R3BLOG_IF(fatal, nullptr == header, "EventHeader. not found");
 
     // get access to Mapped data
     fMappedItems = dynamic_cast<TClonesArray*>(mgr->GetObject("TofdMapped"));
