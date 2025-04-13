@@ -717,7 +717,7 @@ void R3BTofDOnlineSpectra::Reset_Histo()
         {
             fh_tofd_dt_hit[i]->Reset();
         }
-        fh2_tofd_time_vs_charge->Reset();
+        fh2_tofd_time_vs_charge->Reset();fh2_tofd_time_los_cal
         fh2_tofd_charges13->Reset();
         fh2_tofd_charges24->Reset();
         fh2_tofd_charges12->Reset();
@@ -1069,6 +1069,7 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                         auto tof_without_trig_bot =
                             fTimeStitch->GetTime(botc->GetTimeLeading_ns() - header->GetTStartSimple());
                         auto mean_tof_trig = (tof_without_trig_top + tof_without_trig_bot) / 2.;
+                    }
                 }
 
                 if (std::abs(dt_mod) < fC_bar_coincidence_ns)
@@ -1189,6 +1190,7 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
             if (iPlane == 1)
             {
                 fh2_tofd_time_vs_charge->Fill(hitTofd->GetTof(), hitTofd->GetEloss());
+                
             }
 
             if (hitTofd->GetEloss() > charges[iPlane - 1])
