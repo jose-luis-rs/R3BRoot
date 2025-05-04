@@ -1061,15 +1061,6 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                     fh2_tofd_ypos_cal[iPlane - 1]->Fill(iBar, dt_mod);
                     fh2_tofd_timedif_cal[iPlane - 1]->Fill(iBar, topc_ns);
                     fh2_tofd_timedif_cal[iPlane - 1]->Fill(-1 * iBar, botc_ns);
-
-                    if (topc->GetTimeLeading_ns() > 0 && header->GetTStartSimple() > 0)
-                    {
-                        auto tof_without_trig_top =
-                            fTimeStitch->GetTime(topc->GetTimeLeading_ns() - header->GetTStartSimple());
-                        auto tof_without_trig_bot =
-                            fTimeStitch->GetTime(botc->GetTimeLeading_ns() - header->GetTStartSimple());
-                        auto mean_tof_trig = (tof_without_trig_top + tof_without_trig_bot) / 2.;
-                    }
                 }
 
                 if (std::abs(dt_mod) < fC_bar_coincidence_ns)
