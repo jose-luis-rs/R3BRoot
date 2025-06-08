@@ -89,15 +89,35 @@ class R3BOnlineSpectraFrsSciVsLos : public FairTask
     void SetFrsSciNbDets(UShort_t ndets) { fFrsSciNbDets = ndets; }
     void SetFrsSciNbPmts(UShort_t npmts) { fFrsSciNbPmts = npmts; }
     void SetLosNbDets(UShort_t ndets) { fLosNbDets = ndets; }
-    void SetTofRawRange(float min, float max)
+    void SetPosRawRange_FrsSci1(float min, float max)
     {
-        ftof_range_min = min;
-        ftof_range_max = max;
+        fpos_range_min_FrsSci1 = min;
+        fpos_range_max_FrsSci1 = max;
     }
-    void SetPosRawRange(float min, float max)
+    void SetPosRawRange_FrsSci2(float min, float max)
     {
-        fpos_range_min = min;
-        fpos_range_max = max;
+        ftof_range_min_FrsSci2 = min;
+        ftof_range_max_FrsSci2 = max;
+    }
+    void SetTofRawRange_FrsSci1(float min, float max)
+    {
+        ftof_range_min_FrsSci1 = min;
+        ftof_range_max_FrsSci1 = max;
+    }
+    void SetTofRawRange_FrsSci2(float min, float max)
+    {
+        ftof_range_min_FrsSci2 = min;
+        ftof_range_max_FrsSci2 = max;
+    }
+    void SetPosCal_FrsSci1(float gain, float offset)
+    {
+        fpos_gain_FrsSci1 = gain;
+        fpos_offset_FrsSci1 = offset;
+    }
+    void SetPosCal_FrsSci2(float gain, float offset)
+    {
+        fpos_gain_FrsSci2 = gain;
+        fpos_offset_FrsSci2 = offset;
     }
 
   private:
@@ -116,18 +136,32 @@ class R3BOnlineSpectraFrsSciVsLos : public FairTask
     R3BFrsSciCalPar* fCalPar; // cal parameters container - FrsSci
     TArrayF* fPosCal_Gain;
     TArrayF* fPosCal_Offset;
+    TArrayF* fpos_range_min;
+    TArrayF* fpos_range_max;
+    TArrayF* ftof_range_min;
+    TArrayF* ftof_range_max;
 
     Int_t fNEvents; /**< Event counter.     */
     UShort_t fFrsSciNbDets;
     UShort_t fFrsSciNbPmts;
     UShort_t fLosNbDets;
-    Double_t ftof_range_min;
-    Double_t ftof_range_max;
-    Double_t fpos_range_min;
-    Double_t fpos_range_max;
+    // FIXME
+    Double_t fpos_range_min_FrsSci1;
+    Double_t fpos_range_max_FrsSci1;
+    Double_t fpos_range_min_FrsSci2;
+    Double_t fpos_range_max_FrsSci2;
+    Double_t ftof_range_min_FrsSci1;
+    Double_t ftof_range_max_FrsSci1;
+    Double_t ftof_range_min_FrsSci2;
+    Double_t ftof_range_max_FrsSci2;
+    Double_t fpos_gain_FrsSci1;
+    Double_t fpos_offset_FrsSci1;
+    Double_t fpos_gain_FrsSci2;
+    Double_t fpos_offset_FrsSci2;
 
-    // Canvas Tof
-    TCanvas* cTcal_TofRaw;
+    // Canvas Tof and Pos@S2
+    TCanvas** cTcal_TofRaw;
+    TCanvas** cTcal_Tstop_vs_Tstart;
     TCanvas* cTcal_multTofRaw;
     TCanvas* cAoQ;
     TCanvas* cAoQ_vs_PosS2;
@@ -137,14 +171,18 @@ class R3BOnlineSpectraFrsSciVsLos : public FairTask
     TCanvas* cLos_ToT;
 
     // Histograms Tof
-    TH1D** fh1_Tcal1Hit_TofRaw; // [fNumFrsSci] START=FrsSci, STOP=LOS
-    TH1I** fh1_multTofRaw;      // [fNumFrsSci]
-    TH1I** fh1_multTofRaw_Zgt3; // [fNumFrsSci]
-    TH1D** fh1_TofRaw;          // [fNumFrsSci]
-    TH1D** fh1_Tcal1Hit_AoQraw; // [fNumFrsSci] with Brho from FrsSci to Los
-    TH1D** fh1_AoQcal;          // [fNumFrsSci] with Brho from FrsSci to Los
-    TH2D** fh2_AoQcal_vs_PosS2; // [fNumFrsSci] with Brho from FrsSci to Los
-    TH2D** fh2_Z_vs_AoQcal;     // [fNumFrsSci] with Brho from FrsSci to Los
+    TH1D** fh1_Tcal1Hit_TofRaw;               // [fNumFrsSci] START=FrsSci, STOP=LOS
+    TH1D** fh1_Tcal1Hit_PosRaw;               // [fNumFrsSci] at START=FrsSci
+    TH2D** fh2_Tcal1Hit_Tstop_vs_Tstart_Zgt5; // [fNumFrsSci] at START=FrsSci
+    TH1I** fh1_multTofRaw;                    // [fNumFrsSci]
+    TH1I** fh1_multTofRaw_Zgt5;               // [fNumFrsSci]
+    TH1D** fh1_TofRaw;                        // [fNumFrsSci]
+    TH1D** fh1_PosRaw;                        // [fNumFrsSci]
+    TH2D** fh2_Tstop_vs_Tstart_Zgt5;          // [fNumFrsSci] at START=FrsSci
+    TH1D** fh1_Tcal1Hit_AoQraw;               // [fNumFrsSci] with Brho from FrsSci to Los
+    TH1D** fh1_AoQcal;                        // [fNumFrsSci] with Brho from FrsSci to Los
+    TH2D** fh2_AoQcal_vs_PosS2;               // [fNumFrsSci] with Brho from FrsSci to Los
+    TH2D** fh2_Z_vs_AoQcal;                   // [fNumFrsSci] with Brho from FrsSci to Los
 
     // Histograms Los
     TH2I** fh2_MultLos_LE;

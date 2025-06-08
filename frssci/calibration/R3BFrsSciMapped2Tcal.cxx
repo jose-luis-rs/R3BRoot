@@ -156,7 +156,7 @@ void R3BFrsSciMapped2Tcal::Exec(Option_t* option)
             continue;
         }
         tns = CalculateTimeNs(det, pmt, tf, tc);
-        AddTcalData(det, pmt, tns);
+        AddTcalData(det, pmt, tns, tc);
     }
 
     if (nHitsPerEvent_FrsSci != fTcal->GetEntries())
@@ -198,12 +198,12 @@ Double_t R3BFrsSciMapped2Tcal::CalculateTimeNs(UShort_t iDet, UShort_t iPmt, UIn
 }
 
 // -----   Private method AddCalData  --------------------------------------------
-R3BFrsSciTcalData* R3BFrsSciMapped2Tcal::AddTcalData(UShort_t det, UShort_t pmt, Double_t tns)
+R3BFrsSciTcalData* R3BFrsSciMapped2Tcal::AddTcalData(UShort_t det, UShort_t pmt, Double_t tns, UInt_t tc)
 {
     // It fills the R3BFrsSciTcalData
     TClonesArray& clref = *fTcal;
     Int_t size = clref.GetEntriesFast();
-    return new (clref[size]) R3BFrsSciTcalData(det, pmt, tns);
+    return new (clref[size]) R3BFrsSciTcalData(det, pmt, tns, tc);
 }
 
 ClassImp(R3BFrsSciMapped2Tcal)

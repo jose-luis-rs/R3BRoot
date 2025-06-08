@@ -62,7 +62,7 @@ class R3BFrsSciMapped2Tcal : public FairTask
     TRandom3 rand;
 
     Double_t CalculateTimeNs(UShort_t det, UShort_t pmt, UInt_t tf, UInt_t tc);
-    R3BFrsSciTcalData* AddTcalData(UShort_t det, UShort_t pmt, Double_t tns);
+    R3BFrsSciTcalData* AddTcalData(UShort_t det, UShort_t pmt, Double_t tns, UInt_t tc);
 
   public:
     ClassDef(R3BFrsSciMapped2Tcal, 1)

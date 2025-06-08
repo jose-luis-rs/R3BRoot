@@ -118,7 +118,7 @@ class R3BOnlineSpectraFrsSci : public FairTask
     }
 
   private:
-    R3BEventHeader* fEventHeader; /**< Event header.      */
+    R3BEventHeader* fHeader; /**< Event header.      */
 
     TClonesArray* fMapped; /**< Array with R3BFrsSciMappedData */
     TClonesArray* fTcal;   /**< Array with R3BFrsSciTcalData */

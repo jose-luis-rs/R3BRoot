@@ -4,13 +4,15 @@ R3BFrsSciTcalData::R3BFrsSciTcalData()
     : fDetector(0)
     , fPmt(0)
     , fRawTimeNs(0)
+    , fTimeCoarse(0)
 {
 }
 
-R3BFrsSciTcalData::R3BFrsSciTcalData(UShort_t detector, UShort_t pmt, Double_t tns)
+R3BFrsSciTcalData::R3BFrsSciTcalData(UShort_t detector, UShort_t pmt, Double_t tns, UInt_t tc)
     : fDetector(detector)
     , fPmt(pmt)
     , fRawTimeNs(tns)
+    , fTimeCoarse(tc)
 {
 }
 ClassImp(R3BFrsSciTcalData)

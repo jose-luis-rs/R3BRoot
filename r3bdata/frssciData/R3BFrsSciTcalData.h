@@ -10,7 +10,7 @@ class R3BFrsSciTcalData : public TObject
     R3BFrsSciTcalData();
 
     // Standard Constructor
-    R3BFrsSciTcalData(UShort_t, UShort_t, Double_t);
+    R3BFrsSciTcalData(UShort_t, UShort_t, Double_t, UInt_t);
 
     // Destructor
     virtual ~R3BFrsSciTcalData() {}
@@ -19,11 +19,13 @@ class R3BFrsSciTcalData : public TObject
     inline const UShort_t& GetDetector() const { return fDetector; }
     inline const UShort_t& GetPmt() const { return fPmt; }
     inline const Double_t& GetRawTimeNs() const { return fRawTimeNs; }
+    inline const UInt_t& GetTimeCoarse() const { return fTimeCoarse; }
 
   private:
     UShort_t fDetector;  // 1..n with n number of sci from S2 to cave C
     UShort_t fPmt;       // 1..3
     Double_t fRawTimeNs; // (5*coarse_time - fine_time)
+    UInt_t fTimeCoarse;
 
   public:
     ClassDef(R3BFrsSciTcalData, 2)

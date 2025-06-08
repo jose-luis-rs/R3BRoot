@@ -45,9 +45,9 @@ R3BOnlineSpectraFrsSci::R3BOnlineSpectraFrsSci(const char* name, Int_t iVerbose)
     , fNbDets(3)
     , fNbPmts(3)
     , fNbTofs(3)
-    , fpos_range_min(-5.)
-    , fpos_range_max(5.)
-    , ftof_range_min(0.)
+    , fpos_range_min(-10.)
+    , fpos_range_max(100.)
+    , ftof_range_min(-2500.)
     , ftof_range_max(2500)
 {
 }
@@ -85,7 +85,14 @@ InitStatus R3BOnlineSpectraFrsSci::Init()
     // --- ------------ --- //
     // --- MAPPED LEVEL --- //
     // --- ------------ --- //
-
+    //
+    // === get access to EventHeader for GetTStartMaster()=<T_LOS_VFTX>-TrefMASTER ===//
+    fHeader = dynamic_cast<R3BEventHeader*>(mgr->GetObject("EventHeader."));
+    if (!fHeader)
+    {
+        LOG(fatal) << "R3BOnlineSpectraFrsSci::Init(), EventHeader not found";
+        return (kFATAL);
+    }
     // === get access to mapped data ===//
     fMapped = dynamic_cast<TClonesArray*>(mgr->GetObject("FrsSciMappedData"));
     if (!fMapped)
@@ -131,7 +138,7 @@ InitStatus R3BOnlineSpectraFrsSci::Init()
             fh1_Map_finetime[i * fNbPmts + j]->Draw("");
 
             // === TH1I: 1D-mult at map level === //
-            sprintf(Name1, "FrsSci%i_Pmt%i_MultPerEvent_Mapped", i + 1, j + 1);
+            sprintf(Name1, "FrsSci%i_Pmt%i_MultPerEvent_Mapped_TPAT1", i + 1, j + 1);
             sprintf(Name2,
                     "FrsSci%i_Pmt%i_MultPerEvent_Mapped (blue no condition on TPAT, red condition on TPAT = 1 or 2)",
                     i + 1,
@@ -153,7 +160,7 @@ InitStatus R3BOnlineSpectraFrsSci::Init()
         }
 
         // === TH1F: multiplicity per event and channel at mapped level === //
-        sprintf(Name1, "FrsSci%i_MultPerEvent", i + 1);
+        sprintf(Name1, "FrsSci%i_MultPerEvent_TPAT1", i + 1);
         fh2_Map_mult[i] = new TH2I(Name1, Name1, fNbPmts + 1, -0.5, fNbPmts + 0.5, 20, -0.5, 19.5);
         fh2_Map_mult[i]->GetXaxis()->SetTitle("channel: 1=PMT R,    2=PMT L,    3=COMMON REF");
         fh2_Map_mult[i]->GetYaxis()->SetTitle("multiplicity per event");
@@ -309,22 +316,11 @@ InitStatus R3BOnlineSpectraFrsSci::Init()
         {
             // === TH1F: Raw Position in Ns at Cal level=== //
             sprintf(Name1, "FrsSci%i_PosRaw", i + 1);
-            if (fh1_Tcal1Hit_PosRaw[i])
-            {
-                Int_t nbins = fh1_Tcal1Hit_PosRaw[i]->GetNbinsX();
-                fh1_Cal_PosRaw[i] =
-                    new TH1D(Name1,
-                             Name1,
-                             nbins,
-                             fh1_Tcal1Hit_PosRaw[i]->GetBinLowEdge(1),
-                             fh1_Tcal1Hit_PosRaw[i]->GetBinLowEdge(nbins) + fh1_Tcal1Hit_PosRaw[i]->GetBinWidth(nbins));
-            }
-            else
-                fh1_Cal_PosRaw[i] = new TH1D(Name1,
-                                             Name1,
-                                             static_cast<int>(20. * (fpos_range_max - fpos_range_min)),
-                                             fpos_range_min,
-                                             fpos_range_max);
+            fh1_Cal_PosRaw[i] = new TH1D(Name1,
+                                         Name1,
+                                         static_cast<int>(20. * (fpos_range_max - fpos_range_min)),
+                                         fpos_range_min,
+                                         fpos_range_max);
             fh1_Cal_PosRaw[i]->GetXaxis()->SetTitle("Raw Positon [ns] in red CAL level, in blue TCAL-MULT1");
             fh1_Cal_PosRaw[i]->GetYaxis()->SetTitle("number of counts with mult1");
             fh1_Cal_PosRaw[i]->GetXaxis()->CenterTitle(true);
@@ -657,7 +653,7 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
         }
     }
 
-    if (fMapped)
+    if (fMapped && fHeader->GetTpat() == 1)
     {
         if (fMapped->GetEntriesFast() > 0)
         {
@@ -810,7 +806,7 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
 
         fNEvents++;
 
-    } // end of if fMapped
+    } // end of if fMapped and fHeader->Tpat()==1
 }
 
 // -----   Public method Finish   -----------------------------------------------

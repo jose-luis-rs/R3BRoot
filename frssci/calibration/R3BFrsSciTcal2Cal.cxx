@@ -143,6 +143,7 @@ void R3BFrsSciTcal2Cal::Exec(Option_t* option)
     // Variables to read the Tcal data
     UShort_t nDets = (UShort_t)fCalPar->GetNumDets();
     UShort_t nPmts = (UShort_t)fCalPar->GetNumPmts();
+    Int_t idCaveC = (Int_t)fCalPar->GetDetIdCaveC();
     // UShort_t nDets = 2;
     // UShort_t nPmts = 3;
     UShort_t iDet = 0;
@@ -179,7 +180,7 @@ void R3BFrsSciTcal2Cal::Exec(Option_t* option)
     // Select the proper hit in the multihit tcal data
     // if nDets==1 -> Use the Position : not really selective, better use LOS (need to be coded)
     // if nDets>1  -> Use the Tof
-    if (nDets == 1 && mult[0] > 0 && mult[1] > 0)
+    if ((nDets == 1 && mult[0] > 0 && mult[1] > 0) || (idCaveC <= 1))
     {
         // Variables to fill PosCal and TofCal data
         Double_t iRawTime = NAN;
@@ -216,7 +217,7 @@ void R3BFrsSciTcal2Cal::Exec(Option_t* option)
             } // end of loop over the hits of the left PMTs
         }     // end of loop over the hits of the right PMTs
     }         // end of if (nDets==1)
-    else if (nDets > 1)
+    else if (nDets > 1 && idCaveC > 1)
     {
         // Variables to fill PosCal and TofCal data
         Double_t iRawTimeSta = NAN, iRawTimeSto = NAN;
