@@ -46,11 +46,10 @@
 #include "TClonesArray.h"
 #include "TMath.h"
 
-        double fpos_range_min_FrsSci[2] = { -4, 40};
-        double fpos_range_max_FrsSci[2] = { 4, 50};
-        double ftof_range_min_FrsSci[2] = {1375, 1240};
-        double ftof_range_max_FrsSci[2] = {1400, 1275};
-
+double fpos_range_min_FrsSci[2] = { -4, 40 };
+double fpos_range_max_FrsSci[2] = { 4, 50 };
+double ftof_range_min_FrsSci[2] = { 1375, 1240 };
+double ftof_range_max_FrsSci[2] = { 1400, 1275 };
 
 R3BAnalysisIncomingID::R3BAnalysisIncomingID()
     : R3BAnalysisIncomingID("AnalysisIncomingID", 1)
@@ -283,14 +282,17 @@ void R3BAnalysisIncomingID::Exec(Option_t*)
                             0.5 * (FrsSciTraw[i * fFrsSciNbPmts][hitr] + FrsSciTraw[i * fFrsSciNbPmts + 1][hitl]) -
                             (FrsSciTraw[i * fFrsSciNbPmts + 2][0] + 8192. * 5.);
                     }*/
-                    
-                    StartTraw_atTcal = fTimeStitch->GetTime( 0.5 * (FrsSciTraw[i * fFrsSciNbPmts][hitr] + FrsSciTraw[i * fFrsSciNbPmts + 1][hitl]) -
-                            FrsSciTraw[i * fFrsSciNbPmts + 2][0], "vftx", "vftx");
-                    
-                    
+
+                    StartTraw_atTcal = fTimeStitch->GetTime(
+                        0.5 * (FrsSciTraw[i * fFrsSciNbPmts][hitr] + FrsSciTraw[i * fFrsSciNbPmts + 1][hitl]) -
+                            FrsSciTraw[i * fFrsSciNbPmts + 2][0],
+                        "vftx",
+                        "vftx");
+
                     auto TofRaw = fTimeStitch->GetTime(fHeader->GetTStartMaster() - StartTraw_atTcal, "vftx", "vftx");
                     auto PosRaw = FrsSciTraw[i * fFrsSciNbPmts][hitr] - FrsSciTraw[i * fFrsSciNbPmts + 1][hitl];
-                    if (ftof_range_min_FrsSci[i] < TofRaw && TofRaw < ftof_range_max_FrsSci[i] && fpos_range_min_FrsSci[i] < PosRaw && PosRaw < fpos_range_max_FrsSci[i])
+                    if (ftof_range_min_FrsSci[i] < TofRaw && TofRaw < ftof_range_max_FrsSci[i] &&
+                        fpos_range_min_FrsSci[i] < PosRaw && PosRaw < fpos_range_max_FrsSci[i])
                     {
                         indexr[i] = hitr;
                         indexl[i] = hitl;
@@ -299,28 +301,29 @@ void R3BAnalysisIncomingID::Exec(Option_t*)
                 }
             }
 
-            if (indexr[i] >= 0 && indexl[i] >= 0 && multTofRaw[i] == 1 && i==1)
+            if (indexr[i] >= 0 && indexl[i] >= 0 && multTofRaw[i] == 1 && i == 1)
             {
-               /* if ((FrsSciTC[i * fFrsSciNbPmts][indexr[i]] < FrsSciTC[i * fFrsSciNbPmts + 2][0]) &&
-                    (FrsSciTC[i * fFrsSciNbPmts + 1][indexl[i]] < FrsSciTC[i * fFrsSciNbPmts + 2][0]))
-                {
-                    StartTraw_atTcal = 0.5 * (FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] +
-                                              FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]]) -
-                                       FrsSciTraw[i * fFrsSciNbPmts + 2][0] - (i == 1 ? 130. : 0.);
-                }
-                else
-                {
-                    StartTraw_atTcal = 0.5 * (FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] +
-                                              FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]]) -
-                                       (FrsSciTraw[i * fFrsSciNbPmts + 2][0] + 8192 * 5.) - (i == 1 ? 130. : 0.);
-                }*/
-                
-                
-                StartTraw_atTcal = fTimeStitch->GetTime( 0.5 * (FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] +
-                                              FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]]) -
-                                       FrsSciTraw[i * fFrsSciNbPmts + 2][0] , "vftx", "vftx") - (i == 1 ? 130. : 0.);
-                
-                
+                /* if ((FrsSciTC[i * fFrsSciNbPmts][indexr[i]] < FrsSciTC[i * fFrsSciNbPmts + 2][0]) &&
+                     (FrsSciTC[i * fFrsSciNbPmts + 1][indexl[i]] < FrsSciTC[i * fFrsSciNbPmts + 2][0]))
+                 {
+                     StartTraw_atTcal = 0.5 * (FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] +
+                                               FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]]) -
+                                        FrsSciTraw[i * fFrsSciNbPmts + 2][0] - (i == 1 ? 130. : 0.);
+                 }
+                 else
+                 {
+                     StartTraw_atTcal = 0.5 * (FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] +
+                                               FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]]) -
+                                        (FrsSciTraw[i * fFrsSciNbPmts + 2][0] + 8192 * 5.) - (i == 1 ? 130. : 0.);
+                 }*/
+
+                StartTraw_atTcal = fTimeStitch->GetTime(0.5 * (FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] +
+                                                               FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]]) -
+                                                            FrsSciTraw[i * fFrsSciNbPmts + 2][0],
+                                                        "vftx",
+                                                        "vftx") -
+                                   (i == 1 ? 130. : 0.);
+
                 auto TofRaw = fTimeStitch->GetTime(fHeader->GetTStartMaster() - StartTraw_atTcal, "vftx", "vftx");
                 // fh2_Tstop_vs_Tstart_Zgt5[i]->Fill(StartTraw_atTcal, fHeader->GetTStartMaster());
                 auto PosRaw = FrsSciTraw[i * fFrsSciNbPmts][indexr[i]] - FrsSciTraw[i * fFrsSciNbPmts + 1][indexl[i]] -
