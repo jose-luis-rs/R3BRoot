@@ -257,10 +257,11 @@ void R3BAnalysisIncomingID::Exec(Option_t*)
 
         // fTimeStitch->GetTime()
 
+        Int_t indexl[2] = { -1 };
+        Int_t indexr[2] = { -1 };
+
         for (size_t i = 0; i < fFrsSciNbDets; i++)
         {
-            Int_t indexl[2] = { -1 };
-            Int_t indexr[2] = { -1 };
             for (size_t hitr = 0; hitr < multFrsSciTcal[i * fFrsSciNbPmts]; hitr++)
             {
                 for (size_t hitl = 0; hitl < multFrsSciTcal[i * fFrsSciNbPmts + i]; hitl++)
@@ -290,7 +291,7 @@ void R3BAnalysisIncomingID::Exec(Option_t*)
                 }
             }
 
-            if (indexr[i] >= 0 && indexl[i] >= 0 && multTofRaw[i] == 1)
+            if (indexr[i] >= 0 && indexl[i] >= 0 && multTofRaw[i] == 1 && i==1)
             {
                 if ((FrsSciTC[i * fFrsSciNbPmts][indexr[i]] < FrsSciTC[i * fFrsSciNbPmts + 2][0]) &&
                     (FrsSciTC[i * fFrsSciNbPmts + 1][indexl[i]] < FrsSciTC[i * fFrsSciNbPmts + 2][0]))
