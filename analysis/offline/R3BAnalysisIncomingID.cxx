@@ -46,6 +46,12 @@
 #include "TClonesArray.h"
 #include "TMath.h"
 
+        double fpos_range_min_FrsSci[2] = { -4, 40};
+        double fpos_range_max_FrsSci[2] = { 4, 50};
+        double ftof_range_min_FrsSci[2] = {1375, 1240};
+        double ftof_range_max_FrsSci[2] = {1400, 1275};
+
+
 R3BAnalysisIncomingID::R3BAnalysisIncomingID()
     : R3BAnalysisIncomingID("AnalysisIncomingID", 1)
 {
@@ -271,18 +277,17 @@ void R3BAnalysisIncomingID::Exec(Option_t*)
                     {
                         StartTraw_atTcal =
                             0.5 * (FrsSciTraw[i * fFrsSciNbPmts][hitr] + FrsSciTraw[i * fFrsSciNbPmts + 1][hitl]) -
-                            FrsSciTraw[i * fFrsSciNbPmts + 2][0] - (i == 1 ? 130. : 0.);
+                            FrsSciTraw[i * fFrsSciNbPmts + 2][0];
                     }
                     else
                     {
                         StartTraw_atTcal =
                             0.5 * (FrsSciTraw[i * fFrsSciNbPmts][hitr] + FrsSciTraw[i * fFrsSciNbPmts + 1][hitl]) -
-                            (FrsSciTraw[i * fFrsSciNbPmts + 2][0] + 8192. * 5.) - (i == 1 ? 130. : 0.);
+                            (FrsSciTraw[i * fFrsSciNbPmts + 2][0] + 8192. * 5.);
                     }
-                    auto TofRaw = fHeader->GetTStartMaster() - StartTraw_atTcal + (i == 1 ? 130. : 0.);
-                    auto PosRaw = FrsSciTraw[i * fFrsSciNbPmts][hitr] - FrsSciTraw[i * fFrsSciNbPmts + 1][hitl] -
-                                  (i == 1 ? 45.51 : 0.);
-                    if (1375 < TofRaw && TofRaw < 1400 && -4 < PosRaw && PosRaw < 4)
+                    auto TofRaw = fHeader->GetTStartMaster() - StartTraw_atTcal;
+                    auto PosRaw = FrsSciTraw[i * fFrsSciNbPmts][hitr] - FrsSciTraw[i * fFrsSciNbPmts + 1][hitl];
+                    if (ftof_range_min_FrsSci[i] < TofRaw && TofRaw < ftof_range_max_FrsSci[i] && fpos_range_min_FrsSci[i] < PosRaw && PosRaw < fpos_range_max_FrsSci[i])
                     {
                         indexr[i] = hitr;
                         indexl[i] = hitl;
