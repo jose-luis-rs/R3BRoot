@@ -11,16 +11,17 @@
  * or submit itself to any jurisdiction.                                      *
  ******************************************************************************/
 
-#ifndef R3BAnalysisIncomingID_H
-#define R3BAnalysisIncomingID_H 1
+#pragma once
 
 // ROOT headers
-#include "TCutG.h"
-#include "TMath.h"
 #include <TArrayF.h>
+#include <TCutG.h>
+#include <TMath.h>
 
 // FAIR headers
-#include "FairTask.h"
+#include <FairTask.h>
+
+#include "R3BFrsData.h"
 
 class R3BIncomingIDPar;
 class TClonesArray;
@@ -90,41 +91,43 @@ class R3BAnalysisIncomingID : public FairTask
     }
 
     // Accessor to select online mode
-    void SetOnline(Bool_t option) { fOnline = option; }
+    inline void SetOnline(bool option = true) { fOnline = option; }
 
     // Accessor to select the MUSIC for the incoming ID
-    void SetMusicForPID() { fUseLOS = kFALSE, fUsePspx1 = kFALSE; }
+    inline void SetMusicForPID() { fUseLOS = kFALSE, fUsePspx1 = kFALSE; }
 
     // Accessor to select the LOS for the incoming ID
-    void SetLosForPID() { fUseLOS = kTRUE, fUsePspx1 = kFALSE; }
+    inline void SetLosForPID() { fUseLOS = kTRUE, fUsePspx1 = kFALSE; }
+
+    inline void SetZLosMin(double zmin) { fMinLosCharge = zmin; }
 
     // Acsessor to set use of trigger corrected times
-    void SetUseTref() { fUseTref = kTRUE; }
+    inline void SetUseTref() { fUseTref = kTRUE; }
 
-    void SetNumDet(int val) { fNumDet = val; }
-
-  protected:
-    R3BEventHeader* fHeader{}; // Event header
+    inline void SetNumDet(int val) { fNumDet = val; }
 
   private:
     void SetParameter();
     R3BCoarseTimeStitch* fTimeStitch;
     R3BIncomingIDPar* fIncomingID_Par; // Parameter container
+    R3BEventHeader* fHeader = nullptr;
     TClonesArray* fHitItemsMus;
     TClonesArray* fHitItemsMusli;
-    TClonesArray* fFrsDataCA; /**< Array with FRS-output data. >*/
     TClonesArray* fHitLos;
     TClonesArray* fTriggerLos;
     TClonesArray* fHitPspx1_x;
     TClonesArray* fHitPspx1_y;
+    TClonesArray* fFrsSci_Tcal = nullptr;
+    TClonesArray* fFrsHitData = nullptr;
 
-    Bool_t fOnline;            // Don't store data for online
+    bool fOnline = false;      // Don't store data for online
     Bool_t fUseLOS, fUsePspx1; // Use LOS or PSPX1 charge (otherwise MUSIC charge)
     Double_t fP0, fP1, fP2, fZprimary, fZoffset;
     Bool_t fUseTref; // Use trigger corrected times
 
     Double_t fPos_p0;
     Double_t fPos_p1;
+    double fMinLosCharge = 3.;
 
     Int_t fNumDet;
     TArrayF* fToFoffset;
@@ -137,8 +140,16 @@ class R3BAnalysisIncomingID : public FairTask
     Float_t fBeta_max, fBeta_min;
     TCutG *fCutS2, *fCutCave;
 
+    R3BFrsData* AddData(Int_t StaId,
+                        Int_t StoId,
+                        Double_t z,
+                        Double_t aq,
+                        Double_t betaval,
+                        Double_t brhoval,
+                        Double_t xs2,
+                        Double_t xc,
+                        Double_t tof);
+
   public:
     ClassDef(R3BAnalysisIncomingID, 1)
 };
-
-#endif /* R3BAnalysisIncomingID_H */

@@ -15,6 +15,7 @@
 #define R3BCalifavsFootOnlineSpectra_H 1
 
 #include "FairTask.h"
+#include "R3BCalifaOnlineSpectra.h"
 #include "TCanvas.h"
 #include "TMath.h"
 #include <array>
@@ -22,7 +23,6 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include "R3BCalifaOnlineSpectra.h"
 
 class TClonesArray;
 class TH1F;
