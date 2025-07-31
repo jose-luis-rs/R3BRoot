@@ -21,6 +21,7 @@
 #include <FairLogger.h>
 #include <sstream>
 #include <string>
+#include <Rtypes.h>
 
 #define R3BLOG(severity, message)                                                                             \
     do                                                                                                        \
