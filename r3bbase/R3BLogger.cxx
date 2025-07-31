@@ -15,7 +15,3 @@
 // -----                          R3BLogger                         -----
 // -----             Created 15/12/21 by J.L. Rodriguez-Sanchez     -----
 // ----------------------------------------------------------------------
-
-#include "R3BLogger.h"
-
-ClassImp(R3BLogger)

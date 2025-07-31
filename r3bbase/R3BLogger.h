@@ -18,47 +18,39 @@
 
 #pragma once
 
-#include <cstdlib>
-#include <fstream>
-#include <iostream>
+#include <FairLogger.h>
 #include <sstream>
 #include <string>
 
-#include <FairLogger.h>
+#define R3BLOG(severity, message)                                                                             \
+    do                                                                                                        \
+    {                                                                                                         \
+        std::string r3b_file(__FILE__);                                                                       \
+        std::stringstream r3b_ss;                                                                             \
+        r3b_ss << r3b_file.substr(r3b_file.find_last_of("/\\") + 1) << ":" << __LINE__ << ":" << __FUNCTION__ \
+               << "(): " << message;                                                                          \
+        LOG(severity) << r3b_ss.str();                                                                        \
+    } while (0)
 
-// NOLINTBEGIN
-class R3BLogger;
+#define R3BLOG_IF(severity, condition, message)                                                                   \
+    do                                                                                                            \
+    {                                                                                                             \
+        if (condition)                                                                                            \
+        {                                                                                                         \
+            std::string r3b_file(__FILE__);                                                                       \
+            std::stringstream r3b_ss;                                                                             \
+            r3b_ss << r3b_file.substr(r3b_file.find_last_of("/\\") + 1) << ":" << __LINE__ << ":" << __FUNCTION__ \
+                   << "(): " << message;                                                                          \
+            LOG(severity) << r3b_ss.str();                                                                        \
+        }                                                                                                         \
+    } while (0)
 
 class R3BLogger : public FairLogger
 {
-  public:
-#define R3BLOG(severity, x)                                                                            \
-    if (true)                                                                                          \
-    {                                                                                                  \
-        std::string fN(__FILE__);                                                                      \
-        std::stringstream ss;                                                                          \
-        ss << fN.substr(fN.find_last_of("/") + 1) << ":" << __LINE__ << ":" << __FUNCTION__ << "(): "; \
-        LOG(severity) << ss.str() << x;                                                                \
-    }                                                                                                  \
-    else                                                                                               \
-        (void)0
-
-#define R3BLOG_IF(severity, condition, x)                                                                    \
-    if (true)                                                                                                \
-    {                                                                                                        \
-        std::string fNif(__FILE__);                                                                          \
-        std::stringstream ssif;                                                                              \
-        ssif << fNif.substr(fNif.find_last_of("/") + 1) << ":" << __LINE__ << ":" << __FUNCTION__ << "(): "; \
-        LOG_IF(severity, condition) << ssif.str() << x;                                                      \
-    }                                                                                                        \
-    else                                                                                                     \
-        (void)0
-
   private:
     R3BLogger();
-    ~R3BLogger();
+    ~R3BLogger() = default;
 
   public:
-    ClassDefOverride(R3BLogger, 0)
+    ClassDefOverride(R3BLogger, 0);
 };
-// NOLINTEND
