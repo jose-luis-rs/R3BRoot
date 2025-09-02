@@ -30,27 +30,15 @@
 
 // R3BFrsSciMapped2TcalPar: Default Constructor --------------------------
 R3BFrsSciMapped2TcalPar::R3BFrsSciMapped2TcalPar()
-    : FairTask("R3BFrsSciMapped2TcalPar", 1)
-    , fMapped(NULL)
-    , fNumDets(3)
-    , fNumPmts(3)
-    , fNumPars(1000)
-    , fMinStat(100000)
-    , fTcalPar(NULL)
-    , fOutputFile(NULL)
+    : FairTask("R3BFrsSciMapped2TcalPar", 1), fMapped(NULL), fNumDets(3), fNumPmts(3), fNumPars(1000), fMinStat(100000),
+      fTcalPar(NULL), fOutputFile(NULL)
 {
 }
 
 // R3BFrsSciMapped2TcalPar: Standard Constructor --------------------------
 R3BFrsSciMapped2TcalPar::R3BFrsSciMapped2TcalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMapped(NULL)
-    , fNumDets(3)
-    , fNumPmts(3)
-    , fNumPars(1000)
-    , fMinStat(100000)
-    , fTcalPar(NULL)
-    , fOutputFile(NULL)
+    : FairTask(name, iVerbose), fMapped(NULL), fNumDets(3), fNumPmts(3), fNumPars(1000), fMinStat(100000),
+      fTcalPar(NULL), fOutputFile(NULL)
 
 {
 }

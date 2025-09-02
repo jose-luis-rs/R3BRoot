@@ -44,36 +44,14 @@
 #include "TClonesArray.h"
 #include "TMath.h"
 
-R3BAnalysisIncomingID::R3BAnalysisIncomingID()
-    : R3BAnalysisIncomingID("AnalysisIncomingID", 1)
-{
-}
+R3BAnalysisIncomingID::R3BAnalysisIncomingID() : R3BAnalysisIncomingID("AnalysisIncomingID", 1) {}
 
 R3BAnalysisIncomingID::R3BAnalysisIncomingID(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitItemsMus(NULL)
-    , fHitItemsMusli(NULL)
-    , fHitLos(NULL)
-    , fTriggerLos(NULL)
-    , fHitPspx1_x(NULL)
-    , fHitPspx1_y(NULL)
-    , fFrsDataCA(NULL)
-    , fPos_p0(-11)
-    , fPos_p1(54.7)
-    , fP0(-2.12371e7)
-    , fP1(4.9473e7)
-    , fP2(-2.87635e7)
-    , fZprimary(50.)
-    , fZoffset(-1.3)
-    , fOnline(kFALSE)
-    , fIncomingID_Par(NULL)
-    , fNumDet(1)
-    , fUseLOS(kFALSE)
-    , fUsePspx1(kTRUE)
-    , fUseTref(kFALSE)
-    , fTimeStitch(nullptr)
-    , fCutS2(NULL)
-    , fCutCave(NULL)
+    : FairTask(name, iVerbose), fHitItemsMus(NULL), fHitItemsMusli(NULL), fHitLos(NULL), fTriggerLos(NULL),
+      fHitPspx1_x(NULL), fHitPspx1_y(NULL), fFrsDataCA(NULL), fPos_p0(-11), fPos_p1(54.7), fP0(-2.12371e7),
+      fP1(4.9473e7), fP2(-2.87635e7), fZprimary(50.), fZoffset(-1.3), fOnline(kFALSE), fIncomingID_Par(NULL),
+      fNumDet(1), fUseLOS(kFALSE), fUsePspx1(kTRUE), fUseTref(kFALSE), fTimeStitch(nullptr), fCutS2(NULL),
+      fCutCave(NULL)
 {
     fToFoffset = new TArrayF(fNumDet);
     fPosS2Left = new TArrayF(fNumDet);

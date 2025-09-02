@@ -130,76 +130,76 @@ typedef struct EXT_STR_h101_TRLO_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_TRLO_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                           \
-    do                                                                                                             \
-    {                                                                                                              \
-        ok = 1;                                                                                                    \
-        /* RAW */                                                                                                  \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN1, UINT32, "TRLO1TRLORAW_MAIN1");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN2, UINT32, "TRLO1TRLORAW_MAIN2");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN3, UINT32, "TRLO1TRLORAW_MAIN3");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN4, UINT32, "TRLO1TRLORAW_MAIN4");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN5, UINT32, "TRLO1TRLORAW_MAIN5");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN6, UINT32, "TRLO1TRLORAW_MAIN6");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN7, UINT32, "TRLO1TRLORAW_MAIN7");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN8, UINT32, "TRLO1TRLORAW_MAIN8");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN9, UINT32, "TRLO1TRLORAW_MAIN9");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN10, UINT32, "TRLO1TRLORAW_MAIN10"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN11, UINT32, "TRLO1TRLORAW_MAIN11"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN12, UINT32, "TRLO1TRLORAW_MAIN12"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN13, UINT32, "TRLO1TRLORAW_MAIN13"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN14, UINT32, "TRLO1TRLORAW_MAIN14"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN15, UINT32, "TRLO1TRLORAW_MAIN15"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN16, UINT32, "TRLO1TRLORAW_MAIN16"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN1, UINT32, "TRLO1TRLOBDT_MAIN1");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN2, UINT32, "TRLO1TRLOBDT_MAIN2");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN3, UINT32, "TRLO1TRLOBDT_MAIN3");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN4, UINT32, "TRLO1TRLOBDT_MAIN4");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN5, UINT32, "TRLO1TRLOBDT_MAIN5");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN6, UINT32, "TRLO1TRLOBDT_MAIN6");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN7, UINT32, "TRLO1TRLOBDT_MAIN7");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN8, UINT32, "TRLO1TRLOBDT_MAIN8");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN9, UINT32, "TRLO1TRLOBDT_MAIN9");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN10, UINT32, "TRLO1TRLOBDT_MAIN10"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN11, UINT32, "TRLO1TRLOBDT_MAIN11"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN12, UINT32, "TRLO1TRLOBDT_MAIN12"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN13, UINT32, "TRLO1TRLOBDT_MAIN13"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN14, UINT32, "TRLO1TRLOBDT_MAIN14"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN15, UINT32, "TRLO1TRLOBDT_MAIN15"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN16, UINT32, "TRLO1TRLOBDT_MAIN16"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN1, UINT32, "TRLO1TRLOADT_MAIN1");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN2, UINT32, "TRLO1TRLOADT_MAIN2");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN3, UINT32, "TRLO1TRLOADT_MAIN3");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN4, UINT32, "TRLO1TRLOADT_MAIN4");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN5, UINT32, "TRLO1TRLOADT_MAIN5");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN6, UINT32, "TRLO1TRLOADT_MAIN6");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN7, UINT32, "TRLO1TRLOADT_MAIN7");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN8, UINT32, "TRLO1TRLOADT_MAIN8");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN9, UINT32, "TRLO1TRLOADT_MAIN9");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN10, UINT32, "TRLO1TRLOADT_MAIN10"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN11, UINT32, "TRLO1TRLOADT_MAIN11"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN12, UINT32, "TRLO1TRLOADT_MAIN12"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN13, UINT32, "TRLO1TRLOADT_MAIN13"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN14, UINT32, "TRLO1TRLOADT_MAIN14"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN15, UINT32, "TRLO1TRLOADT_MAIN15"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN16, UINT32, "TRLO1TRLOADT_MAIN16"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN1, UINT32, "TRLO1TRLOARD_MAIN1");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN2, UINT32, "TRLO1TRLOARD_MAIN2");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN3, UINT32, "TRLO1TRLOARD_MAIN3");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN4, UINT32, "TRLO1TRLOARD_MAIN4");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN5, UINT32, "TRLO1TRLOARD_MAIN5");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN6, UINT32, "TRLO1TRLOARD_MAIN6");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN7, UINT32, "TRLO1TRLOARD_MAIN7");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN8, UINT32, "TRLO1TRLOARD_MAIN8");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN9, UINT32, "TRLO1TRLOARD_MAIN9");   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN10, UINT32, "TRLO1TRLOARD_MAIN10"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN11, UINT32, "TRLO1TRLOARD_MAIN11"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN12, UINT32, "TRLO1TRLOARD_MAIN12"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN13, UINT32, "TRLO1TRLOARD_MAIN13"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN14, UINT32, "TRLO1TRLOARD_MAIN14"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN15, UINT32, "TRLO1TRLOARD_MAIN15"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN16, UINT32, "TRLO1TRLOARD_MAIN16"); \
-                                                                                                                   \
+#define EXT_STR_h101_TRLO_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN1, UINT32, "TRLO1TRLORAW_MAIN1");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN2, UINT32, "TRLO1TRLORAW_MAIN2");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN3, UINT32, "TRLO1TRLORAW_MAIN3");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN4, UINT32, "TRLO1TRLORAW_MAIN4");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN5, UINT32, "TRLO1TRLORAW_MAIN5");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN6, UINT32, "TRLO1TRLORAW_MAIN6");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN7, UINT32, "TRLO1TRLORAW_MAIN7");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN8, UINT32, "TRLO1TRLORAW_MAIN8");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN9, UINT32, "TRLO1TRLORAW_MAIN9");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN10, UINT32, "TRLO1TRLORAW_MAIN10");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN11, UINT32, "TRLO1TRLORAW_MAIN11");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN12, UINT32, "TRLO1TRLORAW_MAIN12");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN13, UINT32, "TRLO1TRLORAW_MAIN13");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN14, UINT32, "TRLO1TRLORAW_MAIN14");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN15, UINT32, "TRLO1TRLORAW_MAIN15");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLORAW_MAIN16, UINT32, "TRLO1TRLORAW_MAIN16");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN1, UINT32, "TRLO1TRLOBDT_MAIN1");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN2, UINT32, "TRLO1TRLOBDT_MAIN2");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN3, UINT32, "TRLO1TRLOBDT_MAIN3");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN4, UINT32, "TRLO1TRLOBDT_MAIN4");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN5, UINT32, "TRLO1TRLOBDT_MAIN5");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN6, UINT32, "TRLO1TRLOBDT_MAIN6");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN7, UINT32, "TRLO1TRLOBDT_MAIN7");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN8, UINT32, "TRLO1TRLOBDT_MAIN8");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN9, UINT32, "TRLO1TRLOBDT_MAIN9");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN10, UINT32, "TRLO1TRLOBDT_MAIN10");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN11, UINT32, "TRLO1TRLOBDT_MAIN11");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN12, UINT32, "TRLO1TRLOBDT_MAIN12");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN13, UINT32, "TRLO1TRLOBDT_MAIN13");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN14, UINT32, "TRLO1TRLOBDT_MAIN14");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN15, UINT32, "TRLO1TRLOBDT_MAIN15");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOBDT_MAIN16, UINT32, "TRLO1TRLOBDT_MAIN16");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN1, UINT32, "TRLO1TRLOADT_MAIN1");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN2, UINT32, "TRLO1TRLOADT_MAIN2");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN3, UINT32, "TRLO1TRLOADT_MAIN3");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN4, UINT32, "TRLO1TRLOADT_MAIN4");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN5, UINT32, "TRLO1TRLOADT_MAIN5");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN6, UINT32, "TRLO1TRLOADT_MAIN6");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN7, UINT32, "TRLO1TRLOADT_MAIN7");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN8, UINT32, "TRLO1TRLOADT_MAIN8");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN9, UINT32, "TRLO1TRLOADT_MAIN9");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN10, UINT32, "TRLO1TRLOADT_MAIN10");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN11, UINT32, "TRLO1TRLOADT_MAIN11");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN12, UINT32, "TRLO1TRLOADT_MAIN12");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN13, UINT32, "TRLO1TRLOADT_MAIN13");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN14, UINT32, "TRLO1TRLOADT_MAIN14");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN15, UINT32, "TRLO1TRLOADT_MAIN15");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOADT_MAIN16, UINT32, "TRLO1TRLOADT_MAIN16");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN1, UINT32, "TRLO1TRLOARD_MAIN1");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN2, UINT32, "TRLO1TRLOARD_MAIN2");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN3, UINT32, "TRLO1TRLOARD_MAIN3");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN4, UINT32, "TRLO1TRLOARD_MAIN4");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN5, UINT32, "TRLO1TRLOARD_MAIN5");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN6, UINT32, "TRLO1TRLOARD_MAIN6");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN7, UINT32, "TRLO1TRLOARD_MAIN7");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN8, UINT32, "TRLO1TRLOARD_MAIN8");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN9, UINT32, "TRLO1TRLOARD_MAIN9");       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN10, UINT32, "TRLO1TRLOARD_MAIN10");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN11, UINT32, "TRLO1TRLOARD_MAIN11");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN12, UINT32, "TRLO1TRLOARD_MAIN12");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN13, UINT32, "TRLO1TRLOARD_MAIN13");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN14, UINT32, "TRLO1TRLOARD_MAIN14");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN15, UINT32, "TRLO1TRLOARD_MAIN15");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TRLO1TRLOARD_MAIN16, UINT32, "TRLO1TRLOARD_MAIN16");     \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_TRLO_EXT_H101_TRLO_H__*/

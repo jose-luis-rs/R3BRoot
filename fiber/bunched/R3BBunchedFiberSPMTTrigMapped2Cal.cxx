@@ -27,10 +27,8 @@
 #include <cassert>
 
 R3BBunchedFiberSPMTTrigMapped2Cal::R3BBunchedFiberSPMTTrigMapped2Cal(Int_t a_verbose)
-    : FairTask("R3BBunchedFiberSPMTTrigMapped2Cal", a_verbose)
-    , fTCalPar(nullptr)
-    , fMappedItems(nullptr)
-    , fCalItems(new TClonesArray("R3BBunchedFiberCalData"))
+    : FairTask("R3BBunchedFiberSPMTTrigMapped2Cal", a_verbose), fTCalPar(nullptr), fMappedItems(nullptr),
+      fCalItems(new TClonesArray("R3BBunchedFiberCalData"))
 {
 }
 

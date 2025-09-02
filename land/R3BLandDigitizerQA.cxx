@@ -27,20 +27,12 @@
 #include "R3BMCTrack.h"
 
 R3BLandDigitizerQA::R3BLandDigitizerQA()
-    : FairTask("R3BLandDigitizerQA")
-    , fEvent(0)
-    , fTracks(NULL)
-    , fPoints(NULL)
-    , fDigis(NULL)
+    : FairTask("R3BLandDigitizerQA"), fEvent(0), fTracks(NULL), fPoints(NULL), fDigis(NULL)
 {
 }
 
 R3BLandDigitizerQA::R3BLandDigitizerQA(const R3BLandDigitizerQA& right)
-    : FairTask("R3BLandDigitizerQA")
-    , fEvent(right.fEvent)
-    , fTracks(NULL)
-    , fPoints(NULL)
-    , fDigis(NULL)
+    : FairTask("R3BLandDigitizerQA"), fEvent(right.fEvent), fTracks(NULL), fPoints(NULL), fDigis(NULL)
 {
 }
 

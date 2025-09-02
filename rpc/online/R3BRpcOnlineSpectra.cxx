@@ -45,36 +45,14 @@
 #include <iostream>
 #include <sstream>
 
-R3BRpcOnlineSpectra::R3BRpcOnlineSpectra()
-    : R3BRpcOnlineSpectra("RpcOnlineSpectra", 1)
-{
-}
+R3BRpcOnlineSpectra::R3BRpcOnlineSpectra() : R3BRpcOnlineSpectra("RpcOnlineSpectra", 1) {}
 
 R3BRpcOnlineSpectra::R3BRpcOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fEventHeader(nullptr)
-    , fMappedDataItems(NULL)
-    , fCalDataItems(NULL)
-    , fHitDataItems(NULL)
-    , fcounter(0)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fLeftTofLim(-500)
-    , fRightTofLim(500)
-    , fRightRpcTimeLim(1000)
-    , fLeftRpcTimeLim(-1000)
-    , fRpcTimeBins(500)
-    , fTofBins(500)
-    , fRpcToTBins(400)
-    , fLeftRpcToTLim(-400)
-    , fRightRpcToTLim(400)
-    , fTimeStart(0)
-    , fTimeEnd(0)
-    , fBarHits(0)
-    , fStrip21Hits(0)
-    , fSpill(1)
-    , fFirstTPat(1)
-    , fLastTPat(12)
+    : FairTask(name, iVerbose), fEventHeader(nullptr), fMappedDataItems(NULL), fCalDataItems(NULL), fHitDataItems(NULL),
+      fcounter(0), fTrigger(-1), fNEvents(0), fLeftTofLim(-500), fRightTofLim(500), fRightRpcTimeLim(1000),
+      fLeftRpcTimeLim(-1000), fRpcTimeBins(500), fTofBins(500), fRpcToTBins(400), fLeftRpcToTLim(-400),
+      fRightRpcToTLim(400), fTimeStart(0), fTimeEnd(0), fBarHits(0), fStrip21Hits(0), fSpill(1), fFirstTPat(1),
+      fLastTPat(12)
 {
 }
 

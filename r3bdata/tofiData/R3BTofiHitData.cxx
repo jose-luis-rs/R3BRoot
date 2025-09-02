@@ -16,10 +16,7 @@
 // for the data analysis of the Tofi detector.
 // Introduced by M.Heil, May 2016
 
-R3BTofiHitData::R3BTofiHitData()
-    : fBarId(-1)
-{
-}
+R3BTofiHitData::R3BTofiHitData() : fBarId(-1) {}
 
 R3BTofiHitData::R3BTofiHitData(Double_t t,
                                Double_t x,
@@ -29,8 +26,7 @@ R3BTofiHitData::R3BTofiHitData(Double_t t,
                                Double_t ELoss,
                                Double_t ID,
                                Int_t iBar)
-    : R3BHit(ID, x, y, ELoss, t)
-    , fBarId(iBar)
+    : R3BHit(ID, x, y, ELoss, t), fBarId(iBar)
 {
 }
 

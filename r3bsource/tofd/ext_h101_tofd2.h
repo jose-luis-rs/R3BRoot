@@ -110,47 +110,47 @@ typedef struct EXT_STR_h101_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_ITEMS_INFO(ok, si, struct_t, printerr)                                                 \
-    do                                                                                                      \
-    {                                                                                                       \
-        ok = 1;                                                                                             \
-        /* UNPACK */                                                                                        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TRIGGER, UINT32, "TRIGGER", 15);                  \
-        EXT_STR_ITEM_INFO(ok, si, struct_t, printerr, EVENTNO, UINT32, "EVENTNO");                          \
-        /* RAW */                                                                                           \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tfl, UINT32, "TOFD_P1B1T1tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tft, UINT32, "TOFD_P1B1T1tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tcl, UINT32, "TOFD_P1B1T1tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tct, UINT32, "TOFD_P1B1T1tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tfl, UINT32, "TOFD_P1B1T2tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tft, UINT32, "TOFD_P1B1T2tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tcl, UINT32, "TOFD_P1B1T2tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tct, UINT32, "TOFD_P1B1T2tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tfl, UINT32, "TOFD_P1B2T1tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tft, UINT32, "TOFD_P1B2T1tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tcl, UINT32, "TOFD_P1B2T1tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tct, UINT32, "TOFD_P1B2T1tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tfl, UINT32, "TOFD_P1B2T2tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tft, UINT32, "TOFD_P1B2T2tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tcl, UINT32, "TOFD_P1B2T2tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tct, UINT32, "TOFD_P1B2T2tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tfl, UINT32, "TOFD_P1B3T1tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tft, UINT32, "TOFD_P1B3T1tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tcl, UINT32, "TOFD_P1B3T1tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tct, UINT32, "TOFD_P1B3T1tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tfl, UINT32, "TOFD_P1B3T2tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tft, UINT32, "TOFD_P1B3T2tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tcl, UINT32, "TOFD_P1B3T2tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tct, UINT32, "TOFD_P1B3T2tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tfl, UINT32, "TOFD_P1B4T1tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tft, UINT32, "TOFD_P1B4T1tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tcl, UINT32, "TOFD_P1B4T1tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tct, UINT32, "TOFD_P1B4T1tct", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tfl, UINT32, "TOFD_P1B4T2tfl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tft, UINT32, "TOFD_P1B4T2tft", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tcl, UINT32, "TOFD_P1B4T2tcl", 65535); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tct, UINT32, "TOFD_P1B4T2tct", 65535); \
-                                                                                                            \
+#define EXT_STR_h101_ITEMS_INFO(ok, si, struct_t, printerr)                                                            \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* UNPACK */                                                                                                   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TRIGGER, UINT32, "TRIGGER", 15);                             \
+        EXT_STR_ITEM_INFO(ok, si, struct_t, printerr, EVENTNO, UINT32, "EVENTNO");                                     \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tfl, UINT32, "TOFD_P1B1T1tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tft, UINT32, "TOFD_P1B1T1tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tcl, UINT32, "TOFD_P1B1T1tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T1tct, UINT32, "TOFD_P1B1T1tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tfl, UINT32, "TOFD_P1B1T2tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tft, UINT32, "TOFD_P1B1T2tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tcl, UINT32, "TOFD_P1B1T2tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B1T2tct, UINT32, "TOFD_P1B1T2tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tfl, UINT32, "TOFD_P1B2T1tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tft, UINT32, "TOFD_P1B2T1tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tcl, UINT32, "TOFD_P1B2T1tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T1tct, UINT32, "TOFD_P1B2T1tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tfl, UINT32, "TOFD_P1B2T2tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tft, UINT32, "TOFD_P1B2T2tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tcl, UINT32, "TOFD_P1B2T2tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B2T2tct, UINT32, "TOFD_P1B2T2tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tfl, UINT32, "TOFD_P1B3T1tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tft, UINT32, "TOFD_P1B3T1tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tcl, UINT32, "TOFD_P1B3T1tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T1tct, UINT32, "TOFD_P1B3T1tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tfl, UINT32, "TOFD_P1B3T2tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tft, UINT32, "TOFD_P1B3T2tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tcl, UINT32, "TOFD_P1B3T2tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B3T2tct, UINT32, "TOFD_P1B3T2tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tfl, UINT32, "TOFD_P1B4T1tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tft, UINT32, "TOFD_P1B4T1tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tcl, UINT32, "TOFD_P1B4T1tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T1tct, UINT32, "TOFD_P1B4T1tct", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tfl, UINT32, "TOFD_P1B4T2tfl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tft, UINT32, "TOFD_P1B4T2tft", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tcl, UINT32, "TOFD_P1B4T2tcl", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, struct_t, printerr, TOFD_P1B4T2tct, UINT32, "TOFD_P1B4T2tct", 65535);            \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_EXT_H101_H__*/

@@ -28,11 +28,8 @@ extern "C"
 using namespace std;
 
 R3BBeamMonitorReader::R3BBeamMonitorReader(EXT_STR_h101_BMON* data, size_t offset)
-    : R3BReader("R3BBeamMonitorReader")
-    , fData(reinterpret_cast<EXT_STR_h101_BMON_onion*>(data))
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BBeamMonitorMappedData"))
+    : R3BReader("R3BBeamMonitorReader"), fData(reinterpret_cast<EXT_STR_h101_BMON_onion*>(data)), fOffset(offset),
+      fOnline(kFALSE), fArray(new TClonesArray("R3BBeamMonitorMappedData"))
 {
 }
 

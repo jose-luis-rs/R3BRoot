@@ -52,15 +52,15 @@ typedef struct EXT_STR_h101_SAMPMS_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_SAMPMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                               \
-    do                                                                                                   \
-    {                                                                                                    \
-        ok = 1;                                                                                          \
-        /* RAW */                                                                                        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SAMPMS, UINT32, "SAMPMS", 512);        \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSI, UINT32, "SAMPMSI", "SAMPMS"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSv, UINT32, "SAMPMSv", "SAMPMS"); \
-                                                                                                         \
+#define EXT_STR_h101_SAMPMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                             \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SAMPMS, UINT32, "SAMPMS", 512);                      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSI, UINT32, "SAMPMSI", "SAMPMS");               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSv, UINT32, "SAMPMSv", "SAMPMS");               \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_SAMPMS_EXT_H101_SAMPMS_H__*/

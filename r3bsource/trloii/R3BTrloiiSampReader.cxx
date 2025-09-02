@@ -31,62 +31,30 @@ extern "C"
 }
 
 R3BTrloiiSampReader::R3BTrloiiSampReader(EXT_STR_h101_SAMP_onion* data, size_t offset)
-    : R3BReader("R3BTrloiiSampReader")
-    , fSampData(data)
-    , fSampLosData(nullptr)
-    , fSampMSData(nullptr)
-    , fSampLosMSData(nullptr)
-    , fOffset(offset)
-    , fSNum(1)
-    , fSCNum(1)
-    , fArray(new TClonesArray("R3BSamplerMappedData"))
-    , fArrayLH(nullptr)
-    , fOnline(kFALSE)
+    : R3BReader("R3BTrloiiSampReader"), fSampData(data), fSampLosData(nullptr), fSampMSData(nullptr),
+      fSampLosMSData(nullptr), fOffset(offset), fSNum(1), fSCNum(1), fArray(new TClonesArray("R3BSamplerMappedData")),
+      fArrayLH(nullptr), fOnline(kFALSE)
 {
 }
 
 R3BTrloiiSampReader::R3BTrloiiSampReader(EXT_STR_h101_SAMPLOS_onion* data, size_t offset)
-    : R3BReader("R3BTrloiiSampReader")
-    , fSampData(nullptr)
-    , fSampLosData(data)
-    , fSampMSData(nullptr)
-    , fSampLosMSData(nullptr)
-    , fOffset(offset)
-    , fSNum(1)
-    , fSCNum(2)
-    , fArray(nullptr)
-    , fArrayLH(new TClonesArray("R3BSampLosMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader("R3BTrloiiSampReader"), fSampData(nullptr), fSampLosData(data), fSampMSData(nullptr),
+      fSampLosMSData(nullptr), fOffset(offset), fSNum(1), fSCNum(2), fArray(nullptr),
+      fArrayLH(new TClonesArray("R3BSampLosMappedData")), fOnline(kFALSE)
 {
 }
 
 R3BTrloiiSampReader::R3BTrloiiSampReader(EXT_STR_h101_SAMPMS_onion* data, size_t offset)
-    : R3BReader("R3BTrloiiSampMSReader")
-    , fSampData(nullptr)
-    , fSampLosData(nullptr)
-    , fSampMSData(data)
-    , fSampLosMSData(nullptr)
-    , fOffset(offset)
-    , fSNum(2)
-    , fSCNum(1)
-    , fArray(new TClonesArray("R3BSamplerMappedData"))
-    , fArrayLH(nullptr)
-    , fOnline(kFALSE)
+    : R3BReader("R3BTrloiiSampMSReader"), fSampData(nullptr), fSampLosData(nullptr), fSampMSData(data),
+      fSampLosMSData(nullptr), fOffset(offset), fSNum(2), fSCNum(1), fArray(new TClonesArray("R3BSamplerMappedData")),
+      fArrayLH(nullptr), fOnline(kFALSE)
 {
 }
 
 R3BTrloiiSampReader::R3BTrloiiSampReader(EXT_STR_h101_SAMPLOSMS_onion* data, size_t offset)
-    : R3BReader("R3BTrloiiSampMSReader")
-    , fSampData(nullptr)
-    , fSampLosData(nullptr)
-    , fSampMSData(nullptr)
-    , fSampLosMSData(data)
-    , fOffset(offset)
-    , fSNum(2)
-    , fSCNum(2)
-    , fArray(nullptr)
-    , fArrayLH(new TClonesArray("R3BSampLosMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader("R3BTrloiiSampMSReader"), fSampData(nullptr), fSampLosData(nullptr), fSampMSData(nullptr),
+      fSampLosMSData(data), fOffset(offset), fSNum(2), fSCNum(2), fArray(nullptr),
+      fArrayLH(new TClonesArray("R3BSampLosMappedData")), fOnline(kFALSE)
 {
 }
 

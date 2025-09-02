@@ -31,10 +31,7 @@
 #include <stdlib.h>
 
 // -----   Default constructor
-R3BTwim::R3BTwim()
-    : R3BTwim("")
-{
-}
+R3BTwim::R3BTwim() : R3BTwim("") {}
 
 R3BTwim::R3BTwim(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BTwim(geoFile, { trans, rot })
@@ -44,9 +41,8 @@ R3BTwim::R3BTwim(const TString& geoFile, const TGeoTranslation& trans, const TGe
 
 // -----   Standard constructor
 R3BTwim::R3BTwim(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BTwim", kSOFTWIM, geoFile, combi)
-    , fSofTWIMCollection(new TClonesArray("R3BTwimPoint"))
-    , fPosIndex(0)
+    : R3BDetector("R3BTwim", kSOFTWIM, geoFile, combi), fSofTWIMCollection(new TClonesArray("R3BTwimPoint")),
+      fPosIndex(0)
 {
     ResetParameters();
 }
@@ -89,7 +85,7 @@ Bool_t R3BTwim::ProcessHits(FairVolume* vol)
     }
 
     // Sum energy loss for all steps in the active volume
-    Double_t dE = gMC->Edep() * 1000.;                          // in MeV
+    Double_t dE = gMC->Edep() * 1000.; // in MeV
     Double_t post_E = (gMC->Etot() - gMC->TrackMass()) * 1000.; // in MeV
     TString ptype = gMC->GetStack()->GetCurrentTrack()->GetName();
 

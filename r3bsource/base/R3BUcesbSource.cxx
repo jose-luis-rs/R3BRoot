@@ -30,21 +30,9 @@ R3BUcesbSource::R3BUcesbSource(const TString& FileName,
                                const TString& UcesbPath,
                                EXT_STR_h101* event,
                                size_t event_size)
-    : FairSource()
-    , fFd(nullptr)
-    , fClient()
-    , fStructInfo()
-    , fFileName(FileName)
-    , fNtupleOptions(NtupleOptions)
-    , fUcesbPath(UcesbPath)
-    , fNEvent(0)
-    , fEvent(event)
-    , fEventSize(event_size)
-    , fLastEventNo(-1)
-    , fEventHeader(nullptr)
-    , fInputFile()
-    , fEntryMax(0)
-    , fReaders(new TObjArray())
+    : FairSource(), fFd(nullptr), fClient(), fStructInfo(), fFileName(FileName), fNtupleOptions(NtupleOptions),
+      fUcesbPath(UcesbPath), fNEvent(0), fEvent(event), fEventSize(event_size), fLastEventNo(-1), fEventHeader(nullptr),
+      fInputFile(), fEntryMax(0), fReaders(new TObjArray())
 {
 }
 

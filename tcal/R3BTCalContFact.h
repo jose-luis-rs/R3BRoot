@@ -60,23 +60,23 @@ class R3BTCalContFact : public FairContFact
     /**
      * Method to add a Fiber detector to the container
      */
-#define ADD_FIBER(Name, NAME)                                                                       \
-    do                                                                                              \
-    {                                                                                               \
-        addContainer(#Name "MAPMTTCalPar", #NAME " MAPMT TCAL Calibration Parameters");             \
-        addContainer(#Name "SPMTTCalPar", #NAME " SPMT TCAL Calibration Parameters");               \
-        addContainer(#Name "MAPMTTrigTCalPar", #NAME " MAPMT Trigger TCAL Calibration Parameters"); \
+#define ADD_FIBER(Name, NAME)                                                                                          \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        addContainer(#Name "MAPMTTCalPar", #NAME " MAPMT TCAL Calibration Parameters");                                \
+        addContainer(#Name "SPMTTCalPar", #NAME " SPMT TCAL Calibration Parameters");                                  \
+        addContainer(#Name "MAPMTTrigTCalPar", #NAME " MAPMT Trigger TCAL Calibration Parameters");                    \
     } while (0)
 
     /**
      * Method to push a Fiber detector to the container
      */
-#define PUSH_FIBER(Name)                                    \
-    do                                                      \
-    {                                                       \
-        containerNames.push_back(#Name "MAPMTTCalPar");     \
-        containerNames.push_back(#Name "SPMTTCalPar");      \
-        containerNames.push_back(#Name "MAPMTTrigTCalPar"); \
+#define PUSH_FIBER(Name)                                                                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        containerNames.push_back(#Name "MAPMTTCalPar");                                                                \
+        containerNames.push_back(#Name "SPMTTCalPar");                                                                 \
+        containerNames.push_back(#Name "MAPMTTrigTCalPar");                                                            \
     } while (0)
 
     /**

@@ -29,29 +29,14 @@
 #include "R3BTofiMappedData.h"
 
 R3BTofiMapped2CalPar::R3BTofiMapped2CalPar()
-    : FairTask("R3BTofiMapped2CalPar", 1)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fNofPlanes(0)
-    , fPaddlesPerPlane(0)
-    , fNofModules(0)
-    , fCalPar(nullptr)
-    , fMapped(nullptr)
-    , fMappedTrigger(nullptr)
-    , fEngine(nullptr)
+    : FairTask("R3BTofiMapped2CalPar", 1), fUpdateRate(1000000), fMinStats(100000), fNofPlanes(0), fPaddlesPerPlane(0),
+      fNofModules(0), fCalPar(nullptr), fMapped(nullptr), fMappedTrigger(nullptr), fEngine(nullptr)
 {
 }
 
 R3BTofiMapped2CalPar::R3BTofiMapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fNofPlanes(0)
-    , fPaddlesPerPlane(0)
-    , fNofModules(0)
-    , fCalPar(nullptr)
-    , fMappedTrigger(nullptr)
-    , fEngine(nullptr)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fMinStats(100000), fNofPlanes(0), fPaddlesPerPlane(0),
+      fNofModules(0), fCalPar(nullptr), fMappedTrigger(nullptr), fEngine(nullptr)
 {
 }
 

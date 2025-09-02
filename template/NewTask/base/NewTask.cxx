@@ -34,17 +34,11 @@
 namespace R3B
 {
     // ---- Standard Constructor ------------------------------------------
-    NewTask::NewTask(const std::string& name, int iVerbose)
-        : FairTask(name.c_str(), iVerbose)
-    {
-    }
+    NewTask::NewTask(const std::string& name, int iVerbose) : FairTask(name.c_str(), iVerbose) {}
 
     // ---- Default constructor -------------------------------------------
     // use constructor delegation
-    NewTask::NewTask()
-        : NewTask("NewTask", 1)
-    {
-    }
+    NewTask::NewTask() : NewTask("NewTask", 1) {}
 
     // ----  Initialisation  ----------------------------------------------
     void NewTask::SetParContainers()

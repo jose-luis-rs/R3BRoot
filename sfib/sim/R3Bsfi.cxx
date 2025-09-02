@@ -42,10 +42,7 @@
 #include "TVirtualMC.h"
 #include <stdlib.h>
 
-R3Bsfi::R3Bsfi()
-    : R3Bsfi("")
-{
-}
+R3Bsfi::R3Bsfi() : R3Bsfi("") {}
 
 R3Bsfi::R3Bsfi(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3Bsfi(geoFile, { trans, rot })
@@ -53,11 +50,8 @@ R3Bsfi::R3Bsfi(const TString& geoFile, const TGeoTranslation& trans, const TGeoR
 }
 
 R3Bsfi::R3Bsfi(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3Bsfi", kSFI, geoFile, combi)
-    , fsfiCollection(new TClonesArray("R3BFi4Point"))
-    , fPosIndex(0)
-    , kGeoSaved(kFALSE)
-    , flGeoPar(new TList())
+    : R3BDetector("R3Bsfi", kSFI, geoFile, combi), fsfiCollection(new TClonesArray("R3BFi4Point")), fPosIndex(0),
+      kGeoSaved(kFALSE), flGeoPar(new TList())
 {
     flGeoPar->SetName(GetName());
     ResetParameters();
@@ -118,11 +112,11 @@ void R3Bsfi::SetSpecialPhysicsCuts()
             gMC->Gstpar(pSi->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pSi->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pSi->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pSi->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pSi->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
     } //! gGeoManager
 }

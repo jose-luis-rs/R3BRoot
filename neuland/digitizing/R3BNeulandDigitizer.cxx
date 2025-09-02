@@ -38,10 +38,8 @@ R3BNeulandDigitizer::R3BNeulandDigitizer(TString input, TString output)
 R3BNeulandDigitizer::R3BNeulandDigitizer(std::unique_ptr<Digitizing::DigitizingEngineInterface> engine,
                                          TString input,
                                          TString output)
-    : FairTask("R3BNeulandDigitizer")
-    , fPoints(std::move(input))
-    , fHits(std::move(output))
-    , fDigitizingEngine(std::move(engine))
+    : FairTask("R3BNeulandDigitizer"), fPoints(std::move(input)), fHits(std::move(output)),
+      fDigitizingEngine(std::move(engine))
 {
 }
 
@@ -117,7 +115,7 @@ void R3BNeulandDigitizer::Exec(Option_t* /*option*/)
             fDigitizingEngine->DepositLight(paddleID, point->GetTime(), point->GetLightYield() * GeVToMeVFac, dist);
             paddleEnergyDeposit[paddleID] += point->GetEnergyLoss() * GeVToMeVFac;
         } // eloss
-    }     // points
+    } // points
 
     const Double_t triggerTime = fDigitizingEngine->GetTriggerTime();
     const auto paddles = fDigitizingEngine->ExtractPaddles();
@@ -164,7 +162,7 @@ void R3BNeulandDigitizer::Exec(Option_t* /*option*/)
                            << ", energy = " << signal.energy;
             }
         } // loop over all hits for each paddle
-    }     // loop over paddles
+    } // loop over paddles
 
     LOG(debug) << "R3BNeulandDigitizer: produced " << fHits.Size() << " hits";
 }

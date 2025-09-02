@@ -31,13 +31,8 @@
 
 // R3BRpcPreCal2Cal: Constructor
 R3BRpcPreCal2Cal::R3BRpcPreCal2Cal()
-    : FairTask("R3B RPC Calibrator")
-    , fNumChannels(0)
-    , fTotCalPar(NULL)
-    , fParCont(NULL)
-    , fOnline(kFALSE)
-    , fPreCalDataCA(NULL)
-    , fRpcCalDataCA(NULL)
+    : FairTask("R3B RPC Calibrator"), fNumChannels(0), fTotCalPar(NULL), fParCont(NULL), fOnline(kFALSE),
+      fPreCalDataCA(NULL), fRpcCalDataCA(NULL)
 
 {
 }

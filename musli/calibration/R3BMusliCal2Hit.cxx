@@ -33,32 +33,16 @@
 #include <iomanip>
 
 // R3BMusliCal2Hit: Default Constructor --------------------------
-R3BMusliCal2Hit::R3BMusliCal2Hit()
-    : R3BMusliCal2Hit("R3BMusli Calibrator", 1)
-{
-}
+R3BMusliCal2Hit::R3BMusliCal2Hit() : R3BMusliCal2Hit("R3BMusli Calibrator", 1) {}
 
 // R3BMusliCal2HitPar: Standard Constructor --------------------------
 R3BMusliCal2Hit::R3BMusliCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumGroups(MAX_NUM_GROUPS_CAL)
-    , fNumTypes(MAX_NUM_TYPES_HIT)
-    , fMaxMult(MAX_MULT_MUSLI)
-    , fNumEcorrBeta(2)
-    , fNumZ(3)
-    , fEaveVsBetaHitParams(NULL)
-    , fEcorrBetaHitParams(NULL)
-    , fZHitParams(NULL)
-    , fHit_Par(NULL)
-    , fMusliCalDataCA(NULL)
-    , fMusliHitDataCA(NULL)
-    , fFrsDataCA(NULL)
-    , fFrsSciTofCal(kFALSE)
-    , fOnline(kFALSE)
-    , fExpId(522) // s522 at 1.2 A.GeV, s509 at 400 A.MeV
-    , fDirectBeta(0.876)
-    , fIdS2(1)
-    , fIdCaveC(2)
+    : FairTask(name, iVerbose), fNumGroups(MAX_NUM_GROUPS_CAL), fNumTypes(MAX_NUM_TYPES_HIT), fMaxMult(MAX_MULT_MUSLI),
+      fNumEcorrBeta(2), fNumZ(3), fEaveVsBetaHitParams(NULL), fEcorrBetaHitParams(NULL), fZHitParams(NULL),
+      fHit_Par(NULL), fMusliCalDataCA(NULL), fMusliHitDataCA(NULL), fFrsDataCA(NULL), fFrsSciTofCal(kFALSE),
+      fOnline(kFALSE), fExpId(522) // s522 at 1.2 A.GeV, s509 at 400 A.MeV
+      ,
+      fDirectBeta(0.876), fIdS2(1), fIdCaveC(2)
 {
 }
 
@@ -301,7 +285,7 @@ void R3BMusliCal2Hit::Exec(Option_t* option)
                 // starts the theta calculation in the middle of the second pair
                 //                              i.e.  125 mm. upstream GetPosZ()
                 musliZpos[i] = fMusliGeo_Par->GetPosZ() * 10. - 125. + i * 50.; // [mm]
-                musliXpos[i] = dt_cal[0][i + 1];                                // only mult_cal[i] == 1 is selected
+                musliXpos[i] = dt_cal[0][i + 1]; // only mult_cal[i] == 1 is selected
             }
             TVectorD VectX;
             VectX.Use(6, musliXpos);

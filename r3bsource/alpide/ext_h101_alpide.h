@@ -188,204 +188,204 @@ typedef struct EXT_STR_h101_ALPIDE_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_ALPIDE_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                           \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE1T_HI, UINT32, "ALPIDE1T_HI");                   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE1T_LO, UINT32, "ALPIDE1T_LO");                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1PRECHIP, UINT32, "ALPIDE1PRECHIP", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE1PRECHIPv, UINT32, "ALPIDE1PRECHIPv", "ALPIDE1PRECHIP");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1REGION, UINT32, "ALPIDE1REGION", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE1REGIONv, UINT32, "ALPIDE1REGIONv", "ALPIDE1REGION");          \
-        EXT_STR_ITEM_INFO_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE1ENCODER_ID, UINT32, "ALPIDE1ENCODER_ID", 2000);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                    \
-                              si,                                                                                    \
-                              offset,                                                                                \
-                              struct_t,                                                                              \
-                              printerr,                                                                              \
-                              ALPIDE1ENCODER_IDv,                                                                    \
-                              UINT32,                                                                                \
-                              "ALPIDE1ENCODER_IDv",                                                                  \
-                              "ALPIDE1ENCODER_ID");                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1ADDRESS, UINT32, "ALPIDE1ADDRESS", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE1ADDRESSv, UINT32, "ALPIDE1ADDRESSv", "ALPIDE1ADDRESS");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1HITMAP, UINT32, "ALPIDE1HITMAP", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE1HITMAPv, UINT32, "ALPIDE1HITMAPv", "ALPIDE1HITMAP");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1CHIP, UINT32, "ALPIDE1CHIP", 2000);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE1CHIPv, UINT32, "ALPIDE1CHIPv", "ALPIDE1CHIP");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1ROW, UINT32, "ALPIDE1ROW", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE1ROWv, UINT32, "ALPIDE1ROWv", "ALPIDE1ROW"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1COL, UINT32, "ALPIDE1COL", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE1COLv, UINT32, "ALPIDE1COLv", "ALPIDE1COL"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE2T_HI, UINT32, "ALPIDE2T_HI");                   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE2T_LO, UINT32, "ALPIDE2T_LO");                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2PRECHIP, UINT32, "ALPIDE2PRECHIP", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE2PRECHIPv, UINT32, "ALPIDE2PRECHIPv", "ALPIDE2PRECHIP");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2REGION, UINT32, "ALPIDE2REGION", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE2REGIONv, UINT32, "ALPIDE2REGIONv", "ALPIDE2REGION");          \
-        EXT_STR_ITEM_INFO_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE2ENCODER_ID, UINT32, "ALPIDE2ENCODER_ID", 2000);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                    \
-                              si,                                                                                    \
-                              offset,                                                                                \
-                              struct_t,                                                                              \
-                              printerr,                                                                              \
-                              ALPIDE2ENCODER_IDv,                                                                    \
-                              UINT32,                                                                                \
-                              "ALPIDE2ENCODER_IDv",                                                                  \
-                              "ALPIDE2ENCODER_ID");                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2ADDRESS, UINT32, "ALPIDE2ADDRESS", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE2ADDRESSv, UINT32, "ALPIDE2ADDRESSv", "ALPIDE2ADDRESS");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2HITMAP, UINT32, "ALPIDE2HITMAP", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE2HITMAPv, UINT32, "ALPIDE2HITMAPv", "ALPIDE2HITMAP");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2CHIP, UINT32, "ALPIDE2CHIP", 2000);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE2CHIPv, UINT32, "ALPIDE2CHIPv", "ALPIDE2CHIP");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2ROW, UINT32, "ALPIDE2ROW", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE2ROWv, UINT32, "ALPIDE2ROWv", "ALPIDE2ROW"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2COL, UINT32, "ALPIDE2COL", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE2COLv, UINT32, "ALPIDE2COLv", "ALPIDE2COL"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE3T_HI, UINT32, "ALPIDE3T_HI");                   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE3T_LO, UINT32, "ALPIDE3T_LO");                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3PRECHIP, UINT32, "ALPIDE3PRECHIP", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE3PRECHIPv, UINT32, "ALPIDE3PRECHIPv", "ALPIDE3PRECHIP");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3REGION, UINT32, "ALPIDE3REGION", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE3REGIONv, UINT32, "ALPIDE3REGIONv", "ALPIDE3REGION");          \
-        EXT_STR_ITEM_INFO_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE3ENCODER_ID, UINT32, "ALPIDE3ENCODER_ID", 2000);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                    \
-                              si,                                                                                    \
-                              offset,                                                                                \
-                              struct_t,                                                                              \
-                              printerr,                                                                              \
-                              ALPIDE3ENCODER_IDv,                                                                    \
-                              UINT32,                                                                                \
-                              "ALPIDE3ENCODER_IDv",                                                                  \
-                              "ALPIDE3ENCODER_ID");                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3ADDRESS, UINT32, "ALPIDE3ADDRESS", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE3ADDRESSv, UINT32, "ALPIDE3ADDRESSv", "ALPIDE3ADDRESS");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3HITMAP, UINT32, "ALPIDE3HITMAP", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE3HITMAPv, UINT32, "ALPIDE3HITMAPv", "ALPIDE3HITMAP");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3CHIP, UINT32, "ALPIDE3CHIP", 2000);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE3CHIPv, UINT32, "ALPIDE3CHIPv", "ALPIDE3CHIP");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3ROW, UINT32, "ALPIDE3ROW", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE3ROWv, UINT32, "ALPIDE3ROWv", "ALPIDE3ROW"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3COL, UINT32, "ALPIDE3COL", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE3COLv, UINT32, "ALPIDE3COLv", "ALPIDE3COL"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE4T_HI, UINT32, "ALPIDE4T_HI");                   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE4T_LO, UINT32, "ALPIDE4T_LO");                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4PRECHIP, UINT32, "ALPIDE4PRECHIP", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE4PRECHIPv, UINT32, "ALPIDE4PRECHIPv", "ALPIDE4PRECHIP");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4REGION, UINT32, "ALPIDE4REGION", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE4REGIONv, UINT32, "ALPIDE4REGIONv", "ALPIDE4REGION");          \
-        EXT_STR_ITEM_INFO_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE4ENCODER_ID, UINT32, "ALPIDE4ENCODER_ID", 2000);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                    \
-                              si,                                                                                    \
-                              offset,                                                                                \
-                              struct_t,                                                                              \
-                              printerr,                                                                              \
-                              ALPIDE4ENCODER_IDv,                                                                    \
-                              UINT32,                                                                                \
-                              "ALPIDE4ENCODER_IDv",                                                                  \
-                              "ALPIDE4ENCODER_ID");                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4ADDRESS, UINT32, "ALPIDE4ADDRESS", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE4ADDRESSv, UINT32, "ALPIDE4ADDRESSv", "ALPIDE4ADDRESS");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4HITMAP, UINT32, "ALPIDE4HITMAP", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE4HITMAPv, UINT32, "ALPIDE4HITMAPv", "ALPIDE4HITMAP");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4CHIP, UINT32, "ALPIDE4CHIP", 2000);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE4CHIPv, UINT32, "ALPIDE4CHIPv", "ALPIDE4CHIP");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4ROW, UINT32, "ALPIDE4ROW", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE4ROWv, UINT32, "ALPIDE4ROWv", "ALPIDE4ROW"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4COL, UINT32, "ALPIDE4COL", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE4COLv, UINT32, "ALPIDE4COLv", "ALPIDE4COL"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE5T_HI, UINT32, "ALPIDE5T_HI");                   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE5T_LO, UINT32, "ALPIDE5T_LO");                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5PRECHIP, UINT32, "ALPIDE5PRECHIP", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE5PRECHIPv, UINT32, "ALPIDE5PRECHIPv", "ALPIDE5PRECHIP");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5REGION, UINT32, "ALPIDE5REGION", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE5REGIONv, UINT32, "ALPIDE5REGIONv", "ALPIDE5REGION");          \
-        EXT_STR_ITEM_INFO_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE5ENCODER_ID, UINT32, "ALPIDE5ENCODER_ID", 2000);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                    \
-                              si,                                                                                    \
-                              offset,                                                                                \
-                              struct_t,                                                                              \
-                              printerr,                                                                              \
-                              ALPIDE5ENCODER_IDv,                                                                    \
-                              UINT32,                                                                                \
-                              "ALPIDE5ENCODER_IDv",                                                                  \
-                              "ALPIDE5ENCODER_ID");                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5ADDRESS, UINT32, "ALPIDE5ADDRESS", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE5ADDRESSv, UINT32, "ALPIDE5ADDRESSv", "ALPIDE5ADDRESS");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5HITMAP, UINT32, "ALPIDE5HITMAP", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE5HITMAPv, UINT32, "ALPIDE5HITMAPv", "ALPIDE5HITMAP");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5CHIP, UINT32, "ALPIDE5CHIP", 2000);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE5CHIPv, UINT32, "ALPIDE5CHIPv", "ALPIDE5CHIP");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5ROW, UINT32, "ALPIDE5ROW", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE5ROWv, UINT32, "ALPIDE5ROWv", "ALPIDE5ROW"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5COL, UINT32, "ALPIDE5COL", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE5COLv, UINT32, "ALPIDE5COLv", "ALPIDE5COL"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE6T_HI, UINT32, "ALPIDE6T_HI");                   \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE6T_LO, UINT32, "ALPIDE6T_LO");                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6PRECHIP, UINT32, "ALPIDE6PRECHIP", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE6PRECHIPv, UINT32, "ALPIDE6PRECHIPv", "ALPIDE6PRECHIP");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6REGION, UINT32, "ALPIDE6REGION", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE6REGIONv, UINT32, "ALPIDE6REGIONv", "ALPIDE6REGION");          \
-        EXT_STR_ITEM_INFO_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE6ENCODER_ID, UINT32, "ALPIDE6ENCODER_ID", 2000);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                    \
-                              si,                                                                                    \
-                              offset,                                                                                \
-                              struct_t,                                                                              \
-                              printerr,                                                                              \
-                              ALPIDE6ENCODER_IDv,                                                                    \
-                              UINT32,                                                                                \
-                              "ALPIDE6ENCODER_IDv",                                                                  \
-                              "ALPIDE6ENCODER_ID");                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6ADDRESS, UINT32, "ALPIDE6ADDRESS", 2000);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE6ADDRESSv, UINT32, "ALPIDE6ADDRESSv", "ALPIDE6ADDRESS");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6HITMAP, UINT32, "ALPIDE6HITMAP", 2000);     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE6HITMAPv, UINT32, "ALPIDE6HITMAPv", "ALPIDE6HITMAP");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6CHIP, UINT32, "ALPIDE6CHIP", 2000);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, ALPIDE6CHIPv, UINT32, "ALPIDE6CHIPv", "ALPIDE6CHIP");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6ROW, UINT32, "ALPIDE6ROW", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE6ROWv, UINT32, "ALPIDE6ROWv", "ALPIDE6ROW"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6COL, UINT32, "ALPIDE6COL", 2000);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE6COLv, UINT32, "ALPIDE6COLv", "ALPIDE6COL"); \
-                                                                                                                     \
+#define EXT_STR_h101_ALPIDE_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                             \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE1T_HI, UINT32, "ALPIDE1T_HI");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE1T_LO, UINT32, "ALPIDE1T_LO");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1PRECHIP, UINT32, "ALPIDE1PRECHIP", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE1PRECHIPv, UINT32, "ALPIDE1PRECHIPv", "ALPIDE1PRECHIP");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1REGION, UINT32, "ALPIDE1REGION", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE1REGIONv, UINT32, "ALPIDE1REGIONv", "ALPIDE1REGION");            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE1ENCODER_ID, UINT32, "ALPIDE1ENCODER_ID", 2000);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              ALPIDE1ENCODER_IDv,                                                                      \
+                              UINT32,                                                                                  \
+                              "ALPIDE1ENCODER_IDv",                                                                    \
+                              "ALPIDE1ENCODER_ID");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1ADDRESS, UINT32, "ALPIDE1ADDRESS", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE1ADDRESSv, UINT32, "ALPIDE1ADDRESSv", "ALPIDE1ADDRESS");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1HITMAP, UINT32, "ALPIDE1HITMAP", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE1HITMAPv, UINT32, "ALPIDE1HITMAPv", "ALPIDE1HITMAP");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1CHIP, UINT32, "ALPIDE1CHIP", 2000);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE1CHIPv, UINT32, "ALPIDE1CHIPv", "ALPIDE1CHIP");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1ROW, UINT32, "ALPIDE1ROW", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE1ROWv, UINT32, "ALPIDE1ROWv", "ALPIDE1ROW");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE1COL, UINT32, "ALPIDE1COL", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE1COLv, UINT32, "ALPIDE1COLv", "ALPIDE1COL");   \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE2T_HI, UINT32, "ALPIDE2T_HI");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE2T_LO, UINT32, "ALPIDE2T_LO");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2PRECHIP, UINT32, "ALPIDE2PRECHIP", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE2PRECHIPv, UINT32, "ALPIDE2PRECHIPv", "ALPIDE2PRECHIP");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2REGION, UINT32, "ALPIDE2REGION", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE2REGIONv, UINT32, "ALPIDE2REGIONv", "ALPIDE2REGION");            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE2ENCODER_ID, UINT32, "ALPIDE2ENCODER_ID", 2000);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              ALPIDE2ENCODER_IDv,                                                                      \
+                              UINT32,                                                                                  \
+                              "ALPIDE2ENCODER_IDv",                                                                    \
+                              "ALPIDE2ENCODER_ID");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2ADDRESS, UINT32, "ALPIDE2ADDRESS", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE2ADDRESSv, UINT32, "ALPIDE2ADDRESSv", "ALPIDE2ADDRESS");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2HITMAP, UINT32, "ALPIDE2HITMAP", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE2HITMAPv, UINT32, "ALPIDE2HITMAPv", "ALPIDE2HITMAP");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2CHIP, UINT32, "ALPIDE2CHIP", 2000);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE2CHIPv, UINT32, "ALPIDE2CHIPv", "ALPIDE2CHIP");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2ROW, UINT32, "ALPIDE2ROW", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE2ROWv, UINT32, "ALPIDE2ROWv", "ALPIDE2ROW");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE2COL, UINT32, "ALPIDE2COL", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE2COLv, UINT32, "ALPIDE2COLv", "ALPIDE2COL");   \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE3T_HI, UINT32, "ALPIDE3T_HI");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE3T_LO, UINT32, "ALPIDE3T_LO");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3PRECHIP, UINT32, "ALPIDE3PRECHIP", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE3PRECHIPv, UINT32, "ALPIDE3PRECHIPv", "ALPIDE3PRECHIP");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3REGION, UINT32, "ALPIDE3REGION", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE3REGIONv, UINT32, "ALPIDE3REGIONv", "ALPIDE3REGION");            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE3ENCODER_ID, UINT32, "ALPIDE3ENCODER_ID", 2000);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              ALPIDE3ENCODER_IDv,                                                                      \
+                              UINT32,                                                                                  \
+                              "ALPIDE3ENCODER_IDv",                                                                    \
+                              "ALPIDE3ENCODER_ID");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3ADDRESS, UINT32, "ALPIDE3ADDRESS", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE3ADDRESSv, UINT32, "ALPIDE3ADDRESSv", "ALPIDE3ADDRESS");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3HITMAP, UINT32, "ALPIDE3HITMAP", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE3HITMAPv, UINT32, "ALPIDE3HITMAPv", "ALPIDE3HITMAP");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3CHIP, UINT32, "ALPIDE3CHIP", 2000);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE3CHIPv, UINT32, "ALPIDE3CHIPv", "ALPIDE3CHIP");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3ROW, UINT32, "ALPIDE3ROW", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE3ROWv, UINT32, "ALPIDE3ROWv", "ALPIDE3ROW");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE3COL, UINT32, "ALPIDE3COL", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE3COLv, UINT32, "ALPIDE3COLv", "ALPIDE3COL");   \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE4T_HI, UINT32, "ALPIDE4T_HI");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE4T_LO, UINT32, "ALPIDE4T_LO");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4PRECHIP, UINT32, "ALPIDE4PRECHIP", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE4PRECHIPv, UINT32, "ALPIDE4PRECHIPv", "ALPIDE4PRECHIP");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4REGION, UINT32, "ALPIDE4REGION", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE4REGIONv, UINT32, "ALPIDE4REGIONv", "ALPIDE4REGION");            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE4ENCODER_ID, UINT32, "ALPIDE4ENCODER_ID", 2000);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              ALPIDE4ENCODER_IDv,                                                                      \
+                              UINT32,                                                                                  \
+                              "ALPIDE4ENCODER_IDv",                                                                    \
+                              "ALPIDE4ENCODER_ID");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4ADDRESS, UINT32, "ALPIDE4ADDRESS", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE4ADDRESSv, UINT32, "ALPIDE4ADDRESSv", "ALPIDE4ADDRESS");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4HITMAP, UINT32, "ALPIDE4HITMAP", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE4HITMAPv, UINT32, "ALPIDE4HITMAPv", "ALPIDE4HITMAP");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4CHIP, UINT32, "ALPIDE4CHIP", 2000);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE4CHIPv, UINT32, "ALPIDE4CHIPv", "ALPIDE4CHIP");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4ROW, UINT32, "ALPIDE4ROW", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE4ROWv, UINT32, "ALPIDE4ROWv", "ALPIDE4ROW");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE4COL, UINT32, "ALPIDE4COL", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE4COLv, UINT32, "ALPIDE4COLv", "ALPIDE4COL");   \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE5T_HI, UINT32, "ALPIDE5T_HI");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE5T_LO, UINT32, "ALPIDE5T_LO");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5PRECHIP, UINT32, "ALPIDE5PRECHIP", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE5PRECHIPv, UINT32, "ALPIDE5PRECHIPv", "ALPIDE5PRECHIP");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5REGION, UINT32, "ALPIDE5REGION", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE5REGIONv, UINT32, "ALPIDE5REGIONv", "ALPIDE5REGION");            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE5ENCODER_ID, UINT32, "ALPIDE5ENCODER_ID", 2000);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              ALPIDE5ENCODER_IDv,                                                                      \
+                              UINT32,                                                                                  \
+                              "ALPIDE5ENCODER_IDv",                                                                    \
+                              "ALPIDE5ENCODER_ID");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5ADDRESS, UINT32, "ALPIDE5ADDRESS", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE5ADDRESSv, UINT32, "ALPIDE5ADDRESSv", "ALPIDE5ADDRESS");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5HITMAP, UINT32, "ALPIDE5HITMAP", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE5HITMAPv, UINT32, "ALPIDE5HITMAPv", "ALPIDE5HITMAP");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5CHIP, UINT32, "ALPIDE5CHIP", 2000);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE5CHIPv, UINT32, "ALPIDE5CHIPv", "ALPIDE5CHIP");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5ROW, UINT32, "ALPIDE5ROW", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE5ROWv, UINT32, "ALPIDE5ROWv", "ALPIDE5ROW");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE5COL, UINT32, "ALPIDE5COL", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE5COLv, UINT32, "ALPIDE5COLv", "ALPIDE5COL");   \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE6T_HI, UINT32, "ALPIDE6T_HI");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, ALPIDE6T_LO, UINT32, "ALPIDE6T_LO");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6PRECHIP, UINT32, "ALPIDE6PRECHIP", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE6PRECHIPv, UINT32, "ALPIDE6PRECHIPv", "ALPIDE6PRECHIP");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6REGION, UINT32, "ALPIDE6REGION", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE6REGIONv, UINT32, "ALPIDE6REGIONv", "ALPIDE6REGION");            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE6ENCODER_ID, UINT32, "ALPIDE6ENCODER_ID", 2000);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              ALPIDE6ENCODER_IDv,                                                                      \
+                              UINT32,                                                                                  \
+                              "ALPIDE6ENCODER_IDv",                                                                    \
+                              "ALPIDE6ENCODER_ID");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6ADDRESS, UINT32, "ALPIDE6ADDRESS", 2000);     \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE6ADDRESSv, UINT32, "ALPIDE6ADDRESSv", "ALPIDE6ADDRESS");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6HITMAP, UINT32, "ALPIDE6HITMAP", 2000);       \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE6HITMAPv, UINT32, "ALPIDE6HITMAPv", "ALPIDE6HITMAP");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6CHIP, UINT32, "ALPIDE6CHIP", 2000);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, ALPIDE6CHIPv, UINT32, "ALPIDE6CHIPv", "ALPIDE6CHIP");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6ROW, UINT32, "ALPIDE6ROW", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE6ROWv, UINT32, "ALPIDE6ROWv", "ALPIDE6ROW");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ALPIDE6COL, UINT32, "ALPIDE6COL", 2000);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ALPIDE6COLv, UINT32, "ALPIDE6COLv", "ALPIDE6COL");   \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_ALPIDE_EXT_H101_ALPIDE_H__*/

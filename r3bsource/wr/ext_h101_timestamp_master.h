@@ -70,24 +70,24 @@ typedef struct EXT_STR_h101_timestamp_master_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_timestamp_master_ITEMS_INFO(ok, si, offset, struct_t, printerr)                               \
-    do                                                                                                             \
-    {                                                                                                              \
-        ok = 1;                                                                                                    \
-        /* RAW */                                                                                                  \
-        EXT_STR_ITEM_INFO_LIM(                                                                                     \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_ID, UINT32, "TIMESTAMP_MASTER_ID", 65535);        \
-        EXT_STR_ITEM_INFO_LIM(                                                                                     \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T1, UINT32, "TIMESTAMP_MASTER_WR_T1", 65535);  \
-        EXT_STR_ITEM_INFO_LIM(                                                                                     \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T2, UINT32, "TIMESTAMP_MASTER_WR_T2", 65535);  \
-        EXT_STR_ITEM_INFO_LIM(                                                                                     \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T3, UINT32, "TIMESTAMP_MASTER_WR_T3", 65535);  \
-        EXT_STR_ITEM_INFO_LIM(                                                                                     \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T4, UINT32, "TIMESTAMP_MASTER_WR_T4", 65535);  \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_HI, UINT32, "TIMESTAMP_MASTER_HI"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_LO, UINT32, "TIMESTAMP_MASTER_LO"); \
-                                                                                                                   \
+#define EXT_STR_h101_timestamp_master_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                   \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_ID, UINT32, "TIMESTAMP_MASTER_ID", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T1, UINT32, "TIMESTAMP_MASTER_WR_T1", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T2, UINT32, "TIMESTAMP_MASTER_WR_T2", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T3, UINT32, "TIMESTAMP_MASTER_WR_T3", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_WR_T4, UINT32, "TIMESTAMP_MASTER_WR_T4", 65535);      \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_HI, UINT32, "TIMESTAMP_MASTER_HI");     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TIMESTAMP_MASTER_LO, UINT32, "TIMESTAMP_MASTER_LO");     \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_TIMESTAMP_MASTER_EXT_H101_TIMESTAMP_MASTER_H__*/

@@ -30,28 +30,18 @@
 
 using namespace std;
 
-R3BCryAsciiGenerator::R3BCryAsciiGenerator()
-    : fFileName()
-{
-}
+R3BCryAsciiGenerator::R3BCryAsciiGenerator() : fFileName() {}
 
-R3BCryAsciiGenerator::R3BCryAsciiGenerator(const std::string& fileName)
-    : fFileName(std::move(fileName))
+R3BCryAsciiGenerator::R3BCryAsciiGenerator(const std::string& fileName) : fFileName(std::move(fileName))
 {
     infile.open(fileName);
     if (!infile.is_open())
         LOG(error) << "R3BCryAsciiGenerator: Cannot open input file.";
 }
 
-R3BCryAsciiGenerator::R3BCryAsciiGenerator(const TString& fileName)
-    : R3BCryAsciiGenerator(std::string(fileName))
-{
-}
+R3BCryAsciiGenerator::R3BCryAsciiGenerator(const TString& fileName) : R3BCryAsciiGenerator(std::string(fileName)) {}
 
-R3BCryAsciiGenerator::R3BCryAsciiGenerator(const char* fileName)
-    : R3BCryAsciiGenerator(std::string(fileName))
-{
-}
+R3BCryAsciiGenerator::R3BCryAsciiGenerator(const char* fileName) : R3BCryAsciiGenerator(std::string(fileName)) {}
 
 R3BCryAsciiGenerator::~R3BCryAsciiGenerator() { CloseInput(); }
 
@@ -66,8 +56,8 @@ bool R3BCryAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen)
     Int_t fPrevEventId = 0;
 
     // Define track variables
-    Int_t pdgType = 0;  // PDG code
-    Double_t KEn = 0.;  // kinetic energy read in MeV
+    Int_t pdgType = 0; // PDG code
+    Double_t KEn = 0.; // kinetic energy read in MeV
     Double_t cosA = 0.; // direction cosines
     Double_t cosB = 0.;
     Double_t cosC = 0.;
@@ -76,7 +66,7 @@ bool R3BCryAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen)
     Double_t vz = 0.;
 
     // Intermediate varibles
-    Double_t p = 0.;  // total momentum
+    Double_t p = 0.; // total momentum
     Double_t px = 0.; // momentum componets
     Double_t py = 0.;
     Double_t pz = 0.;

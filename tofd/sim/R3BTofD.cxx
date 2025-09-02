@@ -36,10 +36,7 @@
 #include <TString.h>
 #include <boost/regex.hpp>
 
-R3BTofD::R3BTofD()
-    : R3BTofD("")
-{
-}
+R3BTofD::R3BTofD() : R3BTofD("") {}
 
 R3BTofD::R3BTofD(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BTofD(geoFile, { trans, rot })
@@ -47,9 +44,7 @@ R3BTofD::R3BTofD(const TString& geoFile, const TGeoTranslation& trans, const TGe
 }
 
 R3BTofD::R3BTofD(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BTofD", kTOFD, geoFile, combi)
-    , fTofdCollection(new TClonesArray("R3BTofdPoint"))
-    , fPosIndex(0)
+    : R3BDetector("R3BTofD", kTOFD, geoFile, combi), fTofdCollection(new TClonesArray("R3BTofdPoint")), fPosIndex(0)
 {
     ResetParameters();
 }

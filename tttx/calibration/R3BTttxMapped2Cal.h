@@ -80,7 +80,7 @@ class R3BTttxMapped2Cal : public FairTask
     uint8_t fch_tref = 33; //(1-base)
     uint8_t fch_trig = 34; // (1-base)
     double fTimeMin = -1e5;
-    double fTimeMax = 1e5;               // Maximum time of +/-100us
+    double fTimeMax = 1e5; // Maximum time of +/-100us
     double fTimeResolution = 25. / 128.; // For setting 3. in pico-second
     TArrayF* CalParams;
 

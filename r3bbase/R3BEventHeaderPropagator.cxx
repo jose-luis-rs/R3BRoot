@@ -23,8 +23,7 @@ R3BEventHeaderPropagator::R3BEventHeaderPropagator()
 }
 
 R3BEventHeaderPropagator::R3BEventHeaderPropagator(const TString& name, Int_t iVerbose, std::string_view nameheader)
-    : FairTask(name, iVerbose)
-    , fNameHeader(nameheader)
+    : FairTask(name, iVerbose), fNameHeader(nameheader)
 {
 }
 

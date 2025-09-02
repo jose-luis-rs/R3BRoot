@@ -19,10 +19,7 @@
 #include <FairRootManager.h>
 
 R3BStrawtubesCal2Hit::R3BStrawtubesCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems()
-    , fHitItems(new TClonesArray("R3BStrawtubesHitData"))
-    , fNofHitItems(0)
+    : FairTask(name, iVerbose), fCalItems(), fHitItems(new TClonesArray("R3BStrawtubesHitData")), fNofHitItems(0)
 {
 }
 

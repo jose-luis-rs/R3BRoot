@@ -13,25 +13,12 @@
 
 #include "R3BRpcHitData.h"
 
-R3BRpcHitData::R3BRpcHitData()
-    : FairMultiLinkedData()
-    , fDetId(0)
-    , fChannelId(0)
-    , fTime(0)
-    , fPos(0)
-    , fCharge(0)
-    , fTof(0)
+R3BRpcHitData::R3BRpcHitData() : FairMultiLinkedData(), fDetId(0), fChannelId(0), fTime(0), fPos(0), fCharge(0), fTof(0)
 {
 }
 
 R3BRpcHitData::R3BRpcHitData(UInt_t detId, UInt_t channel, double time, double pos, double charge, double tof)
-    : FairMultiLinkedData()
-    , fDetId(detId)
-    , fChannelId(channel)
-    , fTime(time)
-    , fPos(pos)
-    , fCharge(charge)
-    , fTof(tof)
+    : FairMultiLinkedData(), fDetId(detId), fChannelId(channel), fTime(time), fPos(pos), fCharge(charge), fTof(tof)
 {
 }
 

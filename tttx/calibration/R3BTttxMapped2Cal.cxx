@@ -39,16 +39,10 @@ constexpr int ov_mask = 0x80000;
 constexpr int pu_mask = 0x40000;
 
 // R3BTttxMapped2Cal: Default Constructor --------------------------
-R3BTttxMapped2Cal::R3BTttxMapped2Cal()
-    : R3BTttxMapped2Cal("R3BTttxMapped2Cal", 1)
-{
-}
+R3BTttxMapped2Cal::R3BTttxMapped2Cal() : R3BTttxMapped2Cal("R3BTttxMapped2Cal", 1) {}
 
 // R3BTttxMapped2CalPar: Standard Constructor --------------------------
-R3BTttxMapped2Cal::R3BTttxMapped2Cal(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BTttxMapped2Cal::R3BTttxMapped2Cal(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 // Virtual R3BTttxMapped2Cal: Destructor
 R3BTttxMapped2Cal::~R3BTttxMapped2Cal()
@@ -77,8 +71,8 @@ void R3BTttxMapped2Cal::SetParContainers()
 void R3BTttxMapped2Cal::SetParameter()
 {
     //--- Parameter Container ---
-    NumDets = fCal_Par->GetNumDets();      // Number of Detectors
-    NumStrips = fCal_Par->GetNumStrips();  // Number of Strips
+    NumDets = fCal_Par->GetNumDets(); // Number of Detectors
+    NumStrips = fCal_Par->GetNumStrips(); // Number of Strips
     NumParams = fCal_Par->GetNumParsFit(); // Number of Parameters
 
     R3BLOG(info, "Nb detectors: " << NumDets);

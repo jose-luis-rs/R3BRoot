@@ -38,21 +38,17 @@ constexpr int S522 = 522;
 constexpr int S509 = 509;
 
 // R3BMwpc1Cal2Hit: Default Constructor --------------------------
-R3BMwpc1Cal2Hit::R3BMwpc1Cal2Hit()
-    : R3BMwpc1Cal2Hit("R3BMwpc1Cal2Hit", 1)
-{
-}
+R3BMwpc1Cal2Hit::R3BMwpc1Cal2Hit() : R3BMwpc1Cal2Hit("R3BMwpc1Cal2Hit", 1) {}
 
 // R3BMwpc1Cal2Hit: Standard Constructor --------------------------
 R3BMwpc1Cal2Hit::R3BMwpc1Cal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMwpcCalDataCA(NULL)
-    , fMwpcHitDataCA(NULL)
-    , fwx(3.125)   // in mm
-    , fwy(5.000)   // in mm
-    , fSize(200.0) // in mm
-    , fOnline(kFALSE)
-    , fExpId(0)
+    : FairTask(name, iVerbose), fMwpcCalDataCA(NULL), fMwpcHitDataCA(NULL), fwx(3.125) // in mm
+      ,
+      fwy(5.000) // in mm
+      ,
+      fSize(200.0) // in mm
+      ,
+      fOnline(kFALSE), fExpId(0)
 {
 }
 

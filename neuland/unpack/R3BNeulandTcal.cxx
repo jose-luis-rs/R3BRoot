@@ -32,32 +32,24 @@
 #include "TClonesArray.h"
 
 R3BNeulandTcal::R3BNeulandTcal()
-    : FairTask("LandTcal", 1)
-    , fNEvents(0)
-    , fMappedHit(NULL)
-    , fPmt(new TClonesArray("R3BNeulandPmt"))
-    , fNPmt(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    //    , fMap17Seen()
-    //    , fMapStopTime()
-    //    , fMapStopClock()
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask("LandTcal", 1), fNEvents(0), fMappedHit(NULL), fPmt(new TClonesArray("R3BNeulandPmt")), fNPmt(0),
+      fTcalPar(NULL), fTrigger(-1)
+      //    , fMap17Seen()
+      //    , fMapStopTime()
+      //    , fMapStopClock()
+      ,
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 
 R3BNeulandTcal::R3BNeulandTcal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNEvents(0)
-    , fMappedHit(NULL)
-    , fPmt(new TClonesArray("R3BNeulandPmt"))
-    , fNPmt(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    //    , fMap17Seen()
-    //    , fMapStopTime()
-    //    , fMapStopClock()
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask(name, iVerbose), fNEvents(0), fMappedHit(NULL), fPmt(new TClonesArray("R3BNeulandPmt")), fNPmt(0),
+      fTcalPar(NULL), fTrigger(-1)
+      //    , fMap17Seen()
+      //    , fMapStopTime()
+      //    , fMapStopClock()
+      ,
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 

@@ -28,18 +28,10 @@
 #include "TH2F.h"
 #include "THttpServer.h"
 
-R3BOnlineSyncCheck::R3BOnlineSyncCheck()
-    : R3BOnlineSyncCheck("OnlineSyncCheck", 1)
-{
-}
+R3BOnlineSyncCheck::R3BOnlineSyncCheck() : R3BOnlineSyncCheck("OnlineSyncCheck", 1) {}
 
 R3BOnlineSyncCheck::R3BOnlineSyncCheck(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCA(nullptr)
-    , header(nullptr)
-    , fTpat(-1)
-    , fTrig(-1)
-    , canvas(nullptr)
+    : FairTask(name, iVerbose), fCA(nullptr), header(nullptr), fTpat(-1), fTrig(-1), canvas(nullptr)
 {
 }
 

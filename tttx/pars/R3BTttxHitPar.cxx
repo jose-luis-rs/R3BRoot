@@ -28,8 +28,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BTttxHitPar::R3BTttxHitPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumDets(2)
+    : FairParGenericSet(name, title, context), fNumDets(2)
 {
     detName = "TttxHit";
     fZfitpar = new TArrayF(fNumDets * fNumParsZfit);

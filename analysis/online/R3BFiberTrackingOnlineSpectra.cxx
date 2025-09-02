@@ -1526,8 +1526,8 @@ void R3BFiberTrackingOnlineSpectra::Exec(Option_t* option)
                             // if(1==i) ypoints = xposback;
                             // if(2==i) ypoints = xmean;
 
-                            xsum = xsum + xpoints[i];           // calculate sigma(xi)
-                            ysum = ysum + ypoints[i];           // calculate sigma(yi)
+                            xsum = xsum + xpoints[i]; // calculate sigma(xi)
+                            ysum = ysum + ypoints[i]; // calculate sigma(yi)
                             x2sum = x2sum + pow(xpoints[i], 2); // calculate sigma(x^2i)
                             y2sum = y2sum + pow(ypoints[i], 2);
                             xysum = xysum + xpoints[i] * ypoints[i]; // calculate sigma(xi*yi)

@@ -102,15 +102,15 @@ class R3BNeulandGainMatching : public FairTask
     inline void SetNeededStat(Int_t nevents) { fNEventsNeeded = nevents; }
 
   private:
-    UInt_t fNofPlanes;       /**< Number of planes. */
+    UInt_t fNofPlanes; /**< Number of planes. */
     UInt_t fNofBarsPerPlane; /**< Number of bars per plane. */
     UInt_t fNofPMTs;
 
     UInt_t fFirstPlane;
 
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fTrigger;    /**< Trigger value. */
-    Int_t fNEvents;    /**< Event counter. */
+    Int_t fTrigger; /**< Trigger value. */
+    Int_t fNEvents; /**< Event counter. */
 
     Int_t fNEventsNeeded;
 
@@ -133,7 +133,7 @@ class R3BNeulandGainMatching : public FairTask
 
     Double_t hv[60][50][2];
 
-    TClonesArray* fPmt;     /**< Array with time items - input data. */
+    TClonesArray* fPmt; /**< Array with time items - input data. */
     R3BEventHeader* header; /**< Event header - input data. */
 
     Int_t peakmethod;

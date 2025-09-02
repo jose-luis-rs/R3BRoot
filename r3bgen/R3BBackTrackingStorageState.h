@@ -48,14 +48,14 @@ class R3BBackTrackingStorageState : public TObject
   private:
     Double_t p0; // central value of the theoretical momentum calculation
     Double_t pcent;
-    Double_t pmax;    // maximum value of the theoretical momentum calculation
-    Double_t pmin;    // minimum value of the theoretical momentum calculation
+    Double_t pmax; // maximum value of the theoretical momentum calculation
+    Double_t pmin; // minimum value of the theoretical momentum calculation
     Double_t pmaxabs; // maximum value of the theoretical momentum calculation
     Double_t pminabs; // minimum value of the theoretical momentum calculation
-    Double_t pfinal;  // calculated value for the momentum module
-    Double_t piter;   // calculated value for the momentum module
-    Int_t niter;      // iteration number
-    Int_t converg;    // 0 when it doesnt converge,1 when it does.
+    Double_t pfinal; // calculated value for the momentum module
+    Double_t piter; // calculated value for the momentum module
+    Int_t niter; // iteration number
+    Int_t converg; // 0 when it doesnt converge,1 when it does.
 
     Double_t x0tar; // coordinates measured in the target (real measurement)
     Double_t y0tar;

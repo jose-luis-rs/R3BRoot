@@ -31,16 +31,10 @@
 #include "R3BMwpcHitData.h"
 
 // R3BMwpc0Cal2Hit: Default Constructor --------------------------
-R3BMwpc0Cal2Hit::R3BMwpc0Cal2Hit()
-    : R3BMwpc0Cal2Hit("R3BMwpc0Cal2Hit", 1)
-{
-}
+R3BMwpc0Cal2Hit::R3BMwpc0Cal2Hit() : R3BMwpc0Cal2Hit("R3BMwpc0Cal2Hit", 1) {}
 
 // R3BMwpc0Cal2Hit: Standard Constructor --------------------------
-R3BMwpc0Cal2Hit::R3BMwpc0Cal2Hit(const std::string& name, int iVerbose)
-    : FairTask(name.c_str(), iVerbose)
-{
-}
+R3BMwpc0Cal2Hit::R3BMwpc0Cal2Hit(const std::string& name, int iVerbose) : FairTask(name.c_str(), iVerbose) {}
 
 // Virtual R3BMwpc0Cal2Hit: Destructor
 R3BMwpc0Cal2Hit::~R3BMwpc0Cal2Hit()

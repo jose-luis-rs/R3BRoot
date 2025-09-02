@@ -92,11 +92,11 @@ class R3BFiberMAPMTHitModulePar : public FairParGenericSet
     void SetVeff(Double_t v) { fVeff = v; }
 
   private:
-    Int_t fFiber;         /**< Index of a fiber. */
-    Double_t fOffsetUp;   /**< time offset of PM1 */
+    Int_t fFiber; /**< Index of a fiber. */
+    Double_t fOffsetUp; /**< time offset of PM1 */
     Double_t fOffsetDown; /**< time offset of PM2 */
-    Double_t fVeff;       /**< effective velocity of light in paddle for position determination */
-    Double_t fSync;       /**< time offset between paddles */
+    Double_t fVeff; /**< effective velocity of light in paddle for position determination */
+    Double_t fSync; /**< time offset between paddles */
     Double_t fGainUp;
     Double_t fGainDown;
 

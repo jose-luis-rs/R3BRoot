@@ -66,9 +66,7 @@ namespace Neuland
                    WithinBounds(point[2], zBounds);
         }
 
-        CosmicTracker::CosmicTracker()
-            : fDistances{ 0. }
-            , fFit("CosmicTracker:fFit", "pol1")
+        CosmicTracker::CosmicTracker() : fDistances{ 0. }, fFit("CosmicTracker:fFit", "pol1")
         {
             fDistances.reserve(MaxNumberOfPlanes);
             while (fDistances.size() < MaxNumberOfPlanes)

@@ -45,25 +45,20 @@
 #include <sstream>
 
 R3BCalifaJulichOnlineSpectra::R3BCalifaJulichOnlineSpectra()
-    : FairTask("CalifaJulichOnlineSpectra", 1)
-    , fMappedItemsCalifa(NULL)
-    , fMappedItemsSi(NULL)
-    // , fCalItems(NULL)
-    // , fHitItems(NULL)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(1)
+    : FairTask("CalifaJulichOnlineSpectra", 1), fMappedItemsCalifa(NULL), fMappedItemsSi(NULL)
+      // , fCalItems(NULL)
+      // , fHitItems(NULL)
+      ,
+      fTrigger(-1), fNEvents(0), fNbDet(1)
 {
 }
 
 R3BCalifaJulichOnlineSpectra::R3BCalifaJulichOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItemsSi(NULL)
-    // , fCalItems(NULL)
-    // , fHitItems(NULL)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(1)
+    : FairTask(name, iVerbose), fMappedItemsSi(NULL)
+      // , fCalItems(NULL)
+      // , fHitItems(NULL)
+      ,
+      fTrigger(-1), fNEvents(0), fNbDet(1)
 {
 }
 

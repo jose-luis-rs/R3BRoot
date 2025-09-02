@@ -51,12 +51,12 @@ class R3BRpcMappedData : public TObject
     inline UShort_t GetSide() const { return fSide; }
 
   protected:
-    UShort_t fDetId;      // Detector unique identifier
-    UShort_t fChannelId;  // Channel unique identifier
-    uint64_t fFineTime;   // Fine time
+    UShort_t fDetId; // Detector unique identifier
+    UShort_t fChannelId; // Channel unique identifier
+    uint64_t fFineTime; // Fine time
     uint64_t fCoarseTime; // Coarse time
-    UShort_t fEdge;       // Leading or Trailing
-    UShort_t fSide;       // Left Or Right
+    UShort_t fEdge; // Leading or Trailing
+    UShort_t fSide; // Left Or Right
 
   public:
     ClassDef(R3BRpcMappedData, 1)

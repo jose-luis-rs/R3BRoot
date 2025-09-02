@@ -20,10 +20,7 @@ namespace R3B::Digitizing::Neuland
         return exp;
     }
 
-    NeulandPaddle::NeulandPaddle(uint16_t paddleID)
-        : Digitizing::Paddle(paddleID, SignalCouplingNeuland)
-    {
-    }
+    NeulandPaddle::NeulandPaddle(uint16_t paddleID) : Digitizing::Paddle(paddleID, SignalCouplingNeuland) {}
 
     auto NeulandPaddle::MatchSignals(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) -> float
     {

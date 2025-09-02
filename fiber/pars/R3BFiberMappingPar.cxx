@@ -26,9 +26,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BFiberMappingPar::R3BFiberMappingPar(const TString& name, const TString& title, const TString& context)
-    : FairParGenericSet(name, title, context)
-    , fNbSides(2)
-    , fNbChannels(512)
+    : FairParGenericSet(name, title, context), fNbSides(2), fNbChannels(512)
 {
     for (Int_t s = 0; s < fNbSides; s++)
     {

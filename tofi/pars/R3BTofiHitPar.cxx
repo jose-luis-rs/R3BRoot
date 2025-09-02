@@ -19,9 +19,7 @@
 ClassImp(R3BTofiHitPar);
 
 R3BTofiHitPar::R3BTofiHitPar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fHitParams(new TObjArray(NMODULEMAX))
-    , fMapInit(kFALSE)
+    : FairParGenericSet(name, title, context, own), fHitParams(new TObjArray(NMODULEMAX)), fMapInit(kFALSE)
 {
 }
 

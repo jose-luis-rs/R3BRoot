@@ -29,9 +29,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BMusicHitPar::R3BMusicHitPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumParamsZFit(2)
-    , fNumAnodes(8)
+    : FairParGenericSet(name, title, context), fNumParamsZFit(2), fNumAnodes(8)
 {
     fDetZHitParams = new TArrayF(fNumParamsZFit); // 2 Parameters for Z (Linear fits)
     fIn_use = new TArrayI(fNumAnodes);

@@ -47,11 +47,7 @@
 using std::cout;
 using std::endl;
 
-R3BTofiDigitizerCal::R3BTofiDigitizerCal()
-    : FairTask("R3B Tofi Digitization scheme ")
-    , fTofiPoints(NULL)
-{
-}
+R3BTofiDigitizerCal::R3BTofiDigitizerCal() : FairTask("R3B Tofi Digitization scheme "), fTofiPoints(NULL) {}
 
 R3BTofiDigitizerCal::~R3BTofiDigitizerCal() {}
 
@@ -128,13 +124,7 @@ void R3BTofiDigitizerCal::Exec(Option_t* opt)
             Double_t Time;
             Double_t Y;
 
-            TempHit(Int_t id, Double_t e, Double_t t, Double_t y)
-                : ChannelID(id)
-                , Energy(e)
-                , Time(t)
-                , Y(y)
-            {
-            }
+            TempHit(Int_t id, Double_t e, Double_t t, Double_t y) : ChannelID(id), Energy(e), Time(t), Y(y) {}
         };
 
         // ordering the hits in time

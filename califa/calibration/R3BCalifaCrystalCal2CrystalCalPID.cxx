@@ -28,9 +28,7 @@
 using namespace std;
 
 R3BCalifaCrystalCal2CrystalCalPID::R3BCalifaCrystalCal2CrystalCalPID()
-    : FairTask("R3B CALIFA QPID Calibrator")
-    , nEvents(0)
-    , fCrystalCalDataCA(0)
+    : FairTask("R3B CALIFA QPID Calibrator"), nEvents(0), fCrystalCalDataCA(0)
 {
     // counter1=0;
     // counter2=0;

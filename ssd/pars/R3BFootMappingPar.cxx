@@ -29,10 +29,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BFootMappingPar::R3BFootMappingPar(const TString& name, const TString& title, const TString& context)
-    : FairParGenericSet(name, title, context)
-    , fNumDet(20)
-    , fPolPar(5)
-    , fGeo(202111)
+    : FairParGenericSet(name, title, context), fNumDet(20), fPolPar(5), fGeo(202111)
 {
     fDistance2target = new TArrayF(fNumDet);
     fAngleTheta = new TArrayF(fNumDet);

@@ -37,10 +37,7 @@
 using std::cout;
 using std::endl;
 
-R3BGfiDigitizer::R3BGfiDigitizer()
-    : FairTask("R3B Gfi Digitization scheme ")
-{
-}
+R3BGfiDigitizer::R3BGfiDigitizer() : FairTask("R3B Gfi Digitization scheme ") {}
 
 R3BGfiDigitizer::~R3BGfiDigitizer() {}
 

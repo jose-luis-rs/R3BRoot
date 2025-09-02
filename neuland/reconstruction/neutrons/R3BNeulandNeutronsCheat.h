@@ -21,8 +21,8 @@ class R3BNeulandNeutronsCheat : public FairTask
 
   private:
     const TString fInputMultName;
-    const R3BNeulandMultiplicity* fMultiplicity;     //!
-    TCAInputConnector<R3BNeulandHit> fHits;          //!
+    const R3BNeulandMultiplicity* fMultiplicity; //!
+    TCAInputConnector<R3BNeulandHit> fHits; //!
     TCAOutputConnector<R3BNeulandNeutron> fNeutrons; //!
 
     ClassDefOverride(R3BNeulandNeutronsCheat, 0)

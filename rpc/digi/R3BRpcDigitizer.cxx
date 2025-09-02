@@ -24,12 +24,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-R3BRpcDigitizer::R3BRpcDigitizer()
-    : FairTask("R3B RPC Digitizer")
-    , fRpcPointDataCA(NULL)
-    , fRpcCalDataCA(NULL)
-{
-}
+R3BRpcDigitizer::R3BRpcDigitizer() : FairTask("R3B RPC Digitizer"), fRpcPointDataCA(NULL), fRpcCalDataCA(NULL) {}
 
 R3BRpcDigitizer::~R3BRpcDigitizer()
 {

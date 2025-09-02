@@ -3,11 +3,8 @@
 #include "FairRootManager.h"
 
 R3BNeulandNeutronsCheat::R3BNeulandNeutronsCheat(TString inputMult, TString inputHit, TString output)
-    : FairTask("R3BNeulandNeutronsCheat")
-    , fInputMultName(std::move(inputMult))
-    , fMultiplicity(nullptr)
-    , fHits(std::move(inputHit))
-    , fNeutrons(std::move(output))
+    : FairTask("R3BNeulandNeutronsCheat"), fInputMultName(std::move(inputMult)), fMultiplicity(nullptr),
+      fHits(std::move(inputHit)), fNeutrons(std::move(output))
 {
 }
 

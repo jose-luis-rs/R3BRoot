@@ -29,13 +29,8 @@ struct R3BNeulandCosmicTrack
                     Double_t exitPosition = 0.,
                     Double_t energy = 0.,
                     Double_t trackLength = 0.)
-            : BarID(barID)
-            , EntryTime(entryTime)
-            , ExitTime(exitTime)
-            , EntryPosition(entryPosition)
-            , ExitPosition(exitPosition)
-            , Energy(energy)
-            , TrackLength(trackLength)
+            : BarID(barID), EntryTime(entryTime), ExitTime(exitTime), EntryPosition(entryPosition),
+              ExitPosition(exitPosition), Energy(energy), TrackLength(trackLength)
         {
         }
         Int_t BarID;

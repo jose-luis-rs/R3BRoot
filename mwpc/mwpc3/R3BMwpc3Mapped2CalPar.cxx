@@ -44,23 +44,12 @@
 using namespace std;
 
 /* ---- R3BMwpc3Mapped2CalPar: Default Constructor ---- */
-R3BMwpc3Mapped2CalPar::R3BMwpc3Mapped2CalPar()
-    : R3BMwpc3Mapped2CalPar("R3BMwpc3Mapped2CalPar", 1)
-{
-}
+R3BMwpc3Mapped2CalPar::R3BMwpc3Mapped2CalPar() : R3BMwpc3Mapped2CalPar("R3BMwpc3Mapped2CalPar", 1) {}
 
 /* ---- R3BMwpc3Mapped2CalPar: Standard Constructor ---- */
 R3BMwpc3Mapped2CalPar::R3BMwpc3Mapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumPadX(288)
-    , fNumPadY(120)
-    , fNumParams(2)
-    , fMinStadistics(100)
-    , fMapHistos_left(0)
-    , fMapHistos_right(270000)
-    , fMapHistos_bins(27000)
-    , fPad_Par(NULL)
-    , fMwpcMappedDataCA(NULL)
+    : FairTask(name, iVerbose), fNumPadX(288), fNumPadY(120), fNumParams(2), fMinStadistics(100), fMapHistos_left(0),
+      fMapHistos_right(270000), fMapHistos_bins(27000), fPad_Par(NULL), fMwpcMappedDataCA(NULL)
 {
 }
 

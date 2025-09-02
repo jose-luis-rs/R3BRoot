@@ -21,13 +21,8 @@ R3BActafMappedData::R3BActafMappedData(UInt_t pad,
                                        int risetime,
                                        int maxpos,
                                        double maxamplitude)
-    : fPad(pad)
-    , fTrace(trace)
-    , fE(energy)
-    , fBaseline(baseline)
-    , fRisetime(risetime)
-    , fMaxpos(maxpos)
-    , fMaxamplitude(maxamplitude)
+    : fPad(pad), fTrace(trace), fE(energy), fBaseline(baseline), fRisetime(risetime), fMaxpos(maxpos),
+      fMaxamplitude(maxamplitude)
 {
 }
 

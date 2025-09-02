@@ -91,8 +91,8 @@ class R3BTofDMapped2CalPar : public FairTask
 
   private:
     UInt_t fUpdateRate = 1000000; // An update rate
-    UInt_t fMinStats = 100;       // Minimum statistics required per module
-    UInt_t Icount[5][48][4];      // NOLINT
+    UInt_t fMinStats = 100; // Minimum statistics required per module
+    UInt_t Icount[5][48][4]; // NOLINT
 
     UInt_t fNofPlanes = 5;
     UInt_t fPaddlesPerPlane = 48;

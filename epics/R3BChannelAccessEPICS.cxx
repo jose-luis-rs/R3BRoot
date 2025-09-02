@@ -21,11 +21,7 @@
 #include "R3BChannelAccessEPICS.h"
 #include <FairLogger.h>
 
-R3BChannelAccessEPICS::R3BChannelAccessEPICS(TString const& name)
-    : fName(name)
-    , fValue(0)
-    , fId()
-    , fType(DBR_DOUBLE)
+R3BChannelAccessEPICS::R3BChannelAccessEPICS(TString const& name) : fName(name), fValue(0), fId(), fType(DBR_DOUBLE)
 {
     ca_search(name.Data(), &fId);
 }
@@ -45,8 +41,7 @@ void R3BChannelAccessEPICS::Set(double value) { fValue = value; }
 ClassImp(R3BChannelAccessEPICS)
 
     R3BChannelAccessGroupEPICS::R3BChannelAccessGroupEPICS()
-    : fChannelArray("R3BChannelAccessEPICS")
-    , fNeedSearch(false)
+    : fChannelArray("R3BChannelAccessEPICS"), fNeedSearch(false)
 {
 }
 

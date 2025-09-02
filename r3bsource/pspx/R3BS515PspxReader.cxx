@@ -36,13 +36,10 @@ static size_t LENGTH(T (&)[N])
 }
 
 R3BS515PspxReader::R3BS515PspxReader(EXT_STR_h101_PSP_onion* data, size_t offset)
-    : R3BReader("R3BPspxReader")
-    , fDataOnion(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fMappedItems(2 * LENGTH(data->PSPX)) // number of faces of detectors
-    , fBuffer_i(0)
-    , fShift(0)
+    : R3BReader("R3BPspxReader"), fDataOnion(data), fOffset(offset), fOnline(kFALSE),
+      fMappedItems(2 * LENGTH(data->PSPX)) // number of faces of detectors
+      ,
+      fBuffer_i(0), fShift(0)
 {
     assert(fDataOnion);
     for (Int_t d = 0; d < 2 * LENGTH(fDataOnion->PSPX); d++)

@@ -223,7 +223,7 @@ class R3BAnalysisIncomingFrs : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fTrigger; /**< Trigger value. */
     Int_t fTpat;
     Int_t fSamp;
     Double_t fClockFreq; /**< Clock cycle in [ns]. */

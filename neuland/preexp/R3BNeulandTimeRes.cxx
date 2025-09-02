@@ -26,18 +26,12 @@
 #include <sstream>
 
 R3BNeulandTimeRes::R3BNeulandTimeRes()
-    : FairTask("NeulandTimeRes", 1)
-    , fUpdateRate(1000000)
-    , fNEventsNeeded(10000)
-    , fTrigger(-1)
+    : FairTask("NeulandTimeRes", 1), fUpdateRate(1000000), fNEventsNeeded(10000), fTrigger(-1)
 {
 }
 
 R3BNeulandTimeRes::R3BNeulandTimeRes(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fNEventsNeeded(10000)
-    , fTrigger(-1)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fNEventsNeeded(10000), fTrigger(-1)
 {
 }
 

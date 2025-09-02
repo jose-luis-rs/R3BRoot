@@ -24,10 +24,8 @@ R3BBunchedFiberReader::R3BBunchedFiberReader(char const* a_name,
                                              UInt_t a_sub_num,
                                              UInt_t a_mapmt_channel_num,
                                              UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fOffset(a_offset)
-    , fShortName(a_name)
-    , fMappedArray(new TClonesArray("R3BBunchedFiberMappedData"))
+    : R3BReader(TString("R3B") + a_name + "Reader"), fOffset(a_offset), fShortName(a_name),
+      fMappedArray(new TClonesArray("R3BBunchedFiberMappedData"))
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;

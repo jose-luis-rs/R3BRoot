@@ -18,9 +18,7 @@
 #include <FairParamList.h>
 
 R3BTofDHitPar::R3BTofDHitPar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fHitParams(new TObjArray(NPADDLEMAX))
-    , fMapInit(kFALSE)
+    : FairParGenericSet(name, title, context, own), fHitParams(new TObjArray(NPADDLEMAX)), fMapInit(kFALSE)
 {
 }
 

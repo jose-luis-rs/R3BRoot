@@ -134,78 +134,78 @@ typedef struct EXT_STR_h101_TOFI_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_TOFI_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                             \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_TRIGCL, UINT32, "TOFI_TRIGCL", 3);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_TRIGCLI, UINT32, "TOFI_TRIGCLI", "TOFI_TRIGCL");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_TRIGCLv, UINT32, "TOFI_TRIGCLv", "TOFI_TRIGCL");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_TRIGFL, UINT32, "TOFI_TRIGFL", 3);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_TRIGFLI, UINT32, "TOFI_TRIGFLI", "TOFI_TRIGFL");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_TRIGFLv, UINT32, "TOFI_TRIGFLv", "TOFI_TRIGFL");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCLM, UINT32, "TOFI_T1TCLM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TCLMI, UINT32, "TOFI_T1TCLMI", "TOFI_T1TCLM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TCLME, UINT32, "TOFI_T1TCLME", "TOFI_T1TCLM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCL, UINT32, "TOFI_T1TCL", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TCLv, UINT32, "TOFI_T1TCLv", "TOFI_T1TCL"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFLM, UINT32, "TOFI_T1TFLM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TFLMI, UINT32, "TOFI_T1TFLMI", "TOFI_T1TFLM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TFLME, UINT32, "TOFI_T1TFLME", "TOFI_T1TFLM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFL, UINT32, "TOFI_T1TFL", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TFLv, UINT32, "TOFI_T1TFLv", "TOFI_T1TFL"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCTM, UINT32, "TOFI_T1TCTM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TCTMI, UINT32, "TOFI_T1TCTMI", "TOFI_T1TCTM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TCTME, UINT32, "TOFI_T1TCTME", "TOFI_T1TCTM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCT, UINT32, "TOFI_T1TCT", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TCTv, UINT32, "TOFI_T1TCTv", "TOFI_T1TCT"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFTM, UINT32, "TOFI_T1TFTM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TFTMI, UINT32, "TOFI_T1TFTMI", "TOFI_T1TFTM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T1TFTME, UINT32, "TOFI_T1TFTME", "TOFI_T1TFTM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFT, UINT32, "TOFI_T1TFT", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TFTv, UINT32, "TOFI_T1TFTv", "TOFI_T1TFT"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCLM, UINT32, "TOFI_T2TCLM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TCLMI, UINT32, "TOFI_T2TCLMI", "TOFI_T2TCLM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TCLME, UINT32, "TOFI_T2TCLME", "TOFI_T2TCLM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCL, UINT32, "TOFI_T2TCL", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TCLv, UINT32, "TOFI_T2TCLv", "TOFI_T2TCL"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFLM, UINT32, "TOFI_T2TFLM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TFLMI, UINT32, "TOFI_T2TFLMI", "TOFI_T2TFLM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TFLME, UINT32, "TOFI_T2TFLME", "TOFI_T2TFLM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFL, UINT32, "TOFI_T2TFL", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TFLv, UINT32, "TOFI_T2TFLv", "TOFI_T2TFL"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCTM, UINT32, "TOFI_T2TCTM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TCTMI, UINT32, "TOFI_T2TCTMI", "TOFI_T2TCTM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TCTME, UINT32, "TOFI_T2TCTME", "TOFI_T2TCTM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCT, UINT32, "TOFI_T2TCT", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TCTv, UINT32, "TOFI_T2TCTv", "TOFI_T2TCT"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFTM, UINT32, "TOFI_T2TFTM", 24);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TFTMI, UINT32, "TOFI_T2TFTMI", "TOFI_T2TFTM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFI_T2TFTME, UINT32, "TOFI_T2TFTME", "TOFI_T2TFTM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFT, UINT32, "TOFI_T2TFT", 1536);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TFTv, UINT32, "TOFI_T2TFTv", "TOFI_T2TFT"); \
-                                                                                                                     \
+#define EXT_STR_h101_TOFI_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_TRIGCL, UINT32, "TOFI_TRIGCL", 3);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_TRIGCLI, UINT32, "TOFI_TRIGCLI", "TOFI_TRIGCL");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_TRIGCLv, UINT32, "TOFI_TRIGCLv", "TOFI_TRIGCL");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_TRIGFL, UINT32, "TOFI_TRIGFL", 3);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_TRIGFLI, UINT32, "TOFI_TRIGFLI", "TOFI_TRIGFL");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_TRIGFLv, UINT32, "TOFI_TRIGFLv", "TOFI_TRIGFL");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCLM, UINT32, "TOFI_T1TCLM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TCLMI, UINT32, "TOFI_T1TCLMI", "TOFI_T1TCLM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TCLME, UINT32, "TOFI_T1TCLME", "TOFI_T1TCLM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCL, UINT32, "TOFI_T1TCL", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TCLv, UINT32, "TOFI_T1TCLv", "TOFI_T1TCL");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFLM, UINT32, "TOFI_T1TFLM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TFLMI, UINT32, "TOFI_T1TFLMI", "TOFI_T1TFLM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TFLME, UINT32, "TOFI_T1TFLME", "TOFI_T1TFLM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFL, UINT32, "TOFI_T1TFL", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TFLv, UINT32, "TOFI_T1TFLv", "TOFI_T1TFL");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCTM, UINT32, "TOFI_T1TCTM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TCTMI, UINT32, "TOFI_T1TCTMI", "TOFI_T1TCTM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TCTME, UINT32, "TOFI_T1TCTME", "TOFI_T1TCTM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TCT, UINT32, "TOFI_T1TCT", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TCTv, UINT32, "TOFI_T1TCTv", "TOFI_T1TCT");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFTM, UINT32, "TOFI_T1TFTM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TFTMI, UINT32, "TOFI_T1TFTMI", "TOFI_T1TFTM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T1TFTME, UINT32, "TOFI_T1TFTME", "TOFI_T1TFTM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T1TFT, UINT32, "TOFI_T1TFT", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T1TFTv, UINT32, "TOFI_T1TFTv", "TOFI_T1TFT");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCLM, UINT32, "TOFI_T2TCLM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TCLMI, UINT32, "TOFI_T2TCLMI", "TOFI_T2TCLM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TCLME, UINT32, "TOFI_T2TCLME", "TOFI_T2TCLM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCL, UINT32, "TOFI_T2TCL", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TCLv, UINT32, "TOFI_T2TCLv", "TOFI_T2TCL");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFLM, UINT32, "TOFI_T2TFLM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TFLMI, UINT32, "TOFI_T2TFLMI", "TOFI_T2TFLM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TFLME, UINT32, "TOFI_T2TFLME", "TOFI_T2TFLM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFL, UINT32, "TOFI_T2TFL", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TFLv, UINT32, "TOFI_T2TFLv", "TOFI_T2TFL");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCTM, UINT32, "TOFI_T2TCTM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TCTMI, UINT32, "TOFI_T2TCTMI", "TOFI_T2TCTM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TCTME, UINT32, "TOFI_T2TCTME", "TOFI_T2TCTM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TCT, UINT32, "TOFI_T2TCT", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TCTv, UINT32, "TOFI_T2TCTv", "TOFI_T2TCT");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFTM, UINT32, "TOFI_T2TFTM", 24);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TFTMI, UINT32, "TOFI_T2TFTMI", "TOFI_T2TFTM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, TOFI_T2TFTME, UINT32, "TOFI_T2TFTME", "TOFI_T2TFTM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TOFI_T2TFT, UINT32, "TOFI_T2TFT", 1536);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TOFI_T2TFTv, UINT32, "TOFI_T2TFTv", "TOFI_T2TFT");   \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_TOFI_EXT_H101_TOFI_H__*/

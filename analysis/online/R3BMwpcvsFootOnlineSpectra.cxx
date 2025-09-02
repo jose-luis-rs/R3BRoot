@@ -33,15 +33,11 @@
 #include <sstream>
 #include <string>
 
-R3BMwpcvsFootOnlineSpectra::R3BMwpcvsFootOnlineSpectra()
-    : R3BMwpcvsFootOnlineSpectra("R3BMwpcvsFootOnlineSpectra", 1)
+R3BMwpcvsFootOnlineSpectra::R3BMwpcvsFootOnlineSpectra() : R3BMwpcvsFootOnlineSpectra("R3BMwpcvsFootOnlineSpectra", 1)
 {
 }
 
-R3BMwpcvsFootOnlineSpectra::R3BMwpcvsFootOnlineSpectra(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BMwpcvsFootOnlineSpectra::R3BMwpcvsFootOnlineSpectra(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BMwpcvsFootOnlineSpectra::SetParContainers()
 {

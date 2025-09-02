@@ -139,76 +139,76 @@ typedef struct EXT_STR_h101_FIBFOUR_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBFOUR_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                     \
-    do                                                                                                          \
-    {                                                                                                           \
-        ok = 1;                                                                                                 \
-        /* RAW */                                                                                               \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLCM, UINT32, "FIBFOUR_TMLCM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMLCMI, UINT32, "FIBFOUR_TMLCMI", "FIBFOUR_TMLCM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMLCME, UINT32, "FIBFOUR_TMLCME", "FIBFOUR_TMLCM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLC, UINT32, "FIBFOUR_TMLC", 10240); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMLCv, UINT32, "FIBFOUR_TMLCv", "FIBFOUR_TMLC");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLFM, UINT32, "FIBFOUR_TMLFM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMLFMI, UINT32, "FIBFOUR_TMLFMI", "FIBFOUR_TMLFM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMLFME, UINT32, "FIBFOUR_TMLFME", "FIBFOUR_TMLFM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLF, UINT32, "FIBFOUR_TMLF", 10240); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMLFv, UINT32, "FIBFOUR_TMLFv", "FIBFOUR_TMLF");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTCM, UINT32, "FIBFOUR_TMTCM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMTCMI, UINT32, "FIBFOUR_TMTCMI", "FIBFOUR_TMTCM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMTCME, UINT32, "FIBFOUR_TMTCME", "FIBFOUR_TMTCM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTC, UINT32, "FIBFOUR_TMTC", 10240); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMTCv, UINT32, "FIBFOUR_TMTCv", "FIBFOUR_TMTC");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTFM, UINT32, "FIBFOUR_TMTFM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMTFMI, UINT32, "FIBFOUR_TMTFMI", "FIBFOUR_TMTFM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMTFME, UINT32, "FIBFOUR_TMTFME", "FIBFOUR_TMTFM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTF, UINT32, "FIBFOUR_TMTF", 10240); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TMTFv, UINT32, "FIBFOUR_TMTFv", "FIBFOUR_TMTF");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLCM, UINT32, "FIBFOUR_TSLCM", 8);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSLCMI, UINT32, "FIBFOUR_TSLCMI", "FIBFOUR_TSLCM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSLCME, UINT32, "FIBFOUR_TSLCME", "FIBFOUR_TSLCM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLC, UINT32, "FIBFOUR_TSLC", 160);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSLCv, UINT32, "FIBFOUR_TSLCv", "FIBFOUR_TSLC");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLFM, UINT32, "FIBFOUR_TSLFM", 8);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSLFMI, UINT32, "FIBFOUR_TSLFMI", "FIBFOUR_TSLFM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSLFME, UINT32, "FIBFOUR_TSLFME", "FIBFOUR_TSLFM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLF, UINT32, "FIBFOUR_TSLF", 160);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSLFv, UINT32, "FIBFOUR_TSLFv", "FIBFOUR_TSLF");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTCM, UINT32, "FIBFOUR_TSTCM", 8);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSTCMI, UINT32, "FIBFOUR_TSTCMI", "FIBFOUR_TSTCM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSTCME, UINT32, "FIBFOUR_TSTCME", "FIBFOUR_TSTCM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTC, UINT32, "FIBFOUR_TSTC", 160);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSTCv, UINT32, "FIBFOUR_TSTCv", "FIBFOUR_TSTC");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTFM, UINT32, "FIBFOUR_TSTFM", 8);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSTFMI, UINT32, "FIBFOUR_TSTFMI", "FIBFOUR_TSTFM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSTFME, UINT32, "FIBFOUR_TSTFME", "FIBFOUR_TSTFM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTF, UINT32, "FIBFOUR_TSTF", 160);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBFOUR_TSTFv, UINT32, "FIBFOUR_TSTFv", "FIBFOUR_TSTF");        \
-                                                                                                                \
+#define EXT_STR_h101_FIBFOUR_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                            \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLCM, UINT32, "FIBFOUR_TMLCM", 512);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMLCMI, UINT32, "FIBFOUR_TMLCMI", "FIBFOUR_TMLCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMLCME, UINT32, "FIBFOUR_TMLCME", "FIBFOUR_TMLCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLC, UINT32, "FIBFOUR_TMLC", 10240);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMLCv, UINT32, "FIBFOUR_TMLCv", "FIBFOUR_TMLC");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLFM, UINT32, "FIBFOUR_TMLFM", 512);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMLFMI, UINT32, "FIBFOUR_TMLFMI", "FIBFOUR_TMLFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMLFME, UINT32, "FIBFOUR_TMLFME", "FIBFOUR_TMLFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMLF, UINT32, "FIBFOUR_TMLF", 10240);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMLFv, UINT32, "FIBFOUR_TMLFv", "FIBFOUR_TMLF");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTCM, UINT32, "FIBFOUR_TMTCM", 512);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMTCMI, UINT32, "FIBFOUR_TMTCMI", "FIBFOUR_TMTCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMTCME, UINT32, "FIBFOUR_TMTCME", "FIBFOUR_TMTCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTC, UINT32, "FIBFOUR_TMTC", 10240);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMTCv, UINT32, "FIBFOUR_TMTCv", "FIBFOUR_TMTC");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTFM, UINT32, "FIBFOUR_TMTFM", 512);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMTFMI, UINT32, "FIBFOUR_TMTFMI", "FIBFOUR_TMTFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMTFME, UINT32, "FIBFOUR_TMTFME", "FIBFOUR_TMTFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TMTF, UINT32, "FIBFOUR_TMTF", 10240);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TMTFv, UINT32, "FIBFOUR_TMTFv", "FIBFOUR_TMTF");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLCM, UINT32, "FIBFOUR_TSLCM", 8);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSLCMI, UINT32, "FIBFOUR_TSLCMI", "FIBFOUR_TSLCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSLCME, UINT32, "FIBFOUR_TSLCME", "FIBFOUR_TSLCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLC, UINT32, "FIBFOUR_TSLC", 160);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSLCv, UINT32, "FIBFOUR_TSLCv", "FIBFOUR_TSLC");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLFM, UINT32, "FIBFOUR_TSLFM", 8);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSLFMI, UINT32, "FIBFOUR_TSLFMI", "FIBFOUR_TSLFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSLFME, UINT32, "FIBFOUR_TSLFME", "FIBFOUR_TSLFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSLF, UINT32, "FIBFOUR_TSLF", 160);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSLFv, UINT32, "FIBFOUR_TSLFv", "FIBFOUR_TSLF");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTCM, UINT32, "FIBFOUR_TSTCM", 8);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSTCMI, UINT32, "FIBFOUR_TSTCMI", "FIBFOUR_TSTCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSTCME, UINT32, "FIBFOUR_TSTCME", "FIBFOUR_TSTCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTC, UINT32, "FIBFOUR_TSTC", 160);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSTCv, UINT32, "FIBFOUR_TSTCv", "FIBFOUR_TSTC");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTFM, UINT32, "FIBFOUR_TSTFM", 8);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSTFMI, UINT32, "FIBFOUR_TSTFMI", "FIBFOUR_TSTFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSTFME, UINT32, "FIBFOUR_TSTFME", "FIBFOUR_TSTFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBFOUR_TSTF, UINT32, "FIBFOUR_TSTF", 160);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBFOUR_TSTFv, UINT32, "FIBFOUR_TSTFv", "FIBFOUR_TSTF");               \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBFOUR_EXT_H101_FIBFOUR_H__*/

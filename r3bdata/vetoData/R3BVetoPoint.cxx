@@ -24,8 +24,7 @@ using std::endl;
 using std::flush;
 
 // -----   Default constructor   -------------------------------------------
-R3BVetoPoint::R3BVetoPoint()
-    : FairMCPoint()
+R3BVetoPoint::R3BVetoPoint() : FairMCPoint()
 {
     fX_out = fY_out = fZ_out = 0.;
     fPx_out = fPy_out = fPz_out = 0.;

@@ -34,21 +34,12 @@ R3BBunchedFiberMapped2Cal::R3BBunchedFiberMapped2Cal(const char* a_name,
                                                      Int_t a_verbose,
                                                      enum R3BTCalEngine::CTDCVariant a_variant,
                                                      Bool_t a_skip_spmt)
-    : FairTask(TString("R3B") + a_name + "Mapped2Cal", a_verbose)
-    , fName(a_name)
-    , fSPMTElectronics(Electronics::CTDC)
-    , fCTDCVariant(a_variant)
-    , fSkipSPMT(a_skip_spmt)
-    , fMAPMTTCalPar(nullptr)
-    , fMAPMTTrigTCalPar(nullptr)
-    , fSPMTTCalPar(nullptr)
-    , fMappedItems(nullptr)
-    , fCalItems(new TClonesArray("R3BBunchedFiberCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BBunchedFiberCalData"))
-    , fClockFreq(1000. / (R3BTCalEngine::CTDC_16_BWD_150 == a_variant ? 150 : 250))
-    , fTamexFreq(1000. / VFTX_CLOCK_MHZ)
-    , fnEvents(0)
-    , fOnline(kFALSE)
+    : FairTask(TString("R3B") + a_name + "Mapped2Cal", a_verbose), fName(a_name), fSPMTElectronics(Electronics::CTDC),
+      fCTDCVariant(a_variant), fSkipSPMT(a_skip_spmt), fMAPMTTCalPar(nullptr), fMAPMTTrigTCalPar(nullptr),
+      fSPMTTCalPar(nullptr), fMappedItems(nullptr), fCalItems(new TClonesArray("R3BBunchedFiberCalData")),
+      fCalTriggerItems(new TClonesArray("R3BBunchedFiberCalData")),
+      fClockFreq(1000. / (R3BTCalEngine::CTDC_16_BWD_150 == a_variant ? 150 : 250)), fTamexFreq(1000. / VFTX_CLOCK_MHZ),
+      fnEvents(0), fOnline(kFALSE)
 {
 }
 
@@ -57,19 +48,10 @@ R3BBunchedFiberMapped2Cal::R3BBunchedFiberMapped2Cal(const char* a_name,
                                                      enum Electronics a_spmt_electronics,
                                                      enum R3BTCalEngine::CTDCVariant a_variant,
                                                      Bool_t a_skip_spmt)
-    : FairTask(TString("R3B") + a_name + "Mapped2Cal", a_verbose)
-    , fName(a_name)
-    , fSPMTElectronics(a_spmt_electronics)
-    , fCTDCVariant(a_variant)
-    , fSkipSPMT(a_skip_spmt)
-    , fMAPMTTCalPar(nullptr)
-    , fMAPMTTrigTCalPar(nullptr)
-    , fSPMTTCalPar(nullptr)
-    , fMappedItems(nullptr)
-    , fCalItems(new TClonesArray("R3BBunchedFiberCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BBunchedFiberCalData"))
-    , fnEvents(0)
-    , fOnline(kFALSE)
+    : FairTask(TString("R3B") + a_name + "Mapped2Cal", a_verbose), fName(a_name), fSPMTElectronics(a_spmt_electronics),
+      fCTDCVariant(a_variant), fSkipSPMT(a_skip_spmt), fMAPMTTCalPar(nullptr), fMAPMTTrigTCalPar(nullptr),
+      fSPMTTCalPar(nullptr), fMappedItems(nullptr), fCalItems(new TClonesArray("R3BBunchedFiberCalData")),
+      fCalTriggerItems(new TClonesArray("R3BBunchedFiberCalData")), fnEvents(0), fOnline(kFALSE)
 {
 }
 
@@ -123,15 +105,15 @@ void R3BBunchedFiberMapped2Cal::SetParContainers()
 {
     FairRuntimeDb* rtdb = FairRuntimeDb::instance();
     R3BLOG_IF(fatal, !rtdb, "FairRuntimeDb not found");
-#define GET_TCALPAR(NAME)                                                       \
-    do                                                                          \
-    {                                                                           \
-        auto name = fName + #NAME "TCalPar";                                    \
-        f##NAME##TCalPar = dynamic_cast<R3BTCalPar*>(rtdb->getContainer(name)); \
-        if (!f##NAME##TCalPar)                                                  \
-        {                                                                       \
-            R3BLOG(error, "Could not get access to " << name << " container");  \
-        }                                                                       \
+#define GET_TCALPAR(NAME)                                                                                              \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        auto name = fName + #NAME "TCalPar";                                                                           \
+        f##NAME##TCalPar = dynamic_cast<R3BTCalPar*>(rtdb->getContainer(name));                                        \
+        if (!f##NAME##TCalPar)                                                                                         \
+        {                                                                                                              \
+            R3BLOG(error, "Could not get access to " << name << " container");                                         \
+        }                                                                                                              \
     } while (0)
 
     GET_TCALPAR(MAPMT);

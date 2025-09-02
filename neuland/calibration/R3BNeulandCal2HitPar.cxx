@@ -32,14 +32,9 @@
 using namespace Neuland;
 
 R3BNeulandCal2HitPar::R3BNeulandCal2HitPar(const char* name, const Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitCalEngine(new Calibration::HitCalibrationEngine())
-    , fCosmicTracker(new Calibration::CosmicTracker())
-    , fNeulandHitPar(nullptr)
-    , fCalNeuland(nullptr)
-    , fMappedLos(nullptr)
-    , fCosmicTpat(0)
-    , fSavePlots(kFALSE)
+    : FairTask(name, iVerbose), fHitCalEngine(new Calibration::HitCalibrationEngine()),
+      fCosmicTracker(new Calibration::CosmicTracker()), fNeulandHitPar(nullptr), fCalNeuland(nullptr),
+      fMappedLos(nullptr), fCosmicTpat(0), fSavePlots(kFALSE)
 {
 }
 

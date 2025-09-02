@@ -11,13 +11,8 @@ R3BNeulandNeutronsKeras::R3BNeulandNeutronsKeras(TString model,
                                                  TString inputMult,
                                                  TString inputCluster,
                                                  TString output)
-    : FairTask("R3BNeulandNeutronsKeras")
-    , fInputMult(std::move(inputMult))
-    , fMultiplicity(nullptr)
-    , fInputCluster(std::move(inputCluster))
-    , fClusters(nullptr)
-    , fNeutrons(std::move(output))
-    , fMinProb(0.1)
+    : FairTask("R3BNeulandNeutronsKeras"), fInputMult(std::move(inputMult)), fMultiplicity(nullptr),
+      fInputCluster(std::move(inputCluster)), fClusters(nullptr), fNeutrons(std::move(output)), fMinProb(0.1)
 {
     // Warning: The python instance is shared. Here use prefix keras_ for all variables
     // Report python version

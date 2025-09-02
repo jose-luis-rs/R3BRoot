@@ -19,10 +19,7 @@
 
 // -----   Standard constructor   ------------------------------------------
 R3BFootCalData::R3BFootCalData(uint8_t detid, uint16_t stripid, double energy, double sigma)
-    : fDetId(detid)
-    , fStripId(stripid)
-    , fEnergy(energy)
-    , fSigma(sigma)
+    : fDetId(detid), fStripId(stripid), fEnergy(energy), fSigma(sigma)
 {
 }
 

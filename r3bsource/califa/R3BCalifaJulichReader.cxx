@@ -34,13 +34,8 @@ extern "C"
 }
 
 R3BCalifaJulichReader::R3BCalifaJulichReader(EXT_STR_h101_CALIFA* data, size_t offset)
-    : R3BReader("R3BCalifaJulichReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArrayCalifa(new TClonesArray("R3BCalifaMappedData"))
-    , fArrayAms(new TClonesArray("R3BAmsMappedData"))
+    : R3BReader("R3BCalifaJulichReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArrayCalifa(new TClonesArray("R3BCalifaMappedData")), fArrayAms(new TClonesArray("R3BAmsMappedData"))
 {
 }
 

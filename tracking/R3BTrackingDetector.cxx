@@ -31,11 +31,7 @@ R3BTrackingDetector::R3BTrackingDetector(const char* detectorName,
                                          EDetectorType type,
                                          const char* geoParName,
                                          const char* hitArray)
-    : fDetectorName(detectorName)
-    , fGeoParName(geoParName)
-    , fDataName(hitArray)
-    , section(type)
-    , fArrayHits(NULL)
+    : fDetectorName(detectorName), fGeoParName(geoParName), fDataName(hitArray), section(type), fArrayHits(NULL)
 {
     // resolutions (for chi2)
     res_x = 1; // dummy values that allow calculating chi2

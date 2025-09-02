@@ -47,17 +47,10 @@
 
 using namespace std;
 
-R3BMusliOnlineSpectra::R3BMusliOnlineSpectra()
-    : R3BMusliOnlineSpectra("MusliOnlineSpectra", 1)
-{
-}
+R3BMusliOnlineSpectra::R3BMusliOnlineSpectra() : R3BMusliOnlineSpectra("MusliOnlineSpectra", 1) {}
 
 R3BMusliOnlineSpectra::R3BMusliOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMapItemsMusli(NULL)
-    , fCalItemsMusli(NULL)
-    , fHitItemsMusli(NULL)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fMapItemsMusli(NULL), fCalItemsMusli(NULL), fHitItemsMusli(NULL), fNEvents(0)
 {
 }
 

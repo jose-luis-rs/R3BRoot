@@ -18,12 +18,7 @@
 
 using namespace std;
 
-R3BMDFWrapper::R3BMDFWrapper()
-    : mdf_NVariables(0)
-    , pca_NVariables(0)
-    , is_PCA(false)
-{
-}
+R3BMDFWrapper::R3BMDFWrapper() : mdf_NVariables(0), pca_NVariables(0), is_PCA(false) {}
 
 R3BMDFWrapper::R3BMDFWrapper(const char* mdf_file)
 {

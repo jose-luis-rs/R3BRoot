@@ -23,32 +23,32 @@ Double_t det_xGlassPos = 150; //!  x-size of Active Glass plates
 Double_t det_yGlassPos = 120; //!  y-size of Active Glass plates
 Double_t det_zGlassPos = 0.1; //!  z-size of Active Glass plates
 
-Double_t det_xFreonSF6Pos = 150;  //!  x-size of gas gap
-Double_t det_yFreonSF6Pos = 120;  //!  y-size of gas gap
+Double_t det_xFreonSF6Pos = 150; //!  x-size of gas gap
+Double_t det_yFreonSF6Pos = 120; //!  y-size of gas gap
 Double_t det_zFreonSF6Pos = 0.03; //!  z-size of gas gap
 
-Double_t det_xStripPos = 154;   //!  x-size of Strip
-Double_t det_yStripPos = 2.9;   //!  y-size of Strip
+Double_t det_xStripPos = 154; //!  x-size of Strip
+Double_t det_yStripPos = 2.9; //!  y-size of Strip
 Double_t det_zStripPos = 0.003; //!  z-size of Strip
 
-Double_t det_latxPMMAPos = 1.5;  //!  x-size of PMMA box
-Double_t det_latyPMMAPos = 125;  //!  y-size of PMMA box
+Double_t det_latxPMMAPos = 1.5; //!  x-size of PMMA box
+Double_t det_latyPMMAPos = 125; //!  y-size of PMMA box
 Double_t det_latzPMMAPos = 0.88; //!  z-size of PMMA box
 
 Double_t det_frontdxPMMAPos = 155; //!  x-thickness of PMMA box
 Double_t det_frontdyPMMAPos = 125; //!  y-thickness of PMMA box
 Double_t det_frontdzPMMAPos = 0.1; //!  z-thickness of PMMA box
 
-Double_t det_topdxPMMAPos = 155;  //!  x-thickness of PMMA box
-Double_t det_topdyPMMAPos = 1.5;  //!  y-thickness of PMMA box
+Double_t det_topdxPMMAPos = 155; //!  x-thickness of PMMA box
+Double_t det_topdyPMMAPos = 1.5; //!  y-thickness of PMMA box
 Double_t det_topdzPMMAPos = 0.88; //!  z-thickness of PMMA box
 
 Double_t det_xFreonSF6Pos_2 = 0.5; //!  x-size of gas gap
 Double_t det_yFreonSF6Pos_2 = 0.5; //!  y-size of gas gap
 Double_t det_zFreonSF6Pos_2 = 0.8; //!  z-size of gas gap
 
-Double_t det_xFR4Pos = 157;  //!  x-size of FR4 box
-Double_t det_yFR4Pos = 125;  //!  y-size of FR4 box
+Double_t det_xFR4Pos = 157; //!  x-size of FR4 box
+Double_t det_yFR4Pos = 125; //!  y-size of FR4 box
 Double_t det_zFR4Pos = 0.15; //!  z-size of FR4 box
 
 Double_t det_xAlPos = 177; //!  x-size of Aluminium box

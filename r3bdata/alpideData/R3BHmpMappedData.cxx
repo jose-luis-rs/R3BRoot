@@ -28,16 +28,8 @@ R3BHmpMappedData::R3BHmpMappedData(uint32_t TSYS_LO,
                                    uint32_t curr3,
                                    uint32_t volt4,
                                    uint32_t curr4)
-    : fTSLO(TSYS_LO)
-    , fTSHI(TSYS_HI)
-    , fVolt1(volt1)
-    , fCurr1(curr1)
-    , fVolt2(volt2)
-    , fCurr2(curr2)
-    , fVolt3(volt3)
-    , fCurr3(curr3)
-    , fVolt4(volt4)
-    , fCurr4(curr4)
+    : fTSLO(TSYS_LO), fTSHI(TSYS_HI), fVolt1(volt1), fCurr1(curr1), fVolt2(volt2), fCurr2(curr2), fVolt3(volt3),
+      fCurr3(curr3), fVolt4(volt4), fCurr4(curr4)
 {
 }
 

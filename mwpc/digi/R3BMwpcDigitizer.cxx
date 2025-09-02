@@ -34,20 +34,12 @@
 #include <string>
 
 // R3BMwpcDigitizer: Default Constructor --------------------------
-R3BMwpcDigitizer::R3BMwpcDigitizer()
-    : R3BMwpcDigitizer("R3BMwpcDigitizer", 1)
-{
-}
+R3BMwpcDigitizer::R3BMwpcDigitizer() : R3BMwpcDigitizer("R3BMwpcDigitizer", 1) {}
 
 // R3BMwpcDigitizer: Standard Constructor --------------------------
 R3BMwpcDigitizer::R3BMwpcDigitizer(const TString& name, Int_t iVerbose)
-    : FairTask(name + "Digi", iVerbose)
-    , fName(name)
-    , fMCTrack(NULL)
-    , fMwpcPoints(NULL)
-    , fMwpcHits(NULL)
-    , fsigma_x(0.125)
-    , fsigma_y(0.25)
+    : FairTask(name + "Digi", iVerbose), fName(name), fMCTrack(NULL), fMwpcPoints(NULL), fMwpcHits(NULL),
+      fsigma_x(0.125), fsigma_y(0.25)
 {
 }
 

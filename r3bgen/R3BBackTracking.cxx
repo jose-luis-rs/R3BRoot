@@ -19,17 +19,7 @@
 using namespace std;
 
 R3BBackTracking::R3BBackTracking()
-    : px1(0.)
-    , py1(0.)
-    , pz1(0.)
-    , pprim(0.)
-    , x1(0.)
-    , y1(0.)
-    , z1(0.)
-    , x0(0.)
-    , y0(0.)
-    , z0(0.)
-    , inputFile(NULL)
+    : px1(0.), py1(0.), pz1(0.), pprim(0.), x1(0.), y1(0.), z1(0.), x0(0.), y0(0.), z0(0.), inputFile(NULL)
 {
     //
     // Constructor
@@ -44,17 +34,8 @@ R3BBackTracking::R3BBackTracking()
 }
 
 R3BBackTracking::R3BBackTracking(const R3BBackTracking& right)
-    : px1(right.px1)
-    , py1(right.py1)
-    , pz1(right.pz1)
-    , pprim(right.pprim)
-    , x1(right.x1)
-    , y1(right.y1)
-    , z1(right.z1)
-    , x0(right.x0)
-    , y0(right.y0)
-    , z0(right.z0)
-    , inputFile(right.inputFile)
+    : px1(right.px1), py1(right.py1), pz1(right.pz1), pprim(right.pprim), x1(right.x1), y1(right.y1), z1(right.z1),
+      x0(right.x0), y0(right.y0), z0(right.z0), inputFile(right.inputFile)
 {
 }
 

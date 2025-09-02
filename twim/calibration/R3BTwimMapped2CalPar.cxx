@@ -39,39 +39,21 @@
 #include "R3BTwimMappedData.h"
 
 // R3BTwimMapped2CalPar: Default Constructor --------------------------
-R3BTwimMapped2CalPar::R3BTwimMapped2CalPar()
-    : R3BTwimMapped2CalPar("R3BTwimMapped2CalPar", 1, "Mwpc1", "Mwpc2")
-{
-}
+R3BTwimMapped2CalPar::R3BTwimMapped2CalPar() : R3BTwimMapped2CalPar("R3BTwimMapped2CalPar", 1, "Mwpc1", "Mwpc2") {}
 
 // R3BTwimMapped2CalParPar: Standard Constructor --------------------------
 R3BTwimMapped2CalPar::R3BTwimMapped2CalPar(const TString& name,
                                            Int_t iVerbose,
                                            const TString& namedeta,
                                            const TString& namedetb)
-    : FairTask(name, iVerbose)
-    , fNumSec(4)
-    , fNumAnodes(16)   // 16 anodes
-    , fNumAnodesRef(2) // 2 anode for TREF
-    , fMaxMult(20)
-    , fMinStadistics(1000)
-    , fLimit_left(0)
-    , fLimit_right(24000)
-    , fNumParams(3)
-    , fNumPosParams(2)
-    , fMaxSigma(200)
-    , CalParams(NULL)
-    , PosParams(NULL)
-    , fCal_Par(NULL)
-    , fNameDetA(namedeta)
-    , fPosMwpcA(0.)
-    , fNameDetB(namedetb)
-    , fPosMwpcB(0.)
-    , fPosTwim(0.)
-    , fTwimMappedDataCA(NULL)
-    , fHitItemsMwpcA(NULL)
-    , fHitItemsMwpcB(NULL)
-    , fExpId(0)
+    : FairTask(name, iVerbose), fNumSec(4), fNumAnodes(16) // 16 anodes
+      ,
+      fNumAnodesRef(2) // 2 anode for TREF
+      ,
+      fMaxMult(20), fMinStadistics(1000), fLimit_left(0), fLimit_right(24000), fNumParams(3), fNumPosParams(2),
+      fMaxSigma(200), CalParams(NULL), PosParams(NULL), fCal_Par(NULL), fNameDetA(namedeta), fPosMwpcA(0.),
+      fNameDetB(namedetb), fPosMwpcB(0.), fPosTwim(0.), fTwimMappedDataCA(NULL), fHitItemsMwpcA(NULL),
+      fHitItemsMwpcB(NULL), fExpId(0)
 {
 }
 
@@ -137,14 +119,14 @@ InitStatus R3BTwimMapped2CalPar::Init()
     if (fExpId == 444 || fExpId == 467)
     {
         fNumSec = 1;
-        fNumAnodes = 16;   // 16 anodes
+        fNumAnodes = 16; // 16 anodes
         fNumAnodesRef = 2; // 2 anode for TREF
         fMaxMult = 10;
     }
     else
     {
         fNumSec = 4;
-        fNumAnodes = 16;   // 16 anodes
+        fNumAnodes = 16; // 16 anodes
         fNumAnodesRef = 1; // 1 anode for TREF
         fMaxMult = 20;
     }
@@ -228,7 +210,7 @@ void R3BTwimMapped2CalPar::Exec(Option_t* option)
             mulanode[secId][anodeId]++;
         }
         else if (anodeId >= fNumAnodes)
-        {                                                                             // Ref. Time
+        { // Ref. Time
             fDT[secId][mulanode[secId][anodeId]][anodeId] = mappedData[i]->GetTime(); // Ref. Time
             mulanode[secId][anodeId]++;
         }

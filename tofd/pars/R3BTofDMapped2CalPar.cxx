@@ -29,15 +29,9 @@
 #include "R3BTCalPar.h"
 #include "R3BTofdMappedData.h"
 
-R3BTofDMapped2CalPar::R3BTofDMapped2CalPar()
-    : R3BTofDMapped2CalPar("R3BTofDMapped2CalPar", 1)
-{
-}
+R3BTofDMapped2CalPar::R3BTofDMapped2CalPar() : R3BTofDMapped2CalPar("R3BTofDMapped2CalPar", 1) {}
 
-R3BTofDMapped2CalPar::R3BTofDMapped2CalPar(const char* name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BTofDMapped2CalPar::R3BTofDMapped2CalPar(const char* name, int iVerbose) : FairTask(name, iVerbose) {}
 
 R3BTofDMapped2CalPar::~R3BTofDMapped2CalPar()
 {

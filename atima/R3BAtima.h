@@ -25,23 +25,14 @@ namespace R3BAtima
     struct MaterialCompound
     {
         MaterialCompound(const Double_t mass_u = 1, const Double_t charge_e = 1)
-            : Mass_u(mass_u)
-            , Charge_e(charge_e)
-            , Ratio(1.)
+            : Mass_u(mass_u), Charge_e(charge_e), Ratio(1.)
         {
         }
         MaterialCompound(const Double_t mass_u, const Double_t charge_e, const Double_t ratio)
-            : Mass_u(mass_u)
-            , Charge_e(charge_e)
-            , Ratio(ratio)
+            : Mass_u(mass_u), Charge_e(charge_e), Ratio(ratio)
         {
         }
-        MaterialCompound(const std::array<Double_t, 3>& arr)
-            : Mass_u(arr[0])
-            , Charge_e(arr[1])
-            , Ratio(arr[2])
-        {
-        }
+        MaterialCompound(const std::array<Double_t, 3>& arr) : Mass_u(arr[0]), Charge_e(arr[1]), Ratio(arr[2]) {}
 
         bool operator==(const MaterialCompound& other) const
         {
@@ -62,9 +53,7 @@ namespace R3BAtima
         static const TargetMaterial BC400;
 
         TargetMaterial(const std::vector<MaterialCompound>& compounds, const Double_t density, const Bool_t isGas)
-            : Compounds(compounds)
-            , Density(density)
-            , IsGas(isGas)
+            : Compounds(compounds), Density(density), IsGas(isGas)
         {
         }
 

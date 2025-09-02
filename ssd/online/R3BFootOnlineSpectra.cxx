@@ -49,15 +49,9 @@
 #include <iostream>
 #include <sstream>
 
-R3BFootOnlineSpectra::R3BFootOnlineSpectra()
-    : R3BFootOnlineSpectra("FootOnlineSpectra", 1)
-{
-}
+R3BFootOnlineSpectra::R3BFootOnlineSpectra() : R3BFootOnlineSpectra("FootOnlineSpectra", 1) {}
 
-R3BFootOnlineSpectra::R3BFootOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BFootOnlineSpectra::R3BFootOnlineSpectra(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 InitStatus R3BFootOnlineSpectra::Init()
 {

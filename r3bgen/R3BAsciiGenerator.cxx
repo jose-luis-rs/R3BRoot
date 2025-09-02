@@ -25,32 +25,17 @@
 
 int GetIonPdg(int z, int a) { return 1000000000 + 10 * 1000 * z + 10 * a; }
 
-R3BAsciiGenerator::R3BAsciiGenerator()
-    : fFileName()
-    , fFile()
-    , fBuf()
-    , fInput(&fBuf)
-{
-}
+R3BAsciiGenerator::R3BAsciiGenerator() : fFileName(), fFile(), fBuf(), fInput(&fBuf) {}
 
 R3BAsciiGenerator::R3BAsciiGenerator(const std::string& fileName)
-    : fFileName(std::move(fileName))
-    , fFile()
-    , fBuf()
-    , fInput(&fBuf)
+    : fFileName(std::move(fileName)), fFile(), fBuf(), fInput(&fBuf)
 {
     RegisterIons();
 }
 
-R3BAsciiGenerator::R3BAsciiGenerator(const TString& fileName)
-    : R3BAsciiGenerator(std::string(fileName))
-{
-}
+R3BAsciiGenerator::R3BAsciiGenerator(const TString& fileName) : R3BAsciiGenerator(std::string(fileName)) {}
 
-R3BAsciiGenerator::R3BAsciiGenerator(const char* fileName)
-    : R3BAsciiGenerator(std::string(fileName))
-{
-}
+R3BAsciiGenerator::R3BAsciiGenerator(const char* fileName) : R3BAsciiGenerator(std::string(fileName)) {}
 
 bool R3BAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen)
 {

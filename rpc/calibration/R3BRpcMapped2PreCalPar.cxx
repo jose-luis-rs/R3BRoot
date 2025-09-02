@@ -30,18 +30,12 @@
 #include <iostream>
 #include <stdlib.h>
 
-R3BRpcMapped2PreCalPar::R3BRpcMapped2PreCalPar()
-    : R3BRpcMapped2PreCalPar("R3B RPC Calibration Parameters Finder ", 1)
+R3BRpcMapped2PreCalPar::R3BRpcMapped2PreCalPar() : R3BRpcMapped2PreCalPar("R3B RPC Calibration Parameters Finder ", 1)
 {
 }
 
 R3BRpcMapped2PreCalPar::R3BRpcMapped2PreCalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTCalPar(NULL)
-    , fEngine()
-    , fMappedDataCA(NULL)
-    , fNumChannels(64)
-    , fDebugMode(0)
+    : FairTask(name, iVerbose), fTCalPar(NULL), fEngine(), fMappedDataCA(NULL), fNumChannels(64), fDebugMode(0)
 {
 }
 
@@ -105,7 +99,7 @@ void R3BRpcMapped2PreCalPar::Exec(Option_t* opt)
         auto map1 = dynamic_cast<R3BRpcMappedData*>(fMappedDataCA->At(i));
 
         UInt_t iDetector = map1->GetDetId();
-        UInt_t iStrip = map1->GetChannelId();                      // now 1..41
+        UInt_t iStrip = map1->GetChannelId(); // now 1..41
         UInt_t iEdge_Side = map1->GetEdge() * 2 + map1->GetSide(); // 0,3
         fEngine->Fill(iDetector + 1, iStrip, iEdge_Side + 1, map1->GetFineTime());
     }

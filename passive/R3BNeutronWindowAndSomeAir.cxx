@@ -8,9 +8,7 @@
 #include "TGeoMedium.h"
 
 R3BNeutronWindowAndSomeAir::R3BNeutronWindowAndSomeAir(double xstart, double xstop)
-    : FairModule("NeutronWindowAndSomeAir", "NeutronWindowAndSomeAir", false)
-    , fStart(xstart)
-    , fStop(xstop)
+    : FairModule("NeutronWindowAndSomeAir", "NeutronWindowAndSomeAir", false), fStart(xstart), fStop(xstop)
 {
 }
 

@@ -108,12 +108,12 @@ class R3BMusliCal2Hit : public FairTask
     Double_t x_hit[MAX_NUM_TYPES_HIT];
     Double_t theta_hit[MAX_NUM_TYPES_HIT];
 
-    R3BMusliHitPar* fHit_Par;      /**< Parameter container. > */
-    R3BTGeoPar* fMusliGeo_Par;     /**< Parameter container. > */
+    R3BMusliHitPar* fHit_Par; /**< Parameter container. > */
+    R3BTGeoPar* fMusliGeo_Par; /**< Parameter container. > */
     TClonesArray* fMusliCalDataCA; /**< Array with Musli Cal-input data. >*/
     TClonesArray* fMusliHitDataCA; /**< Array with Musli Hit-output data. >*/
-    TClonesArray* fFrsDataCA;      /**< Array with Frs input data (for beta). >*/
-    Bool_t fFrsSciTofCal;          // need to know if FrsSciTofCal or FrsData is used
+    TClonesArray* fFrsDataCA; /**< Array with Frs input data (for beta). >*/
+    Bool_t fFrsSciTofCal; // need to know if FrsSciTofCal or FrsData is used
 
     Bool_t fOnline; // Don't store data for online
 

@@ -30,10 +30,7 @@
 #include "TParticle.h"
 #include "TVirtualMC.h"
 
-R3BFiber::R3BFiber()
-    : R3BFiber("", "", kREF)
-{
-}
+R3BFiber::R3BFiber() : R3BFiber("", "", kREF) {}
 
 R3BFiber::R3BFiber(const TString& name,
                    const TString& geoFile,
@@ -45,13 +42,8 @@ R3BFiber::R3BFiber(const TString& name,
 }
 
 R3BFiber::R3BFiber(const TString& name, const TString& geoFile, DetectorId detid, const TGeoCombiTrans& combi)
-    : R3BDetector("R3B" + name, detid, geoFile, combi)
-    , fName(name)
-    , fDetId(detid)
-    , fFiCollection(new TClonesArray("R3BFibPoint"))
-    , fPosIndex(0)
-    , kGeoSaved(kFALSE)
-    , flGeoPar(new TList())
+    : R3BDetector("R3B" + name, detid, geoFile, combi), fName(name), fDetId(detid),
+      fFiCollection(new TClonesArray("R3BFibPoint")), fPosIndex(0), kGeoSaved(kFALSE), flGeoPar(new TList())
 {
     flGeoPar->SetName(GetName());
     ResetParameters();

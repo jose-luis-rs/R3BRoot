@@ -25,16 +25,9 @@ namespace R3B
         DataType value{};
         DataType error{};
 
-        ValueError(const DataType& val, const DataType& err)
-            : value{ val }
-            , error{ err }
-        {
-        }
+        ValueError(const DataType& val, const DataType& err) : value{ val }, error{ err } {}
 
-        ValueError()
-            : valid{ false }
-        {
-        }
+        ValueError() : valid{ false } {}
 
         auto operator-() const -> ValueError<DataType> { return { -value, error }; }
 

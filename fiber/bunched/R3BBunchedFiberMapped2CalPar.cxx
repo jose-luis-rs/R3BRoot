@@ -28,13 +28,9 @@ R3BBunchedFiberMapped2CalPar::R3BBunchedFiberMapped2CalPar(const char* a_name,
                                                            enum R3BTCalEngine::CTDCVariant a_ctdc_variant,
                                                            Int_t a_update_rate,
                                                            Int_t a_min_stats)
-    : FairTask(TString("R3B") + a_name + "Mapped2CalPar", a_verbose)
-    , fName(a_name)
-    , fSPMTElectronics(a_spmt_electronics)
-    , fCTDCVariant(a_ctdc_variant)
-    , fUpdateRate(a_update_rate)
-    , fMinStats(a_min_stats)
-    , fMapped(NULL)
+    : FairTask(TString("R3B") + a_name + "Mapped2CalPar", a_verbose), fName(a_name),
+      fSPMTElectronics(a_spmt_electronics), fCTDCVariant(a_ctdc_variant), fUpdateRate(a_update_rate),
+      fMinStats(a_min_stats), fMapped(NULL)
 {
 }
 
@@ -58,18 +54,18 @@ InitStatus R3BBunchedFiberMapped2CalPar::Init()
 {
     // container needs to be created in tcal/R3BTCalContFact.cxx AND R3BTCal needs
     // to be set as dependency in CMakeLists.txt in the detector directory.
-#define GET_TCALPAR(NAME)                                                                            \
-    do                                                                                               \
-    {                                                                                                \
-        auto name = fName + #NAME "TCalPar";                                                         \
-        f##NAME##TCalPar = dynamic_cast<R3BTCalPar*>(FairRuntimeDb::instance()->getContainer(name)); \
-        if (!f##NAME##TCalPar)                                                                       \
-        {                                                                                            \
-            R3BLOG(error, "Could not get " << name);                                                 \
-            return kFATAL;                                                                           \
-        }                                                                                            \
-        f##NAME##TCalPar->setChanged();                                                              \
-        f##NAME##Engine = new R3BTCalEngine(f##NAME##TCalPar, fMinStats);                            \
+#define GET_TCALPAR(NAME)                                                                                              \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        auto name = fName + #NAME "TCalPar";                                                                           \
+        f##NAME##TCalPar = dynamic_cast<R3BTCalPar*>(FairRuntimeDb::instance()->getContainer(name));                   \
+        if (!f##NAME##TCalPar)                                                                                         \
+        {                                                                                                              \
+            R3BLOG(error, "Could not get " << name);                                                                   \
+            return kFATAL;                                                                                             \
+        }                                                                                                              \
+        f##NAME##TCalPar->setChanged();                                                                                \
+        f##NAME##Engine = new R3BTCalEngine(f##NAME##TCalPar, fMinStats);                                              \
     } while (0)
 
     auto rm = FairRootManager::Instance();

@@ -14,23 +14,12 @@
 #include "R3BMusliHitData.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BMusliHitData::R3BMusliHitData()
-    : fType(0)
-    , fE(-1.)
-    , fZ(-1.)
-    , fX(0.)
-    , fTheta(-1.)
-{
-}
+R3BMusliHitData::R3BMusliHitData() : fType(0), fE(-1.), fZ(-1.), fX(0.), fTheta(-1.) {}
 // -------------------------------------------------------------------------
 
 // -----   Standard constructor   ------------------------------------------
 R3BMusliHitData::R3BMusliHitData(UInt_t n, Double_t e, Double_t z, Double_t x, Double_t theta)
-    : fType(n)
-    , fE(e)
-    , fZ(z)
-    , fX(x)
-    , fTheta(theta)
+    : fType(n), fE(e), fZ(z), fX(x), fTheta(theta)
 {
 }
 // -------------------------------------------------------------------------

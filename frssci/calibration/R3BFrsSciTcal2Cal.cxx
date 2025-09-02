@@ -24,25 +24,14 @@
 
 // --- Default Constructor
 R3BFrsSciTcal2Cal::R3BFrsSciTcal2Cal()
-    : FairTask("R3BFrsSciTcal2Cal", 1)
-    , fNevent(0)
-    , fTcal(NULL)
-    , fCalPar(NULL)
-    , fPosCal(NULL)
-    , fTofCal(NULL)
-    , fOnline(kFALSE)
+    : FairTask("R3BFrsSciTcal2Cal", 1), fNevent(0), fTcal(NULL), fCalPar(NULL), fPosCal(NULL), fTofCal(NULL),
+      fOnline(kFALSE)
 {
 }
 
 // --- Standard Constructor
 R3BFrsSciTcal2Cal::R3BFrsSciTcal2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNevent(0)
-    , fTcal(NULL)
-    , fCalPar(NULL)
-    , fPosCal(NULL)
-    , fTofCal(NULL)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fNevent(0), fTcal(NULL), fCalPar(NULL), fPosCal(NULL), fTofCal(NULL), fOnline(kFALSE)
 {
 }
 
@@ -214,8 +203,8 @@ void R3BFrsSciTcal2Cal::Exec(Option_t* option)
                 iCalPos = fCalPar->GetPosCalGainAtRank(0) * iRawPos + fCalPar->GetPosCalOffsetAtRank(0);
                 AddPosCalData(1, iRawTime, iRawTime_wtref, iRawPos, iCalPos);
             } // end of loop over the hits of the left PMTs
-        }     // end of loop over the hits of the right PMTs
-    }         // end of if (nDets==1)
+        } // end of loop over the hits of the right PMTs
+    } // end of if (nDets==1)
     else if (nDets > 1)
     {
         // Variables to fill PosCal and TofCal data
@@ -305,12 +294,12 @@ void R3BFrsSciTcal2Cal::Exec(Option_t* option)
                                     }
 
                                 } // end of loop over the left start mult
-                            }     // end of loop over the right start mult
-                        }         // end of if data in Left and Right of Sta detector
-                    }             // end of loop over the start detectors
-                }                 // end of loop over the left stop mult
-            }                     // end of loop over the right stop mult
-        }                         // end of if data in Left and Right of Sto detector
+                            } // end of loop over the right start mult
+                        } // end of if data in Left and Right of Sta detector
+                    } // end of loop over the start detectors
+                } // end of loop over the left stop mult
+            } // end of loop over the right stop mult
+        } // end of if data in Left and Right of Sto detector
 
         // Fill CalData levels
         Double_t iRawTime[nDets];
@@ -405,7 +394,7 @@ void R3BFrsSciTcal2Cal::Exec(Option_t* option)
             }
         }
 
-    }    // end if else is (nDets>1)
+    } // end if else is (nDets>1)
     else // nDets==0, should not happen
     {
     }

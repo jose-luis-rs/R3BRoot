@@ -96,29 +96,10 @@ R3BOnlineSpectraFibvsToFDS494::R3BOnlineSpectraFibvsToFDS494()
 }
 
 R3BOnlineSpectraFibvsToFDS494::R3BOnlineSpectraFibvsToFDS494(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fCuts(0)
-    , fVeto(false)
-    , fwindow_mv(10000)
-    , fxmin(-1000)
-    , fxmax(1000)
-    , ftofminFib2x(T_TOF_MIN)
-    , ftofmaxFib2x(T_TOF_MAX)
-    , ftofminFib3x(T_TOF_MIN)
-    , ftofmaxFib3x(T_TOF_MAX)
-    , ftofminTofi(T_TOF_MIN)
-    , ftofmaxTofi(T_TOF_MAX)
-    , fqtofdmin(0)
-    , fqtofdmax(200)
-    , fNEvents(0)
-    , header(NULL)
-    , fMappedItemsCalifa(NULL)
-    , fMappedItems()
-    , fCalItems()
-    , fHitItems()
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat1(-1), fTpat2(-1), fCuts(0), fVeto(false), fwindow_mv(10000),
+      fxmin(-1000), fxmax(1000), ftofminFib2x(T_TOF_MIN), ftofmaxFib2x(T_TOF_MAX), ftofminFib3x(T_TOF_MIN),
+      ftofmaxFib3x(T_TOF_MAX), ftofminTofi(T_TOF_MIN), ftofmaxTofi(T_TOF_MAX), fqtofdmin(0), fqtofdmax(200),
+      fNEvents(0), header(NULL), fMappedItemsCalifa(NULL), fMappedItems(), fCalItems(), fHitItems()
 {
 }
 
@@ -990,7 +971,7 @@ void R3BOnlineSpectraFibvsToFDS494::Exec(Option_t* option)
                     R3BTofiHitData* hitTofi = dynamic_cast<R3BTofiHitData*>(detHitTofi->At(ihitTofi));
                     randx = (std::rand() / (float)RAND_MAX) - 0.5;
                     x1[det] = hitTofi->GetX() + 0.5 * randx; // cm
-                    y1[det] = hitTofi->GetY();               // cm
+                    y1[det] = hitTofi->GetY(); // cm
                     z1[det] = 0.;
                     q1[det] = hitTofi->GetEloss();
 
@@ -1034,7 +1015,7 @@ void R3BOnlineSpectraFibvsToFDS494::Exec(Option_t* option)
                 R3BFiberMAPMTHitData* hit33 = dynamic_cast<R3BFiberMAPMTHitData*>(detHit33->At(ihit33));
                 randx = (std::rand() / (float)RAND_MAX) - 0.5;
                 x1[det] = hit33->GetX() + 0.1 * randx; // cm
-                y1[det] = hit33->GetY();               // cm
+                y1[det] = hit33->GetY(); // cm
                 z1[det] = 0.;
                 q1[det] = hit33->GetEloss();
 

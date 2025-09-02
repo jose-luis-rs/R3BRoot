@@ -62,27 +62,15 @@ map_fields_ALADiN R3BAladinFieldMap::gMapIField;
 coords_ALADiN R3BAladinFieldMap::gCoords[2];
 Bool_t R3BAladinFieldMap::gInitialized = kFALSE;
 
-R3BAladinFieldMap::R3BAladinFieldMap()
-    : fBx(NULL)
-    , fBy(NULL)
-    , fBz(NULL)
-{
-    fType = 1;
-}
+R3BAladinFieldMap::R3BAladinFieldMap() : fBx(NULL), fBy(NULL), fBz(NULL) { fType = 1; }
 
 R3BAladinFieldMap::R3BAladinFieldMap(const char* mapName, const char* fileType)
-    : FairField(mapName)
-    , fBx(NULL)
-    , fBy(NULL)
-    , fBz(NULL)
+    : FairField(mapName), fBx(NULL), fBy(NULL), fBz(NULL)
 {
     fType = 1;
 }
 
-R3BAladinFieldMap::R3BAladinFieldMap(R3BFieldPar* fieldPar)
-    : fBx(NULL)
-    , fBy(NULL)
-    , fBz(NULL)
+R3BAladinFieldMap::R3BAladinFieldMap(R3BFieldPar* fieldPar) : fBx(NULL), fBy(NULL), fBz(NULL)
 {
     fType = 1;
     fCurrent = fieldPar->GetCurrent();

@@ -79,26 +79,26 @@ typedef struct EXT_STR_h101_SCI2_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_SCI2_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                             \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTFM, UINT32, "SCITWO_VTFM", 8);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SCITWO_VTFMI, UINT32, "SCITWO_VTFMI", "SCITWO_VTFM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SCITWO_VTFME, UINT32, "SCITWO_VTFME", "SCITWO_VTFM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTF, UINT32, "SCITWO_VTF", 256);            \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SCITWO_VTFv, UINT32, "SCITWO_VTFv", "SCITWO_VTF"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTCM, UINT32, "SCITWO_VTCM", 8);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SCITWO_VTCMI, UINT32, "SCITWO_VTCMI", "SCITWO_VTCM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SCITWO_VTCME, UINT32, "SCITWO_VTCME", "SCITWO_VTCM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTC, UINT32, "SCITWO_VTC", 256);            \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SCITWO_VTCv, UINT32, "SCITWO_VTCv", "SCITWO_VTC"); \
-                                                                                                                     \
+#define EXT_STR_h101_SCI2_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTFM, UINT32, "SCITWO_VTFM", 8);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCITWO_VTFMI, UINT32, "SCITWO_VTFMI", "SCITWO_VTFM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCITWO_VTFME, UINT32, "SCITWO_VTFME", "SCITWO_VTFM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTF, UINT32, "SCITWO_VTF", 256);              \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SCITWO_VTFv, UINT32, "SCITWO_VTFv", "SCITWO_VTF");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTCM, UINT32, "SCITWO_VTCM", 8);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCITWO_VTCMI, UINT32, "SCITWO_VTCMI", "SCITWO_VTCM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCITWO_VTCME, UINT32, "SCITWO_VTCME", "SCITWO_VTCM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCITWO_VTC, UINT32, "SCITWO_VTC", 256);              \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SCITWO_VTCv, UINT32, "SCITWO_VTCv", "SCITWO_VTC");   \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_SCI2_EXT_H101_SCI2_H__*/

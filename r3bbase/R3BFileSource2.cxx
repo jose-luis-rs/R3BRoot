@@ -415,15 +415,11 @@ R3BFileSource2::R3BFileSource2(std::string file, std::string_view title)
 {
 }
 
-R3BFileSource2::R3BFileSource2(std::vector<std::string> fileNames)
-    : R3BFileSource2(std::move(fileNames), DEFAULT_TITLE)
+R3BFileSource2::R3BFileSource2(std::vector<std::string> fileNames) : R3BFileSource2(std::move(fileNames), DEFAULT_TITLE)
 {
 }
 
-R3BFileSource2::R3BFileSource2()
-    : R3BFileSource2(std::string{})
-{
-}
+R3BFileSource2::R3BFileSource2() : R3BFileSource2(std::string{}) {}
 
 void R3BFileSource2::AddFile(std::string file_name, bool is_tree_file)
 {
@@ -432,10 +428,10 @@ void R3BFileSource2::AddFile(std::string file_name, bool is_tree_file)
         if (not dataFileNames_.empty())
         {
 
-            R3BLOG(
-                error,
-                fmt::format(
-                    "Root file {0} is incompatible with the first root file {1}", res.value(), dataFileNames_.front()));
+            R3BLOG(error,
+                   fmt::format("Root file {0} is incompatible with the first root file {1}",
+                               res.value(),
+                               dataFileNames_.front()));
         }
         else
         {

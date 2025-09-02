@@ -31,17 +31,10 @@
 #include "TRandom.h"
 #include "TString.h"
 
-R3BIonGenerator::R3BIonGenerator(UInt_t seed)
-    : fMult(0)
-    , fIon(nullptr)
-    , fRNG(seed)
-{
-}
+R3BIonGenerator::R3BIonGenerator(UInt_t seed) : fMult(0), fIon(nullptr), fRNG(seed) {}
 
 R3BIonGenerator::R3BIonGenerator(const Char_t* ionName, Int_t mult, Double_t momentum_AGeV_per_c, UInt_t seed)
-    : fMult(mult)
-    , fIon(nullptr)
-    , fRNG(seed)
+    : fMult(mult), fIon(nullptr), fRNG(seed)
 {
     fIon = dynamic_cast<FairIon*>(FairRunSim::Instance()->GetUserDefIons()->FindObject(ionName));
 
@@ -55,9 +48,7 @@ R3BIonGenerator::R3BIonGenerator(const Char_t* ionName, Int_t mult, Double_t mom
 }
 
 R3BIonGenerator::R3BIonGenerator(Int_t z, Int_t a, Int_t q, Int_t mult, Double_t momentum_AGeV_per_c, UInt_t seed)
-    : fMult(mult)
-    , fIon(NULL)
-    , fRNG(seed)
+    : fMult(mult), fIon(NULL), fRNG(seed)
 {
     fIon = new FairIon(TString::Format("FairIon_%d_%d_%d", z, a, q), z, a, q);
 
@@ -74,10 +65,7 @@ R3BIonGenerator::R3BIonGenerator(Int_t z, Int_t a, Int_t q, Int_t mult, Double_t
 }
 
 R3BIonGenerator::R3BIonGenerator(const R3BIonGenerator& right)
-    : Beam(right.Beam)
-    , fMult(right.fMult)
-    , fIon(right.fIon)
-    , fRNG(right.fRNG)
+    : Beam(right.Beam), fMult(right.fMult), fIon(right.fIon), fRNG(right.fRNG)
 {
 }
 

@@ -7,10 +7,8 @@
 #include <utility>
 
 R3BNeulandMultiplicityBayesTrain::R3BNeulandMultiplicityBayesTrain(TString clusters, TString tracks)
-    : FairTask("R3BNeulandMultiplicityBayesTrain")
-    , fClusters(std::move(clusters))
-    , fTracks(std::move(tracks))
-    , fPar(nullptr)
+    : FairTask("R3BNeulandMultiplicityBayesTrain"), fClusters(std::move(clusters)), fTracks(std::move(tracks)),
+      fPar(nullptr)
 //, fPar(new R3BNeulandMultiplicityBayesPar())
 {
 }

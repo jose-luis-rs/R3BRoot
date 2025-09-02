@@ -33,13 +33,8 @@ extern "C"
 }
 
 R3BFootReader::R3BFootReader(EXT_STR_h101_FOOT_onion* data, size_t offset)
-    : R3BReader("R3BFootReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fNbDet(10)
-    , fArray(new TClonesArray("R3BFootMappedData"))
+    : R3BReader("R3BFootReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE), fNbDet(10),
+      fArray(new TClonesArray("R3BFootMappedData"))
 {
 }
 

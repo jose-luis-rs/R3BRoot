@@ -28,20 +28,11 @@
 #include "R3BSci2MappedData.h"
 #include "R3BSci2TcalData.h"
 
-R3BOnlineSpectraSci2::R3BOnlineSpectraSci2()
-    : R3BOnlineSpectraSci2("Sci2OnlineSpectra", 1)
-{
-}
+R3BOnlineSpectraSci2::R3BOnlineSpectraSci2() : R3BOnlineSpectraSci2("Sci2OnlineSpectra", 1) {}
 
 R3BOnlineSpectraSci2::R3BOnlineSpectraSci2(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMapped(NULL)
-    , fTcal(NULL)
-    , fNEvents(0)
-    , fNbDetectors(1)
-    , fNbChannels(3)
-    , fTpat1(-1)
-    , fTpat2(-1)
+    : FairTask(name, iVerbose), fMapped(NULL), fTcal(NULL), fNEvents(0), fNbDetectors(1), fNbChannels(3), fTpat1(-1),
+      fTpat2(-1)
 {
 }
 
@@ -428,7 +419,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
 
     Int_t nHits;
     Int_t iDet; // 0-based
-    Int_t iCh;  // 0-based
+    Int_t iCh; // 0-based
     Float_t iRawPos;
     Float_t RawPos[fNbDetectors];
 
@@ -480,7 +471,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
                 multTcal[iDet * fNbChannels + iCh]++;
                 iRawTimeNs[iDet * fNbChannels + iCh] = hittcal->GetRawTimeNs();
             } // --- end of loop over Tcal data --- //
-        }     //--- end of if Tcal data --- //
+        } //--- end of if Tcal data --- //
 
         // --- ----------------------------------------- --- //
         // --- filling some histogramms outside the loop --- //

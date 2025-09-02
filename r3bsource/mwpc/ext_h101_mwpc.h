@@ -104,72 +104,72 @@ typedef struct EXT_STR_h101_SOFMWPC_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_SOFMWPC_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                         \
-    do                                                                                                              \
-    {                                                                                                               \
-        ok = 1;                                                                                                     \
-        /* RAW */                                                                                                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC1Plane1Q, UINT32, "SOFMWPC1Plane1Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC1Plane1QI, UINT32, "SOFMWPC1Plane1QI", "SOFMWPC1Plane1Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC1Plane1Qv, UINT32, "SOFMWPC1Plane1Qv", "SOFMWPC1Plane1Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC1Plane2Q, UINT32, "SOFMWPC1Plane2Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC1Plane2QI, UINT32, "SOFMWPC1Plane2QI", "SOFMWPC1Plane2Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC1Plane2Qv, UINT32, "SOFMWPC1Plane2Qv", "SOFMWPC1Plane2Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC1Plane3Q, UINT32, "SOFMWPC1Plane3Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC1Plane3QI, UINT32, "SOFMWPC1Plane3QI", "SOFMWPC1Plane3Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC1Plane3Qv, UINT32, "SOFMWPC1Plane3Qv", "SOFMWPC1Plane3Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC2Plane1Q, UINT32, "SOFMWPC2Plane1Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC2Plane1QI, UINT32, "SOFMWPC2Plane1QI", "SOFMWPC2Plane1Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC2Plane1Qv, UINT32, "SOFMWPC2Plane1Qv", "SOFMWPC2Plane1Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC2Plane2Q, UINT32, "SOFMWPC2Plane2Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC2Plane2QI, UINT32, "SOFMWPC2Plane2QI", "SOFMWPC2Plane2Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC2Plane2Qv, UINT32, "SOFMWPC2Plane2Qv", "SOFMWPC2Plane2Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC2Plane3Q, UINT32, "SOFMWPC2Plane3Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC2Plane3QI, UINT32, "SOFMWPC2Plane3QI", "SOFMWPC2Plane3Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC2Plane3Qv, UINT32, "SOFMWPC2Plane3Qv", "SOFMWPC2Plane3Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC3Plane1Q, UINT32, "SOFMWPC3Plane1Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC3Plane1QI, UINT32, "SOFMWPC3Plane1QI", "SOFMWPC3Plane1Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC3Plane1Qv, UINT32, "SOFMWPC3Plane1Qv", "SOFMWPC3Plane1Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC3Plane2Q, UINT32, "SOFMWPC3Plane2Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC3Plane2QI, UINT32, "SOFMWPC3Plane2QI", "SOFMWPC3Plane2Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC3Plane2Qv, UINT32, "SOFMWPC3Plane2Qv", "SOFMWPC3Plane2Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC3Plane3Q, UINT32, "SOFMWPC3Plane3Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC3Plane3QI, UINT32, "SOFMWPC3Plane3QI", "SOFMWPC3Plane3Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC3Plane3Qv, UINT32, "SOFMWPC3Plane3Qv", "SOFMWPC3Plane3Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC4Plane1Q, UINT32, "SOFMWPC4Plane1Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC4Plane1QI, UINT32, "SOFMWPC4Plane1QI", "SOFMWPC4Plane1Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC4Plane1Qv, UINT32, "SOFMWPC4Plane1Qv", "SOFMWPC4Plane1Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC4Plane2Q, UINT32, "SOFMWPC4Plane2Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC4Plane2QI, UINT32, "SOFMWPC4Plane2QI", "SOFMWPC4Plane2Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC4Plane2Qv, UINT32, "SOFMWPC4Plane2Qv", "SOFMWPC4Plane2Q");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC4Plane3Q, UINT32, "SOFMWPC4Plane3Q", 320); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC4Plane3QI, UINT32, "SOFMWPC4Plane3QI", "SOFMWPC4Plane3Q");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, SOFMWPC4Plane3Qv, UINT32, "SOFMWPC4Plane3Qv", "SOFMWPC4Plane3Q");   \
-                                                                                                                    \
+#define EXT_STR_h101_SOFMWPC_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                            \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC1Plane1Q, UINT32, "SOFMWPC1Plane1Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC1Plane1QI, UINT32, "SOFMWPC1Plane1QI", "SOFMWPC1Plane1Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC1Plane1Qv, UINT32, "SOFMWPC1Plane1Qv", "SOFMWPC1Plane1Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC1Plane2Q, UINT32, "SOFMWPC1Plane2Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC1Plane2QI, UINT32, "SOFMWPC1Plane2QI", "SOFMWPC1Plane2Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC1Plane2Qv, UINT32, "SOFMWPC1Plane2Qv", "SOFMWPC1Plane2Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC1Plane3Q, UINT32, "SOFMWPC1Plane3Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC1Plane3QI, UINT32, "SOFMWPC1Plane3QI", "SOFMWPC1Plane3Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC1Plane3Qv, UINT32, "SOFMWPC1Plane3Qv", "SOFMWPC1Plane3Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC2Plane1Q, UINT32, "SOFMWPC2Plane1Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC2Plane1QI, UINT32, "SOFMWPC2Plane1QI", "SOFMWPC2Plane1Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC2Plane1Qv, UINT32, "SOFMWPC2Plane1Qv", "SOFMWPC2Plane1Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC2Plane2Q, UINT32, "SOFMWPC2Plane2Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC2Plane2QI, UINT32, "SOFMWPC2Plane2QI", "SOFMWPC2Plane2Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC2Plane2Qv, UINT32, "SOFMWPC2Plane2Qv", "SOFMWPC2Plane2Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC2Plane3Q, UINT32, "SOFMWPC2Plane3Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC2Plane3QI, UINT32, "SOFMWPC2Plane3QI", "SOFMWPC2Plane3Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC2Plane3Qv, UINT32, "SOFMWPC2Plane3Qv", "SOFMWPC2Plane3Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC3Plane1Q, UINT32, "SOFMWPC3Plane1Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC3Plane1QI, UINT32, "SOFMWPC3Plane1QI", "SOFMWPC3Plane1Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC3Plane1Qv, UINT32, "SOFMWPC3Plane1Qv", "SOFMWPC3Plane1Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC3Plane2Q, UINT32, "SOFMWPC3Plane2Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC3Plane2QI, UINT32, "SOFMWPC3Plane2QI", "SOFMWPC3Plane2Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC3Plane2Qv, UINT32, "SOFMWPC3Plane2Qv", "SOFMWPC3Plane2Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC3Plane3Q, UINT32, "SOFMWPC3Plane3Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC3Plane3QI, UINT32, "SOFMWPC3Plane3QI", "SOFMWPC3Plane3Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC3Plane3Qv, UINT32, "SOFMWPC3Plane3Qv", "SOFMWPC3Plane3Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC4Plane1Q, UINT32, "SOFMWPC4Plane1Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC4Plane1QI, UINT32, "SOFMWPC4Plane1QI", "SOFMWPC4Plane1Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC4Plane1Qv, UINT32, "SOFMWPC4Plane1Qv", "SOFMWPC4Plane1Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC4Plane2Q, UINT32, "SOFMWPC4Plane2Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC4Plane2QI, UINT32, "SOFMWPC4Plane2QI", "SOFMWPC4Plane2Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC4Plane2Qv, UINT32, "SOFMWPC4Plane2Qv", "SOFMWPC4Plane2Q");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFMWPC4Plane3Q, UINT32, "SOFMWPC4Plane3Q", 320);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC4Plane3QI, UINT32, "SOFMWPC4Plane3QI", "SOFMWPC4Plane3Q");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFMWPC4Plane3Qv, UINT32, "SOFMWPC4Plane3Qv", "SOFMWPC4Plane3Q");      \
+                                                                                                                       \
     } while (0);
 
 /********************************************************

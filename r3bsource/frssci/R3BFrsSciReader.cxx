@@ -27,18 +27,13 @@ extern "C"
 
 using namespace std;
 
-R3BFrsSciReader::R3BFrsSciReader(EXT_STR_h101_FRSSCI* data, size_t offset)
-    : R3BFrsSciReader(data, offset, 1)
-{
-}
+R3BFrsSciReader::R3BFrsSciReader(EXT_STR_h101_FRSSCI* data, size_t offset) : R3BFrsSciReader(data, offset, 1) {}
 
 R3BFrsSciReader::R3BFrsSciReader(EXT_STR_h101_FRSSCI* data, size_t offset, UShort_t NumSci)
-    : R3BReader("R3BFrsSciReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BFrsSciMappedData")) // class name
-    , fNumSci(NumSci)
+    : R3BReader("R3BFrsSciReader"), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BFrsSciMappedData")) // class name
+      ,
+      fNumSci(NumSci)
 {
 }
 

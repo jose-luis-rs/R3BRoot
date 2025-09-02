@@ -122,8 +122,7 @@ namespace R3B
 
     template <typename... Args>
     DataMonitorCanvas::DataMonitorCanvas(DataMonitor* monitor, Args&&... args)
-        : monitor_{ monitor }
-        , canvas_(std::make_unique<TCanvas>(std::forward<Args>(args)...))
+        : monitor_{ monitor }, canvas_(std::make_unique<TCanvas>(std::forward<Args>(args)...))
     {
     }
 

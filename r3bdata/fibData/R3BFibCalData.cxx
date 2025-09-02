@@ -19,19 +19,12 @@
  *
  */
 
-R3BFibCalData::R3BFibCalData()
-    : fPlane(0)
-    , fFiber(0)
-{
-}
+R3BFibCalData::R3BFibCalData() : fPlane(0), fFiber(0) {}
 
 R3BFibCalData::R3BFibCalData(UInt_t plane, UInt_t fiber)
-    : fPlane(plane)
-    , fFiber(fiber)
-    , fTime1L_ns(0.0 / 0.0) // 0/0 produces a NAN. Macro NAN not available??
-    , fTime1T_ns(0.0 / 0.0)
-    , fTime2L_ns(0.0 / 0.0)
-    , fTime2T_ns(0.0 / 0.0)
+    : fPlane(plane), fFiber(fiber), fTime1L_ns(0.0 / 0.0) // 0/0 produces a NAN. Macro NAN not available??
+      ,
+      fTime1T_ns(0.0 / 0.0), fTime2L_ns(0.0 / 0.0), fTime2T_ns(0.0 / 0.0)
 {
 }
 

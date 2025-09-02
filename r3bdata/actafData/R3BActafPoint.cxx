@@ -21,14 +21,7 @@
 
 // -----   Default constructor   -------------------------------------------
 R3BActafPoint::R3BActafPoint()
-    : FairMCPoint()
-    , fModule(-1)
-    , fX_out(0.)
-    , fY_out(0.)
-    , fZ_out(0.)
-    , fPx_out(0.)
-    , fPy_out(0.)
-    , fPz_out(0.)
+    : FairMCPoint(), fModule(-1), fX_out(0.), fY_out(0.), fZ_out(0.), fPx_out(0.), fPy_out(0.), fPz_out(0.)
 {
 }
 // -------------------------------------------------------------------------
@@ -44,14 +37,8 @@ R3BActafPoint::R3BActafPoint(Int_t trackID,
                              Double_t tof,
                              Double_t length,
                              Double_t eLoss)
-    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss)
-    , fModule(plane)
-    , fX_out(posOut.X())
-    , fY_out(posOut.Y())
-    , fZ_out(posOut.Z())
-    , fPx_out(momOut.Px())
-    , fPy_out(momOut.Py())
-    , fPz_out(momOut.Pz())
+    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss), fModule(plane), fX_out(posOut.X()),
+      fY_out(posOut.Y()), fZ_out(posOut.Z()), fPx_out(momOut.Px()), fPy_out(momOut.Py()), fPz_out(momOut.Pz())
 {
 }
 // -------------------------------------------------------------------------

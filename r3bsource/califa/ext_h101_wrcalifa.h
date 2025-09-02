@@ -74,32 +74,32 @@ typedef struct EXT_STR_h101_WRCALIFA_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_WRCALIFA_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                      \
-    do                                                                                                            \
-    {                                                                                                             \
-        ok = 1;                                                                                                   \
-        /* RAW */                                                                                                 \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1ID, UINT32, "TIMESTAMP_CALIFA1ID", 65535);       \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T1, UINT32, "TIMESTAMP_CALIFA1WR_T1", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T2, UINT32, "TIMESTAMP_CALIFA1WR_T2", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T3, UINT32, "TIMESTAMP_CALIFA1WR_T3", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T4, UINT32, "TIMESTAMP_CALIFA1WR_T4", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2ID, UINT32, "TIMESTAMP_CALIFA2ID", 65535);       \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T1, UINT32, "TIMESTAMP_CALIFA2WR_T1", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T2, UINT32, "TIMESTAMP_CALIFA2WR_T2", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T3, UINT32, "TIMESTAMP_CALIFA2WR_T3", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                                    \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T4, UINT32, "TIMESTAMP_CALIFA2WR_T4", 65535); \
-                                                                                                                  \
+#define EXT_STR_h101_WRCALIFA_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                           \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1ID, UINT32, "TIMESTAMP_CALIFA1ID", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T1, UINT32, "TIMESTAMP_CALIFA1WR_T1", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T2, UINT32, "TIMESTAMP_CALIFA1WR_T2", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T3, UINT32, "TIMESTAMP_CALIFA1WR_T3", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA1WR_T4, UINT32, "TIMESTAMP_CALIFA1WR_T4", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2ID, UINT32, "TIMESTAMP_CALIFA2ID", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T1, UINT32, "TIMESTAMP_CALIFA2WR_T1", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T2, UINT32, "TIMESTAMP_CALIFA2WR_T2", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T3, UINT32, "TIMESTAMP_CALIFA2WR_T3", 65535);      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_CALIFA2WR_T4, UINT32, "TIMESTAMP_CALIFA2WR_T4", 65535);      \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_WRCALIFA_EXT_H101_WRCALIFA_H__*/

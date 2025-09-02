@@ -32,19 +32,13 @@
 /* for the data analysis of Sci8 detector.
  */
 
-R3BSci8CalData::R3BSci8CalData()
-    : fDetector(0)
-{
-}
+R3BSci8CalData::R3BSci8CalData() : fDetector(0) {}
 
 R3BSci8CalData::R3BSci8CalData(UInt_t detector)
-    : fDetector(detector)
-    , fTimeV_r_ns(0.0 / 0.0) // 0/0 produces a NAN. Macro NAN not available??
-    , fTimeV_l_ns(0.0 / 0.0)
-    , fTimeL_r_ns(0.0 / 0.0)
-    , fTimeL_l_ns(0.0 / 0.0)
-    , fTimeT_r_ns(0.0 / 0.0)
-    , fTimeT_l_ns(0.0 / 0.0)
+    : fDetector(detector), fTimeV_r_ns(0.0 / 0.0) // 0/0 produces a NAN. Macro NAN not available??
+      ,
+      fTimeV_l_ns(0.0 / 0.0), fTimeL_r_ns(0.0 / 0.0), fTimeL_l_ns(0.0 / 0.0), fTimeT_r_ns(0.0 / 0.0),
+      fTimeT_l_ns(0.0 / 0.0)
 {
 }
 

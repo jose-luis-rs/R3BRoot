@@ -35,19 +35,10 @@
 #include <iostream>
 #include <limits>
 
-R3BPspxPrecal2Cal::R3BPspxPrecal2Cal()
-    : FairTask("PspxPrecal2Cal", 1)
-    , fPrecalItems()
-    , fCalItems()
-    , fOnline(kFALSE)
-{
-}
+R3BPspxPrecal2Cal::R3BPspxPrecal2Cal() : FairTask("PspxPrecal2Cal", 1), fPrecalItems(), fCalItems(), fOnline(kFALSE) {}
 
 R3BPspxPrecal2Cal::R3BPspxPrecal2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fPrecalItems()
-    , fCalItems()
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fPrecalItems(), fCalItems(), fOnline(kFALSE)
 {
 }
 

@@ -30,16 +30,8 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BTwimCalPar::R3BTwimCalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumSections(4)
-    , fNumAnodes(16)
-    , fNumParamsEFit(2)
-    , fNumParamsPosFit(3)
-    , fNumAnodesTRef(2)
-    , fNumAnodesTrig(2)
-    , fMaxMult(20)
-    , fMinDT(-1000)
-    , fMaxDT(1000)
+    : FairParGenericSet(name, title, context), fNumSections(4), fNumAnodes(16), fNumParamsEFit(2), fNumParamsPosFit(3),
+      fNumAnodesTRef(2), fNumAnodesTrig(2), fMaxMult(20), fMinDT(-1000), fMaxDT(1000)
 {
     fIn_use.resize(fNumSections);
     fAnodeECalParams.resize(fNumSections);

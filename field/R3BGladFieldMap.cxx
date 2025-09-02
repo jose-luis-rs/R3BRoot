@@ -56,8 +56,7 @@ R3BGladFieldMap::R3BGladFieldMap()
 
 // -------------   Standard constructor   ---------------------------------
 //
-R3BGladFieldMap::R3BGladFieldMap(const TString& mapName, const TString& fileType)
-    : FairField(mapName.Data())
+R3BGladFieldMap::R3BGladFieldMap(const TString& mapName, const TString& fileType) : FairField(mapName.Data())
 {
     // Default field positions (in cm) in lab:
     // between target position (0,0,0) and GLAD rotation point (field origin)
@@ -399,8 +398,8 @@ void R3BGladFieldMap::WriteAsciiFile(const TString& fileName)
                 mapFile << fBx->At(index) / factor << " " << fBy->At(index) / factor << " " << fBz->At(index) / factor
                         << endl;
             } // z-Loop
-        }     // y-Loop
-    }         // x-Loop
+        } // y-Loop
+    } // x-Loop
     R3BLOG(info, "   " << index + 1 << " written");
     mapFile.close();
 }
@@ -593,8 +592,8 @@ void R3BGladFieldMap::ReadAsciiFile(const TString& fileName)
                     break;
                 }
             } // z-Loop
-        }     // y-Loop
-    }         // x-Loop
+        } // y-Loop
+    } // x-Loop
 
     R3BLOG(info, "   " << index + 1 << " read");
     mapFile.close();

@@ -99,44 +99,44 @@ typedef struct EXT_STR_h101_FIBZERO_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBZERO_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                     \
-    do                                                                                                          \
-    {                                                                                                           \
-        ok = 1;                                                                                                 \
-        /* RAW */                                                                                               \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLCM, UINT32, "FIBZERO_TMLCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMLCMI, UINT32, "FIBZERO_TMLCMI", "FIBZERO_TMLCM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMLCME, UINT32, "FIBZERO_TMLCME", "FIBZERO_TMLCM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLC, UINT32, "FIBZERO_TMLC", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMLCv, UINT32, "FIBZERO_TMLCv", "FIBZERO_TMLC");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLFM, UINT32, "FIBZERO_TMLFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMLFMI, UINT32, "FIBZERO_TMLFMI", "FIBZERO_TMLFM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMLFME, UINT32, "FIBZERO_TMLFME", "FIBZERO_TMLFM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLF, UINT32, "FIBZERO_TMLF", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMLFv, UINT32, "FIBZERO_TMLFv", "FIBZERO_TMLF");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTCM, UINT32, "FIBZERO_TMTCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMTCMI, UINT32, "FIBZERO_TMTCMI", "FIBZERO_TMTCM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMTCME, UINT32, "FIBZERO_TMTCME", "FIBZERO_TMTCM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTC, UINT32, "FIBZERO_TMTC", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMTCv, UINT32, "FIBZERO_TMTCv", "FIBZERO_TMTC");        \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTFM, UINT32, "FIBZERO_TMTFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMTFMI, UINT32, "FIBZERO_TMTFMI", "FIBZERO_TMTFM");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMTFME, UINT32, "FIBZERO_TMTFME", "FIBZERO_TMTFM");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTF, UINT32, "FIBZERO_TMTF", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                  \
-            ok, si, offset, struct_t, printerr, FIBZERO_TMTFv, UINT32, "FIBZERO_TMTFv", "FIBZERO_TMTF");        \
-                                                                                                                \
+#define EXT_STR_h101_FIBZERO_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                            \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLCM, UINT32, "FIBZERO_TMLCM", 256);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMLCMI, UINT32, "FIBZERO_TMLCMI", "FIBZERO_TMLCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMLCME, UINT32, "FIBZERO_TMLCME", "FIBZERO_TMLCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLC, UINT32, "FIBZERO_TMLC", 5120);         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMLCv, UINT32, "FIBZERO_TMLCv", "FIBZERO_TMLC");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLFM, UINT32, "FIBZERO_TMLFM", 256);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMLFMI, UINT32, "FIBZERO_TMLFMI", "FIBZERO_TMLFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMLFME, UINT32, "FIBZERO_TMLFME", "FIBZERO_TMLFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMLF, UINT32, "FIBZERO_TMLF", 5120);         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMLFv, UINT32, "FIBZERO_TMLFv", "FIBZERO_TMLF");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTCM, UINT32, "FIBZERO_TMTCM", 256);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMTCMI, UINT32, "FIBZERO_TMTCMI", "FIBZERO_TMTCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMTCME, UINT32, "FIBZERO_TMTCME", "FIBZERO_TMTCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTC, UINT32, "FIBZERO_TMTC", 5120);         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMTCv, UINT32, "FIBZERO_TMTCv", "FIBZERO_TMTC");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTFM, UINT32, "FIBZERO_TMTFM", 256);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMTFMI, UINT32, "FIBZERO_TMTFMI", "FIBZERO_TMTFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMTFME, UINT32, "FIBZERO_TMTFME", "FIBZERO_TMTFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBZERO_TMTF, UINT32, "FIBZERO_TMTF", 5120);         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBZERO_TMTFv, UINT32, "FIBZERO_TMTFv", "FIBZERO_TMTF");               \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBZERO_EXT_H101_FIBZERO_H__*/

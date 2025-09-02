@@ -36,22 +36,12 @@
 #include "R3BMwpcMappedData.h"
 
 // R3BMwpc1Mapped2Cal: Default Constructor --------------------------
-R3BMwpc1Mapped2Cal::R3BMwpc1Mapped2Cal()
-    : R3BMwpc1Mapped2Cal("R3BMwpc1Mapped2Cal", 1)
-{
-}
+R3BMwpc1Mapped2Cal::R3BMwpc1Mapped2Cal() : R3BMwpc1Mapped2Cal("R3BMwpc1Mapped2Cal", 1) {}
 
 // R3BMwpc1Mapped2Cal: Standard Constructor --------------------------
 R3BMwpc1Mapped2Cal::R3BMwpc1Mapped2Cal(const std::string& name, Int_t iVerbose)
-    : FairTask(name.c_str(), iVerbose)
-    , NumPadX(0)
-    , NumPadY(0)
-    , NumParams(0)
-    , CalParams(NULL)
-    , fCal_Par(NULL)
-    , fMwpcMappedDataCA(NULL)
-    , fMwpcCalDataCA(NULL)
-    , fOnline(kFALSE)
+    : FairTask(name.c_str(), iVerbose), NumPadX(0), NumPadY(0), NumParams(0), CalParams(NULL), fCal_Par(NULL),
+      fMwpcMappedDataCA(NULL), fMwpcCalDataCA(NULL), fOnline(kFALSE)
 {
 }
 
@@ -85,8 +75,8 @@ void R3BMwpc1Mapped2Cal::SetParContainers()
 void R3BMwpc1Mapped2Cal::SetParameter()
 {
     //--- Parameter Container ---
-    NumPadX = fCal_Par->GetNumPadsX();           // Number of Pads in X
-    NumPadY = fCal_Par->GetNumPadsY();           // Number of Pads in Y
+    NumPadX = fCal_Par->GetNumPadsX(); // Number of Pads in X
+    NumPadY = fCal_Par->GetNumPadsY(); // Number of Pads in Y
     NumParams = fCal_Par->GetNumParametersFit(); // Number of parameters in the Fit
 
     R3BLOG(info, "NumPadX: " << NumPadX);

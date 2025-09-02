@@ -10,13 +10,8 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BFrsSciCalPar::R3BFrsSciCalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumDets(3)
-    , fNumPmts(3)
-    , fNumTofs(3)
-    , fDetIdS2(1)
-    , fDetIdS8(2)
-    , fDetIdCaveC(3)
+    : FairParGenericSet(name, title, context), fNumDets(3), fNumPmts(3), fNumTofs(3), fDetIdS2(1), fDetIdS8(2),
+      fDetIdCaveC(3)
 {
     if (fNumDets > 2)
     {

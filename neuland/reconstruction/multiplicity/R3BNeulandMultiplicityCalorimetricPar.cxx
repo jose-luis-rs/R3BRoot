@@ -18,8 +18,7 @@
 R3BNeulandMultiplicityCalorimetricPar::R3BNeulandMultiplicityCalorimetricPar(const char* name,
                                                                              const char* title,
                                                                              const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNeutronCuts(nullptr)
+    : FairParGenericSet(name, title, context), fNeutronCuts(nullptr)
 {
 }
 

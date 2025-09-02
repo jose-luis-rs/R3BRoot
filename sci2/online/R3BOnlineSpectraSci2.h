@@ -98,7 +98,7 @@ class R3BOnlineSpectraSci2 : public FairTask
 
   private:
     TClonesArray* fMapped; /**< Array with R3BSofSciMappedData */
-    TClonesArray* fTcal;   /**< Array with R3BSofSciTcalData */
+    TClonesArray* fTcal; /**< Array with R3BSofSciTcalData */
 
     Int_t fNbDetectors; // fNbDetectors is also equal to fIdCaveC
     Int_t fNbChannels;
@@ -106,11 +106,11 @@ class R3BOnlineSpectraSci2 : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* fEventHeader; /**< Event header.      */
-    Int_t fNEvents;               /**< Event counter.     */
+    Int_t fNEvents; /**< Event counter.     */
 
     // Canvas
     TCanvas** cMapped; // [fNbDetectors]
-    TCanvas** cPos;    // [fNbDetectors]
+    TCanvas** cPos; // [fNbDetectors]
 
     TCanvas* cMultMap;
     TCanvas* cMultTcal;
@@ -118,23 +118,23 @@ class R3BOnlineSpectraSci2 : public FairTask
     TCanvas* cMultMap2D_RvsL;
 
     // Histograms - 1D multiplicity
-    TH1I** fh1_multMap;  // [fNbDetectors * fNbChannels];
+    TH1I** fh1_multMap; // [fNbDetectors * fNbChannels];
     TH1I** fh1_multTcal; // [fNbDetectors * fNbChannels];
     // Histograms - 1D multiplicity with condition on Tpat
-    TH1I** fh1_multMap_condTpat;  // [fNbDetectors * fNbChannels];
+    TH1I** fh1_multMap_condTpat; // [fNbDetectors * fNbChannels];
     TH1I** fh1_multTcal_condTpat; // [fNbDetectors * fNbChannels];
 
     // Histograms - 2D multiplicity
-    TH2I** fh2_mult_RvsL;      // [fNbDetectors];
+    TH2I** fh2_mult_RvsL; // [fNbDetectors];
     TH2I** fh2_mult_TrefVsPmt; //[fNbDetectors * (NbChannels-1)]
 
     // Histograms - 2D multiplicity with condition on Tpat
-    TH2I** fh2_mult_RvsL_condTpat;      // [fNbDetectors];
+    TH2I** fh2_mult_RvsL_condTpat; // [fNbDetectors];
     TH2I** fh2_mult_TrefVsPmt_condTpat; //[fNbDetectors * (NbChannels-1)]
 
     // Histograms for Mapped data : Fine Time and Mult
     TH1I** fh1_finetime; // [fNbDetectors * NbChannels];
-    TH2I** fh2_mult;     // [fNbDetectors];
+    TH2I** fh2_mult; // [fNbDetectors];
     TH1D** fh1_DeltaTref;
 
     // Histograms for X position at Tcal

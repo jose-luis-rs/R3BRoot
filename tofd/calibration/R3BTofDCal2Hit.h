@@ -160,12 +160,12 @@ class R3BTofDCal2Hit : public FairTask
     R3BTofDMappingPar* fMapPar;
 
     bool fOnline = false;
-    TClonesArray* fCalItems;        /**< Array with Cal items - input data. */
+    TClonesArray* fCalItems; /**< Array with Cal items - input data. */
     TClonesArray* fCalTriggerItems; /**< Array with trigger Cal items - input data. */
-    TClonesArray* fHitItems;        /**< Array with Hit items - output data. */
-    UInt_t fNofHitPars;             /**< Number of modules in parameter file. */
-    Double_t fClockFreq;            /**< Clock cycle in [ns]. */
-    Int_t fTrigger;                 /**< Trigger value. */
+    TClonesArray* fHitItems; /**< Array with Hit items - output data. */
+    UInt_t fNofHitPars; /**< Number of modules in parameter file. */
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    Int_t fTrigger; /**< Trigger value. */
     Int_t fTpat1;
     Int_t fTpat2;
     Double_t fTofdQ;

@@ -67,8 +67,7 @@ R3BIncomingTrackingOnlineSpectra::R3BIncomingTrackingOnlineSpectra(const TString
                                                                    float zmax,
                                                                    float aqmin,
                                                                    float aqmax)
-    : FairTask("IncomingTrackingOnlineSpectra_" + name, 1)
-    , fNameCut(name)
+    : FairTask("IncomingTrackingOnlineSpectra_" + name, 1), fNameCut(name)
 {
     fCutIncoming = std::make_unique<TCutG>(name, 5);
     fCutIncoming->SetPoint(0, zmin, aqmin);

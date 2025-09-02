@@ -43,30 +43,14 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 
 R3BSci8Mapped2Cal::R3BSci8Mapped2Cal()
-    : FairTask("Sci8Tcal", 1)
-    , fMappedItems(NULL)
-    , fCalItems(new TClonesArray("R3BSci8CalData"))
-    , fNofCalItems(0)
-    , fNofTcalPars(0)
-    , fNofModules(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvent(0)
+    : FairTask("Sci8Tcal", 1), fMappedItems(NULL), fCalItems(new TClonesArray("R3BSci8CalData")), fNofCalItems(0),
+      fNofTcalPars(0), fNofModules(0), fTcalPar(NULL), fTrigger(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fNEvent(0)
 {
 }
 
 R3BSci8Mapped2Cal::R3BSci8Mapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItems(NULL)
-    , fCalItems(new TClonesArray("R3BSci8CalData"))
-    , fNofCalItems(0)
-    , fNofTcalPars(0)
-    , fNofModules(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvent(0)
+    : FairTask(name, iVerbose), fMappedItems(NULL), fCalItems(new TClonesArray("R3BSci8CalData")), fNofCalItems(0),
+      fNofTcalPars(0), fNofModules(0), fTcalPar(NULL), fTrigger(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fNEvent(0)
 {
 }
 
@@ -146,8 +130,8 @@ void R3BSci8Mapped2Cal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         UInt_t iDet = hit->GetDetector(); // 1..
-        UInt_t iCha = hit->GetChannel();  // 1..
-        UInt_t iType = hit->GetType();    // 0,1,2
+        UInt_t iCha = hit->GetChannel(); // 1..
+        UInt_t iType = hit->GetType(); // 0,1,2
 
         if ((iDet < 1) || (iDet > fNofDetectors))
         {

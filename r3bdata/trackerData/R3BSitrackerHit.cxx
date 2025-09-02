@@ -24,8 +24,7 @@ using std::endl;
 using std::flush;
 
 // -----   Default constructor   -------------------------------------------
-R3BSitrackerHit::R3BSitrackerHit()
-    : FairHit()
+R3BSitrackerHit::R3BSitrackerHit() : FairHit()
 {
     fX = fY = fZ = 0.;
     type = 0;

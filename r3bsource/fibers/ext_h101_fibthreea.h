@@ -146,138 +146,138 @@ typedef struct EXT_STR_h101_FIBTHREEA_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBTHREEA_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                       \
-    do                                                                                                              \
-    {                                                                                                               \
-        ok = 1;                                                                                                     \
-        /* RAW */                                                                                                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCM, UINT32, "FIBTHREEA_TMLCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCMI, UINT32, "FIBTHREEA_TMLCMI", "FIBTHREEA_TMLCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCME, UINT32, "FIBTHREEA_TMLCME", "FIBTHREEA_TMLCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLC, UINT32, "FIBTHREEA_TMLC", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCv, UINT32, "FIBTHREEA_TMLCv", "FIBTHREEA_TMLC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCM, UINT32, "FIBTHREEA_TMTCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCMI, UINT32, "FIBTHREEA_TMTCMI", "FIBTHREEA_TMTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCME, UINT32, "FIBTHREEA_TMTCME", "FIBTHREEA_TMTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTC, UINT32, "FIBTHREEA_TMTC", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCv, UINT32, "FIBTHREEA_TMTCv", "FIBTHREEA_TMTC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFM, UINT32, "FIBTHREEA_TMLFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFMI, UINT32, "FIBTHREEA_TMLFMI", "FIBTHREEA_TMLFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFME, UINT32, "FIBTHREEA_TMLFME", "FIBTHREEA_TMLFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLF, UINT32, "FIBTHREEA_TMLF", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFv, UINT32, "FIBTHREEA_TMLFv", "FIBTHREEA_TMLF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFM, UINT32, "FIBTHREEA_TMTFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFMI, UINT32, "FIBTHREEA_TMTFMI", "FIBTHREEA_TMTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFME, UINT32, "FIBTHREEA_TMTFME", "FIBTHREEA_TMTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTF, UINT32, "FIBTHREEA_TMTF", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFv, UINT32, "FIBTHREEA_TMTFv", "FIBTHREEA_TMTF");      \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLCM, UINT32, "FIBTHREEA_TRIGMLCM", 2);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEA_TRIGMLCMI,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEA_TRIGMLCMI",                                                                \
-                              "FIBTHREEA_TRIGMLCM");                                                                \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEA_TRIGMLCME,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEA_TRIGMLCME",                                                                \
-                              "FIBTHREEA_TRIGMLCM");                                                                \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLC, UINT32, "FIBTHREEA_TRIGMLC", 128);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEA_TRIGMLCv,                                                                   \
-                              UINT32,                                                                               \
-                              "FIBTHREEA_TRIGMLCv",                                                                 \
-                              "FIBTHREEA_TRIGMLC");                                                                 \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLFM, UINT32, "FIBTHREEA_TRIGMLFM", 2);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEA_TRIGMLFMI,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEA_TRIGMLFMI",                                                                \
-                              "FIBTHREEA_TRIGMLFM");                                                                \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEA_TRIGMLFME,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEA_TRIGMLFME",                                                                \
-                              "FIBTHREEA_TRIGMLFM");                                                                \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLF, UINT32, "FIBTHREEA_TRIGMLF", 128);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEA_TRIGMLFv,                                                                   \
-                              UINT32,                                                                               \
-                              "FIBTHREEA_TRIGMLFv",                                                                 \
-                              "FIBTHREEA_TRIGMLF");                                                                 \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCM, UINT32, "FIBTHREEA_TSLCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCMI, UINT32, "FIBTHREEA_TSLCMI", "FIBTHREEA_TSLCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCME, UINT32, "FIBTHREEA_TSLCME", "FIBTHREEA_TSLCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLC, UINT32, "FIBTHREEA_TSLC", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCv, UINT32, "FIBTHREEA_TSLCv", "FIBTHREEA_TSLC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCM, UINT32, "FIBTHREEA_TSTCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCMI, UINT32, "FIBTHREEA_TSTCMI", "FIBTHREEA_TSTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCME, UINT32, "FIBTHREEA_TSTCME", "FIBTHREEA_TSTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTC, UINT32, "FIBTHREEA_TSTC", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCv, UINT32, "FIBTHREEA_TSTCv", "FIBTHREEA_TSTC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFM, UINT32, "FIBTHREEA_TSLFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFMI, UINT32, "FIBTHREEA_TSLFMI", "FIBTHREEA_TSLFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFME, UINT32, "FIBTHREEA_TSLFME", "FIBTHREEA_TSLFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLF, UINT32, "FIBTHREEA_TSLF", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFv, UINT32, "FIBTHREEA_TSLFv", "FIBTHREEA_TSLF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFM, UINT32, "FIBTHREEA_TSTFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFMI, UINT32, "FIBTHREEA_TSTFMI", "FIBTHREEA_TSTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFME, UINT32, "FIBTHREEA_TSTFME", "FIBTHREEA_TSTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTF, UINT32, "FIBTHREEA_TSTF", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFv, UINT32, "FIBTHREEA_TSTFv", "FIBTHREEA_TSTF");      \
-                                                                                                                    \
+#define EXT_STR_h101_FIBTHREEA_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCM, UINT32, "FIBTHREEA_TMLCM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCMI, UINT32, "FIBTHREEA_TMLCMI", "FIBTHREEA_TMLCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCME, UINT32, "FIBTHREEA_TMLCME", "FIBTHREEA_TMLCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLC, UINT32, "FIBTHREEA_TMLC", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLCv, UINT32, "FIBTHREEA_TMLCv", "FIBTHREEA_TMLC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCM, UINT32, "FIBTHREEA_TMTCM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCMI, UINT32, "FIBTHREEA_TMTCMI", "FIBTHREEA_TMTCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCME, UINT32, "FIBTHREEA_TMTCME", "FIBTHREEA_TMTCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTC, UINT32, "FIBTHREEA_TMTC", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTCv, UINT32, "FIBTHREEA_TMTCv", "FIBTHREEA_TMTC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFM, UINT32, "FIBTHREEA_TMLFM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFMI, UINT32, "FIBTHREEA_TMLFMI", "FIBTHREEA_TMLFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFME, UINT32, "FIBTHREEA_TMLFME", "FIBTHREEA_TMLFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMLF, UINT32, "FIBTHREEA_TMLF", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMLFv, UINT32, "FIBTHREEA_TMLFv", "FIBTHREEA_TMLF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFM, UINT32, "FIBTHREEA_TMTFM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFMI, UINT32, "FIBTHREEA_TMTFMI", "FIBTHREEA_TMTFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFME, UINT32, "FIBTHREEA_TMTFME", "FIBTHREEA_TMTFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TMTF, UINT32, "FIBTHREEA_TMTF", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TMTFv, UINT32, "FIBTHREEA_TMTFv", "FIBTHREEA_TMTF");         \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLCM, UINT32, "FIBTHREEA_TRIGMLCM", 2);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEA_TRIGMLCMI,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEA_TRIGMLCMI",                                                                   \
+                              "FIBTHREEA_TRIGMLCM");                                                                   \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEA_TRIGMLCME,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEA_TRIGMLCME",                                                                   \
+                              "FIBTHREEA_TRIGMLCM");                                                                   \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLC, UINT32, "FIBTHREEA_TRIGMLC", 128);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEA_TRIGMLCv,                                                                      \
+                              UINT32,                                                                                  \
+                              "FIBTHREEA_TRIGMLCv",                                                                    \
+                              "FIBTHREEA_TRIGMLC");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLFM, UINT32, "FIBTHREEA_TRIGMLFM", 2);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEA_TRIGMLFMI,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEA_TRIGMLFMI",                                                                   \
+                              "FIBTHREEA_TRIGMLFM");                                                                   \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEA_TRIGMLFME,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEA_TRIGMLFME",                                                                   \
+                              "FIBTHREEA_TRIGMLFM");                                                                   \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TRIGMLF, UINT32, "FIBTHREEA_TRIGMLF", 128);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEA_TRIGMLFv,                                                                      \
+                              UINT32,                                                                                  \
+                              "FIBTHREEA_TRIGMLFv",                                                                    \
+                              "FIBTHREEA_TRIGMLF");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCM, UINT32, "FIBTHREEA_TSLCM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCMI, UINT32, "FIBTHREEA_TSLCMI", "FIBTHREEA_TSLCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCME, UINT32, "FIBTHREEA_TSLCME", "FIBTHREEA_TSLCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLC, UINT32, "FIBTHREEA_TSLC", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLCv, UINT32, "FIBTHREEA_TSLCv", "FIBTHREEA_TSLC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCM, UINT32, "FIBTHREEA_TSTCM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCMI, UINT32, "FIBTHREEA_TSTCMI", "FIBTHREEA_TSTCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCME, UINT32, "FIBTHREEA_TSTCME", "FIBTHREEA_TSTCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTC, UINT32, "FIBTHREEA_TSTC", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTCv, UINT32, "FIBTHREEA_TSTCv", "FIBTHREEA_TSTC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFM, UINT32, "FIBTHREEA_TSLFM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFMI, UINT32, "FIBTHREEA_TSLFMI", "FIBTHREEA_TSLFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFME, UINT32, "FIBTHREEA_TSLFME", "FIBTHREEA_TSLFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSLF, UINT32, "FIBTHREEA_TSLF", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSLFv, UINT32, "FIBTHREEA_TSLFv", "FIBTHREEA_TSLF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFM, UINT32, "FIBTHREEA_TSTFM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFMI, UINT32, "FIBTHREEA_TSTFMI", "FIBTHREEA_TSTFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFME, UINT32, "FIBTHREEA_TSTFME", "FIBTHREEA_TSTFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEA_TSTF, UINT32, "FIBTHREEA_TSTF", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEA_TSTFv, UINT32, "FIBTHREEA_TSTFv", "FIBTHREEA_TSTF");         \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBTHREEA_EXT_H101_FIBTHREEA_H__*/

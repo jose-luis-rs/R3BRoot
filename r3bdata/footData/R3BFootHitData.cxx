@@ -26,31 +26,16 @@ R3BFootHitData::R3BFootHitData(uint8_t detid,
                                uint16_t mulstrip,
                                double eta,
                                double zcharge)
-    : fDetId(detid)
-    , fNbHit(nbhit)
-    , fPos(pos)
-    , fTheta(master.Theta())
-    , fPhi(master.Phi())
-    , fmaster(master)
-    , fEnergy(energy)
-    , fMulStrip(mulstrip)
-    , fEta(eta)
-    , fZCharge(zcharge)
+    : fDetId(detid), fNbHit(nbhit), fPos(pos), fTheta(master.Theta()), fPhi(master.Phi()), fmaster(master),
+      fEnergy(energy), fMulStrip(mulstrip), fEta(eta), fZCharge(zcharge)
 {
 }
 
 // ----------------------------------------------------------------------
 R3BFootHitData::R3BFootHitData(const R3BFootHitData& right)
-    : fDetId(right.fDetId)
-    , fNbHit(right.fNbHit)
-    , fPos(right.fPos)
-    , fTheta(right.fmaster.Theta())
-    , fPhi(right.fmaster.Phi())
-    , fmaster(right.fmaster)
-    , fEnergy(right.fEnergy)
-    , fMulStrip(right.fMulStrip)
-    , fEta(right.fEta)
-    , fZCharge(right.fZCharge)
+    : fDetId(right.fDetId), fNbHit(right.fNbHit), fPos(right.fPos), fTheta(right.fmaster.Theta()),
+      fPhi(right.fmaster.Phi()), fmaster(right.fmaster), fEnergy(right.fEnergy), fMulStrip(right.fMulStrip),
+      fEta(right.fEta), fZCharge(right.fZCharge)
 {
 }
 

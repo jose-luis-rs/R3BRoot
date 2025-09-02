@@ -59,24 +59,16 @@ Double_t R3BLandDigitizer::BuildTOFRangeFromBeamEnergy(const Double_t& e) // [ns
 
 // ----------------------------------------------------------------------------
 R3BLandDigitizer::R3BLandDigitizer()
-    : FairTask("R3B Land Digitization scheme")
-    , f1(new TF1("f1", fun1, 0., 1000., 2))
-    , fRnd(new TRandom3())
-    , fThreshFileName("")
-    , fNChannels(0)
-    , fSaturationCoefficient(R3BLandDigitizer::DEFAULT_SATURATION_COEFFICIENT)
+    : FairTask("R3B Land Digitization scheme"), f1(new TF1("f1", fun1, 0., 1000., 2)), fRnd(new TRandom3()),
+      fThreshFileName(""), fNChannels(0), fSaturationCoefficient(R3BLandDigitizer::DEFAULT_SATURATION_COEFFICIENT)
 {
 }
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
 R3BLandDigitizer::R3BLandDigitizer(Int_t verbose)
-    : FairTask("R3B Land Digitization scheme ", verbose)
-    , f1(new TF1("f1", fun1, 0., 1000., 2))
-    , fRnd(new TRandom3())
-    , fThreshFileName("")
-    , fNChannels(0)
-    , fSaturationCoefficient(R3BLandDigitizer::DEFAULT_SATURATION_COEFFICIENT)
+    : FairTask("R3B Land Digitization scheme ", verbose), f1(new TF1("f1", fun1, 0., 1000., 2)), fRnd(new TRandom3()),
+      fThreshFileName(""), fNChannels(0), fSaturationCoefficient(R3BLandDigitizer::DEFAULT_SATURATION_COEFFICIENT)
 {
 }
 // ----------------------------------------------------------------------------
@@ -322,7 +314,7 @@ void R3BLandDigitizer::Exec(Option_t* opt)
                 }
             }
         } //! eloss
-    }     //! MC hits
+    } //! MC hits
 
     Double_t temp[1500][3];
 
@@ -401,7 +393,7 @@ void R3BLandDigitizer::Exec(Option_t* opt)
                 {
                     triggerTime = PM_res[i][j + 1].Ltime;
                 } // find minimum
-            }     // if above threshold
+            } // if above threshold
 
             PM_res[i][j + 1].Renergy = lambda * PM_res[i][j + 1].RlightCFD;
             PM_res[i][j + 1].Renergy =
@@ -414,9 +406,9 @@ void R3BLandDigitizer::Exec(Option_t* opt)
                 {
                     triggerTime = PM_res[i][j + 1].Rtime;
                 } // find minimum
-            }     // if above threshold
-        }         // digis
-    }             // paddles
+            } // if above threshold
+        } // digis
+    } // paddles
 
     //  Double_t temp[1500][3];
     for (Int_t i = 0; i < npaddles; i++)

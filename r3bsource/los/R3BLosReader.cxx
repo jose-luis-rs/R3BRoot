@@ -40,14 +40,8 @@ extern "C"
 using namespace std;
 
 R3BLosReader::R3BLosReader(EXT_STR_h101_LOS* data, size_t offset)
-    : R3BReader("R3BLosReader")
-    , fNEvents(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fSkiptriggertimes(kFALSE)
-    , fArray(new TClonesArray("R3BLosMappedData"))
-    , fArrayTrigger(new TClonesArray("R3BLosMappedData"))
+    : R3BReader("R3BLosReader"), fNEvents(0), fData(data), fOffset(offset), fOnline(kFALSE), fSkiptriggertimes(kFALSE),
+      fArray(new TClonesArray("R3BLosMappedData")), fArrayTrigger(new TClonesArray("R3BLosMappedData"))
 {
 }
 
@@ -230,11 +224,11 @@ Bool_t R3BLosReader::R3BRead()
                 //      if(header->GetTrigger() != 1) cout<< "Trigger in LosReader: "<<header->GetTrigger()<<endl;
 
                 new ((*fArray)[fArray->GetEntriesFast()])
-                    R3BLosMappedData(d + 1,                // detector number
-                                     channel,              // channel number: 1-8
-                                     0,                    // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
+                    R3BLosMappedData(d + 1, // detector number
+                                     channel, // channel number: 1-8
+                                     0, // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
                                      data->LOS[d].VTFv[j], // VFTX fine time
-                                     coarse_vftx           // VFTX coarse time
+                                     coarse_vftx // VFTX coarse time
                     );
 
                 //    cout<<"Reader VFTX: "<<d+1<<", "<<channel<<"; "<<data->LOS[d].VTFv[j]<<", "<<coarse_vftx <<endl;
@@ -395,11 +389,11 @@ Bool_t R3BLosReader::R3BRead()
                 uint32_t channelc = data->LOS[d].VTRIGCI[i]; // = 1..2
                 if (channelf == channelc)
                     new ((*fArrayTrigger)[fArrayTrigger->GetEntriesFast()])
-                        R3BLosMappedData(d + 1,                   // detector number
-                                         channelf,                // channel number: 1
-                                         0,                       // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
+                        R3BLosMappedData(d + 1, // detector number
+                                         channelf, // channel number: 1
+                                         0, // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
                                          data->LOS[d].VTRIGFv[i], // VFTX fine time
-                                         data->LOS[d].VTRIGCv[i]  // VFTX coarse time
+                                         data->LOS[d].VTRIGCv[i] // VFTX coarse time
                         );
             }
 
@@ -412,11 +406,11 @@ Bool_t R3BLosReader::R3BRead()
                 uint32_t channelcl = data->LOS[d].TTRIGCLI[i]; // = 1..2
                 if (channelfl == channelcl)
                     new ((*fArrayTrigger)[fArrayTrigger->GetEntriesFast()])
-                        R3BLosMappedData(d + 1,                    // detector number
-                                         channelfl,                // channel number: 1
-                                         1,                        // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
+                        R3BLosMappedData(d + 1, // detector number
+                                         channelfl, // channel number: 1
+                                         1, // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
                                          data->LOS[d].TTRIGFLv[i], // TAMEX3 fine time
-                                         data->LOS[d].TTRIGCLv[i]  // TAMEX3 coarse time
+                                         data->LOS[d].TTRIGCLv[i] // TAMEX3 coarse time
                         );
 
                 // Trailing times
@@ -424,11 +418,11 @@ Bool_t R3BLosReader::R3BRead()
                 uint32_t channelct = data->LOS[d].TTRIGCTI[i]; // = 1..2
                 if (channelft == channelct)
                     new ((*fArrayTrigger)[fArrayTrigger->GetEntriesFast()])
-                        R3BLosMappedData(d + 1,                    // detector number
-                                         channelft,                // channel number: 1
-                                         2,                        // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
+                        R3BLosMappedData(d + 1, // detector number
+                                         channelft, // channel number: 1
+                                         2, // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
                                          data->LOS[d].TTRIGFTv[i], // TAMEX3 fine time
-                                         data->LOS[d].TTRIGCTv[i]  // TAMEX3 coarse time
+                                         data->LOS[d].TTRIGCTv[i] // TAMEX3 coarse time
                         );
             }
         }

@@ -32,16 +32,10 @@
 #include <iostream>
 #include <string>
 
-R3BFiberDigitizer::R3BFiberDigitizer(const TString& name)
-    : R3BFiberDigitizer(name, 0.001, 0.01, 1.0)
-{
-}
+R3BFiberDigitizer::R3BFiberDigitizer(const TString& name) : R3BFiberDigitizer(name, 0.001, 0.01, 1.0) {}
 
 R3BFiberDigitizer::R3BFiberDigitizer(const TString& name, Double_t e, Double_t t, Double_t y)
-    : FairTask("R3B" + name + "Digitizer")
-    , fName(name)
-    , fFiPoints(NULL)
-    , fFiHits(NULL)
+    : FairTask("R3B" + name + "Digitizer"), fName(name), fFiPoints(NULL), fFiHits(NULL)
 {
     fMinPID = 1000020030; // Z=2 and A=3
     esigma = e;

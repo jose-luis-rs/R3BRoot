@@ -42,10 +42,7 @@
 #define SST_HALF_WIDTH_CM 3.5200
 #define SST_HALF_HEIGHT_CM 1.9968
 
-R3BTraDigitizer::R3BTraDigitizer()
-    : FairTask("R3B Tra Digitization scheme ")
-{
-}
+R3BTraDigitizer::R3BTraDigitizer() : FairTask("R3B Tra Digitization scheme ") {}
 
 R3BTraDigitizer::~R3BTraDigitizer() {}
 

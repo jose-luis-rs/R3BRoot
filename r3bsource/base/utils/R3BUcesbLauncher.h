@@ -30,10 +30,7 @@ namespace R3B
     class UcesbServerLauncher
     {
       public:
-        explicit UcesbServerLauncher(ext_data_clnt* client)
-            : client_{ client }
-        {
-        }
+        explicit UcesbServerLauncher(ext_data_clnt* client) : client_{ client } {}
         void Launch(std::string command_string);
         void Setup(ext_data_struct_info& struct_info, size_t event_struct_size);
         void Close();

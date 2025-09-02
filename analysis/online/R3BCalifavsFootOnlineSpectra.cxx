@@ -48,24 +48,10 @@ R3BCalifavsFootOnlineSpectra::R3BCalifavsFootOnlineSpectra()
 }
 
 R3BCalifavsFootOnlineSpectra::R3BCalifavsFootOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItemsCalifa(NULL)
-    , fHitItemsCalifa(NULL)
-    , fMappedItemsFoot(NULL)
-    , fCalItemsFoot(NULL)
-    , fHitItemsFoot(NULL)
-    , fNEvents(0)
-    , fTpat(-1)
-    , fNbCalifaCrystals(4864)
-    , fNumSides(Nb_Sides)
-    , fMapHistos_bins(500)
-    , fMapHistos_max(4000)
-    , fBinsChannelFebex(5000)
-    , fMaxBinChannelFebex(65535)
-    , fMaxEnergyBarrel(10)
-    , fMaxEnergyIphos(30)
-    , fMinProtonE(50000.)
-    , fRaw2Cal(kFALSE)
+    : FairTask(name, iVerbose), fCalItemsCalifa(NULL), fHitItemsCalifa(NULL), fMappedItemsFoot(NULL),
+      fCalItemsFoot(NULL), fHitItemsFoot(NULL), fNEvents(0), fTpat(-1), fNbCalifaCrystals(4864), fNumSides(Nb_Sides),
+      fMapHistos_bins(500), fMapHistos_max(4000), fBinsChannelFebex(5000), fMaxBinChannelFebex(65535),
+      fMaxEnergyBarrel(10), fMaxEnergyIphos(30), fMinProtonE(50000.), fRaw2Cal(kFALSE)
 {
 }
 

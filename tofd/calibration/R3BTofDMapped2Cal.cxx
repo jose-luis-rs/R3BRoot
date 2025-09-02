@@ -35,26 +35,13 @@ namespace
     double const c_range_ns = 2048 * 5;
 };
 
-R3BTofDMapped2Cal::R3BTofDMapped2Cal()
-    : R3BTofDMapped2Cal("R3BTofDMapped2Cal", 1)
-{
-}
+R3BTofDMapped2Cal::R3BTofDMapped2Cal() : R3BTofDMapped2Cal("R3BTofDMapped2Cal", 1) {}
 
 R3BTofDMapped2Cal::R3BTofDMapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItems(NULL)
-    , fMappedTriggerItems(NULL)
-    , fCalItems(new TClonesArray("R3BTofdCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BTofdCalData"))
-    , fNofTcalPars(0)
-    , fNofPlanes(0)
-    , fPaddlesPerPlane(0)
-    , fMapPar(NULL)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fCalLookup()
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fMappedItems(NULL), fMappedTriggerItems(NULL),
+      fCalItems(new TClonesArray("R3BTofdCalData")), fCalTriggerItems(new TClonesArray("R3BTofdCalData")),
+      fNofTcalPars(0), fNofPlanes(0), fPaddlesPerPlane(0), fMapPar(NULL), fTcalPar(NULL), fTrigger(-1),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fCalLookup(), fOnline(kFALSE)
 {
 }
 
@@ -165,11 +152,7 @@ void R3BTofDMapped2Cal::Exec(Option_t* option)
     // Calibrate time to nanoseconds.
     struct Cal
     {
-        Cal(R3BTofdMappedData const* a_mapped, double a_time_ns)
-            : mapped(a_mapped)
-            , time_ns(a_time_ns)
-        {
-        }
+        Cal(R3BTofdMappedData const* a_mapped, double a_time_ns) : mapped(a_mapped), time_ns(a_time_ns) {}
         R3BTofdMappedData const* mapped;
         double time_ns;
     };

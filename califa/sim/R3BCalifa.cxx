@@ -30,10 +30,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-R3BCalifa::R3BCalifa()
-    : R3BCalifa("")
-{
-}
+R3BCalifa::R3BCalifa() : R3BCalifa("") {}
 
 R3BCalifa::R3BCalifa(const std::string& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BCalifa(geoFile, { trans, rot })

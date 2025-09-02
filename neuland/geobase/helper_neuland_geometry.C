@@ -52,9 +52,9 @@ TGeoShape* BuildPaddleShape(const TString& name,
     new TGeoBBox(name + "Box", length, width, width);
     new TGeoCone(name + "Cone", coneLength + 0.001, 0., coneRadius, 0., width * TMath::Sqrt(2.));
     new TGeoBBox(name + "Conebox", width, width, coneLength);
-    TGeoShape* shape = new TGeoCompositeShape(
-        name,
-        name + "Box + ((" + name + "Conebox*" + name + "Cone):trc1) + ((" + name + "Conebox*" + name + "Cone):trc2)");
+    TGeoShape* shape = new TGeoCompositeShape(name,
+                                              name + "Box + ((" + name + "Conebox*" + name + "Cone):trc1) + ((" + name +
+                                                  "Conebox*" + name + "Cone):trc2)");
     return shape;
 }
 

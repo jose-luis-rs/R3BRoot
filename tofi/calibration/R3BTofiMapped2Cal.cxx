@@ -50,34 +50,18 @@ namespace
 };
 
 R3BTofiMapped2Cal::R3BTofiMapped2Cal()
-    : FairTask("R3BTofiMapped2Cal", 1)
-    , fMappedItems(nullptr)
-    , fMappedTriggerItems(nullptr)
-    , fCalItems(new TClonesArray("R3BTofiCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BTofiCalData"))
-    , fTcalPar(0)
-    , fNofTcalPars(0)
-    , fNofPlanes(0)
-    , fPaddlesPerPlane(0)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fCalLookup()
+    : FairTask("R3BTofiMapped2Cal", 1), fMappedItems(nullptr), fMappedTriggerItems(nullptr),
+      fCalItems(new TClonesArray("R3BTofiCalData")), fCalTriggerItems(new TClonesArray("R3BTofiCalData")), fTcalPar(0),
+      fNofTcalPars(0), fNofPlanes(0), fPaddlesPerPlane(0), fTrigger(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.),
+      fCalLookup()
 {
 }
 
 R3BTofiMapped2Cal::R3BTofiMapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItems(nullptr)
-    , fMappedTriggerItems(nullptr)
-    , fCalItems(new TClonesArray("R3BTofiCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BTofiCalData"))
-    , fTcalPar(0)
-    , fNofTcalPars(0)
-    , fNofPlanes(0)
-    , fPaddlesPerPlane(0)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fCalLookup()
+    : FairTask(name, iVerbose), fMappedItems(nullptr), fMappedTriggerItems(nullptr),
+      fCalItems(new TClonesArray("R3BTofiCalData")), fCalTriggerItems(new TClonesArray("R3BTofiCalData")), fTcalPar(0),
+      fNofTcalPars(0), fNofPlanes(0), fPaddlesPerPlane(0), fTrigger(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.),
+      fCalLookup()
 {
 }
 
@@ -164,11 +148,7 @@ void R3BTofiMapped2Cal::Exec(Option_t* option)
     // Calibrate time to nanoseconds.
     struct Cal
     {
-        Cal(R3BTofiMappedData const* a_mapped, double a_time_ns)
-            : mapped(a_mapped)
-            , time_ns(a_time_ns)
-        {
-        }
+        Cal(R3BTofiMappedData const* a_mapped, double a_time_ns) : mapped(a_mapped), time_ns(a_time_ns) {}
         R3BTofiMappedData const* mapped;
         double time_ns;
     };

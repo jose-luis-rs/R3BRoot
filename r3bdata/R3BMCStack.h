@@ -221,11 +221,11 @@ class R3BStack : public FairGenericStack
     TClonesArray* fTracks;
 
     /** STL map from particle index to storage flag  **/
-    std::map<Int_t, Bool_t> fStoreMap;            //!
+    std::map<Int_t, Bool_t> fStoreMap; //!
     std::map<Int_t, Bool_t>::iterator fStoreIter; //!
 
     /** STL map from particle index to track index  **/
-    std::map<Int_t, Int_t> fIndexMap;            //!
+    std::map<Int_t, Int_t> fIndexMap; //!
     std::map<Int_t, Int_t>::iterator fIndexIter; //!
 
     /** STL map from track index and detector ID to number of MCPoints **/
@@ -233,11 +233,11 @@ class R3BStack : public FairGenericStack
 
     /** Some indizes and counters **/
     Int_t fCurrentTrack; //! Index of current track
-    Int_t fNPrimaries;   //! Number of primary particles
-    Int_t fNParticles;   //! Number of entries in fParticles
-    Int_t fNTracks;      //! Number of entries in fTracks
-    Int_t fIndex;        //! Used for merging
-    Int_t fMC;           //! index for MC units testing
+    Int_t fNPrimaries; //! Number of primary particles
+    Int_t fNParticles; //! Number of entries in fParticles
+    Int_t fNTracks; //! Number of entries in fTracks
+    Int_t fIndex; //! Used for merging
+    Int_t fMC; //! index for MC units testing
 
     /** Variables defining the criteria for output selection **/
     Bool_t fStoreSecondaries;

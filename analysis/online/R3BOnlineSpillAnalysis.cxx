@@ -56,18 +56,10 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-R3BOnlineSpillAnalysis::R3BOnlineSpillAnalysis()
-    : R3BOnlineSpillAnalysis("OnlineSpillAnalysis", 1)
-{
-}
+R3BOnlineSpillAnalysis::R3BOnlineSpillAnalysis() : R3BOnlineSpillAnalysis("OnlineSpillAnalysis", 1) {}
 
 R3BOnlineSpillAnalysis::R3BOnlineSpillAnalysis(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fSamplerMappedItems(NULL)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fSpillLength(2.)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fSamplerMappedItems(NULL), fTrigger(-1), fTpat(-1), fSpillLength(2.), fNEvents(0)
 {
 }
 
@@ -140,7 +132,7 @@ InitStatus R3BOnlineSpillAnalysis::Init()
                                      fSpillLength); // 10ms bin
 
     fh_spill_times_Fine_adj =
-        new TH1F("CountsPerSpillLOSfineadj", "counts per spill fine [10us bin] ", 1000000, 0., 10.);      // 10µs bin
+        new TH1F("CountsPerSpillLOSfineadj", "counts per spill fine [10us bin] ", 1000000, 0., 10.); // 10µs bin
     fh_spill_times_FFT = new TH1F("CountsPerSpillFFT", "counts per spill [10us bin] ", 1000000, 0., 10.); // 10µs bin
 
     fh_SAMP_tDiff = new TH1F("Time_difference_SAMP", "Time-difference Sampler", 20000, 0., 1.); // 1ms, 5ns bin
@@ -475,9 +467,9 @@ void R3BOnlineSpillAnalysis::Exec(Option_t* option)
             {
                 if (dt > 0.)
                 {
-                    fh_SAMP_tDiff->Fill(dt / 100000.);         /// samp in 10 ns => dt in 1ms w\ 10µs bin
-                    fh_SAMP_tDiff_long->Fill(dt / 100000.);    /// samp in 10 ns => dt in 1ms w\ 10µs bin
-                    fh_SAMP_freq->Fill(100. / dt * 1.E3);      // kHz
+                    fh_SAMP_tDiff->Fill(dt / 100000.); /// samp in 10 ns => dt in 1ms w\ 10µs bin
+                    fh_SAMP_tDiff_long->Fill(dt / 100000.); /// samp in 10 ns => dt in 1ms w\ 10µs bin
+                    fh_SAMP_freq->Fill(100. / dt * 1.E3); // kHz
                     fh_SAMP_freq_long->Fill(100. / dt * 1.E3); // kHz
                     dt_prev = dt;
                 }
@@ -715,11 +707,11 @@ void R3BOnlineSpillAnalysis::Exec(Option_t* option)
         Double_t int_real = 0.;
         Double_t int_pois_byMax = 0.;
         Double_t int_real_byMax = 0.;
-        int_pois = fh_SAMP_tDiff_pois->Integral(1, 200);            // Get Integral of tDiffs equal and below 1µs
-        int_real = fh_SAMP_tDiff->Integral(1, 200);                 // with 5ns bin from 0th to 200th bin
+        int_pois = fh_SAMP_tDiff_pois->Integral(1, 200); // Get Integral of tDiffs equal and below 1µs
+        int_real = fh_SAMP_tDiff->Integral(1, 200); // with 5ns bin from 0th to 200th bin
         int_pois_byMax = fh_SAMP_tDiff_pois->Integral(1, max_pois); // Get Integral of tDiffs equal and below 1µs
-        int_real_byMax = fh_SAMP_tDiff->Integral(1, max_real);      // with 5ns bin from 0th to 200th bin
-        Double_t int_real_LOS = fh_dt_hits->Integral(1, 200);       // with 5ns bin from 0th to 200th bin
+        int_real_byMax = fh_SAMP_tDiff->Integral(1, max_real); // with 5ns bin from 0th to 200th bin
+        Double_t int_real_LOS = fh_dt_hits->Integral(1, 200); // with 5ns bin from 0th to 200th bin
         /**One can either use 1µs tDiff as Integration limit or the mean -> both show the same course, but the
          * absolute values are a bit different. Both seem valid and independent of particle rate, because we compare
          * it to a poisson distribution with the same mean value => the same particle rate. */

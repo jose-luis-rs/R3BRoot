@@ -31,15 +31,8 @@ extern "C"
 }
 
 R3BTrloiiTpatReader::R3BTrloiiTpatReader(EXT_STR_h101_TPAT* data, size_t offset)
-    : R3BReader("R3BTrloiiTpatReader")
-    , fNEvent(1)
-    , fData(data)
-    , fOffset(offset)
-    , fTrigger(-1)
-    , fTpatmin(-1)
-    , fTpatmax(-1)
-    , fSkipTpatZero(kFALSE)
-    , fEventHeader(nullptr)
+    : R3BReader("R3BTrloiiTpatReader"), fNEvent(1), fData(data), fOffset(offset), fTrigger(-1), fTpatmin(-1),
+      fTpatmax(-1), fSkipTpatZero(kFALSE), fEventHeader(nullptr)
 {
 }
 

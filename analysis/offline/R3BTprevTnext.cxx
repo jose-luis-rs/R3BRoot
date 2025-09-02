@@ -26,15 +26,9 @@
 #include "TRandom.h"
 #include <cstdlib>
 #include <iostream>
-R3BTprevTnext::R3BTprevTnext()
-    : R3BTprevTnext("R3B Tprev/Tnext", 1)
-{
-}
+R3BTprevTnext::R3BTprevTnext() : R3BTprevTnext("R3B Tprev/Tnext", 1) {}
 
-R3BTprevTnext::R3BTprevTnext(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BTprevTnext::R3BTprevTnext(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 InitStatus R3BTprevTnext::Init()
 {

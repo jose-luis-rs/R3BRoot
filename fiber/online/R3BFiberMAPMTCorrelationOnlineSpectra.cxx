@@ -45,9 +45,7 @@ R3BFiberMAPMTCorrelationOnlineSpectra::R3BFiberMAPMTCorrelationOnlineSpectra()
 R3BFiberMAPMTCorrelationOnlineSpectra::R3BFiberMAPMTCorrelationOnlineSpectra(const TString name1,
                                                                              const TString name2,
                                                                              int iVerbose)
-    : FairTask(name1 + "_" + name2 + "CorrelationOnlineSpectra", iVerbose)
-    , fName1(name1)
-    , fName2(name2)
+    : FairTask(name1 + "_" + name2 + "CorrelationOnlineSpectra", iVerbose), fName1(name1), fName2(name2)
 {
 }
 

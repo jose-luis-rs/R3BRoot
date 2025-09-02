@@ -59,17 +59,8 @@ R3BMusliVsMwpcOnlineSpectra::R3BMusliVsMwpcOnlineSpectra(const TString& name,
                                                          Int_t iVerbose,
                                                          const TString& namedet1,
                                                          const TString& namedet2)
-    : FairTask(name, iVerbose)
-    , fMapMusli(NULL)
-    , fCalMusli(NULL)
-    , fHitMusli(NULL)
-    , fHitMwpcDet1(NULL)
-    , fHitMwpcDet2(NULL)
-    , fMw1Geo_Par(NULL)
-    , fMw2Geo_Par(NULL)
-    , fNameDet1(namedet1)
-    , fNameDet2(namedet2)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fMapMusli(NULL), fCalMusli(NULL), fHitMusli(NULL), fHitMwpcDet1(NULL),
+      fHitMwpcDet2(NULL), fMw1Geo_Par(NULL), fMw2Geo_Par(NULL), fNameDet1(namedet1), fNameDet2(namedet2), fNEvents(0)
 {
 }
 

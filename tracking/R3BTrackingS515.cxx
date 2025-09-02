@@ -57,32 +57,13 @@
 
 R3BTrackingS515* gMDFTracker;
 
-R3BTrackingS515::R3BTrackingS515()
-    : R3BTrackingS515("TrackingS515", 1)
-{
-}
+R3BTrackingS515::R3BTrackingS515() : R3BTrackingS515("TrackingS515", 1) {}
 
 R3BTrackingS515::R3BTrackingS515(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fNEvents(0)
-    , maxevent(0)
-    , DoAlignment(false)
-    , fTrackItems(new TClonesArray("R3BTrack"))
-    , reference_PoQ(0.)
-    , GladCurrent(-1)
-    , GladReferenceCurrent(-1)
-    , FrsCutMeanZ(-1)
-    , FrsCutRadiusZ(-1)
-    , FrsCutMeanAoZ(-1)
-    , FrsCutRadiusAoZ(-1)
-    , FrsBrhoMin(-1)
-    , FrsBrhoMax(-1)
-    , MusicZMin(-1)
-    , MusicZMax(-1)
-    , FiberEnergyMin(-1)
-    , FiberEnergyMax(-1)
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat(-1), fNEvents(0), maxevent(0), DoAlignment(false),
+      fTrackItems(new TClonesArray("R3BTrack")), reference_PoQ(0.), GladCurrent(-1), GladReferenceCurrent(-1),
+      FrsCutMeanZ(-1), FrsCutRadiusZ(-1), FrsCutMeanAoZ(-1), FrsCutRadiusAoZ(-1), FrsBrhoMin(-1), FrsBrhoMax(-1),
+      MusicZMin(-1), MusicZMax(-1), FiberEnergyMin(-1), FiberEnergyMax(-1)
 {
 }
 
@@ -278,7 +259,7 @@ void R3BTrackingS515::Exec(Option_t* option)
     double track_offset = (f11_point.X() - track_slope * f11_point.Z());
     // Extrapolate final X and Z position in f12
     f12_point.SetZ((track_offset - f12_offset) / (f12_slope - track_slope)); // extrapolated
-    f12_point.SetX(track_slope * f12_point.Z() + track_offset);              // extrapolated
+    f12_point.SetX(track_slope * f12_point.Z() + track_offset); // extrapolated
 
     // Calculate all necessary MDF values
     // preserve the order, it is expected by the MDF function!
@@ -440,7 +421,7 @@ void R3BTrackingS515::Alignment()
     Double_t precision = 1e-10; // 0 - default precision will be automaticalle determined
     Double_t tolerance = 0.02;
     minimizer->SetMaxFunctionCalls(1000000000); // for Minuit/Minuit2
-    minimizer->SetMaxIterations(100);           // for GSL
+    minimizer->SetMaxIterations(100); // for GSL
     minimizer->SetTolerance(tolerance);
     minimizer->SetPrecision(precision);
     minimizer->SetPrintLevel(2);

@@ -23,9 +23,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BRpcTotCalPar::R3BRpcTotCalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumChannels(N_NUM)
-    , fCalParams(new TArrayF(N_NUM))
+    : FairParGenericSet(name, title, context), fNumChannels(N_NUM), fCalParams(new TArrayF(N_NUM))
 {
 }
 

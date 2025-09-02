@@ -24,8 +24,7 @@ using std::endl;
 using std::flush;
 
 // -----   Default constructor   -------------------------------------------
-R3BTrackerHit::R3BTrackerHit()
-    : FairMultiLinkedData()
+R3BTrackerHit::R3BTrackerHit() : FairMultiLinkedData()
 {
     // fNbOfTrackerHits = 0;
     fEnergy = -1.;

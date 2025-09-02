@@ -65,15 +65,15 @@ typedef struct EXT_STR_h101_TPAT_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_TPAT_ITEMS_INFO(ok, si, offset, struct_t, printerr)                           \
-    do                                                                                             \
-    {                                                                                              \
-        ok = 1;                                                                                    \
-        /* RAW */                                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TPAT, UINT32, "TPAT", 170);      \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TPATv, UINT32, "TPATv", "TPAT"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TPATFAIL, UINT32, "TPATFAIL");       \
-                                                                                                   \
+#define EXT_STR_h101_TPAT_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, TPAT, UINT32, "TPAT", 170);                          \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, TPATv, UINT32, "TPATv", "TPAT");                     \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TPATFAIL, UINT32, "TPATFAIL");                           \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_TPAT_EXT_H101_TPAT_H__*/

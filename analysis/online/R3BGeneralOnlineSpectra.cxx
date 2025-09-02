@@ -51,36 +51,14 @@
 #include "TRandom.h"
 #include "TVector3.h"
 
-R3BGeneralOnlineSpectra::R3BGeneralOnlineSpectra()
-    : R3BGeneralOnlineSpectra("GeneralOnlineSpectra", 1)
-{
-}
+R3BGeneralOnlineSpectra::R3BGeneralOnlineSpectra() : R3BGeneralOnlineSpectra("GeneralOnlineSpectra", 1) {}
 
 R3BGeneralOnlineSpectra::R3BGeneralOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fEventHeader(nullptr)
-    , fMwpc0Online(NULL)
-    , fMwpc01Online(NULL)
-    , fMwpc02Online(NULL)
-    , fMwpc12Online(NULL)
-    , fMwpc1Online(NULL)
-    , fMwpc2Online(NULL)
-    , fTwimOnline(NULL)
-    , fMusicOnline(NULL)
-    , fAmsOnline(NULL)
-    , fLosOnline(NULL)
-    , fFootOnline(NULL)
-    , fCalifaOnline(NULL)
-    , fTofdOnlineSpectra(NULL)
-    , fIncomingTrackingOnline(NULL)
-    , fTwimvsFootOnlineSpectra(NULL)
-    , fWRItemsMaster(NULL)
-    , fWRItemsSofia(NULL)
-    , fWRItemsCalifa(NULL)
-    , fWRItemsNeuland(NULL)
-    , fWRItemsS2(NULL)
-    , fWRItemsS8(NULL)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fEventHeader(nullptr), fMwpc0Online(NULL), fMwpc01Online(NULL), fMwpc02Online(NULL),
+      fMwpc12Online(NULL), fMwpc1Online(NULL), fMwpc2Online(NULL), fTwimOnline(NULL), fMusicOnline(NULL),
+      fAmsOnline(NULL), fLosOnline(NULL), fFootOnline(NULL), fCalifaOnline(NULL), fTofdOnlineSpectra(NULL),
+      fIncomingTrackingOnline(NULL), fTwimvsFootOnlineSpectra(NULL), fWRItemsMaster(NULL), fWRItemsSofia(NULL),
+      fWRItemsCalifa(NULL), fWRItemsNeuland(NULL), fWRItemsS2(NULL), fWRItemsS8(NULL), fNEvents(0)
 {
 }
 

@@ -28,16 +28,8 @@ extern "C"
 using namespace std;
 
 R3BTttxReader::R3BTttxReader(EXT_STR_h101_TTTX* data, size_t offset)
-    : R3BReader("R3BTttxReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fDets(2)
-    , fChannels(32)
-    , fTref(1)
-    , fTtrig(1)
-    , fPileup(kFALSE)
-    , fArray(new TClonesArray("R3BTttxMappedData"))
+    : R3BReader("R3BTttxReader"), fData(data), fOffset(offset), fOnline(kFALSE), fDets(2), fChannels(32), fTref(1),
+      fTtrig(1), fPileup(kFALSE), fArray(new TClonesArray("R3BTttxMappedData"))
 {
 }
 

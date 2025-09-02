@@ -19,12 +19,7 @@
 #include <fmt/core.h>
 
 R3BTttxMappedData::R3BTttxMappedData(uint8_t DetID, uint8_t StripID, int32_t time, int32_t energy, bool pu, bool ov)
-    : fDetID(DetID)
-    , fStripID(StripID)
-    , fTime(time)
-    , fEnergy(energy)
-    , fPileup(pu)
-    , fOverflow(ov)
+    : fDetID(DetID), fStripID(StripID), fTime(time), fEnergy(energy), fPileup(pu), fOverflow(ov)
 {
 }
 

@@ -39,35 +39,13 @@
 #include "TMath.h"
 #include "TRandom.h"
 
-R3BIncomingIDOnlineSpectra::R3BIncomingIDOnlineSpectra()
-    : R3BIncomingIDOnlineSpectra("IncomingIDOnlineSpectra", 1)
-{
-}
+R3BIncomingIDOnlineSpectra::R3BIncomingIDOnlineSpectra() : R3BIncomingIDOnlineSpectra("IncomingIDOnlineSpectra", 1) {}
 
 R3BIncomingIDOnlineSpectra::R3BIncomingIDOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitFrs(NULL)
-    , fHitLos(NULL)
-    , fMwpc0HitDataCA(NULL)
-    , fMwpc1HitDataCA(NULL)
-    , header(nullptr)
-    , fNEvents(0)
-    , fTpat(-1)
-    , fStaId(1)
-    , fMin_Z(0.)
-    , fMax_Z(20.)
-    , fMin_Aq(1.6)
-    , fMax_Aq(3.9)
-    , fMin_Brho(6)
-    , fMax_Brho(10)
-    , fMin_RawTof(-50000)
-    , fMax_RawTof(50000)
-    , fMin_Beta(0.)
-    , fMax_Beta(1.)
-    , fMin_Z_gate(0.)
-    , fMax_Z_gate(20.)
-    , fMin_Aq_gate(1.6)
-    , fMax_Aq_gate(3.9)
+    : FairTask(name, iVerbose), fHitFrs(NULL), fHitLos(NULL), fMwpc0HitDataCA(NULL), fMwpc1HitDataCA(NULL),
+      header(nullptr), fNEvents(0), fTpat(-1), fStaId(1), fMin_Z(0.), fMax_Z(20.), fMin_Aq(1.6), fMax_Aq(3.9),
+      fMin_Brho(6), fMax_Brho(10), fMin_RawTof(-50000), fMax_RawTof(50000), fMin_Beta(0.), fMax_Beta(1.),
+      fMin_Z_gate(0.), fMax_Z_gate(20.), fMin_Aq_gate(1.6), fMax_Aq_gate(3.9)
 {
 }
 

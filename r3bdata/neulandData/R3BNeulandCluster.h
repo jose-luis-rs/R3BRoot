@@ -24,18 +24,12 @@ class R3BNeulandCluster : public TObject
 {
   public:
     R3BNeulandCluster() = default;
-    explicit R3BNeulandCluster(const R3BNeulandHit& hit)
-        : fHits({ hit })
-    {
-    }
+    explicit R3BNeulandCluster(const R3BNeulandHit& hit) : fHits({ hit }) {}
     R3BNeulandCluster(std::vector<R3BNeulandHit>::iterator begin, std::vector<R3BNeulandHit>::iterator end)
         : fHits(begin, end)
     {
     }
-    explicit R3BNeulandCluster(std::vector<R3BNeulandHit> hits)
-        : fHits(std::move(hits))
-    {
-    }
+    explicit R3BNeulandCluster(std::vector<R3BNeulandHit> hits) : fHits(std::move(hits)) {}
 
     void Clear(Option_t*) override
     {

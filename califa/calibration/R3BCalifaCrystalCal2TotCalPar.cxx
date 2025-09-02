@@ -39,17 +39,8 @@ R3BCalifaCrystalCal2TotCalPar::R3BCalifaCrystalCal2TotCalPar()
 }
 
 R3BCalifaCrystalCal2TotCalPar::R3BCalifaCrystalCal2TotCalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMap_Par(NULL)
-    , fTotCal_Par(NULL)
-    , fCrystalCalDataCA(NULL)
-    , fNumCrystals(1)
-    , fNumParam(2)
-    , fMinStadistics(100)
-    , fThreshold(0)
-    , fLeft(500.)
-    , fRight(1400.)
-    , fDebugMode(false)
+    : FairTask(name, iVerbose), fMap_Par(NULL), fTotCal_Par(NULL), fCrystalCalDataCA(NULL), fNumCrystals(1),
+      fNumParam(2), fMinStadistics(100), fThreshold(0), fLeft(500.), fRight(1400.), fDebugMode(false)
 {
 }
 

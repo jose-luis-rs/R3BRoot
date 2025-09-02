@@ -33,11 +33,8 @@ extern "C"
 }
 
 R3BMosaicReader::R3BMosaicReader(EXT_STR_h101_MOSAIC_onion* data, size_t offset)
-    : R3BReader("R3BMosaicReader")
-    , fData(data)
-    , fNbMosaic(sizeof(fData->MOSAIC) / sizeof(fData->MOSAIC[0]))
-    , fOffset(offset)
-    , fArray(new TClonesArray("R3BAlpideMappedData"))
+    : R3BReader("R3BMosaicReader"), fData(data), fNbMosaic(sizeof(fData->MOSAIC) / sizeof(fData->MOSAIC[0])),
+      fOffset(offset), fArray(new TClonesArray("R3BAlpideMappedData"))
 {
 }
 

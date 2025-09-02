@@ -46,15 +46,9 @@
 
 using namespace std;
 
-R3BCalifaOnlineSpectra::R3BCalifaOnlineSpectra()
-    : R3BCalifaOnlineSpectra("CALIFAOnlineSpectra", 1)
-{
-}
+R3BCalifaOnlineSpectra::R3BCalifaOnlineSpectra() : R3BCalifaOnlineSpectra("CALIFAOnlineSpectra", 1) {}
 
-R3BCalifaOnlineSpectra::R3BCalifaOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BCalifaOnlineSpectra::R3BCalifaOnlineSpectra(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BCalifaOnlineSpectra::SetParContainers()
 {
@@ -355,7 +349,7 @@ InitStatus R3BCalifaOnlineSpectra::Init()
     std::vector<std::string> side = { "Right", "Left" };
     for (int s = 0; s < fNumSides; s++) // Side
     {
-        for (Int_t r = 0; r < fNumRings; r++)       // Ring
+        for (Int_t r = 0; r < fNumRings; r++) // Ring
             for (Int_t p = 0; p < fNumPreamps; p++) // Preamp
             {
                 if (fFebexInfo[s][r][p][0] != -1)
@@ -1570,7 +1564,7 @@ void R3BCalifaOnlineSpectra::Exec(Option_t* /*option*/)
             if (hit->GetClusterType() == 0) // proton
             {
                 fh2_Califa_theta_energy_pr->Fill(theta, hit->GetEnergy() / 1000.); // MeV
-                fh1_Califa_total_energy_pr->Fill(hit->GetEnergy() / 1000.);        // MeV
+                fh1_Califa_total_energy_pr->Fill(hit->GetEnergy() / 1000.); // MeV
             }
             else if (hit->GetClusterType() == 1) // gamma
             {

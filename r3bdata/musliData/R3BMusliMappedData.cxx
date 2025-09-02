@@ -15,13 +15,7 @@
 
 // -----   Default constructor   -------------------------------------------
 R3BMusliMappedData::R3BMusliMappedData()
-    : fType(0)
-    , fIndex(0)
-    , fSignal(0)
-    , fTime(0)
-    , fEnergy(0)
-    , fPileup(kFALSE)
-    , fOverflow(kFALSE)
+    : fType(0), fIndex(0), fSignal(0), fTime(0), fEnergy(0), fPileup(kFALSE), fOverflow(kFALSE)
 {
 }
 // -------------------------------------------------------------------------
@@ -34,13 +28,7 @@ R3BMusliMappedData::R3BMusliMappedData(UInt_t type,
                                        UInt_t energy,
                                        Bool_t pu,
                                        Bool_t ov)
-    : fType(type)
-    , fIndex(index)
-    , fSignal(signal)
-    , fTime(time)
-    , fEnergy(energy)
-    , fPileup(pu)
-    , fOverflow(ov)
+    : fType(type), fIndex(index), fSignal(signal), fTime(time), fEnergy(energy), fPileup(pu), fOverflow(ov)
 {
 }
 // -------------------------------------------------------------------------

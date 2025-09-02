@@ -23,12 +23,8 @@ extern "C"
 }
 
 R3BWhiterabbitReader::R3BWhiterabbitReader(EXT_STR_h101_whiterabbit* data, size_t offset, UInt_t whiterabbit_id)
-    : R3BReader("R3BWhiterabbitReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fWhiterabbitId(whiterabbit_id)
-    , fEventHeader(nullptr)
+    : R3BReader("R3BWhiterabbitReader"), fNEvent(0), fData(data), fOffset(offset), fWhiterabbitId(whiterabbit_id),
+      fEventHeader(nullptr)
 {
 }
 

@@ -19,8 +19,7 @@
 #include "TString.h"
 
 R3BNeulandHitModulePar::R3BNeulandHitModulePar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fModuleId(0)
+    : FairParGenericSet(name, title, context, own), fModuleId(0)
 {
     // Reset all parameters
     clear();

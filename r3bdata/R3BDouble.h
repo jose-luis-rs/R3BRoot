@@ -21,15 +21,9 @@
 class R3BDouble
 {
   public:
-    R3BDouble()
-        : fValue(0)
-    {
-    }
+    R3BDouble() : fValue(0) {}
     R3BDouble(Double_t value);
-    R3BDouble(const R3BDouble& other)
-        : fValue(other.fValue)
-    {
-    }
+    R3BDouble(const R3BDouble& other) : fValue(other.fValue) {}
     virtual ~R3BDouble() {}
 
     inline operator Double_t() const { return fValue; }

@@ -39,11 +39,7 @@ R3BBunchedFiberCal2Hit_s494::ToT::ToT(R3BBunchedFiberCalData const* a_lead,
                                       Double_t a_lead_ns,
                                       Double_t a_tail_ns,
                                       Double_t a_tot_ns)
-    : lead(a_lead)
-    , trail(a_trail)
-    , lead_ns(a_lead_ns)
-    , tail_ns(a_tail_ns)
-    , tot_ns(a_tot_ns)
+    : lead(a_lead), trail(a_trail), lead_ns(a_lead_ns), tail_ns(a_tail_ns), tot_ns(a_tot_ns)
 {
 }
 
@@ -57,29 +53,12 @@ R3BBunchedFiberCal2Hit_s494::R3BBunchedFiberCal2Hit_s494(const char* a_name,
                                                          Bool_t a_is_calibrator,
                                                          Bool_t a_is_gain,
                                                          Bool_t a_is_tsync)
-    : FairTask(TString("R3B") + a_name + "Cal2Hit", a_verbose)
-    , fName(a_name)
-    , fClockFreq(R3BTCalEngine::CTDC_16_BWD_150 == a_ctdc_variant ? 150 : 250)
-    , fDirection(a_direction)
-    , fSubNum(a_sub_num)
-    , fIsCalibrator(a_is_calibrator)
-    , fIsGain(a_is_gain)
-    , fIsTsync(a_is_tsync)
-    , fCalItems()
-    , fMAPMTCalTriggerItems()
-    , fHitItems(new TClonesArray("R3BBunchedFiberHitData"))
-    , fCalPar()
-    , fHitPar()
-    , fNofHitPars()
-    , fNofHitItems()
-    , fChannelArray()
-    , fh_ToT_MA_Fib()
-    , fh_ToT_SA_Fib()
-    , fh_time_SA_Fib()
-    , fh_dt_Fib()
-    , fh_time_MA_Fib()
-    , fh_Fib_ToF()
-    , fnEvents(0)
+    : FairTask(TString("R3B") + a_name + "Cal2Hit", a_verbose), fName(a_name),
+      fClockFreq(R3BTCalEngine::CTDC_16_BWD_150 == a_ctdc_variant ? 150 : 250), fDirection(a_direction),
+      fSubNum(a_sub_num), fIsCalibrator(a_is_calibrator), fIsGain(a_is_gain), fIsTsync(a_is_tsync), fCalItems(),
+      fMAPMTCalTriggerItems(), fHitItems(new TClonesArray("R3BBunchedFiberHitData")), fCalPar(), fHitPar(),
+      fNofHitPars(), fNofHitItems(), fChannelArray(), fh_ToT_MA_Fib(), fh_ToT_SA_Fib(), fh_time_SA_Fib(), fh_dt_Fib(),
+      fh_time_MA_Fib(), fh_Fib_ToF(), fnEvents(0)
 
 {
     fChPerSub[0] = a_mapmt_per_sub;
@@ -462,7 +441,7 @@ void R3BBunchedFiberCal2Hit_s494::Exec(Option_t* option)
                     Double_t t_spmt = spmt_tot.lead_ns;
 
                     Double_t t_mapmt1 = mapmt_tot.lead->GetTime_ns(); // MAPMT time without subtraction of trigger time
-                    Double_t t_spmt1 = spmt_tot.lead->GetTime_ns();   // SAPMT time without subtraction of trigger time
+                    Double_t t_spmt1 = spmt_tot.lead->GetTime_ns(); // SAPMT time without subtraction of trigger time
 
                     // cout << "ToT fiber_SA_ch: " << tot_spmt << "  ToT multi: " << tot_mapmt << endl;
                     // cout << "Time fiber_SA_ch: " << t_spmt << "  Time multi: " << t_mapmt

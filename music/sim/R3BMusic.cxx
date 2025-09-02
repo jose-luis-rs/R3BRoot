@@ -35,10 +35,7 @@
 #define U_MEV 931.4940954
 
 // -----   Default constructor
-R3BMusic::R3BMusic()
-    : R3BMusic("")
-{
-}
+R3BMusic::R3BMusic() : R3BMusic("") {}
 
 R3BMusic::R3BMusic(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BMusic(geoFile, { trans, rot })
@@ -47,9 +44,7 @@ R3BMusic::R3BMusic(const TString& geoFile, const TGeoTranslation& trans, const T
 
 // -----   Standard constructor
 R3BMusic::R3BMusic(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BMusic", kMUSIC, geoFile, combi)
-    , fMusicCollection(new TClonesArray("R3BMusicPoint"))
-    , fPosIndex(0)
+    : R3BDetector("R3BMusic", kMUSIC, geoFile, combi), fMusicCollection(new TClonesArray("R3BMusicPoint")), fPosIndex(0)
 {
     ResetParameters();
 }

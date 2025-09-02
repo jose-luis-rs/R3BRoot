@@ -20,20 +20,20 @@
 using namespace std;
 
 R3BRoluMappedData::R3BRoluMappedData()
-    : fDetector(0)   // Detector number: 1...n
-    , fChannel(0)    // Channel number:  1...n (n = 4 )
-    , fType(-1)      // Type: 0 =  TAMEX leading edge, 1 = TAMEX trailing edge
-    , fTimeFine(0)   // Fine time
-    , fTimeCoarse(0) // Coarse time
+    : fDetector(0) // Detector number: 1...n
+      ,
+      fChannel(0) // Channel number:  1...n (n = 4 )
+      ,
+      fType(-1) // Type: 0 =  TAMEX leading edge, 1 = TAMEX trailing edge
+      ,
+      fTimeFine(0) // Fine time
+      ,
+      fTimeCoarse(0) // Coarse time
 {
 }
 
 R3BRoluMappedData::R3BRoluMappedData(UInt_t detector, UInt_t channel, Int_t type, UInt_t timeFine, UInt_t timeCoarse)
-    : fDetector(detector)
-    , fChannel(channel)
-    , fType(type)
-    , fTimeFine(timeFine)
-    , fTimeCoarse(timeCoarse)
+    : fDetector(detector), fChannel(channel), fType(type), fTimeFine(timeFine), fTimeCoarse(timeCoarse)
 {
     // cout<<detector<<", "<<channel<<"; "<<type<<", "<<timeFine<<"; "<<timeCoarse<<endl;
 }

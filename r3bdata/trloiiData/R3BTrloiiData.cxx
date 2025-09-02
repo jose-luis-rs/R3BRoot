@@ -17,18 +17,8 @@
 
 #include "R3BTrloiiData.h"
 
-R3BTrloiiData::R3BTrloiiData()
-    : fType(0)
-    , fCh(0)
-    , fCounts(0)
-{
-}
+R3BTrloiiData::R3BTrloiiData() : fType(0), fCh(0), fCounts(0) {}
 
-R3BTrloiiData::R3BTrloiiData(UInt_t type, Int_t ch, uint32_t counts)
-    : fType(type)
-    , fCh(ch)
-    , fCounts(counts)
-{
-}
+R3BTrloiiData::R3BTrloiiData(UInt_t type, Int_t ch, uint32_t counts) : fType(type), fCh(ch), fCounts(counts) {}
 
 ClassImp(R3BTrloiiData);

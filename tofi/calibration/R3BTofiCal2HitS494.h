@@ -158,15 +158,15 @@ class R3BTofiCal2HitS494 : public FairTask
     }
 
   private:
-    TClonesArray* fCalItems;        /**< Array with Cal items - input data. */
+    TClonesArray* fCalItems; /**< Array with Cal items - input data. */
     TClonesArray* fCalTriggerItems; /**< Array with trigger Cal items - input data. */
-    TClonesArray* fHitItems;        /**< Array with Hit items - output data. */
-    UInt_t fNofHitItems;            /**< Number of hit items for cur event. */
-    R3BTofiHitPar* fHitPar;         /**< Hit parameter container. */
-    UInt_t fNofHitPars;             /**< Number of modules in parameter file. */
-    R3BEventHeader* header;         /**< Event header - input data. */
-    Double_t fClockFreq;            /**< Clock cycle in [ns]. */
-    Int_t fTrigger;                 /**< Trigger value. */
+    TClonesArray* fHitItems; /**< Array with Hit items - output data. */
+    UInt_t fNofHitItems; /**< Number of hit items for cur event. */
+    R3BTofiHitPar* fHitPar; /**< Hit parameter container. */
+    UInt_t fNofHitPars; /**< Number of modules in parameter file. */
+    R3BEventHeader* header; /**< Event header - input data. */
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    Int_t fTrigger; /**< Trigger value. */
     Int_t fTpat1, fTpat2;
     Double_t fTofiQ;
     Bool_t cal_hand;

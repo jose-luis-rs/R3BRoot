@@ -19,9 +19,7 @@
 #include "FairRtdbRun.h"
 
 R3BTCalPar::R3BTCalPar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fTCalParams(new TObjArray(NMODULEMAX))
-    , fMapInit(kFALSE)
+    : FairParGenericSet(name, title, context, own), fTCalParams(new TObjArray(NMODULEMAX)), fMapInit(kFALSE)
 {
 }
 

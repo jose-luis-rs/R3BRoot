@@ -25,21 +25,14 @@ R3BINCLRootGenerator::R3BINCLRootGenerator()
     R3BLOG(fatal, "This event generator must be used with an INCL ROOT file");
 }
 
-R3BINCLRootGenerator::R3BINCLRootGenerator(const std::string& fileName)
-    : fFileName(std::move(fileName))
+R3BINCLRootGenerator::R3BINCLRootGenerator(const std::string& fileName) : fFileName(std::move(fileName))
 {
     RegisterIons();
 }
 
-R3BINCLRootGenerator::R3BINCLRootGenerator(const TString& fileName)
-    : R3BINCLRootGenerator(std::string(fileName))
-{
-}
+R3BINCLRootGenerator::R3BINCLRootGenerator(const TString& fileName) : R3BINCLRootGenerator(std::string(fileName)) {}
 
-R3BINCLRootGenerator::R3BINCLRootGenerator(const char* fileName)
-    : R3BINCLRootGenerator(std::string(fileName))
-{
-}
+R3BINCLRootGenerator::R3BINCLRootGenerator(const char* fileName) : R3BINCLRootGenerator(std::string(fileName)) {}
 
 R3BINCLRootGenerator::~R3BINCLRootGenerator() { fInput->Close(); }
 

@@ -25,11 +25,8 @@ extern "C"
 }
 
 R3BBunchedFiberSPMTTrigReader::R3BBunchedFiberSPMTTrigReader(EXT_STR_h101_FIB* a_data, size_t a_offset)
-    : R3BReader("R3BBunchedFiberSPMTTrigReader")
-    , fData(reinterpret_cast<EXT_STR_h101_FIB_onion*>(a_data))
-    , fOffset(a_offset)
-    , fOnline(kFALSE)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
+    : R3BReader("R3BBunchedFiberSPMTTrigReader"), fData(reinterpret_cast<EXT_STR_h101_FIB_onion*>(a_data)),
+      fOffset(a_offset), fOnline(kFALSE), fMappedArray(new TClonesArray("R3BFiberMappedData"))
 {
 }
 

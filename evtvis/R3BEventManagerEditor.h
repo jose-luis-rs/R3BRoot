@@ -22,7 +22,7 @@ class TEveGValuator;
 
 class R3BEventManagerEditor : public TGedFrame
 {
-    R3BEventManagerEditor(const R3BEventManagerEditor&);            // Not implemented
+    R3BEventManagerEditor(const R3BEventManagerEditor&); // Not implemented
     R3BEventManagerEditor& operator=(const R3BEventManagerEditor&); // Not implemented
 
   protected:

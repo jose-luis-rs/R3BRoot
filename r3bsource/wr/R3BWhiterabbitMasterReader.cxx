@@ -30,14 +30,8 @@ extern "C"
 R3BWhiterabbitMasterReader::R3BWhiterabbitMasterReader(EXT_STR_h101_WRMASTER* data,
                                                        size_t offset,
                                                        UInt_t whiterabbit_id)
-    : R3BReader("R3BWhiterabbitMasterReader")
-    , fNEvent(1)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kTRUE)
-    , fWhiterabbitId(whiterabbit_id)
-    , fEventHeader(nullptr)
-    , fArray(new TClonesArray("R3BWRData"))
+    : R3BReader("R3BWhiterabbitMasterReader"), fNEvent(1), fData(data), fOffset(offset), fOnline(kTRUE),
+      fWhiterabbitId(whiterabbit_id), fEventHeader(nullptr), fArray(new TClonesArray("R3BWRData"))
 {
 }
 

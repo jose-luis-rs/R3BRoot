@@ -40,8 +40,7 @@ using std::endl;
 bool SortDigiByTime(const R3BLandDigi* digi1, const R3BLandDigi* digi2);
 
 // -----------------------------------------------------------------------------
-R3BNeuLandClusterFinder::R3BNeuLandClusterFinder()
-    : FairTask("R3BNeuLandClusterFinder")
+R3BNeuLandClusterFinder::R3BNeuLandClusterFinder() : FairTask("R3BNeuLandClusterFinder")
 {
     // Default constructor
 
@@ -54,8 +53,7 @@ R3BNeuLandClusterFinder::R3BNeuLandClusterFinder()
 // -----------------------------------------------------------------------------
 
 // -----------------------------------------------------------------------------
-R3BNeuLandClusterFinder::R3BNeuLandClusterFinder(Int_t verbose)
-    : FairTask("R3BNeuLandClusterFinder", verbose)
+R3BNeuLandClusterFinder::R3BNeuLandClusterFinder(Int_t verbose) : FairTask("R3BNeuLandClusterFinder", verbose)
 {
     // Standard constructor
 

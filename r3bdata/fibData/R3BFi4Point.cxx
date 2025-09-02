@@ -25,14 +25,7 @@ using std::flush;
 
 // -----   Default constructor   -------------------------------------------
 R3BFi4Point::R3BFi4Point()
-    : FairMCPoint()
-    , fX_out(0.)
-    , fY_out(0.)
-    , fZ_out(0.)
-    , fPx_out(0.)
-    , fPy_out(0.)
-    , fPz_out(0.)
-    , fModule(-1)
+    : FairMCPoint(), fX_out(0.), fY_out(0.), fZ_out(0.), fPx_out(0.), fPy_out(0.), fPz_out(0.), fModule(-1)
 {
 }
 // -------------------------------------------------------------------------
@@ -48,27 +41,15 @@ R3BFi4Point::R3BFi4Point(Int_t trackID,
                          Double_t tof,
                          Double_t length,
                          Double_t eLoss)
-    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss)
-    , fX_out(posOut.X())
-    , fY_out(posOut.Y())
-    , fZ_out(posOut.Z())
-    , fPx_out(momOut.Px())
-    , fPy_out(momOut.Py())
-    , fPz_out(momOut.Pz())
-    , fModule(plane)
+    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss), fX_out(posOut.X()), fY_out(posOut.Y()),
+      fZ_out(posOut.Z()), fPx_out(momOut.Px()), fPy_out(momOut.Py()), fPz_out(momOut.Pz()), fModule(plane)
 {
 }
 // -------------------------------------------------------------------------
 
 R3BFi4Point::R3BFi4Point(const R3BFi4Point& right)
-    : FairMCPoint(right)
-    , fX_out(right.fX_out)
-    , fY_out(right.fY_out)
-    , fZ_out(right.fZ_out)
-    , fPx_out(right.fPx_out)
-    , fPy_out(right.fPy_out)
-    , fPz_out(right.fPz_out)
-    , fModule(right.fModule)
+    : FairMCPoint(right), fX_out(right.fX_out), fY_out(right.fY_out), fZ_out(right.fZ_out), fPx_out(right.fPx_out),
+      fPy_out(right.fPy_out), fPz_out(right.fPz_out), fModule(right.fModule)
 {
 }
 

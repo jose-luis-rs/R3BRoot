@@ -5,10 +5,7 @@ using remove_const_ref = std::remove_const_t<std::remove_reference_t<T>>;
 
 namespace R3B
 {
-    DataMonitorCanvas::DataMonitorCanvas(DataMonitor* monitor)
-        : monitor_{ monitor }
-    {
-    }
+    DataMonitorCanvas::DataMonitorCanvas(DataMonitor* monitor) : monitor_{ monitor } {}
 
     void DataMonitorCanvas::draw()
     {

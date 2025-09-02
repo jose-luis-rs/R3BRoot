@@ -42,10 +42,10 @@ class R3BNeulandHitMon : public FairTask
     ~R3BNeulandHitMon() override = default;
 
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeulandHitMon(const R3BNeulandHitMon&) = delete;            // copy constructor
-    R3BNeulandHitMon(R3BNeulandHitMon&&) = delete;                 // move constructor
+    R3BNeulandHitMon(const R3BNeulandHitMon&) = delete; // copy constructor
+    R3BNeulandHitMon(R3BNeulandHitMon&&) = delete; // move constructor
     R3BNeulandHitMon& operator=(const R3BNeulandHitMon&) = delete; // copy assignment
-    R3BNeulandHitMon& operator=(R3BNeulandHitMon&&) = delete;      // move assignment
+    R3BNeulandHitMon& operator=(R3BNeulandHitMon&&) = delete; // move assignment
 
   protected:
     InitStatus Init() override;

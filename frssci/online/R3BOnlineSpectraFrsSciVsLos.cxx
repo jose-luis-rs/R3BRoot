@@ -28,19 +28,11 @@
 #include "R3BLosCalData.h"
 #include "R3BOnlineSpectraFrsSciVsLos.h"
 
-R3BOnlineSpectraFrsSciVsLos::R3BOnlineSpectraFrsSciVsLos()
-    : R3BOnlineSpectraFrsSciVsLos("FrsSciOnlineSpectra", 1)
-{
-}
+R3BOnlineSpectraFrsSciVsLos::R3BOnlineSpectraFrsSciVsLos() : R3BOnlineSpectraFrsSciVsLos("FrsSciOnlineSpectra", 1) {}
 
 R3BOnlineSpectraFrsSciVsLos::R3BOnlineSpectraFrsSciVsLos(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fFrsSci_Tcal(NULL)
-    , fLos_Cal(NULL)
-    , fNEvents(0)
-    , fFrsSciNbDets(1)
-    , fFrsSciNbPmts(3)
-    , fLosTrefPmtId(8)
+    : FairTask(name, iVerbose), fFrsSci_Tcal(NULL), fLos_Cal(NULL), fNEvents(0), fFrsSciNbDets(1), fFrsSciNbPmts(3),
+      fLosTrefPmtId(8)
 {
 }
 

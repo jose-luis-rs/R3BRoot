@@ -27,8 +27,7 @@ namespace
     class testNeulandTamexChannel : public ::testing::Test
     {
       protected:
-        testNeulandTamexChannel()
-            : fChannel{ std::make_unique<TmxChannel>(Digitizing::ChannelSide::left) }
+        testNeulandTamexChannel() : fChannel{ std::make_unique<TmxChannel>(Digitizing::ChannelSide::left) }
         {
             SetChannelPar(fChannel->GetPar());
         }

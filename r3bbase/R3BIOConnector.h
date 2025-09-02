@@ -32,10 +32,7 @@ namespace R3B
     {
       public:
         using RawDataType = std::remove_const_t<std::remove_cv_t<InputType>>;
-        explicit InputConnector(std::string_view branchName)
-            : branch_name_{ branchName }
-        {
-        }
+        explicit InputConnector(std::string_view branchName) : branch_name_{ branchName } {}
 
         // rule of 5
         ~InputConnector() = default;
@@ -123,10 +120,7 @@ namespace R3B
     {
       public:
         using RawDataType = std::remove_const_t<std::remove_cv_t<OutputType>>;
-        explicit OutputConnector(std::string_view branchName)
-            : branch_name_{ branchName }
-        {
-        }
+        explicit OutputConnector(std::string_view branchName) : branch_name_{ branchName } {}
 
         // rule of 5
         ~OutputConnector() = default;

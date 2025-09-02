@@ -30,11 +30,8 @@ namespace R3BAtima
                  const RangeSelector& energies_MeV_per_u,
                  const TargetMaterial& targetMaterial,
                  const RangeSelector& distances_mm)
-        : fProjMass(pMass_u)
-        , fProjCharge(pCharge_e)
-        , fEnergies(energies_MeV_per_u)
-        , fTargetMaterial(targetMaterial)
-        , fDistances(distances_mm)
+        : fProjMass(pMass_u), fProjCharge(pCharge_e), fEnergies(energies_MeV_per_u), fTargetMaterial(targetMaterial),
+          fDistances(distances_mm)
     {
         calculate();
     }
@@ -45,11 +42,8 @@ namespace R3BAtima
                  const TargetMaterial& targetMaterial,
                  const RangeSelector& distances_mm,
                  const TString& path)
-        : fProjMass(pMass_u)
-        , fProjCharge(pCharge_e)
-        , fEnergies(energies_MeV_per_u)
-        , fTargetMaterial(targetMaterial)
-        , fDistances(distances_mm)
+        : fProjMass(pMass_u), fProjCharge(pCharge_e), fEnergies(energies_MeV_per_u), fTargetMaterial(targetMaterial),
+          fDistances(distances_mm)
     {
         if (!read(path))
         {

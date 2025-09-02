@@ -35,24 +35,12 @@
 #include "R3BTwimMappedData.h"
 
 // R3BTwimGainMatching::Default Constructor --------------------------
-R3BTwimGainMatching::R3BTwimGainMatching()
-    : R3BTwimGainMatching("R3BTwimGainMatching", 1)
-{
-}
+R3BTwimGainMatching::R3BTwimGainMatching() : R3BTwimGainMatching("R3BTwimGainMatching", 1) {}
 
 // R3BTwimGainMatchingPar::Standard Constructor --------------------------
 R3BTwimGainMatching::R3BTwimGainMatching(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumSec(4)
-    , fNumAnodes(16)
-    , fNumAnodesRef(1)
-    , fMinStadistics(1000)
-    , fRefAnode(7)
-    , fLimit_left(5000)
-    , fLimit_right(90000)
-    , fNumParams(2)
-    , fTwimMappedDataCA(NULL)
-    , fCal_Par(NULL)
+    : FairTask(name, iVerbose), fNumSec(4), fNumAnodes(16), fNumAnodesRef(1), fMinStadistics(1000), fRefAnode(7),
+      fLimit_left(5000), fLimit_right(90000), fNumParams(2), fTwimMappedDataCA(NULL), fCal_Par(NULL)
 {
 }
 

@@ -55,9 +55,7 @@ bool AuxSortClustersBeta(R3BNeuLandCluster*, R3BNeuLandCluster*);
 
 // -----------------------------------------------------------------------------
 R3BNeutronTracker2D::R3BNeutronTracker2D()
-    : FairTask("R3B NeuLAND Neutron Tracker")
-    , f2DCutEnabled(kTRUE)
-    , fNNeutrons(0)
+    : FairTask("R3B NeuLAND Neutron Tracker"), f2DCutEnabled(kTRUE), fNNeutrons(0)
 {
     dio = 10.6; // 3 times half the diogonal of a paddle
 }
@@ -427,7 +425,7 @@ Int_t R3BNeutronTracker2D::AdvancedMethod()
             fNofTracks += 1;
             break;
         } // clusters
-    }     // nNeut
+    } // nNeut
 
     return nOutput;
 }

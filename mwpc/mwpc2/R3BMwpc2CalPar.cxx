@@ -27,10 +27,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BMwpc2CalPar::R3BMwpc2CalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumPadsX(128)
-    , fNumPadsY(40)
-    , fNumParamsFit(1)
+    : FairParGenericSet(name, title, context), fNumPadsX(128), fNumPadsY(40), fNumParamsFit(1)
 {
     fPadCalParams = new TArrayF((fNumPadsX + fNumPadsY) * fNumParamsFit);
 }

@@ -13,19 +13,10 @@
 
 #include "R3BBunchedFiberCalData.h"
 
-R3BBunchedFiberCalData::R3BBunchedFiberCalData()
-    : fSide(0)
-    , fChannel(0)
-    , fIsLeading()
-    , fTime_ns(-1)
-{
-}
+R3BBunchedFiberCalData::R3BBunchedFiberCalData() : fSide(0), fChannel(0), fIsLeading(), fTime_ns(-1) {}
 
 R3BBunchedFiberCalData::R3BBunchedFiberCalData(Int_t a_side, Int_t a_channel, Bool_t a_is_leading, Double_t a_time_ns)
-    : fSide(a_side)
-    , fChannel(a_channel)
-    , fIsLeading(a_is_leading)
-    , fTime_ns(a_time_ns)
+    : fSide(a_side), fChannel(a_channel), fIsLeading(a_is_leading), fTime_ns(a_time_ns)
 {
 }
 

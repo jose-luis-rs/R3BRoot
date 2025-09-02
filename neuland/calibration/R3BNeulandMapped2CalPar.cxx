@@ -30,22 +30,18 @@
 using namespace std;
 
 R3BNeulandMapped2CalPar::R3BNeulandMapped2CalPar()
-    : FairTask("R3BNeulandMapped2TCalPar", 1)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    //    , fNofPMTs(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask("R3BNeulandMapped2TCalPar", 1), fMinStats(100000), fTrigger(-1)
+      //    , fNofPMTs(0)
+      ,
+      fNEvents(0), fCal_Par(NULL)
 {
 }
 
 R3BNeulandMapped2CalPar::R3BNeulandMapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    //, fNofPMTs(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask(name, iVerbose), fMinStats(100000), fTrigger(-1)
+      //, fNofPMTs(0)
+      ,
+      fNEvents(0), fCal_Par(NULL)
 {
 }
 

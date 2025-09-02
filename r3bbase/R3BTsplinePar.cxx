@@ -29,11 +29,9 @@
 
 // -----   Default constructor   -----------------------------------------------
 R3BTsplinePar::R3BTsplinePar(const TString& name)
-    : TNamed(name, name)
-    , fSpline(NULL)
-    , fMaxPoints(4000) // 100
-    , fxmin(-100.50)
-    , fxmax(1030)
+    : TNamed(name, name), fSpline(NULL), fMaxPoints(4000) // 100
+      ,
+      fxmin(-100.50), fxmax(1030)
 {
     // fSpline = new TSpline3();
 }

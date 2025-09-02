@@ -121,7 +121,7 @@ class R3BOnlineSpillAnalysis : public FairTask
   private:
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fTrigger; /**< Trigger value. */
     Int_t fTpat;
     Int_t fSamp;
     Double_t fSpillLength;
@@ -143,7 +143,7 @@ class R3BOnlineSpillAnalysis : public FairTask
     Double_t tdiff = 0.;
     Double_t fNorm = 1.;
     Int_t iclear_count = 1;
-    UInt_t reset_time;  // time after which bmon spectra are reseted
+    UInt_t reset_time; // time after which bmon spectra are reseted
     Double_t read_time; // step in which scalers are read, in sec
     Double_t fDAQ_dead_time;
 

@@ -24,19 +24,10 @@ using std::endl;
 using std::flush;
 
 // -----   Default constructor   -------------------------------------------
-R3BLandHit::R3BLandHit()
-    : FairHit()
-    , fEnergy(0.)
-    , fTof(0.)
-    , fSaturnPaddleNb(-1)
-{
-}
+R3BLandHit::R3BLandHit() : FairHit(), fEnergy(0.), fTof(0.), fSaturnPaddleNb(-1) {}
 
 R3BLandHit::R3BLandHit(const R3BLandHit& right)
-    : FairHit(right)
-    , fEnergy(right.fEnergy)
-    , fTof(right.fTof)
-    , fSaturnPaddleNb(right.fSaturnPaddleNb)
+    : FairHit(right), fEnergy(right.fEnergy), fTof(right.fTof), fSaturnPaddleNb(right.fSaturnPaddleNb)
 {
 }
 

@@ -26,9 +26,7 @@
 R3BBunchedFiberSPMTTrigMapped2CalPar::R3BBunchedFiberSPMTTrigMapped2CalPar(Int_t a_verbose,
                                                                            Int_t a_update_rate,
                                                                            Int_t a_min_stats)
-    : FairTask("R3BBunchedFiberSMPTTrigMapped2CalPar", a_verbose)
-    , fUpdateRate(a_update_rate)
-    , fMinStats(a_min_stats)
+    : FairTask("R3BBunchedFiberSMPTTrigMapped2CalPar", a_verbose), fUpdateRate(a_update_rate), fMinStats(a_min_stats)
 {
 }
 

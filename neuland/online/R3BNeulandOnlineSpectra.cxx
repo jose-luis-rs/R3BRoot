@@ -27,10 +27,8 @@
 #include <limits>
 
 R3BNeulandOnlineSpectra::R3BNeulandOnlineSpectra()
-    : FairTask("R3BNeulandOnlineSpectra", 0)
-    , fNeulandMappedData("NeulandMappedData")
-    , fNeulandCalData("NeulandCalData")
-    , fNeulandHits("NeulandHits")
+    : FairTask("R3BNeulandOnlineSpectra", 0), fNeulandMappedData("NeulandMappedData"),
+      fNeulandCalData("NeulandCalData"), fNeulandHits("NeulandHits")
 {
 }
 

@@ -16,34 +16,23 @@
 #include <iostream>
 #include <utility>
 
-R3BMCTrack::R3BMCTrack()
-    : fPdgCode(0)
-    , fMotherId(0)
-    , fStartVertex()
-    , fMomentumMass()
-    , fNPoints()
-{
-}
+R3BMCTrack::R3BMCTrack() : fPdgCode(0), fMotherId(0), fStartVertex(), fMomentumMass(), fNPoints() {}
 
 R3BMCTrack::R3BMCTrack(int pdgCode,
                        int motherId,
                        ROOT::Math::XYZTVector xyzt,
                        ROOT::Math::PxPyPzMVector pm,
                        std::array<int, kLAST + 1> nPoints)
-    : fPdgCode(pdgCode)
-    , fMotherId(motherId)
-    , fStartVertex(std::move(xyzt))
-    , fMomentumMass(std::move(pm))
-    , fNPoints(nPoints)
+    : fPdgCode(pdgCode), fMotherId(motherId), fStartVertex(std::move(xyzt)), fMomentumMass(std::move(pm)),
+      fNPoints(nPoints)
 {
 }
 
 R3BMCTrack::R3BMCTrack(TParticle* part, std::array<int, kLAST + 1> nPoints, int fMC)
-    : fPdgCode(part->GetPdgCode())
-    , fMotherId(part->GetMother(0))
-    , fStartVertex(part->Vx(), part->Vy(), part->Vz(), fMC == 0 ? part->T() * 1e09 : part->T()) // G3 == 0 ?!
-    , fMomentumMass(part->Px(), part->Py(), part->Pz(), part->GetMass())
-    , fNPoints(nPoints)
+    : fPdgCode(part->GetPdgCode()), fMotherId(part->GetMother(0)),
+      fStartVertex(part->Vx(), part->Vy(), part->Vz(), fMC == 0 ? part->T() * 1e09 : part->T()) // G3 == 0 ?!
+      ,
+      fMomentumMass(part->Px(), part->Py(), part->Pz(), part->GetMass()), fNPoints(nPoints)
 {
 }
 

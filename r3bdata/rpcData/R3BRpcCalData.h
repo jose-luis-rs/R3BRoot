@@ -48,12 +48,12 @@ class R3BRpcCalData : public FairMultiLinkedData
     inline double GetTotR_B() const { return fTotR_B; }
 
   protected:
-    UShort_t fDetId;     // Detector identifier
+    UShort_t fDetId; // Detector identifier
     UShort_t fChannelId; // Channel unique identifier
-    double fTimeR_B;     // Time from Right strip or Bottom Pmt channel
-    double fTimeL_T;     // Time from Left or Top Pmt channel
-    double fTotR_B;      // Tot from the Right or Bottom Pmt channel
-    double fTotL_T;      // Tot from the Left or Top Pmt channel
+    double fTimeR_B; // Time from Right strip or Bottom Pmt channel
+    double fTimeL_T; // Time from Left or Top Pmt channel
+    double fTotR_B; // Tot from the Right or Bottom Pmt channel
+    double fTotL_T; // Tot from the Left or Top Pmt channel
 
   public:
     ClassDef(R3BRpcCalData, 1)

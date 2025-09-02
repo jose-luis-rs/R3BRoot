@@ -37,24 +37,12 @@
 #include "THttpServer.h"
 #include "TMath.h"
 
-R3BFibervsTofDOnlineSpectra::R3BFibervsTofDOnlineSpectra()
-    : R3BFibervsTofDOnlineSpectra("Fi30", 1)
-{
-}
+R3BFibervsTofDOnlineSpectra::R3BFibervsTofDOnlineSpectra() : R3BFibervsTofDOnlineSpectra("Fi30", 1) {}
 
 R3BFibervsTofDOnlineSpectra::R3BFibervsTofDOnlineSpectra(const TString name, Int_t iVerbose)
-    : FairTask(name + "_TofDCorrelationOnlineSpectra", iVerbose)
-    , fName(name)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fNEvents(0)
-    , fMapPar(NULL)
-    , fHitItems(NULL)
-    , fHitTofdItems(NULL)
-    , fNbfibers(512)
-    , fNbTofdPlanes(4)
-    , fNbTofdPaddlesPerPlane(44)
+    : FairTask(name + "_TofDCorrelationOnlineSpectra", iVerbose), fName(name), fTrigger(-1), fTpat1(-1), fTpat2(-1),
+      fNEvents(0), fMapPar(NULL), fHitItems(NULL), fHitTofdItems(NULL), fNbfibers(512), fNbTofdPlanes(4),
+      fNbTofdPaddlesPerPlane(44)
 {
 }
 

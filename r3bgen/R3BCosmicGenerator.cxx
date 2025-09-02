@@ -37,12 +37,10 @@ constexpr Double_t Sqr(const Double_t val) { return val * val; }
 Double_t Sin2(const Double_t val) { return Sqr(sin(val)); }
 
 R3BCosmicGenerator::R3BCosmicGenerator(const Int_t pdgid, const Int_t mult, const UInt_t seed)
-    : fVertexPositionDist_cm(R3BDistribution3D::Delta(0, 0, 0))
-    , fAngularDist_Rad(
-          { R3BDistribution1D::Function(Sin2, 0, TMath::Pi()), R3BDistribution1D::Flat(0, 2 * TMath::Pi()) })
-    , fRngGen(seed)
-    , fPDGType(pdgid)
-    , fMult(mult)
+    : fVertexPositionDist_cm(R3BDistribution3D::Delta(0, 0, 0)),
+      fAngularDist_Rad(
+          { R3BDistribution1D::Function(Sin2, 0, TMath::Pi()), R3BDistribution1D::Flat(0, 2 * TMath::Pi()) }),
+      fRngGen(seed), fPDGType(pdgid), fMult(mult)
 {
     SetEnergyRange_GeV();
 }

@@ -19,12 +19,7 @@
 #include <fmt/core.h>
 
 R3BTttxHitData::R3BTttxHitData(int8_t idet, double xpos, double energy, double angle, double charge, double time)
-    : fDetID(idet)
-    , fXpos(xpos)
-    , fEnergy(energy)
-    , fAng(angle)
-    , fCharge(charge)
-    , fTime(time)
+    : fDetID(idet), fXpos(xpos), fEnergy(energy), fAng(angle), fCharge(charge), fTime(time)
 {
 }
 

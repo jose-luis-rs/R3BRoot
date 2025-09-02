@@ -24,10 +24,7 @@
 #include "TGeoManager.h"
 #include "TVirtualMC.h"
 
-R3BRpc::R3BRpc()
-    : R3BRpc("")
-{
-}
+R3BRpc::R3BRpc() : R3BRpc("") {}
 
 R3BRpc::R3BRpc(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BRpc(geoFile, { trans, rot })
@@ -35,9 +32,7 @@ R3BRpc::R3BRpc(const TString& geoFile, const TGeoTranslation& trans, const TGeoR
 }
 
 R3BRpc::R3BRpc(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BRpc", kRPC, geoFile, combi)
-    , fRpcCollection(new TClonesArray("R3BRpcPoint"))
-    , fPosIndex(0)
+    : R3BDetector("R3BRpc", kRPC, geoFile, combi), fRpcCollection(new TClonesArray("R3BRpcPoint")), fPosIndex(0)
 {
     ResetParameters();
 }

@@ -13,14 +13,7 @@
 
 #include "R3BTofdMappedData.h"
 
-R3BTofdMappedData::R3BTofdMappedData()
-    : fDetector(-1)
-    , fSide(-1)
-    , fBar(-1)
-    , fTimeFine(-1)
-    , fTimeCoarse(-1)
-{
-}
+R3BTofdMappedData::R3BTofdMappedData() : fDetector(-1), fSide(-1), fBar(-1), fTimeFine(-1), fTimeCoarse(-1) {}
 
 R3BTofdMappedData::R3BTofdMappedData(UInt_t detector,
                                      UInt_t side,
@@ -28,12 +21,7 @@ R3BTofdMappedData::R3BTofdMappedData(UInt_t detector,
                                      UInt_t edge,
                                      UInt_t timeCoarse,
                                      UInt_t timeFine)
-    : fDetector(detector)
-    , fSide(side)
-    , fBar(channel)
-    , fEdge(edge)
-    , fTimeCoarse(timeCoarse)
-    , fTimeFine(timeFine)
+    : fDetector(detector), fSide(side), fBar(channel), fEdge(edge), fTimeCoarse(timeCoarse), fTimeFine(timeFine)
 {
 }
 

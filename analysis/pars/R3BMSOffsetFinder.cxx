@@ -35,16 +35,10 @@
 #include "R3BMSOffsetPar.h"
 
 // R3BMSOffsetFinder: Default Constructor --------------------------
-R3BMSOffsetFinder::R3BMSOffsetFinder()
-    : R3BMSOffsetFinder("R3B MS Offset Finder", 1)
-{
-}
+R3BMSOffsetFinder::R3BMSOffsetFinder() : R3BMSOffsetFinder("R3B MS Offset Finder", 1) {}
 
 // R3BMSOffsetFinder: Standard Constructor --------------------------
-R3BMSOffsetFinder::R3BMSOffsetFinder(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BMSOffsetFinder::R3BMSOffsetFinder(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BMSOffsetFinder::SetParContainers()
 {

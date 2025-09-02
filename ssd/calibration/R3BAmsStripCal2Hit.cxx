@@ -37,35 +37,19 @@
 
 // R3BAmsStripCal2Hit: Default Constructor --------------------------
 R3BAmsStripCal2Hit::R3BAmsStripCal2Hit()
-    : FairTask("R3B Hit-AMS Calibrator", 1)
-    , fPitchK(104.)
-    , fPitchS(110.)
-    , fScen(35.2)
-    , fKcen(19.96)
-    , fThSum(50.)
-    , fMaxNumDet(6)
-    , fMaxNumClusters(3) // Max number of clusters per ams detector set to 3
-    , fAmsStripCalDataCA(NULL)
-    , fAmsHitDataCA(NULL)
-    , fMap_Par(NULL)
-    , fOnline(kFALSE)
+    : FairTask("R3B Hit-AMS Calibrator", 1), fPitchK(104.), fPitchS(110.), fScen(35.2), fKcen(19.96), fThSum(50.),
+      fMaxNumDet(6), fMaxNumClusters(3) // Max number of clusters per ams detector set to 3
+      ,
+      fAmsStripCalDataCA(NULL), fAmsHitDataCA(NULL), fMap_Par(NULL), fOnline(kFALSE)
 {
 }
 
 // R3BAmsStripCal2HitPar: Standard Constructor --------------------------
 R3BAmsStripCal2Hit::R3BAmsStripCal2Hit(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fPitchK(104.)
-    , fPitchS(110.)
-    , fScen(35.2)
-    , fKcen(19.96)
-    , fThSum(50.)
-    , fMaxNumDet(6)
-    , fMaxNumClusters(3) // Max number of clusters per ams detector set to 3
-    , fAmsStripCalDataCA(NULL)
-    , fAmsHitDataCA(NULL)
-    , fMap_Par(NULL)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fPitchK(104.), fPitchS(110.), fScen(35.2), fKcen(19.96), fThSum(50.), fMaxNumDet(6),
+      fMaxNumClusters(3) // Max number of clusters per ams detector set to 3
+      ,
+      fAmsStripCalDataCA(NULL), fAmsHitDataCA(NULL), fMap_Par(NULL), fOnline(kFALSE)
 {
 }
 
@@ -217,7 +201,7 @@ void R3BAmsStripCal2Hit::Exec(Option_t* option)
                 if (fMap_Par->GetGeometry() == 2019)
                 {
                     if (i == 0)
-                    {                                                           // top
+                    { // top
                         z = fMap_Par->GetDist2target(i + 1) + clusterS[mul][1]; // FIXME:Fix offsets for s444_2019
                         y = fKcen + 1.;
                         x = fKcen - clusterK[mul][1];
@@ -303,7 +287,7 @@ void R3BAmsStripCal2Hit::Exec(Option_t* option)
                         y = clusterK[mul][1] - fKcen;
                     }
                     else if (i == 1)
-                    {                                                           // top
+                    { // top
                         z = fMap_Par->GetDist2target(i + 1) + clusterS[mul][1]; // FIXME:Fix offsets for s515_2021
                         y = fKcen + 1.;
                         x = fKcen - clusterK[mul][1];

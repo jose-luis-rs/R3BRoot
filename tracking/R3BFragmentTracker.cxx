@@ -52,16 +52,9 @@ using namespace std;
 #define Fair_Amu 0.931494028
 
 R3BFragmentTracker::R3BFragmentTracker(const char* name, Bool_t vis, Int_t verbose)
-    : FairTask(name, verbose)
-    , fFieldPar(NULL)
-    , fPropagator(NULL)
-    , fArrayMCTracks(NULL)
-    , fDetectors(new R3BTrackingSetup())
-    , fArrayFragments(new TClonesArray("R3BTrackingParticle"))
-    , fNEvents(0)
-    , fVis(vis)
-    , fFitter(nullptr)
-    , fEnergyLoss(kTRUE)
+    : FairTask(name, verbose), fFieldPar(NULL), fPropagator(NULL), fArrayMCTracks(NULL),
+      fDetectors(new R3BTrackingSetup()), fArrayFragments(new TClonesArray("R3BTrackingParticle")), fNEvents(0),
+      fVis(vis), fFitter(nullptr), fEnergyLoss(kTRUE)
 {
     // this is the list of detectors (active areas) we use for tracking
     fDetectors->AddDetector("target", kTarget, "TargetGeoPar");

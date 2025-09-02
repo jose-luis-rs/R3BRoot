@@ -19,15 +19,10 @@
 
 #include "TClonesArray.h"
 
-R3BDataPropagator::R3BDataPropagator()
-    : R3BDataPropagator("R3BDataPropagator", 1)
-{
-}
+R3BDataPropagator::R3BDataPropagator() : R3BDataPropagator("R3BDataPropagator", 1) {}
 
 R3BDataPropagator::R3BDataPropagator(const TString& name, Int_t iVerbose, const TString& namebranch)
-    : FairTask(name, iVerbose)
-    , fNameBranch(namebranch)
-    , fInputData(NULL)
+    : FairTask(name, iVerbose), fNameBranch(namebranch), fInputData(NULL)
 {
 }
 

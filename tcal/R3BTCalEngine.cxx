@@ -20,10 +20,7 @@
 #include "R3BLogger.h"
 #include "R3BTCalEngine.h"
 
-R3BTCalEngine::R3BTCalEngine(R3BTCalPar* param, Int_t minStats)
-    : fMinStats(minStats)
-    , fCal_Par(param)
-    , fClockFreq(0.)
+R3BTCalEngine::R3BTCalEngine(R3BTCalPar* param, Int_t minStats) : fMinStats(minStats), fCal_Par(param), fClockFreq(0.)
 {
     for (Int_t i = 0; i < N_PLANE_MAX; i++)
     {

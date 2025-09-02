@@ -101,17 +101,17 @@ class R3BTwimCal2Hit : public FairTask
     Int_t fMaxEnergyperanode;
     Float_t fZ0[4], fZ1[4], fZ2[4], fZ3[4], fZ4[4];
     Int_t StatusAnodes[4][16]; // Sections and anodes
-    Double_t fPosAnodes[16];   // Position-Z of each anode
+    Double_t fPosAnodes[16]; // Position-Z of each anode
     TArrayF* CalZTofParams;
     TArrayF* CalZParams;
     Float_t fEmean_tof[4];
     Float_t fEmean_dt[4];
     TVectorD fPosZ;
 
-    R3BTwimHitPar* fCal_Par;      /**< Parameter container. >*/
+    R3BTwimHitPar* fCal_Par; /**< Parameter container. >*/
     TClonesArray* fTwimCalDataCA; /**< Array with Twim Cal-input data. >*/
     TClonesArray* fTwimHitDataCA; /**< Array with Twim Hit-output data. >*/
-    TClonesArray* fHitItemsTofW;  /**< Array with tofw-hit items. */
+    TClonesArray* fHitItemsTofW; /**< Array with tofw-hit items. */
 
     /** Private method TwimHitData **/
     //** Adds a TwimHitData to the detector

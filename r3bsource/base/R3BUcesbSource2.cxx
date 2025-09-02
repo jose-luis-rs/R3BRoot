@@ -57,11 +57,8 @@ namespace R3B
                              std::string_view ucesb_path,
                              EventStructType* event_struct,
                              size_t event_struct_size)
-        : event_struct_size_{ event_struct_size }
-        , event_struct_{ event_struct }
-        , lmdfile_name_{ lmdfile_name }
-        , ntuple_options_{ ntuple_options }
-        , ucesb_path_{ ucesb_path }
+        : event_struct_size_{ event_struct_size }, event_struct_{ event_struct }, lmdfile_name_{ lmdfile_name },
+          ntuple_options_{ ntuple_options }, ucesb_path_{ ucesb_path }
     {
     }
 

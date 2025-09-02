@@ -66,22 +66,22 @@ typedef struct EXT_STR_h101_WRAMS_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_WRAMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                   \
-    do                                                                                                      \
-    {                                                                                                       \
-        ok = 1;                                                                                             \
-        /* RAW */                                                                                           \
-        EXT_STR_ITEM_INFO_LIM(                                                                              \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_ID, UINT32, "TIMESTAMP_AMS_ID", 65535);       \
-        EXT_STR_ITEM_INFO_LIM(                                                                              \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T1, UINT32, "TIMESTAMP_AMS_WR_T1", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                              \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T2, UINT32, "TIMESTAMP_AMS_WR_T2", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                              \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T3, UINT32, "TIMESTAMP_AMS_WR_T3", 65535); \
-        EXT_STR_ITEM_INFO_LIM(                                                                              \
-            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T4, UINT32, "TIMESTAMP_AMS_WR_T4", 65535); \
-                                                                                                            \
+#define EXT_STR_h101_WRAMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                              \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_ID, UINT32, "TIMESTAMP_AMS_ID", 65535);                  \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T1, UINT32, "TIMESTAMP_AMS_WR_T1", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T2, UINT32, "TIMESTAMP_AMS_WR_T2", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T3, UINT32, "TIMESTAMP_AMS_WR_T3", 65535);            \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, TIMESTAMP_AMS_WR_T4, UINT32, "TIMESTAMP_AMS_WR_T4", 65535);            \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_WRAMS_EXT_H101_WRAMS_H__*/

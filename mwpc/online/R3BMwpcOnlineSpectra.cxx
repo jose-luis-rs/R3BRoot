@@ -53,14 +53,10 @@
 
 using namespace std;
 
-R3BMwpcOnlineSpectra::R3BMwpcOnlineSpectra()
-    : R3BMwpcOnlineSpectra("R3BMwpcOnlineSpectra", 1, "Mwpc0")
-{
-}
+R3BMwpcOnlineSpectra::R3BMwpcOnlineSpectra() : R3BMwpcOnlineSpectra("R3BMwpcOnlineSpectra", 1, "Mwpc0") {}
 
 R3BMwpcOnlineSpectra::R3BMwpcOnlineSpectra(const TString& name, Int_t iVerbose, const TString& namedet)
-    : FairTask(name, iVerbose)
-    , fNameDet(namedet)
+    : FairTask(name, iVerbose), fNameDet(namedet)
 {
 }
 

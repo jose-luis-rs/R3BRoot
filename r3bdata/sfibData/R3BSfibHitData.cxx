@@ -14,12 +14,7 @@
 #include "R3BSfibHitData.h"
 
 R3BSfibHitData::R3BSfibHitData()
-    : fFiberId(-1)
-    , fTopTime_ns(-1)
-    , fBotTime_ns(-1)
-    , fTime_ns(-1)
-    , fTopToT_ns(-1)
-    , fBotToT_ns(-1)
+    : fFiberId(-1), fTopTime_ns(-1), fBotTime_ns(-1), fTime_ns(-1), fTopToT_ns(-1), fBotToT_ns(-1)
 {
 }
 
@@ -28,13 +23,8 @@ R3BSfibHitData::R3BSfibHitData(Int_t a_fiber_id,
                                Double_t a_bot_time_ns,
                                Double_t a_top_tot_ns,
                                Double_t a_bot_tot_ns)
-    : R3BHit(0, 0, 0, 0, 0)
-    , fFiberId(a_fiber_id)
-    , fTopTime_ns(a_top_time_ns)
-    , fBotTime_ns(a_bot_time_ns)
-    , fTime_ns((a_top_time_ns + a_bot_time_ns) / 2)
-    , fTopToT_ns(a_top_tot_ns)
-    , fBotToT_ns(a_bot_tot_ns)
+    : R3BHit(0, 0, 0, 0, 0), fFiberId(a_fiber_id), fTopTime_ns(a_top_time_ns), fBotTime_ns(a_bot_time_ns),
+      fTime_ns((a_top_time_ns + a_bot_time_ns) / 2), fTopToT_ns(a_top_tot_ns), fBotToT_ns(a_bot_tot_ns)
 {
 }
 

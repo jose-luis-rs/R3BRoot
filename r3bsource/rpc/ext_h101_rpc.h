@@ -222,122 +222,122 @@ typedef struct EXT_STR_h101_RPC_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_RPC_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                              \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, RPC_WR_L, UINT32, "RPC_WR_L");                         \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, RPC_WR_H, UINT32, "RPC_WR_H");                         \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, RPC_EPOCH, UINT32, "RPC_EPOCH");                       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_FTM, UINT32, "RPC_REF_FTM", 9);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_REF_FTMI, UINT32, "RPC_REF_FTMI", "RPC_REF_FTM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_REF_FTME, UINT32, "RPC_REF_FTME", "RPC_REF_FTM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_FT, UINT32, "RPC_REF_FT", 180);            \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_REF_FTv, UINT32, "RPC_REF_FTv", "RPC_REF_FT"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_CTM, UINT32, "RPC_REF_CTM", 9);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_REF_CTMI, UINT32, "RPC_REF_CTMI", "RPC_REF_CTM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_REF_CTME, UINT32, "RPC_REF_CTME", "RPC_REF_CTM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_CT, UINT32, "RPC_REF_CT", 180);            \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_REF_CTv, UINT32, "RPC_REF_CTv", "RPC_REF_CT"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_NCM, UINT32, "RPC_FT_NCM", 40);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_NCMI, UINT32, "RPC_FT_NCMI", "RPC_FT_NCM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_NCME, UINT32, "RPC_FT_NCME", "RPC_FT_NCM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_NC, UINT32, "RPC_FT_NC", 800);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_NCv, UINT32, "RPC_FT_NCv", "RPC_FT_NC");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_B_PMTM, UINT32, "RPC_FT_B_PMTM", 4);        \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_FT_B_PMTMI, UINT32, "RPC_FT_B_PMTMI", "RPC_FT_B_PMTM");          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_FT_B_PMTME, UINT32, "RPC_FT_B_PMTME", "RPC_FT_B_PMTM");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_B_PMT, UINT32, "RPC_FT_B_PMT", 80);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_FT_B_PMTv, UINT32, "RPC_FT_B_PMTv", "RPC_FT_B_PMT");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_T_PMTM, UINT32, "RPC_FT_T_PMTM", 4);        \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_FT_T_PMTMI, UINT32, "RPC_FT_T_PMTMI", "RPC_FT_T_PMTM");          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_FT_T_PMTME, UINT32, "RPC_FT_T_PMTME", "RPC_FT_T_PMTM");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_T_PMT, UINT32, "RPC_FT_T_PMT", 80);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_FT_T_PMTv, UINT32, "RPC_FT_T_PMTv", "RPC_FT_T_PMT");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_LM, UINT32, "RPC_FT_LM", 41);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_LMI, UINT32, "RPC_FT_LMI", "RPC_FT_LM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_LME, UINT32, "RPC_FT_LME", "RPC_FT_LM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_L, UINT32, "RPC_FT_L", 820);                \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_Lv, UINT32, "RPC_FT_Lv", "RPC_FT_L");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_RM, UINT32, "RPC_FT_RM", 41);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_RMI, UINT32, "RPC_FT_RMI", "RPC_FT_RM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_RME, UINT32, "RPC_FT_RME", "RPC_FT_RM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_R, UINT32, "RPC_FT_R", 820);                \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_Rv, UINT32, "RPC_FT_Rv", "RPC_FT_R");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_NCM, UINT32, "RPC_CT_NCM", 40);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_NCMI, UINT32, "RPC_CT_NCMI", "RPC_CT_NCM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_NCME, UINT32, "RPC_CT_NCME", "RPC_CT_NCM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_NC, UINT32, "RPC_CT_NC", 800);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_NCv, UINT32, "RPC_CT_NCv", "RPC_CT_NC");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_B_PMTM, UINT32, "RPC_CT_B_PMTM", 4);        \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_CT_B_PMTMI, UINT32, "RPC_CT_B_PMTMI", "RPC_CT_B_PMTM");          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_CT_B_PMTME, UINT32, "RPC_CT_B_PMTME", "RPC_CT_B_PMTM");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_B_PMT, UINT32, "RPC_CT_B_PMT", 80);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_CT_B_PMTv, UINT32, "RPC_CT_B_PMTv", "RPC_CT_B_PMT");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_T_PMTM, UINT32, "RPC_CT_T_PMTM", 4);        \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_CT_T_PMTMI, UINT32, "RPC_CT_T_PMTMI", "RPC_CT_T_PMTM");          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_CT_T_PMTME, UINT32, "RPC_CT_T_PMTME", "RPC_CT_T_PMTM");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_T_PMT, UINT32, "RPC_CT_T_PMT", 80);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_CT_T_PMTv, UINT32, "RPC_CT_T_PMTv", "RPC_CT_T_PMT");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_LM, UINT32, "RPC_CT_LM", 41);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_LMI, UINT32, "RPC_CT_LMI", "RPC_CT_LM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_LME, UINT32, "RPC_CT_LME", "RPC_CT_LM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_L, UINT32, "RPC_CT_L", 820);                \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_Lv, UINT32, "RPC_CT_Lv", "RPC_CT_L");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_RM, UINT32, "RPC_CT_RM", 41);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_RMI, UINT32, "RPC_CT_RMI", "RPC_CT_RM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_RME, UINT32, "RPC_CT_RME", "RPC_CT_RM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_R, UINT32, "RPC_CT_R", 820);                \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_Rv, UINT32, "RPC_CT_Rv", "RPC_CT_R");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_NCM, UINT32, "RPC_E_NCM", 40);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_NCMI, UINT32, "RPC_E_NCMI", "RPC_E_NCM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_NCME, UINT32, "RPC_E_NCME", "RPC_E_NCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_NC, UINT32, "RPC_E_NC", 800);                \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_NCv, UINT32, "RPC_E_NCv", "RPC_E_NC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_B_PMTM, UINT32, "RPC_E_B_PMTM", 4);          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_E_B_PMTMI, UINT32, "RPC_E_B_PMTMI", "RPC_E_B_PMTM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_E_B_PMTME, UINT32, "RPC_E_B_PMTME", "RPC_E_B_PMTM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_B_PMT, UINT32, "RPC_E_B_PMT", 80);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_E_B_PMTv, UINT32, "RPC_E_B_PMTv", "RPC_E_B_PMT");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_T_PMTM, UINT32, "RPC_E_T_PMTM", 4);          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_E_T_PMTMI, UINT32, "RPC_E_T_PMTMI", "RPC_E_T_PMTM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_E_T_PMTME, UINT32, "RPC_E_T_PMTME", "RPC_E_T_PMTM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_T_PMT, UINT32, "RPC_E_T_PMT", 80);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, RPC_E_T_PMTv, UINT32, "RPC_E_T_PMTv", "RPC_E_T_PMT");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_LM, UINT32, "RPC_E_LM", 41);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_LMI, UINT32, "RPC_E_LMI", "RPC_E_LM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_LME, UINT32, "RPC_E_LME", "RPC_E_LM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_L, UINT32, "RPC_E_L", 820);                  \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_Lv, UINT32, "RPC_E_Lv", "RPC_E_L");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_RM, UINT32, "RPC_E_RM", 41);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_RMI, UINT32, "RPC_E_RMI", "RPC_E_RM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_RME, UINT32, "RPC_E_RME", "RPC_E_RM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_R, UINT32, "RPC_E_R", 820);                  \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_Rv, UINT32, "RPC_E_Rv", "RPC_E_R");          \
-                                                                                                                     \
+#define EXT_STR_h101_RPC_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, RPC_WR_L, UINT32, "RPC_WR_L");                           \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, RPC_WR_H, UINT32, "RPC_WR_H");                           \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, RPC_EPOCH, UINT32, "RPC_EPOCH");                         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_FTM, UINT32, "RPC_REF_FTM", 9);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_REF_FTMI, UINT32, "RPC_REF_FTMI", "RPC_REF_FTM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_REF_FTME, UINT32, "RPC_REF_FTME", "RPC_REF_FTM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_FT, UINT32, "RPC_REF_FT", 180);              \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_REF_FTv, UINT32, "RPC_REF_FTv", "RPC_REF_FT");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_CTM, UINT32, "RPC_REF_CTM", 9);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_REF_CTMI, UINT32, "RPC_REF_CTMI", "RPC_REF_CTM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_REF_CTME, UINT32, "RPC_REF_CTME", "RPC_REF_CTM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_REF_CT, UINT32, "RPC_REF_CT", 180);              \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_REF_CTv, UINT32, "RPC_REF_CTv", "RPC_REF_CT");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_NCM, UINT32, "RPC_FT_NCM", 40);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_NCMI, UINT32, "RPC_FT_NCMI", "RPC_FT_NCM");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_NCME, UINT32, "RPC_FT_NCME", "RPC_FT_NCM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_NC, UINT32, "RPC_FT_NC", 800);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_NCv, UINT32, "RPC_FT_NCv", "RPC_FT_NC");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_B_PMTM, UINT32, "RPC_FT_B_PMTM", 4);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_FT_B_PMTMI, UINT32, "RPC_FT_B_PMTMI", "RPC_FT_B_PMTM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_FT_B_PMTME, UINT32, "RPC_FT_B_PMTME", "RPC_FT_B_PMTM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_B_PMT, UINT32, "RPC_FT_B_PMT", 80);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_FT_B_PMTv, UINT32, "RPC_FT_B_PMTv", "RPC_FT_B_PMT");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_T_PMTM, UINT32, "RPC_FT_T_PMTM", 4);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_FT_T_PMTMI, UINT32, "RPC_FT_T_PMTMI", "RPC_FT_T_PMTM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_FT_T_PMTME, UINT32, "RPC_FT_T_PMTME", "RPC_FT_T_PMTM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_T_PMT, UINT32, "RPC_FT_T_PMT", 80);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_FT_T_PMTv, UINT32, "RPC_FT_T_PMTv", "RPC_FT_T_PMT");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_LM, UINT32, "RPC_FT_LM", 41);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_LMI, UINT32, "RPC_FT_LMI", "RPC_FT_LM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_LME, UINT32, "RPC_FT_LME", "RPC_FT_LM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_L, UINT32, "RPC_FT_L", 820);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_Lv, UINT32, "RPC_FT_Lv", "RPC_FT_L");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_RM, UINT32, "RPC_FT_RM", 41);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_RMI, UINT32, "RPC_FT_RMI", "RPC_FT_RM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_RME, UINT32, "RPC_FT_RME", "RPC_FT_RM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_FT_R, UINT32, "RPC_FT_R", 820);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_FT_Rv, UINT32, "RPC_FT_Rv", "RPC_FT_R");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_NCM, UINT32, "RPC_CT_NCM", 40);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_NCMI, UINT32, "RPC_CT_NCMI", "RPC_CT_NCM");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_NCME, UINT32, "RPC_CT_NCME", "RPC_CT_NCM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_NC, UINT32, "RPC_CT_NC", 800);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_NCv, UINT32, "RPC_CT_NCv", "RPC_CT_NC");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_B_PMTM, UINT32, "RPC_CT_B_PMTM", 4);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_CT_B_PMTMI, UINT32, "RPC_CT_B_PMTMI", "RPC_CT_B_PMTM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_CT_B_PMTME, UINT32, "RPC_CT_B_PMTME", "RPC_CT_B_PMTM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_B_PMT, UINT32, "RPC_CT_B_PMT", 80);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_CT_B_PMTv, UINT32, "RPC_CT_B_PMTv", "RPC_CT_B_PMT");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_T_PMTM, UINT32, "RPC_CT_T_PMTM", 4);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_CT_T_PMTMI, UINT32, "RPC_CT_T_PMTMI", "RPC_CT_T_PMTM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_CT_T_PMTME, UINT32, "RPC_CT_T_PMTME", "RPC_CT_T_PMTM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_T_PMT, UINT32, "RPC_CT_T_PMT", 80);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_CT_T_PMTv, UINT32, "RPC_CT_T_PMTv", "RPC_CT_T_PMT");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_LM, UINT32, "RPC_CT_LM", 41);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_LMI, UINT32, "RPC_CT_LMI", "RPC_CT_LM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_LME, UINT32, "RPC_CT_LME", "RPC_CT_LM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_L, UINT32, "RPC_CT_L", 820);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_Lv, UINT32, "RPC_CT_Lv", "RPC_CT_L");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_RM, UINT32, "RPC_CT_RM", 41);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_RMI, UINT32, "RPC_CT_RMI", "RPC_CT_RM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_RME, UINT32, "RPC_CT_RME", "RPC_CT_RM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_CT_R, UINT32, "RPC_CT_R", 820);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_CT_Rv, UINT32, "RPC_CT_Rv", "RPC_CT_R");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_NCM, UINT32, "RPC_E_NCM", 40);                 \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_NCMI, UINT32, "RPC_E_NCMI", "RPC_E_NCM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_NCME, UINT32, "RPC_E_NCME", "RPC_E_NCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_NC, UINT32, "RPC_E_NC", 800);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_NCv, UINT32, "RPC_E_NCv", "RPC_E_NC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_B_PMTM, UINT32, "RPC_E_B_PMTM", 4);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_E_B_PMTMI, UINT32, "RPC_E_B_PMTMI", "RPC_E_B_PMTM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_E_B_PMTME, UINT32, "RPC_E_B_PMTME", "RPC_E_B_PMTM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_B_PMT, UINT32, "RPC_E_B_PMT", 80);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_E_B_PMTv, UINT32, "RPC_E_B_PMTv", "RPC_E_B_PMT");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_T_PMTM, UINT32, "RPC_E_T_PMTM", 4);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_E_T_PMTMI, UINT32, "RPC_E_T_PMTMI", "RPC_E_T_PMTM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_E_T_PMTME, UINT32, "RPC_E_T_PMTME", "RPC_E_T_PMTM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_T_PMT, UINT32, "RPC_E_T_PMT", 80);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, RPC_E_T_PMTv, UINT32, "RPC_E_T_PMTv", "RPC_E_T_PMT");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_LM, UINT32, "RPC_E_LM", 41);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_LMI, UINT32, "RPC_E_LMI", "RPC_E_LM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_LME, UINT32, "RPC_E_LME", "RPC_E_LM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_L, UINT32, "RPC_E_L", 820);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_Lv, UINT32, "RPC_E_Lv", "RPC_E_L");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_RM, UINT32, "RPC_E_RM", 41);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_RMI, UINT32, "RPC_E_RMI", "RPC_E_RM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_RME, UINT32, "RPC_E_RME", "RPC_E_RM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, RPC_E_R, UINT32, "RPC_E_R", 820);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, RPC_E_Rv, UINT32, "RPC_E_Rv", "RPC_E_R");            \
+                                                                                                                       \
     } while (0);
 #endif /*__GUARD_H101_RPC_EXT_H101_RPC_H__*/
 /*******************************************************/

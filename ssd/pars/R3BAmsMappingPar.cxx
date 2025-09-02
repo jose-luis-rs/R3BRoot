@@ -29,9 +29,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BAmsMappingPar::R3BAmsMappingPar(const TString& name, const TString& title, const TString& context)
-    : FairParGenericSet(name, title, context)
-    , fNumDet(6)
-    , fGeo(2020)
+    : FairParGenericSet(name, title, context), fNumDet(6), fGeo(2020)
 {
     fSam = new TArrayI(fNumDet);
     fGtb = new TArrayI(fNumDet);

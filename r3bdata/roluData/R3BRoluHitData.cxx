@@ -13,20 +13,11 @@
 
 #include "R3BRoluHitData.h"
 
-R3BRoluHitData::R3BRoluHitData()
-    : fDetector(0)
-    , fChannel(0)
-    , ftime(0.)
-    , ftot(0.)
-{
-}
+R3BRoluHitData::R3BRoluHitData() : fDetector(0), fChannel(0), ftime(0.), ftot(0.) {}
 
 R3BRoluHitData::R3BRoluHitData(Int_t detector, Int_t channel, Double_t time, Double_t tot)
 
-    : fDetector(detector)
-    , fChannel(channel)
-    , ftime(time)
-    , ftot(tot)
+    : fDetector(detector), fChannel(channel), ftime(time), ftot(tot)
 
 {
 }

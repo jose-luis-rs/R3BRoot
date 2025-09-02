@@ -20,22 +20,8 @@
 ClassImp(R3BTGeoPar);
 
 R3BTGeoPar::R3BTGeoPar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fPosX(0.)
-    , fPosY(0.)
-    , fPosZ(0.)
-    , fRotX(0.)
-    , fRotY(0.)
-    , fRotZ(0.)
-    , fDimX(0.)
-    , fDimY(0.)
-    , fDimZ(0.)
-    , fSigmaX(0.)
-    , fSigmaY(0.)
-    , fZ(0.)
-    , fA(0.)
-    , fDensity(0.)
-    , fI(0.)
+    : FairParGenericSet(name, title, context, own), fPosX(0.), fPosY(0.), fPosZ(0.), fRotX(0.), fRotY(0.), fRotZ(0.),
+      fDimX(0.), fDimY(0.), fDimZ(0.), fSigmaX(0.), fSigmaY(0.), fZ(0.), fA(0.), fDensity(0.), fI(0.)
 {
 }
 

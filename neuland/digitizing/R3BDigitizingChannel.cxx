@@ -16,10 +16,7 @@
 
 namespace R3B::Digitizing
 {
-    Channel::Channel(ChannelSide side)
-        : fSide(side)
-    {
-    }
+    Channel::Channel(ChannelSide side) : fSide(side) {}
 
     auto Channel::GetDefaultRandomGen() -> TRandom3&
     {

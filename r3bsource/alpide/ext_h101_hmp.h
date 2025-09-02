@@ -72,22 +72,22 @@ typedef struct EXT_STR_h101_HMP_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_HMP_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
-    do                                                                                                           \
-    {                                                                                                            \
-        ok = 1;                                                                                                  \
-        /* RAW */                                                                                                \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_TSYS_LO, UINT32, "HMP_TSYS_LO", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_TSYS_HI, UINT32, "HMP_TSYS_HI", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT1, UINT32, "HMP_VOLT1", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT2, UINT32, "HMP_VOLT2", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT3, UINT32, "HMP_VOLT3", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT4, UINT32, "HMP_VOLT4", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR1, UINT32, "HMP_CURR1", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR2, UINT32, "HMP_CURR2", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR3, UINT32, "HMP_CURR3", 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR4, UINT32, "HMP_CURR4", 0 /*flags*/);     \
-                                                                                                                 \
+#define EXT_STR_h101_HMP_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_TSYS_LO, UINT32, "HMP_TSYS_LO", 0 /*flags*/);       \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_TSYS_HI, UINT32, "HMP_TSYS_HI", 0 /*flags*/);       \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT1, UINT32, "HMP_VOLT1", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT2, UINT32, "HMP_VOLT2", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT3, UINT32, "HMP_VOLT3", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_VOLT4, UINT32, "HMP_VOLT4", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR1, UINT32, "HMP_CURR1", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR2, UINT32, "HMP_CURR2", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR3, UINT32, "HMP_CURR3", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, HMP_CURR4, UINT32, "HMP_CURR4", 0 /*flags*/);           \
+                                                                                                                       \
     } while (0);
 
 /*******************************************************/

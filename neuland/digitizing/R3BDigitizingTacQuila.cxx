@@ -21,22 +21,22 @@
 namespace R3B::Digitizing::Neuland::TacQuila
 {
     Params::Params()
-        : fPMTThresh(1.)                // [MeV]
-        , fSaturationCoefficient(0.012) //
-        , fExperimentalDataIsCorrectedForSaturation(true)
-        , fTimeRes(0.15)         // time + Gaus(0., fTimeRes) [ns]
-        , fEResRel(0.05)         // Gaus(e, fEResRel * e) []
-        , fIntegrationTime(400.) // [ns]
-        , fRnd(new TRandom3())
+        : fPMTThresh(1.) // [MeV]
+          ,
+          fSaturationCoefficient(0.012) //
+          ,
+          fExperimentalDataIsCorrectedForSaturation(true), fTimeRes(0.15) // time + Gaus(0., fTimeRes) [ns]
+          ,
+          fEResRel(0.05) // Gaus(e, fEResRel * e) []
+          ,
+          fIntegrationTime(400.) // [ns]
+          ,
+          fRnd(new TRandom3())
     {
     }
 
     const Params TACQUILA_DEFAULT_PARAM = Params{};
-    Channel::Channel(ChannelSide side, const Params& para)
-        : Digitizing::Channel(side)
-        , par(para)
-    {
-    }
+    Channel::Channel(ChannelSide side, const Params& para) : Digitizing::Channel(side), par(para) {}
 
     void Channel::AddHit(Hit newHit)
     {

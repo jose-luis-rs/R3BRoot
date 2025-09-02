@@ -13,18 +13,8 @@
 
 #include "R3BPspxCalData.h"
 
-R3BPspxCalData::R3BPspxCalData()
-    : fStrip(-1)
-    , fEnergy(-1)
-    , fPos(-1)
-{
-}
+R3BPspxCalData::R3BPspxCalData() : fStrip(-1), fEnergy(-1), fPos(-1) {}
 
-R3BPspxCalData::R3BPspxCalData(Int_t strip, Float_t energy, Float_t pos)
-    : fStrip(strip)
-    , fEnergy(energy)
-    , fPos(pos)
-{
-}
+R3BPspxCalData::R3BPspxCalData(Int_t strip, Float_t energy, Float_t pos) : fStrip(strip), fEnergy(energy), fPos(pos) {}
 
 ClassImp(R3BPspxCalData)

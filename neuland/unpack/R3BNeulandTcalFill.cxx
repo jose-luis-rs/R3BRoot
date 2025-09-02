@@ -32,28 +32,14 @@
 #include <stdlib.h>
 
 R3BNeulandTcalFill::R3BNeulandTcalFill()
-    : FairTask("R3BNeulandTCalFill", 1)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofPlanes(0)
-    , fNofBars(0)
-    , fNof17(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask("R3BNeulandTCalFill", 1), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fNofPlanes(0),
+      fNofBars(0), fNof17(0), fNEvents(0), fCal_Par(NULL)
 {
 }
 
 R3BNeulandTcalFill::R3BNeulandTcalFill(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofPlanes(0)
-    , fNofBars(0)
-    , fNof17(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fNofPlanes(0), fNofBars(0),
+      fNof17(0), fNEvents(0), fCal_Par(NULL)
 {
 }
 

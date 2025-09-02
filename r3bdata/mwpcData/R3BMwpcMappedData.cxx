@@ -18,19 +18,12 @@
 #include "R3BMwpcMappedData.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BMwpcMappedData::R3BMwpcMappedData()
-    : fPlane(0)
-    , fPad(0)
-    , fCharge(0)
-{
-}
+R3BMwpcMappedData::R3BMwpcMappedData() : fPlane(0), fPad(0), fCharge(0) {}
 // -------------------------------------------------------------------------
 
 // -----   Standard constructor   ------------------------------------------
 R3BMwpcMappedData::R3BMwpcMappedData(UInt_t plane, UInt_t pad, UInt_t charge)
-    : fPlane(plane)
-    , fPad(pad)
-    , fCharge(charge)
+    : fPlane(plane), fPad(pad), fCharge(charge)
 {
 }
 // -------------------------------------------------------------------------

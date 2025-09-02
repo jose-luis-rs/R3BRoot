@@ -14,19 +14,12 @@
 #include "R3BMusliCalData.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BMusliCalData::R3BMusliCalData()
-    : fSignal(0)
-    , fDT(-1.)
-    , fE(-1.)
-{
-}
+R3BMusliCalData::R3BMusliCalData() : fSignal(0), fDT(-1.), fE(-1.) {}
 // -------------------------------------------------------------------------
 
 // -----   Standard constructor   ------------------------------------------
 R3BMusliCalData::R3BMusliCalData(UInt_t signal, Double_t drifttime, Double_t energy)
-    : fSignal(signal)
-    , fDT(drifttime)
-    , fE(energy)
+    : fSignal(signal), fDT(drifttime), fE(energy)
 {
 }
 // -------------------------------------------------------------------------

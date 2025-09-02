@@ -83,8 +83,7 @@ Validated<T>::Validated(const T& data)
     //
     // D Valid constructor
     //
-    : m_valid(true)
-    , m_data(data)
+    : m_valid(true), m_data(data)
 {
 }
 
@@ -94,8 +93,7 @@ Validated<T>::Validated(T&& data)
     //
     // D Valid constructor
     //
-    : m_valid(true)
-    , m_data(std::move(data))
+    : m_valid(true), m_data(std::move(data))
 {
 }
 

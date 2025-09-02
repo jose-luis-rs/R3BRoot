@@ -3,10 +3,8 @@
 #include "FairRootManager.h"
 
 R3BNeulandMultiplicityCheat::R3BNeulandMultiplicityCheat(TString input, TString output)
-    : FairTask("R3BNeulandMultiplicityCheat")
-    , fPrimaryHits(std::move(input))
-    , fMultiplicity(new R3BNeulandMultiplicity())
-    , fOutputName(std::move(output))
+    : FairTask("R3BNeulandMultiplicityCheat"), fPrimaryHits(std::move(input)),
+      fMultiplicity(new R3BNeulandMultiplicity()), fOutputName(std::move(output))
 {
 }
 

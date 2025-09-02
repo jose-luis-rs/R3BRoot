@@ -41,14 +41,8 @@
 class R3BGammaGenerator : public FairGenerator
 {
   public:
-    R3BGammaGenerator()
-        : FairGenerator("R3BGammaGenerator", "R3BGammaGenerator")
-    {
-    }
-    R3BGammaGenerator(const char* name, const char* title)
-        : FairGenerator(name, title)
-    {
-    }
+    R3BGammaGenerator() : FairGenerator("R3BGammaGenerator", "R3BGammaGenerator") {}
+    R3BGammaGenerator(const char* name, const char* title) : FairGenerator(name, title) {}
 
     virtual Bool_t Init();
     virtual Bool_t ReadEvent(FairPrimaryGenerator* primGen);

@@ -18,12 +18,7 @@
 #include "R3BAlpideCalData.h"
 #include <fmt/core.h>
 
-R3BAlpideCalData::R3BAlpideCalData(uint16_t senId, uint16_t row, uint16_t col)
-    : fSenId(senId)
-    , fRow(row)
-    , fCol(col)
-{
-}
+R3BAlpideCalData::R3BAlpideCalData(uint16_t senId, uint16_t row, uint16_t col) : fSenId(senId), fRow(row), fCol(col) {}
 
 std::string R3BAlpideCalData::toString() const
 {

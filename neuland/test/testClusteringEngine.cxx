@@ -38,10 +38,7 @@ namespace
         struct DummyDigi
         {
             int a;
-            DummyDigi(const int& _a)
-                : a(_a)
-            {
-            }
+            DummyDigi(const int& _a) : a(_a) {}
             bool operator==(const DummyDigi& rhs) const { return a == rhs.a; }
         };
 

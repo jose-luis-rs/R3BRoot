@@ -3,10 +3,8 @@
 #include "FairRootManager.h"
 
 R3BNeulandMultiplicityFixed::R3BNeulandMultiplicityFixed(const int mult, TString output)
-    : FairTask("R3BNeulandMultiplicityFixed")
-    , fMult(mult)
-    , fMultiplicity(new R3BNeulandMultiplicity())
-    , fOutputName(std::move(output))
+    : FairTask("R3BNeulandMultiplicityFixed"), fMult(mult), fMultiplicity(new R3BNeulandMultiplicity()),
+      fOutputName(std::move(output))
 {
 }
 

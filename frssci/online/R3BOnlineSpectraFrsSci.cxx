@@ -30,25 +30,11 @@
 #include "R3BFrsSciTofCalData.h"
 #include "R3BOnlineSpectraFrsSci.h"
 
-R3BOnlineSpectraFrsSci::R3BOnlineSpectraFrsSci()
-    : R3BOnlineSpectraFrsSci("FrsSciOnlineSpectra", 1)
-{
-}
+R3BOnlineSpectraFrsSci::R3BOnlineSpectraFrsSci() : R3BOnlineSpectraFrsSci("FrsSciOnlineSpectra", 1) {}
 
 R3BOnlineSpectraFrsSci::R3BOnlineSpectraFrsSci(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMapped(NULL)
-    , fTcal(NULL)
-    , fPosCal(NULL)
-    , fTofCal(NULL)
-    , fNEvents(0)
-    , fNbDets(3)
-    , fNbPmts(3)
-    , fNbTofs(3)
-    , fpos_range_min(-5.)
-    , fpos_range_max(5.)
-    , ftof_range_min(0.)
-    , ftof_range_max(2500)
+    : FairTask(name, iVerbose), fMapped(NULL), fTcal(NULL), fPosCal(NULL), fTofCal(NULL), fNEvents(0), fNbDets(3),
+      fNbPmts(3), fNbTofs(3), fpos_range_min(-5.), fpos_range_max(5.), ftof_range_min(0.), ftof_range_max(2500)
 {
 }
 
@@ -639,8 +625,8 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
         LOG(fatal) << "R3BOnlineSpectraFrsSci::Exec FairRootManager not found";
     }
     UInt_t nHits;
-    UShort_t iDet;  // 0-based
-    UShort_t iPmt;  // 0-based
+    UShort_t iDet; // 0-based
+    UShort_t iPmt; // 0-based
     UShort_t iRank; // 0-based
     UShort_t cpt;
 
@@ -751,8 +737,8 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
                                         Traw[sta * fNbPmts + 2]);
                                     cpt++;
                                 } // end of if mult = 1
-                            }     // end of loop over stop FrsSci
-                        }         // end of loop over start FrsSco
+                            } // end of loop over stop FrsSci
+                        } // end of loop over start FrsSco
                     }
                 }
             } // --- end of if Tcal->GetEntries() >0 --- //
@@ -777,8 +763,8 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
                         fh1_Cal_PosRaw[iDet]->Fill(hitposcal->GetRawPosNs());
                         fh1_Cal_PosCal[iDet]->Fill(hitposcal->GetCalPosMm());
                     } // end of loop over pos cal data
-                }     // --- end of if fPosCal->GetEntries() >0 --- //
-            }         // end of if fPosCal
+                } // --- end of if fPosCal->GetEntries() >0 --- //
+            } // end of if fPosCal
             if (fTofCal)
             {
                 if (fTofCal->GetEntriesFast() > 0)
@@ -803,8 +789,8 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
                         fh2_Cal_AoQVsPosSta[iRank]->Fill(hittofcal->GetCalPosStaMm(), hittofcal->GetAoQ());
                         fh2_Cal_AoQVsPosSto[iRank]->Fill(hittofcal->GetCalPosStoMm(), hittofcal->GetAoQ());
                     } // end of loop over tof cal data
-                }     // --- end of if fTofCal->GetEntries() >0 --- //
-            }         // end of if fTofCal
+                } // --- end of if fTofCal->GetEntries() >0 --- //
+            } // end of if fTofCal
 
         } // end of if Tcal
 

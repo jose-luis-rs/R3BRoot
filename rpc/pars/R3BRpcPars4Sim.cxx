@@ -10,8 +10,7 @@
 #include <iostream>
 
 R3BRpcPars4Sim::R3BRpcPars4Sim(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumChannels(64)
+    : FairParGenericSet(name, title, context), fNumChannels(64)
 {
 
     fChannelIDArray = new TArrayI(fNumChannels);

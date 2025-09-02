@@ -42,11 +42,7 @@ namespace R3B::Digitizing
         double time{};
         double light{};
         ChannelHit() = default;
-        ChannelHit(double p_time, double p_light)
-            : time{ p_time }
-            , light{ p_light }
-        {
-        }
+        ChannelHit(double p_time, double p_light) : time{ p_time }, light{ p_light } {}
         auto operator<(const ChannelHit& rhs) const -> bool { return (time < rhs.time); }
     };
 
@@ -84,8 +80,8 @@ namespace R3B::Digitizing
 
       private:
         virtual auto ConstructSignals() -> Signals = 0;
-        Paddle* fPaddle = nullptr;           // pointer to the paddle who owns this channel
-        ChannelSide fSide;                   // side of the channel
+        Paddle* fPaddle = nullptr; // pointer to the paddle who owns this channel
+        ChannelSide fSide; // side of the channel
         mutable Validated<Signals> fSignals; // output signals from the channel
         mutable Validated<double> fTrigTime;
     };

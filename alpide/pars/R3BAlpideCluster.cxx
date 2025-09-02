@@ -18,18 +18,12 @@
 #include "R3BAlpideCluster.h"
 
 R3BAlpideCluster::R3BAlpideCluster(UShort_t sensorid, int col, int row, bool active)
-    : fSensorId(sensorid)
-    , fCol(col)
-    , fRow(row)
-    , fActive(active)
+    : fSensorId(sensorid), fCol(col), fRow(row), fActive(active)
 {
 }
 
 R3BAlpideCluster::R3BAlpideCluster(UShort_t sensorid, int clusterid, int col, int row)
-    : fSensorId(sensorid)
-    , fClusterId(clusterid)
-    , fCol(col)
-    , fRow(row)
+    : fSensorId(sensorid), fClusterId(clusterid), fCol(col), fRow(row)
 {
 }
 

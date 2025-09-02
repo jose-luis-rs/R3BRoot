@@ -16,9 +16,7 @@
 #include "R3BEventHeader.h"
 
 R3BNeulandProvideTStart::R3BNeulandProvideTStart()
-    : FairTask("R3BNeulandProvideTStart", 0)
-    , fNeulandCalData("NeulandCalData")
-    , fEventHeader(nullptr)
+    : FairTask("R3BNeulandProvideTStart", 0), fNeulandCalData("NeulandCalData"), fEventHeader(nullptr)
 {
 }
 

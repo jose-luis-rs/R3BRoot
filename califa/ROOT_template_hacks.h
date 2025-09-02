@@ -30,10 +30,7 @@ namespace roothacks
     class wrappedIterator : public std::iterator<std::forward_iterator_tag, T>
     {
       public:
-        wrappedIterator(TIter c)
-            : pseudoIt(c)
-        {
-        }
+        wrappedIterator(TIter c) : pseudoIt(c) {}
 
         T& operator*() { return dynamic_cast<T&>(**(this->pseudoIt)); }
 
@@ -59,10 +56,7 @@ namespace roothacks
     class wrappedCollection
     {
       public:
-        wrappedCollection(ColType* pseudoCollection)
-            : pseudoCol(pseudoCollection)
-        {
-        }
+        wrappedCollection(ColType* pseudoCollection) : pseudoCol(pseudoCollection) {}
 
         wrappedIterator<T> begin() const { return wrappedIterator<T>(TIter(pseudoCol).Begin()); }
         wrappedIterator<T> end() const { return wrappedIterator<T>(TIter(pseudoCol).End()); }

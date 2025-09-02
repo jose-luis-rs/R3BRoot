@@ -24,7 +24,7 @@ class R3BFrsSciMappedData : public TObject
     // private:
   public:
     UShort_t fDetector; // fDetector1 = S2, fDetector2 = S8, fDetector3 = CaveC
-    UShort_t fPmt;      // Pmt1 = RIGHT, Pmt2 = LEFT, Pmt3 = TREF, Pmt4=reserved for sync signal
+    UShort_t fPmt; // Pmt1 = RIGHT, Pmt2 = LEFT, Pmt3 = TREF, Pmt4=reserved for sync signal
     UInt_t fTimeCoarse;
     UInt_t fTimeFine;
     Int_t fNEvents = 0;

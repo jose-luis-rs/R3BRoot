@@ -52,10 +52,7 @@
 #define MASS_16F_MEV_C2 14909.9864966 // GS resonance 535keV above 15O+p
 #define MASS_15O_MEV_C2 13971.1785118
 
-R3BTargetDigitizer::R3BTargetDigitizer()
-    : FairTask("R3B Target Digitization scheme ")
-{
-}
+R3BTargetDigitizer::R3BTargetDigitizer() : FairTask("R3B Target Digitization scheme ") {}
 
 R3BTargetDigitizer::~R3BTargetDigitizer() {}
 
@@ -211,9 +208,9 @@ void R3BTargetDigitizer::Exec(Option_t* opt)
     p2 = px + py + pz; // MeV^2/c^2
                        //   LOG(info)<<"In "<<"px "<<px<<" py "<<py<<" pz "<<pz<<" sqrt_p2 "<<sqrt(p2);
 
-    Double_t E_f = 1.0 / sqrt(1 - f_beta * f_beta) * MASS_15O_MEV_C2;       // *c
+    Double_t E_f = 1.0 / sqrt(1 - f_beta * f_beta) * MASS_15O_MEV_C2; // *c
     Double_t E_p1 = 1.0 / sqrt(1 - p1_beta * p1_beta) * MASS_PROTON_MEV_C2; // *c
-    E2 = (E_f + E_p1) * (E_f + E_p1);                                       // MeV^2/c^2
+    E2 = (E_f + E_p1) * (E_f + E_p1); // MeV^2/c^2
     //   LOG(info)<<"In "<<"E_f "<<E_f<<" E_p1 "<<E_p1<<" sqrt_E2 "<<sqrt(E2);
 
     //  sqrt(MeV^2/c^2 - MeV^2/c^2)=MeV/c

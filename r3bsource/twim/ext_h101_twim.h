@@ -162,140 +162,140 @@ typedef struct EXT_STR_h101_SOFTWIM_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_SOFTWIM_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1EM, UINT32, "SOFTWIM_S1EM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1EMI, UINT32, "SOFTWIM_S1EMI", "SOFTWIM_S1EM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1EME, UINT32, "SOFTWIM_S1EME", "SOFTWIM_S1EM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1E, UINT32, "SOFTWIM_S1E", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1Ev, UINT32, "SOFTWIM_S1Ev", "SOFTWIM_S1E");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TM, UINT32, "SOFTWIM_S1TM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TMI, UINT32, "SOFTWIM_S1TMI", "SOFTWIM_S1TM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TME, UINT32, "SOFTWIM_S1TME", "SOFTWIM_S1TM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1T, UINT32, "SOFTWIM_S1T", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1Tv, UINT32, "SOFTWIM_S1Tv", "SOFTWIM_S1T");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFM, UINT32, "SOFTWIM_S1TREFM", 1);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFMI, UINT32, "SOFTWIM_S1TREFMI", "SOFTWIM_S1TREFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFME, UINT32, "SOFTWIM_S1TREFME", "SOFTWIM_S1TREFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TREF, UINT32, "SOFTWIM_S1TREF", 100);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFv, UINT32, "SOFTWIM_S1TREFv", "SOFTWIM_S1TREF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGM, UINT32, "SOFTWIM_S1TTRIGM", 1);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGMI, UINT32, "SOFTWIM_S1TTRIGMI", "SOFTWIM_S1TTRIGM"); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGME, UINT32, "SOFTWIM_S1TTRIGME", "SOFTWIM_S1TTRIGM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIG, UINT32, "SOFTWIM_S1TTRIG", 100);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGv, UINT32, "SOFTWIM_S1TTRIGv", "SOFTWIM_S1TTRIG");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2EM, UINT32, "SOFTWIM_S2EM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2EMI, UINT32, "SOFTWIM_S2EMI", "SOFTWIM_S2EM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2EME, UINT32, "SOFTWIM_S2EME", "SOFTWIM_S2EM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2E, UINT32, "SOFTWIM_S2E", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2Ev, UINT32, "SOFTWIM_S2Ev", "SOFTWIM_S2E");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TM, UINT32, "SOFTWIM_S2TM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TMI, UINT32, "SOFTWIM_S2TMI", "SOFTWIM_S2TM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TME, UINT32, "SOFTWIM_S2TME", "SOFTWIM_S2TM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2T, UINT32, "SOFTWIM_S2T", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2Tv, UINT32, "SOFTWIM_S2Tv", "SOFTWIM_S2T");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFM, UINT32, "SOFTWIM_S2TREFM", 1);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFMI, UINT32, "SOFTWIM_S2TREFMI", "SOFTWIM_S2TREFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFME, UINT32, "SOFTWIM_S2TREFME", "SOFTWIM_S2TREFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TREF, UINT32, "SOFTWIM_S2TREF", 100);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFv, UINT32, "SOFTWIM_S2TREFv", "SOFTWIM_S2TREF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGM, UINT32, "SOFTWIM_S2TTRIGM", 1);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGMI, UINT32, "SOFTWIM_S2TTRIGMI", "SOFTWIM_S2TTRIGM"); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGME, UINT32, "SOFTWIM_S2TTRIGME", "SOFTWIM_S2TTRIGM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIG, UINT32, "SOFTWIM_S2TTRIG", 100);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGv, UINT32, "SOFTWIM_S2TTRIGv", "SOFTWIM_S2TTRIG");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3EM, UINT32, "SOFTWIM_S3EM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3EMI, UINT32, "SOFTWIM_S3EMI", "SOFTWIM_S3EM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3EME, UINT32, "SOFTWIM_S3EME", "SOFTWIM_S3EM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3E, UINT32, "SOFTWIM_S3E", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3Ev, UINT32, "SOFTWIM_S3Ev", "SOFTWIM_S3E");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TM, UINT32, "SOFTWIM_S3TM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TMI, UINT32, "SOFTWIM_S3TMI", "SOFTWIM_S3TM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TME, UINT32, "SOFTWIM_S3TME", "SOFTWIM_S3TM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3T, UINT32, "SOFTWIM_S3T", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3Tv, UINT32, "SOFTWIM_S3Tv", "SOFTWIM_S3T");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFM, UINT32, "SOFTWIM_S3TREFM", 1);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFMI, UINT32, "SOFTWIM_S3TREFMI", "SOFTWIM_S3TREFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFME, UINT32, "SOFTWIM_S3TREFME", "SOFTWIM_S3TREFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TREF, UINT32, "SOFTWIM_S3TREF", 100);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFv, UINT32, "SOFTWIM_S3TREFv", "SOFTWIM_S3TREF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGM, UINT32, "SOFTWIM_S3TTRIGM", 1);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGMI, UINT32, "SOFTWIM_S3TTRIGMI", "SOFTWIM_S3TTRIGM"); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGME, UINT32, "SOFTWIM_S3TTRIGME", "SOFTWIM_S3TTRIGM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIG, UINT32, "SOFTWIM_S3TTRIG", 100);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGv, UINT32, "SOFTWIM_S3TTRIGv", "SOFTWIM_S3TTRIG");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4EM, UINT32, "SOFTWIM_S4EM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4EMI, UINT32, "SOFTWIM_S4EMI", "SOFTWIM_S4EM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4EME, UINT32, "SOFTWIM_S4EME", "SOFTWIM_S4EM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4E, UINT32, "SOFTWIM_S4E", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4Ev, UINT32, "SOFTWIM_S4Ev", "SOFTWIM_S4E");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TM, UINT32, "SOFTWIM_S4TM", 16);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TMI, UINT32, "SOFTWIM_S4TMI", "SOFTWIM_S4TM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TME, UINT32, "SOFTWIM_S4TME", "SOFTWIM_S4TM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4T, UINT32, "SOFTWIM_S4T", 1600);         \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4Tv, UINT32, "SOFTWIM_S4Tv", "SOFTWIM_S4T");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFM, UINT32, "SOFTWIM_S4TREFM", 1);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFMI, UINT32, "SOFTWIM_S4TREFMI", "SOFTWIM_S4TREFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFME, UINT32, "SOFTWIM_S4TREFME", "SOFTWIM_S4TREFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TREF, UINT32, "SOFTWIM_S4TREF", 100);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFv, UINT32, "SOFTWIM_S4TREFv", "SOFTWIM_S4TREF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGM, UINT32, "SOFTWIM_S4TTRIGM", 1);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGMI, UINT32, "SOFTWIM_S4TTRIGMI", "SOFTWIM_S4TTRIGM"); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGME, UINT32, "SOFTWIM_S4TTRIGME", "SOFTWIM_S4TTRIGM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIG, UINT32, "SOFTWIM_S4TTRIG", 100);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGv, UINT32, "SOFTWIM_S4TTRIGv", "SOFTWIM_S4TTRIG");    \
-                                                                                                                     \
+#define EXT_STR_h101_SOFTWIM_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                            \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1EM, UINT32, "SOFTWIM_S1EM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1EMI, UINT32, "SOFTWIM_S1EMI", "SOFTWIM_S1EM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1EME, UINT32, "SOFTWIM_S1EME", "SOFTWIM_S1EM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1E, UINT32, "SOFTWIM_S1E", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1Ev, UINT32, "SOFTWIM_S1Ev", "SOFTWIM_S1E");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TM, UINT32, "SOFTWIM_S1TM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TMI, UINT32, "SOFTWIM_S1TMI", "SOFTWIM_S1TM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TME, UINT32, "SOFTWIM_S1TME", "SOFTWIM_S1TM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1T, UINT32, "SOFTWIM_S1T", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1Tv, UINT32, "SOFTWIM_S1Tv", "SOFTWIM_S1T");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFM, UINT32, "SOFTWIM_S1TREFM", 1);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFMI, UINT32, "SOFTWIM_S1TREFMI", "SOFTWIM_S1TREFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFME, UINT32, "SOFTWIM_S1TREFME", "SOFTWIM_S1TREFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TREF, UINT32, "SOFTWIM_S1TREF", 100);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TREFv, UINT32, "SOFTWIM_S1TREFv", "SOFTWIM_S1TREF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGM, UINT32, "SOFTWIM_S1TTRIGM", 1);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGMI, UINT32, "SOFTWIM_S1TTRIGMI", "SOFTWIM_S1TTRIGM");   \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGME, UINT32, "SOFTWIM_S1TTRIGME", "SOFTWIM_S1TTRIGM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIG, UINT32, "SOFTWIM_S1TTRIG", 100);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S1TTRIGv, UINT32, "SOFTWIM_S1TTRIGv", "SOFTWIM_S1TTRIG");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2EM, UINT32, "SOFTWIM_S2EM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2EMI, UINT32, "SOFTWIM_S2EMI", "SOFTWIM_S2EM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2EME, UINT32, "SOFTWIM_S2EME", "SOFTWIM_S2EM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2E, UINT32, "SOFTWIM_S2E", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2Ev, UINT32, "SOFTWIM_S2Ev", "SOFTWIM_S2E");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TM, UINT32, "SOFTWIM_S2TM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TMI, UINT32, "SOFTWIM_S2TMI", "SOFTWIM_S2TM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TME, UINT32, "SOFTWIM_S2TME", "SOFTWIM_S2TM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2T, UINT32, "SOFTWIM_S2T", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2Tv, UINT32, "SOFTWIM_S2Tv", "SOFTWIM_S2T");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFM, UINT32, "SOFTWIM_S2TREFM", 1);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFMI, UINT32, "SOFTWIM_S2TREFMI", "SOFTWIM_S2TREFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFME, UINT32, "SOFTWIM_S2TREFME", "SOFTWIM_S2TREFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TREF, UINT32, "SOFTWIM_S2TREF", 100);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TREFv, UINT32, "SOFTWIM_S2TREFv", "SOFTWIM_S2TREF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGM, UINT32, "SOFTWIM_S2TTRIGM", 1);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGMI, UINT32, "SOFTWIM_S2TTRIGMI", "SOFTWIM_S2TTRIGM");   \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGME, UINT32, "SOFTWIM_S2TTRIGME", "SOFTWIM_S2TTRIGM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIG, UINT32, "SOFTWIM_S2TTRIG", 100);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S2TTRIGv, UINT32, "SOFTWIM_S2TTRIGv", "SOFTWIM_S2TTRIG");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3EM, UINT32, "SOFTWIM_S3EM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3EMI, UINT32, "SOFTWIM_S3EMI", "SOFTWIM_S3EM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3EME, UINT32, "SOFTWIM_S3EME", "SOFTWIM_S3EM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3E, UINT32, "SOFTWIM_S3E", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3Ev, UINT32, "SOFTWIM_S3Ev", "SOFTWIM_S3E");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TM, UINT32, "SOFTWIM_S3TM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TMI, UINT32, "SOFTWIM_S3TMI", "SOFTWIM_S3TM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TME, UINT32, "SOFTWIM_S3TME", "SOFTWIM_S3TM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3T, UINT32, "SOFTWIM_S3T", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3Tv, UINT32, "SOFTWIM_S3Tv", "SOFTWIM_S3T");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFM, UINT32, "SOFTWIM_S3TREFM", 1);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFMI, UINT32, "SOFTWIM_S3TREFMI", "SOFTWIM_S3TREFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFME, UINT32, "SOFTWIM_S3TREFME", "SOFTWIM_S3TREFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TREF, UINT32, "SOFTWIM_S3TREF", 100);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TREFv, UINT32, "SOFTWIM_S3TREFv", "SOFTWIM_S3TREF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGM, UINT32, "SOFTWIM_S3TTRIGM", 1);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGMI, UINT32, "SOFTWIM_S3TTRIGMI", "SOFTWIM_S3TTRIGM");   \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGME, UINT32, "SOFTWIM_S3TTRIGME", "SOFTWIM_S3TTRIGM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIG, UINT32, "SOFTWIM_S3TTRIG", 100);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S3TTRIGv, UINT32, "SOFTWIM_S3TTRIGv", "SOFTWIM_S3TTRIG");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4EM, UINT32, "SOFTWIM_S4EM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4EMI, UINT32, "SOFTWIM_S4EMI", "SOFTWIM_S4EM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4EME, UINT32, "SOFTWIM_S4EME", "SOFTWIM_S4EM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4E, UINT32, "SOFTWIM_S4E", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4Ev, UINT32, "SOFTWIM_S4Ev", "SOFTWIM_S4E");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TM, UINT32, "SOFTWIM_S4TM", 16);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TMI, UINT32, "SOFTWIM_S4TMI", "SOFTWIM_S4TM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TME, UINT32, "SOFTWIM_S4TME", "SOFTWIM_S4TM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4T, UINT32, "SOFTWIM_S4T", 1600);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4Tv, UINT32, "SOFTWIM_S4Tv", "SOFTWIM_S4T");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFM, UINT32, "SOFTWIM_S4TREFM", 1);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFMI, UINT32, "SOFTWIM_S4TREFMI", "SOFTWIM_S4TREFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFME, UINT32, "SOFTWIM_S4TREFME", "SOFTWIM_S4TREFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TREF, UINT32, "SOFTWIM_S4TREF", 100);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TREFv, UINT32, "SOFTWIM_S4TREFv", "SOFTWIM_S4TREF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGM, UINT32, "SOFTWIM_S4TTRIGM", 1);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGMI, UINT32, "SOFTWIM_S4TTRIGMI", "SOFTWIM_S4TTRIGM");   \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGME, UINT32, "SOFTWIM_S4TTRIGME", "SOFTWIM_S4TTRIGM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIG, UINT32, "SOFTWIM_S4TTRIG", 100);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SOFTWIM_S4TTRIGv, UINT32, "SOFTWIM_S4TTRIGv", "SOFTWIM_S4TTRIG");      \
+                                                                                                                       \
     } while (0);
 #endif /*__GUARD_H101_SOFTWIM_EXT_H101_SOFTWIM_H__*/
 

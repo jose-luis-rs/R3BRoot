@@ -269,868 +269,868 @@ typedef struct EXT_STR_h101_TOFD_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_TOFD_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                              \
-    do                                                                                                                \
-    {                                                                                                                 \
-        ok = 1;                                                                                                       \
-        /* RAW */                                                                                                     \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGCL, UINT32, "TOFD_TRIGCL", 24, 0 /*flags*/);                 \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGCLI, UINT32, "TOFD_TRIGCLI", "TOFD_TRIGCL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGCLv, UINT32, "TOFD_TRIGCLv", "TOFD_TRIGCL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGCT, UINT32, "TOFD_TRIGCT", 24, 0 /*flags*/);                 \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGCTI, UINT32, "TOFD_TRIGCTI", "TOFD_TRIGCT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGCTv, UINT32, "TOFD_TRIGCTv", "TOFD_TRIGCT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGFL, UINT32, "TOFD_TRIGFL", 24, 0 /*flags*/);                 \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGFLI, UINT32, "TOFD_TRIGFLI", "TOFD_TRIGFL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGFLv, UINT32, "TOFD_TRIGFLv", "TOFD_TRIGFL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGFT, UINT32, "TOFD_TRIGFT", 24, 0 /*flags*/);                 \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGFTI, UINT32, "TOFD_TRIGFTI", "TOFD_TRIGFT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_TRIGFTv, UINT32, "TOFD_TRIGFTv", "TOFD_TRIGFT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TCLM, UINT32, "TOFD_P1T1TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TCLMI",                                                                      \
-                               "TOFD_P1T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TCLME",                                                                      \
-                               "TOFD_P1T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TCL, UINT32, "TOFD_P1T1TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TCLv, UINT32, "TOFD_P1T1TCLv", "TOFD_P1T1TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TFLM, UINT32, "TOFD_P1T1TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TFLMI",                                                                      \
-                               "TOFD_P1T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TFLME",                                                                      \
-                               "TOFD_P1T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TFL, UINT32, "TOFD_P1T1TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TFLv, UINT32, "TOFD_P1T1TFLv", "TOFD_P1T1TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TCTM, UINT32, "TOFD_P1T1TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TCTMI",                                                                      \
-                               "TOFD_P1T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TCTME",                                                                      \
-                               "TOFD_P1T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TCT, UINT32, "TOFD_P1T1TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TCTv, UINT32, "TOFD_P1T1TCTv", "TOFD_P1T1TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TFTM, UINT32, "TOFD_P1T1TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TFTMI",                                                                      \
-                               "TOFD_P1T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T1TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T1TFTME",                                                                      \
-                               "TOFD_P1T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TFT, UINT32, "TOFD_P1T1TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T1TFTv, UINT32, "TOFD_P1T1TFTv", "TOFD_P1T1TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TCLM, UINT32, "TOFD_P1T2TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TCLMI",                                                                      \
-                               "TOFD_P1T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TCLME",                                                                      \
-                               "TOFD_P1T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TCL, UINT32, "TOFD_P1T2TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TCLv, UINT32, "TOFD_P1T2TCLv", "TOFD_P1T2TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TFLM, UINT32, "TOFD_P1T2TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TFLMI",                                                                      \
-                               "TOFD_P1T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TFLME",                                                                      \
-                               "TOFD_P1T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TFL, UINT32, "TOFD_P1T2TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TFLv, UINT32, "TOFD_P1T2TFLv", "TOFD_P1T2TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TCTM, UINT32, "TOFD_P1T2TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TCTMI",                                                                      \
-                               "TOFD_P1T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TCTME",                                                                      \
-                               "TOFD_P1T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TCT, UINT32, "TOFD_P1T2TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TCTv, UINT32, "TOFD_P1T2TCTv", "TOFD_P1T2TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TFTM, UINT32, "TOFD_P1T2TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TFTMI",                                                                      \
-                               "TOFD_P1T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P1T2TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P1T2TFTME",                                                                      \
-                               "TOFD_P1T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TFT, UINT32, "TOFD_P1T2TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P1T2TFTv, UINT32, "TOFD_P1T2TFTv", "TOFD_P1T2TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TCLM, UINT32, "TOFD_P2T1TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TCLMI",                                                                      \
-                               "TOFD_P2T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TCLME",                                                                      \
-                               "TOFD_P2T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TCL, UINT32, "TOFD_P2T1TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TCLv, UINT32, "TOFD_P2T1TCLv", "TOFD_P2T1TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TFLM, UINT32, "TOFD_P2T1TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TFLMI",                                                                      \
-                               "TOFD_P2T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TFLME",                                                                      \
-                               "TOFD_P2T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TFL, UINT32, "TOFD_P2T1TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TFLv, UINT32, "TOFD_P2T1TFLv", "TOFD_P2T1TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TCTM, UINT32, "TOFD_P2T1TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TCTMI",                                                                      \
-                               "TOFD_P2T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TCTME",                                                                      \
-                               "TOFD_P2T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TCT, UINT32, "TOFD_P2T1TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TCTv, UINT32, "TOFD_P2T1TCTv", "TOFD_P2T1TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TFTM, UINT32, "TOFD_P2T1TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TFTMI",                                                                      \
-                               "TOFD_P2T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T1TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T1TFTME",                                                                      \
-                               "TOFD_P2T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TFT, UINT32, "TOFD_P2T1TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T1TFTv, UINT32, "TOFD_P2T1TFTv", "TOFD_P2T1TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TCLM, UINT32, "TOFD_P2T2TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TCLMI",                                                                      \
-                               "TOFD_P2T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TCLME",                                                                      \
-                               "TOFD_P2T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TCL, UINT32, "TOFD_P2T2TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TCLv, UINT32, "TOFD_P2T2TCLv", "TOFD_P2T2TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TFLM, UINT32, "TOFD_P2T2TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TFLMI",                                                                      \
-                               "TOFD_P2T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TFLME",                                                                      \
-                               "TOFD_P2T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TFL, UINT32, "TOFD_P2T2TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TFLv, UINT32, "TOFD_P2T2TFLv", "TOFD_P2T2TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TCTM, UINT32, "TOFD_P2T2TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TCTMI",                                                                      \
-                               "TOFD_P2T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TCTME",                                                                      \
-                               "TOFD_P2T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TCT, UINT32, "TOFD_P2T2TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TCTv, UINT32, "TOFD_P2T2TCTv", "TOFD_P2T2TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TFTM, UINT32, "TOFD_P2T2TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TFTMI",                                                                      \
-                               "TOFD_P2T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P2T2TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P2T2TFTME",                                                                      \
-                               "TOFD_P2T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TFT, UINT32, "TOFD_P2T2TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P2T2TFTv, UINT32, "TOFD_P2T2TFTv", "TOFD_P2T2TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TCLM, UINT32, "TOFD_P3T1TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TCLMI",                                                                      \
-                               "TOFD_P3T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TCLME",                                                                      \
-                               "TOFD_P3T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TCL, UINT32, "TOFD_P3T1TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TCLv, UINT32, "TOFD_P3T1TCLv", "TOFD_P3T1TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TFLM, UINT32, "TOFD_P3T1TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TFLMI",                                                                      \
-                               "TOFD_P3T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TFLME",                                                                      \
-                               "TOFD_P3T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TFL, UINT32, "TOFD_P3T1TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TFLv, UINT32, "TOFD_P3T1TFLv", "TOFD_P3T1TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TCTM, UINT32, "TOFD_P3T1TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TCTMI",                                                                      \
-                               "TOFD_P3T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TCTME",                                                                      \
-                               "TOFD_P3T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TCT, UINT32, "TOFD_P3T1TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TCTv, UINT32, "TOFD_P3T1TCTv", "TOFD_P3T1TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TFTM, UINT32, "TOFD_P3T1TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TFTMI",                                                                      \
-                               "TOFD_P3T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T1TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T1TFTME",                                                                      \
-                               "TOFD_P3T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TFT, UINT32, "TOFD_P3T1TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T1TFTv, UINT32, "TOFD_P3T1TFTv", "TOFD_P3T1TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TCLM, UINT32, "TOFD_P3T2TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TCLMI",                                                                      \
-                               "TOFD_P3T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TCLME",                                                                      \
-                               "TOFD_P3T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TCL, UINT32, "TOFD_P3T2TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TCLv, UINT32, "TOFD_P3T2TCLv", "TOFD_P3T2TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TFLM, UINT32, "TOFD_P3T2TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TFLMI",                                                                      \
-                               "TOFD_P3T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TFLME",                                                                      \
-                               "TOFD_P3T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TFL, UINT32, "TOFD_P3T2TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TFLv, UINT32, "TOFD_P3T2TFLv", "TOFD_P3T2TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TCTM, UINT32, "TOFD_P3T2TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TCTMI",                                                                      \
-                               "TOFD_P3T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TCTME",                                                                      \
-                               "TOFD_P3T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TCT, UINT32, "TOFD_P3T2TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TCTv, UINT32, "TOFD_P3T2TCTv", "TOFD_P3T2TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TFTM, UINT32, "TOFD_P3T2TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TFTMI",                                                                      \
-                               "TOFD_P3T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P3T2TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P3T2TFTME",                                                                      \
-                               "TOFD_P3T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TFT, UINT32, "TOFD_P3T2TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P3T2TFTv, UINT32, "TOFD_P3T2TFTv", "TOFD_P3T2TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TCLM, UINT32, "TOFD_P4T1TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TCLMI",                                                                      \
-                               "TOFD_P4T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TCLME",                                                                      \
-                               "TOFD_P4T1TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TCL, UINT32, "TOFD_P4T1TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TCLv, UINT32, "TOFD_P4T1TCLv", "TOFD_P4T1TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TFLM, UINT32, "TOFD_P4T1TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TFLMI",                                                                      \
-                               "TOFD_P4T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TFLME",                                                                      \
-                               "TOFD_P4T1TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TFL, UINT32, "TOFD_P4T1TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TFLv, UINT32, "TOFD_P4T1TFLv", "TOFD_P4T1TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TCTM, UINT32, "TOFD_P4T1TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TCTMI",                                                                      \
-                               "TOFD_P4T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TCTME",                                                                      \
-                               "TOFD_P4T1TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TCT, UINT32, "TOFD_P4T1TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TCTv, UINT32, "TOFD_P4T1TCTv", "TOFD_P4T1TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TFTM, UINT32, "TOFD_P4T1TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TFTMI",                                                                      \
-                               "TOFD_P4T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T1TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T1TFTME",                                                                      \
-                               "TOFD_P4T1TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TFT, UINT32, "TOFD_P4T1TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T1TFTv, UINT32, "TOFD_P4T1TFTv", "TOFD_P4T1TFT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TCLM, UINT32, "TOFD_P4T2TCLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TCLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TCLMI",                                                                      \
-                               "TOFD_P4T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TCLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TCLME",                                                                      \
-                               "TOFD_P4T2TCLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TCL, UINT32, "TOFD_P4T2TCL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TCLv, UINT32, "TOFD_P4T2TCLv", "TOFD_P4T2TCL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TFLM, UINT32, "TOFD_P4T2TFLM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TFLMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TFLMI",                                                                      \
-                               "TOFD_P4T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TFLME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TFLME",                                                                      \
-                               "TOFD_P4T2TFLM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TFL, UINT32, "TOFD_P4T2TFL", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TFLv, UINT32, "TOFD_P4T2TFLv", "TOFD_P4T2TFL", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TCTM, UINT32, "TOFD_P4T2TCTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TCTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TCTMI",                                                                      \
-                               "TOFD_P4T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TCTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TCTME",                                                                      \
-                               "TOFD_P4T2TCTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TCT, UINT32, "TOFD_P4T2TCT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TCTv, UINT32, "TOFD_P4T2TCTv", "TOFD_P4T2TCT", 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TFTM, UINT32, "TOFD_P4T2TFTM", 48, 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TFTMI,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TFTMI",                                                                      \
-                               "TOFD_P4T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                    \
-                               si,                                                                                    \
-                               offset,                                                                                \
-                               struct_t,                                                                              \
-                               printerr,                                                                              \
-                               TOFD_P4T2TFTME,                                                                        \
-                               UINT32,                                                                                \
-                               "TOFD_P4T2TFTME",                                                                      \
-                               "TOFD_P4T2TFTM",                                                                       \
-                               0 /*flags*/);                                                                          \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TFT, UINT32, "TOFD_P4T2TFT", 960, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, TOFD_P4T2TFTv, UINT32, "TOFD_P4T2TFTv", "TOFD_P4T2TFT", 0 /*flags*/); \
-                                                                                                                      \
+#define EXT_STR_h101_TOFD_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGCL, UINT32, "TOFD_TRIGCL", 24, 0 /*flags*/);                  \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGCLI, UINT32, "TOFD_TRIGCLI", "TOFD_TRIGCL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGCLv, UINT32, "TOFD_TRIGCLv", "TOFD_TRIGCL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGCT, UINT32, "TOFD_TRIGCT", 24, 0 /*flags*/);                  \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGCTI, UINT32, "TOFD_TRIGCTI", "TOFD_TRIGCT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGCTv, UINT32, "TOFD_TRIGCTv", "TOFD_TRIGCT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGFL, UINT32, "TOFD_TRIGFL", 24, 0 /*flags*/);                  \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGFLI, UINT32, "TOFD_TRIGFLI", "TOFD_TRIGFL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGFLv, UINT32, "TOFD_TRIGFLv", "TOFD_TRIGFL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGFT, UINT32, "TOFD_TRIGFT", 24, 0 /*flags*/);                  \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGFTI, UINT32, "TOFD_TRIGFTI", "TOFD_TRIGFT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_TRIGFTv, UINT32, "TOFD_TRIGFTv", "TOFD_TRIGFT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TCLM, UINT32, "TOFD_P1T1TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TCLMI",                                                                       \
+                               "TOFD_P1T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TCLME",                                                                       \
+                               "TOFD_P1T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TCL, UINT32, "TOFD_P1T1TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TCLv, UINT32, "TOFD_P1T1TCLv", "TOFD_P1T1TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TFLM, UINT32, "TOFD_P1T1TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TFLMI",                                                                       \
+                               "TOFD_P1T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TFLME",                                                                       \
+                               "TOFD_P1T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TFL, UINT32, "TOFD_P1T1TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TFLv, UINT32, "TOFD_P1T1TFLv", "TOFD_P1T1TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TCTM, UINT32, "TOFD_P1T1TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TCTMI",                                                                       \
+                               "TOFD_P1T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TCTME",                                                                       \
+                               "TOFD_P1T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TCT, UINT32, "TOFD_P1T1TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TCTv, UINT32, "TOFD_P1T1TCTv", "TOFD_P1T1TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TFTM, UINT32, "TOFD_P1T1TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TFTMI",                                                                       \
+                               "TOFD_P1T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T1TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T1TFTME",                                                                       \
+                               "TOFD_P1T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TFT, UINT32, "TOFD_P1T1TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T1TFTv, UINT32, "TOFD_P1T1TFTv", "TOFD_P1T1TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TCLM, UINT32, "TOFD_P1T2TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TCLMI",                                                                       \
+                               "TOFD_P1T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TCLME",                                                                       \
+                               "TOFD_P1T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TCL, UINT32, "TOFD_P1T2TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TCLv, UINT32, "TOFD_P1T2TCLv", "TOFD_P1T2TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TFLM, UINT32, "TOFD_P1T2TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TFLMI",                                                                       \
+                               "TOFD_P1T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TFLME",                                                                       \
+                               "TOFD_P1T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TFL, UINT32, "TOFD_P1T2TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TFLv, UINT32, "TOFD_P1T2TFLv", "TOFD_P1T2TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TCTM, UINT32, "TOFD_P1T2TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TCTMI",                                                                       \
+                               "TOFD_P1T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TCTME",                                                                       \
+                               "TOFD_P1T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TCT, UINT32, "TOFD_P1T2TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TCTv, UINT32, "TOFD_P1T2TCTv", "TOFD_P1T2TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TFTM, UINT32, "TOFD_P1T2TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TFTMI",                                                                       \
+                               "TOFD_P1T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P1T2TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P1T2TFTME",                                                                       \
+                               "TOFD_P1T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TFT, UINT32, "TOFD_P1T2TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P1T2TFTv, UINT32, "TOFD_P1T2TFTv", "TOFD_P1T2TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TCLM, UINT32, "TOFD_P2T1TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TCLMI",                                                                       \
+                               "TOFD_P2T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TCLME",                                                                       \
+                               "TOFD_P2T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TCL, UINT32, "TOFD_P2T1TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TCLv, UINT32, "TOFD_P2T1TCLv", "TOFD_P2T1TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TFLM, UINT32, "TOFD_P2T1TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TFLMI",                                                                       \
+                               "TOFD_P2T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TFLME",                                                                       \
+                               "TOFD_P2T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TFL, UINT32, "TOFD_P2T1TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TFLv, UINT32, "TOFD_P2T1TFLv", "TOFD_P2T1TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TCTM, UINT32, "TOFD_P2T1TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TCTMI",                                                                       \
+                               "TOFD_P2T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TCTME",                                                                       \
+                               "TOFD_P2T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TCT, UINT32, "TOFD_P2T1TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TCTv, UINT32, "TOFD_P2T1TCTv", "TOFD_P2T1TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TFTM, UINT32, "TOFD_P2T1TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TFTMI",                                                                       \
+                               "TOFD_P2T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T1TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T1TFTME",                                                                       \
+                               "TOFD_P2T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TFT, UINT32, "TOFD_P2T1TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T1TFTv, UINT32, "TOFD_P2T1TFTv", "TOFD_P2T1TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TCLM, UINT32, "TOFD_P2T2TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TCLMI",                                                                       \
+                               "TOFD_P2T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TCLME",                                                                       \
+                               "TOFD_P2T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TCL, UINT32, "TOFD_P2T2TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TCLv, UINT32, "TOFD_P2T2TCLv", "TOFD_P2T2TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TFLM, UINT32, "TOFD_P2T2TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TFLMI",                                                                       \
+                               "TOFD_P2T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TFLME",                                                                       \
+                               "TOFD_P2T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TFL, UINT32, "TOFD_P2T2TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TFLv, UINT32, "TOFD_P2T2TFLv", "TOFD_P2T2TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TCTM, UINT32, "TOFD_P2T2TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TCTMI",                                                                       \
+                               "TOFD_P2T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TCTME",                                                                       \
+                               "TOFD_P2T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TCT, UINT32, "TOFD_P2T2TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TCTv, UINT32, "TOFD_P2T2TCTv", "TOFD_P2T2TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TFTM, UINT32, "TOFD_P2T2TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TFTMI",                                                                       \
+                               "TOFD_P2T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P2T2TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P2T2TFTME",                                                                       \
+                               "TOFD_P2T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TFT, UINT32, "TOFD_P2T2TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P2T2TFTv, UINT32, "TOFD_P2T2TFTv", "TOFD_P2T2TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TCLM, UINT32, "TOFD_P3T1TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TCLMI",                                                                       \
+                               "TOFD_P3T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TCLME",                                                                       \
+                               "TOFD_P3T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TCL, UINT32, "TOFD_P3T1TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TCLv, UINT32, "TOFD_P3T1TCLv", "TOFD_P3T1TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TFLM, UINT32, "TOFD_P3T1TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TFLMI",                                                                       \
+                               "TOFD_P3T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TFLME",                                                                       \
+                               "TOFD_P3T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TFL, UINT32, "TOFD_P3T1TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TFLv, UINT32, "TOFD_P3T1TFLv", "TOFD_P3T1TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TCTM, UINT32, "TOFD_P3T1TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TCTMI",                                                                       \
+                               "TOFD_P3T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TCTME",                                                                       \
+                               "TOFD_P3T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TCT, UINT32, "TOFD_P3T1TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TCTv, UINT32, "TOFD_P3T1TCTv", "TOFD_P3T1TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TFTM, UINT32, "TOFD_P3T1TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TFTMI",                                                                       \
+                               "TOFD_P3T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T1TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T1TFTME",                                                                       \
+                               "TOFD_P3T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TFT, UINT32, "TOFD_P3T1TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T1TFTv, UINT32, "TOFD_P3T1TFTv", "TOFD_P3T1TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TCLM, UINT32, "TOFD_P3T2TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TCLMI",                                                                       \
+                               "TOFD_P3T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TCLME",                                                                       \
+                               "TOFD_P3T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TCL, UINT32, "TOFD_P3T2TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TCLv, UINT32, "TOFD_P3T2TCLv", "TOFD_P3T2TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TFLM, UINT32, "TOFD_P3T2TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TFLMI",                                                                       \
+                               "TOFD_P3T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TFLME",                                                                       \
+                               "TOFD_P3T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TFL, UINT32, "TOFD_P3T2TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TFLv, UINT32, "TOFD_P3T2TFLv", "TOFD_P3T2TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TCTM, UINT32, "TOFD_P3T2TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TCTMI",                                                                       \
+                               "TOFD_P3T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TCTME",                                                                       \
+                               "TOFD_P3T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TCT, UINT32, "TOFD_P3T2TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TCTv, UINT32, "TOFD_P3T2TCTv", "TOFD_P3T2TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TFTM, UINT32, "TOFD_P3T2TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TFTMI",                                                                       \
+                               "TOFD_P3T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P3T2TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P3T2TFTME",                                                                       \
+                               "TOFD_P3T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TFT, UINT32, "TOFD_P3T2TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P3T2TFTv, UINT32, "TOFD_P3T2TFTv", "TOFD_P3T2TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TCLM, UINT32, "TOFD_P4T1TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TCLMI",                                                                       \
+                               "TOFD_P4T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TCLME",                                                                       \
+                               "TOFD_P4T1TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TCL, UINT32, "TOFD_P4T1TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TCLv, UINT32, "TOFD_P4T1TCLv", "TOFD_P4T1TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TFLM, UINT32, "TOFD_P4T1TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TFLMI",                                                                       \
+                               "TOFD_P4T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TFLME",                                                                       \
+                               "TOFD_P4T1TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TFL, UINT32, "TOFD_P4T1TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TFLv, UINT32, "TOFD_P4T1TFLv", "TOFD_P4T1TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TCTM, UINT32, "TOFD_P4T1TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TCTMI",                                                                       \
+                               "TOFD_P4T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TCTME",                                                                       \
+                               "TOFD_P4T1TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TCT, UINT32, "TOFD_P4T1TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TCTv, UINT32, "TOFD_P4T1TCTv", "TOFD_P4T1TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TFTM, UINT32, "TOFD_P4T1TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TFTMI",                                                                       \
+                               "TOFD_P4T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T1TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T1TFTME",                                                                       \
+                               "TOFD_P4T1TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TFT, UINT32, "TOFD_P4T1TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T1TFTv, UINT32, "TOFD_P4T1TFTv", "TOFD_P4T1TFT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TCLM, UINT32, "TOFD_P4T2TCLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TCLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TCLMI",                                                                       \
+                               "TOFD_P4T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TCLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TCLME",                                                                       \
+                               "TOFD_P4T2TCLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TCL, UINT32, "TOFD_P4T2TCL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TCLv, UINT32, "TOFD_P4T2TCLv", "TOFD_P4T2TCL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TFLM, UINT32, "TOFD_P4T2TFLM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TFLMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TFLMI",                                                                       \
+                               "TOFD_P4T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TFLME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TFLME",                                                                       \
+                               "TOFD_P4T2TFLM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TFL, UINT32, "TOFD_P4T2TFL", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TFLv, UINT32, "TOFD_P4T2TFLv", "TOFD_P4T2TFL", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TCTM, UINT32, "TOFD_P4T2TCTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TCTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TCTMI",                                                                       \
+                               "TOFD_P4T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TCTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TCTME",                                                                       \
+                               "TOFD_P4T2TCTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TCT, UINT32, "TOFD_P4T2TCT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TCTv, UINT32, "TOFD_P4T2TCTv", "TOFD_P4T2TCT", 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TFTM, UINT32, "TOFD_P4T2TFTM", 48, 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TFTMI,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TFTMI",                                                                       \
+                               "TOFD_P4T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_ZZP(ok,                                                                                     \
+                               si,                                                                                     \
+                               offset,                                                                                 \
+                               struct_t,                                                                               \
+                               printerr,                                                                               \
+                               TOFD_P4T2TFTME,                                                                         \
+                               UINT32,                                                                                 \
+                               "TOFD_P4T2TFTME",                                                                       \
+                               "TOFD_P4T2TFTM",                                                                        \
+                               0 /*flags*/);                                                                           \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TFT, UINT32, "TOFD_P4T2TFT", 960, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, TOFD_P4T2TFTv, UINT32, "TOFD_P4T2TFTv", "TOFD_P4T2TFT", 0 /*flags*/);  \
+                                                                                                                       \
     } while (0);
 #endif /*__GUARD_H101_TOFD_EXT_H101_TOFD_H__*/
 

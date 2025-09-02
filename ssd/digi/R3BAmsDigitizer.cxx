@@ -25,12 +25,7 @@
 #include "TMath.h"
 #include "TVector3.h"
 
-R3BAmsDigitizer::R3BAmsDigitizer()
-    : FairTask("R3BAmsDigitizer", false)
-    , fPointData(NULL)
-    , fCalData(NULL)
-{
-}
+R3BAmsDigitizer::R3BAmsDigitizer() : FairTask("R3BAmsDigitizer", false), fPointData(NULL), fCalData(NULL) {}
 
 R3BAmsDigitizer::~R3BAmsDigitizer()
 {

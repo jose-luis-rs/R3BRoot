@@ -52,10 +52,7 @@ namespace Neuland
          * calling clusterize. This seems better than providing a default function which might produce hard-to-track
          * unwanted results. */
         ClusteringEngine(){};
-        ClusteringEngine(const BinaryPredicate& _f)
-            : f(_f)
-        {
-        }
+        ClusteringEngine(const BinaryPredicate& _f) : f(_f) {}
 
         void SetClusteringCondition(const BinaryPredicate& _f) { f = _f; }
 

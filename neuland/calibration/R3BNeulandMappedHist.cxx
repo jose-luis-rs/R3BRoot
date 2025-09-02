@@ -24,24 +24,14 @@
 #include "TH2F.h"
 
 R3BNeulandMappedHist::R3BNeulandMappedHist()
-    : FairTask("NeulandMappedHist", 1)
-    , fnEvents(0)
-    , fNItemsTotal(0)
-    , fHeader(NULL)
-    , fLandMappedData(NULL)
-    , fNeulandTamexHitMapped(NULL)
-    , fLosMappedData(NULL)
+    : FairTask("NeulandMappedHist", 1), fnEvents(0), fNItemsTotal(0), fHeader(NULL), fLandMappedData(NULL),
+      fNeulandTamexHitMapped(NULL), fLosMappedData(NULL)
 {
 }
 
 R3BNeulandMappedHist::R3BNeulandMappedHist(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fnEvents(0)
-    , fNItemsTotal(0)
-    , fHeader(NULL)
-    , fLandMappedData(NULL)
-    , fNeulandTamexHitMapped(NULL)
-    , fLosMappedData(NULL)
+    : FairTask(name, iVerbose), fnEvents(0), fNItemsTotal(0), fHeader(NULL), fLandMappedData(NULL),
+      fNeulandTamexHitMapped(NULL), fLosMappedData(NULL)
 {
 }
 
@@ -99,13 +89,13 @@ void R3BNeulandMappedHist::Exec(Option_t* option)
 
                 fh_neuland_mapped_cle->Fill(hitmapped->GetCoarseTime(0, 0)); // PM1 LE
                 fh_neuland_mapped_cte->Fill(hitmapped->GetCoarseTime(0, 1)); // PM1 TE
-                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(0, 0));   // PM1 LE
-                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(0, 1));   // PM1 TE
+                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(0, 0)); // PM1 LE
+                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(0, 1)); // PM1 TE
 
                 fh_neuland_mapped_cle->Fill(hitmapped->GetCoarseTime(1, 0)); // PM2 LE
                 fh_neuland_mapped_cte->Fill(hitmapped->GetCoarseTime(1, 1)); // PM2 TE
-                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(1, 0));   // PM2 LE
-                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(1, 1));   // PM2 TE
+                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(1, 0)); // PM2 LE
+                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(1, 1)); // PM2 TE
                 //        cout<<"in ana: "<<hitmapped->GetPlaneId()<<"  "<<hitmapped->GetBarId()<<endl;
             }
         }

@@ -32,13 +32,8 @@ double counter_good = 0;
 
 // R3BRpcMapped2PreCal: Constructor
 R3BRpcMapped2PreCal::R3BRpcMapped2PreCal()
-    : FairTask("R3B RPC Calibrator")
-    , fTCalPar(NULL)
-    , fOnline(kFALSE)
-    , fFpgaCorrelationFile("")
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fMappedDataCA(NULL)
-    , fRpcPreCalDataCA(NULL)
+    : FairTask("R3B RPC Calibrator"), fTCalPar(NULL), fOnline(kFALSE), fFpgaCorrelationFile(""),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fMappedDataCA(NULL), fRpcPreCalDataCA(NULL)
 {
 }
 
@@ -218,7 +213,7 @@ void R3BRpcMapped2PreCal::Exec(Option_t* option)
         // loop over strip data
         if (iDetector == 0)
         {
-            UInt_t iStrip = map1->GetChannelId();                      // now 1..41
+            UInt_t iStrip = map1->GetChannelId(); // now 1..41
             UInt_t iEdge_Side = map1->GetEdge() * 2 + map1->GetSide(); // 0,3
             R3BTCalModulePar* par_Strips = fTCalPar->GetModuleParAt(iDetector + 1, iStrip, iEdge_Side + 1);
 
@@ -253,7 +248,7 @@ void R3BRpcMapped2PreCal::Exec(Option_t* option)
 
         if (iDetector == 1)
         {
-            UInt_t iPmt = map1->GetChannelId();                        // now 1..41
+            UInt_t iPmt = map1->GetChannelId(); // now 1..41
             UInt_t iEdge_Side = map1->GetEdge() * 2 + map1->GetSide(); // 0,3
             R3BTCalModulePar* par_Pmts = fTCalPar->GetModuleParAt(iDetector + 1, iPmt, iEdge_Side + 1);
 

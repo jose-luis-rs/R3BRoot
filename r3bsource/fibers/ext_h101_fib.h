@@ -71,22 +71,22 @@ typedef struct EXT_STR_h101_FIB_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIB_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                   \
-    do                                                                                                    \
-    {                                                                                                     \
-        ok = 1;                                                                                           \
-        /* RAW */                                                                                         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIB_TRIGSLC, UINT32, "FIB_TRIGSLC", 3); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                            \
-            ok, si, offset, struct_t, printerr, FIB_TRIGSLCI, UINT32, "FIB_TRIGSLCI", "FIB_TRIGSLC");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                            \
-            ok, si, offset, struct_t, printerr, FIB_TRIGSLCv, UINT32, "FIB_TRIGSLCv", "FIB_TRIGSLC");     \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIB_TRIGSLF, UINT32, "FIB_TRIGSLF", 3); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                            \
-            ok, si, offset, struct_t, printerr, FIB_TRIGSLFI, UINT32, "FIB_TRIGSLFI", "FIB_TRIGSLF");     \
-        EXT_STR_ITEM_INFO_ZZP(                                                                            \
-            ok, si, offset, struct_t, printerr, FIB_TRIGSLFv, UINT32, "FIB_TRIGSLFv", "FIB_TRIGSLF");     \
-                                                                                                          \
+#define EXT_STR_h101_FIB_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIB_TRIGSLC, UINT32, "FIB_TRIGSLC", 3);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIB_TRIGSLCI, UINT32, "FIB_TRIGSLCI", "FIB_TRIGSLC");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIB_TRIGSLCv, UINT32, "FIB_TRIGSLCv", "FIB_TRIGSLC");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIB_TRIGSLF, UINT32, "FIB_TRIGSLF", 3);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIB_TRIGSLFI, UINT32, "FIB_TRIGSLFI", "FIB_TRIGSLF");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIB_TRIGSLFv, UINT32, "FIB_TRIGSLFv", "FIB_TRIGSLF");                  \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIB_EXT_H101_FIB_H__*/

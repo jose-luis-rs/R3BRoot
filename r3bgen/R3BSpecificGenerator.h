@@ -58,10 +58,10 @@ class R3BSpecificGenerator : public FairGenerator
     R3BCDGenerator* pCDGenerator;
     R3BBackTracking* pBackTrackingGenerator;
 
-    TString gammasFlag;       // flag to select an isotropic gamma emitter
-    TString decaySchemeFlag;  //
-    TString reactionFlag;     // flag to select a reaction
-    TString reactionType;     // reaction type
+    TString gammasFlag; // flag to select an isotropic gamma emitter
+    TString decaySchemeFlag; //
+    TString reactionFlag; // flag to select a reaction
+    TString reactionType; // reaction type
     TString dissociationFlag; // Coulomb dissociation generator flag
     TString backTrackingFlag; // BackTracking generator flag
 
@@ -71,12 +71,12 @@ class R3BSpecificGenerator : public FairGenerator
     Double_t targetRadius;
 
     TString beamInteractionFlag; // flag to select target/beam interaction-like position for gammas origin
-    TString rndmFlag;            // flag for a rndm (angle) primary emission
-    TString rndmEneFlag;         // flag for a rndm energy primary emission
-    TString boostFlag;           // flag for a boosted primary emission
-    Int_t fPDGType;              // Particle type (PDG encoding)
-    Double_t kinEnergyPrim;      // kinetic energy of the primary
-    Double_t meanKinEnergyBeam;  // kinetic energy mean of the beam (per nucleon)
+    TString rndmFlag; // flag for a rndm (angle) primary emission
+    TString rndmEneFlag; // flag for a rndm energy primary emission
+    TString boostFlag; // flag for a boosted primary emission
+    Int_t fPDGType; // Particle type (PDG encoding)
+    Double_t kinEnergyPrim; // kinetic energy of the primary
+    Double_t meanKinEnergyBeam; // kinetic energy mean of the beam (per nucleon)
     Double_t sigmaKinEnergyBeam; // kinetic energy sigma of the beam
 
     TString simEmittanceFlag; // flag to select an emittance spectra for vertex emission in CoulDiss
@@ -85,12 +85,12 @@ class R3BSpecificGenerator : public FairGenerator
 
     Double_t fPDGMass; // Particle Mass from internal PDG table
 
-    Int_t fMult;    // Multiplicity
-    Double_t fP;    // Momentum
+    Int_t fMult; // Multiplicity
+    Double_t fP; // Momentum
     TVector3 fPdir; // Momentum Direction
-    Int_t fCharge;  // Charge
-    TVector3 fPol;  // Polarization
-    TVector3 fPos;  // Vertex position
+    Int_t fCharge; // Charge
+    TVector3 fPol; // Polarization
+    TVector3 fPos; // Vertex position
     Double_t fTime; // Decay Time
     TString particlePrim;
     Bool_t isDumped;

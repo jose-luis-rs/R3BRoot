@@ -47,15 +47,9 @@ namespace
     double c_range_ns = 2048 * 5;
 } // namespace
 
-R3BRoluOnlineSpectra::R3BRoluOnlineSpectra()
-    : R3BRoluOnlineSpectra("RoluOnlineSpectra", 1)
-{
-}
+R3BRoluOnlineSpectra::R3BRoluOnlineSpectra() : R3BRoluOnlineSpectra("RoluOnlineSpectra", 1) {}
 
-R3BRoluOnlineSpectra::R3BRoluOnlineSpectra(const char* name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BRoluOnlineSpectra::R3BRoluOnlineSpectra(const char* name, int iVerbose) : FairTask(name, iVerbose) {}
 
 InitStatus R3BRoluOnlineSpectra::Init()
 {

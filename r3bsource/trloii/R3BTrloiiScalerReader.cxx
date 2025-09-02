@@ -33,12 +33,8 @@ extern "C"
 }
 
 R3BTrloiiScalerReader::R3BTrloiiScalerReader(EXT_STR_h101_TRLO_onion* data, size_t offset)
-    : R3BReader("R3BTrloiiScalerReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BTrloiiData"))
+    : R3BReader("R3BTrloiiScalerReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BTrloiiData"))
 {
 }
 

@@ -33,23 +33,12 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 
 // --- Default Constructor
-R3BSci2Mapped2Tcal::R3BSci2Mapped2Tcal()
-    : R3BSci2Mapped2Tcal("Sci2Map2Tcal", 1)
-{
-}
+R3BSci2Mapped2Tcal::R3BSci2Mapped2Tcal() : R3BSci2Mapped2Tcal("Sci2Map2Tcal", 1) {}
 
 // --- Standard constructor
 R3BSci2Mapped2Tcal::R3BSci2Mapped2Tcal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMapped(NULL)
-    , fTcal(NULL)
-    , fNofTcalPars(0)
-    , fNofModules(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    , fClockFreq(5.)
-    , fNEvent(0)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fMapped(NULL), fTcal(NULL), fNofTcalPars(0), fNofModules(0), fTcalPar(NULL),
+      fTrigger(-1), fClockFreq(5.), fNEvent(0), fOnline(kFALSE)
 {
 }
 
@@ -147,8 +136,8 @@ void R3BSci2Mapped2Tcal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         UInt_t iDet = hit->GetDetector(); // 1..
-        UInt_t iCha = hit->GetChannel();  // 1..
-        UInt_t iType = hit->GetType();    // 0,1,2
+        UInt_t iCha = hit->GetChannel(); // 1..
+        UInt_t iType = hit->GetType(); // 0,1,2
 
         if ((iDet < 1) || (iDet > fNofDetectors))
         {

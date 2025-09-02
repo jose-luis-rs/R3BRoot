@@ -91,18 +91,18 @@ class R3BTwimCalPar : public FairParGenericSet
     }
 
   private:
-    std::vector<TArrayF*> fAnodeECalParams;   // Energy calibration parameters for anodes
+    std::vector<TArrayF*> fAnodeECalParams; // Energy calibration parameters for anodes
     std::vector<TArrayF*> fAnodePosCalParams; // Position calibration parameters for anodes
-    std::vector<TArrayI*> fIn_use;            // 1: anode ready, 0:otherwise
-    Int_t fNumSections;                       // number of sections
-    Int_t fNumAnodes;                         // number of anodes
-    Int_t fNumParamsEFit;                     // number of cal parameters in the fit
-    Int_t fNumParamsPosFit;                   // number of parameters for position calibration
-    Int_t fNumAnodesTRef;                     // number of anodes for TREF
-    Int_t fNumAnodesTrig;                     // number of anodes for Trigger
-    Int_t fMaxMult;                           // Max. multiplicity per anode
-    Int_t fMinDT;                             // Min. drift time accepted
-    Int_t fMaxDT;                             // Max. drift time accepted
+    std::vector<TArrayI*> fIn_use; // 1: anode ready, 0:otherwise
+    Int_t fNumSections; // number of sections
+    Int_t fNumAnodes; // number of anodes
+    Int_t fNumParamsEFit; // number of cal parameters in the fit
+    Int_t fNumParamsPosFit; // number of parameters for position calibration
+    Int_t fNumAnodesTRef; // number of anodes for TREF
+    Int_t fNumAnodesTrig; // number of anodes for Trigger
+    Int_t fMaxMult; // Max. multiplicity per anode
+    Int_t fMinDT; // Min. drift time accepted
+    Int_t fMaxDT; // Max. drift time accepted
 
     const R3BTwimCalPar& operator=(const R3BTwimCalPar&);
     R3BTwimCalPar(const R3BTwimCalPar&);

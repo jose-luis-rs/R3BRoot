@@ -23,9 +23,7 @@ R3BNeulandClusterFinder::R3BNeulandClusterFinder(const Double_t dx,
                                                  const Double_t dt,
                                                  const TString input,
                                                  const TString output)
-    : FairTask("R3BNeulandClusterFinder")
-    , fDigis(input)
-    , fClusters(output)
+    : FairTask("R3BNeulandClusterFinder"), fDigis(input), fClusters(output)
 {
     fClusteringEngine.SetClusteringCondition(
         [=](const R3BNeulandHit& a, const R3BNeulandHit& b)

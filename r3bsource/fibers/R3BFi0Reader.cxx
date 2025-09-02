@@ -21,8 +21,7 @@ extern "C"
 }
 
 R3BFi0Reader::R3BFi0Reader(EXT_STR_h101_FIBZERO* a_data, UInt_t a_offset)
-    : R3BBunchedFiberReader("Fi0", a_offset, 1, 256, 0)
-    , fData(reinterpret_cast<EXT_STR_h101_FIBZERO_onion*>(a_data))
+    : R3BBunchedFiberReader("Fi0", a_offset, 1, 256, 0), fData(reinterpret_cast<EXT_STR_h101_FIBZERO_onion*>(a_data))
 {
 }
 

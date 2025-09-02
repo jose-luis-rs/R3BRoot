@@ -80,9 +80,9 @@ void R3BParticleSelector::AddParticle(int pdgCode)
     if (pdgCode > 1000000000)
     {
         // we will use G4NistManager because it knows more exotic isotopes
-        addParticle(
-            pdgCode,
-            G4NistManager::Instance()->GetIsotopeMass(PDGCode2Charge(pdgCode), PDGCode2Mass(pdgCode)) / CLHEP::GeV);
+        addParticle(pdgCode,
+                    G4NistManager::Instance()->GetIsotopeMass(PDGCode2Charge(pdgCode), PDGCode2Mass(pdgCode)) /
+                        CLHEP::GeV);
         return;
     }
 

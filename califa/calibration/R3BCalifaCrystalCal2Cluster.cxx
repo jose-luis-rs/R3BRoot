@@ -138,10 +138,7 @@ void addCrystal2Cluster(struct califa_candidate* cluster,
         usedCrystals->push_back(crystalCal->GetCrystalId() - totalCrystals);
 }
 
-R3BCalifaCrystalCal2Cluster::R3BCalifaCrystalCal2Cluster()
-    : FairTask("R3BCalifaCrystalCal2Cluster")
-{
-}
+R3BCalifaCrystalCal2Cluster::R3BCalifaCrystalCal2Cluster() : FairTask("R3BCalifaCrystalCal2Cluster") {}
 
 R3BCalifaCrystalCal2Cluster::~R3BCalifaCrystalCal2Cluster()
 {

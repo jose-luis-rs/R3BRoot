@@ -105,8 +105,8 @@ namespace Neuland
         constexpr auto CalibrationLogSize = 16 * 1024;
         constexpr auto LogInitialSize = 128;
 
-        constexpr auto MinEnergyDeposit = 1.;     // MeV
-        constexpr auto MaxTSyncError = 0.05;      // ns
+        constexpr auto MinEnergyDeposit = 1.; // MeV
+        constexpr auto MaxTSyncError = 0.05; // ns
         constexpr auto TimeJumpThreshold = 0.075; // ns
         constexpr auto MaxFastTDiffError = 0.05;
 
@@ -128,18 +128,9 @@ namespace Neuland
                                                                            "TS", "SE", "??", "TJ" };
 
         HitCalibrationBar::HitCalibrationBar(const Int_t id)
-            : ID(id)
-            , Validity(0)
-            , FailCounter(0)
-            , LastEventNumber(0)
-            , TimeDifference(NaN)
-            , EffectiveSpeed(NaN)
-            , Gain({ NaN, NaN })
-            , InvLightAttenuationLength(NaN)
-            , Pedestal({ 0, 0 })
-            , Saturation({ 0., 0. })
-            , TimeSync({ NaN, NaN })
-            , Threshold({ NaN, NaN })
+            : ID(id), Validity(0), FailCounter(0), LastEventNumber(0), TimeDifference(NaN), EffectiveSpeed(NaN),
+              Gain({ NaN, NaN }), InvLightAttenuationLength(NaN), Pedestal({ 0, 0 }), Saturation({ 0., 0. }),
+              TimeSync({ NaN, NaN }), Threshold({ NaN, NaN })
         {
 
             Reset();

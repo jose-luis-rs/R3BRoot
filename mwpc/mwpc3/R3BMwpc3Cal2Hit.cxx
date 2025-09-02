@@ -40,24 +40,14 @@ bool compare(pair<int, int> p1, pair<int, int> p2) { return p1.second < p2.secon
 
 /* ---- R3BMwpc3Cal2Hit: Default Constructor ---- */
 
-R3BMwpc3Cal2Hit::R3BMwpc3Cal2Hit()
-    : R3BMwpc3Cal2Hit("R3BMwpc3Cal2Hit", 1)
-{
-}
+R3BMwpc3Cal2Hit::R3BMwpc3Cal2Hit() : R3BMwpc3Cal2Hit("R3BMwpc3Cal2Hit", 1) {}
 
 /* ---- R3BMwpc3Cal2Hit: Standard Constructor ---- */
 R3BMwpc3Cal2Hit::R3BMwpc3Cal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMwpcCalDataCA(NULL)
-    , fMwpcHitDataCA(NULL)
-    , fTofWallHitDataCA(NULL)
-    , fwy(5.000)
-    , fwx(3.125)
-    , fSizeX(900.0)
-    , fSizeY(600.0) // in mm
-    , fOnline(kFALSE)
-    , fTofWallMatching(kFALSE)
-    , fExpId(0)
+    : FairTask(name, iVerbose), fMwpcCalDataCA(NULL), fMwpcHitDataCA(NULL), fTofWallHitDataCA(NULL), fwy(5.000),
+      fwx(3.125), fSizeX(900.0), fSizeY(600.0) // in mm
+      ,
+      fOnline(kFALSE), fTofWallMatching(kFALSE), fExpId(0)
 {
 }
 

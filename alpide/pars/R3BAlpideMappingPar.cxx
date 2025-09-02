@@ -24,11 +24,8 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BAlpideMappingPar::R3BAlpideMappingPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNbSensors(363)
-    , fGeoVersion(2024)
-    , fAlpideCols(DAlpideCols)
-    , fAlpideRows(DAlpideRows)
+    : FairParGenericSet(name, title, context), fNbSensors(363), fGeoVersion(2024), fAlpideCols(DAlpideCols),
+      fAlpideRows(DAlpideRows)
 {
     for (Int_t c = 0; c < fAlpideCols; c++)
         for (Int_t r = 0; r < fAlpideRows; r++)

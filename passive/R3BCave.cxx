@@ -28,21 +28,16 @@
 #include "R3BGeoCave.h"
 #include "R3BGeoPassivePar.h"
 
-R3BCave::R3BCave()
-    : FairModule()
-{
-}
+R3BCave::R3BCave() : FairModule() {}
 
-R3BCave::R3BCave(const char* name, const char* Title)
-    : FairModule(name, Title)
+R3BCave::R3BCave(const char* name, const char* Title) : FairModule(name, Title)
 {
     world[0] = 0;
     world[1] = 0;
     world[2] = 0;
 }
 
-R3BCave::R3BCave(const R3BCave& right)
-    : FairModule(right)
+R3BCave::R3BCave(const R3BCave& right) : FairModule(right)
 {
     world[0] = right.world[0];
     world[1] = right.world[1];

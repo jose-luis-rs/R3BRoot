@@ -28,34 +28,16 @@
 #include "TMath.h"
 
 R3BNeulandMapped2Cal::R3BNeulandMapped2Cal()
-    : FairTask("NeulandMapped2Cal", 1)
-    , fNEvents(0)
-    , fPulserMode(kFALSE)
-    , fWalkEnabled(kTRUE)
-    , fMapped(NULL)
-    , fMappedTrigger(NULL)
-    , fMapPar(NULL)
-    , fCal(new TClonesArray("R3BNeulandCalData"))
-    , fNPmt(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask("NeulandMapped2Cal", 1), fNEvents(0), fPulserMode(kFALSE), fWalkEnabled(kTRUE), fMapped(NULL),
+      fMappedTrigger(NULL), fMapPar(NULL), fCal(new TClonesArray("R3BNeulandCalData")), fNPmt(0), fTcalPar(NULL),
+      fTrigger(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 
 R3BNeulandMapped2Cal::R3BNeulandMapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNEvents(0)
-    , fPulserMode(kFALSE)
-    , fWalkEnabled(kTRUE)
-    , fMapped(NULL)
-    , fMappedTrigger(NULL)
-    , fMapPar(NULL)
-    , fCal(new TClonesArray("R3BNeulandCalData"))
-    , fNPmt(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask(name, iVerbose), fNEvents(0), fPulserMode(kFALSE), fWalkEnabled(kTRUE), fMapped(NULL),
+      fMappedTrigger(NULL), fMapPar(NULL), fCal(new TClonesArray("R3BNeulandCalData")), fNPmt(0), fTcalPar(NULL),
+      fTrigger(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 

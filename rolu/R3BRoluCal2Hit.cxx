@@ -57,14 +57,10 @@ namespace
 } // namespace
 #define IS_NAN(x) TMath::IsNaN(x)
 
-R3BRoluCal2Hit::R3BRoluCal2Hit()
-    : R3BRoluCal2Hit("RoluCal2Hit", 1)
-{
-}
+R3BRoluCal2Hit::R3BRoluCal2Hit() : R3BRoluCal2Hit("RoluCal2Hit", 1) {}
 
 R3BRoluCal2Hit::R3BRoluCal2Hit(const char* name, int iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitItems(new TClonesArray("R3BRoluHitData"))
+    : FairTask(name, iVerbose), fHitItems(new TClonesArray("R3BRoluHitData"))
 {
 }
 
@@ -128,7 +124,7 @@ void R3BRoluCal2Hit::Exec(Option_t* option)
     // min,max,Nbins for ToT spectra
     double fhQmin = 0.;
     double fhQmax = 200; // 300.; //150
-    int fhQbin = 4000;   // 0; //3000; //1500
+    int fhQbin = 4000; // 0; //3000; //1500
     for (int iDet = 0; iDet < fNofDetectors; iDet++)
     {
         if (NULL == fhQ_R[iDet])

@@ -31,10 +31,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BTwimHitPar::R3BTwimHitPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumParamsZFit(4)
-    , fNumAnodes(16)
-    , fNumSec(4)
+    : FairParGenericSet(name, title, context), fNumParamsZFit(4), fNumAnodes(16), fNumSec(4)
 {
     fDetZHitParams = new TArrayF(fNumSec * fNumParamsZFit); // 2 Parameters for Z (Linear fits)
     fIn_use = new TArrayI(fNumAnodes * fNumSec);

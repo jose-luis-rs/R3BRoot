@@ -14,15 +14,9 @@
 #include "R3BPipe.h"
 #include "TGeoManager.h"
 
-R3BPipe::R3BPipe()
-    : R3BModule()
-{
-}
+R3BPipe::R3BPipe() : R3BModule() {}
 
-R3BPipe::R3BPipe(const TString& name)
-    : R3BModule(name, "R3BPipe", kFALSE)
-{
-}
+R3BPipe::R3BPipe(const TString& name) : R3BModule(name, "R3BPipe", kFALSE) {}
 
 R3BPipe::R3BPipe(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BPipe(geoFile, { trans, rot })

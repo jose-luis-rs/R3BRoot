@@ -110,14 +110,14 @@ class R3BTofiMapped2CalPar : public FairTask
 
   private:
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats;   /**< Minimum statistics required per module. */
+    Int_t fMinStats; /**< Minimum statistics required per module. */
 
-    UInt_t fNofPlanes;       /**< Number of planes. */
+    UInt_t fNofPlanes; /**< Number of planes. */
     UInt_t fPaddlesPerPlane; /**< Number of bars per plane. */
-    UInt_t fNofModules;      /**< Total number of modules (=edges) to calibrate */
+    UInt_t fNofModules; /**< Total number of modules (=edges) to calibrate */
 
-    R3BTCalPar* fCalPar;          /**< Parameter container. */
-    TClonesArray* fMapped;        /**< Array with mapped data - input data. */
+    R3BTCalPar* fCalPar; /**< Parameter container. */
+    TClonesArray* fMapped; /**< Array with mapped data - input data. */
     TClonesArray* fMappedTrigger; /**< Array with mapped trigger data - input data. */
 
     R3BTCalEngine* fEngine; /**< Instance of the TCAL engine. */

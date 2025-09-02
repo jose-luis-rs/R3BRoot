@@ -20,8 +20,7 @@
 #include "FairLogger.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BTwimPoint::R3BTwimPoint()
-    : FairMCPoint()
+R3BTwimPoint::R3BTwimPoint() : FairMCPoint()
 {
     fX_out = fY_out = fZ_out = 0.;
     fPx_out = fPy_out = fPz_out = 0.;

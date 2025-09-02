@@ -30,11 +30,8 @@ static Double_t gEmptyBinSupressor(const Double_t* x, const Double_t*)
 }
 
 R3BNeulandVisualizer::R3BNeulandVisualizer(const TString& inputFileName, const TString& what)
-    : fFile(std::make_shared<TFile>(inputFileName, "read"))
-    , fTree(dynamic_cast<TTree*>(fFile->Get("evt")))
-    , fh3(nullptr)
-    , fCanvas(nullptr)
-    , fIndex(0)
+    : fFile(std::make_shared<TFile>(inputFileName, "read")), fTree(dynamic_cast<TTree*>(fFile->Get("evt"))),
+      fh3(nullptr), fCanvas(nullptr), fIndex(0)
 {
     fTree->SetBranchAddress(what, &fh3);
 

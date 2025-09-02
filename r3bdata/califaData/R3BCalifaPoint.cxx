@@ -22,16 +22,12 @@ R3BCalifaPoint::R3BCalifaPoint(int trackID,
                                double tof,
                                double length,
                                double eLoss)
-    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss)
-    , fCrystalId(ident)
-    , fTrackPID(trackPID)
+    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss), fCrystalId(ident), fTrackPID(trackPID)
 {
 }
 
 R3BCalifaPoint::R3BCalifaPoint(const R3BCalifaPoint& right)
-    : FairMCPoint(right)
-    , fCrystalId(right.fCrystalId)
-    , fTrackPID(right.fTrackPID)
+    : FairMCPoint(right), fCrystalId(right.fCrystalId), fTrackPID(right.fTrackPID)
 {
 }
 

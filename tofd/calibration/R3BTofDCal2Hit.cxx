@@ -53,52 +53,16 @@ namespace
     uint64_t n1, n2;
 } // namespace
 
-R3BTofDCal2Hit::R3BTofDCal2Hit()
-    : R3BTofDCal2Hit("TofdCal2Hit", 1)
-{
-}
+R3BTofDCal2Hit::R3BTofDCal2Hit() : R3BTofDCal2Hit("TofdCal2Hit", 1) {}
 
 R3BTofDCal2Hit::R3BTofDCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems(nullptr)
-    , fCalTriggerItems(nullptr)
-    , fHitItems(new TClonesArray("R3BTofdHitData"))
-    , fNofHitPars(0)
-    , fHitPar(nullptr)
-    , fMapPar(nullptr)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(44)
-    , fTofdQ(0)
-    , fTofdHisto(false)
-    , fTofdHistoCal(false)
-    , fTofdTotPos(false)
-    , fnEvents(0)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , maxevent(0)
-    , wrongtrigger(0)
-    , wrongtpat(0)
-    , notpat(0)
-    , headertpat(0)
-    , events_in_cal_level(0)
-    , inbarcoincidence(0)
-    , eventstore(0)
-    , singlehit(0)
-    , multihit(0)
-    , bars_with_multihit(0)
-    , events_wo_tofd_hits(0)
-    , lasttpatevent(0)
-    , goodpair(0)
-    , goodpair4(0)
-    , goodpair3(0)
-    , goodpair1(0)
-    , goodpair2(0)
-    , goodpair5(0)
-    , goodpair6(0)
-    , goodpair7(0)
-    , isASYEOS(kFALSE)
+    : FairTask(name, iVerbose), fCalItems(nullptr), fCalTriggerItems(nullptr),
+      fHitItems(new TClonesArray("R3BTofdHitData")), fNofHitPars(0), fHitPar(nullptr), fMapPar(nullptr), fTrigger(-1),
+      fTpat1(-1), fTpat2(-1), fNofPlanes(5), fPaddlesPerPlane(44), fTofdQ(0), fTofdHisto(false), fTofdHistoCal(false),
+      fTofdTotPos(false), fnEvents(0), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), maxevent(0), wrongtrigger(0),
+      wrongtpat(0), notpat(0), headertpat(0), events_in_cal_level(0), inbarcoincidence(0), eventstore(0), singlehit(0),
+      multihit(0), bars_with_multihit(0), events_wo_tofd_hits(0), lasttpatevent(0), goodpair(0), goodpair4(0),
+      goodpair3(0), goodpair1(0), goodpair2(0), goodpair5(0), goodpair6(0), goodpair7(0), isASYEOS(kFALSE)
 {
     fhNoTpat = nullptr;
     fhWalk = nullptr;
@@ -536,7 +500,7 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
                 inbarcoincidence++;
                 // Hit!
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
+                Int_t iBar = top->GetBarId(); // 1..n
 
                 if (iBar > 44)
                     continue;
@@ -900,9 +864,9 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
     { // loop over all hits in this event
         LOG(debug) << "Set new coincidence window: " << event[ihit].plane << " " << event[ihit].bar << " "
                    << event[ihit].time << " " << event[ihit].charge;
-        time0 = event[ihit].time;              // time of first hit in coincidence window
+        time0 = event[ihit].time; // time of first hit in coincidence window
         Double_t charge0 = event[ihit].charge; // charge of first hit in coincidence window
-        Int_t plane0 = event[ihit].plane;      // plane of first hit in coincidence window
+        Int_t plane0 = event[ihit].plane; // plane of first hit in coincidence window
         std::vector<Double_t> goodcharge;
         std::vector<Double_t> goodplane;
         std::vector<Double_t> goodbar;
@@ -1036,10 +1000,10 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
     {
         size_t ihit = 0;
         for (; ihit < event.size();)
-        {                                                                          // loop over all hits
+        { // loop over all hits
             fhQ[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].charge); // charge per plane
             fhQvsEvent[event[ihit].plane - 1]->Fill(fnEvents, event[ihit].charge); // charge vs event #
-            fhxy[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].ypos);  // xy of plane
+            fhxy[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].ypos); // xy of plane
             ihit++;
         }
     }

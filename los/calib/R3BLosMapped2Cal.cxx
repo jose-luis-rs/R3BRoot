@@ -48,27 +48,18 @@
 #define LOS_COINC_WINDOW_V_NS 200;
 #define LOS_COINC_WINDOW_TL_NS 200; // leading
 #define LOS_COINC_WINDOW_TT_NS 400; // trailing, longer because of pileup
-#define LOS_COINC_WINDOW_M_NS 400;  // 200  // ???
+#define LOS_COINC_WINDOW_M_NS 400; // 200  // ???
 #define IS_NAN(x) TMath::IsNaN(x)
 
-R3BLosMapped2Cal::R3BLosMapped2Cal()
-    : R3BLosMapped2Cal("R3BLosMapped2Cal", 1)
-{
-}
+R3BLosMapped2Cal::R3BLosMapped2Cal() : R3BLosMapped2Cal("R3BLosMapped2Cal", 1) {}
 
 R3BLosMapped2Cal::R3BLosMapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItems(NULL)
-    , fMappedTriggerItems(NULL)
-    , fCalItems(new TClonesArray("R3BLosCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BLosCalData"))
-    , fNofCalItems(0)
-    , fNofTcalPars(0)
-    , fTcalPar(NULL)
-    , fTrigger(-1) // trigger 1 - onspill, 2 - offspill, -1 - all events
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvent(0)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fMappedItems(NULL), fMappedTriggerItems(NULL),
+      fCalItems(new TClonesArray("R3BLosCalData")), fCalTriggerItems(new TClonesArray("R3BLosCalData")),
+      fNofCalItems(0), fNofTcalPars(0), fTcalPar(NULL),
+      fTrigger(-1) // trigger 1 - onspill, 2 - offspill, -1 - all events
+      ,
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fNEvent(0), fOnline(kFALSE)
 {
 }
 
@@ -165,8 +156,8 @@ void R3BLosMapped2Cal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         UInt_t iDet = hit->GetDetector(); // 1..
-        UInt_t iCha = hit->GetChannel();  // 1..
-        UInt_t iType = hit->GetType();    // 0,1,2,3
+        UInt_t iCha = hit->GetChannel(); // 1..
+        UInt_t iType = hit->GetType(); // 0,1,2,3
 
         //   cout<<"Mapped info: "<<ihit<<"; "<<iDet<<", "<<iCha<<"; "<<iType<<", timeFine "<<hit->GetTimeFine()<<endl;
 

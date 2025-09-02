@@ -33,11 +33,8 @@ extern "C"
 
 auto constexpr NUM_PSPX = LENGTH((EXT_STR_h101_PSP_onion::PSPX));
 R3BPspxReader::R3BPspxReader(EXT_STR_h101_PSP* data, size_t offset)
-    : R3BReader("R3BPspxReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fMappedItems(2 * NUM_PSPX) // number of faces of detectors
+    : R3BReader("R3BPspxReader"), fData(data), fOffset(offset), fOnline(kFALSE),
+      fMappedItems(2 * NUM_PSPX) // number of faces of detectors
 {
     for (Int_t d = 0; d < 2 * NUM_PSPX; d++)
     {

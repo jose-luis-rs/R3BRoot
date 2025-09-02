@@ -118,7 +118,7 @@ class R3BTGeoPar : public FairParGenericSet
 
   private:
     const R3BTGeoPar& operator=(const R3BTGeoPar&); /**< an assignment operator */
-    R3BTGeoPar(const R3BTGeoPar&);                  /**< a copy constructor */
+    R3BTGeoPar(const R3BTGeoPar&); /**< a copy constructor */
 
     Double_t fPosX;
     Double_t fPosY;

@@ -1,15 +1,9 @@
 #include "R3BNeulandMultiplicity.h"
 #include <algorithm>
 
-R3BNeulandMultiplicity::R3BNeulandMultiplicity()
-    : m({})
-{
-}
+R3BNeulandMultiplicity::R3BNeulandMultiplicity() : m({}) {}
 
-R3BNeulandMultiplicity::R3BNeulandMultiplicity(MultiplicityProbabilities mult)
-    : m(mult)
-{
-}
+R3BNeulandMultiplicity::R3BNeulandMultiplicity(MultiplicityProbabilities mult) : m(mult) {}
 
 std::ostream& operator<<(std::ostream& os, const R3BNeulandMultiplicity& mult)
 {

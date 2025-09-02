@@ -31,15 +31,9 @@
 #include <array>
 
 R3BNeulandCal2Hit::R3BNeulandCal2Hit(const char* name, const Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fEventHeader(nullptr)
-    , fCalData("NeulandCalData")
-    , fHits("NeulandHits")
-    , fFirstPlaneHorizontal(true)
-    , fDistanceToTarget(Neuland::NaN)
-    , fGlobalTimeOffset(Neuland::NaN)
-    , fEnergyCutoff(Neuland::NaN)
-    , fWalkEnabled(kFALSE)
+    : FairTask(name, iVerbose), fEventHeader(nullptr), fCalData("NeulandCalData"), fHits("NeulandHits"),
+      fFirstPlaneHorizontal(true), fDistanceToTarget(Neuland::NaN), fGlobalTimeOffset(Neuland::NaN),
+      fEnergyCutoff(Neuland::NaN), fWalkEnabled(kFALSE)
 {
 }
 

@@ -113,10 +113,8 @@ int ComputeRiseTime(const std::vector<double>& signal, double maxValue)
 }
 
 R3BActafReader::R3BActafReader(EXT_STR_h101_ACTAF_onion* data, size_t offset)
-    : R3BReader("R3BActafReader")
-    , fData(data)
-    , fOffset(offset)
-    , fArray(std::make_unique<TClonesArray>("R3BActafMappedData"))
+    : R3BReader("R3BActafReader"), fData(data), fOffset(offset),
+      fArray(std::make_unique<TClonesArray>("R3BActafMappedData"))
 {
 }
 

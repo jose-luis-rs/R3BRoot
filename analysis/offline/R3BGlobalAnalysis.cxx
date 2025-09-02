@@ -70,19 +70,11 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-R3BGlobalAnalysis::R3BGlobalAnalysis()
-    : R3BGlobalAnalysis("GlobalAnalysis", 1)
-{
-}
+R3BGlobalAnalysis::R3BGlobalAnalysis() : R3BGlobalAnalysis("GlobalAnalysis", 1) {}
 
 R3BGlobalAnalysis::R3BGlobalAnalysis(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fNofPlanes(N_PLANE_MAX_TOFD)
-    , fPaddlesPerPlane(N_PADDLE_MAX_TOFD)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvents(0)
-    , fFibEvents(0)
+    : FairTask(name, iVerbose), fTrigger(-1), fNofPlanes(N_PLANE_MAX_TOFD), fPaddlesPerPlane(N_PADDLE_MAX_TOFD),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fNEvents(0), fFibEvents(0)
 {
 }
 
@@ -657,7 +649,7 @@ void R3BGlobalAnalysis::Exec(Option_t* option)
                 if (hit->IsMAPMT() && hit->IsLeading())
                 {
                     fh_channels_Fib[ifibcount]->Fill(iCha); // Fill which clockTDC channel has events
-                    ++mapmt_num.at(hit->GetChannel() - 1);  // multihit of a given clockTDC channel
+                    ++mapmt_num.at(hit->GetChannel() - 1); // multihit of a given clockTDC channel
                 }
 
                 if (!hit->IsMAPMT() && hit->IsLeading())
@@ -723,7 +715,7 @@ void R3BGlobalAnalysis::Exec(Option_t* option)
                     continue;
 
                 iFib = hit->GetFiberId(); // 1..
-                ++fiber_num.at(iFib);     // multihit of a given fiber
+                ++fiber_num.at(iFib); // multihit of a given fiber
                 auto m_fib = fiber_num.at(iFib);
 
                 // times

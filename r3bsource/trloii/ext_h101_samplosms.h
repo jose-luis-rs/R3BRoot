@@ -58,18 +58,18 @@ typedef struct EXT_STR_h101_SAMPLOSMS_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_SAMPLOSMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                               \
-    do                                                                                                      \
-    {                                                                                                       \
-        ok = 1;                                                                                             \
-        /* RAW */                                                                                           \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SAMPMSH, UINT32, "SAMPMSH", 512);         \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSHI, UINT32, "SAMPMSHI", "SAMPMSH"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSHv, UINT32, "SAMPMSHv", "SAMPMSH"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SAMPMSL, UINT32, "SAMPMSL", 512);         \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSLI, UINT32, "SAMPMSLI", "SAMPMSL"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSLv, UINT32, "SAMPMSLv", "SAMPMSL"); \
-                                                                                                            \
+#define EXT_STR_h101_SAMPLOSMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SAMPMSH, UINT32, "SAMPMSH", 512);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSHI, UINT32, "SAMPMSHI", "SAMPMSH");            \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSHv, UINT32, "SAMPMSHv", "SAMPMSH");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SAMPMSL, UINT32, "SAMPMSL", 512);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSLI, UINT32, "SAMPMSLI", "SAMPMSL");            \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SAMPMSLv, UINT32, "SAMPMSLv", "SAMPMSL");            \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_SAMPLOSMS_EXT_H101_SAMPLOSMS_H__*/

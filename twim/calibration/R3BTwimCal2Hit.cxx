@@ -48,30 +48,13 @@
 #endif
 
 // R3BTwimCal2Hit: Default Constructor --------------------------
-R3BTwimCal2Hit::R3BTwimCal2Hit()
-    : R3BTwimCal2Hit("R3BTwimCal2Hit", 1)
-{
-}
+R3BTwimCal2Hit::R3BTwimCal2Hit() : R3BTwimCal2Hit("R3BTwimCal2Hit", 1) {}
 
 // R3BTwimCal2HitPar: Standard Constructor --------------------------
 R3BTwimCal2Hit::R3BTwimCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumSec(4)
-    , fNumAnodes(16)
-    , fNumAnodesAngleFit(0)
-    , fNumParamsTof(3)
-    , fNumParams(5)
-    , fMaxEnergyperanode(65535)
-    , CalZParams(NULL)
-    , CalZTofParams(NULL)
-    , fCal_Par(NULL)
-    , fTwimHitDataCA(NULL)
-    , fTwimCalDataCA(NULL)
-    , fHitItemsTofW(NULL)
-    , fOnline(kFALSE)
-    , fExpId(0)
-    , fTpat(-1)
-    , fDebug(false)
+    : FairTask(name, iVerbose), fNumSec(4), fNumAnodes(16), fNumAnodesAngleFit(0), fNumParamsTof(3), fNumParams(5),
+      fMaxEnergyperanode(65535), CalZParams(NULL), CalZTofParams(NULL), fCal_Par(NULL), fTwimHitDataCA(NULL),
+      fTwimCalDataCA(NULL), fHitItemsTofW(NULL), fOnline(kFALSE), fExpId(0), fTpat(-1), fDebug(false)
 {
 }
 
@@ -107,8 +90,8 @@ void R3BTwimCal2Hit::SetParContainers()
 void R3BTwimCal2Hit::SetParameter()
 {
     //--- Parameter Container ---
-    fNumSec = fCal_Par->GetNumSec();        // Number of Sections
-    fNumAnodes = fCal_Par->GetNumAnodes();  // Number of anodes
+    fNumSec = fCal_Par->GetNumSec(); // Number of Sections
+    fNumAnodes = fCal_Par->GetNumAnodes(); // Number of anodes
     fNumParams = fCal_Par->GetNumParZFit(); // Number of Parameters
 
     R3BLOG(info, "Nb sections: " << fNumSec);
@@ -526,7 +509,7 @@ void R3BTwimCal2Hit::S4551()
                         AddHitData(i + 1, theta, zhit, dt_ref, offset, Esum_mean);
                 }
             } // loop nba>8
-        }     // loop NumSec
+        } // loop NumSec
         if (CalDat)
             delete[] CalDat;
         if (HitTofW)

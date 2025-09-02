@@ -24,23 +24,13 @@
 
 // --- Default Constructor
 R3BFrsSciMapped2Tcal::R3BFrsSciMapped2Tcal()
-    : FairTask("R3BFrsSciMapped2Tcal", 1)
-    , fNevent(0)
-    , fMapped(NULL)
-    , fTcalPar(NULL)
-    , fTcal(NULL)
-    , fOnline(kFALSE)
+    : FairTask("R3BFrsSciMapped2Tcal", 1), fNevent(0), fMapped(NULL), fTcalPar(NULL), fTcal(NULL), fOnline(kFALSE)
 {
 }
 
 // --- Standard Constructor
 R3BFrsSciMapped2Tcal::R3BFrsSciMapped2Tcal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNevent(0)
-    , fMapped(NULL)
-    , fTcalPar(NULL)
-    , fTcal(NULL)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fNevent(0), fMapped(NULL), fTcalPar(NULL), fTcal(NULL), fOnline(kFALSE)
 {
 }
 

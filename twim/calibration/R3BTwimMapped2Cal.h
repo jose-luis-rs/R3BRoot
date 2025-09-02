@@ -138,9 +138,9 @@ class R3BTwimMapped2Cal : public FairTask
 
     Bool_t fOnline;
 
-    R3BTwimCalPar* fCal_Par;         /**< Parameter container. >*/
+    R3BTwimCalPar* fCal_Par; /**< Parameter container. >*/
     TClonesArray* fTwimMappedDataCA; /**< Array with Mapped-input data. >*/
-    TClonesArray* fTwimCalDataCA;    /**< Array with Cal-output data. >*/
+    TClonesArray* fTwimCalDataCA; /**< Array with Cal-output data. >*/
 
     /** Private method AddCalData **/
     R3BTwimCalData* AddCalData(Int_t secID, Int_t anodeID, Double_t dtime, Double_t energy);

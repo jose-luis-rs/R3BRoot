@@ -23,8 +23,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BCalifaMappingPar::R3BCalifaMappingPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumCrystals(5088)
+    : FairParGenericSet(name, title, context), fNumCrystals(5088)
 {
     fHalf = new TArrayI(fNumCrystals);
     fRing = new TArrayI(fNumCrystals);

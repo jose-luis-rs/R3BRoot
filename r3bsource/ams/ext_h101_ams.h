@@ -83,30 +83,30 @@ typedef struct EXT_STR_h101_AMS_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_AMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                            \
-    do                                                                                             \
-    {                                                                                              \
-        ok = 1;                                                                                    \
-        /* RAW */                                                                                  \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST1, UINT32, "SST1", 1024);     \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST1I, UINT32, "SST1I", "SST1"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST1E, UINT32, "SST1E", "SST1"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST2, UINT32, "SST2", 1024);     \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST2I, UINT32, "SST2I", "SST2"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST2E, UINT32, "SST2E", "SST2"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST3, UINT32, "SST3", 1024);     \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST3I, UINT32, "SST3I", "SST3"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST3E, UINT32, "SST3E", "SST3"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST4, UINT32, "SST4", 1024);     \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST4I, UINT32, "SST4I", "SST4"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST4E, UINT32, "SST4E", "SST4"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST5, UINT32, "SST5", 1024);     \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST5I, UINT32, "SST5I", "SST5"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST5E, UINT32, "SST5E", "SST5"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST6, UINT32, "SST6", 1024);     \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST6I, UINT32, "SST6I", "SST6"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST6E, UINT32, "SST6E", "SST6"); \
-                                                                                                   \
+#define EXT_STR_h101_AMS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST1, UINT32, "SST1", 1024);                         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST1I, UINT32, "SST1I", "SST1");                     \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST1E, UINT32, "SST1E", "SST1");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST2, UINT32, "SST2", 1024);                         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST2I, UINT32, "SST2I", "SST2");                     \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST2E, UINT32, "SST2E", "SST2");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST3, UINT32, "SST3", 1024);                         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST3I, UINT32, "SST3I", "SST3");                     \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST3E, UINT32, "SST3E", "SST3");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST4, UINT32, "SST4", 1024);                         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST4I, UINT32, "SST4I", "SST4");                     \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST4E, UINT32, "SST4E", "SST4");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST5, UINT32, "SST5", 1024);                         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST5I, UINT32, "SST5I", "SST5");                     \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST5E, UINT32, "SST5E", "SST5");                     \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SST6, UINT32, "SST6", 1024);                         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST6I, UINT32, "SST6I", "SST6");                     \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, SST6E, UINT32, "SST6E", "SST6");                     \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_AMS_EXT_H101_AMS_H__*/

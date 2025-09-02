@@ -41,42 +41,18 @@
 using namespace std;
 
 R3BCalifaDemoOnlineSpectra::R3BCalifaDemoOnlineSpectra()
-    : FairTask("CALIFAOnlineSpectra", 1)
-    , fMappedItemsCalifa(NULL)
-    , fCalItemsCalifa(NULL)
-    , fHitItemsCalifa(NULL)
-    , fWRItemsCalifa(NULL)
-    , fWRItemsMaster(NULL)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fCalifaNumPetals(1)
-    , fNumCrystalPetal(64)
-    , fMapHistos_bins(3000)
-    , fMapHistos_max(3000)
-    , fRaw2Cal(kFALSE)
-    , fLogScale(kTRUE)
-    , fFebex2Preamp(kTRUE)
-    , fCalON(kTRUE)
+    : FairTask("CALIFAOnlineSpectra", 1), fMappedItemsCalifa(NULL), fCalItemsCalifa(NULL), fHitItemsCalifa(NULL),
+      fWRItemsCalifa(NULL), fWRItemsMaster(NULL), fTrigger(-1), fNEvents(0), fCalifaNumPetals(1), fNumCrystalPetal(64),
+      fMapHistos_bins(3000), fMapHistos_max(3000), fRaw2Cal(kFALSE), fLogScale(kTRUE), fFebex2Preamp(kTRUE),
+      fCalON(kTRUE)
 {
 }
 
 R3BCalifaDemoOnlineSpectra::R3BCalifaDemoOnlineSpectra(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItemsCalifa(NULL)
-    , fCalItemsCalifa(NULL)
-    , fHitItemsCalifa(NULL)
-    , fWRItemsCalifa(NULL)
-    , fWRItemsMaster(NULL)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fCalifaNumPetals(1)
-    , fNumCrystalPetal(64)
-    , fMapHistos_bins(3000)
-    , fMapHistos_max(3000)
-    , fRaw2Cal(kFALSE)
-    , fLogScale(kTRUE)
-    , fFebex2Preamp(kTRUE)
-    , fCalON(kTRUE)
+    : FairTask(name, iVerbose), fMappedItemsCalifa(NULL), fCalItemsCalifa(NULL), fHitItemsCalifa(NULL),
+      fWRItemsCalifa(NULL), fWRItemsMaster(NULL), fTrigger(-1), fNEvents(0), fCalifaNumPetals(1), fNumCrystalPetal(64),
+      fMapHistos_bins(3000), fMapHistos_max(3000), fRaw2Cal(kFALSE), fLogScale(kTRUE), fFebex2Preamp(kTRUE),
+      fCalON(kTRUE)
 {
 }
 
@@ -1116,7 +1092,7 @@ void R3BCalifaDemoOnlineSpectra::Exec(Option_t* option)
                 continue;
 
             Int_t cryId = Map_For_s444(hit->GetCrystalId());
-            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal;        // from 0 to 6 (s444)
+            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal; // from 0 to 6 (s444)
             Int_t cryId_petal = cryId - fNumCrystalPetal * (petal); // from 0 to 63
 
             counter[petal]++;
@@ -1156,7 +1132,7 @@ void R3BCalifaDemoOnlineSpectra::Exec(Option_t* option)
                 continue;
 
             Int_t cryId = Map_For_s444(hit->GetCrystalId());
-            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal;        // from 0 to 7
+            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal; // from 0 to 7
             Int_t cryId_petal = cryId - fNumCrystalPetal * (petal); // from 0 to 63
 
             fh_Califa_cryId_energy_cal->Fill(cryId + 1, hit->GetEnergy());

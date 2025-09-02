@@ -45,22 +45,12 @@
 #include "R3BTwimvsFootOnlineSpectra.h"
 
 // R3BTwimvsFootOnlineSpectra::Default Constructor --------------------------
-R3BTwimvsFootOnlineSpectra::R3BTwimvsFootOnlineSpectra()
-    : R3BTwimvsFootOnlineSpectra("TwimvsFootOnlineSpectra", 1)
-{
-}
+R3BTwimvsFootOnlineSpectra::R3BTwimvsFootOnlineSpectra() : R3BTwimvsFootOnlineSpectra("TwimvsFootOnlineSpectra", 1) {}
 
 // R3BTwimvsFootOnlineSpectra::Standard Constructor --------------------------
 R3BTwimvsFootOnlineSpectra::R3BTwimvsFootOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitItemsFoot(NULL)
-    , fHitItemsTwim(NULL)
-    , fEventHeader(NULL)
-    , fNbFootDet(2)
-    , fNEvents(0)
-    , fMusli(kFALSE)
-    , fFootDetId1(1)
-    , fFootDetId2(2)
+    : FairTask(name, iVerbose), fHitItemsFoot(NULL), fHitItemsTwim(NULL), fEventHeader(NULL), fNbFootDet(2),
+      fNEvents(0), fMusli(kFALSE), fFootDetId1(1), fFootDetId2(2)
 {
 }
 

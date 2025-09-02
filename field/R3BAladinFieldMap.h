@@ -199,30 +199,30 @@ class R3BAladinFieldMap : public FairField
     /** Variables for temporary storage
      ** Used in the very frequently called method GetFieldValue  **/
     Double_t fHa[2][2][2]; //! Field at corners of a grid cell
-    Double_t fHb[2][2];    //! Interpolated field (2-dim)
-    Double_t fHc[2];       //! Interpolated field (1-dim)
+    Double_t fHb[2][2]; //! Interpolated field (2-dim)
+    Double_t fHc[2]; //! Interpolated field (1-dim)
 
     /** local transformation
      **/
-    TRotation* gRot;  //!
+    TRotation* gRot; //!
     TVector3* gTrans; //!
 
     /** land02 imported variables
      **/
 
     static map_fields_ALADiN gMapIFieldOrig; //!
-    static map_fields_ALADiN gMapIField;     //!
+    static map_fields_ALADiN gMapIField; //!
 
     static coords_ALADiN gCoords[2]; //!
-    static Bool_t gInitialized;      //!
+    static Bool_t gInitialized; //!
 
     fields_ALADiN* fCurField; //!
-    Double_t fCurrent;        //!
-    Double_t fFieldSign;      //!
+    Double_t fCurrent; //!
+    Double_t fFieldSign; //!
 
     TVector3 af_box[2][2]; //!
     TVector3 af_mag[2][2]; //!
-    Bool_t gFringeField;   //!
+    Bool_t gFringeField; //!
 
     ClassDef(R3BAladinFieldMap, 1)
 };

@@ -27,11 +27,9 @@
 #include <cassert>
 
 R3BSfibMapped2Cal::R3BSfibMapped2Cal(Int_t a_verbose, enum R3BTCalEngine::CTDCVariant a_variant)
-    : FairTask("R3BSfibMapped2Cal", a_verbose)
-    , fTCalPar(nullptr)
-    , fMappedItems(nullptr)
-    , fCalItems(new TClonesArray("R3BSfibCalData"))
-    , fClockFreq(1000. / (R3BTCalEngine::CTDC_16_BWD_150 == a_variant ? 150 : 250))
+    : FairTask("R3BSfibMapped2Cal", a_verbose), fTCalPar(nullptr), fMappedItems(nullptr),
+      fCalItems(new TClonesArray("R3BSfibCalData")),
+      fClockFreq(1000. / (R3BTCalEngine::CTDC_16_BWD_150 == a_variant ? 150 : 250))
 {
 }
 

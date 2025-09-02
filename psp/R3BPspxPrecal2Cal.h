@@ -73,9 +73,9 @@ class R3BPspxPrecal2Cal : public FairTask
   private:
     void SetParameters();
 
-    R3BEventHeader* fHeader;                 // do we need that?
+    R3BEventHeader* fHeader; // do we need that?
     std::vector<TClonesArray*> fPrecalItems; /**< Arrays holding input (Precal) data */
-    std::vector<TClonesArray*> fCalItems;    /**< Arrays holding output (Cal) data */
+    std::vector<TClonesArray*> fCalItems; /**< Arrays holding output (Cal) data */
 
     R3BPspxCalPar* fCalPar; /**< Parameter instance holding gain for energy correction */
     std::vector<std::vector<Float_t>> gain;

@@ -37,21 +37,14 @@
 #include "R3BTwimPoint.h"
 
 // R3BTwimDigitizer: Default Constructor --------------------------
-R3BTwimDigitizer::R3BTwimDigitizer()
-    : R3BTwimDigitizer("R3BTwimDigitizer", 1)
-{
-}
+R3BTwimDigitizer::R3BTwimDigitizer() : R3BTwimDigitizer("R3BTwimDigitizer", 1) {}
 
 // R3BTwimDigitizer: Standard Constructor --------------------------
 R3BTwimDigitizer::R3BTwimDigitizer(const TString& name, Int_t iVerbose)
-    : FairTask(name + "Digi", iVerbose)
-    , fName(name)
-    , fDetId(0)
-    , fMCTrack(NULL)
-    , fTwimPoints(NULL)
-    , fTwimHits(NULL)
-    , fsigma_x(0.030) // 30um
-    , fZsig(0.)
+    : FairTask(name + "Digi", iVerbose), fName(name), fDetId(0), fMCTrack(NULL), fTwimPoints(NULL), fTwimHits(NULL),
+      fsigma_x(0.030) // 30um
+      ,
+      fZsig(0.)
 {
 }
 

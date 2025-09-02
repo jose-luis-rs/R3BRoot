@@ -99,37 +99,37 @@ typedef struct EXT_STR_h101_MUSLI_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_MUSLI_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                            \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_EM, UINT32, "MUSLI_EM", 15);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_EMI, UINT32, "MUSLI_EMI", "MUSLI_EM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_EME, UINT32, "MUSLI_EME", "MUSLI_EM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_E, UINT32, "MUSLI_E", 1500);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_Ev, UINT32, "MUSLI_Ev", "MUSLI_E");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TM, UINT32, "MUSLI_TM", 15);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_TMI, UINT32, "MUSLI_TMI", "MUSLI_TM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_TME, UINT32, "MUSLI_TME", "MUSLI_TM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_T, UINT32, "MUSLI_T", 1500);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_Tv, UINT32, "MUSLI_Tv", "MUSLI_T");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TREFM, UINT32, "MUSLI_TREFM", 1);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSLI_TREFMI, UINT32, "MUSLI_TREFMI", "MUSLI_TREFM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSLI_TREFME, UINT32, "MUSLI_TREFME", "MUSLI_TREFM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TREF, UINT32, "MUSLI_TREF", 100);            \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_TREFv, UINT32, "MUSLI_TREFv", "MUSLI_TREF"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TTRIGM, UINT32, "MUSLI_TTRIGM", 1);          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSLI_TTRIGMI, UINT32, "MUSLI_TTRIGMI", "MUSLI_TTRIGM");             \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSLI_TTRIGME, UINT32, "MUSLI_TTRIGME", "MUSLI_TTRIGM");             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TTRIG, UINT32, "MUSLI_TTRIG", 100);          \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSLI_TTRIGv, UINT32, "MUSLI_TTRIGv", "MUSLI_TTRIG");                \
-                                                                                                                     \
+#define EXT_STR_h101_MUSLI_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                              \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_EM, UINT32, "MUSLI_EM", 15);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_EMI, UINT32, "MUSLI_EMI", "MUSLI_EM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_EME, UINT32, "MUSLI_EME", "MUSLI_EM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_E, UINT32, "MUSLI_E", 1500);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_Ev, UINT32, "MUSLI_Ev", "MUSLI_E");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TM, UINT32, "MUSLI_TM", 15);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_TMI, UINT32, "MUSLI_TMI", "MUSLI_TM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_TME, UINT32, "MUSLI_TME", "MUSLI_TM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_T, UINT32, "MUSLI_T", 1500);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_Tv, UINT32, "MUSLI_Tv", "MUSLI_T");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TREFM, UINT32, "MUSLI_TREFM", 1);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSLI_TREFMI, UINT32, "MUSLI_TREFMI", "MUSLI_TREFM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSLI_TREFME, UINT32, "MUSLI_TREFME", "MUSLI_TREFM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TREF, UINT32, "MUSLI_TREF", 100);              \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSLI_TREFv, UINT32, "MUSLI_TREFv", "MUSLI_TREF");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TTRIGM, UINT32, "MUSLI_TTRIGM", 1);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSLI_TTRIGMI, UINT32, "MUSLI_TTRIGMI", "MUSLI_TTRIGM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSLI_TTRIGME, UINT32, "MUSLI_TTRIGME", "MUSLI_TTRIGM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSLI_TTRIG, UINT32, "MUSLI_TTRIG", 100);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSLI_TTRIGv, UINT32, "MUSLI_TTRIGv", "MUSLI_TTRIG");                  \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_EXT_H101_MUSLI_H__*/

@@ -28,11 +28,8 @@ extern "C"
 using namespace std;
 
 R3BSfibReader::R3BSfibReader(EXT_STR_h101_sfib* data, UInt_t offset)
-    : R3BReader("R3BSfibReader")
-    , fData(data)
-    , fOffset(offset)
-    , fLogger(FairLogger::GetLogger())
-    , fMappedArray(new TClonesArray("R3BSfibMappedData"))
+    : R3BReader("R3BSfibReader"), fData(data), fOffset(offset), fLogger(FairLogger::GetLogger()),
+      fMappedArray(new TClonesArray("R3BSfibMappedData"))
 {
 }
 
@@ -58,25 +55,25 @@ Bool_t R3BSfibReader::Init(ext_data_struct_info* a_struct_info)
 
 Bool_t R3BSfibReader::R3BRead()
 {
-#define PERM(side, side_i, edge, edge_i)                                   \
-    do                                                                     \
-    {                                                                      \
-        uint32_t c_M = fData->SFIB_##side##T##edge##CM;                    \
-        uint32_t cur_entry = 0;                                            \
-        for (uint32_t i = 0; i < c_M; i++)                                 \
-        {                                                                  \
-            uint32_t c_MI = fData->SFIB_##side##T##edge##CMI[i];           \
-            uint32_t c_ME = fData->SFIB_##side##T##edge##CME[i];           \
-            for (; cur_entry < c_ME; cur_entry++)                          \
-            {                                                              \
-                new ((*fMappedArray)[fMappedArray->GetEntriesFast()])      \
-                    R3BSfibMappedData(side_i,                              \
-                                      c_MI,                                \
-                                      0 == edge_i,                         \
-                                      fData->SFIB_##side##T##edge##Cv[i],  \
-                                      fData->SFIB_##side##T##edge##Fv[i]); \
-            }                                                              \
-        }                                                                  \
+#define PERM(side, side_i, edge, edge_i)                                                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        uint32_t c_M = fData->SFIB_##side##T##edge##CM;                                                                \
+        uint32_t cur_entry = 0;                                                                                        \
+        for (uint32_t i = 0; i < c_M; i++)                                                                             \
+        {                                                                                                              \
+            uint32_t c_MI = fData->SFIB_##side##T##edge##CMI[i];                                                       \
+            uint32_t c_ME = fData->SFIB_##side##T##edge##CME[i];                                                       \
+            for (; cur_entry < c_ME; cur_entry++)                                                                      \
+            {                                                                                                          \
+                new ((*fMappedArray)[fMappedArray->GetEntriesFast()])                                                  \
+                    R3BSfibMappedData(side_i,                                                                          \
+                                      c_MI,                                                                            \
+                                      0 == edge_i,                                                                     \
+                                      fData->SFIB_##side##T##edge##Cv[i],                                              \
+                                      fData->SFIB_##side##T##edge##Fv[i]);                                             \
+            }                                                                                                          \
+        }                                                                                                              \
     } while (0)
     PERM(B, 0, L, 0);
     PERM(B, 0, T, 1);

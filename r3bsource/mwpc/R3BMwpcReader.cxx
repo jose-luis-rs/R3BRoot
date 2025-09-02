@@ -31,15 +31,14 @@ extern "C"
 using namespace std;
 
 R3BMwpcReader::R3BMwpcReader(EXT_STR_h101_SOFMWPC* data, size_t offset)
-    : R3BReader("R3BMwpcReader")
-    , fMaxDet(4)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArrayMwpc0(new TClonesArray("R3BMwpcMappedData")) // class name
-    , fArrayMwpc1(new TClonesArray("R3BMwpcMappedData")) // class name
-    , fArrayMwpc2(new TClonesArray("R3BMwpcMappedData")) // class name
-    , fArrayMwpc3(new TClonesArray("R3BMwpcMappedData")) // class name
+    : R3BReader("R3BMwpcReader"), fMaxDet(4), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArrayMwpc0(new TClonesArray("R3BMwpcMappedData")) // class name
+      ,
+      fArrayMwpc1(new TClonesArray("R3BMwpcMappedData")) // class name
+      ,
+      fArrayMwpc2(new TClonesArray("R3BMwpcMappedData")) // class name
+      ,
+      fArrayMwpc3(new TClonesArray("R3BMwpcMappedData")) // class name
 {
 }
 

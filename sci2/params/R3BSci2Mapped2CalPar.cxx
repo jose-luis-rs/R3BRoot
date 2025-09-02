@@ -46,28 +46,14 @@
 using namespace std;
 
 R3BSci2Mapped2CalPar::R3BSci2Mapped2CalPar()
-    : FairTask("R3BSci2Mapped2CalPar", 1)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofDetectors(0)
-    , fNofChannels(0)
-    , fNofTypes(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask("R3BSci2Mapped2CalPar", 1), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fNofDetectors(0),
+      fNofChannels(0), fNofTypes(0), fNEvents(0), fCal_Par(NULL)
 {
 }
 
 R3BSci2Mapped2CalPar::R3BSci2Mapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofDetectors(0)
-    , fNofChannels(0)
-    , fNofTypes(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fNofDetectors(0),
+      fNofChannels(0), fNofTypes(0), fNEvents(0), fCal_Par(NULL)
 {
 }
 
@@ -142,8 +128,8 @@ void R3BSci2Mapped2CalPar::Exec(Option_t* option)
 
         // channel numbers are supposed to be 1-based (1..n)
         UInt_t iDetector = hit->GetDetector() - 1; // now 0..n-1
-        UInt_t iChannel = hit->GetChannel() - 1;   // now 0..n-1
-        UInt_t iType = hit->GetType();             // 0,1,2
+        UInt_t iChannel = hit->GetChannel() - 1; // now 0..n-1
+        UInt_t iType = hit->GetType(); // 0,1,2
 
         if (iDetector > (fNofDetectors - 1))
         {

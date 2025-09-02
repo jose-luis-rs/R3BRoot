@@ -33,15 +33,8 @@
 #include <vector>
 
 R3BRpcCal2Hit::R3BRpcCal2Hit()
-    : FairTask("R3B RPC Cal to Hit")
-    , fParCont1(NULL)
-    , fParCont2(NULL)
-    , fParCont3(NULL)
-    , fParCont4(NULL)
-    , fRpcHitDataCA(NULL)
-    , fRpcCalDataCA(NULL)
-    , fR3BEventHeader(NULL)
-    , fOnline(kFALSE)
+    : FairTask("R3B RPC Cal to Hit"), fParCont1(NULL), fParCont2(NULL), fParCont3(NULL), fParCont4(NULL),
+      fRpcHitDataCA(NULL), fRpcCalDataCA(NULL), fR3BEventHeader(NULL), fOnline(kFALSE)
 {
 }
 

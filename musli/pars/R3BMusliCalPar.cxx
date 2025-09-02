@@ -25,13 +25,8 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BMusliCalPar::R3BMusliCalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumSignals(18)
-    , fNumGroupsAnodes(15)
-    , fNumParamsEneFit(2)
-    , fNumParamsPosFit(2)
-    , fNumParamsMultHit(2)
-    , fMaxMult(20)
+    : FairParGenericSet(name, title, context), fNumSignals(18), fNumGroupsAnodes(15), fNumParamsEneFit(2),
+      fNumParamsPosFit(2), fNumParamsMultHit(2), fMaxMult(20)
 {
     fIn_use = new TArrayI(fNumSignals);
     fEneCalParams = new TArrayF(fNumGroupsAnodes * fNumParamsEneFit);

@@ -66,10 +66,10 @@ class R3BNeulandTacquilaReader : public R3BReader
     void Reset();
 
   private:
-    UInt_t fNEvent;                       /**< An event counter. */
+    UInt_t fNEvent; /**< An event counter. */
     EXT_STR_h101_raw_nnp_tacquila* fData; /**< Reader specific data structure from ucesb. */
     UInt_t fOffset;
-    FairLogger* fLogger;  /**< FairLogger. */
+    FairLogger* fLogger; /**< FairLogger. */
     TClonesArray* fArray; /**< Output array. */
 
   public:

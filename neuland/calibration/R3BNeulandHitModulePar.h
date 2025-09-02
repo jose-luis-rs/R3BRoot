@@ -133,11 +133,11 @@ class R3BNeulandHitModulePar : public FairParGenericSet
     Double_t fTDiff;
     Double_t fTSync;
     Double_t fEffectiveSpeed;
-    Int_t fPedestal[2];      // R/B, L/T
+    Int_t fPedestal[2]; // R/B, L/T
     Double_t fEnergyGain[2]; // R/B, L/T
     Double_t fLightAttenuationLength;
     Double_t fPMTSaturation[2]; // R/B, L/T
-    Double_t fPMTThreshold[2];  // R/B, L/T
+    Double_t fPMTThreshold[2]; // R/B, L/T
     ClassDef(R3BNeulandHitModulePar, 3);
 };
 

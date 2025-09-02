@@ -39,25 +39,10 @@ using std::pair;
 
 // -----   Default constructor   -------------------------------------------
 R3BStack::R3BStack(Int_t size)
-    : fStack()
-    , fParticles(new TClonesArray("TParticle", size))
-    , fTracks(new TClonesArray("R3BMCTrack", size))
-    , fStoreMap()
-    , fStoreIter()
-    , fIndexMap()
-    , fIndexIter()
-    , fPointsMap()
-    , fCurrentTrack(-1)
-    , fNPrimaries(0)
-    , fNParticles(0)
-    , fNTracks(0)
-    , fIndex(0)
-    , fMC(0)
-    , fStoreSecondaries(kTRUE)
-    , fMinPoints(0)
-    , fEnergyCut(0.)
-    , fStoreMothers(kTRUE)
-    , fDebug(kFALSE)
+    : fStack(), fParticles(new TClonesArray("TParticle", size)), fTracks(new TClonesArray("R3BMCTrack", size)),
+      fStoreMap(), fStoreIter(), fIndexMap(), fIndexIter(), fPointsMap(), fCurrentTrack(-1), fNPrimaries(0),
+      fNParticles(0), fNTracks(0), fIndex(0), fMC(0), fStoreSecondaries(kTRUE), fMinPoints(0), fEnergyCut(0.),
+      fStoreMothers(kTRUE), fDebug(kFALSE)
 {
     TString MCName = gMC->GetName();
     if (MCName.CompareTo("TGeant4") == 0)

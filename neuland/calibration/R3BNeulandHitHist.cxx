@@ -29,21 +29,13 @@
 const Double_t C_LIGHT = 29.9792458; // Speed of light [cm/ns]
 
 R3BNeulandHitHist::R3BNeulandHitHist()
-    : fNofBars(100)
-    , fFirstPlaneHorisontal(kFALSE)
-    , fnEvents(0)
-    , fLandDigi(NULL)
-    , fLosHit(NULL)
+    : fNofBars(100), fFirstPlaneHorisontal(kFALSE), fnEvents(0), fLandDigi(NULL), fLosHit(NULL)
 {
 }
 
 R3BNeulandHitHist::R3BNeulandHitHist(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNofBars(100)
-    , fFirstPlaneHorisontal(kFALSE)
-    , fnEvents(0)
-    , fLandDigi(NULL)
-    , fLosHit(NULL)
+    : FairTask(name, iVerbose), fNofBars(100), fFirstPlaneHorisontal(kFALSE), fnEvents(0), fLandDigi(NULL),
+      fLosHit(NULL)
 {
 }
 

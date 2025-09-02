@@ -128,7 +128,7 @@ class R3BGlobalAnalysisS454 : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fTrigger; /**< Trigger value. */
     Int_t fTpat;
     Bool_t fCuts;
     Bool_t fGhost;
@@ -143,7 +143,7 @@ class R3BGlobalAnalysisS454 : public FairTask
     Int_t maxevent;
 
     Int_t fsens_SEE, fsens_IC; // SEETRAM and IC sensitivity, between -4 and -10
-    Double_t calib_SEE = 1.;   // SEETRAM calibration factor
+    Double_t calib_SEE = 1.; // SEETRAM calibration factor
     Double_t see_offset = 7.1; // SEETRAM offset in kHz
     Double_t counts_SEE = 0;
     Double_t counts_IC = 0;

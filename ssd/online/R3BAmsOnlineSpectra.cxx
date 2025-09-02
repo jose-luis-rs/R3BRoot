@@ -53,24 +53,14 @@
 using namespace std;
 
 R3BAmsOnlineSpectra::R3BAmsOnlineSpectra()
-    : FairTask("AmsOnlineSpectra", 1)
-    , fMappedItemsAms(NULL)
-    , fCalItemsAms(NULL)
-    , fHitItemsAms(NULL)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(6)
+    : FairTask("AmsOnlineSpectra", 1), fMappedItemsAms(NULL), fCalItemsAms(NULL), fHitItemsAms(NULL), fTrigger(-1),
+      fNEvents(0), fNbDet(6)
 {
 }
 
 R3BAmsOnlineSpectra::R3BAmsOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItemsAms(NULL)
-    , fCalItemsAms(NULL)
-    , fHitItemsAms(NULL)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(6)
+    : FairTask(name, iVerbose), fMappedItemsAms(NULL), fCalItemsAms(NULL), fHitItemsAms(NULL), fTrigger(-1),
+      fNEvents(0), fNbDet(6)
 {
 }
 
@@ -588,7 +578,7 @@ void R3BAmsOnlineSpectra::Exec(Option_t* option)
         {
             Emaxhit[i] = 0.;
             Thetamaxhit[i] = 0.; // at 0 degrees we have nothing!
-            Phimaxhit[i] = 90.;  // at 90 degrees we have nothing!
+            Phimaxhit[i] = 90.; // at 90 degrees we have nothing!
         }
 
         Int_t nHits = fHitItemsAms->GetEntriesFast();

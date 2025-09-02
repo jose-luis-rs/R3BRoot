@@ -58,9 +58,7 @@ R3BMwpcCorrelationOnlineSpectra::R3BMwpcCorrelationOnlineSpectra(const TString& 
                                                                  Int_t iVerbose,
                                                                  const TString& namedet1,
                                                                  const TString& namedet2)
-    : FairTask(name, iVerbose)
-    , fNameDet1(namedet1)
-    , fNameDet2(namedet2)
+    : FairTask(name, iVerbose), fNameDet1(namedet1), fNameDet2(namedet2)
 {
 }
 

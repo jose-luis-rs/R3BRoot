@@ -30,22 +30,11 @@
 
 #include "TClonesArray.h"
 
-R3BSci2Tcal2Hit::R3BSci2Tcal2Hit()
-    : R3BSci2Tcal2Hit("Sci2Cal2Hit", 1)
-{
-}
+R3BSci2Tcal2Hit::R3BSci2Tcal2Hit() : R3BSci2Tcal2Hit("Sci2Cal2Hit", 1) {}
 
 R3BSci2Tcal2Hit::R3BSci2Tcal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems(NULL)
-    , fHitItems(NULL)
-    , fsci2VeffX(1.)
-    , fsci2OffsetX(0.)
-    , fsci2VeffXT(1.)
-    , fsci2OffsetXT(0.)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fOnline(kFALSE)
-    , fCoincWindow(4.)
+    : FairTask(name, iVerbose), fCalItems(NULL), fHitItems(NULL), fsci2VeffX(1.), fsci2OffsetX(0.), fsci2VeffXT(1.),
+      fsci2OffsetXT(0.), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fOnline(kFALSE), fCoincWindow(4.)
 {
 }
 
@@ -122,7 +111,7 @@ void R3BSci2Tcal2Hit::Exec(Option_t* option)
     Double_t iRawTimeNs[2][3][64];
     Double_t tRawTimeNs[2][3][64];
     Double_t PosCal = -1000.;
-    Double_t Tmean = -1;        // 0.5*(TrawLEFT + TrawRIGHT)
+    Double_t Tmean = -1; // 0.5*(TrawLEFT + TrawRIGHT)
     Double_t Tmean_w_Tref = -1; // 0.5*(TrawLEFT + TrawRIGHT) - Tref
     UInt_t tHits[2];
     Bool_t tCh[2][3][64];
@@ -214,7 +203,7 @@ void R3BSci2Tcal2Hit::Exec(Option_t* option)
             }
             // end of hit loop
         } // end of loop over the number of detectors
-    }     // end of if Tcal data
+    } // end of if Tcal data
     return;
 }
 

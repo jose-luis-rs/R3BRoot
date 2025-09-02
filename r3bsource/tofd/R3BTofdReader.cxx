@@ -31,11 +31,8 @@ extern "C"
 #define MAX_TOFD_PLANES (sizeof data->TOFD_P / sizeof data->TOFD_P[0])
 
 R3BTofdReader::R3BTofdReader(EXT_STR_h101_TOFD_onion* data, size_t offset)
-    : R3BReader("R3BTofdReader")
-    , fData(data)
-    , fOffset(offset)
-    , fArray(new TClonesArray("R3BTofdMappedData"))
-    , fArrayTrigger(new TClonesArray("R3BTofdMappedData"))
+    : R3BReader("R3BTofdReader"), fData(data), fOffset(offset), fArray(new TClonesArray("R3BTofdMappedData")),
+      fArrayTrigger(new TClonesArray("R3BTofdMappedData"))
 {
 }
 
@@ -164,7 +161,7 @@ Bool_t R3BTofdReader::R3BRead()
             }
 
         } // for side
-    }     // for planes
+    } // for planes
 
     // TAMEX trigger times.
     if (fArrayTrigger)

@@ -32,9 +32,7 @@ extern "C"
 }
 
 R3BHmpReader::R3BHmpReader(EXT_STR_h101_HMP_onion* data, size_t offset)
-    : R3BReader("R3BHmpReader")
-    , fData(data)
-    , fArray(new TClonesArray("R3BHmpMappedData"))
+    : R3BReader("R3BHmpReader"), fData(data), fArray(new TClonesArray("R3BHmpMappedData"))
 {
 }
 

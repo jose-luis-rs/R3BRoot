@@ -66,9 +66,9 @@ class R3BMwpc1Mapped2Cal : public FairTask
 
     Bool_t fOnline; // Don't store data for online
 
-    R3BMwpc1CalPar* fCal_Par;        /**< Parameter container. >*/
+    R3BMwpc1CalPar* fCal_Par; /**< Parameter container. >*/
     TClonesArray* fMwpcMappedDataCA; /**< Array with Mapped- input data. >*/
-    TClonesArray* fMwpcCalDataCA;    /**< Array with Cal- output data. >*/
+    TClonesArray* fMwpcCalDataCA; /**< Array with Cal- output data. >*/
 
     /** Private method AddCalData **/
     // Adds a MwpcCalData to the MwpcCalCollection

@@ -89,32 +89,32 @@ typedef struct EXT_STR_h101_ROLU_NOTRIG_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_ROLU_NOTRIG_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                      \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFLM, UINT32, "ROLU1TTFLM", 4);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFLMI, UINT32, "ROLU1TTFLMI", "ROLU1TTFLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFLME, UINT32, "ROLU1TTFLME", "ROLU1TTFLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFL, UINT32, "ROLU1TTFL", 128);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFLv, UINT32, "ROLU1TTFLv", "ROLU1TTFL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFTM, UINT32, "ROLU1TTFTM", 4);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFTMI, UINT32, "ROLU1TTFTMI", "ROLU1TTFTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFTME, UINT32, "ROLU1TTFTME", "ROLU1TTFTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFT, UINT32, "ROLU1TTFT", 128);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFTv, UINT32, "ROLU1TTFTv", "ROLU1TTFT");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCLM, UINT32, "ROLU1TTCLM", 4);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCLMI, UINT32, "ROLU1TTCLMI", "ROLU1TTCLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCLME, UINT32, "ROLU1TTCLME", "ROLU1TTCLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCL, UINT32, "ROLU1TTCL", 128);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCLv, UINT32, "ROLU1TTCLv", "ROLU1TTCL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCTM, UINT32, "ROLU1TTCTM", 4);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCTMI, UINT32, "ROLU1TTCTMI", "ROLU1TTCTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCTME, UINT32, "ROLU1TTCTME", "ROLU1TTCTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCT, UINT32, "ROLU1TTCT", 128);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCTv, UINT32, "ROLU1TTCTv", "ROLU1TTCT");    \
-                                                                                                                     \
+#define EXT_STR_h101_ROLU_NOTRIG_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                        \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFLM, UINT32, "ROLU1TTFLM", 4);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFLMI, UINT32, "ROLU1TTFLMI", "ROLU1TTFLM");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFLME, UINT32, "ROLU1TTFLME", "ROLU1TTFLM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFL, UINT32, "ROLU1TTFL", 128);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFLv, UINT32, "ROLU1TTFLv", "ROLU1TTFL");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFTM, UINT32, "ROLU1TTFTM", 4);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFTMI, UINT32, "ROLU1TTFTMI", "ROLU1TTFTM");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFTME, UINT32, "ROLU1TTFTME", "ROLU1TTFTM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTFT, UINT32, "ROLU1TTFT", 128);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTFTv, UINT32, "ROLU1TTFTv", "ROLU1TTFT");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCLM, UINT32, "ROLU1TTCLM", 4);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCLMI, UINT32, "ROLU1TTCLMI", "ROLU1TTCLM");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCLME, UINT32, "ROLU1TTCLME", "ROLU1TTCLM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCL, UINT32, "ROLU1TTCL", 128);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCLv, UINT32, "ROLU1TTCLv", "ROLU1TTCL");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCTM, UINT32, "ROLU1TTCTM", 4);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCTMI, UINT32, "ROLU1TTCTMI", "ROLU1TTCTM");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCTME, UINT32, "ROLU1TTCTME", "ROLU1TTCTM");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, ROLU1TTCT, UINT32, "ROLU1TTCT", 128);                \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, ROLU1TTCTv, UINT32, "ROLU1TTCTv", "ROLU1TTCT");      \
+                                                                                                                       \
     } while (0);
 #endif /*__GUARD_H101_ROLU_EXT_H101_ROLU_H__*/
 

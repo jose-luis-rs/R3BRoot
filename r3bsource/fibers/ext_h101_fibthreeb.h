@@ -146,138 +146,138 @@ typedef struct EXT_STR_h101_FIBTHREEB_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBTHREEB_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                       \
-    do                                                                                                              \
-    {                                                                                                               \
-        ok = 1;                                                                                                     \
-        /* RAW */                                                                                                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCM, UINT32, "FIBTHREEB_TMLCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCMI, UINT32, "FIBTHREEB_TMLCMI", "FIBTHREEB_TMLCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCME, UINT32, "FIBTHREEB_TMLCME", "FIBTHREEB_TMLCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLC, UINT32, "FIBTHREEB_TMLC", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCv, UINT32, "FIBTHREEB_TMLCv", "FIBTHREEB_TMLC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCM, UINT32, "FIBTHREEB_TMTCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCMI, UINT32, "FIBTHREEB_TMTCMI", "FIBTHREEB_TMTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCME, UINT32, "FIBTHREEB_TMTCME", "FIBTHREEB_TMTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTC, UINT32, "FIBTHREEB_TMTC", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCv, UINT32, "FIBTHREEB_TMTCv", "FIBTHREEB_TMTC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFM, UINT32, "FIBTHREEB_TMLFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFMI, UINT32, "FIBTHREEB_TMLFMI", "FIBTHREEB_TMLFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFME, UINT32, "FIBTHREEB_TMLFME", "FIBTHREEB_TMLFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLF, UINT32, "FIBTHREEB_TMLF", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFv, UINT32, "FIBTHREEB_TMLFv", "FIBTHREEB_TMLF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFM, UINT32, "FIBTHREEB_TMTFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFMI, UINT32, "FIBTHREEB_TMTFMI", "FIBTHREEB_TMTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFME, UINT32, "FIBTHREEB_TMTFME", "FIBTHREEB_TMTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTF, UINT32, "FIBTHREEB_TMTF", 16384); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFv, UINT32, "FIBTHREEB_TMTFv", "FIBTHREEB_TMTF");      \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLCM, UINT32, "FIBTHREEB_TRIGMLCM", 2);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEB_TRIGMLCMI,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEB_TRIGMLCMI",                                                                \
-                              "FIBTHREEB_TRIGMLCM");                                                                \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEB_TRIGMLCME,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEB_TRIGMLCME",                                                                \
-                              "FIBTHREEB_TRIGMLCM");                                                                \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLC, UINT32, "FIBTHREEB_TRIGMLC", 128);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEB_TRIGMLCv,                                                                   \
-                              UINT32,                                                                               \
-                              "FIBTHREEB_TRIGMLCv",                                                                 \
-                              "FIBTHREEB_TRIGMLC");                                                                 \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLFM, UINT32, "FIBTHREEB_TRIGMLFM", 2);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEB_TRIGMLFMI,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEB_TRIGMLFMI",                                                                \
-                              "FIBTHREEB_TRIGMLFM");                                                                \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEB_TRIGMLFME,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTHREEB_TRIGMLFME",                                                                \
-                              "FIBTHREEB_TRIGMLFM");                                                                \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLF, UINT32, "FIBTHREEB_TRIGMLF", 128);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTHREEB_TRIGMLFv,                                                                   \
-                              UINT32,                                                                               \
-                              "FIBTHREEB_TRIGMLFv",                                                                 \
-                              "FIBTHREEB_TRIGMLF");                                                                 \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCM, UINT32, "FIBTHREEB_TSLCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCMI, UINT32, "FIBTHREEB_TSLCMI", "FIBTHREEB_TSLCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCME, UINT32, "FIBTHREEB_TSLCME", "FIBTHREEB_TSLCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLC, UINT32, "FIBTHREEB_TSLC", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCv, UINT32, "FIBTHREEB_TSLCv", "FIBTHREEB_TSLC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCM, UINT32, "FIBTHREEB_TSTCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCMI, UINT32, "FIBTHREEB_TSTCMI", "FIBTHREEB_TSTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCME, UINT32, "FIBTHREEB_TSTCME", "FIBTHREEB_TSTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTC, UINT32, "FIBTHREEB_TSTC", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCv, UINT32, "FIBTHREEB_TSTCv", "FIBTHREEB_TSTC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFM, UINT32, "FIBTHREEB_TSLFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFMI, UINT32, "FIBTHREEB_TSLFMI", "FIBTHREEB_TSLFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFME, UINT32, "FIBTHREEB_TSLFME", "FIBTHREEB_TSLFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLF, UINT32, "FIBTHREEB_TSLF", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFv, UINT32, "FIBTHREEB_TSLFv", "FIBTHREEB_TSLF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFM, UINT32, "FIBTHREEB_TSTFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFMI, UINT32, "FIBTHREEB_TSTFMI", "FIBTHREEB_TSTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFME, UINT32, "FIBTHREEB_TSTFME", "FIBTHREEB_TSTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTF, UINT32, "FIBTHREEB_TSTF", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFv, UINT32, "FIBTHREEB_TSTFv", "FIBTHREEB_TSTF");      \
-                                                                                                                    \
+#define EXT_STR_h101_FIBTHREEB_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCM, UINT32, "FIBTHREEB_TMLCM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCMI, UINT32, "FIBTHREEB_TMLCMI", "FIBTHREEB_TMLCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCME, UINT32, "FIBTHREEB_TMLCME", "FIBTHREEB_TMLCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLC, UINT32, "FIBTHREEB_TMLC", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLCv, UINT32, "FIBTHREEB_TMLCv", "FIBTHREEB_TMLC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCM, UINT32, "FIBTHREEB_TMTCM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCMI, UINT32, "FIBTHREEB_TMTCMI", "FIBTHREEB_TMTCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCME, UINT32, "FIBTHREEB_TMTCME", "FIBTHREEB_TMTCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTC, UINT32, "FIBTHREEB_TMTC", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTCv, UINT32, "FIBTHREEB_TMTCv", "FIBTHREEB_TMTC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFM, UINT32, "FIBTHREEB_TMLFM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFMI, UINT32, "FIBTHREEB_TMLFMI", "FIBTHREEB_TMLFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFME, UINT32, "FIBTHREEB_TMLFME", "FIBTHREEB_TMLFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMLF, UINT32, "FIBTHREEB_TMLF", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMLFv, UINT32, "FIBTHREEB_TMLFv", "FIBTHREEB_TMLF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFM, UINT32, "FIBTHREEB_TMTFM", 256);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFMI, UINT32, "FIBTHREEB_TMTFMI", "FIBTHREEB_TMTFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFME, UINT32, "FIBTHREEB_TMTFME", "FIBTHREEB_TMTFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TMTF, UINT32, "FIBTHREEB_TMTF", 16384);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TMTFv, UINT32, "FIBTHREEB_TMTFv", "FIBTHREEB_TMTF");         \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLCM, UINT32, "FIBTHREEB_TRIGMLCM", 2);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEB_TRIGMLCMI,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEB_TRIGMLCMI",                                                                   \
+                              "FIBTHREEB_TRIGMLCM");                                                                   \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEB_TRIGMLCME,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEB_TRIGMLCME",                                                                   \
+                              "FIBTHREEB_TRIGMLCM");                                                                   \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLC, UINT32, "FIBTHREEB_TRIGMLC", 128);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEB_TRIGMLCv,                                                                      \
+                              UINT32,                                                                                  \
+                              "FIBTHREEB_TRIGMLCv",                                                                    \
+                              "FIBTHREEB_TRIGMLC");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLFM, UINT32, "FIBTHREEB_TRIGMLFM", 2);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEB_TRIGMLFMI,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEB_TRIGMLFMI",                                                                   \
+                              "FIBTHREEB_TRIGMLFM");                                                                   \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEB_TRIGMLFME,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTHREEB_TRIGMLFME",                                                                   \
+                              "FIBTHREEB_TRIGMLFM");                                                                   \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TRIGMLF, UINT32, "FIBTHREEB_TRIGMLF", 128);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTHREEB_TRIGMLFv,                                                                      \
+                              UINT32,                                                                                  \
+                              "FIBTHREEB_TRIGMLFv",                                                                    \
+                              "FIBTHREEB_TRIGMLF");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCM, UINT32, "FIBTHREEB_TSLCM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCMI, UINT32, "FIBTHREEB_TSLCMI", "FIBTHREEB_TSLCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCME, UINT32, "FIBTHREEB_TSLCME", "FIBTHREEB_TSLCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLC, UINT32, "FIBTHREEB_TSLC", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLCv, UINT32, "FIBTHREEB_TSLCv", "FIBTHREEB_TSLC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCM, UINT32, "FIBTHREEB_TSTCM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCMI, UINT32, "FIBTHREEB_TSTCMI", "FIBTHREEB_TSTCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCME, UINT32, "FIBTHREEB_TSTCME", "FIBTHREEB_TSTCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTC, UINT32, "FIBTHREEB_TSTC", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTCv, UINT32, "FIBTHREEB_TSTCv", "FIBTHREEB_TSTC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFM, UINT32, "FIBTHREEB_TSLFM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFMI, UINT32, "FIBTHREEB_TSLFMI", "FIBTHREEB_TSLFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFME, UINT32, "FIBTHREEB_TSLFME", "FIBTHREEB_TSLFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSLF, UINT32, "FIBTHREEB_TSLF", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSLFv, UINT32, "FIBTHREEB_TSLFv", "FIBTHREEB_TSLF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFM, UINT32, "FIBTHREEB_TSTFM", 2);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFMI, UINT32, "FIBTHREEB_TSTFMI", "FIBTHREEB_TSTFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFME, UINT32, "FIBTHREEB_TSTFME", "FIBTHREEB_TSTFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTHREEB_TSTF, UINT32, "FIBTHREEB_TSTF", 128);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTHREEB_TSTFv, UINT32, "FIBTHREEB_TSTFv", "FIBTHREEB_TSTF");         \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBTHREEB_EXT_H101_FIBTHREEB_H__*/

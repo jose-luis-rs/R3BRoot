@@ -30,18 +30,10 @@
 #include <iostream>
 #include <stdlib.h>
 
-R3BRpcCal2HitPar::R3BRpcCal2HitPar()
-    : R3BRpcCal2HitPar("R3B Rpc Tot Calibration Parameters Finder ", 1)
-{
-}
+R3BRpcCal2HitPar::R3BRpcCal2HitPar() : R3BRpcCal2HitPar("R3B Rpc Tot Calibration Parameters Finder ", 1) {}
 
 R3BRpcCal2HitPar::R3BRpcCal2HitPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitPar(NULL)
-    , fCalDataCA(NULL)
-    , fNumChannels(64)
-    , fDebugMode(false)
-    , fRpcCalib(true)
+    : FairTask(name, iVerbose), fHitPar(NULL), fCalDataCA(NULL), fNumChannels(64), fDebugMode(false), fRpcCalib(true)
 {
     for (Int_t i = 0; i < N_STRIP_NB; i++)
     {

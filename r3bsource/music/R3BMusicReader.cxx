@@ -27,11 +27,8 @@ extern "C"
 }
 
 R3BMusicReader::R3BMusicReader(EXT_STR_h101_MUSIC* data, size_t offset)
-    : R3BReader("R3BMusicReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BMusicMappedData"))
+    : R3BReader("R3BMusicReader"), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BMusicMappedData"))
 {
 }
 

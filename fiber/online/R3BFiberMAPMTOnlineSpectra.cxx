@@ -50,18 +50,13 @@ using namespace std;
 namespace
 {
     double c_fiber_coincidence_ns = 20; // nanoseconds.
-    double c_tot_coincidence_ns = 100;  // nanoseconds
+    double c_tot_coincidence_ns = 100; // nanoseconds
 } // namespace
 
-R3BFiberMAPMTOnlineSpectra::R3BFiberMAPMTOnlineSpectra()
-    : R3BFiberMAPMTOnlineSpectra("FiberOnlineSpectra", 1)
-{
-}
+R3BFiberMAPMTOnlineSpectra::R3BFiberMAPMTOnlineSpectra() : R3BFiberMAPMTOnlineSpectra("FiberOnlineSpectra", 1) {}
 
 R3BFiberMAPMTOnlineSpectra::R3BFiberMAPMTOnlineSpectra(const TString name, int iVerbose)
-    : FairTask(name + "OnlineSpectra", iVerbose)
-    , fName(name)
-    , fChannelArray()
+    : FairTask(name + "OnlineSpectra", iVerbose), fName(name), fChannelArray()
 {
 }
 

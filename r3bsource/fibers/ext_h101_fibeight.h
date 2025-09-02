@@ -139,76 +139,76 @@ typedef struct EXT_STR_h101_FIBEIGHT_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBEIGHT_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                      \
-    do                                                                                                            \
-    {                                                                                                             \
-        ok = 1;                                                                                                   \
-        /* RAW */                                                                                                 \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCM, UINT32, "FIBEIGHT_TMLCM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCMI, UINT32, "FIBEIGHT_TMLCMI", "FIBEIGHT_TMLCM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCME, UINT32, "FIBEIGHT_TMLCME", "FIBEIGHT_TMLCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLC, UINT32, "FIBEIGHT_TMLC", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCv, UINT32, "FIBEIGHT_TMLCv", "FIBEIGHT_TMLC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFM, UINT32, "FIBEIGHT_TMLFM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFMI, UINT32, "FIBEIGHT_TMLFMI", "FIBEIGHT_TMLFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFME, UINT32, "FIBEIGHT_TMLFME", "FIBEIGHT_TMLFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLF, UINT32, "FIBEIGHT_TMLF", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFv, UINT32, "FIBEIGHT_TMLFv", "FIBEIGHT_TMLF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCM, UINT32, "FIBEIGHT_TMTCM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCMI, UINT32, "FIBEIGHT_TMTCMI", "FIBEIGHT_TMTCM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCME, UINT32, "FIBEIGHT_TMTCME", "FIBEIGHT_TMTCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTC, UINT32, "FIBEIGHT_TMTC", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCv, UINT32, "FIBEIGHT_TMTCv", "FIBEIGHT_TMTC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFM, UINT32, "FIBEIGHT_TMTFM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFMI, UINT32, "FIBEIGHT_TMTFMI", "FIBEIGHT_TMTFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFME, UINT32, "FIBEIGHT_TMTFME", "FIBEIGHT_TMTFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTF, UINT32, "FIBEIGHT_TMTF", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFv, UINT32, "FIBEIGHT_TMTFv", "FIBEIGHT_TMTF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCM, UINT32, "FIBEIGHT_TSLCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCMI, UINT32, "FIBEIGHT_TSLCMI", "FIBEIGHT_TSLCM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCME, UINT32, "FIBEIGHT_TSLCME", "FIBEIGHT_TSLCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLC, UINT32, "FIBEIGHT_TSLC", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCv, UINT32, "FIBEIGHT_TSLCv", "FIBEIGHT_TSLC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFM, UINT32, "FIBEIGHT_TSLFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFMI, UINT32, "FIBEIGHT_TSLFMI", "FIBEIGHT_TSLFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFME, UINT32, "FIBEIGHT_TSLFME", "FIBEIGHT_TSLFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLF, UINT32, "FIBEIGHT_TSLF", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFv, UINT32, "FIBEIGHT_TSLFv", "FIBEIGHT_TSLF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCM, UINT32, "FIBEIGHT_TSTCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCMI, UINT32, "FIBEIGHT_TSTCMI", "FIBEIGHT_TSTCM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCME, UINT32, "FIBEIGHT_TSTCME", "FIBEIGHT_TSTCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTC, UINT32, "FIBEIGHT_TSTC", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCv, UINT32, "FIBEIGHT_TSTCv", "FIBEIGHT_TSTC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFM, UINT32, "FIBEIGHT_TSTFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFMI, UINT32, "FIBEIGHT_TSTFMI", "FIBEIGHT_TSTFM");    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFME, UINT32, "FIBEIGHT_TSTFME", "FIBEIGHT_TSTFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTF, UINT32, "FIBEIGHT_TSTF", 128);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                    \
-            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFv, UINT32, "FIBEIGHT_TSTFv", "FIBEIGHT_TSTF");       \
-                                                                                                                  \
+#define EXT_STR_h101_FIBEIGHT_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                           \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCM, UINT32, "FIBEIGHT_TMLCM", 512);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCMI, UINT32, "FIBEIGHT_TMLCMI", "FIBEIGHT_TMLCM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCME, UINT32, "FIBEIGHT_TMLCME", "FIBEIGHT_TMLCM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLC, UINT32, "FIBEIGHT_TMLC", 32768);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLCv, UINT32, "FIBEIGHT_TMLCv", "FIBEIGHT_TMLC");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFM, UINT32, "FIBEIGHT_TMLFM", 512);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFMI, UINT32, "FIBEIGHT_TMLFMI", "FIBEIGHT_TMLFM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFME, UINT32, "FIBEIGHT_TMLFME", "FIBEIGHT_TMLFM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMLF, UINT32, "FIBEIGHT_TMLF", 32768);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMLFv, UINT32, "FIBEIGHT_TMLFv", "FIBEIGHT_TMLF");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCM, UINT32, "FIBEIGHT_TMTCM", 512);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCMI, UINT32, "FIBEIGHT_TMTCMI", "FIBEIGHT_TMTCM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCME, UINT32, "FIBEIGHT_TMTCME", "FIBEIGHT_TMTCM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTC, UINT32, "FIBEIGHT_TMTC", 32768);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTCv, UINT32, "FIBEIGHT_TMTCv", "FIBEIGHT_TMTC");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFM, UINT32, "FIBEIGHT_TMTFM", 512);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFMI, UINT32, "FIBEIGHT_TMTFMI", "FIBEIGHT_TMTFM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFME, UINT32, "FIBEIGHT_TMTFME", "FIBEIGHT_TMTFM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TMTF, UINT32, "FIBEIGHT_TMTF", 32768);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TMTFv, UINT32, "FIBEIGHT_TMTFv", "FIBEIGHT_TMTF");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCM, UINT32, "FIBEIGHT_TSLCM", 2);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCMI, UINT32, "FIBEIGHT_TSLCMI", "FIBEIGHT_TSLCM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCME, UINT32, "FIBEIGHT_TSLCME", "FIBEIGHT_TSLCM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLC, UINT32, "FIBEIGHT_TSLC", 128);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLCv, UINT32, "FIBEIGHT_TSLCv", "FIBEIGHT_TSLC");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFM, UINT32, "FIBEIGHT_TSLFM", 2);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFMI, UINT32, "FIBEIGHT_TSLFMI", "FIBEIGHT_TSLFM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFME, UINT32, "FIBEIGHT_TSLFME", "FIBEIGHT_TSLFM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSLF, UINT32, "FIBEIGHT_TSLF", 128);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSLFv, UINT32, "FIBEIGHT_TSLFv", "FIBEIGHT_TSLF");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCM, UINT32, "FIBEIGHT_TSTCM", 2);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCMI, UINT32, "FIBEIGHT_TSTCMI", "FIBEIGHT_TSTCM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCME, UINT32, "FIBEIGHT_TSTCME", "FIBEIGHT_TSTCM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTC, UINT32, "FIBEIGHT_TSTC", 128);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTCv, UINT32, "FIBEIGHT_TSTCv", "FIBEIGHT_TSTC");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFM, UINT32, "FIBEIGHT_TSTFM", 2);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFMI, UINT32, "FIBEIGHT_TSTFMI", "FIBEIGHT_TSTFM");         \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFME, UINT32, "FIBEIGHT_TSTFME", "FIBEIGHT_TSTFM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBEIGHT_TSTF, UINT32, "FIBEIGHT_TSTF", 128);        \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBEIGHT_TSTFv, UINT32, "FIBEIGHT_TSTFv", "FIBEIGHT_TSTF");            \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBEIGHT_EXT_H101_FIBEIGHT_H__*/

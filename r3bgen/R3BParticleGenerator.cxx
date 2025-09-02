@@ -25,21 +25,17 @@
 #include "TVector3.h"
 
 R3BParticleGenerator::R3BParticleGenerator(int pdgCode, unsigned int seed)
-    : fVertex_cm(R3BDistribution3D::Delta(0, 0, 0))
-    , fSpread_mRad({ R3BDistribution1D::Delta(0), R3BDistribution1D::Flat(0, 2 * TMath::Pi() * 1e3) })
-    , fEnergy_AMeV(R3BDistribution1D::Delta(500))
-    , fPDGCode(0)
-    , fRNG(seed)
+    : fVertex_cm(R3BDistribution3D::Delta(0, 0, 0)),
+      fSpread_mRad({ R3BDistribution1D::Delta(0), R3BDistribution1D::Flat(0, 2 * TMath::Pi() * 1e3) }),
+      fEnergy_AMeV(R3BDistribution1D::Delta(500)), fPDGCode(0), fRNG(seed)
 {
     AddParticle(pdgCode);
 }
 
 R3BParticleGenerator::R3BParticleGenerator(unsigned int seed)
-    : fVertex_cm(R3BDistribution3D::Delta(0, 0, 0))
-    , fSpread_mRad({ R3BDistribution1D::Delta(0), R3BDistribution1D::Flat(0, 2 * TMath::Pi() * 1e3) })
-    , fEnergy_AMeV(R3BDistribution1D::Delta(500))
-    , fPDGCode(0)
-    , fRNG(seed)
+    : fVertex_cm(R3BDistribution3D::Delta(0, 0, 0)),
+      fSpread_mRad({ R3BDistribution1D::Delta(0), R3BDistribution1D::Flat(0, 2 * TMath::Pi() * 1e3) }),
+      fEnergy_AMeV(R3BDistribution1D::Delta(500)), fPDGCode(0), fRNG(seed)
 {
 }
 

@@ -26,10 +26,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BNeulandMappingPar::R3BNeulandMappingPar(const TString& name, const TString& title, const TString& context)
-    : FairParGenericSet(name, title, context)
-    , fNumPlanes(60)
-    , fNumPaddles(50)
-    , fNumPmts(2)
+    : FairParGenericSet(name, title, context), fNumPlanes(60), fNumPaddles(50), fNumPmts(2)
 {
     for (Int_t p = 0; p < fNumPmts; p++)
     {

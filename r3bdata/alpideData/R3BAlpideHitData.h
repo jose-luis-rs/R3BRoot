@@ -71,7 +71,7 @@ class R3BAlpideHitData : public TObject
     double fYloc = std::nan("");
     TVector3 fTrack;
     double fTheta = std::nan(""); // Reconstructed Theta
-    double fPhi = std::nan("");   // Reconstructed Phi
+    double fPhi = std::nan(""); // Reconstructed Phi
 
   public:
     // Class definition

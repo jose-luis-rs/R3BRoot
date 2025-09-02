@@ -34,19 +34,12 @@
 #include "R3BMusicPoint.h"
 
 // R3BMusicDigitizer: Default Constructor --------------------------
-R3BMusicDigitizer::R3BMusicDigitizer()
-    : R3BMusicDigitizer("Music", 1)
-{
-}
+R3BMusicDigitizer::R3BMusicDigitizer() : R3BMusicDigitizer("Music", 1) {}
 
 // R3BMusicDigitizer: Standard Constructor --------------------------
 R3BMusicDigitizer::R3BMusicDigitizer(const TString& name, Int_t iVerbose)
-    : FairTask("R3B" + name + "Digitizer", iVerbose)
-    , fName(name)
-    , fMCTrack(nullptr)
-    , fMusicPoints(nullptr)
-    , fMusicCal(nullptr)
-    , fSigmaX(0.03) // mm
+    : FairTask("R3B" + name + "Digitizer", iVerbose), fName(name), fMCTrack(nullptr), fMusicPoints(nullptr),
+      fMusicCal(nullptr), fSigmaX(0.03) // mm
 {
 }
 

@@ -34,14 +34,8 @@ ClassImp(R3BEventManagerEditor)
                                                  Int_t height,
                                                  UInt_t options,
                                                  Pixel_t back)
-    : TGedFrame(p, width, height, options | kVerticalFrame, back)
-    , fObject(0)
-    , fManager(R3BEventManager::Instance())
-    , fCurrentEvent(0)
-    , fCurrentPDG(0)
-    , fVizPri(0)
-    , fMinEnergy(0)
-    , fMaxEnergy(0)
+    : TGedFrame(p, width, height, options | kVerticalFrame, back), fObject(0), fManager(R3BEventManager::Instance()),
+      fCurrentEvent(0), fCurrentPDG(0), fVizPri(0), fMinEnergy(0), fMaxEnergy(0)
 
 {
     cout << "Calling Ctor Event Editor" << endl;

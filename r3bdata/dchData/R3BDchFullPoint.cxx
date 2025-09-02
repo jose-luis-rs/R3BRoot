@@ -21,16 +21,8 @@
 
 // -----   Default constructor   -------------------------------------------
 R3BDchFullPoint::R3BDchFullPoint()
-    : FairMCPoint()
-    , fLocalX(0.)
-    , fLocalY(0.)
-    , fLocalZ(0.)
-    , fLocalPx(0.)
-    , fLocalPy(0.)
-    , fLocalPz(0.)
-    , fModule(-1)
-    , fLayer(-1)
-    , fCell(-1)
+    : FairMCPoint(), fLocalX(0.), fLocalY(0.), fLocalZ(0.), fLocalPx(0.), fLocalPy(0.), fLocalPz(0.), fModule(-1),
+      fLayer(-1), fCell(-1)
 {
 }
 // -------------------------------------------------------------------------
@@ -47,16 +39,8 @@ R3BDchFullPoint::R3BDchFullPoint(Int_t trackId,
                                  Double_t tof,
                                  Double_t length,
                                  Double_t eLoss)
-    : FairMCPoint(trackId, mod, pos, mom, tof, length, eLoss)
-    , fLocalX(lpos.X())
-    , fLocalY(lpos.Y())
-    , fLocalZ(lpos.Z())
-    , fLocalPx(lmom.X())
-    , fLocalPy(lmom.Y())
-    , fLocalPz(lmom.Z())
-    , fModule(mod)
-    , fLayer(layer)
-    , fCell(cell)
+    : FairMCPoint(trackId, mod, pos, mom, tof, length, eLoss), fLocalX(lpos.X()), fLocalY(lpos.Y()), fLocalZ(lpos.Z()),
+      fLocalPx(lmom.X()), fLocalPy(lmom.Y()), fLocalPz(lmom.Z()), fModule(mod), fLayer(layer), fCell(cell)
 {
 }
 

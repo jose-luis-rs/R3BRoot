@@ -32,20 +32,9 @@ R3BNeulandNeutronReconstructionStatistics::R3BNeulandNeutronReconstructionStatis
                                                                                      const TString secondary,
                                                                                      const TString predicted,
                                                                                      std::ostream& out)
-    : fPrimaryClusters(primary)
-    , fSecondaryClusters(secondary)
-    , fPredictedNeutrons(predicted)
-    , fPredictedName(predicted)
-    , fhTP(nullptr)
-    , fhFP(nullptr)
-    , fhFN(nullptr)
-    , fhTN(nullptr)
-    , fTP(0)
-    , fFP(0)
-    , fFN(0)
-    , fTN(0)
-    , fOut(out)
-    , fMult(100)
+    : fPrimaryClusters(primary), fSecondaryClusters(secondary), fPredictedNeutrons(predicted),
+      fPredictedName(predicted), fhTP(nullptr), fhFP(nullptr), fhFN(nullptr), fhTN(nullptr), fTP(0), fFP(0), fFN(0),
+      fTN(0), fOut(out), fMult(100)
 {
 }
 

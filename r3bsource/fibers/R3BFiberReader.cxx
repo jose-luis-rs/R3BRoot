@@ -53,26 +53,14 @@ extern "C"
 }
 
 R3BFiberReader::R3BFiberReader(char const* a_name, UInt_t fiber_num, EXT_STR_h101_FIBZEA_onion* data, size_t offset)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData23a(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(fiber_num)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData23a(data), fOffset(offset), fShortName(a_name),
+      fFiberNum(fiber_num), fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
 }
 
 R3BFiberReader::R3BFiberReader(char const* a_name, UInt_t fiber_num, EXT_STR_h101_FIBZEB_onion* data, size_t offset)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData23b(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(fiber_num)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData23b(data), fOffset(offset), fShortName(a_name),
+      fFiberNum(fiber_num), fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
 }
 
@@ -82,14 +70,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData3a(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData3a(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -101,14 +83,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData3b(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData3b(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -120,14 +96,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData7(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData7(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -139,14 +109,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData8(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData8(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -158,14 +122,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData10(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData10(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -177,14 +135,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData11(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData11(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -196,14 +148,8 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData12(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData12(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
@@ -215,64 +161,34 @@ R3BFiberReader::R3BFiberReader(char const* a_name,
                                UInt_t a_sub_num,
                                UInt_t a_mapmt_channel_num,
                                UInt_t a_spmt_channel_num)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData13(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(0)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData13(data), fOffset(offset), fShortName(a_name), fFiberNum(0),
+      fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
     fChannelNum[0] = a_sub_num * a_mapmt_channel_num;
     fChannelNum[1] = a_sub_num * a_spmt_channel_num;
 }
 
 R3BFiberReader::R3BFiberReader(char const* a_name, UInt_t fiber_num, EXT_STR_h101_FIBEO_onion* data, size_t offset)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData30(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(fiber_num)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData30(data), fOffset(offset), fShortName(a_name),
+      fFiberNum(fiber_num), fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
 }
 
 R3BFiberReader::R3BFiberReader(char const* a_name, UInt_t fiber_num, EXT_STR_h101_FIBEI_onion* data, size_t offset)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData31(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(fiber_num)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData31(data), fOffset(offset), fShortName(a_name),
+      fFiberNum(fiber_num), fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
 }
 
 R3BFiberReader::R3BFiberReader(char const* a_name, UInt_t fiber_num, EXT_STR_h101_FIBEZ_onion* data, size_t offset)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData32(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(fiber_num)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData32(data), fOffset(offset), fShortName(a_name),
+      fFiberNum(fiber_num), fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
 }
 
 R3BFiberReader::R3BFiberReader(char const* a_name, UInt_t fiber_num, EXT_STR_h101_FIBEE_onion* data, size_t offset)
-    : R3BReader(TString("R3B") + a_name + "Reader")
-    , fData33(data)
-    , fOffset(offset)
-    , fShortName(a_name)
-    , fFiberNum(fiber_num)
-    , fDataSPMTTrig(NULL)
-    , fMappedArray(new TClonesArray("R3BFiberMappedData"))
-    , fOnline(kFALSE)
+    : R3BReader(TString("R3B") + a_name + "Reader"), fData33(data), fOffset(offset), fShortName(a_name),
+      fFiberNum(fiber_num), fDataSPMTTrig(NULL), fMappedArray(new TClonesArray("R3BFiberMappedData")), fOnline(kFALSE)
 {
 }
 

@@ -48,43 +48,17 @@ using namespace std;
 
 // R3BAmsMapped2StripCalPar: Default Constructor --------------------------
 R3BAmsMapped2StripCalPar::R3BAmsMapped2StripCalPar()
-    : FairTask("R3B AMS Pedestal Finder", 1)
-    , fMap_Par(NULL)
-    , fStrip_Par(NULL)
-    , fAmsMappedDataCA(NULL)
-    , fNumDets(6)
-    , fNumStrips(1024)
-    , fNumStripsS(640)
-    , fNumStripsK(384)
-    , fMaxSigma(5)
-    , fMinStadistics(1000)
-    , fMapHistos_left(0)
-    , fMapHistos_right(4000)
-    , fMapHistos_bins(4000)
-    , fSigma(0)
-    , fMean(0)
-    , fPrint(kFALSE)
+    : FairTask("R3B AMS Pedestal Finder", 1), fMap_Par(NULL), fStrip_Par(NULL), fAmsMappedDataCA(NULL), fNumDets(6),
+      fNumStrips(1024), fNumStripsS(640), fNumStripsK(384), fMaxSigma(5), fMinStadistics(1000), fMapHistos_left(0),
+      fMapHistos_right(4000), fMapHistos_bins(4000), fSigma(0), fMean(0), fPrint(kFALSE)
 {
 }
 
 // R3BAmsMapped2StripCalPar: Standard Constructor --------------------------
 R3BAmsMapped2StripCalPar::R3BAmsMapped2StripCalPar(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMap_Par(NULL)
-    , fStrip_Par(NULL)
-    , fAmsMappedDataCA(NULL)
-    , fNumDets(6)
-    , fNumStrips(1024)
-    , fNumStripsS(640)
-    , fNumStripsK(384)
-    , fMaxSigma(5)
-    , fMinStadistics(1000)
-    , fMapHistos_left(0)
-    , fMapHistos_right(4000)
-    , fMapHistos_bins(4000)
-    , fSigma(0)
-    , fMean(0)
-    , fPrint(kFALSE)
+    : FairTask(name, iVerbose), fMap_Par(NULL), fStrip_Par(NULL), fAmsMappedDataCA(NULL), fNumDets(6), fNumStrips(1024),
+      fNumStripsS(640), fNumStripsK(384), fMaxSigma(5), fMinStadistics(1000), fMapHistos_left(0),
+      fMapHistos_right(4000), fMapHistos_bins(4000), fSigma(0), fMean(0), fPrint(kFALSE)
 {
 }
 

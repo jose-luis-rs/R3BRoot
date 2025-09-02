@@ -29,15 +29,9 @@ R3BWhiterabbitCalifaReader::R3BWhiterabbitCalifaReader(EXT_STR_h101_WRCALIFA* da
                                                        size_t offset,
                                                        UInt_t whiterabbit_id1,
                                                        UInt_t whiterabbit_id2)
-    : R3BReader("R3BWhiterabbitCalifaReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fWhiterabbitId1(whiterabbit_id1)
-    , fWhiterabbitId2(whiterabbit_id2)
-    , fEventHeader(nullptr)
-    , fArray(new TClonesArray("R3BWRData"))
+    : R3BReader("R3BWhiterabbitCalifaReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fWhiterabbitId1(whiterabbit_id1), fWhiterabbitId2(whiterabbit_id2), fEventHeader(nullptr),
+      fArray(new TClonesArray("R3BWRData"))
 {
 }
 

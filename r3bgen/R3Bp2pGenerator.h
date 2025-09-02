@@ -58,7 +58,7 @@ class R3Bp2pGenerator : public FairGenerator
     virtual Bool_t ReadEvent(FairPrimaryGenerator* primGen);
 
   private:
-    ifstream* fInputFile;    //! Input file stream
+    ifstream* fInputFile; //! Input file stream
     const Char_t* fFileName; //! Input file Name
 
     ofstream* fOutputFile;

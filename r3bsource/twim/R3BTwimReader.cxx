@@ -28,16 +28,8 @@ extern "C"
 using namespace std;
 
 R3BTwimReader::R3BTwimReader(EXT_STR_h101_SOFTWIM* data, size_t offset)
-    : R3BReader("R3BTwimReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fPileup(kFALSE)
-    , fSections(4)
-    , fAnodes(16)
-    , fTref(1)
-    , fTtrig(1)
-    , fArray(new TClonesArray("R3BTwimMappedData"))
+    : R3BReader("R3BTwimReader"), fData(data), fOffset(offset), fOnline(kFALSE), fPileup(kFALSE), fSections(4),
+      fAnodes(16), fTref(1), fTtrig(1), fArray(new TClonesArray("R3BTwimMappedData"))
 {
 }
 

@@ -43,11 +43,7 @@ R3BTwimVertexReconstruction::R3BTwimVertexReconstruction()
 
 // R3BTwimVertexReconstructionPar: Standard Constructor --------------------------
 R3BTwimVertexReconstruction::R3BTwimVertexReconstruction(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTwimHitDataCA(NULL)
-    , f1(NULL)
-    , f2(NULL)
-    , fTpat(-1)
+    : FairTask(name, iVerbose), fTwimHitDataCA(NULL), f1(NULL), f2(NULL), fTpat(-1)
 {
 }
 

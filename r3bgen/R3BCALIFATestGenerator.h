@@ -139,37 +139,37 @@ class R3BCALIFATestGenerator : public FairGenerator
 
   private:
     Int_t fPDGType; // Particle type (PDG encoding)
-    Int_t fMult;    // Multiplicity
+    Int_t fMult; // Multiplicity
 
-    Double32_t fPDGMass;                     // Particle mass [GeV]
-    Double32_t fPtMin, fPtMax;               // Transverse momentum range [GeV]
-    Double32_t fPhiMin, fPhiMax;             // Azimuth angle range [degree]
-    Double32_t fEtaMin, fEtaMax;             // Pseudorapidity range in lab system
-    Double32_t fYMin, fYMax;                 // Rapidity range in lab system
-    Double32_t fPMin, fPMax;                 // Momentum range in lab system
-    Double32_t fThetaMin, fThetaMax;         // Polar angle range in lab system [degree]
-    Double32_t fX, fY, fZ;                   // Point vertex coordinates [cm]
+    Double32_t fPDGMass; // Particle mass [GeV]
+    Double32_t fPtMin, fPtMax; // Transverse momentum range [GeV]
+    Double32_t fPhiMin, fPhiMax; // Azimuth angle range [degree]
+    Double32_t fEtaMin, fEtaMax; // Pseudorapidity range in lab system
+    Double32_t fYMin, fYMax; // Rapidity range in lab system
+    Double32_t fPMin, fPMax; // Momentum range in lab system
+    Double32_t fThetaMin, fThetaMax; // Polar angle range in lab system [degree]
+    Double32_t fX, fY, fZ; // Point vertex coordinates [cm]
     Double32_t fX1, fY1, fZ1, fX2, fY2, fZ2; // Box vertex coords (x1,y1,z1)->(x2,y2,z2)
 
-    Bool_t fEtaRangeIsSet;   // True if eta range is set
-    Bool_t fYRangeIsSet;     // True if rapidity range is set
+    Bool_t fEtaRangeIsSet; // True if eta range is set
+    Bool_t fYRangeIsSet; // True if rapidity range is set
     Bool_t fThetaRangeIsSet; // True if theta range is set
-    Bool_t fCosThetaIsSet;   // True if uniform distribution in
-                             // cos(theta) is set (default -> not set)
-    Bool_t fPtRangeIsSet;    // True if transverse momentum range is set
-    Bool_t fPRangeIsSet;     // True if abs.momentum range is set
-    Bool_t fPointVtxIsSet;   // True if point vertex is set
-    Bool_t fBoxVtxIsSet;     // True if box vertex is set
-    Bool_t fDebug;           // Debug switch
+    Bool_t fCosThetaIsSet; // True if uniform distribution in
+                           // cos(theta) is set (default -> not set)
+    Bool_t fPtRangeIsSet; // True if transverse momentum range is set
+    Bool_t fPRangeIsSet; // True if abs.momentum range is set
+    Bool_t fPointVtxIsSet; // True if point vertex is set
+    Bool_t fBoxVtxIsSet; // True if box vertex is set
+    Bool_t fDebug; // Debug switch
 
     // SPECIFIC OF CALIFA
-    Double32_t fGammaEnergies[8];        // Gamma energies for the nuclear decay chain [GeV] TEST UNITS!
+    Double32_t fGammaEnergies[8]; // Gamma energies for the nuclear decay chain [GeV] TEST UNITS!
     Double32_t fGammaBranchingRatios[8]; // Gamma branching ratios for the nuclear decay chain
-    Int_t fGammasDefinedInNuclearDecay;  // Number of gammas defined (max 8)
-    double fBetaOfEmittingFragment;      // Velocity of the fragment emitting the gammas
-    double fGammaFactor;                 // Velocity of the fragment emitting the gammas
+    Int_t fGammasDefinedInNuclearDecay; // Number of gammas defined (max 8)
+    double fBetaOfEmittingFragment; // Velocity of the fragment emitting the gammas
+    double fGammaFactor; // Velocity of the fragment emitting the gammas
 
-    Bool_t fLorentzBoostIsSet;      // True if Lorentz Boost is set
+    Bool_t fLorentzBoostIsSet; // True if Lorentz Boost is set
     Bool_t fNuclearDecayChainIsSet; // True if a nuclear decay chain is set
 
   public:

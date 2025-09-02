@@ -65,15 +65,15 @@ typedef struct EXT_STR_h101_BMON_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_BMON_ITEMS_INFO(ok, si, offset, struct_t, printerr)                   \
-    do                                                                                     \
-    {                                                                                      \
-        ok = 1;                                                                            \
-        /* RAW */                                                                          \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, IC, UINT32, "IC");           \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, SEETRAM, UINT32, "SEETRAM"); \
-        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TOFDOR, UINT32, "TOFDOR");   \
-                                                                                           \
+#define EXT_STR_h101_BMON_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, IC, UINT32, "IC");                                       \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, SEETRAM, UINT32, "SEETRAM");                             \
+        EXT_STR_ITEM_INFO(ok, si, offset, struct_t, printerr, TOFDOR, UINT32, "TOFDOR");                               \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_BMON_EXT_H101_BMON_H__*/

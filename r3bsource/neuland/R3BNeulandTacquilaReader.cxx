@@ -25,12 +25,8 @@ extern "C"
 }
 
 R3BNeulandTacquilaReader::R3BNeulandTacquilaReader(EXT_STR_h101_raw_nnp_tacquila* data, UInt_t offset)
-    : R3BReader("R3BNeulandTacquilaReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fLogger(FairLogger::GetLogger())
-    , fArray(new TClonesArray("R3BNeulandTacquilaMappedData"))
+    : R3BReader("R3BNeulandTacquilaReader"), fNEvent(0), fData(data), fOffset(offset), fLogger(FairLogger::GetLogger()),
+      fArray(new TClonesArray("R3BNeulandTacquilaMappedData"))
 {
 }
 

@@ -25,20 +25,20 @@ using namespace std;
 // Structure changed to detector, channel, type, fineTime, coarseTime Nov 2016 (Ralf & Aleksandra)
 
 R3BLosMappedData::R3BLosMappedData()
-    : fDetector(-1)   // Detector number: 1...n
-    , fChannel(-1)    // Channel number:  1...n (n = 4 (old LOS), 8 (new LOS))
-    , fType(-1)       // Type: 0 = VFTX time, 1 = TAMEX leading edge, 2 = TAMEX trailing edge
-    , fTimeFine(-1)   // Fine time
-    , fTimeCoarse(-1) // Coarse time
+    : fDetector(-1) // Detector number: 1...n
+      ,
+      fChannel(-1) // Channel number:  1...n (n = 4 (old LOS), 8 (new LOS))
+      ,
+      fType(-1) // Type: 0 = VFTX time, 1 = TAMEX leading edge, 2 = TAMEX trailing edge
+      ,
+      fTimeFine(-1) // Fine time
+      ,
+      fTimeCoarse(-1) // Coarse time
 {
 }
 
 R3BLosMappedData::R3BLosMappedData(UInt_t detector, UInt_t channel, UInt_t type, UInt_t timeFine, UInt_t timeCoarse)
-    : fDetector(detector)
-    , fChannel(channel)
-    , fType(type)
-    , fTimeFine(timeFine)
-    , fTimeCoarse(timeCoarse)
+    : fDetector(detector), fChannel(channel), fType(type), fTimeFine(timeFine), fTimeCoarse(timeCoarse)
 {
     // cout<<"R3BLosMappedData: det. "<< detector<<", chann. "<< channel <<", type "<<type<<", fine/coarse Times:
     // "<<timeFine<<", "

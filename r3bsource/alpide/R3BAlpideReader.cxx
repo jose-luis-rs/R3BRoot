@@ -33,13 +33,8 @@ extern "C"
 }
 
 R3BAlpideReader::R3BAlpideReader(EXT_STR_h101_ALPIDE_onion* data, size_t offset)
-    : R3BReader("R3BAlpideReader")
-    , fNEvent(1)
-    , fData(data)
-    , fNbDet(sizeof(fData->ALPIDE) / sizeof(fData->ALPIDE[0]))
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BAlpideMappedData"))
+    : R3BReader("R3BAlpideReader"), fNEvent(1), fData(data), fNbDet(sizeof(fData->ALPIDE) / sizeof(fData->ALPIDE[0])),
+      fOffset(offset), fOnline(kFALSE), fArray(new TClonesArray("R3BAlpideMappedData"))
 {
 }
 

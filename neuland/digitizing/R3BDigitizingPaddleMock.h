@@ -26,10 +26,7 @@ namespace R3B::Digitizing::Neuland
     class MockPaddle : public Digitizing::Paddle
     {
       public:
-        explicit MockPaddle(uint16_t paddleID)
-            : Digitizing::Paddle{ paddleID }
-        {
-        }
+        explicit MockPaddle(uint16_t paddleID) : Digitizing::Paddle{ paddleID } {}
 
       private:
         [[nodiscard]] auto ComputeTime(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
@@ -62,7 +59,7 @@ namespace R3B::Digitizing::Neuland
 
       public:
         static constexpr double gHalfLength = 135.; // [cm]
-        static constexpr double gCMedium = 30.;     // speed of light in material in [cm/ns]
+        static constexpr double gCMedium = 30.; // speed of light in material in [cm/ns]
         static auto GenerateMockChannelHit(Double_t mcTime, Double_t mcLight, Double_t dist) -> Channel::Hit
         {
             auto time = mcTime - (MockPaddle::gHalfLength + dist) / MockPaddle::gCMedium;

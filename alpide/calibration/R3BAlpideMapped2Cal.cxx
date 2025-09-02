@@ -34,16 +34,10 @@
 #include "R3BLogger.h"
 
 // R3BAlpideMapped2Cal::Default Constructor --------------------------
-R3BAlpideMapped2Cal::R3BAlpideMapped2Cal()
-    : R3BAlpideMapped2Cal("R3BAlpideMapped2Cal", 1)
-{
-}
+R3BAlpideMapped2Cal::R3BAlpideMapped2Cal() : R3BAlpideMapped2Cal("R3BAlpideMapped2Cal", 1) {}
 
 // R3BAlpideMapped2Cal::Standard Constructor --------------------------
-R3BAlpideMapped2Cal::R3BAlpideMapped2Cal(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BAlpideMapped2Cal::R3BAlpideMapped2Cal(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 // Virtual R3BAlpideMapped2Cal::Destructor
 R3BAlpideMapped2Cal::~R3BAlpideMapped2Cal()

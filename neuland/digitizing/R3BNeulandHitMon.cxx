@@ -27,9 +27,7 @@
 #include <utility>
 
 R3BNeulandHitMon::R3BNeulandHitMon(TString input, TString output, const Option_t* option)
-    : FairTask("R3B NeuLAND NeulandHit Monitor")
-    , fOutput(std::move(output))
-    , fHits(std::move(input))
+    : FairTask("R3B NeuLAND NeulandHit Monitor"), fOutput(std::move(output)), fHits(std::move(input))
 {
     LOG(info) << "Using R3B NeuLAND NeulandHit Monitor";
 

@@ -159,138 +159,138 @@ typedef struct EXT_STR_h101_FIBTWELVE_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBTWELVE_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                       \
-    do                                                                                                              \
-    {                                                                                                               \
-        ok = 1;                                                                                                     \
-        /* RAW */                                                                                                   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCM, UINT32, "FIBTWELVE_TMLCM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCMI, UINT32, "FIBTWELVE_TMLCMI", "FIBTWELVE_TMLCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCME, UINT32, "FIBTWELVE_TMLCME", "FIBTWELVE_TMLCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLC, UINT32, "FIBTWELVE_TMLC", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCv, UINT32, "FIBTWELVE_TMLCv", "FIBTWELVE_TMLC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCM, UINT32, "FIBTWELVE_TMTCM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCMI, UINT32, "FIBTWELVE_TMTCMI", "FIBTWELVE_TMTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCME, UINT32, "FIBTWELVE_TMTCME", "FIBTWELVE_TMTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTC, UINT32, "FIBTWELVE_TMTC", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCv, UINT32, "FIBTWELVE_TMTCv", "FIBTWELVE_TMTC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFM, UINT32, "FIBTWELVE_TMLFM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFMI, UINT32, "FIBTWELVE_TMLFMI", "FIBTWELVE_TMLFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFME, UINT32, "FIBTWELVE_TMLFME", "FIBTWELVE_TMLFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLF, UINT32, "FIBTWELVE_TMLF", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFv, UINT32, "FIBTWELVE_TMLFv", "FIBTWELVE_TMLF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFM, UINT32, "FIBTWELVE_TMTFM", 512); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFMI, UINT32, "FIBTWELVE_TMTFMI", "FIBTWELVE_TMTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFME, UINT32, "FIBTWELVE_TMTFME", "FIBTWELVE_TMTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTF, UINT32, "FIBTWELVE_TMTF", 32768); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFv, UINT32, "FIBTWELVE_TMTFv", "FIBTWELVE_TMTF");      \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLCM, UINT32, "FIBTWELVE_TRIGMLCM", 4);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTWELVE_TRIGMLCMI,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTWELVE_TRIGMLCMI",                                                                \
-                              "FIBTWELVE_TRIGMLCM");                                                                \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTWELVE_TRIGMLCME,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTWELVE_TRIGMLCME",                                                                \
-                              "FIBTWELVE_TRIGMLCM");                                                                \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLC, UINT32, "FIBTWELVE_TRIGMLC", 256);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTWELVE_TRIGMLCv,                                                                   \
-                              UINT32,                                                                               \
-                              "FIBTWELVE_TRIGMLCv",                                                                 \
-                              "FIBTWELVE_TRIGMLC");                                                                 \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLFM, UINT32, "FIBTWELVE_TRIGMLFM", 4);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTWELVE_TRIGMLFMI,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTWELVE_TRIGMLFMI",                                                                \
-                              "FIBTWELVE_TRIGMLFM");                                                                \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTWELVE_TRIGMLFME,                                                                  \
-                              UINT32,                                                                               \
-                              "FIBTWELVE_TRIGMLFME",                                                                \
-                              "FIBTWELVE_TRIGMLFM");                                                                \
-        EXT_STR_ITEM_INFO_LIM(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLF, UINT32, "FIBTWELVE_TRIGMLF", 256);               \
-        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                   \
-                              si,                                                                                   \
-                              offset,                                                                               \
-                              struct_t,                                                                             \
-                              printerr,                                                                             \
-                              FIBTWELVE_TRIGMLFv,                                                                   \
-                              UINT32,                                                                               \
-                              "FIBTWELVE_TRIGMLFv",                                                                 \
-                              "FIBTWELVE_TRIGMLF");                                                                 \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCM, UINT32, "FIBTWELVE_TSLCM", 4);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCMI, UINT32, "FIBTWELVE_TSLCMI", "FIBTWELVE_TSLCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCME, UINT32, "FIBTWELVE_TSLCME", "FIBTWELVE_TSLCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLC, UINT32, "FIBTWELVE_TSLC", 256);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCv, UINT32, "FIBTWELVE_TSLCv", "FIBTWELVE_TSLC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCM, UINT32, "FIBTWELVE_TSTCM", 4);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCMI, UINT32, "FIBTWELVE_TSTCMI", "FIBTWELVE_TSTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCME, UINT32, "FIBTWELVE_TSTCME", "FIBTWELVE_TSTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTC, UINT32, "FIBTWELVE_TSTC", 256);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCv, UINT32, "FIBTWELVE_TSTCv", "FIBTWELVE_TSTC");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFM, UINT32, "FIBTWELVE_TSLFM", 4);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFMI, UINT32, "FIBTWELVE_TSLFMI", "FIBTWELVE_TSLFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFME, UINT32, "FIBTWELVE_TSLFME", "FIBTWELVE_TSLFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLF, UINT32, "FIBTWELVE_TSLF", 256);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFv, UINT32, "FIBTWELVE_TSLFv", "FIBTWELVE_TSLF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFM, UINT32, "FIBTWELVE_TSTFM", 4);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFMI, UINT32, "FIBTWELVE_TSTFMI", "FIBTWELVE_TSTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFME, UINT32, "FIBTWELVE_TSTFME", "FIBTWELVE_TSTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTF, UINT32, "FIBTWELVE_TSTF", 256);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                      \
-            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFv, UINT32, "FIBTWELVE_TSTFv", "FIBTWELVE_TSTF");      \
-                                                                                                                    \
+#define EXT_STR_h101_FIBTWELVE_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCM, UINT32, "FIBTWELVE_TMLCM", 512);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCMI, UINT32, "FIBTWELVE_TMLCMI", "FIBTWELVE_TMLCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCME, UINT32, "FIBTWELVE_TMLCME", "FIBTWELVE_TMLCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLC, UINT32, "FIBTWELVE_TMLC", 32768);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLCv, UINT32, "FIBTWELVE_TMLCv", "FIBTWELVE_TMLC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCM, UINT32, "FIBTWELVE_TMTCM", 512);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCMI, UINT32, "FIBTWELVE_TMTCMI", "FIBTWELVE_TMTCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCME, UINT32, "FIBTWELVE_TMTCME", "FIBTWELVE_TMTCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTC, UINT32, "FIBTWELVE_TMTC", 32768);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTCv, UINT32, "FIBTWELVE_TMTCv", "FIBTWELVE_TMTC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFM, UINT32, "FIBTWELVE_TMLFM", 512);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFMI, UINT32, "FIBTWELVE_TMLFMI", "FIBTWELVE_TMLFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFME, UINT32, "FIBTWELVE_TMLFME", "FIBTWELVE_TMLFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMLF, UINT32, "FIBTWELVE_TMLF", 32768);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMLFv, UINT32, "FIBTWELVE_TMLFv", "FIBTWELVE_TMLF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFM, UINT32, "FIBTWELVE_TMTFM", 512);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFMI, UINT32, "FIBTWELVE_TMTFMI", "FIBTWELVE_TMTFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFME, UINT32, "FIBTWELVE_TMTFME", "FIBTWELVE_TMTFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TMTF, UINT32, "FIBTWELVE_TMTF", 32768);    \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TMTFv, UINT32, "FIBTWELVE_TMTFv", "FIBTWELVE_TMTF");         \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLCM, UINT32, "FIBTWELVE_TRIGMLCM", 4);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTWELVE_TRIGMLCMI,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTWELVE_TRIGMLCMI",                                                                   \
+                              "FIBTWELVE_TRIGMLCM");                                                                   \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTWELVE_TRIGMLCME,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTWELVE_TRIGMLCME",                                                                   \
+                              "FIBTWELVE_TRIGMLCM");                                                                   \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLC, UINT32, "FIBTWELVE_TRIGMLC", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTWELVE_TRIGMLCv,                                                                      \
+                              UINT32,                                                                                  \
+                              "FIBTWELVE_TRIGMLCv",                                                                    \
+                              "FIBTWELVE_TRIGMLC");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLFM, UINT32, "FIBTWELVE_TRIGMLFM", 4);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTWELVE_TRIGMLFMI,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTWELVE_TRIGMLFMI",                                                                   \
+                              "FIBTWELVE_TRIGMLFM");                                                                   \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTWELVE_TRIGMLFME,                                                                     \
+                              UINT32,                                                                                  \
+                              "FIBTWELVE_TRIGMLFME",                                                                   \
+                              "FIBTWELVE_TRIGMLFM");                                                                   \
+        EXT_STR_ITEM_INFO_LIM(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TRIGMLF, UINT32, "FIBTWELVE_TRIGMLF", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok,                                                                                      \
+                              si,                                                                                      \
+                              offset,                                                                                  \
+                              struct_t,                                                                                \
+                              printerr,                                                                                \
+                              FIBTWELVE_TRIGMLFv,                                                                      \
+                              UINT32,                                                                                  \
+                              "FIBTWELVE_TRIGMLFv",                                                                    \
+                              "FIBTWELVE_TRIGMLF");                                                                    \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCM, UINT32, "FIBTWELVE_TSLCM", 4);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCMI, UINT32, "FIBTWELVE_TSLCMI", "FIBTWELVE_TSLCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCME, UINT32, "FIBTWELVE_TSLCME", "FIBTWELVE_TSLCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLC, UINT32, "FIBTWELVE_TSLC", 256);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLCv, UINT32, "FIBTWELVE_TSLCv", "FIBTWELVE_TSLC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCM, UINT32, "FIBTWELVE_TSTCM", 4);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCMI, UINT32, "FIBTWELVE_TSTCMI", "FIBTWELVE_TSTCM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCME, UINT32, "FIBTWELVE_TSTCME", "FIBTWELVE_TSTCM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTC, UINT32, "FIBTWELVE_TSTC", 256);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTCv, UINT32, "FIBTWELVE_TSTCv", "FIBTWELVE_TSTC");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFM, UINT32, "FIBTWELVE_TSLFM", 4);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFMI, UINT32, "FIBTWELVE_TSLFMI", "FIBTWELVE_TSLFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFME, UINT32, "FIBTWELVE_TSLFME", "FIBTWELVE_TSLFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSLF, UINT32, "FIBTWELVE_TSLF", 256);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSLFv, UINT32, "FIBTWELVE_TSLFv", "FIBTWELVE_TSLF");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFM, UINT32, "FIBTWELVE_TSTFM", 4);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFMI, UINT32, "FIBTWELVE_TSTFMI", "FIBTWELVE_TSTFM");      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFME, UINT32, "FIBTWELVE_TSTFME", "FIBTWELVE_TSTFM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBTWELVE_TSTF, UINT32, "FIBTWELVE_TSTF", 256);      \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBTWELVE_TSTFv, UINT32, "FIBTWELVE_TSTFv", "FIBTWELVE_TSTF");         \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBTWELVE_EXT_H101_FIBTWELVE_H__*/

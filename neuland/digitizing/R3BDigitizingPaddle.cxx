@@ -17,8 +17,7 @@
 namespace R3B::Digitizing
 {
     Paddle::Paddle(int paddleID, SignalCouplingStrategy strategy)
-        : fPaddleID{ paddleID }
-        , fSignalCouplingStrategy{ std::move(strategy) }
+        : fPaddleID{ paddleID }, fSignalCouplingStrategy{ std::move(strategy) }
     {
     }
 

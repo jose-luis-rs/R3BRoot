@@ -42,11 +42,7 @@ R3BBunchedFiberCal2Hit::ToT::ToT(R3BBunchedFiberCalData const* a_lead,
                                  Double_t a_lead_ns,
                                  Double_t a_tail_ns,
                                  Double_t a_tot_ns)
-    : lead(a_lead)
-    , trail(a_trail)
-    , lead_ns(a_lead_ns)
-    , tail_ns(a_tail_ns)
-    , tot_ns(a_tot_ns)
+    : lead(a_lead), trail(a_trail), lead_ns(a_lead_ns), tail_ns(a_tail_ns), tot_ns(a_tot_ns)
 {
 }
 
@@ -60,38 +56,14 @@ R3BBunchedFiberCal2Hit::R3BBunchedFiberCal2Hit(const char* a_name,
                                                Bool_t a_is_calibrator,
                                                Bool_t a_is_gain,
                                                Bool_t a_is_tsync)
-    : FairTask(TString("R3B") + a_name + "Cal2Hit", a_verbose)
-    , fName(a_name)
-    , fClockFreq(R3BTCalEngine::CTDC_16_BWD_150 == a_ctdc_variant ? 150 : 250)
-    , fDirection(a_direction)
-    , fSubNum(a_sub_num)
-    , fIsCalibrator(a_is_calibrator)
-    , fIsGain(a_is_gain)
-    , fIsTsync(a_is_tsync)
-    , fCalItems()
-    , fMAPMTCalTriggerItems()
-    , fSPMTCalTriggerItems()
-    , fHitItems(new TClonesArray("R3BBunchedFiberHitData"))
-    , fMapPar(NULL)
-    , fCalPar(NULL)
-    , fHitPar(NULL)
-    , fNofHitPars()
-    , fNofHitItems()
-    , fChannelArray()
-    , fh_ToT_MA_Fib()
-    , fh_ToT_Single_Fib()
-    , fh_ToT_s_Fib()
-    , fh_time_s_Fib()
-    , fh_ToT_ToT()
-    , fh_dt_Fib()
-    , fh_time_Fib()
-    , fh_Fib_ToF()
-    , fnEvents(0)
-    , fNumFibers(a_sub_num * a_mapmt_per_sub)
-    , fOrientation(STANDARD)
-    , fTimeStitch(nullptr)
-    , fExpId(0)
-    , fDetId(0)
+    : FairTask(TString("R3B") + a_name + "Cal2Hit", a_verbose), fName(a_name),
+      fClockFreq(R3BTCalEngine::CTDC_16_BWD_150 == a_ctdc_variant ? 150 : 250), fDirection(a_direction),
+      fSubNum(a_sub_num), fIsCalibrator(a_is_calibrator), fIsGain(a_is_gain), fIsTsync(a_is_tsync), fCalItems(),
+      fMAPMTCalTriggerItems(), fSPMTCalTriggerItems(), fHitItems(new TClonesArray("R3BBunchedFiberHitData")),
+      fMapPar(NULL), fCalPar(NULL), fHitPar(NULL), fNofHitPars(), fNofHitItems(), fChannelArray(), fh_ToT_MA_Fib(),
+      fh_ToT_Single_Fib(), fh_ToT_s_Fib(), fh_time_s_Fib(), fh_ToT_ToT(), fh_dt_Fib(), fh_time_Fib(), fh_Fib_ToF(),
+      fnEvents(0), fNumFibers(a_sub_num * a_mapmt_per_sub), fOrientation(STANDARD), fTimeStitch(nullptr), fExpId(0),
+      fDetId(0)
 
 {
     fChPerSub[0] = a_mapmt_per_sub;
@@ -841,7 +813,7 @@ void R3BBunchedFiberCal2Hit::Standard()
                         fName == "Fi3b")
                     {
                         Float_t fiber_thickness = 0.021000 * 2.; // s remove *2 when taking SPMT into analysis
-                        Int_t fiber_nbr = 512 / 2;               // s remove /2 when taking SPMT into analysis
+                        Int_t fiber_nbr = 512 / 2; // s remove /2 when taking SPMT into analysis
                         Float_t dead_layer = 0.9;
                         Float_t air_layer = 0.01; // relative to fiber_thickness
                         Float_t detector_width = fiber_nbr * fiber_thickness * (1 + air_layer);

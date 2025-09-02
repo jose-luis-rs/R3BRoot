@@ -22,9 +22,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BLosHitPar::R3BLosHitPar(const TString& name, const TString& title, const TString& context)
-    : FairParGenericSet(name, title, context)
-    , fNumParamsTamexLE(2)
-    , fNumParamsTamexTE(2)
+    : FairParGenericSet(name, title, context), fNumParamsTamexLE(2), fNumParamsTamexTE(2)
 {
     fLEMatchParams = new TArrayF(8 * fNumParamsTamexLE);
     fTEMatchParams = new TArrayF(8 * fNumParamsTamexTE);

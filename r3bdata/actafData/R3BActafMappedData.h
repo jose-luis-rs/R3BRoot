@@ -58,7 +58,7 @@ class R3BActafMappedData : public TObject
     void Print(const Option_t*) const override;
 
   protected:
-    UInt_t fPad = 0;                // Pad number
+    UInt_t fPad = 0; // Pad number
     double fE = 0., fBaseline = 0.; // Energy and baseline
     int fRisetime = 0, fMaxpos = 0;
     double fMaxamplitude = 0.;

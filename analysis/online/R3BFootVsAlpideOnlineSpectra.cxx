@@ -59,24 +59,14 @@
 using namespace std;
 
 R3BFootVsAlpideOnlineSpectra::R3BFootVsAlpideOnlineSpectra()
-    : FairTask("FootVsAlpideOnlineSpectra", 1)
-    , fHitItemsFoot(NULL)
-    , fHitItemsAlpide(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(8)
+    : FairTask("FootVsAlpideOnlineSpectra", 1), fHitItemsFoot(NULL), fHitItemsAlpide(NULL),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTrigger(-1), fNEvents(0), fNbDet(8)
 {
 }
 
 R3BFootVsAlpideOnlineSpectra::R3BFootVsAlpideOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitItemsFoot(NULL)
-    , fHitItemsAlpide(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(8)
+    : FairTask(name, iVerbose), fHitItemsFoot(NULL), fHitItemsAlpide(NULL), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.),
+      fTrigger(-1), fNEvents(0), fNbDet(8)
 {
 }
 

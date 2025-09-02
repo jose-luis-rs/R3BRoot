@@ -35,16 +35,11 @@ extern "C"
 }
 
 R3BFootSiReader::R3BFootSiReader(EXT_STR_h101_FOOT_onion* data, size_t offset)
-    : R3BReader("R3BFootSiReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fNbDet(16)
-    //, fNbDet(sizeof(EXT_STR_h101_FOOT_onion) / sizeof(EXT_STR_h101_FOOT_onion.FOOT[0])) // Auto-gets # FEET from
-    // struct!
-    , fArray(new TClonesArray("R3BFootMappedData"))
-    , fMappedDetId(16)
+    : R3BReader("R3BFootSiReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE), fNbDet(16)
+      //, fNbDet(sizeof(EXT_STR_h101_FOOT_onion) / sizeof(EXT_STR_h101_FOOT_onion.FOOT[0])) // Auto-gets # FEET from
+      // struct!
+      ,
+      fArray(new TClonesArray("R3BFootMappedData")), fMappedDetId(16)
 {
     // Trivial mapping 1 - 1 by default
     std::iota(fMappedDetId.begin(), fMappedDetId.end(), 1);

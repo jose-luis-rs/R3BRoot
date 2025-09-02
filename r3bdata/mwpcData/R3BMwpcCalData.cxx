@@ -18,21 +18,11 @@
 #include "R3BMwpcCalData.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BMwpcCalData::R3BMwpcCalData()
-    : fPlane(0)
-    , fPad(0)
-    , fCharge(0.0)
-{
-}
+R3BMwpcCalData::R3BMwpcCalData() : fPlane(0), fPad(0), fCharge(0.0) {}
 // -------------------------------------------------------------------------
 
 // -----   Standard constructor   ------------------------------------------
-R3BMwpcCalData::R3BMwpcCalData(UInt_t plane, UInt_t pad, Float_t charge)
-    : fPlane(plane)
-    , fPad(pad)
-    , fCharge(charge)
-{
-}
+R3BMwpcCalData::R3BMwpcCalData(UInt_t plane, UInt_t pad, Float_t charge) : fPlane(plane), fPad(pad), fCharge(charge) {}
 // -------------------------------------------------------------------------
 
 ClassImp(R3BMwpcCalData);

@@ -18,25 +18,14 @@
 
 #include "R3BFiberMAPMTMappedData.h"
 
-R3BFiberMAPMTMappedData::R3BFiberMAPMTMappedData()
-    : fSide(-1)
-    , fChannel(-1)
-    , fIsLeading()
-    , fCoarse(-1)
-    , fFine(-1)
-{
-}
+R3BFiberMAPMTMappedData::R3BFiberMAPMTMappedData() : fSide(-1), fChannel(-1), fIsLeading(), fCoarse(-1), fFine(-1) {}
 
 R3BFiberMAPMTMappedData::R3BFiberMAPMTMappedData(Int_t a_side,
                                                  Int_t a_channel,
                                                  Bool_t a_is_leading,
                                                  Int_t a_coarse,
                                                  Int_t a_fine)
-    : fSide(a_side)
-    , fChannel(a_channel)
-    , fIsLeading(a_is_leading)
-    , fCoarse(a_coarse)
-    , fFine(a_fine)
+    : fSide(a_side), fChannel(a_channel), fIsLeading(a_is_leading), fCoarse(a_coarse), fFine(a_fine)
 {
 }
 

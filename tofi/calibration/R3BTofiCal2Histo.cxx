@@ -55,21 +55,9 @@ namespace
 } // namespace
 
 R3BTofiCal2Histo::R3BTofiCal2Histo()
-    : FairTask("R3BTofiCal2Histo", 1)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(6)
-    , fNEvents(0)
-    , fCal_Par(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTofiY(0.)
-    , fTofiQ(0.)
-    , fTofiSmiley(true)
-    , fTofiZ(false)
-    , fParaFile("")
+    : FairTask("R3BTofiCal2Histo", 1), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fTpat(-1), fNofPlanes(5),
+      fPaddlesPerPlane(6), fNEvents(0), fCal_Par(NULL), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTofiY(0.), fTofiQ(0.),
+      fTofiSmiley(true), fTofiZ(false), fParaFile("")
 {
     for (Int_t i = 0; i < N_TOFI_HIT_PLANE_MAX; i++)
     {
@@ -89,22 +77,9 @@ R3BTofiCal2Histo::R3BTofiCal2Histo()
 }
 
 R3BTofiCal2Histo::R3BTofiCal2Histo(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(6)
-    , fNEvents(0)
-    , fCal_Par(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTofiY(0.)
-    , fTofiQ(0.)
-    , fTofiSmiley(true)
-    , fTofiZ(false)
-    , fParaFile("")
-    , maxevent(0)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fTpat(-1), fNofPlanes(5),
+      fPaddlesPerPlane(6), fNEvents(0), fCal_Par(NULL), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTofiY(0.), fTofiQ(0.),
+      fTofiSmiley(true), fTofiZ(false), fParaFile(""), maxevent(0)
 {
     for (Int_t i = 0; i < N_TOFI_HIT_PLANE_MAX; i++)
     {
@@ -336,8 +311,8 @@ void R3BTofiCal2Histo::Exec(Option_t* option)
                 // Hit!
                 // std::cout << "Hit!\n";
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
-                if (iPlane > fNofPlanes)             // this also errors for iDetector==0
+                Int_t iBar = top->GetBarId(); // 1..n
+                if (iPlane > fNofPlanes) // this also errors for iDetector==0
                 {
                     // LOG(error) << "R3BTofiCal2HitPar::Exec() : more detectors than expected! Det: " << iPlane
                     //           << " allowed are 1.." << fNofPlanes;

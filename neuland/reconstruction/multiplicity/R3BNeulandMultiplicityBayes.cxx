@@ -7,11 +7,8 @@
 #include <utility>
 
 R3BNeulandMultiplicityBayes::R3BNeulandMultiplicityBayes(TString input, TString output)
-    : FairTask("R3BNeulandMultiplicityBayes")
-    , fClusters(std::move(input))
-    , fMultiplicity(new R3BNeulandMultiplicity())
-    , fOutputName(std::move(output))
-    , fPar(nullptr)
+    : FairTask("R3BNeulandMultiplicityBayes"), fClusters(std::move(input)), fMultiplicity(new R3BNeulandMultiplicity()),
+      fOutputName(std::move(output)), fPar(nullptr)
 {
 }
 

@@ -26,10 +26,7 @@
 #include "TString.h"
 
 R3BPspxHitPar::R3BPspxHitPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumDetectors(-1)
-    , fHitPosPar()
-    , fHitEPar()
+    : FairParGenericSet(name, title, context), fNumDetectors(-1), fHitPosPar(), fHitEPar()
 {
     detName = "Pspx";
 }

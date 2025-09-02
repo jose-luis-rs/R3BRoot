@@ -36,35 +36,17 @@
 #include "R3BTGeoPar.h"
 
 // R3BMusliMapped2CalPar: Default Constructor --------------------------
-R3BMusliMapped2CalPar::R3BMusliMapped2CalPar()
-    : R3BMusliMapped2CalPar("R3BMusliMapped2CalPar", 1, "Mwpc1", "Mwpc2")
-{
-}
+R3BMusliMapped2CalPar::R3BMusliMapped2CalPar() : R3BMusliMapped2CalPar("R3BMusliMapped2CalPar", 1, "Mwpc1", "Mwpc2") {}
 
 // R3BMusliMapped2CalParPar: Standard Constructor --------------------------
 R3BMusliMapped2CalPar::R3BMusliMapped2CalPar(const TString& name,
                                              Int_t iVerbose,
                                              const TString& namedeta,
                                              const TString& namedetb)
-    : FairTask(name, iVerbose)
-    , fNumSignals(18)
-    , fNumGroupsAnodes(15)
-    , fMaxMult(20)
-    , fMinStatistics(1000)
-    , fNumParamsEneFit(2)
-    , fNumParamsPosFit(2)
-    , fNameDetA(namedeta)
-    , fNameDetB(namedetb)
-    , fLim_DTrawMin(0)
-    , fLim_DTrawMax(24000)
-    , EneCalParams(NULL)
-    , PosCalParams(NULL)
-    , fMusliGeo_Par(NULL)
-    , fMwAGeo_Par(NULL)
-    , fMwBGeo_Par(NULL)
-    , fMusliMappedDataCA(NULL)
-    , fMwAHitDataCA(NULL)
-    , fMwBHitDataCA(NULL)
+    : FairTask(name, iVerbose), fNumSignals(18), fNumGroupsAnodes(15), fMaxMult(20), fMinStatistics(1000),
+      fNumParamsEneFit(2), fNumParamsPosFit(2), fNameDetA(namedeta), fNameDetB(namedetb), fLim_DTrawMin(0),
+      fLim_DTrawMax(24000), EneCalParams(NULL), PosCalParams(NULL), fMusliGeo_Par(NULL), fMwAGeo_Par(NULL),
+      fMwBGeo_Par(NULL), fMusliMappedDataCA(NULL), fMwAHitDataCA(NULL), fMwBHitDataCA(NULL)
 {
 }
 
@@ -226,7 +208,7 @@ void R3BMusliMapped2CalPar::Exec(Option_t* option)
     Double_t slope = (fXB - fXA) / (fMwBGeo_Par->GetPosZ() - fMwAGeo_Par->GetPosZ());
     Double_t musliZpos[fNumGroupsAnodes]; // position in Z of each group of anodes
     Double_t musliXpos[fNumGroupsAnodes]; // position in X extrapolated from MwA & MwB
-    Double_t DTraw[fNumGroupsAnodes];     // raw drift time measured for each group of anodes
+    Double_t DTraw[fNumGroupsAnodes]; // raw drift time measured for each group of anodes
 
     for (Int_t i = 0; i < 8; i++)
         musliZpos[i] = fMusliGeo_Par->GetPosZ() * 10. - 175. + i * 50.;

@@ -41,19 +41,11 @@ using std::ifstream;
 using std::ofstream;
 
 // -----   Default constructor   ------------------------------------------
-R3Bp2pGenerator::R3Bp2pGenerator()
-    : fInputFile(NULL)
-    , fFileName("")
-    , fOutputFile(NULL)
-{
-}
+R3Bp2pGenerator::R3Bp2pGenerator() : fInputFile(NULL), fFileName(""), fOutputFile(NULL) {}
 // ------------------------------------------------------------------------
 
 // -----   Standard constructor   -----------------------------------------
-R3Bp2pGenerator::R3Bp2pGenerator(const char* fileName)
-    : fInputFile(NULL)
-    , fFileName(fileName)
-    , fOutputFile(NULL)
+R3Bp2pGenerator::R3Bp2pGenerator(const char* fileName) : fInputFile(NULL), fFileName(fileName), fOutputFile(NULL)
 {
     cout << "-I R3Bp2pGenerator: Opening input file " << fileName << endl;
     fInputFile = new ifstream(fFileName);
@@ -66,9 +58,7 @@ R3Bp2pGenerator::R3Bp2pGenerator(const char* fileName)
 // ------------------------------------------------------------------------
 
 R3Bp2pGenerator::R3Bp2pGenerator(const R3Bp2pGenerator& right)
-    : fInputFile(right.fInputFile)
-    , fFileName(right.fFileName)
-    , fOutputFile(right.fOutputFile)
+    : fInputFile(right.fInputFile), fFileName(right.fFileName), fOutputFile(right.fOutputFile)
 {
 }
 

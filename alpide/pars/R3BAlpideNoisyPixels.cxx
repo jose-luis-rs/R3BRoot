@@ -31,18 +31,11 @@
 #include "R3BLogger.h"
 
 // R3BAlpideNoisyPixels::Default Constructor --------------------------
-R3BAlpideNoisyPixels::R3BAlpideNoisyPixels()
-    : R3BAlpideNoisyPixels("R3BAlpideNoisyPixels", 1)
-{
-}
+R3BAlpideNoisyPixels::R3BAlpideNoisyPixels() : R3BAlpideNoisyPixels("R3BAlpideNoisyPixels", 1) {}
 
 // R3BAlpideNoisyPixels::Standard Constructor --------------------------
 R3BAlpideNoisyPixels::R3BAlpideNoisyPixels(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fAlpideMappedData(NULL)
-    , fMap_Par(NULL)
-    , fNbSensors(1)
-    , fThr(1000)
+    : FairTask(name, iVerbose), fAlpideMappedData(NULL), fMap_Par(NULL), fNbSensors(1), fThr(1000)
 {
     for (Int_t c = 0; c < DAlpideCols; c++)
         for (Int_t r = 0; r < DAlpideRows; r++)

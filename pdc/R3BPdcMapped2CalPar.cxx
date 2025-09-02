@@ -29,21 +29,13 @@
 #include "R3BTCalPar.h"
 
 R3BPdcMapped2CalPar::R3BPdcMapped2CalPar()
-    : FairTask("R3BPdcMapped2CalPar", 1)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fCalPar(nullptr)
-    , fMapped(nullptr)
-    , fEngine(nullptr)
+    : FairTask("R3BPdcMapped2CalPar", 1), fUpdateRate(1000000), fMinStats(100000), fCalPar(nullptr), fMapped(nullptr),
+      fEngine(nullptr)
 {
 }
 
 R3BPdcMapped2CalPar::R3BPdcMapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fCalPar(nullptr)
-    , fEngine(nullptr)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fMinStats(100000), fCalPar(nullptr), fEngine(nullptr)
 {
 }
 

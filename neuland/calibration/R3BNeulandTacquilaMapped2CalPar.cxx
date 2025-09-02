@@ -27,23 +27,13 @@
 #include <stdlib.h>
 
 R3BNeulandTacquilaMapped2CalPar::R3BNeulandTacquilaMapped2CalPar()
-    : fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofPMTs(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fNofPMTs(0), fNEvents(0), fCal_Par(NULL)
 {
 }
 
 R3BNeulandTacquilaMapped2CalPar::R3BNeulandTacquilaMapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofPMTs(0)
-    , fNEvents(0)
-    , fCal_Par(NULL)
+    : FairTask(name, iVerbose), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1), fNofPMTs(0), fNEvents(0),
+      fCal_Par(NULL)
 {
 }
 

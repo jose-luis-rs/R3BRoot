@@ -61,7 +61,7 @@ namespace Neuland
             TH1F fTotalStoppedTrackLengthDistribution;
             TH2F fCorrelationMatrix;
             TH3F fTrackEntryPointDistribution; // Z X Y
-            TH3F fTrackDirectionDistribution;  // Z X Y
+            TH3F fTrackDirectionDistribution; // Z X Y
         };
     } // namespace Calibration
 } // namespace Neuland

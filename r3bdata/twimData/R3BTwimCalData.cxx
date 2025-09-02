@@ -18,21 +18,12 @@
 #include "R3BTwimCalData.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BTwimCalData::R3BTwimCalData()
-    : fSecID(0)
-    , fAnodeID(0)
-    , fDT(0.)
-    , fEnergy(0.)
-{
-}
+R3BTwimCalData::R3BTwimCalData() : fSecID(0), fAnodeID(0), fDT(0.), fEnergy(0.) {}
 // -------------------------------------------------------------------------
 
 // -----   Standard constructor   ------------------------------------------
 R3BTwimCalData::R3BTwimCalData(UInt_t secID, UInt_t anodeID, Double_t dt, Double_t energy)
-    : fSecID(secID)
-    , fAnodeID(anodeID)
-    , fDT(dt)
-    , fEnergy(energy)
+    : fSecID(secID), fAnodeID(anodeID), fDT(dt), fEnergy(energy)
 {
 }
 // -------------------------------------------------------------------------

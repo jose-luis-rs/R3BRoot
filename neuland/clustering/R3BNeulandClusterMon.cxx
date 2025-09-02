@@ -38,10 +38,8 @@ inline Double_t GetTheta(const R3BNeulandCluster* cluster)
 }
 
 R3BNeulandClusterMon::R3BNeulandClusterMon(TString input, TString output, const Option_t* option)
-    : FairTask("R3B NeuLAND NeulandCluster Monitor")
-    , fNeulandClusters(input)
-    , fOutput(std::move(output))
-    , fBeta(0.793) // 600 Mev?
+    : FairTask("R3B NeuLAND NeulandCluster Monitor"), fNeulandClusters(input), fOutput(std::move(output)),
+      fBeta(0.793) // 600 Mev?
 {
     LOG(info) << "Using R3B NeuLAND NeulandCluster Monitor";
 
@@ -249,10 +247,10 @@ InitStatus R3BNeulandClusterMon::Init()
 void R3BNeulandClusterMon::Exec(Option_t*)
 {
     auto clusters = fNeulandClusters.Retrieve();
-    clusters.erase(
-        std::remove_if(
-            clusters.begin(), clusters.end(), [&](R3BNeulandCluster* c) { return !(fClusterFilters.IsValid(c)); }),
-        clusters.end());
+    clusters.erase(std::remove_if(clusters.begin(),
+                                  clusters.end(),
+                                  [&](R3BNeulandCluster* c) { return !(fClusterFilters.IsValid(c)); }),
+                   clusters.end());
 
     const auto nClusters = clusters.size();
 
@@ -378,10 +376,10 @@ void R3BNeulandClusterMon::Exec(Option_t*)
                 {
                     fhScatterAngleVSRecoilAngle->Fill(std::acos(Neuland::ScatteredNeutronAngle(*ita, *itb)),
                                                       std::acos(Neuland::RecoilScatteringAngle(*ita)));
-                    fhSumAngleVSRatioErecoEtof->Fill(
-                        std::acos(Neuland::ScatteredNeutronAngle(*ita, *itb)) +
-                            std::acos(Neuland::RecoilScatteringAngle(*ita)),
-                        Neuland::NeutronEnergyFromElasticProtonScattering(*ita) / (*ita)->GetFirstHit().GetEToF());
+                    fhSumAngleVSRatioErecoEtof->Fill(std::acos(Neuland::ScatteredNeutronAngle(*ita, *itb)) +
+                                                         std::acos(Neuland::RecoilScatteringAngle(*ita)),
+                                                     Neuland::NeutronEnergyFromElasticProtonScattering(*ita) /
+                                                         (*ita)->GetFirstHit().GetEToF());
                 }
             }
         }

@@ -26,10 +26,7 @@ extern "C"
 #define LENGTH(x) (sizeof x / sizeof *x)
 
 R3BPdcReader::R3BPdcReader(EXT_STR_h101_PDC* data, UInt_t a_offset)
-    : R3BReader("R3BPdcReader")
-    , fData(data)
-    , fOffset(a_offset)
-    , fMappedArray(new TClonesArray("R3BPdcMappedData"))
+    : R3BReader("R3BPdcReader"), fData(data), fOffset(a_offset), fMappedArray(new TClonesArray("R3BPdcMappedData"))
 {
 }
 

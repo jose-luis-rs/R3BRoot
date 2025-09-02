@@ -23,12 +23,9 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BRpcHitPar::R3BRpcHitPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumChannels(N_STRIP_NB)
-    , fHitCalParams1(new TArrayF(N_STRIP_NB))
-    , fHitCalParams2(new TArrayF(N_STRIP_NB))
-    , fHitCalParams3(new TArrayF(N_STRIP_NB))
-    , fHitCalParams4(new TArrayF(N_STRIP_NB))
+    : FairParGenericSet(name, title, context), fNumChannels(N_STRIP_NB), fHitCalParams1(new TArrayF(N_STRIP_NB)),
+      fHitCalParams2(new TArrayF(N_STRIP_NB)), fHitCalParams3(new TArrayF(N_STRIP_NB)),
+      fHitCalParams4(new TArrayF(N_STRIP_NB))
 {
 }
 

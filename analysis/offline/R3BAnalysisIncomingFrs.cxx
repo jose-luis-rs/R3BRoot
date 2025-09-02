@@ -49,64 +49,20 @@ using namespace std;
 #define SPEED_OF_LIGHT_MNS 0.299792458
 
 R3BAnalysisIncomingFrs::R3BAnalysisIncomingFrs()
-    : FairTask("AnalysisIncomingFrs", 1)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fClockFreq(5.)
-    , fNEvents(0)
-    , fTcalSci2(NULL)
-    , fHitItemsMus(NULL)
-    , fFrsDataCA(NULL)
-    , fToFoffset(0)
-    , fToFmin(-5000)
-    , fToFmax(5000)
-    , fTof2InvV_p0(-7.8)
-    , fTof2InvV_p1(0.0073)
-    , fL2(137)
-    , fPos_p0(-11)
-    , fPos_p1(54.7)
-    , fDispersionS2(7000)
-    , fBrho0_S2toCC(9.458)
-    , fP0(-2.12371e7)
-    , fP1(4.9473e7)
-    , fP2(-2.87635e7)
-    , fZprimary(50.)
-    , fZoffset(-1.3)
-    , fPos2min(-200.)
-    , fPos2max(200.)
-    , ZMUSIC_cut(50)
-    , ZMUSIC_wcut(0.5)
-    , fOnline(kFALSE)
+    : FairTask("AnalysisIncomingFrs", 1), fTrigger(-1), fTpat(-1), fClockFreq(5.), fNEvents(0), fTcalSci2(NULL),
+      fHitItemsMus(NULL), fFrsDataCA(NULL), fToFoffset(0), fToFmin(-5000), fToFmax(5000), fTof2InvV_p0(-7.8),
+      fTof2InvV_p1(0.0073), fL2(137), fPos_p0(-11), fPos_p1(54.7), fDispersionS2(7000), fBrho0_S2toCC(9.458),
+      fP0(-2.12371e7), fP1(4.9473e7), fP2(-2.87635e7), fZprimary(50.), fZoffset(-1.3), fPos2min(-200.), fPos2max(200.),
+      ZMUSIC_cut(50), ZMUSIC_wcut(0.5), fOnline(kFALSE)
 {
 }
 
 R3BAnalysisIncomingFrs::R3BAnalysisIncomingFrs(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fClockFreq(5.)
-    , fNEvents(0)
-    , fTcalSci2(NULL)
-    , fHitItemsMus(NULL)
-    , fFrsDataCA(NULL)
-    , fToFoffset(0)
-    , fToFmin(-5000)
-    , fToFmax(5000)
-    , fTof2InvV_p0(-7.8)
-    , fTof2InvV_p1(0.0073)
-    , fL2(137)
-    , fPos_p0(-11)
-    , fPos_p1(54.7)
-    , fDispersionS2(7000.)
-    , fBrho0_S2toCC(9.458)
-    , fP0(-2.12371e7)
-    , fP1(4.9473e7)
-    , fP2(-2.87635e7)
-    , fZprimary(50.)
-    , fZoffset(-1.3)
-    , ZMUSIC_cut(50)
-    , ZMUSIC_wcut(0.5)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat(-1), fClockFreq(5.), fNEvents(0), fTcalSci2(NULL),
+      fHitItemsMus(NULL), fFrsDataCA(NULL), fToFoffset(0), fToFmin(-5000), fToFmax(5000), fTof2InvV_p0(-7.8),
+      fTof2InvV_p1(0.0073), fL2(137), fPos_p0(-11), fPos_p1(54.7), fDispersionS2(7000.), fBrho0_S2toCC(9.458),
+      fP0(-2.12371e7), fP1(4.9473e7), fP2(-2.87635e7), fZprimary(50.), fZoffset(-1.3), ZMUSIC_cut(50), ZMUSIC_wcut(0.5),
+      fOnline(kFALSE)
 {
 }
 
@@ -364,8 +320,8 @@ void R3BAnalysisIncomingFrs::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
-            Int_t iTyp = hit->GetType();     // 0,1,2,3
+            Int_t iCha = hit->GetChannel(); // 1..
+            Int_t iTyp = hit->GetType(); // 0,1,2,3
         }
     }
 
@@ -693,7 +649,7 @@ void R3BAnalysisIncomingFrs::Exec(Option_t* option)
                 Beta_m1 = Velo_m1 / 0.299792458;
                 Gamma_m1 = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1, 2)));
                 PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]
-                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1;       // [mm] at S2
+                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1; // [mm] at S2
                 Brho_m1 = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
                 AoQ_m1 = Brho_m1 / (3.10716 * Beta_m1 * Gamma_m1);
                 if (Zmusic > 0.)

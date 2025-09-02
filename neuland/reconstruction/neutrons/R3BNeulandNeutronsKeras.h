@@ -25,11 +25,11 @@ class R3BNeulandNeutronsKeras : public FairTask
     InitStatus Init() override;
 
   private:
-    const TString fInputMult;                    //!
+    const TString fInputMult; //!
     const R3BNeulandMultiplicity* fMultiplicity; //!
 
     const TString fInputCluster; //!
-    TClonesArray* fClusters;     //! non-owning
+    TClonesArray* fClusters; //! non-owning
 
     TCAOutputConnector<R3BNeulandNeutron> fNeutrons; //!
     double fMinProb;

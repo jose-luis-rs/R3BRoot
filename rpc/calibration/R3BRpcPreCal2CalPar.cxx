@@ -31,18 +31,11 @@
 #include <iostream>
 #include <stdlib.h>
 
-R3BRpcPreCal2CalPar::R3BRpcPreCal2CalPar()
-    : R3BRpcPreCal2CalPar("R3B RPC Calibration Parameters Finder ", 1)
-{
-}
+R3BRpcPreCal2CalPar::R3BRpcPreCal2CalPar() : R3BRpcPreCal2CalPar("R3B RPC Calibration Parameters Finder ", 1) {}
 
 R3BRpcPreCal2CalPar::R3BRpcPreCal2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fDebugMode(0)
-    , fNumChannels(64)
-    , fR3BEventHeader(NULL)
-    , fTotCalPar(NULL)
-    , fPreCalDataCA(NULL)
+    : FairTask(name, iVerbose), fDebugMode(0), fNumChannels(64), fR3BEventHeader(NULL), fTotCalPar(NULL),
+      fPreCalDataCA(NULL)
 {
     for (Int_t i = 0; i < N_NUM; i++)
     {

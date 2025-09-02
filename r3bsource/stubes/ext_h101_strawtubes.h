@@ -85,26 +85,26 @@ typedef struct EXT_STR_h101_STRAWTUBES_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_STRAWTUBES_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                       \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TFM, UINT32, "STRAW1S1TFM", 32);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, STRAW1S1TFMI, UINT32, "STRAW1S1TFMI", "STRAW1S1TFM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, STRAW1S1TFME, UINT32, "STRAW1S1TFME", "STRAW1S1TFM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TF, UINT32, "STRAW1S1TF", 6400);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, STRAW1S1TFv, UINT32, "STRAW1S1TFv", "STRAW1S1TF"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TCM, UINT32, "STRAW1S1TCM", 32);           \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, STRAW1S1TCMI, UINT32, "STRAW1S1TCMI", "STRAW1S1TCM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, STRAW1S1TCME, UINT32, "STRAW1S1TCME", "STRAW1S1TCM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TC, UINT32, "STRAW1S1TC", 6400);           \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, STRAW1S1TCv, UINT32, "STRAW1S1TCv", "STRAW1S1TC"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TRIG, UINT32, "STRAW1S1TRIG", 65535);      \
-                                                                                                                     \
+#define EXT_STR_h101_STRAWTUBES_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                         \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TFM, UINT32, "STRAW1S1TFM", 32);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, STRAW1S1TFMI, UINT32, "STRAW1S1TFMI", "STRAW1S1TFM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, STRAW1S1TFME, UINT32, "STRAW1S1TFME", "STRAW1S1TFM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TF, UINT32, "STRAW1S1TF", 6400);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, STRAW1S1TFv, UINT32, "STRAW1S1TFv", "STRAW1S1TF");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TCM, UINT32, "STRAW1S1TCM", 32);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, STRAW1S1TCMI, UINT32, "STRAW1S1TCMI", "STRAW1S1TCM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, STRAW1S1TCME, UINT32, "STRAW1S1TCME", "STRAW1S1TCM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TC, UINT32, "STRAW1S1TC", 6400);             \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, STRAW1S1TCv, UINT32, "STRAW1S1TCv", "STRAW1S1TC");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, STRAW1S1TRIG, UINT32, "STRAW1S1TRIG", 65535);        \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_EXT_H101_STRAWTUBES_H__*/

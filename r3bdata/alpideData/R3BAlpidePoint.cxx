@@ -18,8 +18,7 @@
 #include "R3BAlpidePoint.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BAlpidePoint::R3BAlpidePoint()
-    : FairMCPoint()
+R3BAlpidePoint::R3BAlpidePoint() : FairMCPoint()
 {
     fSensorID = 0;
     fPid = 0;

@@ -15,13 +15,9 @@
 #include "FairLogger.h"
 #include "TGeoManager.h"
 
-R3BModule::R3BModule()
-    : FairModule()
-{
-}
+R3BModule::R3BModule() : FairModule() {}
 
-R3BModule::R3BModule(const TString& name, const TString& title, const Bool_t active)
-    : FairModule(name, title, active)
+R3BModule::R3BModule(const TString& name, const TString& title, const Bool_t active) : FairModule(name, title, active)
 {
 }
 
@@ -40,8 +36,7 @@ R3BModule::R3BModule(const TString& name,
                      const Bool_t active,
                      const TString& geoFile,
                      const TGeoCombiTrans& combi)
-    : FairModule(name, title, active)
-    , fCombiTrans(combi)
+    : FairModule(name, title, active), fCombiTrans(combi)
 {
     SetGeometryFileName(geoFile);
 }

@@ -27,10 +27,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BMwpc0CalPar::R3BMwpc0CalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumPadsX(64)
-    , fNumPadsY(64)
-    , fNumParamsFit(1)
+    : FairParGenericSet(name, title, context), fNumPadsX(64), fNumPadsY(64), fNumParamsFit(1)
 {
     fPadCalParams = new TArrayF((fNumPadsX + fNumPadsY) *
                                 fNumParamsFit); //(64 Pads in X + 64 Pads in Y) x 1 Calibration Parameter (Pedestal)

@@ -33,10 +33,8 @@ R3BNeulandPrimaryClusterFinder::R3BNeulandPrimaryClusterFinder(TString primaryHi
                                                                TString clusters,
                                                                TString primaryClusters,
                                                                TString secondaryClusters)
-    : fPrimaryHits(std::move(primaryHits))
-    , fClusters(std::move(clusters))
-    , fPrimaryClusters(std::move(primaryClusters))
-    , fSecondaryClusters(std::move(secondaryClusters))
+    : fPrimaryHits(std::move(primaryHits)), fClusters(std::move(clusters)),
+      fPrimaryClusters(std::move(primaryClusters)), fSecondaryClusters(std::move(secondaryClusters))
 {
 }
 

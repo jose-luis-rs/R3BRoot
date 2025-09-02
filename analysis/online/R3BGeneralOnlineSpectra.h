@@ -107,17 +107,17 @@ class R3BGeneralOnlineSpectra : public FairTask
     virtual void Reset_GENERAL_Histo();
 
   private:
-    TClonesArray* fWRItemsMaster;  /**< Array with WR-Master items. */
-    TClonesArray* fWRItemsSofia;   /**< Array with WR-Sofia items. */
-    TClonesArray* fWRItemsCalifa;  /**< Array with WR-Califa items. */
+    TClonesArray* fWRItemsMaster; /**< Array with WR-Master items. */
+    TClonesArray* fWRItemsSofia; /**< Array with WR-Sofia items. */
+    TClonesArray* fWRItemsCalifa; /**< Array with WR-Califa items. */
     TClonesArray* fWRItemsNeuland; /**< Array with WR-Neuland items. */
-    TClonesArray* fWRItemsS2;      /**< Array with WR-S2 items. */
-    TClonesArray* fWRItemsS8;      /**< Array with WR-S8 items. */
+    TClonesArray* fWRItemsS2; /**< Array with WR-S2 items. */
+    TClonesArray* fWRItemsS8; /**< Array with WR-S8 items. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* fEventHeader; /**< Event header.      */
-    Int_t fTrigger;               /**< Trigger value.     */
-    Int_t fNEvents;               /**< Event counter.     */
+    Int_t fTrigger; /**< Trigger value.     */
+    Int_t fNEvents; /**< Event counter.     */
 
     R3BMwpcOnlineSpectra* fMwpc0Online;
     R3BMwpcCorrelationOnlineSpectra* fMwpc01Online;

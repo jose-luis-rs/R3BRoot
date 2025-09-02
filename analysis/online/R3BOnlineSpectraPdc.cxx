@@ -62,17 +62,10 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-R3BOnlineSpectraPdc::R3BOnlineSpectraPdc()
-    : R3BOnlineSpectraPdc("OnlineSpectra", 1)
-{
-}
+R3BOnlineSpectraPdc::R3BOnlineSpectraPdc() : R3BOnlineSpectraPdc("OnlineSpectra", 1) {}
 
 R3BOnlineSpectraPdc::R3BOnlineSpectraPdc(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fSamp(-1)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat(-1), fSamp(-1), fNEvents(0)
 {
 }
 
@@ -305,7 +298,7 @@ void R3BOnlineSpectraPdc::Exec(Option_t* option)
                 continue; // should not happen
 
             Int_t const iPlane = mapped->GetPlaneId(); // 1..n
-            Int_t const iWire = mapped->GetWireId();   // 1..n
+            Int_t const iWire = mapped->GetWireId(); // 1..n
             Int_t const iEdge = mapped->GetEdgeId();
             // cout << "Plane: " << iPlane << " Wire: " << iWire << endl;
             if (iPlane <= N_PLANE_MAX_PDC)

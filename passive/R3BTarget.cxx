@@ -16,15 +16,9 @@
 #include "TGeoManager.h"
 #include "TGeoTube.h"
 
-R3BTarget::R3BTarget()
-    : R3BModule()
-{
-}
+R3BTarget::R3BTarget() : R3BModule() {}
 
-R3BTarget::R3BTarget(const TString& name)
-    : R3BModule(name, "Target", kFALSE)
-{
-}
+R3BTarget::R3BTarget(const TString& name) : R3BModule(name, "Target", kFALSE) {}
 
 R3BTarget::R3BTarget(const TString& name, const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BTarget(name, geoFile, { trans, rot })

@@ -39,28 +39,18 @@ constexpr int S444 = 444;
 constexpr int S467 = 467;
 
 // R3BTwimMapped2Cal::Default Constructor --------------------------
-R3BTwimMapped2Cal::R3BTwimMapped2Cal()
-    : R3BTwimMapped2Cal("R3BTwimMapped2Cal", 1)
-{
-}
+R3BTwimMapped2Cal::R3BTwimMapped2Cal() : R3BTwimMapped2Cal("R3BTwimMapped2Cal", 1) {}
 
 // R3BTwimMapped2CalPar::Standard Constructor --------------------------
 R3BTwimMapped2Cal::R3BTwimMapped2Cal(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumSec(4)
-    , fNumAnodes(16)    // 16 anodes
-    , fNumAnodesRef(2)  // 2 anode for TREF
-    , fNumAnodesTrig(2) // 2 anode for TRIG
-    , fMaxMult(20)
-    , fMinDT(-1000)
-    , fMaxDT(1000)
-    , fNumEParams(2)
-    , fNumPosParams(3)
-    , fCal_Par(NULL)
-    , fTwimMappedDataCA(NULL)
-    , fTwimCalDataCA(NULL)
-    , fExpId(0)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fNumSec(4), fNumAnodes(16) // 16 anodes
+      ,
+      fNumAnodesRef(2) // 2 anode for TREF
+      ,
+      fNumAnodesTrig(2) // 2 anode for TRIG
+      ,
+      fMaxMult(20), fMinDT(-1000), fMaxDT(1000), fNumEParams(2), fNumPosParams(3), fCal_Par(NULL),
+      fTwimMappedDataCA(NULL), fTwimCalDataCA(NULL), fExpId(0), fOnline(kFALSE)
 {
     CalEParams.resize(fNumSec, nullptr);
     PosParams.resize(fNumSec, nullptr);
@@ -88,14 +78,14 @@ void R3BTwimMapped2Cal::SetParContainers()
 void R3BTwimMapped2Cal::SetParameter()
 {
     //--- Parameter Container ---
-    fNumSec = fCal_Par->GetNumSec();               // Number of sections
-    fNumAnodesRef = fCal_Par->GetNumAnodesTRef();  // Anodes for TREF
+    fNumSec = fCal_Par->GetNumSec(); // Number of sections
+    fNumAnodesRef = fCal_Par->GetNumAnodesTRef(); // Anodes for TREF
     fNumAnodesTrig = fCal_Par->GetNumAnodesTrig(); // Anodes for Trig
     fMaxMult = fCal_Par->GetMaxMult();
     fMinDT = fCal_Par->GetMinDT();
     fMaxDT = fCal_Par->GetMaxDT();
-    fNumAnodes = fCal_Par->GetNumAnodes();          // Number of anodes per section
-    fNumEParams = fCal_Par->GetNumParamsEFit();     // Number of parameters for energy calibration
+    fNumAnodes = fCal_Par->GetNumAnodes(); // Number of anodes per section
+    fNumEParams = fCal_Par->GetNumParamsEFit(); // Number of parameters for energy calibration
     fNumPosParams = fCal_Par->GetNumParamsPosFit(); // Number of parameters for position calibration
 
     R3BLOG(info, "Nb sections: " << fNumSec);

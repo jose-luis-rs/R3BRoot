@@ -21,8 +21,7 @@
 #include "FairParamList.h"
 
 R3BNeulandGeoPar::R3BNeulandGeoPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNeulandGeoNode(nullptr)
+    : FairParGenericSet(name, title, context), fNeulandGeoNode(nullptr)
 {
 }
 

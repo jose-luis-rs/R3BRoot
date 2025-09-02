@@ -31,21 +31,13 @@
 #include "R3BMusliMappedData.h"
 #include "R3BOnlineSpectraFrsSciVsMusli.h"
 
-R3BOnlineSpectraFrsSciVsMusli::R3BOnlineSpectraFrsSciVsMusli()
-    : R3BOnlineSpectraFrsSciVsMusli("FrsSciOnlineSpectra", 1)
+R3BOnlineSpectraFrsSciVsMusli::R3BOnlineSpectraFrsSciVsMusli() : R3BOnlineSpectraFrsSciVsMusli("FrsSciOnlineSpectra", 1)
 {
 }
 
 R3BOnlineSpectraFrsSciVsMusli::R3BOnlineSpectraFrsSciVsMusli(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fFrsSci_PosCal(NULL)
-    , fFrsSci_TofCal(NULL)
-    , fMusli_Map(NULL)
-    , fMusli_Cal(NULL)
-    , fMusli_Hit(NULL)
-    , fNEvents(0)
-    , fIdS2(1)
-    , fIdCaveC(2)
+    : FairTask(name, iVerbose), fFrsSci_PosCal(NULL), fFrsSci_TofCal(NULL), fMusli_Map(NULL), fMusli_Cal(NULL),
+      fMusli_Hit(NULL), fNEvents(0), fIdS2(1), fIdCaveC(2)
 {
 }
 

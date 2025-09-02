@@ -18,9 +18,7 @@
 #include "R3BFootMappedData.h"
 
 R3BFootMappedData::R3BFootMappedData(uint8_t detId, uint16_t stripId, int energy)
-    : fDetId(detId)
-    , fStripId(stripId)
-    , fEnergy(energy)
+    : fDetId(detId), fStripId(stripId), fEnergy(energy)
 {
 }
 

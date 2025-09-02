@@ -81,10 +81,10 @@ class R3BTttxStripCalPar : public FairParGenericSet
 
   private:
     TArrayF* fStripCalParams; // Calibration Parameters of strip
-    TArrayI* fIn_use;         // 1: in use
-    int fNumDets = 2;         // Number of detectors
-    int fNumStrips = 32;      // Number of strips
-    int fNumParsFit = 2;      // Number of parameters for the fit
+    TArrayI* fIn_use; // 1: in use
+    int fNumDets = 2; // Number of detectors
+    int fNumStrips = 32; // Number of strips
+    int fNumParsFit = 2; // Number of parameters for the fit
 
     const R3BTttxStripCalPar& operator=(const R3BTttxStripCalPar&);
     R3BTttxStripCalPar(const R3BTttxStripCalPar&);

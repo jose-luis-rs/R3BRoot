@@ -27,10 +27,7 @@ namespace R3B
     {
       public:
         ProgramOptions() = default;
-        explicit ProgramOptions(const std::string& desc)
-            : desc_{ desc }
-        {
-        }
+        explicit ProgramOptions(const std::string& desc) : desc_{ desc } {}
 
         template <typename OptionType>
         auto Create_Option(const std::string& optionName,
@@ -82,9 +79,7 @@ namespace R3B
         auto operator=(const Option&) -> Option& = delete;
         auto operator=(Option&&) -> Option& = delete;
         Option(std::string name, Type defaultValue, ProgramOptions* program)
-            : name_{ std::move(name) }
-            , value_{ std::move(defaultValue) }
-            , program_{ program }
+            : name_{ std::move(name) }, value_{ std::move(defaultValue) }, program_{ program }
         {
             if (auto end = name_.find(','))
             {

@@ -6,10 +6,8 @@
 #include <utility>
 
 R3BNeulandMultiplicityScikit::R3BNeulandMultiplicityScikit(TString model, TString input, TString output)
-    : FairTask("R3BNeulandMultiplicityScikit")
-    , fClusters(std::move(input))
-    , fMultiplicity(new R3BNeulandMultiplicity())
-    , fOutputName(std::move(output))
+    : FairTask("R3BNeulandMultiplicityScikit"), fClusters(std::move(input)),
+      fMultiplicity(new R3BNeulandMultiplicity()), fOutputName(std::move(output))
 {
     TPython::Exec("import sys; v = sys.version.replace('\\n', '')");
     TPython::Exec("print(f'R3BNeulandMultiplicityScikit running TPython with Python version {v}')");

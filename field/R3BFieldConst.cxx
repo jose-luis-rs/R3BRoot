@@ -28,15 +28,7 @@ using std::setw;
 
 // -----   Default constructor   -------------------------------------------
 R3BFieldConst::R3BFieldConst()
-    : fXmin(0.)
-    , fXmax(0.)
-    , fYmin(0.)
-    , fYmax(0.)
-    , fZmin(0.)
-    , fZmax(0.)
-    , fBx(0.)
-    , fBy(0.)
-    , fBz(0.)
+    : fXmin(0.), fXmax(0.), fYmin(0.), fYmax(0.), fZmin(0.), fZmax(0.), fBx(0.), fBy(0.), fBz(0.)
 {
     fType = 0;
 }
@@ -53,16 +45,8 @@ R3BFieldConst::R3BFieldConst(const char* name,
                              Double_t bX,
                              Double_t bY,
                              Double_t bZ)
-    : FairField(name)
-    , fXmin(xMin)
-    , fXmax(xMax)
-    , fYmin(yMin)
-    , fYmax(yMax)
-    , fZmin(zMin)
-    , fZmax(zMax)
-    , fBx(bX)
-    , fBy(bY)
-    , fBz(bZ)
+    : FairField(name), fXmin(xMin), fXmax(xMax), fYmin(yMin), fYmax(yMax), fZmin(zMin), fZmax(zMax), fBx(bX), fBy(bY),
+      fBz(bZ)
 {
     fType = 0;
 }
@@ -70,15 +54,7 @@ R3BFieldConst::R3BFieldConst(const char* name,
 
 // --------   Constructor from R3BFieldPar   -------------------------------
 R3BFieldConst::R3BFieldConst(R3BFieldPar* fieldPar)
-    : fXmin(0.)
-    , fXmax(0.)
-    , fYmin(0.)
-    , fYmax(0.)
-    , fZmin(0.)
-    , fZmax(0.)
-    , fBx(0.)
-    , fBy(0.)
-    , fBz(0.)
+    : fXmin(0.), fXmax(0.), fYmin(0.), fYmax(0.), fZmin(0.), fZmax(0.), fBx(0.), fBy(0.), fBz(0.)
 {
     if (!fieldPar)
     {

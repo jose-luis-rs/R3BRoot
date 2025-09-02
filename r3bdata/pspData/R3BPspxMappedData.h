@@ -43,7 +43,7 @@ class R3BPspxMappedData : public TObject
     inline const Int_t& GetEnergy2() const { return fEnergy[1]; }
 
   private:
-    Int_t fStrip[2];  // Channel number, counting from 1, one entry for each side of each strip
+    Int_t fStrip[2]; // Channel number, counting from 1, one entry for each side of each strip
     Int_t fEnergy[2]; // Energy/Collected charge, one entry for each side of each strip
 
   public:

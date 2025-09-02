@@ -33,12 +33,8 @@ extern "C"
 }
 
 R3BAmsReader::R3BAmsReader(EXT_STR_h101_AMS_onion* data, size_t offset)
-    : R3BReader("R3BAmsReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BAmsMappedData"))
+    : R3BReader("R3BAmsReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BAmsMappedData"))
 {
 }
 

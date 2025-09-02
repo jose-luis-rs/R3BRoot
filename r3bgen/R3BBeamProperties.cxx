@@ -20,9 +20,8 @@
 constexpr auto AMU_MeV = TGeoUnit::amu_c2 / TGeoUnit::MeV; // MeV
 
 R3BBeamProperties::R3BBeamProperties()
-    : fVertex_cm(R3BDistribution3D::Delta(0, 0, 0))
-    , fSpread_mRad(R3BDistribution2D::Delta(0, 0))
-    , fBeta(R3BDistribution1D::Delta(0.5))
+    : fVertex_cm(R3BDistribution3D::Delta(0, 0, 0)), fSpread_mRad(R3BDistribution2D::Delta(0, 0)),
+      fBeta(R3BDistribution1D::Delta(0.5))
 {
 }
 

@@ -8,12 +8,8 @@ R3BNeulandNeutronsRValue::R3BNeulandNeutronsRValue(double EkinRefMeV,
                                                    TString inputMult,
                                                    TString inputCluster,
                                                    TString output)
-    : FairTask("R3BNeulandNeutronsRValue")
-    , fEkinRefMeV(EkinRefMeV)
-    , fInputMultName(std::move(inputMult))
-    , fMultiplicity(nullptr)
-    , fClusters(std::move(inputCluster))
-    , fNeutrons(std::move(output))
+    : FairTask("R3BNeulandNeutronsRValue"), fEkinRefMeV(EkinRefMeV), fInputMultName(std::move(inputMult)),
+      fMultiplicity(nullptr), fClusters(std::move(inputCluster)), fNeutrons(std::move(output))
 {
 }
 

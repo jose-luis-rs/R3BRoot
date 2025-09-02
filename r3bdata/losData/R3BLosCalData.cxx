@@ -17,17 +17,17 @@
 #include <cmath>
 #include <iostream>
 
-#define ASSERT(a, op, b)                                                                                     \
-    do                                                                                                       \
-    {                                                                                                        \
-        auto const a_ = a;                                                                                   \
-        auto const b_ = b;                                                                                   \
-        if (!(a_ op b_))                                                                                     \
-        {                                                                                                    \
-            std::cerr << "Assertion \"" #a << '=' << a_ << ' ' << #op << " " #b << '=' << b_ << "\" failed." \
-                      << std::endl;                                                                          \
-            abort();                                                                                         \
-        }                                                                                                    \
+#define ASSERT(a, op, b)                                                                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        auto const a_ = a;                                                                                             \
+        auto const b_ = b;                                                                                             \
+        if (!(a_ op b_))                                                                                               \
+        {                                                                                                              \
+            std::cerr << "Assertion \"" #a << '=' << a_ << ' ' << #op << " " #b << '=' << b_ << "\" failed."           \
+                      << std::endl;                                                                                    \
+            abort();                                                                                                   \
+        }                                                                                                              \
     } while (0)
 #define IS_NAN(x) TMath::IsNaN(x)
 #define LENGTH(x) (sizeof x / sizeof x[0])
@@ -57,16 +57,8 @@ namespace
  *
  */
 
-R3BLosCalData::R3BLosCalData()
-    : fDetector(-1)
-{
-    Reset();
-}
-R3BLosCalData::R3BLosCalData(UInt_t detector)
-    : fDetector(detector)
-{
-    Reset();
-}
+R3BLosCalData::R3BLosCalData() : fDetector(-1) { Reset(); }
+R3BLosCalData::R3BLosCalData(UInt_t detector) : fDetector(detector) { Reset(); }
 
 UInt_t R3BLosCalData::GetDetector() const { return fDetector; }
 

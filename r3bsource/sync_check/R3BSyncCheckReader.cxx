@@ -28,12 +28,8 @@ extern "C"
 }
 
 R3BSyncCheckReader::R3BSyncCheckReader(EXT_STR_h101_SYNC_CHECK* data, size_t offset)
-    : R3BReader("R3BSyncCheckReader")
-    , fNEvent(1)
-    , fData(data)
-    , fOffset(offset)
-    , fArray(new TClonesArray("R3BSyncCheckData"))
-    , fStoreData(kFALSE)
+    : R3BReader("R3BSyncCheckReader"), fNEvent(1), fData(data), fOffset(offset),
+      fArray(new TClonesArray("R3BSyncCheckData")), fStoreData(kFALSE)
 {
 }
 

@@ -28,10 +28,7 @@
 #include "R3BLogger.h"
 
 // R3BCalifaMapped2CrystalCal::Constructor
-R3BCalifaMapped2CrystalCal::R3BCalifaMapped2CrystalCal()
-    : FairTask("R3BCalifaMapped2CrystalCal")
-{
-}
+R3BCalifaMapped2CrystalCal::R3BCalifaMapped2CrystalCal() : FairTask("R3BCalifaMapped2CrystalCal") {}
 
 R3BCalifaMapped2CrystalCal::~R3BCalifaMapped2CrystalCal()
 {
@@ -86,7 +83,7 @@ void R3BCalifaMapped2CrystalCal::SetParameter()
     // Just my 2 cents. -- pklenze
 
     //--- Parameter Container ---
-    fNumCrystals = fCal_Par->GetNumCrystals();    // Number of Crystals
+    fNumCrystals = fCal_Par->GetNumCrystals(); // Number of Crystals
     fNumParams = fCal_Par->GetNumParametersFit(); // Number of Parameters
 
     fCalParams = const_cast<TArrayF*>(fCal_Par->GetCryCalParams()); // Array with the Cal parameters

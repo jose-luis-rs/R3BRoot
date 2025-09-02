@@ -16,16 +16,8 @@
 #include "R3BTrackingDetector.h"
 
 R3BTrackingParticle::R3BTrackingParticle()
-    : fCharge(0.)
-    , fStartPosition(0., 0., 0.)
-    , fStartMomentum(0., 0., 0.)
-    , fStartBeta(0.)
-    , fMass(0.)
-    , fPosition(0., 0., 0.)
-    , fMomentum(0., 0., 0.)
-    , fBeta(0.)
-    , fLength(0.)
-    , fChi2(0.)
+    : fCharge(0.), fStartPosition(0., 0., 0.), fStartMomentum(0., 0., 0.), fStartBeta(0.), fMass(0.),
+      fPosition(0., 0., 0.), fMomentum(0., 0., 0.), fBeta(0.), fLength(0.), fChi2(0.)
 {
 }
 
@@ -38,16 +30,8 @@ R3BTrackingParticle::R3BTrackingParticle(Double_t charge,
                                          Double_t pz,
                                          Double_t beta,
                                          Double_t mass)
-    : fCharge(charge)
-    , fStartPosition(x, y, z)
-    , fStartMomentum(px, py, pz)
-    , fStartBeta(beta)
-    , fMass(mass)
-    , fPosition(x, y, z)
-    , fMomentum(px, py, pz)
-    , fBeta(beta)
-    , fLength(0.)
-    , fChi2(0.)
+    : fCharge(charge), fStartPosition(x, y, z), fStartMomentum(px, py, pz), fStartBeta(beta), fMass(mass),
+      fPosition(x, y, z), fMomentum(px, py, pz), fBeta(beta), fLength(0.), fChi2(0.)
 {
 }
 

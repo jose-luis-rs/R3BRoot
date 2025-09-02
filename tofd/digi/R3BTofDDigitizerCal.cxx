@@ -24,11 +24,7 @@
 #include <vector>
 
 R3BTofDDigitizerCal::R3BTofDDigitizerCal()
-    : FairTask("R3BTofDDigitizerCal")
-    , fTofdPoints(NULL)
-    , fTofdCals(NULL)
-    , fCalTriggerItems(NULL)
-    , fMCTrack(NULL)
+    : FairTask("R3BTofDDigitizerCal"), fTofdPoints(NULL), fTofdCals(NULL), fCalTriggerItems(NULL), fMCTrack(NULL)
 {
     // detector parameter
     number_layers = 4;
@@ -101,13 +97,7 @@ void R3BTofDDigitizerCal::Exec(Option_t* opt)
             Double_t Time;
             Double_t Y;
 
-            TempHit(Int_t id, Double_t e, Double_t t, Double_t y)
-                : ChannelID(id)
-                , Energy(e)
-                , Time(t)
-                , Y(y)
-            {
-            }
+            TempHit(Int_t id, Double_t e, Double_t t, Double_t y) : ChannelID(id), Energy(e), Time(t), Y(y) {}
         };
 
         // ordering the hits in time

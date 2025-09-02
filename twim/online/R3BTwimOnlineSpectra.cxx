@@ -51,15 +51,9 @@
 #include <iostream>
 #include <sstream>
 
-R3BTwimOnlineSpectra::R3BTwimOnlineSpectra()
-    : R3BTwimOnlineSpectra("TwimOnlineSpectra", 1)
-{
-}
+R3BTwimOnlineSpectra::R3BTwimOnlineSpectra() : R3BTwimOnlineSpectra("TwimOnlineSpectra", 1) {}
 
-R3BTwimOnlineSpectra::R3BTwimOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BTwimOnlineSpectra::R3BTwimOnlineSpectra(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 InitStatus R3BTwimOnlineSpectra::Init()
 {
@@ -984,7 +978,7 @@ void R3BTwimOnlineSpectra::s455()
                 if (hit->GetEnergy() < 65535 && hit->GetEnergy() > 0 &&
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] == 0)
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetEnergy(); // mult=1 !!!
-                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime();       // mult=1 !!!
+                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime(); // mult=1 !!!
             }
         } // end of loop over the Mapped data
 
@@ -1023,9 +1017,9 @@ void R3BTwimOnlineSpectra::s455()
                 // Tref = 16 for ch 0 to 15
                 if ((mult[j][i] == 1) && (mult[j][i + 1] == 1) && (mult[j][idTref] == 1))
                 {
-                    fh2_twim_DTvsDT[j * fNbAnodes + i]->Fill(
-                        Traw[j][i] - Traw[j][idTref],
-                        Traw[j][i] - Traw[j][idTref] - (Traw[j][i + 1] - Traw[j][idTref]));
+                    fh2_twim_DTvsDT[j * fNbAnodes + i]->Fill(Traw[j][i] - Traw[j][idTref],
+                                                             Traw[j][i] - Traw[j][idTref] -
+                                                                 (Traw[j][i + 1] - Traw[j][idTref]));
                 }
             }
             if ((mult[j][15] == 1) && (mult[j][0] == 1) && (mult[j][16] == 1))
@@ -1188,7 +1182,7 @@ void R3BTwimOnlineSpectra::s444_s467()
                 if (hit->GetEnergy() < 8192 && hit->GetEnergy() > 0 &&
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] == 0)
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetEnergy(); // mult=1 !!!
-                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime();       // mult=1 !!!
+                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime(); // mult=1 !!!
             }
         }
         Int_t idTref;

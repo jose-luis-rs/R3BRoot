@@ -83,9 +83,9 @@ class R3BMusicMapped2Cal : public FairTask
     Bool_t fOnline; // Don't store data for online
 
     R3BCoarseTimeStitch* fTimeStitch;
-    R3BMusicCalPar* fCal_Par;         /**< Parameter container. >*/
+    R3BMusicCalPar* fCal_Par; /**< Parameter container. >*/
     TClonesArray* fMusicMappedDataCA; /**< Array with Music Mapped-input data. >*/
-    TClonesArray* fMusicCalDataCA;    /**< Array with Music Cal-output data. >*/
+    TClonesArray* fMusicCalDataCA; /**< Array with Music Cal-output data. >*/
 
     /** Private method AddCalData **/
     //** Adds a MusicCalData to the anodeCalCollection

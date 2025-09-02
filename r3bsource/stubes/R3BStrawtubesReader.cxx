@@ -27,11 +27,8 @@ extern "C"
 #define LENGTH(x) (sizeof x / sizeof *x)
 
 R3BStrawtubesReader::R3BStrawtubesReader(EXT_STR_h101_STRAWTUBES* data, UInt_t offset)
-    : R3BReader("R3BStrawtubesReader")
-    , fOnion(reinterpret_cast<EXT_STR_h101_STRAWTUBES_onion*>(data))
-    , fOffset(offset)
-    , fLogger(FairLogger::GetLogger())
-    , fArray(new TClonesArray("R3BStrawtubesMappedData"))
+    : R3BReader("R3BStrawtubesReader"), fOnion(reinterpret_cast<EXT_STR_h101_STRAWTUBES_onion*>(data)), fOffset(offset),
+      fLogger(FairLogger::GetLogger()), fArray(new TClonesArray("R3BStrawtubesMappedData"))
 {
 }
 

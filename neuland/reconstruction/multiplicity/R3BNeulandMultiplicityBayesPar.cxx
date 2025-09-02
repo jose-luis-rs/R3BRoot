@@ -44,11 +44,9 @@ void R3BNeulandMultiplicityBayesPar::Finish()
 }
 
 R3BNeulandMultiplicityBayesPar::R3BNeulandMultiplicityBayesPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fHits({ 1000, 1000, 1000, 1000, 1000, 1000, 1000 })
-    , fClusters({ 1000, 1000, 1000, 1000, 1000, 1000, 1000 })
-    , fEdep({ 1000, 1000, 1000, 1000, 1000, 1000, 1000 })
-    , fIsProperlyLoaded(false)
+    : FairParGenericSet(name, title, context), fHits({ 1000, 1000, 1000, 1000, 1000, 1000, 1000 }),
+      fClusters({ 1000, 1000, 1000, 1000, 1000, 1000, 1000 }), fEdep({ 1000, 1000, 1000, 1000, 1000, 1000, 1000 }),
+      fIsProperlyLoaded(false)
 {
 }
 

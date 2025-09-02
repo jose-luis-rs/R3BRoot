@@ -24,16 +24,8 @@ R3BCalifaMappedData::R3BCalifaMappedData(UShort_t crystalId,
                                          uint16_t pu,
                                          uint16_t dc,
                                          uint16_t tot)
-    : fCrystalId(crystalId)
-    , fEnergy(energy)
-    , fNf(nf)
-    , fNs(ns)
-    , fFebexTime(febextime)
-    , fWrts(wrts)
-    , fOverFlow(ov)
-    , fPileup(pu)
-    , fDiscard(dc)
-    , fTot(tot)
+    : fCrystalId(crystalId), fEnergy(energy), fNf(nf), fNs(ns), fFebexTime(febextime), fWrts(wrts), fOverFlow(ov),
+      fPileup(pu), fDiscard(dc), fTot(tot)
 {
 }
 

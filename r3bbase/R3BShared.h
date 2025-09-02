@@ -132,11 +132,7 @@ namespace R3B
     {
       public:
         LRPair() = default;
-        LRPair(const DataType& left, const DataType& right)
-            : data_{ std::make_pair(left, right) }
-            , is_valid(true)
-        {
-        }
+        LRPair(const DataType& left, const DataType& right) : data_{ std::make_pair(left, right) }, is_valid(true) {}
 
         auto& left() { return data_.first; }
         auto& right() { return data_.second; }

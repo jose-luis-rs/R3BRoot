@@ -13,14 +13,7 @@
 
 #include "R3BBeamInfo.h"
 
-R3BBeamInfo::R3BBeamInfo()
-    : theta(0.)
-    , phi(0.)
-    , xPos(0.)
-    , yPos(0.)
-    , zPos(0.)
-{
-}
+R3BBeamInfo::R3BBeamInfo() : theta(0.), phi(0.), xPos(0.), yPos(0.), zPos(0.) {}
 
 R3BBeamInfo::~R3BBeamInfo()
 {

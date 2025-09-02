@@ -37,37 +37,17 @@
 
 // R3BAmsMapped2StripCal: Default Constructor --------------------------
 R3BAmsMapped2StripCal::R3BAmsMapped2StripCal()
-    : FairTask("R3B AMS Calibrator", 1)
-    , NumDets(0)
-    , NumStrips(0)
-    , NumStripsS(0)
-    , NumStripsK(0)
-    , NumParams(0)
-    , MaxSigma(5)
-    , fTimesSigma(5.)
-    , CalParams(NULL)
-    , fCal_Par(NULL)
-    , fAmsMappedDataCA(NULL)
-    , fAmsStripCalDataCA(NULL)
-    , fOnline(kFALSE)
+    : FairTask("R3B AMS Calibrator", 1), NumDets(0), NumStrips(0), NumStripsS(0), NumStripsK(0), NumParams(0),
+      MaxSigma(5), fTimesSigma(5.), CalParams(NULL), fCal_Par(NULL), fAmsMappedDataCA(NULL), fAmsStripCalDataCA(NULL),
+      fOnline(kFALSE)
 {
 }
 
 // R3BAmsMapped2StripCalPar: Standard Constructor --------------------------
 R3BAmsMapped2StripCal::R3BAmsMapped2StripCal(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , NumDets(0)
-    , NumStrips(0)
-    , NumStripsS(0)
-    , NumStripsK(0)
-    , NumParams(0)
-    , MaxSigma(5)
-    , fTimesSigma(5.)
-    , CalParams(NULL)
-    , fCal_Par(NULL)
-    , fAmsMappedDataCA(NULL)
-    , fAmsStripCalDataCA(NULL)
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), NumDets(0), NumStrips(0), NumStripsS(0), NumStripsK(0), NumParams(0), MaxSigma(5),
+      fTimesSigma(5.), CalParams(NULL), fCal_Par(NULL), fAmsMappedDataCA(NULL), fAmsStripCalDataCA(NULL),
+      fOnline(kFALSE)
 {
 }
 
@@ -107,10 +87,10 @@ void R3BAmsMapped2StripCal::SetParameter()
 {
 
     //--- Parameter Container ---
-    NumDets = fCal_Par->GetNumDets();            // Number of Detectors
-    NumStrips = fCal_Par->GetNumStrips();        // Number of Strips
-    NumStripsS = fCal_Par->GetNumStripsS();      // Number of Strips S-side
-    NumStripsK = fCal_Par->GetNumStripsK();      // Number of Strips K-side
+    NumDets = fCal_Par->GetNumDets(); // Number of Detectors
+    NumStrips = fCal_Par->GetNumStrips(); // Number of Strips
+    NumStripsS = fCal_Par->GetNumStripsS(); // Number of Strips S-side
+    NumStripsK = fCal_Par->GetNumStripsK(); // Number of Strips K-side
     NumParams = fCal_Par->GetNumParametersFit(); // Number of Parameters
 
     LOG(info) << "R3BAmsMapped2StripCal: Nb detectors: " << NumDets;

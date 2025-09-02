@@ -34,13 +34,7 @@ R3BAlpideGeometry* R3BAlpideGeometry::Instance()
     return &instance;
 }
 
-R3BAlpideGeometry::R3BAlpideGeometry()
-    : TObject()
-    , IsInitialize(kFALSE)
-    , fGeometryVersion(2024)
-    , fNbSensor(108)
-{
-}
+R3BAlpideGeometry::R3BAlpideGeometry() : TObject(), IsInitialize(kFALSE), fGeometryVersion(2024), fNbSensor(108) {}
 
 bool R3BAlpideGeometry::Init(Int_t version)
 {
@@ -374,8 +368,8 @@ int R3BAlpideGeometry::GetSensorId(const char* volumePath)
         return sensorId;
     }
 
-    barID = std::stoi(m[1].str());    // converting to int the barrel type
-    layerID = std::stoi(m[2].str());  // converting to int the layer type
+    barID = std::stoi(m[1].str()); // converting to int the barrel type
+    layerID = std::stoi(m[2].str()); // converting to int the layer type
     alpideID = std::stoi(m[3].str()); // converting to int the alpide type
 
     if (fGeometryVersion == 2026 || fGeometryVersion == 2028)

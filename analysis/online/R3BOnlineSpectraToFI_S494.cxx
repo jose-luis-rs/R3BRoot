@@ -65,21 +65,12 @@ namespace
     double c_bar_coincidence_ns = 20; // nanoseconds.
 } // namespace
 
-R3BOnlineSpectraToFI_S494::R3BOnlineSpectraToFI_S494()
-    : R3BOnlineSpectraToFI_S494("OnlineSpectraToFI_S494", 1)
-{
-}
+R3BOnlineSpectraToFI_S494::R3BOnlineSpectraToFI_S494() : R3BOnlineSpectraToFI_S494("OnlineSpectraToFI_S494", 1) {}
 
 R3BOnlineSpectraToFI_S494::R3BOnlineSpectraToFI_S494(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fCalTriggerItems(NULL)
-    , fNofPlanes(N_PLANE_MAX_TOFI)
-    , fPaddlesPerPlane(N_PADDLE_MAX_TOFI)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat1(-1), fTpat2(-1), fCalTriggerItems(NULL),
+      fNofPlanes(N_PLANE_MAX_TOFI), fPaddlesPerPlane(N_PADDLE_MAX_TOFI), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.),
+      fNEvents(0)
 {
 }
 
@@ -477,8 +468,8 @@ void R3BOnlineSpectraToFI_S494::Exec(Option_t* option)
                 continue; // should not happen
 
             Int_t const iPlane = mapped->GetDetectorId(); // 1..n
-            Int_t const iBar = mapped->GetBarId();        // 1..n
-            Int_t const iSide = mapped->GetSideId();      // 1..n
+            Int_t const iBar = mapped->GetBarId(); // 1..n
+            Int_t const iSide = mapped->GetSideId(); // 1..n
             Int_t const iEdge = mapped->GetEdgeId();
 
             if (iEdge == 1)
@@ -614,7 +605,7 @@ void R3BOnlineSpectraToFI_S494::Exec(Option_t* option)
 
                 //      cout<<"Time: "<<top_ns<<"; "<<bot_ns<<endl;
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
+                Int_t iBar = top->GetBarId(); // 1..n
 
                 auto top_tot = fmod(top->GetTimeTrailing_ns() - top->GetTimeLeading_ns() + c_range_ns, c_range_ns);
 
@@ -660,7 +651,7 @@ void R3BOnlineSpectraToFI_S494::Exec(Option_t* option)
 
                 //      cout<<"Time: "<<top_ns<<"; "<<bot_ns<<endl;
                 Int_t iPlane = bot->GetDetectorId(); // 1..n
-                Int_t iBar = bot->GetBarId();        // 1..n
+                Int_t iBar = bot->GetBarId(); // 1..n
                 // auto bot_tot = fmod(bot->GetTimeTrailing_ns() - bot->GetTimeLeading_ns() + c_range_ns, c_range_ns);
                 auto bot_tot = bot->GetTimeTrailing_ns() - bot->GetTimeLeading_ns();
 
@@ -754,8 +745,8 @@ void R3BOnlineSpectraToFI_S494::Exec(Option_t* option)
                     // Hit!
                     // std::cout << "Hit!\n";
                     Int_t iPlane = topc->GetDetectorId(); // 1..n
-                    Int_t iBar = topc->GetBarId();        // 1..n
-                    if (iPlane > fNofPlanes)              // this also errors for iDetector==0
+                    Int_t iBar = topc->GetBarId(); // 1..n
+                    if (iPlane > fNofPlanes) // this also errors for iDetector==0
                     {
                         LOG(error) << "R3BTOnlineSpectraToFI::Exec() : more detectors than expected! Det: " << iPlane
                                    << " allowed are 1.." << fNofPlanes;

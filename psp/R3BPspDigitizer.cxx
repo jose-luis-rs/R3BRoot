@@ -43,10 +43,7 @@
 using std::cout;
 using std::endl;
 
-R3BPspDigitizer::R3BPspDigitizer()
-    : FairTask("R3B Psp Digitization scheme ")
-{
-}
+R3BPspDigitizer::R3BPspDigitizer() : FairTask("R3B Psp Digitization scheme ") {}
 
 R3BPspDigitizer::~R3BPspDigitizer() {}
 
@@ -152,7 +149,7 @@ void R3BPspDigitizer::Exec(Option_t* opt)
                 //      PspXhis->Fill(psp3x);
                 psp3mul++;
             } // psp3
-        }     // PID
+        } // PID
     }
 
     // psp3x = gRandom->Gaus(psp3x, 0.0200);

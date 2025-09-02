@@ -26,9 +26,7 @@
 #include "TString.h"
 
 R3BPspxMappedPar::R3BPspxMappedPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , pspxmappedparstrip()
-    , pspxmappedpardetector(-1)
+    : FairParGenericSet(name, title, context), pspxmappedparstrip(), pspxmappedpardetector(-1)
 {
     detName = "Pspx";
 }

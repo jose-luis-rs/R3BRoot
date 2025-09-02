@@ -24,7 +24,7 @@
 #define N_PADDLE_MAX_TOFD 50
 #define N_PADDLE_MAX_PTOF 100
 #define N_FIBER_PLOT_2019 520 // range to plot
-#define N_FIBER_PLOT 1050     // range to plot
+#define N_FIBER_PLOT 1050 // range to plot
 
 #define N_PSPX 2
 #define N_STRIPS_PSPX 32
@@ -173,14 +173,14 @@ class R3BGlobalAnalysis : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
-    Double_t fClockFreq;    /**< Clock cycle in [ns]. */
+    Int_t fTrigger; /**< Trigger value. */
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t fNofPlanes;
     UInt_t fPaddlesPerPlane; /**< Number of paddles per plane. */
     unsigned long long t0_prev = 0;
     Double_t time_previous_event = 0;
 
-    Int_t fNEvents = 0;   /**< Event counter. */
+    Int_t fNEvents = 0; /**< Event counter. */
     Int_t fFibEvents = 0; /**< Event counter. */
     Double_t max_values[NOF_FIB_DET][2048];
     Int_t FibMax[NOF_FIB_DET];

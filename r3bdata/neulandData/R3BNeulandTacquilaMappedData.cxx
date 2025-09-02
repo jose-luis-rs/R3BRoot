@@ -20,13 +20,7 @@ R3BNeulandTacquilaMappedData::R3BNeulandTacquilaMappedData(UShort_t clock,
                                                            Int_t plane,
                                                            Int_t paddle,
                                                            Int_t side)
-    : fClock(clock)
-    , fTacData(tacData)
-    , fStopT(stopT)
-    , fQdcData(qdcData)
-    , fPlane(plane)
-    , fPaddle(paddle)
-    , fSide(side)
+    : fClock(clock), fTacData(tacData), fStopT(stopT), fQdcData(qdcData), fPlane(plane), fPaddle(paddle), fSide(side)
 {
 }
 

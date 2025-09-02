@@ -161,98 +161,98 @@ typedef struct EXT_STR_h101_LOS_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_LOS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
-    do                                                                                                                \
-    {                                                                                                                 \
-        ok = 1;                                                                                                       \
-        /* RAW */                                                                                                     \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTFM, UINT32, "LOS1VTFM", 8, 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTFMI, UINT32, "LOS1VTFMI", "LOS1VTFM", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTFME, UINT32, "LOS1VTFME", "LOS1VTFM", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTF, UINT32, "LOS1VTF", 256, 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTFv, UINT32, "LOS1VTFv", "LOS1VTF", 0 /*flags*/);                \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTCM, UINT32, "LOS1VTCM", 8, 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTCMI, UINT32, "LOS1VTCMI", "LOS1VTCM", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTCME, UINT32, "LOS1VTCME", "LOS1VTCM", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTC, UINT32, "LOS1VTC", 256, 0 /*flags*/);     \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTCv, UINT32, "LOS1VTCv", "LOS1VTC", 0 /*flags*/);                \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTRIGF, UINT32, "LOS1VTRIGF", 2, 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTRIGFI, UINT32, "LOS1VTRIGFI", "LOS1VTRIGF", 0 /*flags*/);       \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTRIGFv, UINT32, "LOS1VTRIGFv", "LOS1VTRIGF", 0 /*flags*/);       \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTRIGC, UINT32, "LOS1VTRIGC", 2, 0 /*flags*/); \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTRIGCI, UINT32, "LOS1VTRIGCI", "LOS1VTRIGC", 0 /*flags*/);       \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VTRIGCv, UINT32, "LOS1VTRIGCv", "LOS1VTRIGC", 0 /*flags*/);       \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VZEROF1, UINT32, "LOS1VZEROF1", 65535, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1VZEROC1, UINT32, "LOS1VZEROC1", 65535, 0 /*flags*/);              \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFLM, UINT32, "LOS1TTFLM", 8, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTFLMI, UINT32, "LOS1TTFLMI", "LOS1TTFLM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTFLME, UINT32, "LOS1TTFLME", "LOS1TTFLM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFL, UINT32, "LOS1TTFL", 256, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTFLv, UINT32, "LOS1TTFLv", "LOS1TTFL", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFTM, UINT32, "LOS1TTFTM", 8, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTFTMI, UINT32, "LOS1TTFTMI", "LOS1TTFTM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTFTME, UINT32, "LOS1TTFTME", "LOS1TTFTM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFT, UINT32, "LOS1TTFT", 256, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTFTv, UINT32, "LOS1TTFTv", "LOS1TTFT", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCLM, UINT32, "LOS1TTCLM", 8, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTCLMI, UINT32, "LOS1TTCLMI", "LOS1TTCLM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTCLME, UINT32, "LOS1TTCLME", "LOS1TTCLM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCL, UINT32, "LOS1TTCL", 256, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTCLv, UINT32, "LOS1TTCLv", "LOS1TTCL", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCTM, UINT32, "LOS1TTCTM", 8, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTCTMI, UINT32, "LOS1TTCTMI", "LOS1TTCTM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTCTME, UINT32, "LOS1TTCTME", "LOS1TTCTM", 0 /*flags*/);          \
-        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCT, UINT32, "LOS1TTCT", 256, 0 /*flags*/);   \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTCTv, UINT32, "LOS1TTCTv", "LOS1TTCT", 0 /*flags*/);             \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGFL, UINT32, "LOS1TTRIGFL", 1, 0 /*flags*/);                  \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGFLI, UINT32, "LOS1TTRIGFLI", "LOS1TTRIGFL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGFLv, UINT32, "LOS1TTRIGFLv", "LOS1TTRIGFL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGCL, UINT32, "LOS1TTRIGCL", 1, 0 /*flags*/);                  \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGCLI, UINT32, "LOS1TTRIGCLI", "LOS1TTRIGCL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGCLv, UINT32, "LOS1TTRIGCLv", "LOS1TTRIGCL", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGFT, UINT32, "LOS1TTRIGFT", 1, 0 /*flags*/);                  \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGFTI, UINT32, "LOS1TTRIGFTI", "LOS1TTRIGFT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGFTv, UINT32, "LOS1TTRIGFTv", "LOS1TTRIGFT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_LIM(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGCT, UINT32, "LOS1TTRIGCT", 1, 0 /*flags*/);                  \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGCTI, UINT32, "LOS1TTRIGCTI", "LOS1TTRIGCT", 0 /*flags*/);    \
-        EXT_STR_ITEM_INFO2_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, LOS1TTRIGCTv, UINT32, "LOS1TTRIGCTv", "LOS1TTRIGCT", 0 /*flags*/);    \
-                                                                                                                      \
+#define EXT_STR_h101_LOS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTFM, UINT32, "LOS1VTFM", 8, 0 /*flags*/);      \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTFMI, UINT32, "LOS1VTFMI", "LOS1VTFM", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTFME, UINT32, "LOS1VTFME", "LOS1VTFM", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTF, UINT32, "LOS1VTF", 256, 0 /*flags*/);      \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTFv, UINT32, "LOS1VTFv", "LOS1VTF", 0 /*flags*/);                 \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTCM, UINT32, "LOS1VTCM", 8, 0 /*flags*/);      \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTCMI, UINT32, "LOS1VTCMI", "LOS1VTCM", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTCME, UINT32, "LOS1VTCME", "LOS1VTCM", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTC, UINT32, "LOS1VTC", 256, 0 /*flags*/);      \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTCv, UINT32, "LOS1VTCv", "LOS1VTC", 0 /*flags*/);                 \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTRIGF, UINT32, "LOS1VTRIGF", 2, 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTRIGFI, UINT32, "LOS1VTRIGFI", "LOS1VTRIGF", 0 /*flags*/);        \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTRIGFv, UINT32, "LOS1VTRIGFv", "LOS1VTRIGF", 0 /*flags*/);        \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1VTRIGC, UINT32, "LOS1VTRIGC", 2, 0 /*flags*/);  \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTRIGCI, UINT32, "LOS1VTRIGCI", "LOS1VTRIGC", 0 /*flags*/);        \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VTRIGCv, UINT32, "LOS1VTRIGCv", "LOS1VTRIGC", 0 /*flags*/);        \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VZEROF1, UINT32, "LOS1VZEROF1", 65535, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1VZEROC1, UINT32, "LOS1VZEROC1", 65535, 0 /*flags*/);               \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFLM, UINT32, "LOS1TTFLM", 8, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTFLMI, UINT32, "LOS1TTFLMI", "LOS1TTFLM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTFLME, UINT32, "LOS1TTFLME", "LOS1TTFLM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFL, UINT32, "LOS1TTFL", 256, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTFLv, UINT32, "LOS1TTFLv", "LOS1TTFL", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFTM, UINT32, "LOS1TTFTM", 8, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTFTMI, UINT32, "LOS1TTFTMI", "LOS1TTFTM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTFTME, UINT32, "LOS1TTFTME", "LOS1TTFTM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTFT, UINT32, "LOS1TTFT", 256, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTFTv, UINT32, "LOS1TTFTv", "LOS1TTFT", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCLM, UINT32, "LOS1TTCLM", 8, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTCLMI, UINT32, "LOS1TTCLMI", "LOS1TTCLM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTCLME, UINT32, "LOS1TTCLME", "LOS1TTCLM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCL, UINT32, "LOS1TTCL", 256, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTCLv, UINT32, "LOS1TTCLv", "LOS1TTCL", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCTM, UINT32, "LOS1TTCTM", 8, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTCTMI, UINT32, "LOS1TTCTMI", "LOS1TTCTM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTCTME, UINT32, "LOS1TTCTME", "LOS1TTCTM", 0 /*flags*/);           \
+        EXT_STR_ITEM_INFO2_LIM(ok, si, offset, struct_t, printerr, LOS1TTCT, UINT32, "LOS1TTCT", 256, 0 /*flags*/);    \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTCTv, UINT32, "LOS1TTCTv", "LOS1TTCT", 0 /*flags*/);              \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGFL, UINT32, "LOS1TTRIGFL", 1, 0 /*flags*/);                   \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGFLI, UINT32, "LOS1TTRIGFLI", "LOS1TTRIGFL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGFLv, UINT32, "LOS1TTRIGFLv", "LOS1TTRIGFL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGCL, UINT32, "LOS1TTRIGCL", 1, 0 /*flags*/);                   \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGCLI, UINT32, "LOS1TTRIGCLI", "LOS1TTRIGCL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGCLv, UINT32, "LOS1TTRIGCLv", "LOS1TTRIGCL", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGFT, UINT32, "LOS1TTRIGFT", 1, 0 /*flags*/);                   \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGFTI, UINT32, "LOS1TTRIGFTI", "LOS1TTRIGFT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGFTv, UINT32, "LOS1TTRIGFTv", "LOS1TTRIGFT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_LIM(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGCT, UINT32, "LOS1TTRIGCT", 1, 0 /*flags*/);                   \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGCTI, UINT32, "LOS1TTRIGCTI", "LOS1TTRIGCT", 0 /*flags*/);     \
+        EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
+            ok, si, offset, struct_t, printerr, LOS1TTRIGCTv, UINT32, "LOS1TTRIGCTv", "LOS1TTRIGCT", 0 /*flags*/);     \
+                                                                                                                       \
     } while (0);
 
 /*******************************************************/

@@ -77,28 +77,28 @@ typedef struct EXT_STR_h101_SCI8_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_SCI8_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                      \
-    do                                                                                                        \
-    {                                                                                                         \
-        ok = 1;                                                                                               \
-        /* RAW */                                                                                             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTFM, UINT32, "SCIEIGHT_VTFM", 8); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, SCIEIGHT_VTFMI, UINT32, "SCIEIGHT_VTFMI", "SCIEIGHT_VTFM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, SCIEIGHT_VTFME, UINT32, "SCIEIGHT_VTFME", "SCIEIGHT_VTFM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTF, UINT32, "SCIEIGHT_VTF", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, SCIEIGHT_VTFv, UINT32, "SCIEIGHT_VTFv", "SCIEIGHT_VTF");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTCM, UINT32, "SCIEIGHT_VTCM", 8); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, SCIEIGHT_VTCMI, UINT32, "SCIEIGHT_VTCMI", "SCIEIGHT_VTCM");   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, SCIEIGHT_VTCME, UINT32, "SCIEIGHT_VTCME", "SCIEIGHT_VTCM");   \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTC, UINT32, "SCIEIGHT_VTC", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, SCIEIGHT_VTCv, UINT32, "SCIEIGHT_VTCv", "SCIEIGHT_VTC");      \
-                                                                                                              \
+#define EXT_STR_h101_SCI8_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTFM, UINT32, "SCIEIGHT_VTFM", 8);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCIEIGHT_VTFMI, UINT32, "SCIEIGHT_VTFMI", "SCIEIGHT_VTFM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCIEIGHT_VTFME, UINT32, "SCIEIGHT_VTFME", "SCIEIGHT_VTFM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTF, UINT32, "SCIEIGHT_VTF", 256);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCIEIGHT_VTFv, UINT32, "SCIEIGHT_VTFv", "SCIEIGHT_VTF");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTCM, UINT32, "SCIEIGHT_VTCM", 8);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCIEIGHT_VTCMI, UINT32, "SCIEIGHT_VTCMI", "SCIEIGHT_VTCM");            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCIEIGHT_VTCME, UINT32, "SCIEIGHT_VTCME", "SCIEIGHT_VTCM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, SCIEIGHT_VTC, UINT32, "SCIEIGHT_VTC", 256);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, SCIEIGHT_VTCv, UINT32, "SCIEIGHT_VTCv", "SCIEIGHT_VTC");               \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_SCI8_EXT_H101_SCI8_H__*/

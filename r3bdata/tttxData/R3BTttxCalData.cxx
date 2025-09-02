@@ -19,10 +19,7 @@
 #include <fmt/core.h>
 
 R3BTttxCalData::R3BTttxCalData(uint8_t DetID, uint8_t StripID, double time, double energy)
-    : fDetID(DetID)
-    , fStripID(StripID)
-    , fTime(time)
-    , fEnergy(energy)
+    : fDetID(DetID), fStripID(StripID), fTime(time), fEnergy(energy)
 {
 }
 

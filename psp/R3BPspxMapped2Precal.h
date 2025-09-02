@@ -73,7 +73,7 @@ class R3BPspxMapped2Precal : public FairTask
   private:
     void SetParameters();
 
-    R3BEventHeader* fHeader;                 // do we need that?
+    R3BEventHeader* fHeader; // do we need that?
     std::vector<TClonesArray*> fMappedItems; /**< Arrays holding input (Mapped) data */
     std::vector<TClonesArray*> fPrecalItems; /**< Arrays holding output (Precal) data */
 

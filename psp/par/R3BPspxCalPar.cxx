@@ -26,10 +26,7 @@
 #include "TString.h"
 
 R3BPspxCalPar::R3BPspxCalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumDetectors(-1)
-    , fNumStrips()
-    , fCalPar()
+    : FairParGenericSet(name, title, context), fNumDetectors(-1), fNumStrips(), fCalPar()
 {
     detName = "Pspx";
 }

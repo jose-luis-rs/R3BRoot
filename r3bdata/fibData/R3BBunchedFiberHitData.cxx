@@ -14,12 +14,7 @@
 #include "R3BBunchedFiberHitData.h"
 
 R3BBunchedFiberHitData::R3BBunchedFiberHitData()
-    : fFiberId(-1)
-    , fMAPMTTime_ns(-1)
-    , fSPMTTime_ns(-1)
-    , fTime_ns(-1)
-    , fMAPMTToT_ns(-1)
-    , fSPMTToT_ns(-1)
+    : fFiberId(-1), fMAPMTTime_ns(-1), fSPMTTime_ns(-1), fTime_ns(-1), fMAPMTToT_ns(-1), fSPMTToT_ns(-1)
 {
 }
 
@@ -33,13 +28,8 @@ R3BBunchedFiberHitData::R3BBunchedFiberHitData(Int_t ID,
                                                Double_t a_spmt_time_ns,
                                                Double_t a_mapmt_tot_ns,
                                                Double_t a_spmt_tot_ns)
-    : R3BHit(ID, x, y, eloss, time)
-    , fFiberId(a_fiber_id)
-    , fMAPMTTime_ns(a_mapmt_time_ns)
-    , fSPMTTime_ns(a_spmt_time_ns)
-    , fTime_ns((a_mapmt_time_ns + a_spmt_time_ns) / 2)
-    , fMAPMTToT_ns(a_mapmt_tot_ns)
-    , fSPMTToT_ns(a_spmt_tot_ns)
+    : R3BHit(ID, x, y, eloss, time), fFiberId(a_fiber_id), fMAPMTTime_ns(a_mapmt_time_ns), fSPMTTime_ns(a_spmt_time_ns),
+      fTime_ns((a_mapmt_time_ns + a_spmt_time_ns) / 2), fMAPMTToT_ns(a_mapmt_tot_ns), fSPMTToT_ns(a_spmt_tot_ns)
 {
 }
 

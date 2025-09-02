@@ -14,11 +14,7 @@
 #include "R3BNeulandCalData.h"
 
 R3BNeulandCalData::R3BNeulandCalData(Int_t barId, Int_t side, Double_t time, Double_t triggertime, Int_t qdc)
-    : fBarId(barId)
-    , fSide(side)
-    , fTime(time)
-    , fTriggerTime(triggertime)
-    , fQdc(qdc)
+    : fBarId(barId), fSide(side), fTime(time), fTriggerTime(triggertime), fQdc(qdc)
 {
 }
 

@@ -39,13 +39,8 @@ extern "C"
 using namespace std;
 
 R3BRoluReader::R3BRoluReader(EXT_STR_h101_ROLU_onion* data, size_t offset)
-    : R3BReader("R3BRoluReader")
-    , fData(data)
-    , fNbDet(NUM_ROLU_DETECTORS)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BRoluMappedData"))
-    , fArrayTrigger(new TClonesArray("R3BRoluMappedData"))
+    : R3BReader("R3BRoluReader"), fData(data), fNbDet(NUM_ROLU_DETECTORS), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BRoluMappedData")), fArrayTrigger(new TClonesArray("R3BRoluMappedData"))
 {
 }
 

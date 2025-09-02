@@ -98,13 +98,9 @@ void writeout(std::map<T, TH1D*>& map, const std::string& what, const int nEvent
 }
 
 R3BNeulandMCMon::R3BNeulandMCMon(const Option_t* option)
-    : FairTask("R3B NeuLAND Neuland Monte Carlo Monitor")
-    , fIs3DTrackEnabled(false)
-    , fIsFullSimAnaEnabled(false)
-    , fPrimaryNeutronInteractionPoints("NeulandPrimaryPoints")
-    , fMCTracks("MCTrack")
-    , fNeulandPoints("NeulandPoints")
-    , nEvents(0)
+    : FairTask("R3B NeuLAND Neuland Monte Carlo Monitor"), fIs3DTrackEnabled(false), fIsFullSimAnaEnabled(false),
+      fPrimaryNeutronInteractionPoints("NeulandPrimaryPoints"), fMCTracks("MCTrack"), fNeulandPoints("NeulandPoints"),
+      nEvents(0)
 {
     LOG(info) << "Using R3B NeuLAND Neuland Monte Carlo Monitor";
 
@@ -273,7 +269,7 @@ void R3BNeulandMCMon::Exec(Option_t*)
         const Double_t v2 = s2 / std::pow(npnip->GetTime(), 2); // ns²
 
         const Double_t c2 = 898.75517873681758374898; // cm²/ns²
-        const Double_t massNeutron = 939.565379;      // MeV/c²
+        const Double_t massNeutron = 939.565379; // MeV/c²
         const Double_t ETimeOfFlight = massNeutron * ((1. / std::sqrt(1 - (v2 / c2))) - 1);
 
         auto mcTrack = mcTracks.at(npnip->GetTrackID());
@@ -318,7 +314,7 @@ void R3BNeulandMCMon::Exec(Option_t*)
                 }
                 // Get Energy py particle where the mother is a primary neutron
                 fhmEPdg[mcTrack->GetPdgCode()]->Fill(point->GetLightYield() * 1000.); // point->GetEnergyLoss()*1000.);
-            }                                                                         // end primary neutron mother
+            } // end primary neutron mother
 
             // Sum energy per particle type per event
             if (!EtotPDG[mcTrack->GetPdgCode()])
@@ -517,19 +513,19 @@ void R3BNeulandMCMon::Exec(Option_t*)
 
                 // std::vector<int> filteredPdgCodes{ 22, -211, 211, 111 };
                 std::vector<int> filteredPdgCodes{ 22, 111 };
-                const TString reaction = std::accumulate(
-                    tracks.begin(),
-                    tracks.end(),
-                    TString(),
-                    [&](TString s, const R3BMCTrack* b) -> TString
-                    {
-                        if (std::find(filteredPdgCodes.begin(), filteredPdgCodes.end(), b->GetPdgCode()) !=
-                            filteredPdgCodes.end())
-                        {
-                            return s;
-                        }
-                        return s += "_" + TString::Itoa(b->GetPdgCode(), 10);
-                    });
+                const TString reaction = std::accumulate(tracks.begin(),
+                                                         tracks.end(),
+                                                         TString(),
+                                                         [&](TString s, const R3BMCTrack* b) -> TString
+                                                         {
+                                                             if (std::find(filteredPdgCodes.begin(),
+                                                                           filteredPdgCodes.end(),
+                                                                           b->GetPdgCode()) != filteredPdgCodes.end())
+                                                             {
+                                                                 return s;
+                                                             }
+                                                             return s += "_" + TString::Itoa(b->GetPdgCode(), 10);
+                                                         });
 
                 if (fhmEnergyByReaction[reaction] == nullptr)
                 {

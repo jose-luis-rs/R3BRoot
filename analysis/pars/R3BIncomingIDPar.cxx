@@ -25,8 +25,7 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BIncomingIDPar::R3BIncomingIDPar(const TString& name, const TString& title, const TString& context)
-    : FairParGenericSet(name, title, context)
-    , fNumDet(1)
+    : FairParGenericSet(name, title, context), fNumDet(1)
 {
     fToFoffset = new TArrayF(fNumDet);
     fPosS2Left = new TArrayF(fNumDet);

@@ -41,27 +41,14 @@
 
 // R3BMusicMapped2CalPar_S515: Default Constructor --------------------------
 R3BMusicMapped2CalPar_S515::R3BMusicMapped2CalPar_S515()
-    : FairTask("R3B Music Angle Calibrator", 1)
-    , fNumAnodes(MAX_NB_MUSICANODE)   // 8 anodes
-    , fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
-    , fMaxMult(MAX_MULT_MUSIC_CAL)
-    , fMinStadistics(1000)
-    , fLimit_left(10000)
-    , fLimit_right(24000)
-    , fNumParams(3)
-    , fNumPosParams(2)
-    , fMaxSigma(200)
-    , CalParams(NULL)
-    , PosParams(NULL)
-    , fCal_Par(NULL)
-    , fNameDetA("Mwpc0")
-    , fPosMwpcA(0.)
-    , fNameDetB("Los")
-    , fPosLos(0.)
-    , fPosMusic(0.)
-    , fMusicMappedDataCA(NULL)
-    , fHitItemsMwpcA(NULL)
-    , fHitItemsLos(NULL)
+    : FairTask("R3B Music Angle Calibrator", 1), fNumAnodes(MAX_NB_MUSICANODE) // 8 anodes
+      ,
+      fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
+      ,
+      fMaxMult(MAX_MULT_MUSIC_CAL), fMinStadistics(1000), fLimit_left(10000), fLimit_right(24000), fNumParams(3),
+      fNumPosParams(2), fMaxSigma(200), CalParams(NULL), PosParams(NULL), fCal_Par(NULL), fNameDetA("Mwpc0"),
+      fPosMwpcA(0.), fNameDetB("Los"), fPosLos(0.), fPosMusic(0.), fMusicMappedDataCA(NULL), fHitItemsMwpcA(NULL),
+      fHitItemsLos(NULL)
 {
 }
 
@@ -70,27 +57,14 @@ R3BMusicMapped2CalPar_S515::R3BMusicMapped2CalPar_S515(const TString& name,
                                                        Int_t iVerbose,
                                                        const TString& namedeta,
                                                        const TString& namedetb)
-    : FairTask(name, iVerbose)
-    , fNumAnodes(MAX_NB_MUSICANODE)   // 8 anodes
-    , fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
-    , fMaxMult(MAX_MULT_MUSIC_CAL)
-    , fMinStadistics(1000)
-    , fLimit_left(10000)
-    , fLimit_right(24000)
-    , fNumParams(3)
-    , fNumPosParams(2)
-    , fMaxSigma(200)
-    , CalParams(NULL)
-    , PosParams(NULL)
-    , fCal_Par(NULL)
-    , fNameDetA(namedeta)
-    , fPosMwpcA(0.)
-    , fNameDetB(namedetb)
-    , fPosLos(0.)
-    , fPosMusic(0.)
-    , fMusicMappedDataCA(NULL)
-    , fHitItemsMwpcA(NULL)
-    , fHitItemsLos(NULL)
+    : FairTask(name, iVerbose), fNumAnodes(MAX_NB_MUSICANODE) // 8 anodes
+      ,
+      fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
+      ,
+      fMaxMult(MAX_MULT_MUSIC_CAL), fMinStadistics(1000), fLimit_left(10000), fLimit_right(24000), fNumParams(3),
+      fNumPosParams(2), fMaxSigma(200), CalParams(NULL), PosParams(NULL), fCal_Par(NULL), fNameDetA(namedeta),
+      fPosMwpcA(0.), fNameDetB(namedetb), fPosLos(0.), fPosMusic(0.), fMusicMappedDataCA(NULL), fHitItemsMwpcA(NULL),
+      fHitItemsLos(NULL)
 {
 }
 

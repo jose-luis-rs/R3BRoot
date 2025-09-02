@@ -24,12 +24,8 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BMusliHitPar::R3BMusliHitPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumGroups(15)
-    , fNumTypes(4)
-    , fMaxMult(20)
-    , fNumParamsEcorrBetaFit(2)
-    , fNumParamsZFit(3)
+    : FairParGenericSet(name, title, context), fNumGroups(15), fNumTypes(4), fMaxMult(20), fNumParamsEcorrBetaFit(2),
+      fNumParamsZFit(3)
 {
     fEaveVsBetaHitParams = new TArrayD(fNumTypes);
     fEcorrBetaHitParams = new TArrayD(fNumTypes * fNumParamsEcorrBetaFit);

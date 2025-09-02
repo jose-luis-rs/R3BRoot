@@ -58,94 +58,94 @@ class TClonesArray;
 //
 
 #define LENGTH(x) (sizeof x / sizeof *x)
-#define R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME)                                                \
-    int ok;                                                                                \
-    R3BLOG(info, "");                                                                      \
-    EXT_STR_h101_##NAME##_ITEMS_INFO(ok, *a_struct_info, fOffset, EXT_STR_h101_##NAME, 0); \
-    if (!ok)                                                                               \
-    {                                                                                      \
-        R3BLOG(error, "Failed to setup UCESB structure information.");                     \
-        return kFALSE;                                                                     \
+#define R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME)                                                                            \
+    int ok;                                                                                                            \
+    R3BLOG(info, "");                                                                                                  \
+    EXT_STR_h101_##NAME##_ITEMS_INFO(ok, *a_struct_info, fOffset, EXT_STR_h101_##NAME, 0);                             \
+    if (!ok)                                                                                                           \
+    {                                                                                                                  \
+        R3BLOG(error, "Failed to setup UCESB structure information.");                                                 \
+        return kFALSE;                                                                                                 \
     }
 #define R3B_BUNCHED_FIBER_INIT_END_ return R3BBunchedFiberReader::Init(nullptr)
 
-#define R3B_BUNCHED_FIBER_INIT(NAME, data)                                       \
-    do                                                                           \
-    {                                                                            \
-        R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME);                                     \
-        memset(data, 0, sizeof *data);                                           \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][0], data->NAME##_TMLC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][1], data->NAME##_TMLF); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][0], data->NAME##_TMTC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][1], data->NAME##_TMTF); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][0], data->NAME##_TSLC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][1], data->NAME##_TSLF); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][0], data->NAME##_TSTC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][1], data->NAME##_TSTF); \
-        R3B_BUNCHED_FIBER_INIT_END_;                                             \
+#define R3B_BUNCHED_FIBER_INIT(NAME, data)                                                                             \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME);                                                                           \
+        memset(data, 0, sizeof *data);                                                                                 \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][0], data->NAME##_TMLC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][1], data->NAME##_TMLF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][0], data->NAME##_TMTC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][1], data->NAME##_TMTF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][0], data->NAME##_TSLC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][1], data->NAME##_TSLF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][0], data->NAME##_TSTC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][1], data->NAME##_TSTF);                                       \
+        R3B_BUNCHED_FIBER_INIT_END_;                                                                                   \
     } while (0)
 
-#define R3B_BUNCHED_FIBER_INIT_MAPMT_ONLY(NAME, data)                            \
-    do                                                                           \
-    {                                                                            \
-        R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME);                                     \
-        memset(data, 0, sizeof *data);                                           \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][0], data->NAME##_TMLC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][1], data->NAME##_TMLF); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][0], data->NAME##_TMTC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][1], data->NAME##_TMTF); \
-        R3B_BUNCHED_FIBER_INIT_END_;                                             \
+#define R3B_BUNCHED_FIBER_INIT_MAPMT_ONLY(NAME, data)                                                                  \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME);                                                                           \
+        memset(data, 0, sizeof *data);                                                                                 \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][0], data->NAME##_TMLC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][1], data->NAME##_TMLF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][0], data->NAME##_TMTC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][1], data->NAME##_TMTF);                                       \
+        R3B_BUNCHED_FIBER_INIT_END_;                                                                                   \
     } while (0)
 
-#define R3B_BUNCHED_FIBER_INIT_MAPMT_TRIG(NAME, data)                               \
-    do                                                                              \
-    {                                                                               \
-        R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME);                                        \
-        memset(data, 0, sizeof *data);                                              \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][0], data->NAME##_TMLC);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][1], data->NAME##_TMLF);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][0], data->NAME##_TMTC);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][1], data->NAME##_TMTF);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][0], data->NAME##_TSLC);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][1], data->NAME##_TSLF);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][0], data->NAME##_TSTC);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][1], data->NAME##_TSTF);    \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[2][0][0], data->NAME##_TRIGMLC); \
-        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[2][0][1], data->NAME##_TRIGMLF); \
-        R3B_BUNCHED_FIBER_INIT_END_;                                                \
+#define R3B_BUNCHED_FIBER_INIT_MAPMT_TRIG(NAME, data)                                                                  \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        R3B_BUNCHED_FIBER_INIT_BEGIN_(NAME);                                                                           \
+        memset(data, 0, sizeof *data);                                                                                 \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][0], data->NAME##_TMLC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][0][1], data->NAME##_TMLF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][0], data->NAME##_TMTC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[0][1][1], data->NAME##_TMTF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][0], data->NAME##_TSLC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][0][1], data->NAME##_TSLF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][0], data->NAME##_TSTC);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[1][1][1], data->NAME##_TSTF);                                       \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[2][0][0], data->NAME##_TRIGMLC);                                    \
+        R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(fMHL[2][0][1], data->NAME##_TRIGMLF);                                    \
+        R3B_BUNCHED_FIBER_INIT_END_;                                                                                   \
     } while (0)
 
-#define R3B_BUNCHED_FIBER_UCESB_LINK(dst, src)             \
-    do                                                     \
-    {                                                      \
-        dst._ = &src;                                      \
-        dst._MI = src##I;                                  \
-        dst._MI_len = LENGTH(src##I);                      \
-        dst._v = src##v;                                   \
-        dst._v_len = LENGTH(src##v);                       \
-        if (dst._MI_len != dst._v_len)                     \
-        {                                                  \
-            LOG(error) << "UCESB single-hit array error."; \
-            exit(EXIT_FAILURE);                            \
-        }                                                  \
+#define R3B_BUNCHED_FIBER_UCESB_LINK(dst, src)                                                                         \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        dst._ = &src;                                                                                                  \
+        dst._MI = src##I;                                                                                              \
+        dst._MI_len = LENGTH(src##I);                                                                                  \
+        dst._v = src##v;                                                                                               \
+        dst._v_len = LENGTH(src##v);                                                                                   \
+        if (dst._MI_len != dst._v_len)                                                                                 \
+        {                                                                                                              \
+            LOG(error) << "UCESB single-hit array error.";                                                             \
+            exit(EXIT_FAILURE);                                                                                        \
+        }                                                                                                              \
     } while (0)
 
-#define R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(dst, src)   \
-    do                                                    \
-    {                                                     \
-        dst._M = &src##M;                                 \
-        dst._MI = src##MI;                                \
-        dst._MI_len = LENGTH(src##MI);                    \
-        dst._ME = src##ME;                                \
-        dst._ME_len = LENGTH(src##ME);                    \
-        if (dst._MI_len != dst._ME_len)                   \
-        {                                                 \
-            LOG(error) << "UCESB multi-hit array error."; \
-            exit(EXIT_FAILURE);                           \
-        }                                                 \
-        dst._ = &src;                                     \
-        dst._v = src##v;                                  \
-        dst._v_len = LENGTH(src##v);                      \
+#define R3B_BUNCHED_FIBER_UCESB_LINK_MULTIHIT(dst, src)                                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        dst._M = &src##M;                                                                                              \
+        dst._MI = src##MI;                                                                                             \
+        dst._MI_len = LENGTH(src##MI);                                                                                 \
+        dst._ME = src##ME;                                                                                             \
+        dst._ME_len = LENGTH(src##ME);                                                                                 \
+        if (dst._MI_len != dst._ME_len)                                                                                \
+        {                                                                                                              \
+            LOG(error) << "UCESB multi-hit array error.";                                                              \
+            exit(EXIT_FAILURE);                                                                                        \
+        }                                                                                                              \
+        dst._ = &src;                                                                                                  \
+        dst._v = src##v;                                                                                               \
+        dst._v_len = LENGTH(src##v);                                                                                   \
     } while (0)
 
 class R3BBunchedFiberReader : public R3BReader

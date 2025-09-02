@@ -29,10 +29,9 @@
 
 // ---- Standard Constructor ---------------------------------------------------
 R3BMusicCalPar::R3BMusicCalPar(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumAnodes(8)
-    , fNumParamsEFit(3) // Gaussian fit
-    , fNumParamsPosFit(2)
+    : FairParGenericSet(name, title, context), fNumAnodes(8), fNumParamsEFit(3) // Gaussian fit
+      ,
+      fNumParamsPosFit(2)
 {
     fAnodeCalParams = new TArrayF(fNumAnodes * fNumParamsEFit); // 8 anodes * 3 Calibration-Parameters
     fPosParams = new TArrayF(fNumAnodes * fNumParamsPosFit);

@@ -63,14 +63,14 @@ class R3BS515PspxReader : public R3BReader
 
   private:
     EXT_STR_h101_PSP_onion* fDataOnion; /**< Reader specific data structure from ucesb */
-    size_t fOffset;                     /**< Data Offset */
+    size_t fOffset; /**< Data Offset */
     // Don't store data for online
     Bool_t fOnline;
     std::vector<TClonesArray*> fMappedItems; /**< Array holding output (Mapped) data */
     // to handle event mixing :
     EXT_STR_h101_PSP_onion* fEventBuffer[20]; // buffer to store the events before shifting and storing to mapped data
-    size_t fBuffer_i;                         // buffer index
-    size_t fShift;                            // shift of PSPX data with respect to other detectors
+    size_t fBuffer_i; // buffer index
+    size_t fShift; // shift of PSPX data with respect to other detectors
     // EventHeader
     R3BEventHeader* header;
 

@@ -20,12 +20,7 @@ R3BCalifaCrystalCalData::R3BCalifaCrystalCalData(uint16_t cryid,
                                                  double Ns,
                                                  ULong64_t time,
                                                  double tot_energy)
-    : fCrystalId(cryid)
-    , fEnergy(energy)
-    , fNf(Nf)
-    , fNs(Ns)
-    , fTime(time)
-    , fToT_Energy(tot_energy)
+    : fCrystalId(cryid), fEnergy(energy), fNf(Nf), fNs(Ns), fTime(time), fToT_Energy(tot_energy)
 {
 }
 

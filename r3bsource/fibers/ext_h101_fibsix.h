@@ -139,76 +139,76 @@ typedef struct EXT_STR_h101_FIBSIX_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_FIBSIX_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                    \
-    do                                                                                                        \
-    {                                                                                                         \
-        ok = 1;                                                                                               \
-        /* RAW */                                                                                             \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLCM, UINT32, "FIBSIX_TMLCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMLCMI, UINT32, "FIBSIX_TMLCMI", "FIBSIX_TMLCM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMLCME, UINT32, "FIBSIX_TMLCME", "FIBSIX_TMLCM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLC, UINT32, "FIBSIX_TMLC", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMLCv, UINT32, "FIBSIX_TMLCv", "FIBSIX_TMLC");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLFM, UINT32, "FIBSIX_TMLFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMLFMI, UINT32, "FIBSIX_TMLFMI", "FIBSIX_TMLFM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMLFME, UINT32, "FIBSIX_TMLFME", "FIBSIX_TMLFM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLF, UINT32, "FIBSIX_TMLF", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMLFv, UINT32, "FIBSIX_TMLFv", "FIBSIX_TMLF");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTCM, UINT32, "FIBSIX_TMTCM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMTCMI, UINT32, "FIBSIX_TMTCMI", "FIBSIX_TMTCM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMTCME, UINT32, "FIBSIX_TMTCME", "FIBSIX_TMTCM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTC, UINT32, "FIBSIX_TMTC", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMTCv, UINT32, "FIBSIX_TMTCv", "FIBSIX_TMTC");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTFM, UINT32, "FIBSIX_TMTFM", 256); \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMTFMI, UINT32, "FIBSIX_TMTFMI", "FIBSIX_TMTFM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMTFME, UINT32, "FIBSIX_TMTFME", "FIBSIX_TMTFM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTF, UINT32, "FIBSIX_TMTF", 5120);  \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TMTFv, UINT32, "FIBSIX_TMTFv", "FIBSIX_TMTF");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLCM, UINT32, "FIBSIX_TSLCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSLCMI, UINT32, "FIBSIX_TSLCMI", "FIBSIX_TSLCM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSLCME, UINT32, "FIBSIX_TSLCME", "FIBSIX_TSLCM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLC, UINT32, "FIBSIX_TSLC", 40);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSLCv, UINT32, "FIBSIX_TSLCv", "FIBSIX_TSLC");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLFM, UINT32, "FIBSIX_TSLFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSLFMI, UINT32, "FIBSIX_TSLFMI", "FIBSIX_TSLFM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSLFME, UINT32, "FIBSIX_TSLFME", "FIBSIX_TSLFM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLF, UINT32, "FIBSIX_TSLF", 40);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSLFv, UINT32, "FIBSIX_TSLFv", "FIBSIX_TSLF");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTCM, UINT32, "FIBSIX_TSTCM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSTCMI, UINT32, "FIBSIX_TSTCMI", "FIBSIX_TSTCM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSTCME, UINT32, "FIBSIX_TSTCME", "FIBSIX_TSTCM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTC, UINT32, "FIBSIX_TSTC", 40);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSTCv, UINT32, "FIBSIX_TSTCv", "FIBSIX_TSTC");         \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTFM, UINT32, "FIBSIX_TSTFM", 2);   \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSTFMI, UINT32, "FIBSIX_TSTFMI", "FIBSIX_TSTFM");      \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSTFME, UINT32, "FIBSIX_TSTFME", "FIBSIX_TSTFM");      \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTF, UINT32, "FIBSIX_TSTF", 40);    \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                \
-            ok, si, offset, struct_t, printerr, FIBSIX_TSTFv, UINT32, "FIBSIX_TSTFv", "FIBSIX_TSTF");         \
-                                                                                                              \
+#define EXT_STR_h101_FIBSIX_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                             \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLCM, UINT32, "FIBSIX_TMLCM", 256);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMLCMI, UINT32, "FIBSIX_TMLCMI", "FIBSIX_TMLCM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMLCME, UINT32, "FIBSIX_TMLCME", "FIBSIX_TMLCM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLC, UINT32, "FIBSIX_TMLC", 5120);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMLCv, UINT32, "FIBSIX_TMLCv", "FIBSIX_TMLC");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLFM, UINT32, "FIBSIX_TMLFM", 256);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMLFMI, UINT32, "FIBSIX_TMLFMI", "FIBSIX_TMLFM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMLFME, UINT32, "FIBSIX_TMLFME", "FIBSIX_TMLFM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMLF, UINT32, "FIBSIX_TMLF", 5120);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMLFv, UINT32, "FIBSIX_TMLFv", "FIBSIX_TMLF");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTCM, UINT32, "FIBSIX_TMTCM", 256);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMTCMI, UINT32, "FIBSIX_TMTCMI", "FIBSIX_TMTCM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMTCME, UINT32, "FIBSIX_TMTCME", "FIBSIX_TMTCM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTC, UINT32, "FIBSIX_TMTC", 5120);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMTCv, UINT32, "FIBSIX_TMTCv", "FIBSIX_TMTC");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTFM, UINT32, "FIBSIX_TMTFM", 256);          \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMTFMI, UINT32, "FIBSIX_TMTFMI", "FIBSIX_TMTFM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMTFME, UINT32, "FIBSIX_TMTFME", "FIBSIX_TMTFM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TMTF, UINT32, "FIBSIX_TMTF", 5120);           \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TMTFv, UINT32, "FIBSIX_TMTFv", "FIBSIX_TMTF");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLCM, UINT32, "FIBSIX_TSLCM", 2);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSLCMI, UINT32, "FIBSIX_TSLCMI", "FIBSIX_TSLCM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSLCME, UINT32, "FIBSIX_TSLCME", "FIBSIX_TSLCM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLC, UINT32, "FIBSIX_TSLC", 40);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSLCv, UINT32, "FIBSIX_TSLCv", "FIBSIX_TSLC");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLFM, UINT32, "FIBSIX_TSLFM", 2);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSLFMI, UINT32, "FIBSIX_TSLFMI", "FIBSIX_TSLFM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSLFME, UINT32, "FIBSIX_TSLFME", "FIBSIX_TSLFM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSLF, UINT32, "FIBSIX_TSLF", 40);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSLFv, UINT32, "FIBSIX_TSLFv", "FIBSIX_TSLF");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTCM, UINT32, "FIBSIX_TSTCM", 2);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSTCMI, UINT32, "FIBSIX_TSTCMI", "FIBSIX_TSTCM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSTCME, UINT32, "FIBSIX_TSTCME", "FIBSIX_TSTCM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTC, UINT32, "FIBSIX_TSTC", 40);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSTCv, UINT32, "FIBSIX_TSTCv", "FIBSIX_TSTC");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTFM, UINT32, "FIBSIX_TSTFM", 2);            \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSTFMI, UINT32, "FIBSIX_TSTFMI", "FIBSIX_TSTFM");               \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSTFME, UINT32, "FIBSIX_TSTFME", "FIBSIX_TSTFM");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, FIBSIX_TSTF, UINT32, "FIBSIX_TSTF", 40);             \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, FIBSIX_TSTFv, UINT32, "FIBSIX_TSTFv", "FIBSIX_TSTF");                  \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_FIBSIX_EXT_H101_FIBSIX_H__*/

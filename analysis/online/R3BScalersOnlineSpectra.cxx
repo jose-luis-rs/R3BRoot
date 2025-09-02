@@ -35,15 +35,9 @@
 #include <iostream>
 #include <sstream>
 
-R3BScalersOnlineSpectra::R3BScalersOnlineSpectra()
-    : R3BScalersOnlineSpectra("R3BScalersOnlineSpectra", 1)
-{
-}
+R3BScalersOnlineSpectra::R3BScalersOnlineSpectra() : R3BScalersOnlineSpectra("R3BScalersOnlineSpectra", 1) {}
 
-R3BScalersOnlineSpectra::R3BScalersOnlineSpectra(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BScalersOnlineSpectra::R3BScalersOnlineSpectra(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 InitStatus R3BScalersOnlineSpectra::Init()
 {

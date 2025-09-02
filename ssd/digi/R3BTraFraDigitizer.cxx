@@ -42,10 +42,7 @@
 #define SST_HALF_WIDTH_CM 3.5200 // from Ralf's tracker
 #define SST_HALF_HEIGHT_CM 1.9968
 
-R3BTraFraDigitizer::R3BTraFraDigitizer()
-    : FairTask("R3B TraFra Digitization scheme ")
-{
-}
+R3BTraFraDigitizer::R3BTraFraDigitizer() : FairTask("R3B TraFra Digitization scheme ") {}
 
 R3BTraFraDigitizer::~R3BTraFraDigitizer() {}
 

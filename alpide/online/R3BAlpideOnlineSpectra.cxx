@@ -45,16 +45,10 @@
 #include "R3BShared.h"
 
 // R3BAlpideOnlineSpectra::Default Constructor --------------------------
-R3BAlpideOnlineSpectra::R3BAlpideOnlineSpectra()
-    : R3BAlpideOnlineSpectra("AlpideOnlineSpectra", 1)
-{
-}
+R3BAlpideOnlineSpectra::R3BAlpideOnlineSpectra() : R3BAlpideOnlineSpectra("AlpideOnlineSpectra", 1) {}
 
 // R3BAlpideOnlineSpectra::Standard Constructor --------------------------
-R3BAlpideOnlineSpectra::R3BAlpideOnlineSpectra(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BAlpideOnlineSpectra::R3BAlpideOnlineSpectra(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BAlpideOnlineSpectra::SetParContainers()
 {

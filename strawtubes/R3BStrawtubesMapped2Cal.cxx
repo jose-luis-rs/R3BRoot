@@ -34,11 +34,8 @@
 #define VFTX2_COARSE_NS (1000.0 / VFTX_CLOCK_MHZ)
 
 R3BStrawtubesMapped2Cal::R3BStrawtubesMapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItems()
-    , fCalItems(new TClonesArray("R3BStrawtubesCalData"))
-    , fNofCalItems(0)
-    , fTcalPar()
+    : FairTask(name, iVerbose), fMappedItems(), fCalItems(new TClonesArray("R3BStrawtubesCalData")), fNofCalItems(0),
+      fTcalPar()
 {
 }
 

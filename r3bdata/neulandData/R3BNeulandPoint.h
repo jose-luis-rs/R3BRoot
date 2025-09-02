@@ -23,11 +23,7 @@ class R3BNeulandPoint : public FairMCPoint
 {
 
   public:
-    R3BNeulandPoint()
-        : FairMCPoint()
-        , fLightYield(0)
-    {
-    }
+    R3BNeulandPoint() : FairMCPoint(), fLightYield(0) {}
 
     R3BNeulandPoint(const Int_t trackID,
                     const Int_t detID,
@@ -38,14 +34,11 @@ class R3BNeulandPoint : public FairMCPoint
                     const Double_t eLoss,
                     const UInt_t EventId,
                     const Double_t lightYield)
-        : FairMCPoint(trackID, detID, pos, mom, tof, length, eLoss, EventId)
-        , fLightYield(lightYield)
+        : FairMCPoint(trackID, detID, pos, mom, tof, length, eLoss, EventId), fLightYield(lightYield)
     {
     }
 
-    R3BNeulandPoint(const FairMCPoint& point, const Double_t lightYield)
-        : FairMCPoint(point)
-        , fLightYield(lightYield)
+    R3BNeulandPoint(const FairMCPoint& point, const Double_t lightYield) : FairMCPoint(point), fLightYield(lightYield)
     {
     }
 

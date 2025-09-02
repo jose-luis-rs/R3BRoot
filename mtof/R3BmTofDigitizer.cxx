@@ -43,10 +43,7 @@
 using std::cout;
 using std::endl;
 
-R3BmTofDigitizer::R3BmTofDigitizer()
-    : FairTask("R3B mTof Digitization scheme ")
-{
-}
+R3BmTofDigitizer::R3BmTofDigitizer() : FairTask("R3B mTof Digitization scheme ") {}
 
 R3BmTofDigitizer::~R3BmTofDigitizer() {}
 

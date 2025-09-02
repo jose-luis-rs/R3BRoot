@@ -36,10 +36,8 @@ static Double_t gEmptyBinSupressor(const Double_t* x, const Double_t*)
 }
 
 R3BNeulandOnlineReconstruction::R3BNeulandOnlineReconstruction()
-    : FairTask("R3BNeulandOnlineReconstruction", 0)
-    , fEventHeader(nullptr)
-    , fNeulandHits("NeulandHits")
-    , fNeulandClusters("NeulandClusters")
+    : FairTask("R3BNeulandOnlineReconstruction", 0), fEventHeader(nullptr), fNeulandHits("NeulandHits"),
+      fNeulandClusters("NeulandClusters")
 {
 }
 

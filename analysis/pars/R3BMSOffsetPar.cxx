@@ -26,8 +26,7 @@
 // R3BMSOffsetPar::R3BMSOffsetPar(const char* name, const char* title, const char* context)
 //    : FairParGenericSet(name, title, context)
 R3BMSOffsetPar::R3BMSOffsetPar(std::string_view name, std::string_view title, std::string_view context)
-    : FairParGenericSet(name.data(), title.data(), context.data())
-    , fMSOffset(0)
+    : FairParGenericSet(name.data(), title.data(), context.data()), fMSOffset(0)
 {
 }
 

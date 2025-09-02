@@ -34,23 +34,12 @@
 #include <string>
 
 // R3BAlpideDigitizer: Default Constructor --------------------------
-R3BAlpideDigitizer::R3BAlpideDigitizer()
-    : R3BAlpideDigitizer("R3BAlpideDigitizer", 1)
-{
-}
+R3BAlpideDigitizer::R3BAlpideDigitizer() : R3BAlpideDigitizer("R3BAlpideDigitizer", 1) {}
 
 // R3BAlpideDigitizer: Standard Constructor --------------------------
 R3BAlpideDigitizer::R3BAlpideDigitizer(const TString& name, Int_t iVerbose)
-    : FairTask(name + "Digitizer", iVerbose)
-    , fName(name)
-    , fGeoversion(2024)
-    , fMCTrack(nullptr)
-    , fAlpidePoints(nullptr)
-    , fAlpideHits(nullptr)
-    , fAlpideGeo(nullptr)
-    , fMappingPar(nullptr)
-    , fLabframe(false)
-    , fsigma(0.0005) // in cm
+    : FairTask(name + "Digitizer", iVerbose), fName(name), fGeoversion(2024), fMCTrack(nullptr), fAlpidePoints(nullptr),
+      fAlpideHits(nullptr), fAlpideGeo(nullptr), fMappingPar(nullptr), fLabframe(false), fsigma(0.0005) // in cm
 {
 }
 

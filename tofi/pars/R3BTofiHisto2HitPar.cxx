@@ -63,46 +63,18 @@ namespace
 TFile* hifilename;
 
 R3BTofiHisto2HitPar::R3BTofiHisto2HitPar()
-    : FairTask("R3BTofiHisto2HitPar", 1)
-    , fCalItemsLos(NULL)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fParameter(1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(6)
-    , fNEvents(0)
-    , fCal_Par(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTofiY(0.)
-    , fTofiQ(0.)
-    , fTofiTotLow(0.)
-    , fTofiTotHigh(0.)
-    , fTofiSmiley(true)
-    , fParaFile("")
-    , fHistoFile("")
+    : FairTask("R3BTofiHisto2HitPar", 1), fCalItemsLos(NULL), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1),
+      fParameter(1), fNofPlanes(5), fPaddlesPerPlane(6), fNEvents(0), fCal_Par(NULL),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTofiY(0.), fTofiQ(0.), fTofiTotLow(0.), fTofiTotHigh(0.),
+      fTofiSmiley(true), fParaFile(""), fHistoFile("")
 {
 }
 
 R3BTofiHisto2HitPar::R3BTofiHisto2HitPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItemsLos(NULL)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fParameter(1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(6)
-    , fNEvents(0)
-    , fCal_Par(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTofiY(0.)
-    , fTofiQ(0.)
-    , fTofiTotLow(0.)
-    , fTofiTotHigh(0.)
-    , fTofiSmiley(true)
-    , fParaFile("")
-    , fHistoFile("")
+    : FairTask(name, iVerbose), fCalItemsLos(NULL), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1),
+      fParameter(1), fNofPlanes(5), fPaddlesPerPlane(6), fNEvents(0), fCal_Par(NULL),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTofiY(0.), fTofiQ(0.), fTofiTotLow(0.), fTofiTotHigh(0.),
+      fTofiSmiley(true), fParaFile(""), fHistoFile("")
 {
 }
 
@@ -199,8 +171,8 @@ void R3BTofiHisto2HitPar::FinishTask()
             LOG(warn) << "Calling function smiley";
             Double_t para2[4];
             Double_t min2 = -50.; // -40 effective bar length
-            Double_t max2 = 50.;  // 40 effective bar length = 80 cm
-                                  // we will use 50 here for some fit safety margin
+            Double_t max2 = 50.; // 40 effective bar length = 80 cm
+                                 // we will use 50 here for some fit safety margin
             for (Int_t i = 0; i < fNofPlanes; i++)
             {
                 for (Int_t j = 0; j < fPaddlesPerPlane; j++)
@@ -232,7 +204,7 @@ void R3BTofiHisto2HitPar::FinishTask()
             LOG(warn) << "Calling function doubleExp";
             Double_t para[4];
             Double_t min = -40.; // effective bar length
-            Double_t max = 40.;  // effective bar length = 80 cm
+            Double_t max = 40.; // effective bar length = 80 cm
 
             for (Int_t i = 0; i < fNofPlanes; i++)
             {

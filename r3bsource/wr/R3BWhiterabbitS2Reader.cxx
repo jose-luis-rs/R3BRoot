@@ -26,14 +26,8 @@ extern "C"
 }
 
 R3BWhiterabbitS2Reader::R3BWhiterabbitS2Reader(EXT_STR_h101_WRS2* data, size_t offset, UInt_t whiterabbit_id)
-    : R3BReader("R3BWhiterabbitS2Reader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fWhiterabbitId(whiterabbit_id)
-    , fEventHeader(nullptr)
-    , fArray(new TClonesArray("R3BWRData"))
+    : R3BReader("R3BWhiterabbitS2Reader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fWhiterabbitId(whiterabbit_id), fEventHeader(nullptr), fArray(new TClonesArray("R3BWRData"))
 {
 }
 

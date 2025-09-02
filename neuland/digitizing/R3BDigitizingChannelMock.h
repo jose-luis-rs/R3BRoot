@@ -7,8 +7,7 @@ namespace R3B::Digitizing::Neuland
     class MockChannel : public Digitizing::Channel
     {
       public:
-        explicit MockChannel(ChannelSide side)
-            : Digitizing::Channel{ side } {};
+        explicit MockChannel(ChannelSide side) : Digitizing::Channel{ side } {};
         void AddHit(Hit newHit) override
         {
             InvalidateSignals();

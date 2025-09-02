@@ -57,26 +57,14 @@
 using namespace std;
 
 R3BAmsCalifaCorrelatedOnlineSpectra::R3BAmsCalifaCorrelatedOnlineSpectra()
-    : FairTask("AmsCalifaOnlineSpectra", 1)
-    , fHitItemsAms(NULL)
-    , fHitItemsCalifa(NULL)
-    , fCalItemsLos(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(4)
+    : FairTask("AmsCalifaOnlineSpectra", 1), fHitItemsAms(NULL), fHitItemsCalifa(NULL), fCalItemsLos(NULL),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTrigger(-1), fNEvents(0), fNbDet(4)
 {
 }
 
 R3BAmsCalifaCorrelatedOnlineSpectra::R3BAmsCalifaCorrelatedOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fHitItemsAms(NULL)
-    , fHitItemsCalifa(NULL)
-    , fCalItemsLos(NULL)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fTrigger(-1)
-    , fNEvents(0)
-    , fNbDet(4)
+    : FairTask(name, iVerbose), fHitItemsAms(NULL), fHitItemsCalifa(NULL), fCalItemsLos(NULL),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), fTrigger(-1), fNEvents(0), fNbDet(4)
 {
 }
 

@@ -56,8 +56,8 @@ class R3BMwpc0Cal2Hit : public FairTask
 
   private:
     Double_t fSize = 200.; // Detector size in X and Y (mm)
-    Double_t fwx = 3.125;  // Pad width in X (mm)
-    Double_t fwy = 3.125;  // Pad width in Y (mm)
+    Double_t fwx = 3.125; // Pad width in X (mm)
+    Double_t fwy = 3.125; // Pad width in Y (mm)
     Int_t fx[Mw0PadsX], fy[Mw0PadsY];
 
     bool fOnline = false; // Don't store data for online

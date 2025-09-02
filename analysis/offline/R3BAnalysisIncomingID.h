@@ -118,7 +118,7 @@ class R3BAnalysisIncomingID : public FairTask
     TClonesArray* fHitPspx1_x;
     TClonesArray* fHitPspx1_y;
 
-    Bool_t fOnline;            // Don't store data for online
+    Bool_t fOnline; // Don't store data for online
     Bool_t fUseLOS, fUsePspx1; // Use LOS or PSPX1 charge (otherwise MUSIC charge)
     Double_t fP0, fP1, fP2, fZprimary, fZoffset;
     Bool_t fUseTref; // Use trigger corrected times

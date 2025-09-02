@@ -29,11 +29,7 @@ namespace R3B
 
       public:
         CanvasElement() = default;
-        CanvasElement(ElementType* element, TVirtualPad* pad)
-            : element_{ element }
-            , pad_{ pad }
-        {
-        }
+        CanvasElement(ElementType* element, TVirtualPad* pad) : element_{ element }, pad_{ pad } {}
         auto* get() { return element_; }
         auto* operator->() { return element_; }
         auto* pad() { return pad_; }

@@ -37,15 +37,8 @@ using namespace std;
 #define IS_NAN(x) TMath::IsNaN(x)
 
 R3BSci8Cal2Hit::R3BSci8Cal2Hit()
-    : FairTask("Sci8Cal2Hit", 1)
-    , fCalItems(NULL)
-    , fHitItems(new TClonesArray("R3BSci8HitData"))
-    , fNofHitItems(0)
-    , fsci8VeffX(1.)
-    , fsci8OffsetX(0.)
-    , fsci8VeffXT(1.)
-    , fsci8OffsetXT(0.)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask("Sci8Cal2Hit", 1), fCalItems(NULL), fHitItems(new TClonesArray("R3BSci8HitData")), fNofHitItems(0),
+      fsci8VeffX(1.), fsci8OffsetX(0.), fsci8VeffXT(1.), fsci8OffsetXT(0.), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
     fhTres_M = NULL;
     fhTres_T = NULL;
@@ -57,15 +50,8 @@ R3BSci8Cal2Hit::R3BSci8Cal2Hit()
 }
 
 R3BSci8Cal2Hit::R3BSci8Cal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems(NULL)
-    , fHitItems(new TClonesArray("R3BSci8HitData"))
-    , fNofHitItems(0)
-    , fsci8VeffX(1.)
-    , fsci8OffsetX(0.)
-    , fsci8VeffXT(1.)
-    , fsci8OffsetXT(0.)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask(name, iVerbose), fCalItems(NULL), fHitItems(new TClonesArray("R3BSci8HitData")), fNofHitItems(0),
+      fsci8VeffX(1.), fsci8OffsetX(0.), fsci8VeffXT(1.), fsci8OffsetXT(0.), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
     fhTres_M = NULL;
     fhTres_T = NULL;
@@ -149,19 +135,19 @@ void R3BSci8Cal2Hit::Exec(Option_t* option)
     Int_t fhdTxbin = 20;
     // min,max,Nbins for time spectra
     Double_t fhTmin = -20.; //-5.; //-10
-    Double_t fhTmax = 20.;  // 5.;  // 10
-    Int_t fhTbin = 2000;    // 10000; // 20000
+    Double_t fhTmax = 20.; // 5.;  // 10
+    Int_t fhTbin = 2000; // 10000; // 20000
     // min,max,Nbins for ToT spectra
     Double_t fhQmin = 0.;
     Double_t fhQmax = 200; // 300.; //150
-    Int_t fhQbin = 4000;   // 0; //3000; //1500
+    Int_t fhQbin = 4000; // 0; //3000; //1500
     // min,max,Nbins for X and Y spectra
     Double_t fhXmin = -5.; //-5
-    Double_t fhXmax = 5.;  // 5
-    Int_t fhXbin = 2000;   // 1000
-                           // min,max,Nbins for radius spectra
+    Double_t fhXmax = 5.; // 5
+    Int_t fhXbin = 2000; // 1000
+                         // min,max,Nbins for radius spectra
     Double_t fhRmin = -2.; // 0.;
-    Double_t fhRmax = 2.;  // 10.;
+    Double_t fhRmax = 2.; // 10.;
     Int_t fhRbin = 1000;
 
     if (NULL == fhTres_M)

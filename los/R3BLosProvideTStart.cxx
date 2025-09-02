@@ -19,15 +19,9 @@
 #include <FairRootManager.h>
 
 R3BLosProvideTStart::R3BLosProvideTStart()
-    : FairTask("R3BLosProvideTStart", 0)
-    , fLosCalData("LosCal")
-    , fLosTriggerCalData("LosTriggerCal")
-    , fLosHitData("LosHit")
-    , fLosTriggerData("LosTriggerTCal")
-    , fEventHeader(nullptr)
-    , edgeL(0.)
-    , edgeR(0.)
-    , fUseTrigHit(kFALSE)
+    : FairTask("R3BLosProvideTStart", 0), fLosCalData("LosCal"), fLosTriggerCalData("LosTriggerCal"),
+      fLosHitData("LosHit"), fLosTriggerData("LosTriggerTCal"), fEventHeader(nullptr), edgeL(0.), edgeR(0.),
+      fUseTrigHit(kFALSE)
 {
 }
 

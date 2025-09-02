@@ -25,36 +25,16 @@ using std::flush;
 
 // -----   Default constructor   -------------------------------------------
 R3BPaddleCrystalHit::R3BPaddleCrystalHit()
-    : FairHit()
-    , type(0)
-    , copy(0)
-    , fEnergy(0.)
-    , nbOfSteps(0)
-    , fTimeFirstStep(0.)
-    , fTimeLastStep(0.)
-    , nbOfPrimaries(0)
-    , fEnergyPrimary(0.)
-    , fThetaPrimary(0.)
-    , fPhiPrimary(0.)
-    , eventID(0)
-    , runID(0)
+    : FairHit(), type(0), copy(0), fEnergy(0.), nbOfSteps(0), fTimeFirstStep(0.), fTimeLastStep(0.), nbOfPrimaries(0),
+      fEnergyPrimary(0.), fThetaPrimary(0.), fPhiPrimary(0.), eventID(0), runID(0)
 {
 }
 
 R3BPaddleCrystalHit::R3BPaddleCrystalHit(const R3BPaddleCrystalHit& right)
-    : FairHit(right)
-    , type(right.type)
-    , copy(right.copy)
-    , fEnergy(right.fEnergy)
-    , nbOfSteps(right.nbOfSteps)
-    , fTimeFirstStep(right.fTimeFirstStep)
-    , fTimeLastStep(right.fTimeLastStep)
-    , nbOfPrimaries(right.nbOfPrimaries)
-    , fEnergyPrimary(right.fEnergyPrimary)
-    , fThetaPrimary(right.fThetaPrimary)
-    , fPhiPrimary(right.fPhiPrimary)
-    , eventID(right.eventID)
-    , runID(right.runID)
+    : FairHit(right), type(right.type), copy(right.copy), fEnergy(right.fEnergy), nbOfSteps(right.nbOfSteps),
+      fTimeFirstStep(right.fTimeFirstStep), fTimeLastStep(right.fTimeLastStep), nbOfPrimaries(right.nbOfPrimaries),
+      fEnergyPrimary(right.fEnergyPrimary), fThetaPrimary(right.fThetaPrimary), fPhiPrimary(right.fPhiPrimary),
+      eventID(right.eventID), runID(right.runID)
 {
 }
 

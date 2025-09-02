@@ -28,14 +28,8 @@ extern "C"
 R3BWhiterabbitPspReader::R3BWhiterabbitPspReader(EXT_STR_h101_TIMESTAMP_PSPX* data,
                                                  size_t offset,
                                                  UInt_t whiterabbit_id)
-    : R3BReader("R3BWhiterabbitPspReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fWhiterabbitId(whiterabbit_id)
-    , fEventHeader(nullptr)
-    , fArray(new TClonesArray("R3BWRData"))
+    : R3BReader("R3BWhiterabbitPspReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fWhiterabbitId(whiterabbit_id), fEventHeader(nullptr), fArray(new TClonesArray("R3BWRData"))
 {
 }
 

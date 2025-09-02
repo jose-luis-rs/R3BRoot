@@ -80,20 +80,10 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-R3BGlobalAnalysisS454::R3BGlobalAnalysisS454()
-    : R3BGlobalAnalysisS454("GlobalAnalysis", 1)
-{
-}
+R3BGlobalAnalysisS454::R3BGlobalAnalysisS454() : R3BGlobalAnalysisS454("GlobalAnalysis", 1) {}
 
 R3BGlobalAnalysisS454::R3BGlobalAnalysisS454(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fCuts(0)
-    , fGhost(0)
-    , fPairs(0)
-    , fB(-1672)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat(-1), fCuts(0), fGhost(0), fPairs(0), fB(-1672), fNEvents(0)
 {
 }
 
@@ -616,8 +606,8 @@ void R3BGlobalAnalysisS454::Exec(Option_t* option)
 
             /** Calculate invariant mass and relative energy **/
             Double_t m_inva = (alpha + carbon).M(); // invariant mass
-            Double_t Erel = m_inva - mHe - mC;      // relative Energy
-            fh_Erel->Fill(Erel);                    // relative Energy plot
+            Double_t Erel = m_inva - mHe - mC; // relative Energy
+            fh_Erel->Fill(Erel); // relative Energy plot
 
             if (alpha.Px() < 0. && carbon.Px() < 0.)
                 fh_ErelR->Fill(Erel);
@@ -707,7 +697,7 @@ void R3BGlobalAnalysisS454::Exec(Option_t* option)
             */
 
         } // end if chi2
-    }     // end if trackHits>1
+    } // end if trackHits>1
 
     // second, old version of analysis
     if (is_carbon && is_alpha && 1 == 0)
@@ -1099,7 +1089,7 @@ void R3BGlobalAnalysisS454::Exec(Option_t* option)
             fh_pz_pz_cm->Fill(pHez_cm, pCz_cm);
 
         } // end if chi2
-    }     // end if trackHits>1
+    } // end if trackHits>1
 
     fNEvents += 1;
     return;

@@ -18,21 +18,10 @@
 
 #include "R3BNeulandPmt.h"
 
-R3BNeulandPmt::R3BNeulandPmt()
-    : fPlaneId(0)
-    , fBarId(0)
-    , fSide(0)
-    , fTime(0.)
-    , fCharge(0)
-{
-}
+R3BNeulandPmt::R3BNeulandPmt() : fPlaneId(0), fBarId(0), fSide(0), fTime(0.), fCharge(0) {}
 
 R3BNeulandPmt::R3BNeulandPmt(Int_t planeId, Int_t barId, Int_t side, Double_t time, Double_t charge)
-    : fPlaneId(planeId)
-    , fBarId(barId)
-    , fSide(side)
-    , fTime(time)
-    , fCharge(charge)
+    : fPlaneId(planeId), fBarId(barId), fSide(side), fTime(time), fCharge(charge)
 {
 }
 

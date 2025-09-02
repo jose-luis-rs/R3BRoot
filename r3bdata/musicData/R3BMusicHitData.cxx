@@ -18,34 +18,18 @@
 #include "R3BMusicHitData.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BMusicHitData::R3BMusicHitData()
-    : fTheta(0.)
-    , fZ(0.)
-{
-}
+R3BMusicHitData::R3BMusicHitData() : fTheta(0.), fZ(0.) {}
 // -------------------------------------------------------------------------
 
 // -----   Standard constructor   ------------------------------------------
-R3BMusicHitData::R3BMusicHitData(Double_t theta, Double_t z)
-    : fTheta(theta)
-    , fZ(z)
-{
-}
+R3BMusicHitData::R3BMusicHitData(Double_t theta, Double_t z) : fTheta(theta), fZ(z) {}
 // -------------------------------------------------------------------------
 
 // -----   For later analysis with reconstructed beta   --------------------
-R3BMusicHitData::R3BMusicHitData(Double_t theta, Double_t z, Double_t ene)
-    : fTheta(theta)
-    , fZ(z)
-    , fE(ene)
-{
-}
+R3BMusicHitData::R3BMusicHitData(Double_t theta, Double_t z, Double_t ene) : fTheta(theta), fZ(z), fE(ene) {}
 // -------------------------------------------------------------------------
 R3BMusicHitData::R3BMusicHitData(Double_t theta, Double_t z, Double_t ene, Double_t good_dt)
-    : fTheta(theta)
-    , fZ(z)
-    , fE(ene)
-    , fDt(good_dt)
+    : fTheta(theta), fZ(z), fE(ene), fDt(good_dt)
 {
 }
 ClassImp(R3BMusicHitData);

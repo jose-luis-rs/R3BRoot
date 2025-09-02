@@ -94,48 +94,48 @@ typedef struct EXT_STR_h101_PSP_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_PSP_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                              \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F1S1E, UINT32, "PSPX1F1S1E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S1EI, UINT32, "PSPX1F1S1EI", "PSPX1F1S1E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S1Ev, UINT32, "PSPX1F1S1Ev", "PSPX1F1S1E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F1S2E, UINT32, "PSPX1F1S2E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S2EI, UINT32, "PSPX1F1S2EI", "PSPX1F1S2E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S2Ev, UINT32, "PSPX1F1S2Ev", "PSPX1F1S2E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F2S1E, UINT32, "PSPX1F2S1E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S1EI, UINT32, "PSPX1F2S1EI", "PSPX1F2S1E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S1Ev, UINT32, "PSPX1F2S1Ev", "PSPX1F2S1E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F2S2E, UINT32, "PSPX1F2S2E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S2EI, UINT32, "PSPX1F2S2EI", "PSPX1F2S2E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S2Ev, UINT32, "PSPX1F2S2Ev", "PSPX1F2S2E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F1S1E, UINT32, "PSPX2F1S1E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S1EI, UINT32, "PSPX2F1S1EI", "PSPX2F1S1E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S1Ev, UINT32, "PSPX2F1S1Ev", "PSPX2F1S1E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F1S2E, UINT32, "PSPX2F1S2E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S2EI, UINT32, "PSPX2F1S2EI", "PSPX2F1S2E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S2Ev, UINT32, "PSPX2F1S2Ev", "PSPX2F1S2E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F2S1E, UINT32, "PSPX2F2S1E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S1EI, UINT32, "PSPX2F2S1EI", "PSPX2F2S1E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S1Ev, UINT32, "PSPX2F2S1Ev", "PSPX2F2S1E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F2S2E, UINT32, "PSPX2F2S2E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S2EI, UINT32, "PSPX2F2S2EI", "PSPX2F2S2E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S2Ev, UINT32, "PSPX2F2S2Ev", "PSPX2F2S2E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F1S1E, UINT32, "PSPX3F1S1E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S1EI, UINT32, "PSPX3F1S1EI", "PSPX3F1S1E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S1Ev, UINT32, "PSPX3F1S1Ev", "PSPX3F1S1E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F1S2E, UINT32, "PSPX3F1S2E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S2EI, UINT32, "PSPX3F1S2EI", "PSPX3F1S2E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S2Ev, UINT32, "PSPX3F1S2Ev", "PSPX3F1S2E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F2S1E, UINT32, "PSPX3F2S1E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S1EI, UINT32, "PSPX3F2S1EI", "PSPX3F2S1E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S1Ev, UINT32, "PSPX3F2S1Ev", "PSPX3F2S1E"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F2S2E, UINT32, "PSPX3F2S2E", 32);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S2EI, UINT32, "PSPX3F2S2EI", "PSPX3F2S2E"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S2Ev, UINT32, "PSPX3F2S2Ev", "PSPX3F2S2E"); \
-                                                                                                                     \
+#define EXT_STR_h101_PSP_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F1S1E, UINT32, "PSPX1F1S1E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S1EI, UINT32, "PSPX1F1S1EI", "PSPX1F1S1E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S1Ev, UINT32, "PSPX1F1S1Ev", "PSPX1F1S1E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F1S2E, UINT32, "PSPX1F1S2E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S2EI, UINT32, "PSPX1F1S2EI", "PSPX1F1S2E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F1S2Ev, UINT32, "PSPX1F1S2Ev", "PSPX1F1S2E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F2S1E, UINT32, "PSPX1F2S1E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S1EI, UINT32, "PSPX1F2S1EI", "PSPX1F2S1E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S1Ev, UINT32, "PSPX1F2S1Ev", "PSPX1F2S1E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX1F2S2E, UINT32, "PSPX1F2S2E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S2EI, UINT32, "PSPX1F2S2EI", "PSPX1F2S2E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX1F2S2Ev, UINT32, "PSPX1F2S2Ev", "PSPX1F2S2E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F1S1E, UINT32, "PSPX2F1S1E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S1EI, UINT32, "PSPX2F1S1EI", "PSPX2F1S1E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S1Ev, UINT32, "PSPX2F1S1Ev", "PSPX2F1S1E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F1S2E, UINT32, "PSPX2F1S2E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S2EI, UINT32, "PSPX2F1S2EI", "PSPX2F1S2E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F1S2Ev, UINT32, "PSPX2F1S2Ev", "PSPX2F1S2E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F2S1E, UINT32, "PSPX2F2S1E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S1EI, UINT32, "PSPX2F2S1EI", "PSPX2F2S1E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S1Ev, UINT32, "PSPX2F2S1Ev", "PSPX2F2S1E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX2F2S2E, UINT32, "PSPX2F2S2E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S2EI, UINT32, "PSPX2F2S2EI", "PSPX2F2S2E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX2F2S2Ev, UINT32, "PSPX2F2S2Ev", "PSPX2F2S2E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F1S1E, UINT32, "PSPX3F1S1E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S1EI, UINT32, "PSPX3F1S1EI", "PSPX3F1S1E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S1Ev, UINT32, "PSPX3F1S1Ev", "PSPX3F1S1E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F1S2E, UINT32, "PSPX3F1S2E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S2EI, UINT32, "PSPX3F1S2EI", "PSPX3F1S2E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F1S2Ev, UINT32, "PSPX3F1S2Ev", "PSPX3F1S2E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F2S1E, UINT32, "PSPX3F2S1E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S1EI, UINT32, "PSPX3F2S1EI", "PSPX3F2S1E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S1Ev, UINT32, "PSPX3F2S1Ev", "PSPX3F2S1E");   \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PSPX3F2S2E, UINT32, "PSPX3F2S2E", 32);               \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S2EI, UINT32, "PSPX3F2S2EI", "PSPX3F2S2E");   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PSPX3F2S2Ev, UINT32, "PSPX3F2S2Ev", "PSPX3F2S2E");   \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_PSP_EXT_H101_PSP_H__*/

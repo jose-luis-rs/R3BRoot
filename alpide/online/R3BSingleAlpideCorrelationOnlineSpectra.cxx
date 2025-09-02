@@ -44,13 +44,8 @@ R3BSingleAlpideCorrelationOnlineSpectra::R3BSingleAlpideCorrelationOnlineSpectra
                                                                                  const int id1,
                                                                                  const TString& namedet2,
                                                                                  const int id2)
-    : FairTask(name, iVerbose)
-    , fHitItems(NULL)
-    , fNameDet1(namedet1)
-    , fId1(id1)
-    , fNameDet2(namedet2)
-    , fId2(id2)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fHitItems(NULL), fNameDet1(namedet1), fId1(id1), fNameDet2(namedet2), fId2(id2),
+      fNEvents(0)
 {
 }
 

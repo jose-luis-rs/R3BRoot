@@ -36,18 +36,12 @@
 #include <limits>
 
 R3BPspxMapped2Precal::R3BPspxMapped2Precal()
-    : FairTask("PspxMapped2Precal", 1)
-    , fMappedItems()
-    , fPrecalItems()
-    , fOnline(kFALSE)
+    : FairTask("PspxMapped2Precal", 1), fMappedItems(), fPrecalItems(), fOnline(kFALSE)
 {
 }
 
 R3BPspxMapped2Precal::R3BPspxMapped2Precal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItems()
-    , fPrecalItems()
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fMappedItems(), fPrecalItems(), fOnline(kFALSE)
 {
 }
 

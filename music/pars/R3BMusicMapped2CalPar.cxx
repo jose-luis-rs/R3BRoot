@@ -38,37 +38,21 @@
 #include "R3BMwpcHitData.h"
 
 // R3BMusicMapped2CalPar: Default Constructor --------------------------
-R3BMusicMapped2CalPar::R3BMusicMapped2CalPar()
-    : R3BMusicMapped2CalPar("R3BMusicMapped2CalPar", 1)
-{
-}
+R3BMusicMapped2CalPar::R3BMusicMapped2CalPar() : R3BMusicMapped2CalPar("R3BMusicMapped2CalPar", 1) {}
 
 // R3BMusicMapped2CalParPar: Standard Constructor --------------------------
 R3BMusicMapped2CalPar::R3BMusicMapped2CalPar(const TString& name,
                                              Int_t iVerbose,
                                              const TString& namedeta,
                                              const TString& namedetb)
-    : FairTask(name, iVerbose)
-    , fNumAnodes(MAX_NB_MUSICANODE)   // 8 anodes
-    , fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
-    , fMaxMult(MAX_MULT_MUSIC_CAL)
-    , fMinStadistics(1000)
-    , fLimit_left(10000)
-    , fLimit_right(24000)
-    , fNumParams(3)
-    , fNumPosParams(2)
-    , fMaxSigma(200)
-    , CalParams(NULL)
-    , PosParams(NULL)
-    , fCal_Par(NULL)
-    , fNameDetA(namedeta)
-    , fPosDetA(0.)
-    , fNameDetB(namedetb)
-    , fPosDetB(0.)
-    , fPosMusic(0.)
-    , fMusicMappedDataCA(NULL)
-    , fHitItemsDetA(NULL)
-    , fHitItemsDetB(NULL)
+    : FairTask(name, iVerbose), fNumAnodes(MAX_NB_MUSICANODE) // 8 anodes
+      ,
+      fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
+      ,
+      fMaxMult(MAX_MULT_MUSIC_CAL), fMinStadistics(1000), fLimit_left(10000), fLimit_right(24000), fNumParams(3),
+      fNumPosParams(2), fMaxSigma(200), CalParams(NULL), PosParams(NULL), fCal_Par(NULL), fNameDetA(namedeta),
+      fPosDetA(0.), fNameDetB(namedetb), fPosDetB(0.), fPosMusic(0.), fMusicMappedDataCA(NULL), fHitItemsDetA(NULL),
+      fHitItemsDetB(NULL)
 {
 }
 

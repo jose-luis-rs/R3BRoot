@@ -83,10 +83,8 @@ namespace R3B::Digitizing
             const UsePaddle<PaddleClass>& p_paddleClass,
             const UseChannel<ChannelClass>& p_channelClass,
             InitFunc initFunc = []() {})
-            : paddleClass_{ p_paddleClass }
-            , channelClass_{ p_channelClass }
-            , DigitizingEngineInterface()
-            , initFunc_{ initFunc }
+            : paddleClass_{ p_paddleClass }, channelClass_{ p_channelClass },
+              DigitizingEngineInterface(), initFunc_{ initFunc }
         {
         }
 

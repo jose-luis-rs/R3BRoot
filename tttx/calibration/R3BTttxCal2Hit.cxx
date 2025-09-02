@@ -36,16 +36,10 @@
 #include "R3BTttxHitPar.h"
 
 // R3BTttxCal2Hit: Default Constructor --------------------------
-R3BTttxCal2Hit::R3BTttxCal2Hit()
-    : R3BTttxCal2Hit("R3BTttxCal2Hit", 1)
-{
-}
+R3BTttxCal2Hit::R3BTttxCal2Hit() : R3BTttxCal2Hit("R3BTttxCal2Hit", 1) {}
 
 // R3BTttxCal2HitPar: Standard Constructor --------------------------
-R3BTttxCal2Hit::R3BTttxCal2Hit(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BTttxCal2Hit::R3BTttxCal2Hit(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 // Virtual R3BTttxCal2Hit: Destructor
 R3BTttxCal2Hit::~R3BTttxCal2Hit()
@@ -57,12 +51,9 @@ R3BTttxCal2Hit::~R3BTttxCal2Hit()
 
 // Constructor and destructor for HitDetector
 R3BTttxCal2Hit::HitDetector::HitDetector(R3BTttxCalData* hit)
-    : fX(StripID2X(hit->GetStripID()))
-    , fE(static_cast<double>(hit->GetEnergy()))
-    , fE2(static_cast<double>(hit->GetEnergy() * hit->GetEnergy()))
-    , fT(static_cast<double>(hit->GetTime()))
-    , fDetID(hit->GetDetID())
-    , fTrefIncluded(false)
+    : fX(StripID2X(hit->GetStripID())), fE(static_cast<double>(hit->GetEnergy())),
+      fE2(static_cast<double>(hit->GetEnergy() * hit->GetEnergy())), fT(static_cast<double>(hit->GetTime())),
+      fDetID(hit->GetDetID()), fTrefIncluded(false)
 {
     R3BLOG(debug, "A hit constructed.");
 }
@@ -89,7 +80,7 @@ void R3BTttxCal2Hit::SetParContainers()
 void R3BTttxCal2Hit::SetParameter()
 {
     //--- Parameter Container ---
-    NumDets = fHit_Par->GetNumDets();     // Number of Detectors
+    NumDets = fHit_Par->GetNumDets(); // Number of Detectors
     NumPars = fHit_Par->GetNumParsZfit(); // Number of Parameters per each detector
     R3BLOG(info, "Nb detectors: " << NumDets << ", Nb of Parameters per det: " << NumPars);
 

@@ -10,13 +10,8 @@ R3BNeulandNeutronsScikit::R3BNeulandNeutronsScikit(TString model,
                                                    TString inputMult,
                                                    TString inputCluster,
                                                    TString output)
-    : FairTask("R3BNeulandNeutronsScikit")
-    , fInputMult(std::move(inputMult))
-    , fMultiplicity(nullptr)
-    , fInputCluster(std::move(inputCluster))
-    , fClusters(nullptr)
-    , fNeutrons(std::move(output))
-    , fMinProb(0.1)
+    : FairTask("R3BNeulandNeutronsScikit"), fInputMult(std::move(inputMult)), fMultiplicity(nullptr),
+      fInputCluster(std::move(inputCluster)), fClusters(nullptr), fNeutrons(std::move(output)), fMinProb(0.1)
 {
     TPython::Exec("import sys; v = sys.version.replace('\\n', '')");
     TPython::Exec("print(f'R3BNeulandNeutronsScikit running TPython with Python version {v}')");

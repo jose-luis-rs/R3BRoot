@@ -19,8 +19,7 @@
 #include "R3BLogger.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BTofdPoint::R3BTofdPoint()
-    : FairMCPoint()
+R3BTofdPoint::R3BTofdPoint() : FairMCPoint()
 {
     fPlane = 0;
     fPaddle = 0;

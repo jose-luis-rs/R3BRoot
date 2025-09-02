@@ -25,16 +25,12 @@
 #define nPMTs 2 * fPaddles* fPlanes
 
 R3BNeulandTacquilaMapped2QCalPar::R3BNeulandTacquilaMapped2QCalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fPar(NULL)
-    , fHits(NULL)
+    : FairTask(name, iVerbose), fPar(NULL), fHits(NULL)
 {
 }
 
 R3BNeulandTacquilaMapped2QCalPar::R3BNeulandTacquilaMapped2QCalPar()
-    : FairTask("R3BNeulandTacquilaMapped2QCalPar")
-    , fPar(NULL)
-    , fHits(NULL)
+    : FairTask("R3BNeulandTacquilaMapped2QCalPar"), fPar(NULL), fHits(NULL)
 {
 }
 

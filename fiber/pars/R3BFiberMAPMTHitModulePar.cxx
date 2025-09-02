@@ -24,14 +24,8 @@ R3BFiberMAPMTHitModulePar::R3BFiberMAPMTHitModulePar(const char* name,
                                                      const char* title,
                                                      const char* context,
                                                      Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fFiber(0)
-    , fOffsetUp(0)
-    , fOffsetDown(0)
-    , fVeff(0)
-    , fSync(0)
-    , fGainUp(0)
-    , fGainDown(0)
+    : FairParGenericSet(name, title, context, own), fFiber(0), fOffsetUp(0), fOffsetDown(0), fVeff(0), fSync(0),
+      fGainUp(0), fGainDown(0)
 {
 }
 

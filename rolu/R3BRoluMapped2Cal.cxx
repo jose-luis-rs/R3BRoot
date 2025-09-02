@@ -38,14 +38,10 @@
 #define Rolu_COINC_WINDOW_T_NS 200
 #define IS_NAN(x) TMath::IsNaN(x)
 
-R3BRoluMapped2Cal::R3BRoluMapped2Cal()
-    : R3BRoluMapped2Cal("RoluTcal", 1)
-{
-}
+R3BRoluMapped2Cal::R3BRoluMapped2Cal() : R3BRoluMapped2Cal("RoluTcal", 1) {}
 
 R3BRoluMapped2Cal::R3BRoluMapped2Cal(const char* name, int iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems(new TClonesArray("R3BRoluCalData"))
+    : FairTask(name, iVerbose), fCalItems(new TClonesArray("R3BRoluCalData"))
 {
 }
 
@@ -160,8 +156,8 @@ void R3BRoluMapped2Cal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         unsigned int iDet = hit->GetDetector(); // 1..
-        unsigned int iCha = hit->GetChannel();  // 1..4
-        unsigned int iType = hit->GetType();    // 0,1
+        unsigned int iCha = hit->GetChannel(); // 1..4
+        unsigned int iType = hit->GetType(); // 0,1
 
         if ((iDet < 1) || (iDet > fNofDetectors))
         {

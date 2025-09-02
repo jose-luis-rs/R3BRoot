@@ -62,60 +62,22 @@ using std::endl;
 
 // -----   Default constructor   -------------------------------------------
 R3BCalifaEventDisplay::R3BCalifaEventDisplay()
-    : FairTask("R3BCalifaEventDisplay", 0)
-    , fEventManager(NULL)
-    , fGeometryVersion(10)
-    , fDataHist(NULL)
-    , fCalo3d(NULL)
-    , fCalo2d(NULL)
-    , fLego(NULL)
-    , slotLeftTop(NULL)
-    , slotLeftBottom(NULL)
-    , slotRightTop(NULL)
-    , slotRightBottom(NULL)
-    , viewerLeftTop(NULL)
-    , sceneLeftTop(NULL)
-    , viewerRightTop(NULL)
-    , sceneRightTop(NULL)
-    , viewerLeftBottom(NULL)
-    , sceneLeftBottom(NULL)
-    , viewerRightBottom(NULL)
-    , sceneRightBottom(NULL)
-    , legoSlot(NULL)
-    , legoScene(NULL)
-    , legoViewer(NULL)
-    , fProjManager1(NULL)
-    , fProjManager2(NULL)
+    : FairTask("R3BCalifaEventDisplay", 0), fEventManager(NULL), fGeometryVersion(10), fDataHist(NULL), fCalo3d(NULL),
+      fCalo2d(NULL), fLego(NULL), slotLeftTop(NULL), slotLeftBottom(NULL), slotRightTop(NULL), slotRightBottom(NULL),
+      viewerLeftTop(NULL), sceneLeftTop(NULL), viewerRightTop(NULL), sceneRightTop(NULL), viewerLeftBottom(NULL),
+      sceneLeftBottom(NULL), viewerRightBottom(NULL), sceneRightBottom(NULL), legoSlot(NULL), legoScene(NULL),
+      legoViewer(NULL), fProjManager1(NULL), fProjManager2(NULL)
 {
 }
 // -----------------------------------------------------------------------
 
 // -----   Standard constructor   -------------------------------------------
 R3BCalifaEventDisplay::R3BCalifaEventDisplay(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fEventManager(NULL)
-    , fGeometryVersion(10)
-    , fDataHist(NULL)
-    , fCalo3d(NULL)
-    , fCalo2d(NULL)
-    , fLego(NULL)
-    , slotLeftTop(NULL)
-    , slotLeftBottom(NULL)
-    , slotRightTop(NULL)
-    , slotRightBottom(NULL)
-    , viewerLeftTop(NULL)
-    , sceneLeftTop(NULL)
-    , viewerRightTop(NULL)
-    , sceneRightTop(NULL)
-    , viewerLeftBottom(NULL)
-    , sceneLeftBottom(NULL)
-    , viewerRightBottom(NULL)
-    , sceneRightBottom(NULL)
-    , legoSlot(NULL)
-    , legoScene(NULL)
-    , legoViewer(NULL)
-    , fProjManager1(NULL)
-    , fProjManager2(NULL)
+    : FairTask(name, iVerbose), fEventManager(NULL), fGeometryVersion(10), fDataHist(NULL), fCalo3d(NULL),
+      fCalo2d(NULL), fLego(NULL), slotLeftTop(NULL), slotLeftBottom(NULL), slotRightTop(NULL), slotRightBottom(NULL),
+      viewerLeftTop(NULL), sceneLeftTop(NULL), viewerRightTop(NULL), sceneRightTop(NULL), viewerLeftBottom(NULL),
+      sceneLeftBottom(NULL), viewerRightBottom(NULL), sceneRightBottom(NULL), legoSlot(NULL), legoScene(NULL),
+      legoViewer(NULL), fProjManager1(NULL), fProjManager2(NULL)
 {
 }
 // -----------------------------------------------------------------------

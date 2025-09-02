@@ -25,10 +25,8 @@ R3BSfibMapped2CalPar::R3BSfibMapped2CalPar(Int_t a_verbose,
                                            enum R3BTCalEngine::CTDCVariant a_ctdc_variant,
                                            Int_t a_update_rate,
                                            Int_t a_min_stats)
-    : FairTask("R3BSfibMapped2CalPar", a_verbose)
-    , fCTDCVariant(a_ctdc_variant)
-    , fUpdateRate(a_update_rate)
-    , fMinStats(a_min_stats)
+    : FairTask("R3BSfibMapped2CalPar", a_verbose), fCTDCVariant(a_ctdc_variant), fUpdateRate(a_update_rate),
+      fMinStats(a_min_stats)
 {
 }
 

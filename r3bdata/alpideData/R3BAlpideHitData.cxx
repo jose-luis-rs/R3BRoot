@@ -25,13 +25,7 @@ R3BAlpideHitData::R3BAlpideHitData(uint16_t sensorId,
                                    double posz,
                                    double locposx,
                                    double locposy)
-    : fSensorId(sensorId)
-    , fClustersize(clustersize)
-    , fX(posx)
-    , fY(posy)
-    , fZ(posz)
-    , fXloc(locposx)
-    , fYloc(locposy)
+    : fSensorId(sensorId), fClustersize(clustersize), fX(posx), fY(posy), fZ(posz), fXloc(locposx), fYloc(locposy)
 {
     fTrack.SetXYZ(posx, posy, posz);
     fTheta = fTrack.Theta();

@@ -13,16 +13,8 @@
 
 #include "R3BPspxHitData.h"
 
-R3BPspxHitData::R3BPspxHitData()
-    : fEnergy(0)
-    , fPos(0)
-{
-}
+R3BPspxHitData::R3BPspxHitData() : fEnergy(0), fPos(0) {}
 
-R3BPspxHitData::R3BPspxHitData(Float_t energy, Float_t pos)
-    : fEnergy(energy)
-    , fPos(pos)
-{
-}
+R3BPspxHitData::R3BPspxHitData(Float_t energy, Float_t pos) : fEnergy(energy), fPos(pos) {}
 
 ClassImp(R3BPspxHitData)

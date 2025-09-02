@@ -25,20 +25,12 @@
 #define PLANE_END 13
 
 R3BNeulandCheckMapping::R3BNeulandCheckMapping()
-    : FairTask("NeulandCheckMapping", 1)
-    , timestamp0(0)
-    , timestamp1(0)
-    , fMapped(NULL)
-    , fTrigger(-1)
+    : FairTask("NeulandCheckMapping", 1), timestamp0(0), timestamp1(0), fMapped(NULL), fTrigger(-1)
 {
 }
 
 R3BNeulandCheckMapping::R3BNeulandCheckMapping(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , timestamp0(0)
-    , timestamp1(0)
-    , fMapped(NULL)
-    , fTrigger(-1)
+    : FairTask(name, iVerbose), timestamp0(0), timestamp1(0), fMapped(NULL), fTrigger(-1)
 {
 }
 

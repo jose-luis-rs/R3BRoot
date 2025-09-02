@@ -24,12 +24,7 @@ R3BAlpideMappedData::R3BAlpideMappedData(uint16_t senId,
                                          uint16_t chip,
                                          uint16_t row,
                                          uint16_t col)
-    : fSenId(senId)
-    , fReg(reg)
-    , fAds(ads)
-    , fChip(chip)
-    , fRow(row)
-    , fCol(col)
+    : fSenId(senId), fReg(reg), fAds(ads), fChip(chip), fRow(row), fCol(col)
 {
 }
 

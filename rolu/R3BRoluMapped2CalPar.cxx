@@ -45,15 +45,9 @@
 
 using namespace std;
 
-R3BRoluMapped2CalPar::R3BRoluMapped2CalPar()
-    : R3BRoluMapped2CalPar("R3BRoluMapped2CalPar", 1)
-{
-}
+R3BRoluMapped2CalPar::R3BRoluMapped2CalPar() : R3BRoluMapped2CalPar("R3BRoluMapped2CalPar", 1) {}
 
-R3BRoluMapped2CalPar::R3BRoluMapped2CalPar(const char* name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BRoluMapped2CalPar::R3BRoluMapped2CalPar(const char* name, int iVerbose) : FairTask(name, iVerbose) {}
 
 R3BRoluMapped2CalPar::~R3BRoluMapped2CalPar()
 {
@@ -130,8 +124,8 @@ void R3BRoluMapped2CalPar::Exec(Option_t* option)
 
         // channel numbers are supposed to be 1-based (1..n)
         unsigned int iDetector = hit->GetDetector() - 1; // now 0..n-1
-        unsigned int iChannel = hit->GetChannel() - 1;   // now 0..n-1
-        unsigned int iType = hit->GetType();             // 0,1
+        unsigned int iChannel = hit->GetChannel() - 1; // now 0..n-1
+        unsigned int iType = hit->GetType(); // 0,1
 
         if (iDetector > (fNofDetectors - 1))
         {

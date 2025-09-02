@@ -33,15 +33,9 @@
 #include <sstream>
 #include <string>
 
-R3BLosvsFootOnlineSpectra::R3BLosvsFootOnlineSpectra()
-    : R3BLosvsFootOnlineSpectra("R3BLosvsFootOnlineSpectra", 1)
-{
-}
+R3BLosvsFootOnlineSpectra::R3BLosvsFootOnlineSpectra() : R3BLosvsFootOnlineSpectra("R3BLosvsFootOnlineSpectra", 1) {}
 
-R3BLosvsFootOnlineSpectra::R3BLosvsFootOnlineSpectra(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BLosvsFootOnlineSpectra::R3BLosvsFootOnlineSpectra(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BLosvsFootOnlineSpectra::SetParContainers()
 {

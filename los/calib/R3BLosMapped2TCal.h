@@ -131,15 +131,15 @@ class R3BLosMapped2TCal : public FairTask
     Int_t fNofTCalItems; /**< Number of produced time items per event. */
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fTrigger; /**< Trigger value. */
 
     UInt_t fNofDetectors; /**< Number of detectors. */
-    UInt_t fNofChannels;  /**< Number of channels per detector. */
-    Double_t fClockFreq;  /**< Clock cycle in [ns]. */
+    UInt_t fNofChannels; /**< Number of channels per detector. */
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t fNEvent;
     // Don't store data for online
     Bool_t fOnline;

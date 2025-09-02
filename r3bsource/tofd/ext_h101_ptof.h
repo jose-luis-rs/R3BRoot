@@ -99,32 +99,32 @@ typedef struct EXT_STR_h101_PTOF_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_PTOF_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                          \
-    do                                                                                                            \
-    {                                                                                                             \
-        ok = 1;                                                                                                   \
-        /* RAW */                                                                                                 \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFLM, UINT32, "PTOF_TFLM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFLMI, UINT32, "PTOF_TFLMI", "PTOF_TFLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFLME, UINT32, "PTOF_TFLME", "PTOF_TFLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFL, UINT32, "PTOF_TFL", 80);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFLv, UINT32, "PTOF_TFLv", "PTOF_TFL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFTM, UINT32, "PTOF_TFTM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFTMI, UINT32, "PTOF_TFTMI", "PTOF_TFTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFTME, UINT32, "PTOF_TFTME", "PTOF_TFTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFT, UINT32, "PTOF_TFT", 80);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFTv, UINT32, "PTOF_TFTv", "PTOF_TFT");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCLM, UINT32, "PTOF_TCLM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCLMI, UINT32, "PTOF_TCLMI", "PTOF_TCLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCLME, UINT32, "PTOF_TCLME", "PTOF_TCLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCL, UINT32, "PTOF_TCL", 80);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCLv, UINT32, "PTOF_TCLv", "PTOF_TCL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCTM, UINT32, "PTOF_TCTM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCTMI, UINT32, "PTOF_TCTMI", "PTOF_TCTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCTME, UINT32, "PTOF_TCTME", "PTOF_TCTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCT, UINT32, "PTOF_TCT", 80);              \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCTv, UINT32, "PTOF_TCTv", "PTOF_TCT");    \
-                                                                                                                  \
+#define EXT_STR_h101_PTOF_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                               \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFLM, UINT32, "PTOF_TFLM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFLMI, UINT32, "PTOF_TFLMI", "PTOF_TFLM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFLME, UINT32, "PTOF_TFLME", "PTOF_TFLM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFL, UINT32, "PTOF_TFL", 80);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFLv, UINT32, "PTOF_TFLv", "PTOF_TFL");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFTM, UINT32, "PTOF_TFTM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFTMI, UINT32, "PTOF_TFTMI", "PTOF_TFTM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFTME, UINT32, "PTOF_TFTME", "PTOF_TFTM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TFT, UINT32, "PTOF_TFT", 80);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TFTv, UINT32, "PTOF_TFTv", "PTOF_TFT");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCLM, UINT32, "PTOF_TCLM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCLMI, UINT32, "PTOF_TCLMI", "PTOF_TCLM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCLME, UINT32, "PTOF_TCLME", "PTOF_TCLM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCL, UINT32, "PTOF_TCL", 80);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCLv, UINT32, "PTOF_TCLv", "PTOF_TCL");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCTM, UINT32, "PTOF_TCTM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCTMI, UINT32, "PTOF_TCTMI", "PTOF_TCTM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCTME, UINT32, "PTOF_TCTME", "PTOF_TCTM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, PTOF_TCT, UINT32, "PTOF_TCT", 80);                   \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, PTOF_TCTv, UINT32, "PTOF_TCTv", "PTOF_TCT");         \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_PTOF_EXT_H101_PTOF_H__*/

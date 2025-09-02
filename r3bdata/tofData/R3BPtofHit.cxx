@@ -18,33 +18,15 @@
 using std::cout;
 using std::endl;
 
-R3BPtofHit::R3BPtofHit()
-    : fPaddleNb(-1)
-    , fCharge(0)
-    , fTdc(0.)
-    , fxx(0.)
-    , fyy(0.)
-    , fzz(0.)
-{
-}
+R3BPtofHit::R3BPtofHit() : fPaddleNb(-1), fCharge(0), fTdc(0.), fxx(0.), fyy(0.), fzz(0.) {}
 
 R3BPtofHit::R3BPtofHit(Int_t paddle, Double_t charge, Double_t tdc, Double_t xx, Double_t yy, Double_t zz)
-    : fPaddleNb(paddle)
-    , fCharge(charge)
-    , fTdc(tdc)
-    , fxx(xx)
-    , fyy(yy)
-    , fzz(zz)
+    : fPaddleNb(paddle), fCharge(charge), fTdc(tdc), fxx(xx), fyy(yy), fzz(zz)
 {
 }
 
 R3BPtofHit::R3BPtofHit(const R3BPtofHit& digi)
-    : fPaddleNb(digi.fPaddleNb)
-    , fCharge(digi.fCharge)
-    , fTdc(digi.fTdc)
-    , fxx(digi.fxx)
-    , fyy(digi.fyy)
-    , fzz(digi.fzz)
+    : fPaddleNb(digi.fPaddleNb), fCharge(digi.fCharge), fTdc(digi.fTdc), fxx(digi.fxx), fyy(digi.fyy), fzz(digi.fzz)
 {
 }
 

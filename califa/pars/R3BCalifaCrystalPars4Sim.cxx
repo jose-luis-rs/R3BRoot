@@ -10,9 +10,7 @@
 #include <iostream>
 
 R3BCalifaCrystalPars4Sim::R3BCalifaCrystalPars4Sim(const char* name, const char* title, const char* context)
-    : FairParGenericSet(name, title, context)
-    , fNumCrystals(4864)
-    , fNumParams4Sim(3) /* Crystal ID & Reso & Threshold */
+    : FairParGenericSet(name, title, context), fNumCrystals(4864), fNumParams4Sim(3) /* Crystal ID & Reso & Threshold */
 {
 
     fCrystalIDArray = new TArrayI(fNumCrystals);

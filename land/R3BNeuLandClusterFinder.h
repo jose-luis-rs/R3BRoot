@@ -54,8 +54,8 @@ class R3BNeuLandClusterFinder : public FairTask
     void Reset();
 
   private:
-    TClonesArray* fArrayDigi;              // Array of digis - input
-    TClonesArray* fArrayCluster;           // Array of clusters - output
+    TClonesArray* fArrayDigi; // Array of digis - input
+    TClonesArray* fArrayCluster; // Array of clusters - output
     std::vector<R3BLandDigi*> fVectorDigi; // Vector of digis (for sorting in time)
 
     // Control histograms

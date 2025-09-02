@@ -60,22 +60,14 @@ namespace
     double c_fiber_coincidence_ns = 200000; // nanoseconds.
 } // namespace
 R3BOnlineSpectraFiber23::R3BOnlineSpectraFiber23()
-    : FairTask("OnlineSpectraFiber23", 1)
-    , fTrigger(1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvents(0)
+    : FairTask("OnlineSpectraFiber23", 1), fTrigger(1), fTpat1(-1), fTpat2(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.),
+      fNEvents(0)
 {
 }
 
 R3BOnlineSpectraFiber23::R3BOnlineSpectraFiber23(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat1(-1), fTpat2(-1), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.),
+      fNEvents(0)
 {
 }
 

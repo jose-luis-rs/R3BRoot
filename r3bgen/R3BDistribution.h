@@ -30,8 +30,7 @@ class R3BDistribution
     using Array = std::array<Double_t, dimension>;
 
   public:
-    R3BDistribution()
-        : fLookupFunction([](const Array vals) { return vals; })
+    R3BDistribution() : fLookupFunction([](const Array vals) { return vals; })
     {
         CreateValues();
     } // Required by Root Dict
@@ -49,16 +48,11 @@ class R3BDistribution
         for (int i = 0; i < dimension; ++i)
             fValues[i] = dists[i].fValues[0];
     }
-    R3BDistribution(const std::function<Array(const Array)> lookupFunction)
-        : fLookupFunction(lookupFunction)
+    R3BDistribution(const std::function<Array(const Array)> lookupFunction) : fLookupFunction(lookupFunction)
     {
         CreateValues();
     }
-    R3BDistribution(const Array& values)
-        : fLookupFunction([values](const Array) { return values; })
-    {
-        CreateValues();
-    }
+    R3BDistribution(const Array& values) : fLookupFunction([values](const Array) { return values; }) { CreateValues(); }
     R3BDistribution(const Array& lvalues, const Array& uvalues)
         : fLookupFunction(
               [lvalues, uvalues](const Array rndvalues)

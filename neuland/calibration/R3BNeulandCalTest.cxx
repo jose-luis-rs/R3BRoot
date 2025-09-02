@@ -26,8 +26,8 @@ Double_t walk(Double_t x)
 {
     Double_t y = 0;
 
-    Double_t par1 = 1500.;                                                // +-0.2238
-    Double_t par2 = 0.00075;                                              //+-2.355e-05
+    Double_t par1 = 1500.; // +-0.2238
+    Double_t par2 = 0.00075; //+-2.355e-05
     y = par1 * TMath::Power(x, par2) - (par1 * TMath::Power(400., par2)); // Michael's
 
     // y=2.29083*log(x)-0.0870157*log(x)*log(x)-4.57824;  // mine
@@ -36,20 +36,10 @@ Double_t walk(Double_t x)
     // return 0.;
 }
 
-R3BNeulandCalTest::R3BNeulandCalTest()
-    : fnEvents(0)
-    , fLandPmt(NULL)
-    , fNeulandPmt(NULL)
-    , fLosHit(NULL)
-{
-}
+R3BNeulandCalTest::R3BNeulandCalTest() : fnEvents(0), fLandPmt(NULL), fNeulandPmt(NULL), fLosHit(NULL) {}
 
 R3BNeulandCalTest::R3BNeulandCalTest(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fnEvents(0)
-    , fLandPmt(NULL)
-    , fNeulandPmt(NULL)
-    , fLosHit(NULL)
+    : FairTask(name, iVerbose), fnEvents(0), fLandPmt(NULL), fNeulandPmt(NULL), fLosHit(NULL)
 {
 }
 

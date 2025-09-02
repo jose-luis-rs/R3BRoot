@@ -21,11 +21,7 @@
 #include <FairRootManager.h>
 
 R3BStrawtubesMapped2CalPar::R3BStrawtubesMapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMinStats(1e5)
-    , fCalPar()
-    , fEngine()
-    , fMapped()
+    : FairTask(name, iVerbose), fMinStats(1e5), fCalPar(), fEngine(), fMapped()
 {
 }
 

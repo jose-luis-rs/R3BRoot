@@ -26,10 +26,7 @@
 #include "R3BMCTrack.h"
 #include "R3BTofdPoint.h"
 
-R3BTofDDigitizer::R3BTofDDigitizer()
-    : FairTask("R3BTofDDigitizer")
-    , fTofdPoints(NULL)
-    , fTofdHits(NULL)
+R3BTofDDigitizer::R3BTofDDigitizer() : FairTask("R3BTofDDigitizer"), fTofdPoints(NULL), fTofdHits(NULL)
 {
     // set default values for smearing
     fsigma_y = 0.001;

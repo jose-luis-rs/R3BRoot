@@ -35,10 +35,7 @@ auto MakeCompFun = [](std::array<double, 6> par)
     { return (val > 0.0) ? par[5] / (par[0] + par[1] * pow(val, par[2]) + par[3] / pow(val, par[4])) : 0.0; };
 };
 
-R3BCalifaDigitizer::R3BCalifaDigitizer()
-    : FairTask("R3BCalifaDigitizer")
-{
-}
+R3BCalifaDigitizer::R3BCalifaDigitizer() : FairTask("R3BCalifaDigitizer") {}
 
 R3BCalifaDigitizer::~R3BCalifaDigitizer()
 {
@@ -73,7 +70,7 @@ void R3BCalifaDigitizer::SetParameter()
     if (fRealConfig == true)
     {
         //--- Parameter Container ---
-        fNumCrystals = fSim_Par->GetNumCrystals() / 2;      // Number of Crystals
+        fNumCrystals = fSim_Par->GetNumCrystals() / 2; // Number of Crystals
         fNumberOfParams = fSim_Par->GetNumParameters4Sim(); // Number of Parameters
 
         const auto numcryroot = R3BCalifaGeometry::Instance()->GetNbCrystals() / 2;

@@ -37,26 +37,16 @@ extern "C"
 #define IS_NAN(x) TMath::IsNaN(x)
 
 R3BPdcMapped2Cal::R3BPdcMapped2Cal()
-    : FairTask("R3BPdcMapped2Cal", 1)
-    , fMappedItems(nullptr)
-    , fCalItems(new TClonesArray("R3BPdcCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BPdcCalData"))
-    , fTcalPar(0)
-    , fNofTcalPars(0)
-    , fTrigger(-1)
-    , fClockFreq(1000. / CTDC_16_CLOCK_MHZ)
+    : FairTask("R3BPdcMapped2Cal", 1), fMappedItems(nullptr), fCalItems(new TClonesArray("R3BPdcCalData")),
+      fCalTriggerItems(new TClonesArray("R3BPdcCalData")), fTcalPar(0), fNofTcalPars(0), fTrigger(-1),
+      fClockFreq(1000. / CTDC_16_CLOCK_MHZ)
 {
 }
 
 R3BPdcMapped2Cal::R3BPdcMapped2Cal(Int_t iVerbose)
-    : FairTask("R3BPdcMapped2Cal", iVerbose)
-    , fMappedItems(nullptr)
-    , fCalItems(new TClonesArray("R3BPdcCalData"))
-    , fCalTriggerItems(new TClonesArray("R3BPdcCalData"))
-    , fTcalPar(0)
-    , fNofTcalPars(0)
-    , fTrigger(-1)
-    , fClockFreq(1000. / CTDC_16_CLOCK_MHZ)
+    : FairTask("R3BPdcMapped2Cal", iVerbose), fMappedItems(nullptr), fCalItems(new TClonesArray("R3BPdcCalData")),
+      fCalTriggerItems(new TClonesArray("R3BPdcCalData")), fTcalPar(0), fNofTcalPars(0), fTrigger(-1),
+      fClockFreq(1000. / CTDC_16_CLOCK_MHZ)
 {
 }
 

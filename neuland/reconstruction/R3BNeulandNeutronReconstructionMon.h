@@ -36,10 +36,10 @@ class R3BNeulandNeutronReconstructionMon : public FairTask
 
   private:
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeulandNeutronReconstructionMon(const R3BNeulandNeutronReconstructionMon&);            // copy constructor
-    R3BNeulandNeutronReconstructionMon(R3BNeulandNeutronReconstructionMon&&);                 // move constructor
+    R3BNeulandNeutronReconstructionMon(const R3BNeulandNeutronReconstructionMon&); // copy constructor
+    R3BNeulandNeutronReconstructionMon(R3BNeulandNeutronReconstructionMon&&); // move constructor
     R3BNeulandNeutronReconstructionMon& operator=(const R3BNeulandNeutronReconstructionMon&); // copy assignment
-    R3BNeulandNeutronReconstructionMon& operator=(R3BNeulandNeutronReconstructionMon&&);      // move assignment
+    R3BNeulandNeutronReconstructionMon& operator=(R3BNeulandNeutronReconstructionMon&&); // move assignment
 
   protected:
     InitStatus Init() override;

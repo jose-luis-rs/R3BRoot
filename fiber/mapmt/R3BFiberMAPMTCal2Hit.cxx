@@ -41,11 +41,7 @@ R3BFiberMAPMTCal2Hit::ToT::ToT(R3BFiberMAPMTCalData const* a_lead,
                                Double_t a_lead_ns,
                                Double_t a_tail_ns,
                                Double_t a_tot_ns)
-    : lead(a_lead)
-    , trail(a_trail)
-    , lead_ns(a_lead_ns)
-    , tail_ns(a_tail_ns)
-    , tot_ns(a_tot_ns)
+    : lead(a_lead), trail(a_trail), lead_ns(a_lead_ns), tail_ns(a_tail_ns), tot_ns(a_tot_ns)
 {
 }
 
@@ -54,13 +50,9 @@ R3BFiberMAPMTCal2Hit::R3BFiberMAPMTCal2Hit(const std::string& a_name,
                                            Direction a_direction,
                                            uint32_t a_num_fibers,
                                            bool a_is_calibrator)
-    : FairTask(("R3B" + a_name + "Cal2Hit").c_str(), a_verbose)
-    , fName(a_name)
-    , fDirection(a_direction)
-    , fNumFibers(a_num_fibers)
-    , fIsCalibrator(a_is_calibrator)
-    , fHitItems(new TClonesArray("R3BFiberMAPMTHitData"))
-    , fChannelArray()
+    : FairTask(("R3B" + a_name + "Cal2Hit").c_str(), a_verbose), fName(a_name), fDirection(a_direction),
+      fNumFibers(a_num_fibers), fIsCalibrator(a_is_calibrator), fHitItems(new TClonesArray("R3BFiberMAPMTHitData")),
+      fChannelArray()
 {
     if (fName == "Fi23a")
         fDetId = 230;

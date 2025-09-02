@@ -58,30 +58,14 @@ namespace
 } // namespace
 
 R3BTofiChangePar::R3BTofiChangePar()
-    : FairTask("R3BTofiChangePar", 1)
-    , fCalItemsLos(NULL)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(6)
-    , fNEvents(0)
-    , fCal_Par(NULL)
-    , fParaFile("")
+    : FairTask("R3BTofiChangePar", 1), fCalItemsLos(NULL), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1),
+      fNofPlanes(5), fPaddlesPerPlane(6), fNEvents(0), fCal_Par(NULL), fParaFile("")
 {
 }
 
 R3BTofiChangePar::R3BTofiChangePar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItemsLos(NULL)
-    , fUpdateRate(1000000)
-    , fMinStats(100000)
-    , fTrigger(-1)
-    , fNofPlanes(5)
-    , fPaddlesPerPlane(6)
-    , fNEvents(0)
-    , fCal_Par(NULL)
-    , fParaFile("")
+    : FairTask(name, iVerbose), fCalItemsLos(NULL), fUpdateRate(1000000), fMinStats(100000), fTrigger(-1),
+      fNofPlanes(5), fPaddlesPerPlane(6), fNEvents(0), fCal_Par(NULL), fParaFile("")
 {
 }
 

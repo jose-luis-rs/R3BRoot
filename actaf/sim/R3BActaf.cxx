@@ -23,10 +23,7 @@
 #include "R3BLogger.h"
 #include "R3BMCStack.h"
 
-R3BActaf::R3BActaf()
-    : R3BActaf("")
-{
-}
+R3BActaf::R3BActaf() : R3BActaf("") {}
 
 R3BActaf::R3BActaf(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BActaf(geoFile, { trans, rot })
@@ -34,8 +31,7 @@ R3BActaf::R3BActaf(const TString& geoFile, const TGeoTranslation& trans, const T
 }
 
 R3BActaf::R3BActaf(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BActaf", kACTAF, geoFile, combi)
-    , fActafCollection(new TClonesArray("R3BActafPoint"))
+    : R3BDetector("R3BActaf", kACTAF, geoFile, combi), fActafCollection(new TClonesArray("R3BActafPoint"))
 {
     ResetParameters();
 }

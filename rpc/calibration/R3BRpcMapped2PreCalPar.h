@@ -65,8 +65,8 @@ class R3BRpcMapped2PreCalPar : public FairTask
     Bool_t fDebugMode;
     Int_t fNumChannels;
 
-    R3BTCalPar* fTCalPar;        /**< Parameter container. */
-    R3BTCalEngine* fEngine;      /**< Instance of the TCAL engine. */
+    R3BTCalPar* fTCalPar; /**< Parameter container. */
+    R3BTCalEngine* fEngine; /**< Instance of the TCAL engine. */
     TClonesArray* fMappedDataCA; /**< Array with RPC Mapped-input data. >*/
 
   public:

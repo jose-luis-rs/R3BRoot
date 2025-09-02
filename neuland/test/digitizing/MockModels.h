@@ -28,10 +28,7 @@ namespace R3B::testing::Neuland
 
     struct GMockNeulandPaddle : public Paddle
     {
-        explicit GMockNeulandPaddle(uint16_t paddleID)
-            : Paddle{ paddleID }
-        {
-        }
+        explicit GMockNeulandPaddle(uint16_t paddleID) : Paddle{ paddleID } {}
         MOCK_METHOD(double,
                     ComputeTime,
                     (const Channel::Signal& firstSignal, const Channel::Signal& secondSignal),
@@ -49,8 +46,7 @@ namespace R3B::testing::Neuland
 
     struct GMockChannel : public Channel
     {
-        explicit GMockChannel(ChannelSide side)
-            : Digitizing::Channel{ side } {};
+        explicit GMockChannel(ChannelSide side) : Digitizing::Channel{ side } {};
         void AddHit(Hit hit) override { hits_.push_back(hit); }
 
         MOCK_METHOD(void, AttachToPaddle, (Paddle*), (override));

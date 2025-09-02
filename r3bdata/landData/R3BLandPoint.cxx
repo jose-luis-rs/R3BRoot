@@ -25,17 +25,8 @@ using std::flush;
 
 // -----   Default constructor   -------------------------------------------
 R3BLandPoint::R3BLandPoint()
-    : FairMCPoint()
-    , fX_out(0.)
-    , fY_out(0.)
-    , fZ_out(0.)
-    , fPx_out(0.)
-    , fPy_out(0.)
-    , fPz_out(0.)
-    , fSector(-1)
-    , fPaddleNb(-1)
-    , fPaddleTyp(-1)
-    , fLightYield(-1)
+    : FairMCPoint(), fX_out(0.), fY_out(0.), fZ_out(0.), fPx_out(0.), fPy_out(0.), fPz_out(0.), fSector(-1),
+      fPaddleNb(-1), fPaddleTyp(-1), fLightYield(-1)
 {
 }
 // -------------------------------------------------------------------------
@@ -54,34 +45,18 @@ R3BLandPoint::R3BLandPoint(Int_t trackID,
                            Double_t length,
                            Double_t eLoss,
                            Double_t lightYield)
-    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss)
-    , fX_out(posOut.X())
-    , fY_out(posOut.Y())
-    , fZ_out(posOut.Z())
-    , fPx_out(momOut.X())
-    , fPy_out(momOut.Y())
-    , fPz_out(momOut.Z())
-    , fSector(sector)
-    , fPaddleNb(paddle)
-    , fPaddleTyp(box)
-    , fLightYield(lightYield)
+    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss), fX_out(posOut.X()), fY_out(posOut.Y()),
+      fZ_out(posOut.Z()), fPx_out(momOut.X()), fPy_out(momOut.Y()), fPz_out(momOut.Z()), fSector(sector),
+      fPaddleNb(paddle), fPaddleTyp(box), fLightYield(lightYield)
 {
 }
 // -------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------
 R3BLandPoint::R3BLandPoint(const R3BLandPoint& right)
-    : FairMCPoint(right)
-    , fX_out(right.fX_out)
-    , fY_out(right.fY_out)
-    , fZ_out(right.fZ_out)
-    , fPx_out(right.fPx_out)
-    , fPy_out(right.fPy_out)
-    , fPz_out(right.fPz_out)
-    , fSector(right.fSector)
-    , fPaddleNb(right.fPaddleNb)
-    , fPaddleTyp(right.fPaddleTyp)
-    , fLightYield(right.fLightYield)
+    : FairMCPoint(right), fX_out(right.fX_out), fY_out(right.fY_out), fZ_out(right.fZ_out), fPx_out(right.fPx_out),
+      fPy_out(right.fPy_out), fPz_out(right.fPz_out), fSector(right.fSector), fPaddleNb(right.fPaddleNb),
+      fPaddleTyp(right.fPaddleTyp), fLightYield(right.fLightYield)
 {
 }
 // -------------------------------------------------------------------------

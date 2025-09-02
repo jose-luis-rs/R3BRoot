@@ -24,8 +24,7 @@ using std::endl;
 using std::flush;
 
 // -----   Default constructor   -------------------------------------------
-R3BTraHit::R3BTraHit()
-    : FairHit()
+R3BTraHit::R3BTraHit() : FairHit()
 {
     fEnergy = fTof = 0.;
     fDetectorID = -1;

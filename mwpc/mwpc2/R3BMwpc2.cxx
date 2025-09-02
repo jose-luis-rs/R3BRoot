@@ -31,10 +31,7 @@
 #include "TVirtualMC.h"
 #include <stdlib.h>
 
-R3BMwpc2::R3BMwpc2()
-    : R3BMwpc2("")
-{
-}
+R3BMwpc2::R3BMwpc2() : R3BMwpc2("") {}
 
 R3BMwpc2::R3BMwpc2(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BMwpc2(geoFile, { trans, rot })
@@ -42,9 +39,8 @@ R3BMwpc2::R3BMwpc2(const TString& geoFile, const TGeoTranslation& trans, const T
 }
 
 R3BMwpc2::R3BMwpc2(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BMwpc2", kSOFMWPC2, geoFile, combi)
-    , fSofMWPCCollection(new TClonesArray("R3BMwpcPoint"))
-    , fPosIndex(0)
+    : R3BDetector("R3BMwpc2", kSOFMWPC2, geoFile, combi), fSofMWPCCollection(new TClonesArray("R3BMwpcPoint")),
+      fPosIndex(0)
 {
     ResetParameters();
 }

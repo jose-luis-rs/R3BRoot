@@ -30,12 +30,7 @@ class TCAInputConnector
     TClonesArray* fTCA; // non-owning
 
   public:
-    TCAInputConnector(TString b)
-        : fBranchName(std::move(b))
-        , fClassName(T().ClassName())
-        , fTCA(nullptr)
-    {
-    }
+    TCAInputConnector(TString b) : fBranchName(std::move(b)), fClassName(T().ClassName()), fTCA(nullptr) {}
 
     void Init()
     {
@@ -105,12 +100,7 @@ class TCAOptionalInputConnector
     TClonesArray* fTCA; // non-owning
 
   public:
-    TCAOptionalInputConnector(TString b)
-        : fBranchName(std::move(b))
-        , fClassName(T().ClassName())
-        , fTCA(nullptr)
-    {
-    }
+    TCAOptionalInputConnector(TString b) : fBranchName(std::move(b)), fClassName(T().ClassName()), fTCA(nullptr) {}
 
     void Init()
     {
@@ -172,12 +162,7 @@ class TCAOutputConnector
     TClonesArray* fTCA; // non-owning
 
   public:
-    TCAOutputConnector(TString b)
-        : fBranchName(std::move(b))
-        , fClassName(T().ClassName())
-        , fTCA(nullptr)
-    {
-    }
+    TCAOutputConnector(TString b) : fBranchName(std::move(b)), fClassName(T().ClassName()), fTCA(nullptr) {}
 
     void Init()
     {

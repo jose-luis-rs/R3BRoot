@@ -28,8 +28,8 @@ class R3BBunchedFiberCalData;
 class R3BBunchedFiberHitPar;
 class R3BBunchedFiberHitModulePar;
 
-#define BUNCHED_FIBER_TRIGGER_MAP_SET_s494(mapmt_arr, spmt_arr) \
-    MAPMTTriggerMapSet(mapmt_arr, sizeof mapmt_arr);            \
+#define BUNCHED_FIBER_TRIGGER_MAP_SET_s494(mapmt_arr, spmt_arr)                                                        \
+    MAPMTTriggerMapSet(mapmt_arr, sizeof mapmt_arr);                                                                   \
     MAPMTTriggerMapSet(mapmt_arr, sizeof mapmt_arr)
 
 //  SPMTTriggerMapSet(spmt_arr, sizeof spmt_arr)
@@ -81,8 +81,8 @@ class R3BBunchedFiberCal2Hit_s494 : public FairTask
                                 UInt_t,
                                 UInt_t,
                                 UInt_t,
-                                Bool_t,  // is calib
-                                Bool_t,  // is gain
+                                Bool_t, // is calib
+                                Bool_t, // is gain
                                 Bool_t); // is tsync
 
     /**
@@ -175,7 +175,7 @@ class R3BBunchedFiberCal2Hit_s494 : public FairTask
     //    unsigned const *fSPMTTriggerMap;
     R3BBunchedFiberHitPar* fCalPar; /**< Parameter container. */
     R3BBunchedFiberHitPar* fHitPar; /**< Hit parameter container. */
-    Int_t fNofHitPars;              /**< Number of modules in parameter file. */
+    Int_t fNofHitPars; /**< Number of modules in parameter file. */
     Int_t fNofHitItems;
     // [0=MAPMT,1=SPMT][Channel].
     std::vector<Channel> fChannelArray[2];

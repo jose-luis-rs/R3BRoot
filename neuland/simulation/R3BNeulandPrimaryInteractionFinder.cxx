@@ -120,16 +120,13 @@ R3BNeulandPrimaryInteractionFinder::R3BNeulandPrimaryInteractionFinder(TString p
                                                                        TString pointsOut,
                                                                        TString hitsOut,
                                                                        TString tracksOut)
-    : FairTask("R3BNeulandPrimaryInteractionFinder")
-    , fTracksIn("MCTrack")
-    , fPointsIn(std::move(pointsIn))
-    , fHitsIn(std::move(hitsIn))
-    , fTracksOut(std::move(tracksOut))
-    , fPointsOut(std::move(pointsOut))
-    , fHitsOut(std::move(hitsOut))
-    , fhDistance(new TH1D("fhDistance", "Distance firstPoint to firstHit", 10000, 0, 1000))
-    , fhPointsVsHits(new TH2D("fhPointsVsHits", "Number of Primary Points vs Number of Primary Hits", 6, 0, 6, 6, 0, 6))
-    , fhPointVsHitPaddle(
+    : FairTask("R3BNeulandPrimaryInteractionFinder"), fTracksIn("MCTrack"), fPointsIn(std::move(pointsIn)),
+      fHitsIn(std::move(hitsIn)), fTracksOut(std::move(tracksOut)), fPointsOut(std::move(pointsOut)),
+      fHitsOut(std::move(hitsOut)),
+      fhDistance(new TH1D("fhDistance", "Distance firstPoint to firstHit", 10000, 0, 1000)),
+      fhPointsVsHits(
+          new TH2D("fhPointsVsHits", "Number of Primary Points vs Number of Primary Hits", 6, 0, 6, 6, 0, 6)),
+      fhPointVsHitPaddle(
           new TH2D("fhPointVsHitPaddle", "First Point Paddle vs First Hit Paddle", 3001, -1, 3000, 3001, -1, 3000))
 {
     fhDistance->GetXaxis()->SetTitle("Distance [cm]");

@@ -84,22 +84,14 @@
 using namespace std;
 
 R3BLosCal2HitPar::R3BLosCal2HitPar()
-    : FairTask("LosCal2HitPar", 1)
-    , fStats(100000)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fNEvents(0)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask("LosCal2HitPar", 1), fStats(100000), fTrigger(-1), fTpat(-1), fNEvents(0),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 
 R3BLosCal2HitPar::R3BLosCal2HitPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fStats(100000)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fNEvents(0)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask(name, iVerbose), fStats(100000), fTrigger(-1), fTpat(-1), fNEvents(0),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 
@@ -387,7 +379,7 @@ void R3BLosCal2HitPar::Exec(Option_t* option)
                 } // if iLosType
 
             } // for iPart
-        }     // for iDet
+        } // for iDet
     }
 
     for (Int_t i = 0; i < fStats; i++)
@@ -446,7 +438,7 @@ void R3BLosCal2HitPar::Fit()
     ROOT::Math::Minimizer* min = ROOT::Math::Factory::CreateMinimizer("Minuit2", "kMigrad");
 
     min->SetMaxFunctionCalls(1000000); // for Minuit/Minuit2
-    min->SetMaxIterations(1000000);    // for GSL
+    min->SetMaxIterations(1000000); // for GSL
     min->SetTolerance(0.001);
     min->SetPrintLevel(2);
     // set precision setPrecision(double eps) 1.e-5 - 1.e-14

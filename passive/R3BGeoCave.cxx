@@ -26,9 +26,7 @@
 
 using namespace std;
 
-R3BGeoCave::R3BGeoCave()
-    : FairGeoSet()
-    , name("cave")
+R3BGeoCave::R3BGeoCave() : FairGeoSet(), name("cave")
 {
     // Constructor
     fName = "cave";

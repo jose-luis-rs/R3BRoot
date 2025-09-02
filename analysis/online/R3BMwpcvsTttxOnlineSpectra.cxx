@@ -32,15 +32,11 @@
 #include <TClonesArray.h>
 #include <sstream>
 
-R3BMwpcvsTttxOnlineSpectra::R3BMwpcvsTttxOnlineSpectra()
-    : R3BMwpcvsTttxOnlineSpectra("R3BMwpcvsTttxOnlineSpectra", 1)
+R3BMwpcvsTttxOnlineSpectra::R3BMwpcvsTttxOnlineSpectra() : R3BMwpcvsTttxOnlineSpectra("R3BMwpcvsTttxOnlineSpectra", 1)
 {
 }
 
-R3BMwpcvsTttxOnlineSpectra::R3BMwpcvsTttxOnlineSpectra(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BMwpcvsTttxOnlineSpectra::R3BMwpcvsTttxOnlineSpectra(const TString& name, int iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BMwpcvsTttxOnlineSpectra::SetParContainers()
 {

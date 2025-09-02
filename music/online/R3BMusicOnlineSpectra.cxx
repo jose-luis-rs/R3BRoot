@@ -53,20 +53,11 @@
 
 using namespace std;
 
-R3BMusicOnlineSpectra::R3BMusicOnlineSpectra()
-    : R3BMusicOnlineSpectra("MusicOnlineSpectra", 1)
-{
-}
+R3BMusicOnlineSpectra::R3BMusicOnlineSpectra() : R3BMusicOnlineSpectra("MusicOnlineSpectra", 1) {}
 
 R3BMusicOnlineSpectra::R3BMusicOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItemsMus(NULL)
-    , fCalItemsMus(NULL)
-    , fHitItemsMus(NULL)
-    , fExpId(0)
-    , fERange(8192)
-    , fZRange(40)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fMappedItemsMus(NULL), fCalItemsMus(NULL), fHitItemsMus(NULL), fExpId(0), fERange(8192),
+      fZRange(40), fNEvents(0)
 {
 }
 

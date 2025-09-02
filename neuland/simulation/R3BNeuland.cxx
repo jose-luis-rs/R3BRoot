@@ -49,10 +49,7 @@ inline Double_t GetLightYield(const Int_t charge, const Double_t length, const D
     return edep; // Rarely very small energy depositions have no length?
 }
 
-R3BNeuland::R3BNeuland()
-    : R3BNeuland("")
-{
-}
+R3BNeuland::R3BNeuland() : R3BNeuland("") {}
 
 R3BNeuland::R3BNeuland(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BNeuland(geoFile, { trans, rot })
@@ -60,8 +57,7 @@ R3BNeuland::R3BNeuland(const TString& geoFile, const TGeoTranslation& trans, con
 }
 
 R3BNeuland::R3BNeuland(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BNeuland", kNEULAND, geoFile, combi)
-    , fNeulandPoints(new TClonesArray("R3BNeulandPoint"))
+    : R3BDetector("R3BNeuland", kNEULAND, geoFile, combi), fNeulandPoints(new TClonesArray("R3BNeulandPoint"))
 {
 }
 

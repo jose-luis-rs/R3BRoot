@@ -28,14 +28,8 @@ R3BBunchedFiberHitModulePar::R3BBunchedFiberHitModulePar(const char* name,
                                                          const char* title,
                                                          const char* context,
                                                          Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fFiber(0)
-    , fOffset1(0)
-    , fOffset2(0)
-    , fVeff(0)
-    , fSync(0)
-    , fGainMA(0)
-    , fGainS(0)
+    : FairParGenericSet(name, title, context, own), fFiber(0), fOffset1(0), fOffset2(0), fVeff(0), fSync(0), fGainMA(0),
+      fGainS(0)
 {
     // Reset all parameters
     clear();

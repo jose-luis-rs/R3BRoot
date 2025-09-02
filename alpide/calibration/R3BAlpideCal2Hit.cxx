@@ -38,15 +38,11 @@
 #include "R3BTGeoPar.h"
 
 // R3BAlpideCal2Hit::Default Constructor --------------------------
-R3BAlpideCal2Hit::R3BAlpideCal2Hit()
-    : R3BAlpideCal2Hit("R3BAlpideCal2Hit", 1)
-{
-}
+R3BAlpideCal2Hit::R3BAlpideCal2Hit() : R3BAlpideCal2Hit("R3BAlpideCal2Hit", 1) {}
 
 // R3BAlpideCal2Hit::Standard Constructor --------------------------
 R3BAlpideCal2Hit::R3BAlpideCal2Hit(const TString& name, int iVerbose)
-    : FairTask(name, iVerbose)
-    , fAlpideCluster(new TClonesArray("R3BAlpideCluster"))
+    : FairTask(name, iVerbose), fAlpideCluster(new TClonesArray("R3BAlpideCluster"))
 {
     fTargetPos.SetXYZ(0., 0., 0.);
     fAlpidePos.SetXYZ(0., 0., 0.);
@@ -260,7 +256,7 @@ void R3BAlpideCal2Hit::FindClusters()
         return;
     }
 
-    uint16_t mult[fNbSensors][nHits];  // NOLINT
+    uint16_t mult[fNbSensors][nHits]; // NOLINT
     double meancol[fNbSensors][nHits]; // NOLINT
     double meanrow[fNbSensors][nHits]; // NOLINT
     for (size_t s = 0; s < fNbSensors; s++)

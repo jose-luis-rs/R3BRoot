@@ -17,21 +17,10 @@
 #include <cmath>
 #include <iostream>
 
-R3BTofdCalData::R3BTofdCalData()
-    : fDetector(-1)
-    , fBar(-1)
-    , fSide(-1)
-    , fLeading_ns(-1)
-    , fTrailing_ns(-1)
-{
-}
+R3BTofdCalData::R3BTofdCalData() : fDetector(-1), fBar(-1), fSide(-1), fLeading_ns(-1), fTrailing_ns(-1) {}
 
 R3BTofdCalData::R3BTofdCalData(UInt_t detector, UInt_t channel, UInt_t side, Double_t lead, Double_t trail)
-    : fDetector(detector)
-    , fBar(channel)
-    , fSide(side)
-    , fLeading_ns(lead)
-    , fTrailing_ns(trail)
+    : fDetector(detector), fBar(channel), fSide(side), fLeading_ns(lead), fTrailing_ns(trail)
 {
 }
 

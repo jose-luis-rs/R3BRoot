@@ -18,25 +18,14 @@
 
 #include "R3BSfibMappedData.h"
 
-R3BSfibMappedData::R3BSfibMappedData()
-    : fIsBottom(-1)
-    , fChannel(-1)
-    , fIsLeading()
-    , fCoarse(-1)
-    , fFine(-1)
-{
-}
+R3BSfibMappedData::R3BSfibMappedData() : fIsBottom(-1), fChannel(-1), fIsLeading(), fCoarse(-1), fFine(-1) {}
 
 R3BSfibMappedData::R3BSfibMappedData(Int_t a_is_bottom,
                                      Int_t a_channel,
                                      Bool_t a_is_leading,
                                      Int_t a_coarse,
                                      Int_t a_fine)
-    : fIsBottom(a_is_bottom)
-    , fChannel(a_channel)
-    , fIsLeading(a_is_leading)
-    , fCoarse(a_coarse)
-    , fFine(a_fine)
+    : fIsBottom(a_is_bottom), fChannel(a_channel), fIsLeading(a_is_leading), fCoarse(a_coarse), fFine(a_fine)
 {
 }
 

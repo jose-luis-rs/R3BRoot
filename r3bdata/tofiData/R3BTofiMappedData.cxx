@@ -14,14 +14,7 @@
 #include "R3BTofiMappedData.h"
 #include <iostream>
 
-R3BTofiMappedData::R3BTofiMappedData()
-    : fDetector(-1)
-    , fSide(-1)
-    , fBar(-1)
-    , fTimeFine(-1)
-    , fTimeCoarse(-1)
-{
-}
+R3BTofiMappedData::R3BTofiMappedData() : fDetector(-1), fSide(-1), fBar(-1), fTimeFine(-1), fTimeCoarse(-1) {}
 
 R3BTofiMappedData::R3BTofiMappedData(UInt_t detector,
                                      UInt_t side,
@@ -29,12 +22,7 @@ R3BTofiMappedData::R3BTofiMappedData(UInt_t detector,
                                      UInt_t edge,
                                      UInt_t timeCoarse,
                                      UInt_t timeFine)
-    : fDetector(detector)
-    , fSide(side)
-    , fBar(channel)
-    , fEdge(edge)
-    , fTimeCoarse(timeCoarse)
-    , fTimeFine(timeFine)
+    : fDetector(detector), fSide(side), fBar(channel), fEdge(edge), fTimeCoarse(timeCoarse), fTimeFine(timeFine)
 {
     // if(fDetector < 2) std::cout<<"Mapped data        : "<<fSide<<"; "<<fBar<<"; "<<fEdge<<",
     // "<<fTimeCoarse<<std::endl;

@@ -167,82 +167,82 @@ typedef struct EXT_STR_h101_LOS_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_LOS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                           \
-    do                                                                                                            \
-    {                                                                                                             \
-        ok = 1;                                                                                                   \
-        /* RAW */                                                                                                 \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTFM, UINT32, "LOS1VTFM", 8);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTFMI, UINT32, "LOS1VTFMI", "LOS1VTFM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTFME, UINT32, "LOS1VTFME", "LOS1VTFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTF, UINT32, "LOS1VTF", 256);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTFv, UINT32, "LOS1VTFv", "LOS1VTF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTCM, UINT32, "LOS1VTCM", 8);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTCMI, UINT32, "LOS1VTCMI", "LOS1VTCM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTCME, UINT32, "LOS1VTCME", "LOS1VTCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTC, UINT32, "LOS1VTC", 256);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTCv, UINT32, "LOS1VTCv", "LOS1VTC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1MTM, UINT32, "LOS1MTM", 8);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1MTMI, UINT32, "LOS1MTMI", "LOS1MTM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1MTME, UINT32, "LOS1MTME", "LOS1MTM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1MT, UINT32, "LOS1MT", 256);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1MTv, UINT32, "LOS1MTv", "LOS1MT");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFLM, UINT32, "LOS1TTFLM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFLMI, UINT32, "LOS1TTFLMI", "LOS1TTFLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFLME, UINT32, "LOS1TTFLME", "LOS1TTFLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFL, UINT32, "LOS1TTFL", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFLv, UINT32, "LOS1TTFLv", "LOS1TTFL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFTM, UINT32, "LOS1TTFTM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFTMI, UINT32, "LOS1TTFTMI", "LOS1TTFTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFTME, UINT32, "LOS1TTFTME", "LOS1TTFTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFT, UINT32, "LOS1TTFT", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFTv, UINT32, "LOS1TTFTv", "LOS1TTFT");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCLM, UINT32, "LOS1TTCLM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCLMI, UINT32, "LOS1TTCLMI", "LOS1TTCLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCLME, UINT32, "LOS1TTCLME", "LOS1TTCLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCL, UINT32, "LOS1TTCL", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCLv, UINT32, "LOS1TTCLv", "LOS1TTCL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCTM, UINT32, "LOS1TTCTM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCTMI, UINT32, "LOS1TTCTMI", "LOS1TTCTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCTME, UINT32, "LOS1TTCTME", "LOS1TTCTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCT, UINT32, "LOS1TTCT", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCTv, UINT32, "LOS1TTCTv", "LOS1TTCT");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTFM, UINT32, "LOS2VTFM", 8);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTFMI, UINT32, "LOS2VTFMI", "LOS2VTFM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTFME, UINT32, "LOS2VTFME", "LOS2VTFM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTF, UINT32, "LOS2VTF", 256);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTFv, UINT32, "LOS2VTFv", "LOS2VTF");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTCM, UINT32, "LOS2VTCM", 8);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTCMI, UINT32, "LOS2VTCMI", "LOS2VTCM");    \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTCME, UINT32, "LOS2VTCME", "LOS2VTCM");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTC, UINT32, "LOS2VTC", 256);               \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTCv, UINT32, "LOS2VTCv", "LOS2VTC");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2MTM, UINT32, "LOS2MTM", 8);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2MTMI, UINT32, "LOS2MTMI", "LOS2MTM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2MTME, UINT32, "LOS2MTME", "LOS2MTM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2MT, UINT32, "LOS2MT", 256);                 \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2MTv, UINT32, "LOS2MTv", "LOS2MT");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFLM, UINT32, "LOS2TTFLM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFLMI, UINT32, "LOS2TTFLMI", "LOS2TTFLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFLME, UINT32, "LOS2TTFLME", "LOS2TTFLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFL, UINT32, "LOS2TTFL", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFLv, UINT32, "LOS2TTFLv", "LOS2TTFL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFTM, UINT32, "LOS2TTFTM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFTMI, UINT32, "LOS2TTFTMI", "LOS2TTFTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFTME, UINT32, "LOS2TTFTME", "LOS2TTFTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFT, UINT32, "LOS2TTFT", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFTv, UINT32, "LOS2TTFTv", "LOS2TTFT");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCLM, UINT32, "LOS2TTCLM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCLMI, UINT32, "LOS2TTCLMI", "LOS2TTCLM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCLME, UINT32, "LOS2TTCLME", "LOS2TTCLM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCL, UINT32, "LOS2TTCL", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCLv, UINT32, "LOS2TTCLv", "LOS2TTCL");    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCTM, UINT32, "LOS2TTCTM", 8);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCTMI, UINT32, "LOS2TTCTMI", "LOS2TTCTM"); \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCTME, UINT32, "LOS2TTCTME", "LOS2TTCTM"); \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCT, UINT32, "LOS2TTCT", 256);             \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCTv, UINT32, "LOS2TTCTv", "LOS2TTCT");    \
-                                                                                                                  \
+#define EXT_STR_h101_LOS_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                                \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTFM, UINT32, "LOS1VTFM", 8);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTFMI, UINT32, "LOS1VTFMI", "LOS1VTFM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTFME, UINT32, "LOS1VTFME", "LOS1VTFM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTF, UINT32, "LOS1VTF", 256);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTFv, UINT32, "LOS1VTFv", "LOS1VTF");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTCM, UINT32, "LOS1VTCM", 8);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTCMI, UINT32, "LOS1VTCMI", "LOS1VTCM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTCME, UINT32, "LOS1VTCME", "LOS1VTCM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1VTC, UINT32, "LOS1VTC", 256);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1VTCv, UINT32, "LOS1VTCv", "LOS1VTC");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1MTM, UINT32, "LOS1MTM", 8);                      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1MTMI, UINT32, "LOS1MTMI", "LOS1MTM");            \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1MTME, UINT32, "LOS1MTME", "LOS1MTM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1MT, UINT32, "LOS1MT", 256);                      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1MTv, UINT32, "LOS1MTv", "LOS1MT");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFLM, UINT32, "LOS1TTFLM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFLMI, UINT32, "LOS1TTFLMI", "LOS1TTFLM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFLME, UINT32, "LOS1TTFLME", "LOS1TTFLM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFL, UINT32, "LOS1TTFL", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFLv, UINT32, "LOS1TTFLv", "LOS1TTFL");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFTM, UINT32, "LOS1TTFTM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFTMI, UINT32, "LOS1TTFTMI", "LOS1TTFTM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFTME, UINT32, "LOS1TTFTME", "LOS1TTFTM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTFT, UINT32, "LOS1TTFT", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTFTv, UINT32, "LOS1TTFTv", "LOS1TTFT");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCLM, UINT32, "LOS1TTCLM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCLMI, UINT32, "LOS1TTCLMI", "LOS1TTCLM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCLME, UINT32, "LOS1TTCLME", "LOS1TTCLM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCL, UINT32, "LOS1TTCL", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCLv, UINT32, "LOS1TTCLv", "LOS1TTCL");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCTM, UINT32, "LOS1TTCTM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCTMI, UINT32, "LOS1TTCTMI", "LOS1TTCTM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCTME, UINT32, "LOS1TTCTME", "LOS1TTCTM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS1TTCT, UINT32, "LOS1TTCT", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS1TTCTv, UINT32, "LOS1TTCTv", "LOS1TTCT");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTFM, UINT32, "LOS2VTFM", 8);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTFMI, UINT32, "LOS2VTFMI", "LOS2VTFM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTFME, UINT32, "LOS2VTFME", "LOS2VTFM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTF, UINT32, "LOS2VTF", 256);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTFv, UINT32, "LOS2VTFv", "LOS2VTF");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTCM, UINT32, "LOS2VTCM", 8);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTCMI, UINT32, "LOS2VTCMI", "LOS2VTCM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTCME, UINT32, "LOS2VTCME", "LOS2VTCM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2VTC, UINT32, "LOS2VTC", 256);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2VTCv, UINT32, "LOS2VTCv", "LOS2VTC");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2MTM, UINT32, "LOS2MTM", 8);                      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2MTMI, UINT32, "LOS2MTMI", "LOS2MTM");            \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2MTME, UINT32, "LOS2MTME", "LOS2MTM");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2MT, UINT32, "LOS2MT", 256);                      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2MTv, UINT32, "LOS2MTv", "LOS2MT");               \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFLM, UINT32, "LOS2TTFLM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFLMI, UINT32, "LOS2TTFLMI", "LOS2TTFLM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFLME, UINT32, "LOS2TTFLME", "LOS2TTFLM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFL, UINT32, "LOS2TTFL", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFLv, UINT32, "LOS2TTFLv", "LOS2TTFL");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFTM, UINT32, "LOS2TTFTM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFTMI, UINT32, "LOS2TTFTMI", "LOS2TTFTM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFTME, UINT32, "LOS2TTFTME", "LOS2TTFTM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTFT, UINT32, "LOS2TTFT", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTFTv, UINT32, "LOS2TTFTv", "LOS2TTFT");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCLM, UINT32, "LOS2TTCLM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCLMI, UINT32, "LOS2TTCLMI", "LOS2TTCLM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCLME, UINT32, "LOS2TTCLME", "LOS2TTCLM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCL, UINT32, "LOS2TTCL", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCLv, UINT32, "LOS2TTCLv", "LOS2TTCL");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCTM, UINT32, "LOS2TTCTM", 8);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCTMI, UINT32, "LOS2TTCTMI", "LOS2TTCTM");      \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCTME, UINT32, "LOS2TTCTME", "LOS2TTCTM");      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, LOS2TTCT, UINT32, "LOS2TTCT", 256);                  \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, LOS2TTCTv, UINT32, "LOS2TTCTv", "LOS2TTCT");         \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_LOS_EXT_H101_LOS_DEZ19_H__*/

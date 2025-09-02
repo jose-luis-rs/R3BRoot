@@ -32,13 +32,8 @@ extern "C"
 }
 
 R3BCalifaFebexReader::R3BCalifaFebexReader(EXT_STR_h101_CALIFA* data, size_t offset)
-    : R3BReader("R3BCalifaFebexReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BCalifaMappedData"))
-    , fArraytrig(new TClonesArray("R3BCalifaMappedData"))
+    : R3BReader("R3BCalifaFebexReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BCalifaMappedData")), fArraytrig(new TClonesArray("R3BCalifaMappedData"))
 {
 }
 

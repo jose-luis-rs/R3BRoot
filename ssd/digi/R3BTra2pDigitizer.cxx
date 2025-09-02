@@ -42,10 +42,7 @@
 #define SST_HALF_WIDTH_CM 3.5200
 #define SST_HALF_HEIGHT_CM 1.9968
 
-R3BTra2pDigitizer::R3BTra2pDigitizer()
-    : FairTask("R3B Tra2p Digitization scheme ")
-{
-}
+R3BTra2pDigitizer::R3BTra2pDigitizer() : FairTask("R3B Tra2p Digitization scheme ") {}
 
 R3BTra2pDigitizer::~R3BTra2pDigitizer() {}
 

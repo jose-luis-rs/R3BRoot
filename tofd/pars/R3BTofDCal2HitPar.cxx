@@ -51,13 +51,9 @@ namespace
     double c_bar_coincidence_ns = 20.; // nanoseconds.
 } // namespace
 
-R3BTofDCal2HitPar::R3BTofDCal2HitPar()
-    : R3BTofDCal2HitPar("R3BTofDCal2HitPar", 1)
-{
-}
+R3BTofDCal2HitPar::R3BTofDCal2HitPar() : R3BTofDCal2HitPar("R3BTofDCal2HitPar", 1) {}
 
-R3BTofDCal2HitPar::R3BTofDCal2HitPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
+R3BTofDCal2HitPar::R3BTofDCal2HitPar(const char* name, Int_t iVerbose) : FairTask(name, iVerbose)
 {
     for (Int_t i = 0; i < fNofPlanes; i++)
     {
@@ -254,8 +250,8 @@ void R3BTofDCal2HitPar::Exec(Option_t* /*option*/)
             {
                 // Hit
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
-                if (iPlane > fNofPlanes)             // this also errors for iDetector==0
+                Int_t iBar = top->GetBarId(); // 1..n
+                if (iPlane > fNofPlanes) // this also errors for iDetector==0
                 {
                     R3BLOG(error, "More detectors than expected! Det: " << iPlane << " allowed are 1.." << fNofPlanes);
                     continue;
@@ -1172,8 +1168,8 @@ void R3BTofDCal2HitPar::FinishTask()
             for (Int_t i = 0; i < 4; i++)
                 para2[i] = 0.;
             Double_t min2 = -40.; // -40 effective bar length
-            Double_t max2 = 40.;  // 40 effective bar length = 80 cm
-                                  // we will use 50 here for some fit safety margin
+            Double_t max2 = 40.; // 40 effective bar length = 80 cm
+                                 // we will use 50 here for some fit safety margin
             for (Int_t i = 0; i < fNofPlanes; i++)
             {
                 for (Int_t j = 0; j < fPaddlesPerPlane; j++)
@@ -1199,7 +1195,7 @@ void R3BTofDCal2HitPar::FinishTask()
             for (Int_t i = 0; i < 4; i++)
                 para[i] = 0.;
             Double_t min = -40.; // effective bar length
-            Double_t max = 40.;  // effective bar length = 80 cm
+            Double_t max = 40.; // effective bar length = 80 cm
 
             for (Int_t i = 0; i < fNofPlanes; i++)
             {

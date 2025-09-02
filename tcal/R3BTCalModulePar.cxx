@@ -24,11 +24,7 @@
 using namespace std;
 
 R3BTCalModulePar::R3BTCalModulePar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fPlane(0)
-    , fPaddle(0)
-    , fSide(0)
-    , fNofChannels(0)
+    : FairParGenericSet(name, title, context, own), fPlane(0), fPaddle(0), fSide(0), fNofChannels(0)
 {
     // Reset all parameters
     clear();

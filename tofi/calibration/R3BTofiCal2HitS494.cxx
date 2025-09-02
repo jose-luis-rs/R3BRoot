@@ -60,36 +60,12 @@ namespace
 } // namespace
 
 R3BTofiCal2HitS494::R3BTofiCal2HitS494()
-    : FairTask("TofiCal2Hit", 1)
-    , fCalItems(NULL)
-    , fCalTriggerItems(NULL)
-    , fHitItems(new TClonesArray("R3BTofiHitData"))
-    , fNofHitItems(0)
-    , fNofHitPars(0)
-    , fHitPar(NULL)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fNofPlanes(2)
-    , fPaddlesPerPlane(6)
-    , fTofiQ(1)
-    , fTofiGap(0)
-    , fTofiHisto(true)
-    , fTofiTotPos(true)
-    , fShowProgress(true)
-    , fnEvents(0)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , maxevent(0)
-    , wrongtrigger(0)
-    , wrongtpat(0)
-    , headertpat(0)
-    , events_in_cal_level(0)
-    , inbarcoincidence(0)
-    , eventstore(0)
-    , singlehit(0)
-    , multihit(0)
-    , bars_with_multihit(0)
-    , events_wo_tofi_hits(0)
+    : FairTask("TofiCal2Hit", 1), fCalItems(NULL), fCalTriggerItems(NULL),
+      fHitItems(new TClonesArray("R3BTofiHitData")), fNofHitItems(0), fNofHitPars(0), fHitPar(NULL), fTrigger(-1),
+      fTpat1(-1), fTpat2(-1), fNofPlanes(2), fPaddlesPerPlane(6), fTofiQ(1), fTofiGap(0), fTofiHisto(true),
+      fTofiTotPos(true), fShowProgress(true), fnEvents(0), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), maxevent(0),
+      wrongtrigger(0), wrongtpat(0), headertpat(0), events_in_cal_level(0), inbarcoincidence(0), eventstore(0),
+      singlehit(0), multihit(0), bars_with_multihit(0), events_wo_tofi_hits(0)
 {
     if (fTofiHisto)
     {
@@ -112,36 +88,12 @@ R3BTofiCal2HitS494::R3BTofiCal2HitS494()
 }
 
 R3BTofiCal2HitS494::R3BTofiCal2HitS494(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems(NULL)
-    , fCalTriggerItems(NULL)
-    , fHitItems(new TClonesArray("R3BTofiHitData"))
-    , fNofHitItems(0)
-    , fNofHitPars(0)
-    , fHitPar(NULL)
-    , fTrigger(-1)
-    , fTpat1(-1)
-    , fTpat2(-1)
-    , fNofPlanes(2)
-    , fPaddlesPerPlane(6)
-    , fTofiQ(1)
-    , fTofiGap(0)
-    , fTofiHisto(true)
-    , fTofiTotPos(true)
-    , fShowProgress(true)
-    , fnEvents(0)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
-    , maxevent(0)
-    , wrongtrigger(0)
-    , wrongtpat(0)
-    , headertpat(0)
-    , events_in_cal_level(0)
-    , inbarcoincidence(0)
-    , eventstore(0)
-    , singlehit(0)
-    , multihit(0)
-    , bars_with_multihit(0)
-    , events_wo_tofi_hits(0)
+    : FairTask(name, iVerbose), fCalItems(NULL), fCalTriggerItems(NULL), fHitItems(new TClonesArray("R3BTofiHitData")),
+      fNofHitItems(0), fNofHitPars(0), fHitPar(NULL), fTrigger(-1), fTpat1(-1), fTpat2(-1), fNofPlanes(2),
+      fPaddlesPerPlane(6), fTofiQ(1), fTofiGap(0), fTofiHisto(true), fTofiTotPos(true), fShowProgress(true),
+      fnEvents(0), fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.), maxevent(0), wrongtrigger(0), wrongtpat(0), headertpat(0),
+      events_in_cal_level(0), inbarcoincidence(0), eventstore(0), singlehit(0), multihit(0), bars_with_multihit(0),
+      events_wo_tofi_hits(0)
 {
     if (fTofiHisto)
     {
@@ -452,8 +404,8 @@ void R3BTofiCal2HitS494::Exec(Option_t* option)
                 // Hit!
                 // std::cout << "Hit!\n";
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
-                if (iPlane > fNofPlanes)             // this also errors for iDetector==0
+                Int_t iBar = top->GetBarId(); // 1..n
+                if (iPlane > fNofPlanes) // this also errors for iDetector==0
                 {
                     // LOG(error) << "R3BTofiCal2HitS494Par::Exec() : more detectors than expected! Det: " << iPlane
                     //           << " allowed are 1.." << fNofPlanes;
@@ -543,7 +495,7 @@ void R3BTofiCal2HitS494::Exec(Option_t* option)
                 if (fTofiGap > 0.)
                     gap_center_layer = fTofiGap;
                 // define number of layers and paddles with sizes of the detector
-                Int_t number_layers = N_TOFI_HIT_PLANE_MAX;   // Sabina 2;   // number of layers
+                Int_t number_layers = N_TOFI_HIT_PLANE_MAX; // Sabina 2;   // number of layers
                 Int_t number_paddles = N_TOFI_HIT_PADDLE_MAX; // number of paddles per layer
                 Float_t detector_width =
                     number_paddles * paddle_width + (number_paddles - 1) * air_gap_paddles + gap_center_layer;
@@ -724,7 +676,7 @@ void R3BTofiCal2HitS494::Exec(Option_t* option)
             eventstore++;
             fhQ[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].charge); // charge per plane
             fhQvsEvent[event[ihit].plane - 1]->Fill(fnEvents, event[ihit].charge); // charge vs event #
-            fhxy[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].ypos);  // xy of plane
+            fhxy[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].ypos); // xy of plane
             ihit++;
         }
     }

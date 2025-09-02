@@ -23,26 +23,14 @@ R3BCalifaClusterData::R3BCalifaClusterData(std::vector<uint16_t> crystalList,
                                            double phi,
                                            ULong64_t time,
                                            uint8_t clusterType)
-    : fCrystalList(crystalList)
-    , fEnergy(ene)
-    , fNf(nf)
-    , fNs(ns)
-    , fTheta(theta)
-    , fPhi(phi)
-    , fTime(time)
-    , fClusterType(clusterType)
+    : fCrystalList(crystalList), fEnergy(ene), fNf(nf), fNs(ns), fTheta(theta), fPhi(phi), fTime(time),
+      fClusterType(clusterType)
 {
 }
 
 R3BCalifaClusterData::R3BCalifaClusterData(const R3BCalifaClusterData& right)
-    : fCrystalList(right.fCrystalList)
-    , fEnergy(right.fEnergy)
-    , fNf(right.fNf)
-    , fNs(right.fNs)
-    , fTheta(right.fTheta)
-    , fPhi(right.fPhi)
-    , fTime(right.fTime)
-    , fClusterType(right.fClusterType)
+    : fCrystalList(right.fCrystalList), fEnergy(right.fEnergy), fNf(right.fNf), fNs(right.fNs), fTheta(right.fTheta),
+      fPhi(right.fPhi), fTime(right.fTime), fClusterType(right.fClusterType)
 {
 }
 

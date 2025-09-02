@@ -54,24 +54,11 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-R3BTrackerTestS454::R3BTrackerTestS454()
-    : R3BTrackerTestS454("Track", 1)
-{
-}
+R3BTrackerTestS454::R3BTrackerTestS454() : R3BTrackerTestS454("Track", 1) {}
 
 R3BTrackerTestS454::R3BTrackerTestS454(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fCuts(0)
-    , fGraphCuts(0)
-    , fGhost(0)
-    , fPairs(0)
-    , fB(-1672)
-    , fSimu(0)
-    , fNEvents(0)
-    , fTrackItems(new TClonesArray("R3BTrack"))
-    , fNofTrackItems()
+    : FairTask(name, iVerbose), fTrigger(-1), fTpat(-1), fCuts(0), fGraphCuts(0), fGhost(0), fPairs(0), fB(-1672),
+      fSimu(0), fNEvents(0), fTrackItems(new TClonesArray("R3BTrack")), fNofTrackItems()
 {
 }
 
@@ -660,7 +647,7 @@ void R3BTrackerTestS454::Exec(Option_t* option)
     countdet = 0;
 
     Double_t track[12]; // x,y,z, px, py, pz
-    Double_t chi[6];    // x,y,z, px, py, pz
+    Double_t chi[6]; // x,y,z, px, py, pz
 
     Int_t n_det = 10;
     if (fGhost)
@@ -704,7 +691,7 @@ void R3BTrackerTestS454::Exec(Option_t* option)
     Double_t target[3];
     Double_t track1_best[6]; // x,y,z, px, py, pz
     Double_t track2_best[6]; // x,y,z, px, py, pz
-    Double_t chi_best[6];    // chi2, chi2_red
+    Double_t chi_best[6]; // chi2, chi2_red
 
     Double_t chi2;
     Double_t chi2_best;

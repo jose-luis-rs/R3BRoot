@@ -47,21 +47,11 @@
 #include <iostream>
 #include <sstream>
 
-R3BTttxOnlineSpectra::R3BTttxOnlineSpectra()
-    : R3BTttxOnlineSpectra("TttxOnlineSpectra", 1)
-{
-}
+R3BTttxOnlineSpectra::R3BTttxOnlineSpectra() : R3BTttxOnlineSpectra("TttxOnlineSpectra", 1) {}
 
 R3BTttxOnlineSpectra::R3BTttxOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItemsTttx(NULL)
-    , fNEvents(0)
-    , fExpId(0)
-    , fNbDets(2)
-    , fNbStrips(32)
-    , fNbTref(1)
-    , fNbTrig(1)
-    , fNbEntries(50000)
+    : FairTask(name, iVerbose), fMappedItemsTttx(NULL), fNEvents(0), fExpId(0), fNbDets(2), fNbStrips(32), fNbTref(1),
+      fNbTrig(1), fNbEntries(50000)
 {
 }
 
@@ -543,9 +533,9 @@ void R3BTttxOnlineSpectra::Exec(Option_t* option)
             if (mult[i_det][i_strip] > 0)
                 fh2_MultVsStrip[i_det]->Fill(i_strip + 1, mult[i_det][i_strip]);
             if (!isnan(time[i_det][i_strip]) && !isnan(time[i_det][fNbStrips + fNbTref + fNbTrig - 1]))
-                fh2_TimeVsStrip[i_det]->Fill(
-                    i_strip + 1,
-                    time[i_det][i_strip] - time[i_det][fNbStrips + fNbTref + fNbTrig - 1]); // mult=1 !
+                fh2_TimeVsStrip[i_det]->Fill(i_strip + 1,
+                                             time[i_det][i_strip] -
+                                                 time[i_det][fNbStrips + fNbTref + fNbTrig - 1]); // mult=1 !
         }
     }
     if (!isnan(highest_e[0]) && !isnan(highest_e[1]))

@@ -39,29 +39,13 @@
 #include "R3BMusicHitPar.h"
 
 // R3BMusicCal2Hit: Default Constructor --------------------------
-R3BMusicCal2Hit::R3BMusicCal2Hit()
-    : R3BMusicCal2Hit("R3BMusicCal2Hit", 1)
-{
-}
+R3BMusicCal2Hit::R3BMusicCal2Hit() : R3BMusicCal2Hit("R3BMusicCal2Hit", 1) {}
 
 // R3BMusicCal2HitPar: Standard Constructor --------------------------
 R3BMusicCal2Hit::R3BMusicCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumAnodes(8)
-    , fNumAnodesAngleFit(0)
-    , fNumParams(2)
-    , CalZParams(NULL)
-    , fCal_Par(NULL)
-    , fMusicHitDataCA(NULL)
-    , fMusicCalDataCA(NULL)
-    , fZ0(0.)
-    , fZ1(0.)
-    , fZ2(0.)
-    , fOnline(kFALSE)
-    , fx0_point(0.0)
-    , fy0_point(0.0)
-    , frot_ang(0.0)
-    , fSim(false)
+    : FairTask(name, iVerbose), fNumAnodes(8), fNumAnodesAngleFit(0), fNumParams(2), CalZParams(NULL), fCal_Par(NULL),
+      fMusicHitDataCA(NULL), fMusicCalDataCA(NULL), fZ0(0.), fZ1(0.), fZ2(0.), fOnline(kFALSE), fx0_point(0.0),
+      fy0_point(0.0), frot_ang(0.0), fSim(false)
 {
 }
 

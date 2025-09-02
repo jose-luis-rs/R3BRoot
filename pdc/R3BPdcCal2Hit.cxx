@@ -56,37 +56,25 @@ R3BPdcCal2Hit::ToT::ToT(R3BPdcCalData const* a_lead,
                         Double_t a_lead_ns,
                         Double_t a_tail_ns,
                         Double_t a_tot_ns)
-    : lead(a_lead)
-    , trail(a_trail)
-    , lead_ns(a_lead_ns)
-    , tail_ns(a_tail_ns)
-    , tot_ns(a_tot_ns)
+    : lead(a_lead), trail(a_trail), lead_ns(a_lead_ns), tail_ns(a_tail_ns), tot_ns(a_tot_ns)
 {
 }
 
 R3BPdcCal2Hit::R3BPdcCal2Hit()
-    : FairTask("PdcCal2Hit", 1)
-    , fCalItems(NULL)
-    , fCalTriggerItems(NULL)
-    , fHitItems(new TClonesArray("R3BPdcHitData"))
-    , fNofHitItems(0)
-    , fNofHitPars(0)
-    //    , fHitPar(NULL)
-    , fnEvents(0)
-    , fClockFreq(1. / CTDC_16_CLOCK_MHZ * 1000.)
+    : FairTask("PdcCal2Hit", 1), fCalItems(NULL), fCalTriggerItems(NULL), fHitItems(new TClonesArray("R3BPdcHitData")),
+      fNofHitItems(0), fNofHitPars(0)
+      //    , fHitPar(NULL)
+      ,
+      fnEvents(0), fClockFreq(1. / CTDC_16_CLOCK_MHZ * 1000.)
 {
 }
 
 R3BPdcCal2Hit::R3BPdcCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems(NULL)
-    , fCalTriggerItems(NULL)
-    , fHitItems(new TClonesArray("R3BPdcHitData"))
-    , fNofHitItems(0)
-    , fNofHitPars(0)
-    //    , fHitPar(NULL)
-    , fnEvents(0)
-    , fClockFreq(1. / CTDC_16_CLOCK_MHZ * 1000.)
+    : FairTask(name, iVerbose), fCalItems(NULL), fCalTriggerItems(NULL), fHitItems(new TClonesArray("R3BPdcHitData")),
+      fNofHitItems(0), fNofHitPars(0)
+      //    , fHitPar(NULL)
+      ,
+      fnEvents(0), fClockFreq(1. / CTDC_16_CLOCK_MHZ * 1000.)
 {
 }
 

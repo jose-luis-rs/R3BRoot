@@ -26,12 +26,7 @@
 #include "TMath.h"
 
 // -----   Default constructor   -----------------------------------------------
-R3BTcutPar::R3BTcutPar(const TString& cutname)
-    : TNamed(cutname, cutname)
-    , fMaxPoints(40)
-    , fCut(NULL)
-{
-}
+R3BTcutPar::R3BTcutPar(const TString& cutname) : TNamed(cutname, cutname), fMaxPoints(40), fCut(NULL) {}
 
 // ----  Method putParams ------------------------------------------------------
 void R3BTcutPar::putParams(FairParamList* list)

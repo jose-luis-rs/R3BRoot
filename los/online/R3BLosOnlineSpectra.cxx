@@ -40,15 +40,9 @@
 #define IS_NAN(x) TMath::IsNaN(x)
 using namespace std;
 
-R3BLosOnlineSpectra::R3BLosOnlineSpectra()
-    : R3BLosOnlineSpectra("LosOnlineSpectra", 1)
-{
-}
+R3BLosOnlineSpectra::R3BLosOnlineSpectra() : R3BLosOnlineSpectra("LosOnlineSpectra", 1) {}
 
-R3BLosOnlineSpectra::R3BLosOnlineSpectra(const char* name, int iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BLosOnlineSpectra::R3BLosOnlineSpectra(const char* name, int iVerbose) : FairTask(name, iVerbose) {}
 
 InitStatus R3BLosOnlineSpectra::Init()
 {
@@ -152,7 +146,7 @@ InitStatus R3BLosOnlineSpectra::Init()
             fh_los_dt_hits_ToT[iloscount] = R3B::root_owned<TH2F>(
                 Form("%s_dt_ToT", detName), Form("%s ToT dt ", detName), 4000, -4., 4., 300, 0, 300.);
             fh_los_dt_hits_ToT[iloscount]->GetXaxis()->SetTitle("Time MCFD / ns"); // dt between two hits / ns
-            fh_los_dt_hits_ToT[iloscount]->GetYaxis()->SetTitle("ToT / ns");       // ToT / ns
+            fh_los_dt_hits_ToT[iloscount]->GetYaxis()->SetTitle("ToT / ns"); // ToT / ns
 
             fh_los_tres_MCFD[iloscount] =
                 R3B::root_owned<TH1F>(Form("%s_dt_4vs4_MCFD", detName),
@@ -456,8 +450,8 @@ void R3BLosOnlineSpectra::Exec(Option_t* /*option*/)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
-            Int_t iTyp = hit->GetType();     // 0,1,2,3
+            Int_t iCha = hit->GetChannel(); // 1..
+            Int_t iTyp = hit->GetType(); // 0,1,2,3
             // Int_t iFT = hit->GetTimeFine();
             Int_t iCT = hit->GetTimeCoarse();
             if (iTyp == 0 || iTyp == 1)
@@ -791,8 +785,8 @@ void R3BLosOnlineSpectra::Exec(Option_t* /*option*/)
                         fh_los_multihit[iDet - 1]->Fill(iPart + 1);
                     }
                 } // if iLosType
-            }     // for iPart
-        }         // for iDet
+            } // for iPart
+        } // for iDet
 
     } // if fCallItems
 

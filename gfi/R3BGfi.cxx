@@ -33,11 +33,8 @@
 #include <stdlib.h>
 
 R3BGfi::R3BGfi(const TString& geoFile)
-    : R3BDetector("R3BGfi", kGFI)
-    , fPos1(-73.274339, 0.069976, 513.649524)
-    , fPos2(-147.135037, 0.069976, 729.680342)
-    , fRot1(new TGeoRotation())
-    , fRot2(new TGeoRotation())
+    : R3BDetector("R3BGfi", kGFI), fPos1(-73.274339, 0.069976, 513.649524), fPos2(-147.135037, 0.069976, 729.680342),
+      fRot1(new TGeoRotation()), fRot2(new TGeoRotation())
 {
     ResetParameters();
     SetGeometryFileName(geoFile);
@@ -60,11 +57,8 @@ R3BGfi::R3BGfi(const TString& geoFile,
                const Double_t y2,
                const Double_t z2,
                const Double_t rot_y2)
-    : R3BDetector("R3BGfi", kGFI)
-    , fPos1(x1, y1, z1)
-    , fPos2(x2, y2, z2)
-    , fRot1(new TGeoRotation())
-    , fRot2(new TGeoRotation())
+    : R3BDetector("R3BGfi", kGFI), fPos1(x1, y1, z1), fPos2(x2, y2, z2), fRot1(new TGeoRotation()),
+      fRot2(new TGeoRotation())
 {
     ResetParameters();
     SetGeometryFileName(geoFile);
@@ -133,11 +127,11 @@ void R3BGfi::SetSpecialPhysicsCuts()
             gMC->Gstpar(pSi->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pSi->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pSi->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pSi->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pSi->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
     } //! gGeoManager

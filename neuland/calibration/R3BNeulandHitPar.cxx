@@ -18,11 +18,8 @@
 #include "FairParamList.h" // for FairParamList
 
 R3BNeulandHitPar::R3BNeulandHitPar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fParams(new TObjArray(Neuland::MaxNumberOfBars))
-    , fGlobalTimeOffset(Neuland::NaN)
-    , fDistanceToTarget(Neuland::NaN)
-    , fEnergyCut(0.0)
+    : FairParGenericSet(name, title, context, own), fParams(new TObjArray(Neuland::MaxNumberOfBars)),
+      fGlobalTimeOffset(Neuland::NaN), fDistanceToTarget(Neuland::NaN), fEnergyCut(0.0)
 {
     fDistancesToFirstPlane.resize(Neuland::MaxNumberOfPlanes, 0);
     for (int p = 1; p < Neuland::MaxNumberOfPlanes; ++p)

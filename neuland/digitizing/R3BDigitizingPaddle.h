@@ -28,9 +28,7 @@ namespace R3B::Digitizing
     {
         Type left{};
         Type right{};
-        LRPair(Type p_left, Type p_right)
-            : left(p_left)
-            , right(p_right){};
+        LRPair(Type p_left, Type p_right) : left(p_left), right(p_right){};
         LRPair() = default;
     };
 
@@ -42,16 +40,15 @@ namespace R3B::Digitizing
         const Channel::Signal& leftChannel;
         const Channel::Signal& rightChannel;
         explicit PaddleSignal(LRPair<const Channel::Signal&> p_signals)
-            : leftChannel{ p_signals.left }
-            , rightChannel{ p_signals.right }
+            : leftChannel{ p_signals.left }, rightChannel{ p_signals.right }
         {
         }
     };
 
     struct PaddleHit
     {
-        double time;               // ns
-        double LightDep;           // MeV
+        double time; // ns
+        double LightDep; // MeV
         double DistToPaddleCenter; // cm
     };
 

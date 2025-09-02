@@ -29,9 +29,7 @@ R3BWhiterabbitPropagator::R3BWhiterabbitPropagator()
 }
 
 R3BWhiterabbitPropagator::R3BWhiterabbitPropagator(const TString& name, Int_t iVerbose, const TString& namewr)
-    : FairTask(name, iVerbose)
-    , fInputItem(NULL)
-    , fNameWR(namewr)
+    : FairTask(name, iVerbose), fInputItem(NULL), fNameWR(namewr)
 {
 }
 

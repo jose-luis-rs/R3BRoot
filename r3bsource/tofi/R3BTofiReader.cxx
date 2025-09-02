@@ -33,12 +33,8 @@ extern "C"
 #define MAX_TOFI_PADDLES 24
 
 R3BTofiReader::R3BTofiReader(EXT_STR_h101_TOFI* data, size_t offset)
-    : R3BReader("R3BTofiReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fArray(new TClonesArray("R3BTofiMappedData"))
-    , fArrayTrigger(new TClonesArray("R3BTofiMappedData"))
+    : R3BReader("R3BTofiReader"), fData(data), fOffset(offset), fOnline(kFALSE),
+      fArray(new TClonesArray("R3BTofiMappedData")), fArrayTrigger(new TClonesArray("R3BTofiMappedData"))
 {
 }
 

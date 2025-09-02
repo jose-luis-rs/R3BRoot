@@ -49,8 +49,7 @@
 using std::cout;
 using std::endl;
 
-R3BsfiDigitizer::R3BsfiDigitizer()
-    : FairTask("R3B sfi Digitization scheme ")
+R3BsfiDigitizer::R3BsfiDigitizer() : FairTask("R3B sfi Digitization scheme ")
 {
 
     esigma = 0.001;
@@ -58,8 +57,7 @@ R3BsfiDigitizer::R3BsfiDigitizer()
     NumOfFibers = 512;
 }
 
-R3BsfiDigitizer::R3BsfiDigitizer(Double_t e, Double_t t)
-    : FairTask("R3B sfi Digitization scheme ")
+R3BsfiDigitizer::R3BsfiDigitizer(Double_t e, Double_t t) : FairTask("R3B sfi Digitization scheme ")
 {
 
     esigma = e;
@@ -137,12 +135,7 @@ void R3BsfiDigitizer::Exec(Option_t* opt)
         Double_t Energy;
         Double_t Time;
 
-        TempHit(Int_t id, Double_t e, Double_t t)
-            : fiberID(id)
-            , Energy(e)
-            , Time(t)
-        {
-        }
+        TempHit(Int_t id, Double_t e, Double_t t) : fiberID(id), Energy(e), Time(t) {}
     };
 
     // ordering the hits in time

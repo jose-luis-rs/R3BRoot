@@ -41,16 +41,10 @@
 #include "R3BLogger.h"
 
 // R3BFootStripCal2Hit::Default Constructor -------------------------------------
-R3BFootStripCal2Hit::R3BFootStripCal2Hit()
-    : R3BFootStripCal2Hit("R3BFootStripCal2Hit", 1)
-{
-}
+R3BFootStripCal2Hit::R3BFootStripCal2Hit() : R3BFootStripCal2Hit("R3BFootStripCal2Hit", 1) {}
 
 // R3BFootStripCal2HitPar::Standard Constructor ---------------------------------
-R3BFootStripCal2Hit::R3BFootStripCal2Hit(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BFootStripCal2Hit::R3BFootStripCal2Hit(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 // Virtual R3BFootStripCal2Hit::Destructor --------------------------------------
 R3BFootStripCal2Hit::~R3BFootStripCal2Hit() { R3BLOG(debug1, ""); }

@@ -18,18 +18,7 @@
 
 #include "R3BFrsData.h"
 
-R3BFrsData::R3BFrsData()
-    : fStaId(0)
-    , fStoId(0)
-    , fZ(0.)
-    , fAq(0.)
-    , fBeta(0.)
-    , fTof(0.)
-    , fBrho(0.)
-    , fxs2(0.)
-    , fxc(0.)
-{
-}
+R3BFrsData::R3BFrsData() : fStaId(0), fStoId(0), fZ(0.), fAq(0.), fBeta(0.), fTof(0.), fBrho(0.), fxs2(0.), fxc(0.) {}
 
 R3BFrsData::R3BFrsData(Int_t StaId,
                        Int_t StoId,
@@ -40,15 +29,7 @@ R3BFrsData::R3BFrsData(Int_t StaId,
                        Double_t xs2,
                        Double_t xc,
                        Double_t tof)
-    : fStaId(StaId)
-    , fStoId(StoId)
-    , fZ(z)
-    , fAq(aq)
-    , fBeta(beta)
-    , fTof(tof)
-    , fBrho(brho)
-    , fxs2(xs2)
-    , fxc(xc)
+    : fStaId(StaId), fStoId(StoId), fZ(z), fAq(aq), fBeta(beta), fTof(tof), fBrho(brho), fxs2(xs2), fxc(xc)
 {
 }
 

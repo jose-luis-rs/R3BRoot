@@ -19,19 +19,13 @@
 /* for the data analysis of Sci2 detector.
  */
 
-R3BSci2CalData::R3BSci2CalData()
-    : fDetector(0)
-{
-}
+R3BSci2CalData::R3BSci2CalData() : fDetector(0) {}
 
 R3BSci2CalData::R3BSci2CalData(UInt_t detector)
-    : fDetector(detector)
-    , fTimeV_r_ns(0.0 / 0.0) // 0/0 produces a NAN. Macro NAN not available??
-    , fTimeV_l_ns(0.0 / 0.0)
-    , fTimeL_r_ns(0.0 / 0.0)
-    , fTimeL_l_ns(0.0 / 0.0)
-    , fTimeT_r_ns(0.0 / 0.0)
-    , fTimeT_l_ns(0.0 / 0.0)
+    : fDetector(detector), fTimeV_r_ns(0.0 / 0.0) // 0/0 produces a NAN. Macro NAN not available??
+      ,
+      fTimeV_l_ns(0.0 / 0.0), fTimeL_r_ns(0.0 / 0.0), fTimeL_l_ns(0.0 / 0.0), fTimeT_r_ns(0.0 / 0.0),
+      fTimeT_l_ns(0.0 / 0.0)
 {
 }
 

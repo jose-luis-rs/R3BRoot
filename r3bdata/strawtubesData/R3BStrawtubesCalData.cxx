@@ -14,10 +14,7 @@
 #include "R3BStrawtubesCalData.h"
 #include <cmath>
 
-R3BStrawtubesCalData::R3BStrawtubesCalData(UChar_t plane, UChar_t straw)
-    : fPlane(plane)
-    , fStraw(straw)
-    , fTime_ns()
+R3BStrawtubesCalData::R3BStrawtubesCalData(UChar_t plane, UChar_t straw) : fPlane(plane), fStraw(straw), fTime_ns()
 {
     fTime_ns[0] = NAN;
     fTime_ns[1] = NAN;

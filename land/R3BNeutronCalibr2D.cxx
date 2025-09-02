@@ -35,8 +35,7 @@ ClassImp(R3BNeutronCalibr2D)
 
     // -----------------------------------------------------------------------------
     R3BNeutronCalibr2D::R3BNeutronCalibr2D()
-    : FairTask("Calibration of NEULAND cuts")
-    , fEventNo(0)
+    : FairTask("Calibration of NEULAND cuts"), fEventNo(0)
 {
 }
 // -----------------------------------------------------------------------------

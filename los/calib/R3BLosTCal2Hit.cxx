@@ -44,40 +44,15 @@
 using namespace std;
 #define IS_NAN(x) TMath::IsNaN(x)
 
-R3BLosTCal2Hit::R3BLosTCal2Hit()
-    : R3BLosTCal2Hit("LosTCal2Hit", 1)
-{
-}
+R3BLosTCal2Hit::R3BLosTCal2Hit() : R3BLosTCal2Hit("LosTCal2Hit", 1) {}
 
 R3BLosTCal2Hit::R3BLosTCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTCalItems(NULL)
-    , fTCalTriggerItems(NULL)
-    , fHitItems(new TClonesArray("R3BLosHitData"))
-    , fTimeStitch(NULL)
-    , fLEMatchParams(NULL)
-    , fTEMatchParams(NULL)
-    , fNofHitItems(0)
-    , fNofDetectors(1)
-    , fTrigger(-1)
-    , fTpat(-1)
-    , fNumParamsTamexLE(2)
-    , fNumParamsTamexTE(2)
-    , fWindowV(10.)
-    , flosVeffX(1.)
-    , flosVeffY(1.)
-    , flosOffsetX(0.)
-    , flosOffsetY(0.)
-    , flosVeffXT(1.)
-    , flosVeffYT(1.)
-    , flosOffsetXT(0.)
-    , flosOffsetYT(0.)
-    , flosVeffXQ(1.)
-    , flosVeffYQ(1.)
-    , flosOffsetXQ(0.)
-    , flosOffsetYQ(0.)
-    , fOnline(kFALSE)
-    , fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
+    : FairTask(name, iVerbose), fTCalItems(NULL), fTCalTriggerItems(NULL), fHitItems(new TClonesArray("R3BLosHitData")),
+      fTimeStitch(NULL), fLEMatchParams(NULL), fTEMatchParams(NULL), fNofHitItems(0), fNofDetectors(1), fTrigger(-1),
+      fTpat(-1), fNumParamsTamexLE(2), fNumParamsTamexTE(2), fWindowV(10.), flosVeffX(1.), flosVeffY(1.),
+      flosOffsetX(0.), flosOffsetY(0.), flosVeffXT(1.), flosVeffYT(1.), flosOffsetXT(0.), flosOffsetYT(0.),
+      flosVeffXQ(1.), flosVeffYQ(1.), flosOffsetXQ(0.), flosOffsetYQ(0.), fOnline(kFALSE),
+      fClockFreq(1. / VFTX_CLOCK_MHZ * 1000.)
 {
 }
 

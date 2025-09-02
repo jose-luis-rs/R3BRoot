@@ -57,24 +57,14 @@
 using namespace std;
 
 R3BPspxOnlineSpectra::R3BPspxOnlineSpectra()
-    : FairTask("PspOnlineSpectra", 1)
-    , fMappedItemsPspx()
-    , fPrecalItemsPspx()
-    , fCalItemsPspx()
-    , fHitItemsPspx()
-    , fTrigger(-1)
-    , fNEvents(0)
+    : FairTask("PspOnlineSpectra", 1), fMappedItemsPspx(), fPrecalItemsPspx(), fCalItemsPspx(), fHitItemsPspx(),
+      fTrigger(-1), fNEvents(0)
 {
 }
 
 R3BPspxOnlineSpectra::R3BPspxOnlineSpectra(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fMappedItemsPspx()
-    , fPrecalItemsPspx()
-    , fCalItemsPspx()
-    , fHitItemsPspx()
-    , fTrigger(-1)
-    , fNEvents(0)
+    : FairTask(name, iVerbose), fMappedItemsPspx(), fPrecalItemsPspx(), fCalItemsPspx(), fHitItemsPspx(), fTrigger(-1),
+      fNEvents(0)
 {
 }
 

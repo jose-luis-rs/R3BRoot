@@ -18,12 +18,7 @@
 // adapted by Joachim March 2016
 
 R3BFi4HitItem::R3BFi4HitItem()
-    : fDetector(0)
-    , fFiber_n(0)
-    , fEnergy_top(0)
-    , fEnergy_bottom(0)
-    , fTime_top(0)
-    , fTime_bottom(0)
+    : fDetector(0), fFiber_n(0), fEnergy_top(0), fEnergy_bottom(0), fTime_top(0), fTime_bottom(0)
 {
 }
 
@@ -36,13 +31,8 @@ R3BFi4HitItem::R3BFi4HitItem(UInt_t detector,
                              Float_t energy_bottom,
                              Float_t time_top,
                              Float_t time_bottom)
-    : R3BHit(0, xpos, ypos, (energy_top + energy_bottom) / 2., 0.)
-    , fDetector(detector)
-    , fFiber_n(fiber)
-    , fEnergy_top(energy_top)
-    , fEnergy_bottom(energy_bottom)
-    , fTime_top(time_top)
-    , fTime_bottom(time_bottom)
+    : R3BHit(0, xpos, ypos, (energy_top + energy_bottom) / 2., 0.), fDetector(detector), fFiber_n(fiber),
+      fEnergy_top(energy_top), fEnergy_bottom(energy_bottom), fTime_top(time_top), fTime_bottom(time_bottom)
 {
 }
 

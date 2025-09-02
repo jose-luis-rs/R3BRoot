@@ -19,11 +19,7 @@ using std::cout;
 using std::endl;
 using std::flush;
 
-R3BRpcPoint::R3BRpcPoint()
-    : FairMCPoint()
-    , fChannelId(-1)
-{
-}
+R3BRpcPoint::R3BRpcPoint() : FairMCPoint(), fChannelId(-1) {}
 
 R3BRpcPoint::R3BRpcPoint(Int_t trackID,
                          Int_t detID,
@@ -34,16 +30,11 @@ R3BRpcPoint::R3BRpcPoint(Int_t trackID,
                          Double_t length,
                          Double_t eLoss,
                          UInt_t EventId)
-    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss, EventId)
-    , fChannelId(ident)
+    : FairMCPoint(trackID, detID, posIn, momIn, tof, length, eLoss, EventId), fChannelId(ident)
 {
 }
 
-R3BRpcPoint::R3BRpcPoint(const R3BRpcPoint& right)
-    : FairMCPoint(right)
-    , fChannelId(right.fChannelId)
-{
-}
+R3BRpcPoint::R3BRpcPoint(const R3BRpcPoint& right) : FairMCPoint(right), fChannelId(right.fChannelId) {}
 
 R3BRpcPoint::~R3BRpcPoint() {}
 

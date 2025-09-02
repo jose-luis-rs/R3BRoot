@@ -13,19 +13,10 @@
 
 #include "R3BPdcCalData.h"
 
-R3BPdcCalData::R3BPdcCalData()
-    : fPlane(-1)
-    , fWire(-1)
-    , fEdge(-1)
-    , fTime_ns(-1)
-{
-}
+R3BPdcCalData::R3BPdcCalData() : fPlane(-1), fWire(-1), fEdge(-1), fTime_ns(-1) {}
 
 R3BPdcCalData::R3BPdcCalData(UInt_t plane, UInt_t wire, UInt_t edge, Double_t time_ns)
-    : fPlane(plane)
-    , fWire(wire)
-    , fEdge(edge)
-    , fTime_ns(time_ns)
+    : fPlane(plane), fWire(wire), fEdge(edge), fTime_ns(time_ns)
 {
 }
 

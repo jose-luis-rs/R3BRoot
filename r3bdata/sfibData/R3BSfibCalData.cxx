@@ -13,19 +13,10 @@
 
 #include "R3BSfibCalData.h"
 
-R3BSfibCalData::R3BSfibCalData()
-    : fSide(-1)
-    , fChannel(-1)
-    , fIsLeading()
-    , fTime_ns(-1)
-{
-}
+R3BSfibCalData::R3BSfibCalData() : fSide(-1), fChannel(-1), fIsLeading(), fTime_ns(-1) {}
 
 R3BSfibCalData::R3BSfibCalData(Int_t a_side, Int_t a_channel, Bool_t a_is_leading, Double_t a_time_ns)
-    : fSide(a_side)
-    , fChannel(a_channel)
-    , fIsLeading(a_is_leading)
-    , fTime_ns(a_time_ns)
+    : fSide(a_side), fChannel(a_channel), fIsLeading(a_is_leading), fTime_ns(a_time_ns)
 {
 }
 

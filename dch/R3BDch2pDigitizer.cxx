@@ -88,13 +88,8 @@
 #define PDC_L_X 99.07 // x length of active area
 #define PDC_L_Y 77.60 // y length of active area
 
-R3BDch2pDigitizer::R3BDch2pDigitizer()
-    : FairTask("R3B Dch2p Digitization scheme ")
-{
-    detectorResolution = 0;
-}
-R3BDch2pDigitizer::R3BDch2pDigitizer(int detres)
-    : FairTask("R3B Dch2p Digitization scheme ")
+R3BDch2pDigitizer::R3BDch2pDigitizer() : FairTask("R3B Dch2p Digitization scheme ") { detectorResolution = 0; }
+R3BDch2pDigitizer::R3BDch2pDigitizer(int detres) : FairTask("R3B Dch2p Digitization scheme ")
 {
     detectorResolution = detres; // 0=all off, 1= all on, ...
 }

@@ -90,10 +90,10 @@ class R3BOnlineSpectraFrsSciVsMusli : public FairTask
 
     TClonesArray* fFrsSci_PosCal; /**< Array with R3BFrsSciPosCalData */
     TClonesArray* fFrsSci_TofCal; /**< Array with R3BFrsSciTofCalData */
-    TClonesArray* fMusli_Map;     /**< Array with R3BMusliMappedData */
-    TClonesArray* fMusli_Cal;     /**< Array with R3BMusliCalData */
-    TClonesArray* fMusli_Hit;     /**< Array with R3BMusliHitData */
-    Int_t fNEvents;               /**< Event counter.     */
+    TClonesArray* fMusli_Map; /**< Array with R3BMusliMappedData */
+    TClonesArray* fMusli_Cal; /**< Array with R3BMusliCalData */
+    TClonesArray* fMusli_Hit; /**< Array with R3BMusliHitData */
+    Int_t fNEvents; /**< Event counter.     */
     UShort_t fIdS2;
     UShort_t fIdCaveC;
 
@@ -107,7 +107,7 @@ class R3BOnlineSpectraFrsSciVsMusli : public FairTask
     // Histograms FrsSciCal vs MusliCal
     TH2D** fh2_Map_PosRawVsDT; // at Cave C only, one histo per pair of anodes [8]
     TH2D** fh2_Cal_PosCalVsDT; // at Cave C only, one histo per pair of anodes [8]
-    TH2D** fh2_Cal_EvsAoQ;     // AoQ from S2 to cave C, one histo per signal [15]
+    TH2D** fh2_Cal_EvsAoQ; // AoQ from S2 to cave C, one histo per signal [15]
 
     // Canvas FrsSciCal vs MusliHit
     TCanvas* cHit_EvsTofRaw;
@@ -117,9 +117,9 @@ class R3BOnlineSpectraFrsSciVsMusli : public FairTask
 
     //// Histograms FrsSciCal vs MusliHit
     TH2D** fh2_Hit_EvsTofRaw; // TofRaw calculated from S2 to Cave C, one histo per type of data
-    TH2D** fh2_Hit_EvsBeta;   // Beta calculated from S2 to Cave C, one histo per type of data
-    TH2D** fh2_Hit_EvsAoQ;    // AoQ calculated from S2 to Cave C, one histo per type of data
-    TH2D** fh2_Hit_ZvsAoQ;    // AoQ calculated from S2 to Cave C, one histo per type of data
+    TH2D** fh2_Hit_EvsBeta; // Beta calculated from S2 to Cave C, one histo per type of data
+    TH2D** fh2_Hit_EvsAoQ; // AoQ calculated from S2 to Cave C, one histo per type of data
+    TH2D** fh2_Hit_ZvsAoQ; // AoQ calculated from S2 to Cave C, one histo per type of data
 
   public:
     ClassDef(R3BOnlineSpectraFrsSciVsMusli, 1)

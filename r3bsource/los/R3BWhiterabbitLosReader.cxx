@@ -26,14 +26,8 @@ extern "C"
 }
 
 R3BWhiterabbitLosReader::R3BWhiterabbitLosReader(EXT_STR_h101_WRLOS* data, size_t offset, UInt_t whiterabbit_id)
-    : R3BReader("R3BWhiterabbitLosReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fWhiterabbitId(whiterabbit_id)
-    , fEventHeader(nullptr)
-    , fArray(new TClonesArray("R3BWRData"))
+    : R3BReader("R3BWhiterabbitLosReader"), fNEvent(0), fData(data), fOffset(offset), fOnline(kFALSE),
+      fWhiterabbitId(whiterabbit_id), fEventHeader(nullptr), fArray(new TClonesArray("R3BWRData"))
 {
 }
 

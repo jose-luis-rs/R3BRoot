@@ -26,8 +26,7 @@
 
 constexpr auto DEFAULT_ENERGY = 100.;
 
-R3BPhaseSpaceGenerator::R3BPhaseSpaceGenerator(unsigned int seed)
-    : fErel_keV(R3BDistribution1D::Delta(DEFAULT_ENERGY))
+R3BPhaseSpaceGenerator::R3BPhaseSpaceGenerator(unsigned int seed) : fErel_keV(R3BDistribution1D::Delta(DEFAULT_ENERGY))
 {
     rnd_gen_.SetSeed(seed);
 }

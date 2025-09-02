@@ -14,15 +14,9 @@
 #include "R3BVacVesselCool.h"
 #include "FairLogger.h"
 
-R3BVacVesselCool::R3BVacVesselCool()
-    : R3BModule()
-{
-}
+R3BVacVesselCool::R3BVacVesselCool() : R3BModule() {}
 
-R3BVacVesselCool::R3BVacVesselCool(const TString& name)
-    : R3BModule(name, "VacVesselCool", kFALSE)
-{
-}
+R3BVacVesselCool::R3BVacVesselCool(const TString& name) : R3BModule(name, "VacVesselCool", kFALSE) {}
 
 R3BVacVesselCool::R3BVacVesselCool(const TString& name,
                                    const TString& geoFile,

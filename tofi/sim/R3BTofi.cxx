@@ -44,10 +44,7 @@
 #include "TVirtualMC.h"
 #include <stdlib.h>
 
-R3BTofi::R3BTofi()
-    : R3BTofi("")
-{
-}
+R3BTofi::R3BTofi() : R3BTofi("") {}
 
 R3BTofi::R3BTofi(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BTofi(geoFile, { trans, rot })
@@ -55,11 +52,8 @@ R3BTofi::R3BTofi(const TString& geoFile, const TGeoTranslation& trans, const TGe
 }
 
 R3BTofi::R3BTofi(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BTofi", kTOFI, geoFile, combi)
-    , fTofiCollection(new TClonesArray("R3BTofiPoint"))
-    , fPosIndex(0)
-    , kGeoSaved(kFALSE)
-    , flGeoPar(new TList())
+    : R3BDetector("R3BTofi", kTOFI, geoFile, combi), fTofiCollection(new TClonesArray("R3BTofiPoint")), fPosIndex(0),
+      kGeoSaved(kFALSE), flGeoPar(new TList())
 {
     flGeoPar->SetName(GetName());
     ResetParameters();

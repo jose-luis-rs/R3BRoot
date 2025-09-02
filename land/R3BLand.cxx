@@ -48,10 +48,7 @@ using std::cerr;
 using std::cout;
 using std::endl;
 
-R3BLand::R3BLand()
-    : R3BLand("")
-{
-}
+R3BLand::R3BLand() : R3BLand("") {}
 
 R3BLand::R3BLand(const TString& geoFile, const TGeoTranslation& trans, const TGeoRotation& rot)
     : R3BLand(geoFile, { trans, rot })
@@ -59,12 +56,8 @@ R3BLand::R3BLand(const TString& geoFile, const TGeoTranslation& trans, const TGe
 }
 
 R3BLand::R3BLand(const TString& geoFile, const TGeoCombiTrans& combi)
-    : R3BDetector("R3BLand", kLAND, geoFile, combi)
-    , fLandCollection(new TClonesArray("R3BLandPoint"))
-    , fPosIndex(0)
-    , kGeoSaved(kFALSE)
-    , flGeoPar(new TList())
-    , fLandFirstHits(new TClonesArray("R3BLandFirstHits"))
+    : R3BDetector("R3BLand", kLAND, geoFile, combi), fLandCollection(new TClonesArray("R3BLandPoint")), fPosIndex(0),
+      kGeoSaved(kFALSE), flGeoPar(new TList()), fLandFirstHits(new TClonesArray("R3BLandFirstHits"))
 {
     flGeoPar->SetName(GetName());
     ResetParameters();

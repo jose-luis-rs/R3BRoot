@@ -20,16 +20,16 @@
 using namespace std;
 
 R3BBeamMonitorMappedData::R3BBeamMonitorMappedData()
-    : fIC(-1)      // IC
-    , fSEETRAM(-1) // SEETRAM
-    , fTOFDOR(-1)  // TOFD or
+    : fIC(-1) // IC
+      ,
+      fSEETRAM(-1) // SEETRAM
+      ,
+      fTOFDOR(-1) // TOFD or
 {
 }
 
 R3BBeamMonitorMappedData::R3BBeamMonitorMappedData(UInt_t IC, UInt_t SEETRAM, UInt_t TOFDOR)
-    : fIC(IC)
-    , fSEETRAM(SEETRAM)
-    , fTOFDOR(TOFDOR)
+    : fIC(IC), fSEETRAM(SEETRAM), fTOFDOR(TOFDOR)
 {
     /*
      LOG(info)<<"LosBeamMonitorData: "<<IC<<",  "<<SEETRAM<<", "<<TOFDOR;

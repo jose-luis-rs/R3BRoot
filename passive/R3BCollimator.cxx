@@ -16,15 +16,9 @@
 #include "TGeoManager.h"
 #include "TGeoTube.h"
 
-R3BCollimator::R3BCollimator()
-    : R3BModule()
-{
-}
+R3BCollimator::R3BCollimator() : R3BModule() {}
 
-R3BCollimator::R3BCollimator(const TString& name)
-    : R3BModule(name, "Collimator", kFALSE)
-{
-}
+R3BCollimator::R3BCollimator(const TString& name) : R3BModule(name, "Collimator", kFALSE) {}
 
 R3BCollimator::R3BCollimator(const TString& name,
                              const TString& geoFile,

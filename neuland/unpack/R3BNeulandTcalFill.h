@@ -122,16 +122,16 @@ class R3BNeulandTcalFill : public FairTask
 
   private:
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats;   /**< Minimum statistics required per module. */
-    Int_t fTrigger;    /**< Trigger value. */
+    Int_t fMinStats; /**< Minimum statistics required per module. */
+    Int_t fTrigger; /**< Trigger value. */
 
     Int_t fNofPlanes; /**< Number of NeuLAND planes. */
-    Int_t fNofBars;   /**< Number of NeuLAND bars per plane. */
-    Int_t fNof17;     /**< Number of channels with stop signal. */
+    Int_t fNofBars; /**< Number of NeuLAND bars per plane. */
+    Int_t fNof17; /**< Number of channels with stop signal. */
 
-    Int_t fNEvents;         /**< Event counter. */
-    R3BTCalPar* fCal_Par;   /**< Parameter container. */
-    TClonesArray* fHits;    /**< Array with NeuLAND hits - input data. */
+    Int_t fNEvents; /**< Event counter. */
+    R3BTCalPar* fCal_Par; /**< Parameter container. */
+    TClonesArray* fHits; /**< Array with NeuLAND hits - input data. */
     R3BEventHeader* header; /**< Event header - input data. */
 
     R3BTCalEngine* fEngine; /**< Instance of the TCAL engine. */

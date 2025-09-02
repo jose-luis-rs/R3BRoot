@@ -29,17 +29,9 @@
 R3BNeulandMultiplicityCalorimetricTrain::R3BNeulandMultiplicityCalorimetricTrain(TString clusters,
                                                                                  TString tracks,
                                                                                  TString phits)
-    : FairTask("R3BNeulandMultiplicityCalorimetricTrain")
-    , fClusters(std::move(clusters))
-    , fTracks(std::move(tracks))
-    , fPHits(std::move(phits))
-    , fPar(nullptr)
-    , fUseHits(false)
-    , fEdepOpt({ 200, 25, 50, 1500 })
-    , fEdepOffOpt({ 5, 1, 0, 250 })
-    , fNclusterOpt({ 10, 5, 5, 50 })
-    , fNclusterOffOpt({ 2, 1, 0, 10 })
-    , fWeight(0)
+    : FairTask("R3BNeulandMultiplicityCalorimetricTrain"), fClusters(std::move(clusters)), fTracks(std::move(tracks)),
+      fPHits(std::move(phits)), fPar(nullptr), fUseHits(false), fEdepOpt({ 200, 25, 50, 1500 }),
+      fEdepOffOpt({ 5, 1, 0, 250 }), fNclusterOpt({ 10, 5, 5, 50 }), fNclusterOffOpt({ 2, 1, 0, 10 }), fWeight(0)
 {
 }
 

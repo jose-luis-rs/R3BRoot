@@ -24,26 +24,15 @@ R3BSfibCal2Hit::ToT::ToT(R3BSfibCalData const* a_lead,
                          Double_t a_lead_ns,
                          Double_t a_tail_ns,
                          Double_t a_tot_ns)
-    : lead(a_lead)
-    , trail(a_trail)
-    , lead_ns(a_lead_ns)
-    , tail_ns(a_tail_ns)
-    , tot_ns(a_tot_ns)
+    : lead(a_lead), trail(a_trail), lead_ns(a_lead_ns), tail_ns(a_tail_ns), tot_ns(a_tot_ns)
 {
 }
 
 R3BSfibCal2Hit::R3BSfibCal2Hit(Int_t a_verbose, enum R3BTCalEngine::CTDCVariant a_ctdc_variant)
-    : FairTask("R3BSfibCal2Hit", a_verbose)
-    , fnEvents()
-    , fClockFreq(R3BTCalEngine::CTDC_16_BWD_150 == a_ctdc_variant ? 150 : 250)
-    , fCalItems()
-    , fTopCalTriggerItems()
-    , fBotCalTriggerItems()
-    , fHitItems(new TClonesArray("R3BSfibHitData"))
-    , fTopTriggerMap()
-    , fBotTriggerMap()
-    , fNofHitItems()
-    , fChannelArray()
+    : FairTask("R3BSfibCal2Hit", a_verbose), fnEvents(),
+      fClockFreq(R3BTCalEngine::CTDC_16_BWD_150 == a_ctdc_variant ? 150 : 250), fCalItems(), fTopCalTriggerItems(),
+      fBotCalTriggerItems(), fHitItems(new TClonesArray("R3BSfibHitData")), fTopTriggerMap(), fBotTriggerMap(),
+      fNofHitItems(), fChannelArray()
 {
 }
 

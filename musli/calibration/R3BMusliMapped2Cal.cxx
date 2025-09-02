@@ -34,31 +34,14 @@
 #include <iomanip>
 
 // R3BMusliMapped2Cal: Default Constructor --------------------------
-R3BMusliMapped2Cal::R3BMusliMapped2Cal()
-    : R3BMusliMapped2Cal("R3BMusli Calibrator", 1)
-{
-}
+R3BMusliMapped2Cal::R3BMusliMapped2Cal() : R3BMusliMapped2Cal("R3BMusli Calibrator", 1) {}
 
 // R3BMusliMapped2CalPar: Standard Constructor --------------------------
 R3BMusliMapped2Cal::R3BMusliMapped2Cal(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fNumSignals(18)
-    , fNumGroupsAnodes(15)
-    , fNumParamsEneFit(2)
-    , fNumParamsPosFit(2)
-    , fNumParamsMultHit(2)
-    , fMaxMult(20)
-    , fEneCalParams(NULL)
-    , fPosCalParams(NULL)
-    , fMultHitCalParams(NULL)
-    , fCal_Par(NULL)
-    , fMusliMappedDataCA(NULL)
-    , fMusliCalDataCA(NULL)
-    , fOnline(kFALSE)
-    , fHeader(NULL)
-    , winL(0.)
-    , winR(0.)
-    , fUseMultHit(kFALSE)
+    : FairTask(name, iVerbose), fNumSignals(18), fNumGroupsAnodes(15), fNumParamsEneFit(2), fNumParamsPosFit(2),
+      fNumParamsMultHit(2), fMaxMult(20), fEneCalParams(NULL), fPosCalParams(NULL), fMultHitCalParams(NULL),
+      fCal_Par(NULL), fMusliMappedDataCA(NULL), fMusliCalDataCA(NULL), fOnline(kFALSE), fHeader(NULL), winL(0.),
+      winR(0.), fUseMultHit(kFALSE)
 {
 }
 
@@ -93,11 +76,11 @@ void R3BMusliMapped2Cal::SetParContainers()
 void R3BMusliMapped2Cal::SetParameters()
 {
     //--- Parameter Container ---
-    fNumSignals = fCal_Par->GetNumSignals();           // Number of signals at Mapped
+    fNumSignals = fCal_Par->GetNumSignals(); // Number of signals at Mapped
     fNumGroupsAnodes = fCal_Par->GetNumGroupsAnodes(); // Number of groups of anodes
     fNumParamsEneFit = fCal_Par->GetNumParamsEneFit(); // Number of ene calib params per group of anodes
     fNumParamsPosFit = fCal_Par->GetNumParamsPosFit(); // Number of pos calib params per group of anodes
-    fMaxMult = fCal_Par->GetMaxMult();                 // maximum number of hit per output channel
+    fMaxMult = fCal_Par->GetMaxMult(); // maximum number of hit per output channel
 
     Int_t array_ene = fNumGroupsAnodes * fNumParamsEneFit; // array of ene calibration parameters
     fEneCalParams = new TArrayF();

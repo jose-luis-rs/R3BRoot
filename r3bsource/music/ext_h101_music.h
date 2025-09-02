@@ -89,29 +89,29 @@ typedef struct EXT_STR_h101_MUSIC_onion_t
 
 /*******************************************************/
 
-#define EXT_STR_h101_MUSIC_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                            \
-    do                                                                                                               \
-    {                                                                                                                \
-        ok = 1;                                                                                                      \
-        /* RAW */                                                                                                    \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_EM, UINT32, "MUSIC_EM", 8);                  \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_EMI, UINT32, "MUSIC_EMI", "MUSIC_EM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_EME, UINT32, "MUSIC_EME", "MUSIC_EM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_E, UINT32, "MUSIC_E", 800);                  \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_Ev, UINT32, "MUSIC_Ev", "MUSIC_E");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_TM, UINT32, "MUSIC_TM", 8);                  \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_TMI, UINT32, "MUSIC_TMI", "MUSIC_TM");       \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_TME, UINT32, "MUSIC_TME", "MUSIC_TM");       \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_T, UINT32, "MUSIC_T", 800);                  \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_Tv, UINT32, "MUSIC_Tv", "MUSIC_T");          \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_TREFM, UINT32, "MUSIC_TREFM", 2);            \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSIC_TREFMI, UINT32, "MUSIC_TREFMI", "MUSIC_TREFM");                \
-        EXT_STR_ITEM_INFO_ZZP(                                                                                       \
-            ok, si, offset, struct_t, printerr, MUSIC_TREFME, UINT32, "MUSIC_TREFME", "MUSIC_TREFM");                \
-        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_TREF, UINT32, "MUSIC_TREF", 200);            \
-        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_TREFv, UINT32, "MUSIC_TREFv", "MUSIC_TREF"); \
-                                                                                                                     \
+#define EXT_STR_h101_MUSIC_ITEMS_INFO(ok, si, offset, struct_t, printerr)                                              \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        ok = 1;                                                                                                        \
+        /* RAW */                                                                                                      \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_EM, UINT32, "MUSIC_EM", 8);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_EMI, UINT32, "MUSIC_EMI", "MUSIC_EM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_EME, UINT32, "MUSIC_EME", "MUSIC_EM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_E, UINT32, "MUSIC_E", 800);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_Ev, UINT32, "MUSIC_Ev", "MUSIC_E");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_TM, UINT32, "MUSIC_TM", 8);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_TMI, UINT32, "MUSIC_TMI", "MUSIC_TM");         \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_TME, UINT32, "MUSIC_TME", "MUSIC_TM");         \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_T, UINT32, "MUSIC_T", 800);                    \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_Tv, UINT32, "MUSIC_Tv", "MUSIC_T");            \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_TREFM, UINT32, "MUSIC_TREFM", 2);              \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSIC_TREFMI, UINT32, "MUSIC_TREFMI", "MUSIC_TREFM");                  \
+        EXT_STR_ITEM_INFO_ZZP(                                                                                         \
+            ok, si, offset, struct_t, printerr, MUSIC_TREFME, UINT32, "MUSIC_TREFME", "MUSIC_TREFM");                  \
+        EXT_STR_ITEM_INFO_LIM(ok, si, offset, struct_t, printerr, MUSIC_TREF, UINT32, "MUSIC_TREF", 200);              \
+        EXT_STR_ITEM_INFO_ZZP(ok, si, offset, struct_t, printerr, MUSIC_TREFv, UINT32, "MUSIC_TREFv", "MUSIC_TREF");   \
+                                                                                                                       \
     } while (0);
 
 #endif /*__GUARD_H101_MUSIC_EXT_H101_MUSIC_H__*/

@@ -14,12 +14,7 @@
 #include "R3BFiberMAPMTHitData.h"
 
 R3BFiberMAPMTHitData::R3BFiberMAPMTHitData()
-    : fFiberId(0)
-    , fBottomTime_ns(-1)
-    , fTopTime_ns(-1)
-    , fTime_ns(-1)
-    , fBottomToT_ns(-1)
-    , fTopToT_ns(-1)
+    : fFiberId(0), fBottomTime_ns(-1), fTopTime_ns(-1), fTime_ns(-1), fBottomToT_ns(-1), fTopToT_ns(-1)
 {
 }
 
@@ -33,13 +28,8 @@ R3BFiberMAPMTHitData::R3BFiberMAPMTHitData(Int_t ID,
                                            Double_t a_top_time_ns,
                                            Double_t a_bottom_tot_ns,
                                            Double_t a_top_tot_ns)
-    : R3BHit(ID, x, y, eloss, time)
-    , fFiberId(a_fiber_id)
-    , fBottomTime_ns(a_bottom_time_ns)
-    , fTopTime_ns(a_top_time_ns)
-    , fTime_ns((a_bottom_time_ns + a_top_time_ns) / 2.)
-    , fBottomToT_ns(a_bottom_tot_ns)
-    , fTopToT_ns(a_top_tot_ns)
+    : R3BHit(ID, x, y, eloss, time), fFiberId(a_fiber_id), fBottomTime_ns(a_bottom_time_ns), fTopTime_ns(a_top_time_ns),
+      fTime_ns((a_bottom_time_ns + a_top_time_ns) / 2.), fBottomToT_ns(a_bottom_tot_ns), fTopToT_ns(a_top_tot_ns)
 {
 }
 

@@ -35,19 +35,10 @@
 #include <iostream>
 #include <limits>
 
-R3BPspxCal2Hit::R3BPspxCal2Hit()
-    : FairTask("PspxCal2Hit", 1)
-    , fCalItems()
-    , fHitItems()
-    , fOnline(kFALSE)
-{
-}
+R3BPspxCal2Hit::R3BPspxCal2Hit() : FairTask("PspxCal2Hit", 1), fCalItems(), fHitItems(), fOnline(kFALSE) {}
 
 R3BPspxCal2Hit::R3BPspxCal2Hit(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fCalItems()
-    , fHitItems()
-    , fOnline(kFALSE)
+    : FairTask(name, iVerbose), fCalItems(), fHitItems(), fOnline(kFALSE)
 {
 }
 
@@ -230,7 +221,7 @@ void R3BPspxCal2Hit::Exec(Option_t* option)
             Float_t energy = calData->GetEnergy() * eGain[d] + eOffset[d]; // convert energy to MeV
             Float_t pos =
                 calData->GetPos() * orientation[d] /** detSize[d]*/; // convert position to mm, flip axis if necessary
-            pos = pos * posSlope[d] + posOffset[d];                  // correct position for detector offset and tilt
+            pos = pos * posSlope[d] + posOffset[d]; // correct position for detector offset and tilt
             new ((*fHitItems[d])[fHitItems[d]->GetEntriesFast()])
                 R3BPspxHitData(energy, pos); // register hit level event
         }

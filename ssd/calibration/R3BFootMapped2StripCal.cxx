@@ -38,15 +38,11 @@
 #include "R3BShared.h"
 
 // R3BFootMapped2StripCal: Default Constructor --------------------------
-R3BFootMapped2StripCal::R3BFootMapped2StripCal()
-    : R3BFootMapped2StripCal("FootMapped2StripCal", 1)
-{
-}
+R3BFootMapped2StripCal::R3BFootMapped2StripCal() : R3BFootMapped2StripCal("FootMapped2StripCal", 1) {}
 
 // R3BFootMapped2StripCalPar: Standard Constructor --------------------------
 R3BFootMapped2StripCal::R3BFootMapped2StripCal(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fFootMappedData("FootMappedData")
+    : FairTask(name, iVerbose), fFootMappedData("FootMappedData")
 {
     // Initialize histograms for each detector
     h2_raw.resize(fNDets);

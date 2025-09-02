@@ -25,11 +25,7 @@ extern "C"
 #include <iostream>
 
 R3BUnpackReader::R3BUnpackReader(EXT_STR_h101_unpack* data, size_t offset)
-    : R3BReader("R3BUnpackReader")
-    , fNEvent(0)
-    , fData(data)
-    , fOffset(offset)
-    , fHeader(NULL)
+    : R3BReader("R3BUnpackReader"), fNEvent(0), fData(data), fOffset(offset), fHeader(NULL)
 {
 }
 

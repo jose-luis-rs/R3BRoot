@@ -36,29 +36,12 @@
 #include "TClonesArray.h"
 #include "TMath.h"
 
-R3BIncomingBeta::R3BIncomingBeta()
-    : R3BIncomingBeta("IncomingBeta", 1)
-{
-}
+R3BIncomingBeta::R3BIncomingBeta() : R3BIncomingBeta("IncomingBeta", 1) {}
 
 R3BIncomingBeta::R3BIncomingBeta(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-    , fTimeStitch(nullptr)
-    , fIncomingID_Par(NULL)
-    , fFrsDataCA(NULL)
-    , fHitSci2(NULL)
-    , fPosCalFrsSci(NULL)
-    , fTcalSci2(NULL)
-    , fOnline(kFALSE)
-    , fStaId(1)
-    , fStoId(2)
-    , fLosRefCh(0)
-    , fLosCalTrig_Low(3160.)
-    , fLosCalTrig_High(3220.)
-    , fNumDet(1)
-    , fUseTref(kFALSE)
-    , fUseMultHit(kFALSE)
-    , fUseFrsSci(kFALSE)
+    : FairTask(name, iVerbose), fTimeStitch(nullptr), fIncomingID_Par(NULL), fFrsDataCA(NULL), fHitSci2(NULL),
+      fPosCalFrsSci(NULL), fTcalSci2(NULL), fOnline(kFALSE), fStaId(1), fStoId(2), fLosRefCh(0), fLosCalTrig_Low(3160.),
+      fLosCalTrig_High(3220.), fNumDet(1), fUseTref(kFALSE), fUseMultHit(kFALSE), fUseFrsSci(kFALSE)
 {
     fToFoffset = new TArrayF(fNumDet);
     fPosS2Left = new TArrayF(fNumDet);
@@ -434,7 +417,7 @@ void R3BIncomingBeta::Exec(Option_t* option)
                     if (!fUseMultHit)
                         break;
                 }
-            }             // end: if (num_tof_candidates == 0 && fHeader->GetExpId() == 509)
+            } // end: if (num_tof_candidates == 0 && fHeader->GetExpId() == 509)
             if (fUseTref) // Tref defines when the trigger time is. And only one hit is recorded.
                 break;
         } // End of loop with LOS mult

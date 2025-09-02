@@ -24,11 +24,7 @@
 
 static R3BFieldCreator gR3BFieldCreator;
 
-R3BFieldCreator::R3BFieldCreator()
-    : FairFieldFactory()
-    , fFieldPar(nullptr)
-{
-}
+R3BFieldCreator::R3BFieldCreator() : FairFieldFactory(), fFieldPar(nullptr) {}
 
 R3BFieldCreator::~R3BFieldCreator() {}
 

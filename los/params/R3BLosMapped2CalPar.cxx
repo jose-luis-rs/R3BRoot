@@ -32,15 +32,9 @@
 #include <iostream>
 #include <stdlib.h>
 
-R3BLosMapped2CalPar::R3BLosMapped2CalPar()
-    : R3BLosMapped2CalPar("R3BLosMapped2CalPar", 1)
-{
-}
+R3BLosMapped2CalPar::R3BLosMapped2CalPar() : R3BLosMapped2CalPar("R3BLosMapped2CalPar", 1) {}
 
-R3BLosMapped2CalPar::R3BLosMapped2CalPar(const char* name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BLosMapped2CalPar::R3BLosMapped2CalPar(const char* name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 R3BLosMapped2CalPar::~R3BLosMapped2CalPar()
 {
@@ -108,8 +102,8 @@ void R3BLosMapped2CalPar::Exec(Option_t* option)
 
         // channel numbers are supposed to be 1-based (1..n)
         auto iDetector = hit->GetDetector() - 1; // now 0..n-1
-        auto iChannel = hit->GetChannel() - 1;   // now 0..n-1
-        auto iType = hit->GetType();             // 0,1,2,3
+        auto iChannel = hit->GetChannel() - 1; // now 0..n-1
+        auto iType = hit->GetType(); // 0,1,2,3
 
         if (iType < 3)
         {
@@ -121,9 +115,9 @@ void R3BLosMapped2CalPar::Exec(Option_t* option)
             }
             if (iChannel > (fNofChannels - 1))
             {
-                R3BLOG(
-                    error,
-                    "More channels than expected! Channel: " << (iChannel + 1) << " allowed are 1.." << fNofChannels);
+                R3BLOG(error,
+                       "More channels than expected! Channel: " << (iChannel + 1) << " allowed are 1.."
+                                                                << fNofChannels);
                 continue;
             }
             if (iType > 3)

@@ -16,8 +16,7 @@
 #include "FairLogger.h"
 
 // -----   Default constructor   -------------------------------------------
-R3BMwpcPoint::R3BMwpcPoint()
-    : FairMCPoint()
+R3BMwpcPoint::R3BMwpcPoint() : FairMCPoint()
 {
     fX_out = fY_out = fZ_out = 0.;
     fPx_out = fPy_out = fPz_out = 0.;

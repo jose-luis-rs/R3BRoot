@@ -33,14 +33,9 @@ extern "C"
 }
 
 R3BNeulandTamexReader::R3BNeulandTamexReader(EXT_STR_h101_raw_nnp_tamex_onion* data, size_t offset)
-    : R3BReader("R3BNeulandTamexReader")
-    , fData(data)
-    , fOffset(offset)
-    , fOnline(kFALSE)
-    , fSkiptriggertimes(kFALSE)
-    , fArray(new TClonesArray("R3BPaddleTamexMappedData"))
-    , fArrayTrigger(new TClonesArray("R3BPaddleTamexMappedData"))
-    , fNofPlanes(sizeof(fData->NN_P) / sizeof(fData->NN_P[0]))
+    : R3BReader("R3BNeulandTamexReader"), fData(data), fOffset(offset), fOnline(kFALSE), fSkiptriggertimes(kFALSE),
+      fArray(new TClonesArray("R3BPaddleTamexMappedData")), fArrayTrigger(new TClonesArray("R3BPaddleTamexMappedData")),
+      fNofPlanes(sizeof(fData->NN_P) / sizeof(fData->NN_P[0]))
 {
 }
 

@@ -19,8 +19,7 @@
 #include <iostream>
 
 // -----   Default constructor   -------------------------------------------
-R3BMusicPoint::R3BMusicPoint()
-    : FairMCPoint()
+R3BMusicPoint::R3BMusicPoint() : FairMCPoint()
 {
     fX_out = fY_out = fZ_out = 0.;
     fPx_out = fPy_out = fPz_out = 0.;

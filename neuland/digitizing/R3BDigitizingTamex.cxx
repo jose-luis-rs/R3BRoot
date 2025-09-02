@@ -43,10 +43,7 @@ namespace R3B::Digitizing::Neuland::Tamex
     const size_t TmxPeaksInitialCapacity = 10;
     R3BNeulandHitPar* Channel::neuland_hit_par_ = nullptr; // NOLINT
 
-    Params::Params(TRandom3& rnd)
-        : fRnd{ &rnd }
-    {
-    }
+    Params::Params(TRandom3& rnd) : fRnd{ &rnd } {}
 
     Params::Params(const Params& other)
     {
@@ -58,8 +55,7 @@ namespace R3B::Digitizing::Neuland::Tamex
         *this = other;
     }
 
-    PMTPeak::PMTPeak(Digitizing::Channel::Hit pmtHit, const Channel& channel)
-        : time_(pmtHit.time)
+    PMTPeak::PMTPeak(Digitizing::Channel::Hit pmtHit, const Channel& channel) : time_(pmtHit.time)
     {
         auto par = channel.GetParConstRef();
         // apply saturation coefficent
@@ -74,9 +70,7 @@ namespace R3B::Digitizing::Neuland::Tamex
     }
 
     FQTPeak::FQTPeak(const PMTPeak& pmtPeak, Channel* channel)
-        : qdc_(pmtPeak.GetQDC())
-        , leading_edge_time_(pmtPeak.GetLETime())
-        , channel_ptr_(channel)
+        : qdc_(pmtPeak.GetQDC()), leading_edge_time_(pmtPeak.GetLETime()), channel_ptr_(channel)
     {
         if (channel_ptr_ == nullptr)
         {
@@ -114,9 +108,7 @@ namespace R3B::Digitizing::Neuland::Tamex
     }
 
     Channel::Channel(ChannelSide side, PeakPileUpStrategy strategy, const Params& par)
-        : Digitizing::Channel{ side }
-        , pileup_strategy_{ strategy }
-        , par_{ par }
+        : Digitizing::Channel{ side }, pileup_strategy_{ strategy }, par_{ par }
     {
         pmt_peaks_.reserve(TmxPeaksInitialCapacity);
     }

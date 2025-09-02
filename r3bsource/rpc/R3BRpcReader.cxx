@@ -26,13 +26,8 @@ extern "C"
 }
 
 R3BRpcReader::R3BRpcReader(EXT_STR_h101_RPC* data, size_t offset)
-    : R3BReader("R3BRpcReader")
-    , fData(data)
-    , fArrayRpc(new TClonesArray("R3BRpcMappedData"))
-    , fOnline(kFALSE)
-    , fOffset(offset)
-    , fCoarseReference(0)
-    , fNEvent(0)
+    : R3BReader("R3BRpcReader"), fData(data), fArrayRpc(new TClonesArray("R3BRpcMappedData")), fOnline(kFALSE),
+      fOffset(offset), fCoarseReference(0), fNEvent(0)
 {
 }
 

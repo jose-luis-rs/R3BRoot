@@ -19,18 +19,8 @@
 
 // -----   Default constructor   -------------------------------------------
 R3BAmsHitData::R3BAmsHitData()
-    : FairMultiLinkedData()
-    , fDetId(-1)
-    , fNumHit(0)
-    , fMulS(0)
-    , fMulK(0)
-    , fX(0)
-    , fY(0)
-    , fTheta(0)
-    , fPhi(0)
-    , fmaster(0, 0, 0)
-    , fEnergyS(0)
-    , fEnergyK(0)
+    : FairMultiLinkedData(), fDetId(-1), fNumHit(0), fMulS(0), fMulK(0), fX(0), fY(0), fTheta(0), fPhi(0),
+      fmaster(0, 0, 0), fEnergyS(0), fEnergyK(0)
 {
 }
 
@@ -44,35 +34,16 @@ R3BAmsHitData::R3BAmsHitData(Int_t detid,
                              Double_t energy_k,
                              Int_t mulS,
                              Int_t mulK)
-    : FairMultiLinkedData()
-    , fDetId(detid)
-    , fNumHit(numhit)
-    , fMulS(mulS)
-    , fMulK(mulK)
-    , fX(x)
-    , fY(y)
-    , fTheta(master.Theta())
-    , fPhi(master.Phi())
-    , fmaster(master)
-    , fEnergyS(energy_s)
-    , fEnergyK(energy_k)
+    : FairMultiLinkedData(), fDetId(detid), fNumHit(numhit), fMulS(mulS), fMulK(mulK), fX(x), fY(y),
+      fTheta(master.Theta()), fPhi(master.Phi()), fmaster(master), fEnergyS(energy_s), fEnergyK(energy_k)
 {
 }
 // -------------------------------------------------------------------------
 
 R3BAmsHitData::R3BAmsHitData(const R3BAmsHitData& right)
-    : FairMultiLinkedData(right)
-    , fDetId(right.fDetId)
-    , fNumHit(right.fNumHit)
-    , fMulS(right.fMulS)
-    , fMulK(right.fMulK)
-    , fX(right.fX)
-    , fY(right.fY)
-    , fTheta(right.fmaster.Theta())
-    , fPhi(right.fmaster.Phi())
-    , fmaster(right.fmaster)
-    , fEnergyS(right.fEnergyS)
-    , fEnergyK(right.fEnergyK)
+    : FairMultiLinkedData(right), fDetId(right.fDetId), fNumHit(right.fNumHit), fMulS(right.fMulS), fMulK(right.fMulK),
+      fX(right.fX), fY(right.fY), fTheta(right.fmaster.Theta()), fPhi(right.fmaster.Phi()), fmaster(right.fmaster),
+      fEnergyS(right.fEnergyS), fEnergyK(right.fEnergyK)
 {
 }
 

@@ -25,36 +25,10 @@ using namespace std;
 ClassImp(R3BTofiHitModulePar);
 
 R3BTofiHitModulePar::R3BTofiHitModulePar(const char* name, const char* title, const char* context, Bool_t own)
-    : FairParGenericSet(name, title, context, own)
-    , fPlane(0)
-    , fPaddle(0)
-    , fOffset1(0)
-    , fOffset2(0)
-    , fToTOffset1(0)
-    , fToTOffset2(0)
-    , fVeff(0)
-    , fLambda(0)
-    , fSync(0)
-    , fPar1a(0)
-    , fPar1b(0)
-    , fPar1c(0)
-    , fPar1d(0)
-    , fPar2a(0)
-    , fPar2b(0)
-    , fPar2c(0)
-    , fPar2d(0)
-    , fPola(0)
-    , fPolb(0)
-    , fPolc(0)
-    , fPold(0)
-    , fPar1za(0)
-    , fPar1zb(0)
-    , fPar1zc(0)
-    , fPar1walk(0)
-    , fPar2walk(0)
-    , fPar3walk(0)
-    , fPar4walk(0)
-    , fPar5walk(0)
+    : FairParGenericSet(name, title, context, own), fPlane(0), fPaddle(0), fOffset1(0), fOffset2(0), fToTOffset1(0),
+      fToTOffset2(0), fVeff(0), fLambda(0), fSync(0), fPar1a(0), fPar1b(0), fPar1c(0), fPar1d(0), fPar2a(0), fPar2b(0),
+      fPar2c(0), fPar2d(0), fPola(0), fPolb(0), fPolc(0), fPold(0), fPar1za(0), fPar1zb(0), fPar1zc(0), fPar1walk(0),
+      fPar2walk(0), fPar3walk(0), fPar4walk(0), fPar5walk(0)
 {
     // Reset all parameters
     clear();

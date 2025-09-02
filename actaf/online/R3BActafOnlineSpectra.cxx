@@ -44,16 +44,10 @@
 #include "R3BShared.h"
 
 // R3BActafOnlineSpectra::Default Constructor --------------------------
-R3BActafOnlineSpectra::R3BActafOnlineSpectra()
-    : R3BActafOnlineSpectra("ActafOnlineSpectra", 1)
-{
-}
+R3BActafOnlineSpectra::R3BActafOnlineSpectra() : R3BActafOnlineSpectra("ActafOnlineSpectra", 1) {}
 
 // R3BActafOnlineSpectra::Standard Constructor --------------------------
-R3BActafOnlineSpectra::R3BActafOnlineSpectra(const TString& name, Int_t iVerbose)
-    : FairTask(name, iVerbose)
-{
-}
+R3BActafOnlineSpectra::R3BActafOnlineSpectra(const TString& name, Int_t iVerbose) : FairTask(name, iVerbose) {}
 
 void R3BActafOnlineSpectra::SetParContainers()
 {
