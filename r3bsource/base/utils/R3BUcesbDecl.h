@@ -27,8 +27,8 @@ constexpr auto EXT_DATA_STATE_SETUP_WRITE = 5;
 
 struct ext_data_structure_item
 {
-    uint32_t _offset;   /* Not used within STRUCT_WRITER itself. */
-    uint32_t _length;   /* not needed, info only */
+    uint32_t _offset; /* Not used within STRUCT_WRITER itself. */
+    uint32_t _length; /* not needed, info only */
     const char* _block; /* not needed, info only */
 
     const char* _var_name;

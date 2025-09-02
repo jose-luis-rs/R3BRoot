@@ -101,23 +101,23 @@ class R3BSci2Mapped2Tcal : public FairTask
 
   private:
     void SetParameter();
-    Bool_t fOnline;        // Don't store data for online
+    Bool_t fOnline; // Don't store data for online
     TClonesArray* fMapped; /**< Array with mapped items - input data. */
-    TClonesArray* fTcal;   /**< Array with cal items - output data. */
+    TClonesArray* fTcal; /**< Array with cal items - output data. */
     Int_t Icounts_good = 0;
     Int_t Icounts_tot = 0;
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fTrigger; /**< Trigger value. */
 
     UInt_t fNofDetectors; /**< Number of detectors. */
-    UInt_t fNofChannels;  /**< Number of channels per detector. */
-    UInt_t fNofModules;   /**< Total number of channels. */
-    Double_t fClockFreq;  /**< Clock cycle in [ns]. */
+    UInt_t fNofChannels; /**< Number of channels per detector. */
+    UInt_t fNofModules; /**< Total number of channels. */
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t fNEvent;
 
     // Private method to add TcalData

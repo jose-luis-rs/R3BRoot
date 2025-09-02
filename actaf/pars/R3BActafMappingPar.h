@@ -84,7 +84,7 @@ class R3BActafMappingPar : public FairParGenericSet
     std::vector<Int_t> fPad;
 
     const R3BActafMappingPar& operator=(const R3BActafMappingPar&); /*< an assignment operator>*/
-    R3BActafMappingPar(const R3BActafMappingPar&);                  /*< a copy constructor >*/
+    R3BActafMappingPar(const R3BActafMappingPar&); /*< a copy constructor >*/
 
   public:
     ClassDefOverride(R3BActafMappingPar, 1);

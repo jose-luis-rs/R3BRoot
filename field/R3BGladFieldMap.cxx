@@ -586,7 +586,9 @@ void R3BGladFieldMap::ReadAsciiFile(const TString& fileName)
                 //  cout << "-I- " << bx << " : " << by << " : "  << bz  << " : " << endl;
                 if (mapFile.eof())
                 {
-                    R3BLOG(error, " EOF" << " reached at " << ix << " " << iy << " " << iz);
+                    R3BLOG(error,
+                           " EOF"
+                               << " reached at " << ix << " " << iy << " " << iz);
                     mapFile.close();
                     break;
                 }

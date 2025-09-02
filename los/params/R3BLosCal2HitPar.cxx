@@ -446,7 +446,7 @@ void R3BLosCal2HitPar::Fit()
     ROOT::Math::Minimizer* min = ROOT::Math::Factory::CreateMinimizer("Minuit2", "kMigrad");
 
     min->SetMaxFunctionCalls(1000000); // for Minuit/Minuit2
-    min->SetMaxIterations(1000000);    // for GSL
+    min->SetMaxIterations(1000000); // for GSL
     min->SetTolerance(0.001);
     min->SetPrintLevel(2);
     // set precision setPrecision(double eps) 1.e-5 - 1.e-14

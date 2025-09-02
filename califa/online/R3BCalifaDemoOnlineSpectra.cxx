@@ -1116,7 +1116,7 @@ void R3BCalifaDemoOnlineSpectra::Exec(Option_t* option)
                 continue;
 
             Int_t cryId = Map_For_s444(hit->GetCrystalId());
-            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal;        // from 0 to 6 (s444)
+            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal; // from 0 to 6 (s444)
             Int_t cryId_petal = cryId - fNumCrystalPetal * (petal); // from 0 to 63
 
             counter[petal]++;
@@ -1156,7 +1156,7 @@ void R3BCalifaDemoOnlineSpectra::Exec(Option_t* option)
                 continue;
 
             Int_t cryId = Map_For_s444(hit->GetCrystalId());
-            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal;        // from 0 to 7
+            Int_t petal = (Int_t)(cryId) / fNumCrystalPetal; // from 0 to 7
             Int_t cryId_petal = cryId - fNumCrystalPetal * (petal); // from 0 to 63
 
             fh_Califa_cryId_energy_cal->Fill(cryId + 1, hit->GetEnergy());

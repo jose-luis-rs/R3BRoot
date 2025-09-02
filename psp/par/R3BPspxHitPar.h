@@ -63,8 +63,8 @@ class R3BPspxHitPar : public FairParGenericSet
 
   private:
     Int_t fNumDetectors; // number of detectors
-    TArrayF fHitPosPar;  // parameters for position
-    TArrayF fHitEPar;    // parameters for energy
+    TArrayF fHitPosPar; // parameters for position
+    TArrayF fHitEPar; // parameters for energy
 
     R3BPspxHitPar(const R3BPspxHitPar&);
     R3BPspxHitPar& operator=(const R3BPspxHitPar&);

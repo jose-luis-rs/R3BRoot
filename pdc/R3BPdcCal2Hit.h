@@ -109,14 +109,14 @@ class R3BPdcCal2Hit : public FairTask
     virtual void SetParContainers();
 
   private:
-    TClonesArray* fCalItems;        /**< Array with Cal items - input data. */
+    TClonesArray* fCalItems; /**< Array with Cal items - input data. */
     TClonesArray* fCalTriggerItems; /**< Array with trigger Cal items - input data. */
-    TClonesArray* fHitItems;        /**< Array with Hit items - output data. */
-    UInt_t fNofHitItems;            /**< Number of hit items for cur event. */
-                                    //    R3BPdcHitPar* fHitPar;     /**< Hit parameter container. */
-    UInt_t fNofHitPars;             /**< Number of modules in parameter file. */
-    R3BEventHeader* header;         /**< Event header - input data. */
-    Double_t fClockFreq;            /**< Clock cycle in [ns]. */
+    TClonesArray* fHitItems; /**< Array with Hit items - output data. */
+    UInt_t fNofHitItems; /**< Number of hit items for cur event. */
+    //    R3BPdcHitPar* fHitPar;     /**< Hit parameter container. */
+    UInt_t fNofHitPars; /**< Number of modules in parameter file. */
+    R3BEventHeader* header; /**< Event header - input data. */
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t maxevent;
     UInt_t fnEvents;
 

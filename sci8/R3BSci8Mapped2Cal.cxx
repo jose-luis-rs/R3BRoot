@@ -146,8 +146,8 @@ void R3BSci8Mapped2Cal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         UInt_t iDet = hit->GetDetector(); // 1..
-        UInt_t iCha = hit->GetChannel();  // 1..
-        UInt_t iType = hit->GetType();    // 0,1,2
+        UInt_t iCha = hit->GetChannel(); // 1..
+        UInt_t iType = hit->GetType(); // 0,1,2
 
         if ((iDet < 1) || (iDet > fNofDetectors))
         {

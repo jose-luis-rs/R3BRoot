@@ -110,7 +110,7 @@ class R3BIncomingBeta : public FairTask
     void SetParameter();
     R3BCoarseTimeStitch* fTimeStitch;
     R3BIncomingIDPar* fIncomingID_Par; // Parameter container
-    TClonesArray* fFrsDataCA;          /**< Array with FRS-output data. >*/
+    TClonesArray* fFrsDataCA; /**< Array with FRS-output data. >*/
 
     TClonesArray* fHitSci2;
     TClonesArray* fPosCalFrsSci;

@@ -44,7 +44,7 @@ class R3BNeulandVisualizer
   private:
     std::shared_ptr<TFile> fFile;
     TTree* fTree; // non-owning
-    TH3D* fh3;    // non-owning
+    TH3D* fh3; // non-owning
     std::shared_ptr<TCanvas> fCanvas;
     UInt_t fIndex;
 

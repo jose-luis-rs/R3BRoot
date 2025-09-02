@@ -30,8 +30,8 @@ class R3BTofdCalData : public TObject
 
   private:
     UInt_t fDetector; // 1..4
-    UInt_t fBar;      // 1..44
-    UInt_t fSide;     // 1..2
+    UInt_t fBar; // 1..44
+    UInt_t fSide; // 1..2
     Double_t fLeading_ns;
     Double_t fTrailing_ns;
 

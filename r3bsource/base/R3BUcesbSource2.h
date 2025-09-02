@@ -82,7 +82,7 @@ namespace R3B
         unsigned int max_event_num_ = 0;
         size_t event_struct_size_ = 0;
         EventStructType* event_struct_ = nullptr; // non-owning
-        R3BEventHeader* event_header_ = nullptr;  // non-owning
+        R3BEventHeader* event_header_ = nullptr; // non-owning
         std::vector<std::unique_ptr<R3BReader>> readers_;
         std::string lmdfile_name_;
         std::string ntuple_options_;

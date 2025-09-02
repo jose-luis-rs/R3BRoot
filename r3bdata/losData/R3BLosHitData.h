@@ -43,7 +43,7 @@ class R3BLosHitData : public TObject
 
   public:
     Double_t fTime_ns; // average time of the scintillators
-    Double_t fX_cm;    // position in cm
+    Double_t fX_cm; // position in cm
     Double_t fY_cm;
     Double_t fZ; // Charge
 

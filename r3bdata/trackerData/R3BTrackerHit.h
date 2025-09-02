@@ -79,16 +79,16 @@ class R3BTrackerHit : public FairMultiLinkedData
   protected:
     // Basic Hit information
     // Int_t fNbOfTrackerHits; //number of Si hits contributing to the R3BTrackerHit
-    Double_t fEnergy;    // total energy deposited
-    Int_t fDetector;     // Detector hit by event
-    Double_t fXHit;      // Position in x of hit in detector fdetector
-    Double_t fYHit;      // Position in y of hit in detector fdetector
-    Double_t fZHit;      // Position in z of hit in detector fdetector
-    Double_t fPx;        // Momentum in the x direction of particle
-    Double_t fPy;        // Momentum in the y direction of particle
-    Double_t fPz;        // Momentum in the z direction of particle
+    Double_t fEnergy; // total energy deposited
+    Int_t fDetector; // Detector hit by event
+    Double_t fXHit; // Position in x of hit in detector fdetector
+    Double_t fYHit; // Position in y of hit in detector fdetector
+    Double_t fZHit; // Position in z of hit in detector fdetector
+    Double_t fPx; // Momentum in the x direction of particle
+    Double_t fPy; // Momentum in the y direction of particle
+    Double_t fPz; // Momentum in the z direction of particle
     Double_t fThetaZero; // Theta from (0,0,0) in detector fdetector
-    Double_t fPhiZero;   // Phi from (0,0,0) in detector fdetector
+    Double_t fPhiZero; // Phi from (0,0,0) in detector fdetector
 
     ClassDef(R3BTrackerHit, 1)
 };

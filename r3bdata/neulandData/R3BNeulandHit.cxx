@@ -13,7 +13,7 @@
 
 #include "R3BNeulandHit.h"
 
-constexpr Double_t c = 29.97924580000000105;   // cm/ns
+constexpr Double_t c = 29.97924580000000105; // cm/ns
 constexpr Double_t c2 = 898.75517873681758374; // cm²/ns²
 
 R3BNeulandHit::R3BNeulandHit(Int_t paddle,

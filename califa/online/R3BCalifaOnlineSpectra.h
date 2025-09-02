@@ -35,9 +35,9 @@ constexpr const int Nb_PreampCh = 16;
 constexpr const int Nb_SlotandModule = 4; // Febex slot and module info: 0 slot and 1 module, (PR) 2 slot and 3 module
 constexpr const int BinsChannelFebex = 5000; // Number of Bins per Febex channel
 constexpr const int MaxBinChannelFebex = 65535;
-constexpr const int MaxNbCrystals = 5088;  // gamma + proton range channels
+constexpr const int MaxNbCrystals = 5088; // gamma + proton range channels
 constexpr const int BarrelCrystals = 3904; // gamma + proton range channels
-constexpr const int iPhosCrystals = 4864;  // gamma + proton range channels
+constexpr const int iPhosCrystals = 4864; // gamma + proton range channels
 
 class TClonesArray;
 class R3BCalifaMappingPar;
@@ -189,25 +189,25 @@ class R3BCalifaOnlineSpectra : public FairTask
     int fTpat1 = -1;
     int fTpat2 = -1;
 
-    R3BCalifaMappingPar* fMap_Par = nullptr;    // Container with mapping parameters
+    R3BCalifaMappingPar* fMap_Par = nullptr; // Container with mapping parameters
     TClonesArray* fMappedItemsCalifa = nullptr; // Array with mapped items
     TClonesArray* fTrigMappedItemsCalifa = nullptr;
     TClonesArray* fCalItemsCalifa = nullptr; // Array with cal items
     TClonesArray* fHitItemsCalifa = nullptr; // Array with hit items
-    TClonesArray* fWRItemsCalifa = nullptr;  // Array with WR-Califa items
-    TClonesArray* fWRItemsMaster = nullptr;  // Array with WR-Master items
+    TClonesArray* fWRItemsCalifa = nullptr; // Array with WR-Califa items
+    TClonesArray* fWRItemsMaster = nullptr; // Array with WR-Master items
 
     // Check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header = nullptr; // Event header
-    unsigned long long fNEvents = 0;  // Event counter
+    unsigned long long fNEvents = 0; // Event counter
     int fTrigger = -1;
 
-    int fNbCalifaCrystals = MaxNbCrystals;        // Number of Crystals in Califa
-    int fNumSides = Nb_Sides;                     // Number of Sides, left and right
-    int fNumRings = Nb_Rings;                     // Number of Rings
-    int fNumPreamps = Nb_Preamps;                 // Number of Preamps per ring
-    int fNumCrystalPreamp = Nb_PreampCh;          // Number of Crystals/Channels per Preamp
-    int fBinsChannelFebex = BinsChannelFebex;     // Number of Bins per Febex channel
+    int fNbCalifaCrystals = MaxNbCrystals; // Number of Crystals in Califa
+    int fNumSides = Nb_Sides; // Number of Sides, left and right
+    int fNumRings = Nb_Rings; // Number of Rings
+    int fNumPreamps = Nb_Preamps; // Number of Preamps per ring
+    int fNumCrystalPreamp = Nb_PreampCh; // Number of Crystals/Channels per Preamp
+    int fBinsChannelFebex = BinsChannelFebex; // Number of Bins per Febex channel
     int fMaxBinChannelFebex = MaxBinChannelFebex; // Maximum bin for Febex histograms
 
     // Selector for febex or preamp sequence
@@ -215,13 +215,13 @@ class R3BCalifaOnlineSpectra : public FairTask
 
     float fMinProtonE = 50000.; // Min proton energy (in keV) to calculate the opening angle
 
-    TString fCalifaFile;       // Config file name
-    int fMaxEnergyGR = 32000;  // Max. energy for the gamma range in keV
-    int fMaxEnergyPR = 340;    // Max. energy for the proton range in MeV
-    bool fLogScale = true;     // Selecting scale
-    bool fRaw2Cal = false;     // Mapped or Cal selector
+    TString fCalifaFile; // Config file name
+    int fMaxEnergyGR = 32000; // Max. energy for the gamma range in keV
+    int fMaxEnergyPR = 340; // Max. energy for the proton range in MeV
+    bool fLogScale = true; // Selecting scale
+    bool fRaw2Cal = false; // Mapped or Cal selector
     bool fFebex2Preamp = true; // Febex or Preamp selector
-    bool fTotHist = false;     // Tot histograms selector
+    bool fTotHist = false; // Tot histograms selector
     multi_array<int, 4> fFebexInfo;
 
     // Canvas

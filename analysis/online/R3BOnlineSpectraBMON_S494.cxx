@@ -425,7 +425,7 @@ void R3BOnlineSpectraBMON_S494::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
+            Int_t iCha = hit->GetChannel(); // 1..
 
             if (iDet < 2)
                 fh_rolu_channels->Fill(iCha); // ROLU 1
@@ -526,7 +526,7 @@ void R3BOnlineSpectraBMON_S494::Exec(Option_t* option)
             IC = hit->GetIC(); // negative values if offset not high enough
             counts_IC += (double)IC;
 
-            SEETRAM_raw = hit->GetSEETRAM();           // raw counts
+            SEETRAM_raw = hit->GetSEETRAM(); // raw counts
             SEETRAM = (double)SEETRAM_raw * calib_SEE; // calibrated SEETRAM counts
             // cout<<SEETRAM_raw<<" "<<calib_SEE<<" "<<SEETRAM<<"\n";
             counts_SEE += SEETRAM;
@@ -641,12 +641,13 @@ void R3BOnlineSpectraBMON_S494::FinishEvent()
 void R3BOnlineSpectraBMON_S494::FinishTask()
 {
     R3BLOG(info,
-           "\n" << "nEvents total " << fNEvents << "\n"
-                << "nEvents Rolu " << fNEventsRolu << "\n"
-                << "Time_start      : " << time_begin << "\n"
-                << "Time end        : " << time_end << "\n"
-                << "Time duration   : " << (double)(time_end - time_begin) / 1.e9 << " sec \n"
-                << "nSpill          : " << fNSpills);
+           "\n"
+               << "nEvents total " << fNEvents << "\n"
+               << "nEvents Rolu " << fNEventsRolu << "\n"
+               << "Time_start      : " << time_begin << "\n"
+               << "Time end        : " << time_end << "\n"
+               << "Time duration   : " << (double)(time_end - time_begin) / 1.e9 << " sec \n"
+               << "nSpill          : " << fNSpills);
 
     if (fMappedItems.at(DET_ROLU))
     {

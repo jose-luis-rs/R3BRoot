@@ -37,7 +37,7 @@
 #include "R3BNeulandPoint.h"
 
 static const Double_t c2 = 898.75517873681758374; // cm²/ns²
-static const Double_t massNeutron = 939.565379;   // MeV/c²
+static const Double_t massNeutron = 939.565379; // MeV/c²
 
 Double_t Distance(const R3BNeulandNeutron& nn, const FairMCPoint& mc)
 {

@@ -33,9 +33,9 @@ void create_glad_geo(bool create_flange_windows = false, const char* geoTag = "v
     TGeoManager* gGeoMan = NULL;
 
     // Global positioning definition
-    Double_t glad_angle = 14.08;       // deg
+    Double_t glad_angle = 14.08; // deg
     Double_t distanceToTarget = 308.8; // cm
-    Double_t zeroLineOffset = -42.0;   // cm
+    Double_t zeroLineOffset = -42.0; // cm
 
     // -------   Load media from media file   -----------------------------------
     FairGeoLoader* geoLoad = new FairGeoLoader("TGeo", "FairGeoLoader");

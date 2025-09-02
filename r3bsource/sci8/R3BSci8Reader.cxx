@@ -138,7 +138,7 @@ Bool_t R3BSci8Reader::R3BRead()
         // then coarse counter was reseted, and thus, to its value 8192 (in case of VFTX) will be added.
         for (int i = 0; i < numChannels; i++)
         {
-            uint32_t channel = data->SCIEIGHT_VTFMI[i];          // = 1..8
+            uint32_t channel = data->SCIEIGHT_VTFMI[i]; // = 1..8
             uint32_t nextChannelStart = data->SCIEIGHT_VTFME[i]; // index in v for first item of next channel
 
             for (int j = curChannelStart; j < nextChannelStart; j++)
@@ -156,7 +156,7 @@ Bool_t R3BSci8Reader::R3BRead()
         curChannelStart = 0;
         for (int i = 0; i < numChannels; i++) // VFTX, now do the mapping
         {
-            uint32_t channel = data->SCIEIGHT_VTFMI[i];          // = 1..8
+            uint32_t channel = data->SCIEIGHT_VTFMI[i]; // = 1..8
             uint32_t nextChannelStart = data->SCIEIGHT_VTFME[i]; // index in v for first item of next channel
 
             for (int j = curChannelStart; j < nextChannelStart; j++)
@@ -172,11 +172,11 @@ Bool_t R3BSci8Reader::R3BRead()
                          << mean_coarse_vftx << endl;
 
                 new ((*fArray)[fArray->GetEntriesFast()])
-                    R3BSci8MappedData(d + 1,                  // detector number
-                                      channel,                // channel number: 1-8
-                                      0,                      // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
+                    R3BSci8MappedData(d + 1, // detector number
+                                      channel, // channel number: 1-8
+                                      0, // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
                                       data->SCIEIGHT_VTFv[j], // VFTX fine time
-                                      coarse_vftx             // VFTX coarse time
+                                      coarse_vftx // VFTX coarse time
                     );
             }
             curChannelStart = nextChannelStart;

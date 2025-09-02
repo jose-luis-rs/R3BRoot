@@ -72,15 +72,15 @@ class R3BFootMappingPar : public FairParGenericSet
     void SetEnevsPosCorr(Float_t value, Int_t order) { fEnevsPosCorr->AddAt(value, order - 1); }
 
   private:
-    Int_t fGeo;                // Geometry of the foot detectors
-    Int_t fNumDet;             // Number of foot detectors (from 1 to 10 for 2021 experiments)
+    Int_t fGeo; // Geometry of the foot detectors
+    Int_t fNumDet; // Number of foot detectors (from 1 to 10 for 2021 experiments)
     TArrayF* fDistance2target; // Distance to target
-    TArrayF* fAngleTheta;      // Angle with respect to beam direction
-    TArrayF* fAnglePhi;        // Rotation Angle around the Z direction
-    TArrayF* fOffsetX;         // Offset for x
-    TArrayF* fOffsetY;         // Offset for y
-    Int_t fPolPar;             // Number of parameters for polynomial for Energy Vs Position Correction
-    TArrayF* fEnevsPosCorr;    // Polynomial parameters for Energy Vs Position Correction
+    TArrayF* fAngleTheta; // Angle with respect to beam direction
+    TArrayF* fAnglePhi; // Rotation Angle around the Z direction
+    TArrayF* fOffsetX; // Offset for x
+    TArrayF* fOffsetY; // Offset for y
+    Int_t fPolPar; // Number of parameters for polynomial for Energy Vs Position Correction
+    TArrayF* fEnevsPosCorr; // Polynomial parameters for Energy Vs Position Correction
 
     const R3BFootMappingPar& operator=(const R3BFootMappingPar&);
     R3BFootMappingPar(const R3BFootMappingPar&);

@@ -101,20 +101,20 @@ class R3BTofDMapped2Cal : public FairTask
 
     R3BTofDMappingPar* fMapPar;
 
-    TClonesArray* fMappedItems;        /**< Array with mapped items - input data. */
+    TClonesArray* fMappedItems; /**< Array with mapped items - input data. */
     TClonesArray* fMappedTriggerItems; /**< Array with mapped items - input data. */
-    TClonesArray* fCalItems;           /**< Array with cal items - output data. */
-    TClonesArray* fCalTriggerItems;    /**< Array with cal trigger items - output data. */
+    TClonesArray* fCalItems; /**< Array with cal items - output data. */
+    TClonesArray* fCalTriggerItems; /**< Array with cal trigger items - output data. */
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
 
     UInt_t fNofPlanes;
     UInt_t fPaddlesPerPlane; /**< Number of paddles per plane. */
-    Double_t fClockFreq;     /**< Clock cycle in [ns]. */
-    R3BEventHeader* header;  /**< Event header. */
-    Int_t fTrigger;          /**< Trigger value. */
-    Bool_t fOnline;          // Don't store data for online
+    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    R3BEventHeader* header; /**< Event header. */
+    Int_t fTrigger; /**< Trigger value. */
+    Bool_t fOnline; // Don't store data for online
 
     // Fast lookup for matching mapped data.
     std::vector<std::vector<R3BTofdCalData*>> fCalLookup;

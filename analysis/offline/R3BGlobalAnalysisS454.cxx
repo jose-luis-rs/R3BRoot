@@ -616,8 +616,8 @@ void R3BGlobalAnalysisS454::Exec(Option_t* option)
 
             /** Calculate invariant mass and relative energy **/
             Double_t m_inva = (alpha + carbon).M(); // invariant mass
-            Double_t Erel = m_inva - mHe - mC;      // relative Energy
-            fh_Erel->Fill(Erel);                    // relative Energy plot
+            Double_t Erel = m_inva - mHe - mC; // relative Energy
+            fh_Erel->Fill(Erel); // relative Energy plot
 
             if (alpha.Px() < 0. && carbon.Px() < 0.)
                 fh_ErelR->Fill(Erel);

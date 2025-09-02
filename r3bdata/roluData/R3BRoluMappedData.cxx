@@ -20,10 +20,10 @@
 using namespace std;
 
 R3BRoluMappedData::R3BRoluMappedData()
-    : fDetector(0)   // Detector number: 1...n
-    , fChannel(0)    // Channel number:  1...n (n = 4 )
-    , fType(-1)      // Type: 0 =  TAMEX leading edge, 1 = TAMEX trailing edge
-    , fTimeFine(0)   // Fine time
+    : fDetector(0) // Detector number: 1...n
+    , fChannel(0) // Channel number:  1...n (n = 4 )
+    , fType(-1) // Type: 0 =  TAMEX leading edge, 1 = TAMEX trailing edge
+    , fTimeFine(0) // Fine time
     , fTimeCoarse(0) // Coarse time
 {
 }

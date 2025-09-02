@@ -125,14 +125,14 @@ class R3BFootOnlineSpectra : public FairTask
 
   private:
     R3BEventHeader* fEventHeader = nullptr; // // Pointer to the R3BEventHeader structure
-    TClonesArray* fMappedItems = nullptr;   // Array with mapped items.
-    TClonesArray* fCalItems = nullptr;      // Array with cal items.
-    TClonesArray* fHitItems = nullptr;      // Array with hit items.
+    TClonesArray* fMappedItems = nullptr; // Array with mapped items.
+    TClonesArray* fCalItems = nullptr; // Array with cal items.
+    TClonesArray* fHitItems = nullptr; // Array with hit items.
 
     int fTrigger = -1; // Trigger value.
     int fTpat = 0;
     int fNEvents = 0; // Event counter.
-    int fNbDet = 8;   // Number of Foot detectors.
+    int fNbDet = 8; // Number of Foot detectors.
     int eventNumber = 0;
     int fSigmaRefreshRate = 5000;
 

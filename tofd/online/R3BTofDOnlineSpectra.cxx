@@ -816,8 +816,8 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                 continue; // should not happen
 
             Int_t const iPlane = mapped->GetDetectorId(); // 1..n
-            Int_t const iBar = mapped->GetBarId();        // 1..n
-            Int_t const iSide = mapped->GetSideId();      // 1..n
+            Int_t const iBar = mapped->GetBarId(); // 1..n
+            Int_t const iSide = mapped->GetSideId(); // 1..n
             Int_t const iEdge = mapped->GetEdgeId();
 
             if (iSide == 1 && iEdge == 1 && iPlane < fNofPlanes)
@@ -944,8 +944,8 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                 }
 
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
-                if (iPlane > fNofPlanes)             // this also errors for iDetector==0
+                Int_t iBar = top->GetBarId(); // 1..n
+                if (iPlane > fNofPlanes) // this also errors for iDetector==0
                 {
                     R3BLOG(error, "More detectors than expected! Det: " << iPlane << " allowed are 1.." << fNofPlanes);
                     continue;
@@ -992,8 +992,8 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                     fC_range_ns / 2;
 
                 Int_t iPlane = bot->GetDetectorId(); // 1..n
-                Int_t iBar = bot->GetBarId();        // 1..n
-                if (iPlane > fNofPlanes)             // this also errors for iDetector==0
+                Int_t iBar = bot->GetBarId(); // 1..n
+                if (iPlane > fNofPlanes) // this also errors for iDetector==0
                 {
                     R3BLOG(error, "More detectors than expected! Det: " << iPlane << " allowed are 1.." << fNofPlanes);
                     continue;
@@ -1085,7 +1085,7 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                 if (std::abs(dt_mod) < fC_bar_coincidence_ns * 10.)
                 {
                     int iPlane = topc->GetDetectorId(); // 1..n
-                    int iBar = topc->GetBarId();        // 1..n
+                    int iBar = topc->GetBarId(); // 1..n
                     // Histograms to display Y position
                     fh2_tofd_ypos_cal[iPlane - 1]->Fill(iBar, dt_mod);
                     fh2_tofd_timedif_cal[iPlane - 1]->Fill(iBar, topc_ns);
@@ -1115,8 +1115,8 @@ void R3BTofDOnlineSpectra::Exec(Option_t* option)
                     // Hit!
                     // std::cout << "Hit!\n";
                     Int_t iPlane = topc->GetDetectorId(); // 1..n
-                    Int_t iBar = topc->GetBarId();        // 1..n
-                    if (iPlane > fNofPlanes)              // this also errors for iDetector==0
+                    Int_t iBar = topc->GetBarId(); // 1..n
+                    if (iPlane > fNofPlanes) // this also errors for iDetector==0
                     {
                         R3BLOG(error,
                                "More detectors than expected! Det: " << iPlane << " allowed are 1.." << fNofPlanes);

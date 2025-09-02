@@ -117,7 +117,7 @@ class R3BTofDvsTttxOnlineSpectra : public FairTask
 
     int fNEvents = 0;
     int fTpat = 0;
-    double fMinZTofd = 0.;   // Atomic number
+    double fMinZTofd = 0.; // Atomic number
     double fMaxZTofd = 100.; // Atomic number
     int fPlaneTofd = 1;
 

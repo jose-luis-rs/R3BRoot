@@ -47,7 +47,7 @@ class R3BRpcDigitizer : public FairTask
     void SetParameter();
 
     TClonesArray* fRpcPointDataCA; //!  The RPC hit collection
-    TClonesArray* fRpcCalDataCA;   /**< Array with RPC Cal- output data. >*/
+    TClonesArray* fRpcCalDataCA; /**< Array with RPC Cal- output data. >*/
 
     R3BRpcPars4Sim* fSim_Par; // Parameter Container for a Realistic Simulation
 
@@ -59,7 +59,7 @@ class R3BRpcDigitizer : public FairTask
      **/
     R3BRpcCalData* AddCal(Int_t ident, Double_t energy, ULong64_t time, Double_t tot_energy = 0.);
 
-    inline void ResetParameters() {};
+    inline void ResetParameters(){};
 
   public:
     ClassDef(R3BRpcDigitizer, 1);

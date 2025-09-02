@@ -107,10 +107,10 @@ void R3BAmsMapped2StripCal::SetParameter()
 {
 
     //--- Parameter Container ---
-    NumDets = fCal_Par->GetNumDets();            // Number of Detectors
-    NumStrips = fCal_Par->GetNumStrips();        // Number of Strips
-    NumStripsS = fCal_Par->GetNumStripsS();      // Number of Strips S-side
-    NumStripsK = fCal_Par->GetNumStripsK();      // Number of Strips K-side
+    NumDets = fCal_Par->GetNumDets(); // Number of Detectors
+    NumStrips = fCal_Par->GetNumStrips(); // Number of Strips
+    NumStripsS = fCal_Par->GetNumStripsS(); // Number of Strips S-side
+    NumStripsK = fCal_Par->GetNumStripsK(); // Number of Strips K-side
     NumParams = fCal_Par->GetNumParametersFit(); // Number of Parameters
 
     LOG(info) << "R3BAmsMapped2StripCal: Nb detectors: " << NumDets;

@@ -138,8 +138,8 @@ class R3BRpcOnlineSpectra : public FairTask
     Float_t fStrip21Hits;
 
     R3BEventHeader* header; // Event header.
-    Int_t fTrigger;         // Trigger value.
-    Int_t fNEvents;         // Event counter.
+    Int_t fTrigger; // Trigger value.
+    Int_t fNEvents; // Event counter.
 
     /* ----- Map Histograms -----*/
     TH1F* stripCoarseRightHisto[41];

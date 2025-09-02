@@ -117,11 +117,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pSi->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pSi->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pSi->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pSi->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pSi->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pSi->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pSi->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
         // <DB> trick to remove too much internal
         // tracking in the Aladin magnet yoke
@@ -162,11 +162,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pLiH->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pLiH->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pLiH->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pLiH->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pLiH->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pLiH->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pLiH->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pLiH->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pLiH->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pLiH->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pLiH->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pLiH->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pLiH->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pVac = gGeoManager->GetMedium("vacuum");
@@ -197,11 +197,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pVac->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pVac->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pVac->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pVac->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pVac->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pVac->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pVac->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pVac->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pVac->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pVac->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pVac->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pVac->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pVac->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pGold = gGeoManager->GetMedium("gold");
@@ -232,11 +232,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pGold->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pGold->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pGold->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pGold->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pGold->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pGold->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pGold->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pGold->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pGold->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pGold->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pGold->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pGold->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pGold->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pM = gGeoManager->GetMedium("mylar");
@@ -267,11 +267,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pM->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pM->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pM->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pM->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pM->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pM->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pM->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pM->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pM->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pM->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pM->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pM->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pM->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pAl = gGeoManager->GetMedium("aluminium");
@@ -302,11 +302,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pAl->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pAl->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pAl->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pAl->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pAl->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pAl->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pAl->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pAl->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pAl->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pAl->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pAl->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pAl->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pAl->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pC = gGeoManager->GetMedium("carbon");
@@ -337,11 +337,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pC->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pC->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pC->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pC->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pC->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pC->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pC->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pC->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pC->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pC->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pC->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pC->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pC->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pHe = gGeoManager->GetMedium("helium");
@@ -372,11 +372,11 @@ void R3BTra::SetSpecialPhysicsCuts()
             gMC->Gstpar(pHe->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             gMC->Gstpar(pHe->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             gMC->Gstpar(pHe->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            gMC->Gstpar(pHe->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            gMC->Gstpar(pHe->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            gMC->Gstpar(pHe->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            gMC->Gstpar(pHe->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            gMC->Gstpar(pHe->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            gMC->Gstpar(pHe->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            gMC->Gstpar(pHe->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            gMC->Gstpar(pHe->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            gMC->Gstpar(pHe->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            gMC->Gstpar(pHe->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
     } //! gGeoManager
 }

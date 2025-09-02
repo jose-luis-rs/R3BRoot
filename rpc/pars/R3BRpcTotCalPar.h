@@ -61,7 +61,7 @@ class R3BRpcTotCalPar : public FairParGenericSet
 
   private:
     TArrayF* fCalParams; /*< Calibration Parameters of Channels>*/
-    Int_t fNumChannels;  /*< number of channels>*/
+    Int_t fNumChannels; /*< number of channels>*/
 
     const R3BRpcTotCalPar& operator=(const R3BRpcTotCalPar&);
     R3BRpcTotCalPar(const R3BRpcTotCalPar&);

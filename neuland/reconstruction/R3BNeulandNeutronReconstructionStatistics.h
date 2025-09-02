@@ -32,7 +32,7 @@ class R3BNeulandNeutronReconstructionStatistics : public FairTask
 
     // No copy and no move is allowed (Rule of three/five)
     R3BNeulandNeutronReconstructionStatistics(const R3BNeulandNeutronReconstructionStatistics&) =
-        delete;                                                                                      // copy constructor
+        delete; // copy constructor
     R3BNeulandNeutronReconstructionStatistics(R3BNeulandNeutronReconstructionStatistics&&) = delete; // move constructor
     R3BNeulandNeutronReconstructionStatistics& operator=(const R3BNeulandNeutronReconstructionStatistics&) =
         delete; // copy assignment

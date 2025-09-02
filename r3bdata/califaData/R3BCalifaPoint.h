@@ -61,7 +61,7 @@ class R3BCalifaPoint : public FairMCPoint
 
   protected:
     int fCrystalId = 0; // Crystal index
-    int fTrackPID = 0;  // PID
+    int fTrackPID = 0; // PID
 
     ClassDefOverride(R3BCalifaPoint, 2)
 };

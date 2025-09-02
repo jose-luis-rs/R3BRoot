@@ -95,7 +95,7 @@ class R3BMusliOnlineSpectra : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header.      */
-    Int_t fNEvents;         /**< Event counter.     */
+    Int_t fNEvents; /**< Event counter.     */
 
     // Canvas at MAPPED level
     TCanvas* cMusliMap_Mult;

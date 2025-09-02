@@ -105,10 +105,10 @@ class R3BTwimOnlineSpectra : public FairTask
     void s455();
 
     TClonesArray* fMappedItemsTwim = nullptr; /**< Array with mapped items. */
-    TClonesArray* fCalItemsTwim = nullptr;    /**< Array with cal items. */
-    TClonesArray* fHitItemsTwim = nullptr;    /**< Array with hit items. */
-    TClonesArray* fHitItemsMwpc3 = nullptr;   /**< Array with mw3-hit items. */
-    TClonesArray* fHitItemsTofW = nullptr;    /**< Array with tofw-hit items. */
+    TClonesArray* fCalItemsTwim = nullptr; /**< Array with cal items. */
+    TClonesArray* fHitItemsTwim = nullptr; /**< Array with hit items. */
+    TClonesArray* fHitItemsMwpc3 = nullptr; /**< Array with mw3-hit items. */
+    TClonesArray* fHitItemsTofW = nullptr; /**< Array with tofw-hit items. */
 
     // check for trigger should be done globablly (somewhere else)
     int fNEvents = 0;

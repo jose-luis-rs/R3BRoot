@@ -66,8 +66,8 @@ bool R3BCryAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen)
     Int_t fPrevEventId = 0;
 
     // Define track variables
-    Int_t pdgType = 0;  // PDG code
-    Double_t KEn = 0.;  // kinetic energy read in MeV
+    Int_t pdgType = 0; // PDG code
+    Double_t KEn = 0.; // kinetic energy read in MeV
     Double_t cosA = 0.; // direction cosines
     Double_t cosB = 0.;
     Double_t cosC = 0.;
@@ -76,7 +76,7 @@ bool R3BCryAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen)
     Double_t vz = 0.;
 
     // Intermediate varibles
-    Double_t p = 0.;  // total momentum
+    Double_t p = 0.; // total momentum
     Double_t px = 0.; // momentum componets
     Double_t py = 0.;
     Double_t pz = 0.;

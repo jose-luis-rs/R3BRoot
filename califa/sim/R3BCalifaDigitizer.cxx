@@ -73,7 +73,7 @@ void R3BCalifaDigitizer::SetParameter()
     if (fRealConfig == true)
     {
         //--- Parameter Container ---
-        fNumCrystals = fSim_Par->GetNumCrystals() / 2;      // Number of Crystals
+        fNumCrystals = fSim_Par->GetNumCrystals() / 2; // Number of Crystals
         fNumberOfParams = fSim_Par->GetNumParameters4Sim(); // Number of Parameters
 
         const auto numcryroot = R3BCalifaGeometry::Instance()->GetNbCrystals() / 2;

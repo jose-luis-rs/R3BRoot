@@ -75,7 +75,7 @@ class R3BPspxCal2Hit : public FairTask
   private:
     void SetParameters();
 
-    R3BEventHeader* fHeader;              // do we need that?
+    R3BEventHeader* fHeader; // do we need that?
     std::vector<TClonesArray*> fCalItems; /**< Array holding input (Cal) data */
     std::vector<TClonesArray*> fHitItems; /**< Array holding output (Hit) data */
 

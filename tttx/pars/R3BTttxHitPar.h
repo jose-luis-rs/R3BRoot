@@ -68,9 +68,9 @@ class R3BTttxHitPar : public FairParGenericSet
     /** Create more Methods if you need them! **/
 
   private:
-    int fNumDets = 2;     // Number of detectors
+    int fNumDets = 2; // Number of detectors
     int fNumParsZfit = 2; // Number of parameters used to calibrate the charge Z
-    TArrayF* fZfitpar;    // Parameters used to calibrate the charge Z
+    TArrayF* fZfitpar; // Parameters used to calibrate the charge Z
 
     const R3BTttxHitPar& operator=(const R3BTttxHitPar&);
     R3BTttxHitPar(const R3BTttxHitPar&);

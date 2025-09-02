@@ -74,8 +74,8 @@ class R3BMSOffsetFinder : public FairTask // NOLINT
     // Minimum statistics and parameters
     Int_t fMinStatistics = 1;
 
-    R3BMSOffsetPar* fMSOffsetPar = nullptr;   /**< Parameter container. >*/
-    TClonesArray* fSamplerMapped = nullptr;   /**< Array with SAMP Mapped input data. >*/
+    R3BMSOffsetPar* fMSOffsetPar = nullptr; /**< Parameter container. >*/
+    TClonesArray* fSamplerMapped = nullptr; /**< Array with SAMP Mapped input data. >*/
     TClonesArray* fSamplerMSMapped = nullptr; /**< Array with SAMPMS MApped input data. >*/
 
     TH1F* fh_Offset_Finder = nullptr;

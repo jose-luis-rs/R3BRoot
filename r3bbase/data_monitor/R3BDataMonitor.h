@@ -31,9 +31,8 @@ namespace R3B
         DataMonitor() = default;
 
         template <typename... Args>
-        [[nodiscard]] auto create_canvas(std::string_view canvas_name,
-                                         std::string_view canvas_title,
-                                         Args&&... args) -> DataMonitorCanvas&;
+        [[nodiscard]] auto create_canvas(std::string_view canvas_name, std::string_view canvas_title, Args&&... args)
+            -> DataMonitorCanvas&;
 
         // Use R3B::make_hist to create unique_ptr<TH1>
         [[nodiscard]] auto add_hist(std::unique_ptr<TH1> hist) -> TH1*
@@ -108,9 +107,8 @@ namespace R3B
     }
 
     template <typename... Args>
-    auto DataMonitor::create_canvas(std::string_view canvas_name,
-                                    std::string_view canvas_title,
-                                    Args&&... args) -> DataMonitorCanvas&
+    auto DataMonitor::create_canvas(std::string_view canvas_name, std::string_view canvas_title, Args&&... args)
+        -> DataMonitorCanvas&
     {
         if (canvases_.find(std::string{ canvas_name }) != canvases_.end())
         {

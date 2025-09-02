@@ -465,7 +465,7 @@ InitStatus R3BOnlineSpectraLosVsSci2::Init()
             fh_los_dt_hits_ToT[iloscount] =
                 new TH2F(Form("%s_dt_ToT", detName), Form("%s ToT dt ", detName), 4000, -4., 4., 300, 0, 300.);
             fh_los_dt_hits_ToT[iloscount]->GetXaxis()->SetTitle("Time MCFD / ns"); // dt between two hits / ns
-            fh_los_dt_hits_ToT[iloscount]->GetYaxis()->SetTitle("ToT / ns");       // ToT / ns
+            fh_los_dt_hits_ToT[iloscount]->GetYaxis()->SetTitle("ToT / ns"); // ToT / ns
 
             fh_los_tres_MCFD[iloscount] = new TH1F(Form("%s_dt_4vs4_MCFD", detName),
                                                    Form("%s MCFD Time resolution - 4pmts vs 4pmts", detName),
@@ -856,8 +856,8 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
-            Int_t iTyp = hit->GetType();     // 0,1,2,3
+            Int_t iCha = hit->GetChannel(); // 1..
+            Int_t iTyp = hit->GetType(); // 0,1,2,3
 
             fh_los_channels[iDet - 1]->Fill(iCha); // exclude MTDC data
         }
@@ -1229,7 +1229,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                                 Beta = Velo / 0.299792458;
                                 Gamma = 1. / (TMath::Sqrt(1. - TMath::Power(Beta, 2)));
                                 PosRaw = iRawTimeNs[0][multR] - iRawTimeNs[1][multL]; // [ns]
-                                PosCal = fPos_p0 + fPos_p1 * PosRaw;                  // [mm] at S2
+                                PosCal = fPos_p0 + fPos_p1 * PosRaw; // [mm] at S2
                                 Brho = fBrho0_S2toCC * (1. - PosCal / fDispersionS2);
                                 AoQ = Brho / (3.10716 * Beta * Gamma);
                             }
@@ -1263,7 +1263,7 @@ void R3BOnlineSpectraLosVsSci2::Exec(Option_t* option)
                 Beta_m1 = Velo_m1 / 0.299792458;
                 Gamma_m1 = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1, 2)));
                 PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]
-                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1;       // [mm] at S2
+                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1; // [mm] at S2
                 Brho_m1 = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
                 AoQ_m1 = Brho_m1 / (3.10716 * Beta_m1 * Gamma_m1);
                 fh1_RawPos_m1->Fill(PosRaw_m1);

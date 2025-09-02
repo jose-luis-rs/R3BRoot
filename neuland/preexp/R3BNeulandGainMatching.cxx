@@ -25,10 +25,10 @@
 namespace
 {
     Float_t const MAX_STEPS = 10;
-    Float_t const Kp = 1.0;   // Adjust PID here !!
+    Float_t const Kp = 1.0; // Adjust PID here !!
     Float_t const Ki = 0.075; // Adjust PID here !!
     Float_t const Kd = 0.025; // Adjust PID here !!
-    Float_t const Ta = 0.5;   // Adjust PID here !!
+    Float_t const Ta = 0.5; // Adjust PID here !!
     Float_t const xtargetp1 = 95.;
     Float_t const accuracy = 0.01;
     Float_t const starthv = 1100.;

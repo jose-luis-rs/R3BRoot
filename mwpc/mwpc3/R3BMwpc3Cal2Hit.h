@@ -78,8 +78,8 @@ class R3BMwpc3Cal2Hit : public FairTask
 
     Double_t fSizeX; // Detector size in X and Y
     Double_t fSizeY; // Detector size in X and Y
-    Double_t fwx;    // Pad width in X
-    Double_t fwy;    // Pad width in Y
+    Double_t fwx; // Pad width in X
+    Double_t fwy; // Pad width in Y
     Double_t fx[Mw3PadsX], fy[Mw3PadsY];
     vector<Int_t> fQX;
     vector<Int_t> fQY;
@@ -92,12 +92,12 @@ class R3BMwpc3Cal2Hit : public FairTask
 
     double fThresholdX;
     double fThresholdY;
-    Bool_t fOnline;          // Don't store data for online
+    Bool_t fOnline; // Don't store data for online
     Bool_t fTofWallMatching; // boolean to know if position matching with the tofwall is required
     Int_t fExpId;
 
-    TClonesArray* fMwpcCalDataCA;    /**< Array with Cal input data. >*/
-    TClonesArray* fMwpcHitDataCA;    /**< Array with Hit output data. >*/
+    TClonesArray* fMwpcCalDataCA; /**< Array with Cal input data. >*/
+    TClonesArray* fMwpcHitDataCA; /**< Array with Hit output data. >*/
     TClonesArray* fTofWallHitDataCA; /**< Array with Hit output data. >*/
 
     /** Private method AddHitData **/

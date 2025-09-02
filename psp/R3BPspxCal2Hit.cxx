@@ -230,7 +230,7 @@ void R3BPspxCal2Hit::Exec(Option_t* option)
             Float_t energy = calData->GetEnergy() * eGain[d] + eOffset[d]; // convert energy to MeV
             Float_t pos =
                 calData->GetPos() * orientation[d] /** detSize[d]*/; // convert position to mm, flip axis if necessary
-            pos = pos * posSlope[d] + posOffset[d];                  // correct position for detector offset and tilt
+            pos = pos * posSlope[d] + posOffset[d]; // correct position for detector offset and tilt
             new ((*fHitItems[d])[fHitItems[d]->GetEntriesFast()])
                 R3BPspxHitData(energy, pos); // register hit level event
         }

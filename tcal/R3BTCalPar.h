@@ -145,11 +145,11 @@ class R3BTCalPar : public FairParGenericSet
 
   private:
     const R3BTCalPar& operator=(const R3BTCalPar&); /**< an assignment operator */
-    R3BTCalPar(const R3BTCalPar&);                  /**< a copy constructor */
+    R3BTCalPar(const R3BTCalPar&); /**< a copy constructor */
 
     TObjArray* fTCalParams; /**< an array with parameter containers of all modules */
 
-    Bool_t fMapInit;             /**< a boolean flag for indication whether the indexing map is initialized */
+    Bool_t fMapInit; /**< a boolean flag for indication whether the indexing map is initialized */
     map<Int_t, Int_t> fIndexMap; /**< a map between index of a container in array and plane,paddle,side */
 
   public:

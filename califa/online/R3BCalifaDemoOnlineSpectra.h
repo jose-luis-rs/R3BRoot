@@ -131,18 +131,18 @@ class R3BCalifaDemoOnlineSpectra : public FairTask
     Int_t fMapHistos_bins;
 
     TClonesArray* fMappedItemsCalifa; /**< Array with mapped items.    */
-    TClonesArray* fCalItemsCalifa;    /**< Array with cal items.       */
-    TClonesArray* fHitItemsCalifa;    /**< Array with hit items.       */
-    TClonesArray* fWRItemsCalifa;     /**< Array with WR-Califa items. */
-    TClonesArray* fWRItemsMaster;     /**< Array with WR-Master items. */
+    TClonesArray* fCalItemsCalifa; /**< Array with cal items.       */
+    TClonesArray* fHitItemsCalifa; /**< Array with hit items.       */
+    TClonesArray* fWRItemsCalifa; /**< Array with WR-Califa items. */
+    TClonesArray* fWRItemsMaster; /**< Array with WR-Master items. */
 
     // Check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header.  */
-    Int_t fTrigger;         /**< Trigger value. */
-    Int_t fNEvents;         /**< Event counter. */
+    Int_t fTrigger; /**< Trigger value. */
+    Int_t fNEvents; /**< Event counter. */
 
-    Int_t fCalifaNumPetals;      /**< Number of Petals.   */
-    Int_t fNumCrystalPetal;      /**< Crystals per Petal. */
+    Int_t fCalifaNumPetals; /**< Number of Petals.   */
+    Int_t fNumCrystalPetal; /**< Crystals per Petal. */
     Int_t fOrderFebexPreamp[16]; /**< Selector for febex or preamp sequence. */
 
     // Multiplicities
@@ -171,10 +171,10 @@ class R3BCalifaDemoOnlineSpectra : public FairTask
     TH2F* fh_Califa_theta_energy[N_MAX_PETALS];
     TH1F* fh_Califa_total_energy;
 
-    TString fCalifaFile;  /**< Config file name. */
-    Bool_t fCalON;        /**< Cal selector. */
-    Bool_t fLogScale;     /**< Selecting scale. */
-    Bool_t fRaw2Cal;      /**< Mapped or Cal selector. */
+    TString fCalifaFile; /**< Config file name. */
+    Bool_t fCalON; /**< Cal selector. */
+    Bool_t fLogScale; /**< Selecting scale. */
+    Bool_t fRaw2Cal; /**< Mapped or Cal selector. */
     Bool_t fFebex2Preamp; /**< Febex or Preamp selector. */
 
     TCanvas* cMap;

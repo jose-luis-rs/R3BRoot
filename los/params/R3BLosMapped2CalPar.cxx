@@ -108,8 +108,8 @@ void R3BLosMapped2CalPar::Exec(Option_t* option)
 
         // channel numbers are supposed to be 1-based (1..n)
         auto iDetector = hit->GetDetector() - 1; // now 0..n-1
-        auto iChannel = hit->GetChannel() - 1;   // now 0..n-1
-        auto iType = hit->GetType();             // 0,1,2,3
+        auto iChannel = hit->GetChannel() - 1; // now 0..n-1
+        auto iType = hit->GetType(); // 0,1,2,3
 
         if (iType < 3)
         {

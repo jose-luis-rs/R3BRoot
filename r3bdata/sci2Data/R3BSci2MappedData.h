@@ -27,8 +27,8 @@ class R3BSci2MappedData : public TObject
     // private:
   public:
     UInt_t fDetector; // 1..n
-    UInt_t fChannel;  // 1..n (n=4 or 8 or 18)
-    UInt_t fType;     // 0 (VFTX), 1 (TAMEX leading), 2 (TAMEX trailing)
+    UInt_t fChannel; // 1..n (n=4 or 8 or 18)
+    UInt_t fType; // 0 (VFTX), 1 (TAMEX leading), 2 (TAMEX trailing)
     UInt_t fTimeCoarse;
     UInt_t fTimeFine;
     Int_t fNEvents = 0;

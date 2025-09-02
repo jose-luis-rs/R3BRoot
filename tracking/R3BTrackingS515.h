@@ -61,33 +61,33 @@ class R3BTrackingS515 : public FairTask
     void SetMaxEvent(Int_t nev) { maxevent = nev; }
 
     // Set lab positions and angles of the detectors from the steering macro
-    void SetPositionLOS(double x, double y, double z) { los_position.SetXYZ(x, y, z); }   // cm
+    void SetPositionLOS(double x, double y, double z) { los_position.SetXYZ(x, y, z); } // cm
     void SetPositionMWPC(double x, double y, double z) { mwpc_position.SetXYZ(x, y, z); } // cm
-    void SetPositionF10(double x, double y, double z) { f10_position.SetXYZ(x, y, z); }   // cm
-    void SetPositionF11(double x, double y, double z) { f11_position.SetXYZ(x, y, z); }   // cm
-    void SetPositionF12(double x, double y, double z) { f12_position.SetXYZ(x, y, z); }   // cm
+    void SetPositionF10(double x, double y, double z) { f10_position.SetXYZ(x, y, z); } // cm
+    void SetPositionF11(double x, double y, double z) { f11_position.SetXYZ(x, y, z); } // cm
+    void SetPositionF12(double x, double y, double z) { f12_position.SetXYZ(x, y, z); } // cm
     void SetPositionTofd(double x, double y, double z) { tofd_position.SetXYZ(x, y, z); } // cm
 
-    void SetEulerAnglesLOS(double x, double y, double z) { los_angles.SetXYZ(x, y, z); }   // rad
+    void SetEulerAnglesLOS(double x, double y, double z) { los_angles.SetXYZ(x, y, z); } // rad
     void SetEulerAnglesMWPC(double x, double y, double z) { mwpc_angles.SetXYZ(x, y, z); } // rad
-    void SetEulerAnglesF10(double x, double y, double z) { f10_angles.SetXYZ(x, y, z); }   // rad
-    void SetEulerAnglesF11(double x, double y, double z) { f11_angles.SetXYZ(x, y, z); }   // rad
-    void SetEulerAnglesF12(double x, double y, double z) { f12_angles.SetXYZ(x, y, z); }   // rad
+    void SetEulerAnglesF10(double x, double y, double z) { f10_angles.SetXYZ(x, y, z); } // rad
+    void SetEulerAnglesF11(double x, double y, double z) { f11_angles.SetXYZ(x, y, z); } // rad
+    void SetEulerAnglesF12(double x, double y, double z) { f12_angles.SetXYZ(x, y, z); } // rad
     void SetEulerAnglesTofd(double x, double y, double z) { tofd_angles.SetXYZ(x, y, z); } // rad
 
     // Get lab positions and angles (needed by alignment function)
-    inline TVector3 GetPositionLOS() { return los_position; }   // cm
+    inline TVector3 GetPositionLOS() { return los_position; } // cm
     inline TVector3 GetPositionMWPC() { return mwpc_position; } // cm
-    inline TVector3 GetPositionF10() { return f10_position; }   // cm
-    inline TVector3 GetPositionF11() { return f11_position; }   // cm
-    inline TVector3 GetPositionF12() { return f12_position; }   // cm
+    inline TVector3 GetPositionF10() { return f10_position; } // cm
+    inline TVector3 GetPositionF11() { return f11_position; } // cm
+    inline TVector3 GetPositionF12() { return f12_position; } // cm
     inline TVector3 GetPositionTofd() { return tofd_position; } // cm
 
-    inline TVector3 GetEulerAnglesLOS() { return los_angles; }   // rad
+    inline TVector3 GetEulerAnglesLOS() { return los_angles; } // rad
     inline TVector3 GetEulerAnglesMWPC() { return mwpc_angles; } // rad
-    inline TVector3 GetEulerAnglesF10() { return f10_angles; }   // rad
-    inline TVector3 GetEulerAnglesF11() { return f11_angles; }   // rad
-    inline TVector3 GetEulerAnglesF12() { return f12_angles; }   // rad
+    inline TVector3 GetEulerAnglesF10() { return f10_angles; } // rad
+    inline TVector3 GetEulerAnglesF11() { return f11_angles; } // rad
+    inline TVector3 GetEulerAnglesF12() { return f12_angles; } // rad
     inline TVector3 GetEulerAnglesTofd() { return tofd_angles; } // rad
 
     R3BMDFWrapper* Get_MDF_PoQ() { return MDF_PoQ; }
@@ -166,7 +166,7 @@ class R3BTrackingS515 : public FairTask
 
     R3BEventHeader* fHeader;
     std::vector<TClonesArray*> fDataItems; // input data
-    TClonesArray* fTrackItems;             // output data
+    TClonesArray* fTrackItems; // output data
 
     TVector3 los_position;
     TVector3 mwpc_position;
@@ -196,7 +196,7 @@ class R3BTrackingS515 : public FairTask
     TString MDF_TX1_filename;
     TString MDF_TY1_filename;
 
-    Double_t mdf_data[8];   // data container for the MDF function
+    Double_t mdf_data[8]; // data container for the MDF function
     unsigned long fNEvents; // Event counter
     Int_t fTrigger;
     Int_t fTpat;
@@ -238,7 +238,7 @@ class R3BTrackingS515 : public FairTask
 
     // Essential constants
     const Double_t SPEED_OF_LIGHT = 29.9792458; // cm/ns
-    const Double_t AMU = 0.9314940038;          // GeV/c2
+    const Double_t AMU = 0.9314940038; // GeV/c2
 
     // Private method to fill output track data
     R3BTrack* AddTrackData(TVector3 mw, TVector3 poq, Double_t charge, Double_t aoz);

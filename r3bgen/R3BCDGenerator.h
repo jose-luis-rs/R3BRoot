@@ -48,7 +48,7 @@ class R3BCDGenerator : public TObject
     Double_t px1; // momentum components for particle 1
     Double_t py1;
     Double_t pz1;
-    Double_t E1;  // energy for particle 1
+    Double_t E1; // energy for particle 1
     Double_t px2; // momentum components for particle 2
     Double_t py2;
     Double_t pz2;

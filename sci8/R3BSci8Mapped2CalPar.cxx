@@ -142,8 +142,8 @@ void R3BSci8Mapped2CalPar::Exec(Option_t* option)
 
         // channel numbers are supposed to be 1-based (1..n)
         UInt_t iDetector = hit->GetDetector() - 1; // now 0..n-1
-        UInt_t iChannel = hit->GetChannel() - 1;   // now 0..n-1
-        UInt_t iType = hit->GetType();             // 0,1,2
+        UInt_t iChannel = hit->GetChannel() - 1; // now 0..n-1
+        UInt_t iType = hit->GetType(); // 0,1,2
 
         if (iDetector > (fNofDetectors - 1))
         {

@@ -34,8 +34,8 @@ class R3BRoluMappedData : public TObject
 
   public:
     UInt_t fDetector; // 1..n
-    UInt_t fChannel;  // 1..n (n=4 )
-    Int_t fType;      // 0 (TAMEX leading), 1 (TAMEX trailing)
+    UInt_t fChannel; // 1..n (n=4 )
+    Int_t fType; // 0 (TAMEX leading), 1 (TAMEX trailing)
     UInt_t fTimeCoarse;
     UInt_t fTimeFine;
 

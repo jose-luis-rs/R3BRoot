@@ -89,7 +89,7 @@ void R3BTttxCal2Hit::SetParContainers()
 void R3BTttxCal2Hit::SetParameter()
 {
     //--- Parameter Container ---
-    NumDets = fHit_Par->GetNumDets();     // Number of Detectors
+    NumDets = fHit_Par->GetNumDets(); // Number of Detectors
     NumPars = fHit_Par->GetNumParsZfit(); // Number of Parameters per each detector
     R3BLOG(info, "Nb detectors: " << NumDets << ", Nb of Parameters per det: " << NumPars);
 

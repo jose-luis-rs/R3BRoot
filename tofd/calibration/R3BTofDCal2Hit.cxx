@@ -536,7 +536,7 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
                 inbarcoincidence++;
                 // Hit!
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
+                Int_t iBar = top->GetBarId(); // 1..n
 
                 if (iBar > 44)
                     continue;
@@ -900,9 +900,9 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
     { // loop over all hits in this event
         LOG(debug) << "Set new coincidence window: " << event[ihit].plane << " " << event[ihit].bar << " "
                    << event[ihit].time << " " << event[ihit].charge;
-        time0 = event[ihit].time;              // time of first hit in coincidence window
+        time0 = event[ihit].time; // time of first hit in coincidence window
         Double_t charge0 = event[ihit].charge; // charge of first hit in coincidence window
-        Int_t plane0 = event[ihit].plane;      // plane of first hit in coincidence window
+        Int_t plane0 = event[ihit].plane; // plane of first hit in coincidence window
         std::vector<Double_t> goodcharge;
         std::vector<Double_t> goodplane;
         std::vector<Double_t> goodbar;
@@ -1036,10 +1036,10 @@ void R3BTofDCal2Hit::Exec(Option_t* option)
     {
         size_t ihit = 0;
         for (; ihit < event.size();)
-        {                                                                          // loop over all hits
+        { // loop over all hits
             fhQ[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].charge); // charge per plane
             fhQvsEvent[event[ihit].plane - 1]->Fill(fnEvents, event[ihit].charge); // charge vs event #
-            fhxy[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].ypos);  // xy of plane
+            fhxy[event[ihit].plane - 1]->Fill(event[ihit].bar, event[ihit].ypos); // xy of plane
             ihit++;
         }
     }

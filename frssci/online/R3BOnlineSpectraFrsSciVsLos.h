@@ -90,8 +90,8 @@ class R3BOnlineSpectraFrsSciVsLos : public FairTask
     R3BEventHeader* fEventHeader; /**< Event header.      */
 
     TClonesArray* fFrsSci_Tcal; /**< Array with R3BFrsSciPosCalData */
-    TClonesArray* fLos_Cal;     /**< Array with R3BLosCalData */
-    Int_t fNEvents;             /**< Event counter.     */
+    TClonesArray* fLos_Cal; /**< Array with R3BLosCalData */
+    Int_t fNEvents; /**< Event counter.     */
     UShort_t fFrsSciNbDets;
     UShort_t fFrsSciNbPmts;
     UShort_t fLosTrefPmtId;

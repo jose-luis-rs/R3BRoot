@@ -130,8 +130,8 @@ void R3BRoluMapped2CalPar::Exec(Option_t* option)
 
         // channel numbers are supposed to be 1-based (1..n)
         unsigned int iDetector = hit->GetDetector() - 1; // now 0..n-1
-        unsigned int iChannel = hit->GetChannel() - 1;   // now 0..n-1
-        unsigned int iType = hit->GetType();             // 0,1
+        unsigned int iChannel = hit->GetChannel() - 1; // now 0..n-1
+        unsigned int iType = hit->GetType(); // 0,1
 
         if (iDetector > (fNofDetectors - 1))
         {

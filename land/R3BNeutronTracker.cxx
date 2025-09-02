@@ -1478,7 +1478,7 @@ void R3BNeutronTracker::Exec(Option_t* opt)
             {
                 beta[i] =
                     PRIM_part[i].p / sqrt(PRIM_part[i].p * PRIM_part[i].p + PRIM_part[i].M * PRIM_part[i].M); // beta
-                gamma[i] = 1. / sqrt(1. - beta[i] * beta[i]);                                                 // gamma
+                gamma[i] = 1. / sqrt(1. - beta[i] * beta[i]); // gamma
                 momentumT[i] = PRIM_part[i].p;
                 momentumX[i] = PRIM_part[i].px;
                 momentumY[i] = PRIM_part[i].py;
@@ -1500,8 +1500,8 @@ void R3BNeutronTracker::Exec(Option_t* opt)
         // fragment: This information have to come later from the Tracker
         Double_t beta_frag =
             PRIM_frag[0].p / sqrt(PRIM_frag[0].p * PRIM_frag[0].p + PRIM_frag[0].M * PRIM_frag[0].M); // beta
-        Double_t gamma_frag = 1. / sqrt(1. - beta_frag * beta_frag);                                  // gamma
-        Double_t energy_frag = gamma_frag * PRIM_frag[0].A * amu;                                     // total energy
+        Double_t gamma_frag = 1. / sqrt(1. - beta_frag * beta_frag); // gamma
+        Double_t energy_frag = gamma_frag * PRIM_frag[0].A * amu; // total energy
 
         cout << "result1 " << sum_momentumX << "  " << sum_momentumY << "  " << sum_momentumZ << endl;
         cout << " beta gamma frag" << beta_frag << "  " << gamma_frag << endl;

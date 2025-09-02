@@ -81,10 +81,10 @@ class R3BSitrackerHit : public FairHit
 
     // Basic Hit information
     Double32_t fEnergy; // total energy deposited on the paddle
-    UInt_t nbOfSteps;   // number of step depositing energy in the crystal
+    UInt_t nbOfSteps; // number of step depositing energy in the crystal
 
     Double32_t fTimeFirstStep; // time of the first interaction
-    Double32_t fTimeLastStep;  // time of the last interaction
+    Double32_t fTimeLastStep; // time of the last interaction
 
     // Primary identification
     UInt_t nbOfPrimaries; // for a gamma source
@@ -94,7 +94,7 @@ class R3BSitrackerHit : public FairHit
 
     // Event identification
     UInt_t eventID; // event ID
-    UInt_t runID;   // run ID
+    UInt_t runID; // run ID
 
     ClassDef(R3BSitrackerHit, 1)
 };

@@ -33,16 +33,16 @@ R3BSpecificGenerator::R3BSpecificGenerator()
     , backTrackingFlag("off")
     , targetType("Parafin0Deg")
     , targetHalfThicknessPara((0.11 / 2.) / 10.) // cm
-    , targetThicknessLiH(3.5)                    // cm
-    , targetRadius(1.)                           // cm
+    , targetThicknessLiH(3.5) // cm
+    , targetRadius(1.) // cm
     , beamInteractionFlag("off")
     , rndmFlag("off")
     , rndmEneFlag("off")
     , boostFlag("off")
     , fPDGType(2212)
-    , kinEnergyPrim(1e-03)            // GeV - kinetic energy of the primary
+    , kinEnergyPrim(1e-03) // GeV - kinetic energy of the primary
     , meanKinEnergyBeam(700. * 1e-03) // GeV - kinetic energy mean of the beam (per nucleon)
-    , sigmaKinEnergyBeam(1.e-03)      // GeV - kinetic energy sigma of the beam
+    , sigmaKinEnergyBeam(1.e-03) // GeV - kinetic energy sigma of the beam
     , simEmittanceFlag("off")
     , sigmaXInEmittance(1.)
     , sigmaXPrimeInEmittance(0.0001)
@@ -304,7 +304,7 @@ Bool_t R3BSpecificGenerator::ReadEvent(FairPrimaryGenerator* primGen)
 
                 // Define energy from the kinematics - real cross section
                 Double_t T_min = 0.076; // Keep MeV : T minimum 40 MeV
-                Double_t T_max = 0.75;  // Keep MeV : T maximum
+                Double_t T_max = 0.75; // Keep MeV : T maximum
                 Int_t Bin_min = 0;
                 Int_t Bin_max = 0;
                 Int_t Nbin = 0;
@@ -622,7 +622,7 @@ Bool_t R3BSpecificGenerator::ReadEvent(FairPrimaryGenerator* primGen)
             if (rndmFlag == "on")
             {
                 Double_t theta = TMath::ACos(1 - 2 * gRandom->Rndm()); // flat in cos(theta)
-                Double_t phi = 6.283185307 * gRandom->Rndm();          // flat in phi
+                Double_t phi = 6.283185307 * gRandom->Rndm(); // flat in phi
                 direction = TVector3(
                     TMath::Sin(theta) * TMath::Cos(phi), TMath::Sin(theta) * TMath::Sin(phi), TMath::Cos(theta));
             }
@@ -761,7 +761,7 @@ Bool_t R3BSpecificGenerator::ReadEvent(FairPrimaryGenerator* primGen)
             if (beamInteractionFlag == "on")
             {
                 // Some beam parameters, still hardcoded
-                Double_t FWHM = 1.;           // cm
+                Double_t FWHM = 1.; // cm
                 Double_t sigma = FWHM / 2.35; // cm
 
                 if (targetType == "LeadTarget")
@@ -815,7 +815,7 @@ Bool_t R3BSpecificGenerator::ReadEvent(FairPrimaryGenerator* primGen)
                 }
 
                 if (targetType == "LiH")
-                {                                            //  LiH Target
+                { //  LiH Target
                     Double_t ThicknessMyl = 0.15 * 1. / 10.; // cm
 
                     Double_t RL = TMath::Abs(gRandom->Gaus(0., sigma));

@@ -50,9 +50,9 @@ class R3BBeamProperties
     void SetEnergyDistribution(R3BDistribution<1> energyDistribution_AMeV, int nNucleons = 1, double mass_MeV = 0.);
 
   private:
-    R3BDistribution<3> fVertex_cm;   //!
+    R3BDistribution<3> fVertex_cm; //!
     R3BDistribution<2> fSpread_mRad; //!
-    R3BDistribution<1> fBeta;        //!
+    R3BDistribution<1> fBeta; //!
 };
 
 #endif

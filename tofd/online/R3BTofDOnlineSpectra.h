@@ -131,10 +131,10 @@ class R3BTofDOnlineSpectra : public FairTask
     Int_t fTpat1 = -1, fTpat2 = -1;
     UInt_t fNofPlanes = 4;
     Int_t fMaxmul = 100;
-    UInt_t fPaddlesPerPlane = 44;         /**< Number of paddles per plane. */
-    Double_t fC_range_ns = 2048 * 5.;     // ns
+    UInt_t fPaddlesPerPlane = 44; /**< Number of paddles per plane. */
+    Double_t fC_range_ns = 2048 * 5.; // ns
     Double_t fC_bar_coincidence_ns = 20.; // ns
-    unsigned long fNEvents = 0;           /**< Event counter. */
+    unsigned long fNEvents = 0; /**< Event counter. */
     std::vector<double> fTofcor;
 
     std::vector<TH1F*> fh_tofd_channels;

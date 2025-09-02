@@ -101,15 +101,15 @@ class R3BAmsOnlineSpectra : public FairTask
     void SetParameter();
 
     TClonesArray* fMappedItemsAms; /**< Array with mapped items. */
-    TClonesArray* fCalItemsAms;    /**< Array with cal items. */
-    TClonesArray* fHitItemsAms;    /**< Array with hit items. */
+    TClonesArray* fCalItemsAms; /**< Array with cal items. */
+    TClonesArray* fHitItemsAms; /**< Array with hit items. */
 
     R3BAmsMappingPar* fMap_Par; /**< Container with mapping parameters. >*/
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
-    Int_t fNEvents;         /**< Event counter. */
+    Int_t fTrigger; /**< Trigger value. */
+    Int_t fNEvents; /**< Event counter. */
 
     TCanvas* cMap;
     TCanvas *cCalL, *cCalR;

@@ -336,8 +336,8 @@ void R3BTofiCal2Histo::Exec(Option_t* option)
                 // Hit!
                 // std::cout << "Hit!\n";
                 Int_t iPlane = top->GetDetectorId(); // 1..n
-                Int_t iBar = top->GetBarId();        // 1..n
-                if (iPlane > fNofPlanes)             // this also errors for iDetector==0
+                Int_t iBar = top->GetBarId(); // 1..n
+                if (iPlane > fNofPlanes) // this also errors for iDetector==0
                 {
                     // LOG(error) << "R3BTofiCal2HitPar::Exec() : more detectors than expected! Det: " << iPlane
                     //           << " allowed are 1.." << fNofPlanes;

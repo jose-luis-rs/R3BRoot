@@ -639,8 +639,8 @@ void R3BOnlineSpectraFrsSci::Exec(Option_t* option)
         LOG(fatal) << "R3BOnlineSpectraFrsSci::Exec FairRootManager not found";
     }
     UInt_t nHits;
-    UShort_t iDet;  // 0-based
-    UShort_t iPmt;  // 0-based
+    UShort_t iDet; // 0-based
+    UShort_t iPmt; // 0-based
     UShort_t iRank; // 0-based
     UShort_t cpt;
 

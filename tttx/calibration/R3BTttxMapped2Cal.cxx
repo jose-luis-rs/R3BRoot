@@ -77,8 +77,8 @@ void R3BTttxMapped2Cal::SetParContainers()
 void R3BTttxMapped2Cal::SetParameter()
 {
     //--- Parameter Container ---
-    NumDets = fCal_Par->GetNumDets();      // Number of Detectors
-    NumStrips = fCal_Par->GetNumStrips();  // Number of Strips
+    NumDets = fCal_Par->GetNumDets(); // Number of Detectors
+    NumStrips = fCal_Par->GetNumStrips(); // Number of Strips
     NumParams = fCal_Par->GetNumParsFit(); // Number of Parameters
 
     R3BLOG(info, "Nb detectors: " << NumDets);

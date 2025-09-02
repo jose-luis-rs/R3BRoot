@@ -45,7 +45,7 @@ namespace Neuland
         const Double_t t = second->GetT() - first->GetT();
 
         const Double_t v2 = pN_.Mag2() / std::pow(t, 2); // cm²/ns²
-        const Double_t c2 = 898.75517873681758374;       // cm²/ns²
+        const Double_t c2 = 898.75517873681758374; // cm²/ns²
         if (v2 > c2 || v2 > first->GetFirstHit().GetPosition().Mag2() / std::pow(first->GetT(), 2))
         {
             return 0;
@@ -109,7 +109,7 @@ namespace Neuland
                                                 const R3BNeulandCluster* second,
                                                 const Double_t targetMass)
     {
-        const Double_t E0n = 938.;       // Rest Mass Neutron [MeV]
+        const Double_t E0n = 938.; // Rest Mass Neutron [MeV]
         const Double_t E0k = targetMass; // Rest Mass heavy nucleus [MeV], e.g. 11000 for Carbon
 
         const Double_t En_ = ScatteredNeutronEnergy(first, second) + E0n;

@@ -100,19 +100,19 @@ class R3BPdcMapped2Cal : public FairTask
     inline void SetTrigger(Int_t trigger) { fTrigger = trigger; }
 
   private:
-    TClonesArray* fMappedItems;     /**< Array with mapped items - input data. */
-    TClonesArray* fCalItems;        /**< Array with cal items - output data. */
+    TClonesArray* fMappedItems; /**< Array with mapped items - input data. */
+    TClonesArray* fCalItems; /**< Array with cal items - output data. */
     TClonesArray* fCalTriggerItems; /**< Array with cal trigger items - output data. */
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
 
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
     Int_t fnEvents;
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fTrigger; /**< Trigger value. */
 
   public:
     ClassDef(R3BPdcMapped2Cal, 1)

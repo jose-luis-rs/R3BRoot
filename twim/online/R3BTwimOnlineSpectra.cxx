@@ -984,7 +984,7 @@ void R3BTwimOnlineSpectra::s455()
                 if (hit->GetEnergy() < 65535 && hit->GetEnergy() > 0 &&
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] == 0)
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetEnergy(); // mult=1 !!!
-                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime();       // mult=1 !!!
+                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime(); // mult=1 !!!
             }
         } // end of loop over the Mapped data
 
@@ -1188,7 +1188,7 @@ void R3BTwimOnlineSpectra::s444_s467()
                 if (hit->GetEnergy() < 8192 && hit->GetEnergy() > 0 &&
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] == 0)
                     Eraw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetEnergy(); // mult=1 !!!
-                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime();       // mult=1 !!!
+                Traw[hit->GetSecID() - 1][hit->GetAnodeID() - 1] = hit->GetTime(); // mult=1 !!!
             }
         }
         Int_t idTref;

@@ -428,7 +428,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
 
     Int_t nHits;
     Int_t iDet; // 0-based
-    Int_t iCh;  // 0-based
+    Int_t iCh; // 0-based
     Float_t iRawPos;
     Float_t RawPos[fNbDetectors];
 

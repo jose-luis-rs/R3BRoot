@@ -358,7 +358,7 @@ Bool_t R3BPtofReader::ReadTrailingEdgeChannel(EXT_STR_h101_PTOF_onion* data,
             int tot = coarse - hit->fCoarseTime1LE;
             LOG(debug) << "checking tube 1, bar: " << bar << " coarse: " << coarse << " tot: " << tot;
             if ((tot <= MAX_TIME_OVER_THRESHOLD) && (tot >= 0) && (hit->fCoarseTime1TE == -1) /* no trailing */
-                && (hit->fCoarseTime1LE != -1))                                               /* has leading */
+                && (hit->fCoarseTime1LE != -1)) /* has leading */
             {
                 mapped = hit;
                 LOG(debug) << "matching trailing ";
@@ -383,7 +383,7 @@ Bool_t R3BPtofReader::ReadTrailingEdgeChannel(EXT_STR_h101_PTOF_onion* data,
             int tot = coarse - hit->fCoarseTime2LE;
             LOG(debug) << "checking tube 2, bar: " << bar << " coarse: " << coarse << " tot: " << tot;
             if ((tot <= MAX_TIME_OVER_THRESHOLD) && (tot >= 0) && (hit->fCoarseTime2TE == -1) // no trailing
-                && (hit->fCoarseTime2LE != -1))                                               // has leading
+                && (hit->fCoarseTime2LE != -1)) // has leading
             {
                 mapped = hit;
                 LOG(debug) << "matching trailing ";

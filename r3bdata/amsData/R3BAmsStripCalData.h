@@ -64,9 +64,9 @@ class R3BAmsStripCalData : public FairMultiLinkedData
     void AddMoreEnergy(Double32_t moreEnergy) { fEnergy += moreEnergy; }
 
   protected:
-    Int_t fDetId;       // detector unique identifier
-    Int_t fSideId;      // side unique identifier
-    Int_t fStripId;     // strip unique identifier
+    Int_t fDetId; // detector unique identifier
+    Int_t fSideId; // side unique identifier
+    Int_t fStripId; // strip unique identifier
     Double32_t fEnergy; // total energy in the strip
 
     ClassDef(R3BAmsStripCalData, 1)

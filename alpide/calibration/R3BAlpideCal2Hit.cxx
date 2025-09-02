@@ -260,7 +260,7 @@ void R3BAlpideCal2Hit::FindClusters()
         return;
     }
 
-    uint16_t mult[fNbSensors][nHits];  // NOLINT
+    uint16_t mult[fNbSensors][nHits]; // NOLINT
     double meancol[fNbSensors][nHits]; // NOLINT
     double meanrow[fNbSensors][nHits]; // NOLINT
     for (size_t s = 0; s < fNbSensors; s++)

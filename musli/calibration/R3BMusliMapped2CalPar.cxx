@@ -226,7 +226,7 @@ void R3BMusliMapped2CalPar::Exec(Option_t* option)
     Double_t slope = (fXB - fXA) / (fMwBGeo_Par->GetPosZ() - fMwAGeo_Par->GetPosZ());
     Double_t musliZpos[fNumGroupsAnodes]; // position in Z of each group of anodes
     Double_t musliXpos[fNumGroupsAnodes]; // position in X extrapolated from MwA & MwB
-    Double_t DTraw[fNumGroupsAnodes];     // raw drift time measured for each group of anodes
+    Double_t DTraw[fNumGroupsAnodes]; // raw drift time measured for each group of anodes
 
     for (Int_t i = 0; i < 8; i++)
         musliZpos[i] = fMusliGeo_Par->GetPosZ() * 10. - 175. + i * 50.;

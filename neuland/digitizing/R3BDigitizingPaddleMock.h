@@ -32,18 +32,18 @@ namespace R3B::Digitizing::Neuland
         }
 
       private:
-        [[nodiscard]] auto ComputeTime(const Channel::Signal& firstSignal,
-                                       const Channel::Signal& secondSignal) const -> double override
+        [[nodiscard]] auto ComputeTime(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
+            -> double override
         {
             return (firstSignal.tdc + secondSignal.tdc) / 2;
         }
-        [[nodiscard]] auto ComputeEnergy(const Channel::Signal& firstSignal,
-                                         const Channel::Signal& secondSignal) const -> double override
+        [[nodiscard]] auto ComputeEnergy(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
+            -> double override
         {
             return (firstSignal.qdcUnSat + secondSignal.qdcUnSat) / 2;
         }
-        [[nodiscard]] auto ComputePosition(const Channel::Signal& leftSignal,
-                                           const Channel::Signal& rightSignal) const -> double override
+        [[nodiscard]] auto ComputePosition(const Channel::Signal& leftSignal, const Channel::Signal& rightSignal) const
+            -> double override
         {
             if (leftSignal.side == rightSignal.side)
             {
@@ -62,7 +62,7 @@ namespace R3B::Digitizing::Neuland
 
       public:
         static constexpr double gHalfLength = 135.; // [cm]
-        static constexpr double gCMedium = 30.;     // speed of light in material in [cm/ns]
+        static constexpr double gCMedium = 30.; // speed of light in material in [cm/ns]
         static auto GenerateMockChannelHit(Double_t mcTime, Double_t mcLight, Double_t dist) -> Channel::Hit
         {
             auto time = mcTime - (MockPaddle::gHalfLength + dist) / MockPaddle::gCMedium;

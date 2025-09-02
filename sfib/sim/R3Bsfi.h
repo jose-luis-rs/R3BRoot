@@ -107,21 +107,21 @@ class R3Bsfi : public R3BDetector
   private:
     /** Track information to be stored until the track leaves the
     active volume. **/
-    Int_t fTrackID;                 //!  track index
-    Int_t fVolumeID;                //!  volume id
+    Int_t fTrackID; //!  track index
+    Int_t fVolumeID; //!  volume id
     TLorentzVector fPosIn, fPosOut; //!  position
     TLorentzVector fMomIn, fMomOut; //!  momentum
-    Double32_t fTime_in;            //!  time when entering active volume
-    Double32_t fTime_out;           //!  time when exiting active volume
-    Double32_t fTime;               //!  time
-    Double32_t fLength_in;          //!  length when entering active volume
-    Double32_t fLength_out;         //!  length when exiting active volume
-    Double32_t fLength;             //!  length
-    Double32_t fELoss;              //!  energy loss
-    Int_t fPosIndex;                //!
-    TClonesArray* fsfiCollection;   //!  The hit collection
-    Bool_t kGeoSaved;               //!
-    TList* flGeoPar;                //!
+    Double32_t fTime_in; //!  time when entering active volume
+    Double32_t fTime_out; //!  time when exiting active volume
+    Double32_t fTime; //!  time
+    Double32_t fLength_in; //!  length when entering active volume
+    Double32_t fLength_out; //!  length when exiting active volume
+    Double32_t fLength; //!  length
+    Double32_t fELoss; //!  energy loss
+    Int_t fPosIndex; //!
+    TClonesArray* fsfiCollection; //!  The hit collection
+    Bool_t kGeoSaved; //!
+    TList* flGeoPar; //!
 
     /** Private method AddHit
      **

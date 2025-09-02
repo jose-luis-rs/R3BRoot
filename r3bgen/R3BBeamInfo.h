@@ -41,7 +41,7 @@ class R3BBeamInfo : public TObject
 
   private:
     Double_t theta; // theta emission angle in vertex
-    Double_t phi;   // phi emission angle in vertex
+    Double_t phi; // phi emission angle in vertex
 
     Double_t xPos; // vertex position
     Double_t yPos;

@@ -89,7 +89,7 @@ Bool_t R3BTwim::ProcessHits(FairVolume* vol)
     }
 
     // Sum energy loss for all steps in the active volume
-    Double_t dE = gMC->Edep() * 1000.;                          // in MeV
+    Double_t dE = gMC->Edep() * 1000.; // in MeV
     Double_t post_E = (gMC->Etot() - gMC->TrackMass()) * 1000.; // in MeV
     TString ptype = gMC->GetStack()->GetCurrentTrack()->GetName();
 

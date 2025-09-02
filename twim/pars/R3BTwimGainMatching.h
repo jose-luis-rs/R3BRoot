@@ -75,7 +75,7 @@ class R3BTwimGainMatching : public FairTask
     TGraph** Anode8_vs_anodes;
     TCanvas** canvas;
 
-    R3BTwimCalPar* fCal_Par;         /**< Parameter container. >*/
+    R3BTwimCalPar* fCal_Par; /**< Parameter container. >*/
     TClonesArray* fTwimMappedDataCA; /**< Array with Twim Mapped-input data. >*/
 
   public:

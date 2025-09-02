@@ -62,7 +62,7 @@ class R3BPspxMappedPar : public FairParGenericSet
     Bool_t getParams(FairParamList*);
 
   private:
-    TArrayI pspxmappedparstrip;  // Number of strips per detector
+    TArrayI pspxmappedparstrip; // Number of strips per detector
     Int_t pspxmappedpardetector; // Number of detectors
 
     R3BPspxMappedPar(const R3BPspxMappedPar&);

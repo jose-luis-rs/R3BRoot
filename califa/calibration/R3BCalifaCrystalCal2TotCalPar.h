@@ -90,7 +90,7 @@ class R3BCalifaCrystalCal2TotCalPar : public FairTask
     Double_t fLeft;
     Double_t fRight;
 
-    R3BCalifaMappingPar* fMap_Par;   /**< Parameter container with mapping. >*/
+    R3BCalifaMappingPar* fMap_Par; /**< Parameter container with mapping. >*/
     R3BCalifaTotCalPar* fTotCal_Par; /**< Container for Tot-Cal parameters. >*/
     TClonesArray* fCrystalCalDataCA; /**< Array with CALIFA energy calibrated - input data. >*/
 

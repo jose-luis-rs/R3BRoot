@@ -122,7 +122,7 @@ void R3BSci2Tcal2Hit::Exec(Option_t* option)
     Double_t iRawTimeNs[2][3][64];
     Double_t tRawTimeNs[2][3][64];
     Double_t PosCal = -1000.;
-    Double_t Tmean = -1;        // 0.5*(TrawLEFT + TrawRIGHT)
+    Double_t Tmean = -1; // 0.5*(TrawLEFT + TrawRIGHT)
     Double_t Tmean_w_Tref = -1; // 0.5*(TrawLEFT + TrawRIGHT) - Tref
     UInt_t tHits[2];
     Bool_t tCh[2][3][64];

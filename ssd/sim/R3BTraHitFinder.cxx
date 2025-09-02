@@ -35,7 +35,7 @@
 R3BTraHitFinder::R3BTraHitFinder()
     : FairTask("R3B Tracker Hit Finder ")
 {
-    fThreshold = 0.;         // no threshold
+    fThreshold = 0.; // no threshold
     fTrackerResolution = 0.; // perfect resolution
 }
 
@@ -67,9 +67,9 @@ void R3BTraHitFinder::Exec(Option_t* opt)
 
     // Si Geometrical parameter:
     // Inner layer
-    Double_t Length1 = 19.03;     // cm
-    Double_t WidthMax1 = 7.945;   // cm
-    Double_t WidthMin1 = 2.25;    // cm
+    Double_t Length1 = 19.03; // cm
+    Double_t WidthMax1 = 7.945; // cm
+    Double_t WidthMin1 = 2.25; // cm
     Double_t StripPitch1 = 0.005; // = 50 um
     // Double_t AngRangeMin1=7.;
     // Double_t InclAng1=14.9;
@@ -77,10 +77,10 @@ void R3BTraHitFinder::Exec(Option_t* opt)
     // Double_t WidthHalf1=WidthMax1 - (Length1/cos(AngTrap1))*sin(AngTrap1);
     Double_t StepZ1 = StripPitch1 / sin(AngTrap1); // step along the z axis of the detector (in xz plan)
     Double_t StepX1 = StripPitch1 / cos(AngTrap1); // step along the x axis of the detector (in xz plan)
-    Int_t NbStrip1 = int(WidthMax1 / StepX1);      //
+    Int_t NbStrip1 = int(WidthMax1 / StepX1); //
     // LOG(info) << "NbStrip1= " << NbStrip1;
     // Double_t ShiftalongZ;
-    Double_t Proj;      // cm
+    Double_t Proj; // cm
     Double_t ProjStrip; // cm
     Int_t strip = 0;
     Int_t StripA_Id = 0;
@@ -88,67 +88,67 @@ void R3BTraHitFinder::Exec(Option_t* opt)
     Double_t SlopA, SlopB, OffsetA = nan(""), OffsetB = nan("");
 
     // Middle layer
-    Double_t Length2 = 30.06;                      // cm
-    Double_t WidthMax2 = 10.4;                     // cm
-    Double_t WidthMin2 = 1.3;                      // cm
-    Double_t StripPitch2 = 0.005;                  // = 50 um
-    Double_t AngTrap2 = 0.14853;                   // in rad = 17/2 degrees
+    Double_t Length2 = 30.06; // cm
+    Double_t WidthMax2 = 10.4; // cm
+    Double_t WidthMin2 = 1.3; // cm
+    Double_t StripPitch2 = 0.005; // = 50 um
+    Double_t AngTrap2 = 0.14853; // in rad = 17/2 degrees
     Double_t StepZ2 = StripPitch2 / sin(AngTrap2); // step along the z axis of the detector (in xz plan)
     Double_t StepX2 = StripPitch2 / cos(AngTrap2); // step along the x axis of the detector (in xz plan)
-    Int_t NbStrip2 = int(WidthMax2 / StepX2);      //
+    Int_t NbStrip2 = int(WidthMax2 / StepX2); //
     // LOG(info) << "NbStrip2= " << NbStrip2;
 
     // Outer layer
-    Double_t Length3 = 30.06;                      // cm
-    Double_t WidthMax3 = 10.4;                     // cm
-    Double_t WidthMin3 = 1.3;                      // cm
-    Double_t StripPitch3 = 0.005;                  // = 50 um
-    Double_t AngTrap3 = 0.14853;                   // in rad = 17/2 degrees
+    Double_t Length3 = 30.06; // cm
+    Double_t WidthMax3 = 10.4; // cm
+    Double_t WidthMin3 = 1.3; // cm
+    Double_t StripPitch3 = 0.005; // = 50 um
+    Double_t AngTrap3 = 0.14853; // in rad = 17/2 degrees
     Double_t StepZ3 = StripPitch3 / sin(AngTrap3); // step along the z axis of the detector (in xz plan)
     Double_t StepX3 = StripPitch3 / cos(AngTrap3); // step along the x axis of the detector (in xz plan)
-    Int_t NbStrip3 = int(WidthMax3 / StepX3);      //
+    Int_t NbStrip3 = int(WidthMax3 / StepX3); //
     // LOG(info) << "NbStrip3= " << NbStrip3;
 
     Double_t M_Inner[6][4][4] = { {
-                                      { 1, 0, 0, 0 },                                // Matrice 1 row 0
+                                      { 1, 0, 0, 0 }, // Matrice 1 row 0
                                       { 0, 0.966376079, -0.257132793, 6.991301064 }, // Matrice 1 row 1
                                       { 0, 0.257132793, 0.966376079, -7.093624461 }, // Matrice 1 row 2
-                                      { 0, 0, 0, 1 }                                 // Matrice 1 row 3
+                                      { 0, 0, 0, 1 } // Matrice 1 row 3
                                   },
 
                                   {
-                                      { 0.5, -0.866025404, 0, 0 },                             // Matrice 2 row 0
+                                      { 0.5, -0.866025404, 0, 0 }, // Matrice 2 row 0
                                       { 0.836906234, 0.483188040, -0.257132793, 6.991301064 }, // Matrice 2 row 1
                                       { 0.222683531, 0.128566397, 0.966376079, -7.093624461 }, // Matrice 2 row 2
-                                      { 0, 0, 0, 1 }                                           // Matrice 2 row 3
+                                      { 0, 0, 0, 1 } // Matrice 2 row 3
                                   },
 
                                   {
-                                      { -0.5, -0.866025404, 0, 0 },                             // Matrice 3 row 0
+                                      { -0.5, -0.866025404, 0, 0 }, // Matrice 3 row 0
                                       { 0.836906234, -0.483188040, -0.257132793, 6.991301064 }, // Matrice 3 row 1
                                       { 0.222683531, -0.128566397, 0.966376079, -7.093624461 }, // Matrice 3 row 2
-                                      { 0, 0, 0, 1 }                                            // Matrice 3 row 3
+                                      { 0, 0, 0, 1 } // Matrice 3 row 3
                                   },
 
                                   {
-                                      { -1., 0., 0, 0 },                               // Matrice 4 row 0
+                                      { -1., 0., 0, 0 }, // Matrice 4 row 0
                                       { 0., -0.966376079, -0.257132793, 6.991301064 }, // Matrice 4 row 1
                                       { 0., -0.257132793, 0.966376079, -7.093624461 }, // Matrice 4 row 2
-                                      { 0., 0, 0, 1 }                                  // Matrice 4 row 3
+                                      { 0., 0, 0, 1 } // Matrice 4 row 3
                                   },
 
                                   {
-                                      { -0.5, 0.866025404, 0, 0 },                               // Matrice 5 row 0
+                                      { -0.5, 0.866025404, 0, 0 }, // Matrice 5 row 0
                                       { -0.836906234, -0.483188040, -0.257132793, 6.991301064 }, // Matrice 5 row 1
                                       { -0.222683531, -0.128566397, 0.966376079, -7.093624461 }, // Matrice 5 row 2
-                                      { 0, 0, 0, 1 }                                             // Matrice 5 row 3
+                                      { 0, 0, 0, 1 } // Matrice 5 row 3
                                   },
 
                                   {
-                                      { 0.5, 0.866025404, 0, 0 },                               // Matrice 6 row 0
+                                      { 0.5, 0.866025404, 0, 0 }, // Matrice 6 row 0
                                       { -0.836906234, 0.483188040, -0.257132793, 6.991301064 }, // Matrice 6 row 1
                                       { -0.222683531, 0.128566397, 0.966376079, -7.093624461 }, // Matrice 6 row 2
-                                      { 0, 0, 0, 1 }                                            // Matrice 6 row 3
+                                      { 0, 0, 0, 1 } // Matrice 6 row 3
                                   } };
 
     /*
@@ -161,174 +161,174 @@ void R3BTraHitFinder::Exec(Option_t* opt)
 
     // Middle layer:
     Double_t M_Mid[12][4][4] = { {
-                                     { 1, 0, 0, 0 },                                // Matrice 1 row 0
+                                     { 1, 0, 0, 0 }, // Matrice 1 row 0
                                      { 0, 0.831954122, -0.554844427, 19.71955601 }, // Matrice 1 row 1
                                      { 0, 0.554844427, 0.831954122, -7.631968001 }, // Matrice 1 row 2
-                                     { 0, 0, 0, 1 }                                 // Matrice 1 row 3
+                                     { 0, 0, 0, 1 } // Matrice 1 row 3
                                  },
 
                                  {
-                                     { 0.866025404, -0.5, 0, 0 },                             // Matrice 2 row 0
+                                     { 0.866025404, -0.5, 0, 0 }, // Matrice 2 row 0
                                      { 0.415977061, 0.720493405, -0.554844427, 19.71955601 }, // Matrice 2 row 1
                                      { 0.277422214, 0.480509369, 0.831954122, -7.631968001 }, // Matrice 2 row 2
-                                     { 0, 0, 0, 1 }                                           // Matrice 2 row 3
+                                     { 0, 0, 0, 1 } // Matrice 2 row 3
                                  },
 
                                  {
-                                     { 0.5, -0.866025404, 0, 0 },                             // Matrice 3 row 0
+                                     { 0.5, -0.866025404, 0, 0 }, // Matrice 3 row 0
                                      { 0.720493405, 0.415977061, -0.554844427, 19.71955601 }, // Matrice 3 row 1
                                      { 0.480509369, 0.277422214, 0.831954122, -7.631968001 }, // Matrice 3 row 2
-                                     { 0, 0, 0, 1 }                                           // Matrice 3 row 3
+                                     { 0, 0, 0, 1 } // Matrice 3 row 3
                                  },
 
                                  {
-                                     { 0, -1, 0, 0 },                               // Matrice 4 row 0
+                                     { 0, -1, 0, 0 }, // Matrice 4 row 0
                                      { 0.831954122, 0, -0.554844427, 19.71955601 }, // Matrice 4 row 1
                                      { 0.554844427, 0, 0.831954122, -7.631968001 }, // Matrice 4 row 2
-                                     { 0, 0, 0, 1 }                                 // Matrice 4 row 3
+                                     { 0, 0, 0, 1 } // Matrice 4 row 3
                                  },
 
                                  {
-                                     { -0.5, -0.866025404, 0, 0 },                             // Matrice 5 row 0
+                                     { -0.5, -0.866025404, 0, 0 }, // Matrice 5 row 0
                                      { 0.720493405, -0.415977061, -0.554844427, 19.71955601 }, // Matrice 5 row 1
                                      { 0.480509369, -0.277422214, 0.831954122, -7.631968001 }, // Matrice 5 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 5 row 3
+                                     { 0, 0, 0, 1 } // Matrice 5 row 3
                                  },
 
                                  {
-                                     { -0.866025404, -0.5, 0, 0 },                             // Matrice 6 row 0
+                                     { -0.866025404, -0.5, 0, 0 }, // Matrice 6 row 0
                                      { 0.415977061, -0.720493405, -0.554844427, 19.71955601 }, // Matrice 6 row 1
                                      { 0.277422214, -0.480509369, 0.831954122, -7.631968001 }, // Matrice 6 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 6 row 3
+                                     { 0, 0, 0, 1 } // Matrice 6 row 3
                                  },
 
                                  {
-                                     { -1, 0, 0, 0 },                                // Matrice 7 row 0
+                                     { -1, 0, 0, 0 }, // Matrice 7 row 0
                                      { 0, -0.831954122, -0.554844427, 19.71955601 }, // Matrice 7 row 1
                                      { 0, -0.554844427, 0.831954122, -7.631968001 }, // Matrice 7 row 2
-                                     { 0, 0, 0, 1 }                                  // Matrice 7 row 3
+                                     { 0, 0, 0, 1 } // Matrice 7 row 3
                                  },
 
                                  {
-                                     { -0.866025404, 0.5, 0, 0 },                               // Matrice 8 row 0
+                                     { -0.866025404, 0.5, 0, 0 }, // Matrice 8 row 0
                                      { -0.415977061, -0.720493405, -0.554844427, 19.71955601 }, // Matrice 8 row 1
                                      { -0.277422214, -0.480509369, 0.831954122, -7.631968001 }, // Matrice 8 row 2
-                                     { 0, 0, 0, 1 }                                             // Matrice 8 row 3
+                                     { 0, 0, 0, 1 } // Matrice 8 row 3
                                  },
 
                                  {
-                                     { -0.5, 0.866025404, 0, 0 },                               // Matrice 9 row 0
+                                     { -0.5, 0.866025404, 0, 0 }, // Matrice 9 row 0
                                      { -0.720493405, -0.415977061, -0.554844427, 19.71955601 }, // Matrice 9 row 1
                                      { -0.480509369, -0.277422214, 0.831954122, -7.631968001 }, // Matrice 9 row 2
-                                     { 0, 0, 0, 1 }                                             // Matrice 9 row 3
+                                     { 0, 0, 0, 1 } // Matrice 9 row 3
                                  },
 
                                  {
-                                     { 0, 1, 0, 0 },                                 // Matrice 10 row 0
+                                     { 0, 1, 0, 0 }, // Matrice 10 row 0
                                      { -0.831954122, 0, -0.554844427, 19.71955601 }, // Matrice 10 row 1
                                      { -0.554844427, 0, 0.831954122, -7.631968001 }, // Matrice 10 row 2
-                                     { 0, 0, 0, 1 }                                  // Matrice 10 row 3
+                                     { 0, 0, 0, 1 } // Matrice 10 row 3
                                  },
 
                                  {
-                                     { 0.5, 0.866025404, 0, 0 },                               // Matrice 11 row 0
+                                     { 0.5, 0.866025404, 0, 0 }, // Matrice 11 row 0
                                      { -0.720493405, 0.415977061, -0.554844427, 19.71955601 }, // Matrice 11 row 1
                                      { -0.480509369, 0.277422214, 0.831954122, -7.631968001 }, // Matrice 11 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 11 row 3
+                                     { 0, 0, 0, 1 } // Matrice 11 row 3
                                  },
 
                                  {
-                                     { 0.866025404, 0.5, 0, 0 },                               // Matrice 12 row 0
+                                     { 0.866025404, 0.5, 0, 0 }, // Matrice 12 row 0
                                      { -0.415977061, 0.720493405, -0.554844427, 19.71955601 }, // Matrice 12 row 1
                                      { -0.277422214, 0.480509369, 0.831954122, -7.631968001 }, // Matrice 12 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 12 row 3
+                                     { 0, 0, 0, 1 } // Matrice 12 row 3
                                  }
 
     };
 
     // Outer layer:
     Double_t M_Out[12][4][4] = { {
-                                     { 1, 0, 0, 0 },                                // Matrice 1 row 0
+                                     { 1, 0, 0, 0 }, // Matrice 1 row 0
                                      { 0, 0.831954122, -0.554844427, 19.90455601 }, // Matrice 1 row 1
                                      { 0, 0.554844427, 0.831954122, -9.138672091 }, // Matrice 1 row 2
-                                     { 0, 0, 0, 1 }                                 // Matrice 1 row 3
+                                     { 0, 0, 0, 1 } // Matrice 1 row 3
                                  },
 
                                  {
-                                     { 0.866025404, -0.5, 0, 0 },                             // Matrice 2 row 0
+                                     { 0.866025404, -0.5, 0, 0 }, // Matrice 2 row 0
                                      { 0.415977061, 0.720493405, -0.554844427, 19.90455601 }, // Matrice 2 row 1
                                      { 0.277422214, 0.480509369, 0.831954122, -9.138672091 }, // Matrice 2 row 2
-                                     { 0, 0, 0, 1 }                                           // Matrice 2 row 3
+                                     { 0, 0, 0, 1 } // Matrice 2 row 3
                                  },
 
                                  {
-                                     { 0.5, -0.866025404, 0, 0 },                             // Matrice 3 row 0
+                                     { 0.5, -0.866025404, 0, 0 }, // Matrice 3 row 0
                                      { 0.720493405, 0.415977061, -0.554844427, 19.90455601 }, // Matrice 3 row 1
                                      { 0.480509369, 0.277422214, 0.831954122, -9.138672091 }, // Matrice 3 row 2
-                                     { 0, 0, 0, 1 }                                           // Matrice 3 row 3
+                                     { 0, 0, 0, 1 } // Matrice 3 row 3
                                  },
 
                                  {
-                                     { 0, -1, 0, 0 },                               // Matrice 4 row 0
+                                     { 0, -1, 0, 0 }, // Matrice 4 row 0
                                      { 0.831954122, 0, -0.554844427, 19.90455601 }, // Matrice 4 row 1
                                      { 0.554844427, 0, 0.831954122, -9.138672091 }, // Matrice 4 row 2
-                                     { 0, 0, 0, 1 }                                 // Matrice 4 row 3
+                                     { 0, 0, 0, 1 } // Matrice 4 row 3
                                  },
 
                                  {
-                                     { -0.5, -0.866025404, 0, 0 },                             // Matrice 5 row 0
+                                     { -0.5, -0.866025404, 0, 0 }, // Matrice 5 row 0
                                      { 0.720493405, -0.415977061, -0.554844427, 19.90455601 }, // Matrice 5 row 1
                                      { 0.480509369, -0.277422214, 0.831954122, -9.138672091 }, // Matrice 5 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 5 row 3
+                                     { 0, 0, 0, 1 } // Matrice 5 row 3
                                  },
 
                                  {
-                                     { -0.866025404, -0.5, 0, 0 },                             // Matrice 6 row 0
+                                     { -0.866025404, -0.5, 0, 0 }, // Matrice 6 row 0
                                      { 0.415977061, -0.720493405, -0.554844427, 19.90455601 }, // Matrice 6 row 1
                                      { 0.277422214, -0.480509369, 0.831954122, -9.138672091 }, // Matrice 6 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 6 row 3
+                                     { 0, 0, 0, 1 } // Matrice 6 row 3
                                  },
 
                                  {
-                                     { -1, 0, 0, 0 },                                // Matrice 7 row 0
+                                     { -1, 0, 0, 0 }, // Matrice 7 row 0
                                      { 0, -0.831954122, -0.554844427, 19.90455601 }, // Matrice 7 row 1
                                      { 0, -0.554844427, 0.831954122, -9.138672091 }, // Matrice 7 row 2
-                                     { 0, 0, 0, 1 }                                  // Matrice 7 row 3
+                                     { 0, 0, 0, 1 } // Matrice 7 row 3
                                  },
 
                                  {
-                                     { 0.866025404, -0.5, 0, 0 },                               // Matrice 8 row 0
+                                     { 0.866025404, -0.5, 0, 0 }, // Matrice 8 row 0
                                      { -0.415977061, -0.720493405, -0.554844427, 19.90455601 }, // Matrice 8 row 1
                                      { -0.277422214, -0.480509369, 0.831954122, -9.138672091 }, // Matrice 8 row 2
-                                     { 0, 0, 0, 1 }                                             // Matrice 8 row 3
+                                     { 0, 0, 0, 1 } // Matrice 8 row 3
                                  },
 
                                  {
-                                     { -0.5, 0.866025404, 0, 0 },                               // Matrice 9 row 0
+                                     { -0.5, 0.866025404, 0, 0 }, // Matrice 9 row 0
                                      { -0.720493405, -0.415977061, -0.554844427, 19.90455601 }, // Matrice 9 row 1
                                      { -0.480509369, -0.277422214, 0.831954122, -9.138672091 }, // Matrice 9 row 2
-                                     { 0, 0, 0, 1 }                                             // Matrice 9 row 3
+                                     { 0, 0, 0, 1 } // Matrice 9 row 3
                                  },
 
                                  {
-                                     { 0, 1, 0, 0 },                                 // Matrice 10 row 0
+                                     { 0, 1, 0, 0 }, // Matrice 10 row 0
                                      { -0.831954122, 0, -0.554844427, 19.90455601 }, // Matrice 10 row 1
                                      { -0.554844427, 0, 0.831954122, -9.138672091 }, // Matrice 10 row 2
-                                     { 0, 0, 0, 1 }                                  // Matrice 10 row 3
+                                     { 0, 0, 0, 1 } // Matrice 10 row 3
                                  },
 
                                  {
-                                     { 0.5, 0.866025404, 0, 0 },                               // Matrice 11 row 0
+                                     { 0.5, 0.866025404, 0, 0 }, // Matrice 11 row 0
                                      { -0.720493405, 0.415977061, -0.554844427, 19.90455601 }, // Matrice 11 row 1
                                      { -0.480509369, 0.277422214, 0.831954122, -9.138672091 }, // Matrice 11 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 11 row 3
+                                     { 0, 0, 0, 1 } // Matrice 11 row 3
                                  },
 
                                  {
-                                     { 0.866025404, 0.5, 0, 0 },                               // Matrice 12 row 0
+                                     { 0.866025404, 0.5, 0, 0 }, // Matrice 12 row 0
                                      { -0.415977061, 0.720493405, -0.554844427, 19.90455601 }, // Matrice 12 row 1
                                      { -0.277422214, 0.480509369, 0.831954122, -9.138672091 }, // Matrice 12 row 2
-                                     { 0, 0, 0, 1 }                                            // Matrice 12 row 3
+                                     { 0, 0, 0, 1 } // Matrice 12 row 3
                                  }
 
     };
@@ -337,216 +337,216 @@ void R3BTraHitFinder::Exec(Option_t* opt)
 
     // Inner layer:
     Double_t M_INV_Inner[6][4][4] = { {
-                                          { 1, 0, 0, 0 },                                // Matrice 1 row 0
+                                          { 1, 0, 0, 0 }, // Matrice 1 row 0
                                           { 0, 0.966376079, 0.257132793, -4.932222641 }, // Matrice 1 row 1
                                           { 0, -0.257132793, 0.966376079, 8.652801765 }, // Matrice 1 row 2
-                                          { 0, 0, 0, 1 },                                // Matrice 1 row 3
+                                          { 0, 0, 0, 1 }, // Matrice 1 row 3
                                       },
 
                                       {
-                                          { 0.5, 0.836906234, 0.222683531, -4.271430104 },        // Matrice 2 row 0
+                                          { 0.5, 0.836906234, 0.222683531, -4.271430104 }, // Matrice 2 row 0
                                           { -0.866025404, 0.48318804, 0.128566397, -2.46611132 }, // Matrice 2 row 1
-                                          { 0, -0.257132793, 0.966376079, 8.652801765 },          // Matrice 2 row 2
-                                          { 0, 0, 0, 1 },                                         // Matrice 2 row 3
+                                          { 0, -0.257132793, 0.966376079, 8.652801765 }, // Matrice 2 row 2
+                                          { 0, 0, 0, 1 }, // Matrice 2 row 3
 
                                       },
 
                                       {
-                                          { -0.5, 0.836906234, 0.222683531, -4.271430104 },          // Matrice 3 row 0
+                                          { -0.5, 0.836906234, 0.222683531, -4.271430104 }, // Matrice 3 row 0
                                           { -0.866025404, -0.483188040, -0.128566397, 2.466111320 }, // Matrice 3 row 1
-                                          { 0, -0.257132793, 0.966376079, 8.652801765 },             // Matrice 3 row 2
-                                          { 0, 0, 0, 1 },                                            // Matrice 3 row 3
+                                          { 0, -0.257132793, 0.966376079, 8.652801765 }, // Matrice 3 row 2
+                                          { 0, 0, 0, 1 }, // Matrice 3 row 3
                                       },
 
                                       {
-                                          { -1., 0., 0., 0. },                             // Matrice 4 row 0
+                                          { -1., 0., 0., 0. }, // Matrice 4 row 0
                                           { 0., -0.966376079, -0.257132793, 4.932222641 }, // Matrice 4 row 1
-                                          { 0., -0.257132793, 0.966376079, 8.652801765 },  // Matrice 4 row 2
-                                          { 0., 0., 0., 1. },                              // Matrice 4 row 3
+                                          { 0., -0.257132793, 0.966376079, 8.652801765 }, // Matrice 4 row 2
+                                          { 0., 0., 0., 1. }, // Matrice 4 row 3
                                       },
 
                                       {
-                                          { -0.5, -0.836906234, -0.222683531, 4.271430104 },        // Matrice 5 row 0
+                                          { -0.5, -0.836906234, -0.222683531, 4.271430104 }, // Matrice 5 row 0
                                           { 0.866025404, -0.483188040, -0.128566397, 2.466111320 }, // Matrice 5 row 1
-                                          { 0., -0.257132793, 0.966376079, 8.652801765 },           // Matrice 5 row 2
-                                          { 0., 0, 0, 1 },                                          // Matrice 5 row 3
+                                          { 0., -0.257132793, 0.966376079, 8.652801765 }, // Matrice 5 row 2
+                                          { 0., 0, 0, 1 }, // Matrice 5 row 3
                                       },
 
                                       {
-                                          { 0.5, -0.836906234, -0.222683531, 4.271430104 },        // Matrice 6 row 0
+                                          { 0.5, -0.836906234, -0.222683531, 4.271430104 }, // Matrice 6 row 0
                                           { 0.866025404, 0.483188040, 0.128566397, -2.466111320 }, // Matrice 6 row 1
-                                          { 0., -0.257132793, 0.966376079, 8.652801765 },          // Matrice 6 row 2
-                                          { 0., 0, 0, 1 },                                         // Matrice 6 row 3
+                                          { 0., -0.257132793, 0.966376079, 8.652801765 }, // Matrice 6 row 2
+                                          { 0., 0, 0, 1 }, // Matrice 6 row 3
                                       } };
 
     // Middle layer:
     Double_t M_INV_Mid[12][4][4] = { {
-                                         { 1, 0, 0, 0 },                                // Matrice 1 row 0
+                                         { 1, 0, 0, 0 }, // Matrice 1 row 0
                                          { 0, 0.831954122, 0.554844427, -12.17121099 }, // Matrice 1 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },   // Matrice 1 row 2
-                                         { 0, 0, 0, 1 }                                 // Matrice 1 row 3
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 1 row 2
+                                         { 0, 0, 0, 1 } // Matrice 1 row 3
                                      },
 
                                      {
                                          { 0.866025404, 0.415977061, 0.277422214, -6.085605496 }, // Matrice 2 row 0
-                                         { -0.5, 0.720493405, 0.480509369, -10.54057791 },        // Matrice 2 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },             // Matrice 2 row 2
-                                         { 0, 0, 0, 1 }                                           // Matrice 2 row 3
+                                         { -0.5, 0.720493405, 0.480509369, -10.54057791 }, // Matrice 2 row 1
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 2 row 2
+                                         { 0, 0, 0, 1 } // Matrice 2 row 3
                                      },
 
                                      {
-                                         { 0.5, 0.720493405, 0.480509369, -10.54057791 },          // Matrice 3 row 0
+                                         { 0.5, 0.720493405, 0.480509369, -10.54057791 }, // Matrice 3 row 0
                                          { -0.866025404, 0.415977061, 0.277422214, -6.085605496 }, // Matrice 3 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },              // Matrice 3 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 3 row 3
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 3 row 2
+                                         { 0, 0, 0, 1 } // Matrice 3 row 3
                                      },
 
                                      {
                                          { 0., 0.831954122, 0.554844427, -12.17121099 }, // Matrice 4 row 0
-                                         { -1., 0., 0., 0. },                            // Matrice 4 row 1
-                                         { 0., -0.554844427, 0.831954122, 17.290733 },   // Matrice 4 row 2
-                                         { 0., 0, 0, 1 }                                 // Matrice 4 row 3
+                                         { -1., 0., 0., 0. }, // Matrice 4 row 1
+                                         { 0., -0.554844427, 0.831954122, 17.290733 }, // Matrice 4 row 2
+                                         { 0., 0, 0, 1 } // Matrice 4 row 3
                                      },
 
                                      {
-                                         { -0.5, 0.720493405, 0.480509369, -10.54057791 },          // Matrice 5 row 0
+                                         { -0.5, 0.720493405, 0.480509369, -10.54057791 }, // Matrice 5 row 0
                                          { -0.866025404, -0.415977061, -0.277422214, 6.085605496 }, // Matrice 5 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },               // Matrice 5 row 2
-                                         { 0, 0, 0, 1 }                                             // Matrice 5 row 3
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 5 row 2
+                                         { 0, 0, 0, 1 } // Matrice 5 row 3
                                      },
 
                                      {
                                          { -0.866025404, 0.415977061, 0.277422214, -6.085605496 }, // Matrice 6 row 0
-                                         { -0.5, -0.720493405, -0.480509369, 10.54057791 },        // Matrice 6 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },              // Matrice 6 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 6 row 3
+                                         { -0.5, -0.720493405, -0.480509369, 10.54057791 }, // Matrice 6 row 1
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 6 row 2
+                                         { 0, 0, 0, 1 } // Matrice 6 row 3
                                      },
 
                                      {
-                                         { -1, 0, 0, 0 },                                // Matrice 7 row 0
+                                         { -1, 0, 0, 0 }, // Matrice 7 row 0
                                          { 0, -0.831954122, -0.554844427, 12.17121099 }, // Matrice 7 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },    // Matrice 7 row 2
-                                         { 0, 0, 0, 1 }                                  // Matrice 7 row 3
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 7 row 2
+                                         { 0, 0, 0, 1 } // Matrice 7 row 3
                                      },
 
                                      {
                                          { -0.866025404, -0.415977061, -0.277422214, 6.085605496 }, // Matrice 8 row 0
-                                         { 0.5, -0.720493405, -0.480509369, 10.54057791 },          // Matrice 8 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },               // Matrice 8 row 2
-                                         { 0, 0, 0, 1 }                                             // Matrice 8 row 3
+                                         { 0.5, -0.720493405, -0.480509369, 10.54057791 }, // Matrice 8 row 1
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 8 row 2
+                                         { 0, 0, 0, 1 } // Matrice 8 row 3
                                      },
 
                                      {
-                                         { -0.5, -0.720493405, -0.480509369, 10.54057791 },        // Matrice 9 row 0
+                                         { -0.5, -0.720493405, -0.480509369, 10.54057791 }, // Matrice 9 row 0
                                          { 0.866025404, -0.415977061, -0.277422214, 6.085605496 }, // Matrice 9 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },              // Matrice 9 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 9 row 3
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 9 row 2
+                                         { 0, 0, 0, 1 } // Matrice 9 row 3
                                      },
 
                                      {
                                          { 0., -0.831954122, -0.554844427, 12.17121099 }, // Matrice 10 row 0
-                                         { 1., 0., 0., 0. },                              // Matrice 10 row 1
-                                         { 0., -0.554844427, 0.831954122, 17.290733 },    // Matrice 10 row 2
-                                         { 0., 0, 0, 1 }                                  // Matrice 10 row 3
+                                         { 1., 0., 0., 0. }, // Matrice 10 row 1
+                                         { 0., -0.554844427, 0.831954122, 17.290733 }, // Matrice 10 row 2
+                                         { 0., 0, 0, 1 } // Matrice 10 row 3
                                      },
 
                                      {
-                                         { 0.5, -0.720493405, -0.480509369, 10.54057791 },        // Matrice 11 row 0
+                                         { 0.5, -0.720493405, -0.480509369, 10.54057791 }, // Matrice 11 row 0
                                          { 0.866025404, 0.415977061, 0.277422214, -6.085605496 }, // Matrice 11 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },             // Matrice 11 row 2
-                                         { 0, 0, 0, 1 }                                           // Matrice 11 row 3
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 11 row 2
+                                         { 0, 0, 0, 1 } // Matrice 11 row 3
                                      },
 
                                      {
                                          { 0.866025404, -0.415977061, -0.277422214, 6.085605496 }, // Matrice 12 row 0
-                                         { 0.5, 0.720493405, 0.480509369, -10.54057791 },          // Matrice 12 row 1
-                                         { 0, -0.554844427, 0.831954122, 17.290733 },              // Matrice 12 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 12 row 3
+                                         { 0.5, 0.720493405, 0.480509369, -10.54057791 }, // Matrice 12 row 1
+                                         { 0, -0.554844427, 0.831954122, 17.290733 }, // Matrice 12 row 2
+                                         { 0, 0, 0, 1 } // Matrice 12 row 3
                                      } };
 
     // Outer layer:
     Double_t M_INV_Out[12][4][4] = { {
-                                         { 1, 0, 0, 0 },                                // Matrice 1 row 0
+                                         { 1, 0, 0, 0 }, // Matrice 1 row 0
                                          { 0, 0.831954122, 0.554844427, -11.48913614 }, // Matrice 1 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },  // Matrice 1 row 2
-                                         { 0, 0, 0, 1 }                                 // Matrice 1 row 3
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 1 row 2
+                                         { 0, 0, 0, 1 } // Matrice 1 row 3
                                      },
 
                                      {
                                          { 0.866025404, 0.415977061, 0.277422214, -5.744568068 }, // Matrice 2 row 0
-                                         { -0.5, 0.720493405, 0.480509369, -9.949883762 },        // Matrice 2 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },            // Matrice 2 row 2
-                                         { 0, 0, 0, 1 }                                           // Matrice 2 row 3
+                                         { -0.5, 0.720493405, 0.480509369, -9.949883762 }, // Matrice 2 row 1
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 2 row 2
+                                         { 0, 0, 0, 1 } // Matrice 2 row 3
                                      },
 
                                      {
-                                         { 0.5, 0.720493405, 0.480509369, -9.949883762 },          // Matrice 3 row 0
+                                         { 0.5, 0.720493405, 0.480509369, -9.949883762 }, // Matrice 3 row 0
                                          { -0.866025404, 0.415977061, 0.277422214, -5.744568068 }, // Matrice 3 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },             // Matrice 3 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 3 row 3
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 3 row 2
+                                         { 0, 0, 0, 1 } // Matrice 3 row 3
                                      },
 
                                      {
                                          { 0., 0.831954122, 0.554844427, -11.48913614 }, // Matrice 4 row 0
-                                         { -1., 0., 0., 0. },                            // Matrice 4 row 1
-                                         { 0., -0.554844427, 0.831954122, 18.6468879 },  // Matrice 4 row 2
-                                         { 0., 0, 0, 1 }                                 // Matrice 4 row 3
+                                         { -1., 0., 0., 0. }, // Matrice 4 row 1
+                                         { 0., -0.554844427, 0.831954122, 18.6468879 }, // Matrice 4 row 2
+                                         { 0., 0, 0, 1 } // Matrice 4 row 3
                                      },
 
                                      {
-                                         { -0.5, 0.720493405, 0.480509369, -9.949883762 },          // Matrice 5 row 0
+                                         { -0.5, 0.720493405, 0.480509369, -9.949883762 }, // Matrice 5 row 0
                                          { -0.866025404, -0.415977061, -0.277422214, 5.744568068 }, // Matrice 5 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },              // Matrice 5 row 2
-                                         { 0, 0, 0, 1 }                                             // Matrice 5 row 3
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 5 row 2
+                                         { 0, 0, 0, 1 } // Matrice 5 row 3
                                      },
 
                                      {
                                          { -0.866025404, 0.415977061, 0.277422214, -5.744568068 }, // Matrice 6 row 0
-                                         { -0.5, -0.720493405, -0.480509369, 9.949883762 },        // Matrice 6 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },             // Matrice 6 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 6 row 3
+                                         { -0.5, -0.720493405, -0.480509369, 9.949883762 }, // Matrice 6 row 1
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 6 row 2
+                                         { 0, 0, 0, 1 } // Matrice 6 row 3
                                      },
 
                                      {
-                                         { -1, 0, 0, 0 },                                // Matrice 7 row 0
+                                         { -1, 0, 0, 0 }, // Matrice 7 row 0
                                          { 0, -0.831954122, -0.554844427, 11.48913614 }, // Matrice 7 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },   // Matrice 7 row 2
-                                         { 0, 0, 0, 1 }                                  // Matrice 7 row 3
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 7 row 2
+                                         { 0, 0, 0, 1 } // Matrice 7 row 3
                                      },
 
                                      {
                                          { 0.866025404, -0.415977061, -0.277422214, 5.744568068 }, // Matrice 8 row 0
-                                         { -0.5, -0.720493405, -0.480509369, 9.949883762 },        // Matrice 8 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },             // Matrice 8 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 8 row 3
+                                         { -0.5, -0.720493405, -0.480509369, 9.949883762 }, // Matrice 8 row 1
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 8 row 2
+                                         { 0, 0, 0, 1 } // Matrice 8 row 3
                                      },
 
                                      {
-                                         { -0.5, -0.720493405, -0.480509369, 9.949883762 },        // Matrice 9 row 0
+                                         { -0.5, -0.720493405, -0.480509369, 9.949883762 }, // Matrice 9 row 0
                                          { 0.866025404, -0.415977061, -0.277422214, 5.744568068 }, // Matrice 9 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },             // Matrice 9 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 9 row 3
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 9 row 2
+                                         { 0, 0, 0, 1 } // Matrice 9 row 3
                                      },
 
                                      {
                                          { 0., -0.831954122, -0.554844427, 11.48913614 }, // Matrice 10 row 0
-                                         { 1., 0., 0., 0. },                              // Matrice 10 row 1
-                                         { 0., -0.554844427, 0.831954122, 18.6468879 },   // Matrice 10 row 2
-                                         { 0., 0, 0, 1 }                                  // Matrice 10 row 3
+                                         { 1., 0., 0., 0. }, // Matrice 10 row 1
+                                         { 0., -0.554844427, 0.831954122, 18.6468879 }, // Matrice 10 row 2
+                                         { 0., 0, 0, 1 } // Matrice 10 row 3
                                      },
 
                                      {
-                                         { 0.5, -0.720493405, -0.480509369, 9.949883762 },        // Matrice 11 row 0
+                                         { 0.5, -0.720493405, -0.480509369, 9.949883762 }, // Matrice 11 row 0
                                          { 0.866025404, 0.415977061, 0.277422214, -5.744568068 }, // Matrice 11 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },            // Matrice 11 row 2
-                                         { 0, 0, 0, 1 }                                           // Matrice 11 row 3
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 11 row 2
+                                         { 0, 0, 0, 1 } // Matrice 11 row 3
                                      },
 
                                      {
                                          { 0.866025404, -0.415977061, -0.277422214, 5.744568068 }, // Matrice 12 row 0
-                                         { 0.5, 0.720493405, 0.480509369, -9.949883762 },          // Matrice 12 row 1
-                                         { 0, -0.554844427, 0.831954122, 18.6468879 },             // Matrice 12 row 2
-                                         { 0, 0, 0, 1 }                                            // Matrice 12 row 3
+                                         { 0.5, 0.720493405, 0.480509369, -9.949883762 }, // Matrice 12 row 1
+                                         { 0, -0.554844427, 0.831954122, 18.6468879 }, // Matrice 12 row 2
+                                         { 0, 0, 0, 1 } // Matrice 12 row 3
                                      } };
 
     Double_t Energy = 0.;
@@ -565,8 +565,8 @@ void R3BTraHitFinder::Exec(Option_t* opt)
     Double_t X_intersect = 0.; // Position X in Detector frame
     Double_t Y_intersect = 0.; // Position Y in Detector frame
     Double_t Z_intersect = 0.; // Position Z in Detector frame
-    Double_t Theta = 0.;       // Theta from (0,0,0)
-    Double_t Phi = 0.;         // Phi (0,0,0)
+    Double_t Theta = 0.; // Theta from (0,0,0)
+    Double_t Phi = 0.; // Phi (0,0,0)
 
     Int_t Detector;
 

@@ -842,7 +842,7 @@ void R3BTrackS454::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hitRolu->GetDetector(); // 1..
-            Int_t iCha = hitRolu->GetChannel();  // 1..
+            Int_t iCha = hitRolu->GetChannel(); // 1..
             RoluCut = true;
         }
     }
@@ -1009,7 +1009,7 @@ void R3BTrackS454::Exec(Option_t* option)
     countdet = 0;
 
     Double_t track[12]; // x,y,z, px, py, pz
-    Double_t chi[6];    // x,y,z, px, py, pz
+    Double_t chi[6]; // x,y,z, px, py, pz
 
     Int_t n_det = 10;
     if (fGhost)
@@ -1053,7 +1053,7 @@ void R3BTrackS454::Exec(Option_t* option)
     Double_t target[3];
     Double_t track1_best[6]; // x,y,z, px, py, pz
     Double_t track2_best[6]; // x,y,z, px, py, pz
-    Double_t chi_best[6];    // chi2, chi2_red
+    Double_t chi_best[6]; // chi2, chi2_red
 
     Double_t chi2;
     Double_t chi2_best;

@@ -212,16 +212,16 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
 
     // Defintion of the Mother Volume
     auto pCBWorldOut = new TGeoTube("Califa_boxOut",
-                                    0.,               // Rmin
-                                    59.,              // Rmax
+                                    0., // Rmin
+                                    59., // Rmax
                                     (55. + 70) / 2.); // half length
     auto trans0 = new TGeoCombiTrans("trans0", 0., 0., 7.5, fRefRot);
     trans0->RegisterYourself();
 
     TGeoShape* pCBWorldIn1 = new TGeoTube("Califa_Centerpart1", // hole to accommodate the tracker
-                                          0.,                   // Rmin
-                                          27.,                  // Rmax
-                                          130 / 2.);            // half length
+                                          0., // Rmin
+                                          27., // Rmax
+                                          130 / 2.); // half length
     auto trans1 = new TGeoCombiTrans("trans1", 0., 0., 7.5, fRefRot);
     trans1->RegisterYourself();
 
@@ -239,15 +239,15 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     const Int_t N_ALV_TYPES = 23; // alveolar structures
     const Int_t N_CRY_TYPES = 85; // crystal elements
     // CALIFA CEPA USC VERSION (JAN 2024) PARAMETERS
-    const Int_t N_ALV_TYPES_CEPA = 3;  // alveolar structures
+    const Int_t N_ALV_TYPES_CEPA = 3; // alveolar structures
     const Int_t N_CRY_TYPES_CEPA = 14; // crystal elements
 
     Int_t counter = 0;
     Float_t x, y, z;
 
-    Double_t wrapping_thickness = 0.0065;            // in cm.
+    Double_t wrapping_thickness = 0.0065; // in cm.
     const Double_t wrapping_thickness_CEPA = 0.0080; // (80 microns recomended by E. Casarejos)
-    const Double_t cf_thickness_CEPA = 0.0300;       // carbon fiber (300 microns recomended by E. Casarejos)
+    const Double_t cf_thickness_CEPA = 0.0300; // carbon fiber (300 microns recomended by E. Casarejos)
     const Double_t security_margin =
         0.0110; // between wrapping and carbon fiber inner volume (minimum 40 microns, depends on crystal_reduction)
     const Double_t crystal_reduction = -0.0330; // minimum -220 microns as there was a small overlap among sectors
@@ -331,11 +331,11 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     // BARREL+iPHOS PART
     //  centers of faces
     TVector3 center[N_ALV_TYPES * 2 * 2]; // 23 geometries, 2 face centers, outer and inner (23*2*2)
-    TVector3 x_uni[N_ALV_TYPES * 2 * 2];  // unit vectors for each face
+    TVector3 x_uni[N_ALV_TYPES * 2 * 2]; // unit vectors for each face
     TVector3 y_uni[N_ALV_TYPES * 2 * 2];
     TVector3 z_uni[N_ALV_TYPES * 2 * 2];
     TVector3 center_cry[N_CRY_TYPES * 2]; // 85 types of crystals, 2 face centers (85*2)
-    TVector3 x_uni_cry[N_CRY_TYPES * 2];  // unit vectors for each face for crystals
+    TVector3 x_uni_cry[N_CRY_TYPES * 2]; // unit vectors for each face for crystals
     TVector3 y_uni_cry[N_CRY_TYPES * 2];
     TVector3 z_uni_cry[N_CRY_TYPES * 2];
     TRotation rot[N_ALV_TYPES * 2 * 2 + 1]; // calculated in each face, but only 23 are really different if all is ok
@@ -344,9 +344,9 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     // systems.
     TRotation rot_cry[N_CRY_TYPES * 2]; // only a few are really different if all is ok
     // volume centers
-    TVector3 alv_cm[N_ALV_TYPES * 2];     // 23 geometries, outer and inner
+    TVector3 alv_cm[N_ALV_TYPES * 2]; // 23 geometries, outer and inner
     TVector3 alv_cm_rot[N_ALV_TYPES * 2]; // 23 geometries, outer and inner after final rotation
-    TVector3 cry_cm[N_CRY_TYPES];         // 85 types of crystals
+    TVector3 cry_cm[N_CRY_TYPES]; // 85 types of crystals
 
     // The center of the faces are first calculated. Then, the unit vectors defining the axis in each faces
     // Third, the rotation moving from the lab system to the unit vectors previously found. To define the
@@ -355,7 +355,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     for (Int_t i = 0; i < N_ALV_TYPES * 2 * 2; i++)
     { // for 23 geometries, 2 face centers, outer and inner (23*2*2)
         center[i] = points[i * 4] + points[i * 4 + 1] + points[i * 4 + 2] + points[i * 4 + 3]; // face centers
-        center[i] *= 0.25;                                                                     // face centers
+        center[i] *= 0.25; // face centers
         // center[i].Print();
         z_uni[i] = (points[i * 4 + 1] - points[i * 4]).Cross(points[i * 4 + 2] - points[i * 4 + 1]);
         z_uni[i] = z_uni[i].Unit(); // normal to face center
@@ -364,7 +364,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
         { // for the irregular alveoli at the end of the iPhos, the X axis is taken from other vertices
             x_uni[i] = points[i * 4 + 2] - points[i * 4 + 3];
         }
-        x_uni[i] = x_uni[i].Unit();          // unit along X
+        x_uni[i] = x_uni[i].Unit(); // unit along X
         y_uni[i] = z_uni[i].Cross(x_uni[i]); // unit along Y
 
         // x_uni[i].Print();  y_uni[i].Print();   z_uni[i].Print();
@@ -401,7 +401,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     { // 85 types of crystals, 2 face centers (85*2)
         center_cry[i] =
             points_cry[i * 4] + points_cry[i * 4 + 1] + points_cry[i * 4 + 2] + points_cry[i * 4 + 3]; // face centers
-        center_cry[i] *= 0.25;                                                                         // face centers
+        center_cry[i] *= 0.25; // face centers
         // center_cry[i].Print();
         z_uni_cry[i] = (points_cry[i * 4 + 1] - points_cry[i * 4]).Cross(points_cry[i * 4 + 2] - points_cry[i * 4 + 1]);
         z_uni_cry[i] = z_uni_cry[i].Unit(); // normal to face center
@@ -410,7 +410,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
         { // for the irregular crystals at the end of the iPhos, the X axis is taken from other vertices
             x_uni[i] = points_cry[i * 4 + 2] - points_cry[i * 4 + 3];
         }
-        x_uni_cry[i] = x_uni_cry[i].Unit();              // unit along X
+        x_uni_cry[i] = x_uni_cry[i].Unit(); // unit along X
         y_uni_cry[i] = z_uni_cry[i].Cross(x_uni_cry[i]); // unit along Y
         // x_uni_cry[i].Print();  y_uni_cry[i].Print();    z_uni_cry[i].Print();
 
@@ -466,7 +466,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     }
 
     // location of the crystals in the alveoli
-    TVector3 cry_position[N_CRY_TYPES];       // 85 types of crystals
+    TVector3 cry_position[N_CRY_TYPES]; // 85 types of crystals
     TVector3 cry_position_local[N_CRY_TYPES]; // 85 types of crystals
 
     cry_position[0] = cry_cm[0] - alv_cm[1]; // first alveolus with a single crystal wrt inner alv
@@ -546,7 +546,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     }
 
     // Redefinition of vertices for the construction of the Crystals, using TGeoArb8
-    Double_t* vertices_Cry[N_CRY_TYPES];      // 680/8=85 (85 crystal types)
+    Double_t* vertices_Cry[N_CRY_TYPES]; // 680/8=85 (85 crystal types)
     Double_t* vertices_Cry_Wrap[N_CRY_TYPES]; // 680/8=85 (85 crystal types)
     for (Int_t i = 0; i < N_CRY_TYPES; i++)
     {
@@ -583,25 +583,25 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     // CEPA USC PART
     //  centers of faces
     TVector3 center_CEPA[N_ALV_TYPES_CEPA * 2]; // 3 geometries, 2 face centers, (3*2)
-    TVector3 x_uni_CEPA[N_ALV_TYPES_CEPA * 2];  // unit vectors for each face
+    TVector3 x_uni_CEPA[N_ALV_TYPES_CEPA * 2]; // unit vectors for each face
     TVector3 y_uni_CEPA[N_ALV_TYPES_CEPA * 2];
     TVector3 z_uni_CEPA[N_ALV_TYPES_CEPA * 2];
     TVector3 center_inn_CEPA[N_ALV_TYPES_CEPA * 2]; // 3 geometries, 2 face centers, (3*2)
-    TVector3 x_inn_uni_CEPA[N_ALV_TYPES_CEPA * 2];  // unit vectors for each face
+    TVector3 x_inn_uni_CEPA[N_ALV_TYPES_CEPA * 2]; // unit vectors for each face
     TVector3 y_inn_uni_CEPA[N_ALV_TYPES_CEPA * 2];
     TVector3 z_inn_uni_CEPA[N_ALV_TYPES_CEPA * 2];
     TVector3 center_cry_CEPA[N_CRY_TYPES_CEPA * 2]; // 12 types of crystals, 2 face centers (12*2)
-    TVector3 x_uni_cry_CEPA[N_CRY_TYPES_CEPA * 2];  // unit vectors for each face for crystals
+    TVector3 x_uni_cry_CEPA[N_CRY_TYPES_CEPA * 2]; // unit vectors for each face for crystals
     TVector3 y_uni_cry_CEPA[N_CRY_TYPES_CEPA * 2];
     TVector3 z_uni_cry_CEPA[N_CRY_TYPES_CEPA * 2];
-    TRotation rot_CEPA[N_ALV_TYPES_CEPA * 2];     // calculated in each face
+    TRotation rot_CEPA[N_ALV_TYPES_CEPA * 2]; // calculated in each face
     TRotation rot_inn_CEPA[N_ALV_TYPES_CEPA * 2]; // calculated in each face
     TRotation rot_cry_CEPA[N_CRY_TYPES_CEPA * 2]; // only a few are really different if all is ok
     // volume centers
-    TVector3 alv_cm_CEPA[N_ALV_TYPES_CEPA];     // 3 geometries
+    TVector3 alv_cm_CEPA[N_ALV_TYPES_CEPA]; // 3 geometries
     TVector3 alv_cm_rot_CEPA[N_ALV_TYPES_CEPA]; // 3 geometries, after final rotation
     TVector3 alv_inn_cm_CEPA[N_ALV_TYPES_CEPA]; // 3 geometries
-    TVector3 cry_cm_CEPA[N_CRY_TYPES_CEPA];     // 12 types of crystals
+    TVector3 cry_cm_CEPA[N_CRY_TYPES_CEPA]; // 12 types of crystals
 
     // The center of the crystal faces are first calculated. Then, the unit vectors defining the axis in each faces
     // Third, the rotation moving from the lab system to the unit vectors previously found. To define the
@@ -611,7 +611,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     { // 14 types of crystals, 2 face centers (14*2)
         center_cry_CEPA[i] = points_cry_CEPA[i * 4] + points_cry_CEPA[i * 4 + 1] + points_cry_CEPA[i * 4 + 2] +
                              points_cry_CEPA[i * 4 + 3]; // face centers
-        center_cry_CEPA[i] *= 0.25;                      // face centers
+        center_cry_CEPA[i] *= 0.25; // face centers
         // center_cry_CEPA[i].Print();
         z_uni_cry_CEPA[i] = (points_cry_CEPA[i * 4 + 1] - points_cry_CEPA[i * 4])
                                 .Cross(points_cry_CEPA[i * 4 + 2] - points_cry_CEPA[i * 4 + 1]);
@@ -619,7 +619,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
         x_uni_cry_CEPA[i] =
             points_cry_CEPA[i * 4 + 2] - points_cry_CEPA[i * 4 + 1]; // MODIFIED FROM BARREL+IPHOS DEFINITION!!!!
 
-        x_uni_cry_CEPA[i] = x_uni_cry_CEPA[i].Unit();                   // unit along X
+        x_uni_cry_CEPA[i] = x_uni_cry_CEPA[i].Unit(); // unit along X
         y_uni_cry_CEPA[i] = z_uni_cry_CEPA[i].Cross(x_uni_cry_CEPA[i]); // unit along Y
         // x_uni_cry_CEPA[i].Print();  y_uni_cry_CEPA[i].Print();    z_uni_cry_CEPA[i].Print();
 
@@ -730,7 +730,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     // They require a later correction to enlarge the alveoli inner space and avoid extrusions
     // as the points_cry_CEPA are given without wrapping
     for (Int_t uOrD = 0; uOrD < 2; uOrD++)
-    {                                                                       // upper or lower face
+    { // upper or lower face
         points_inn_CEPA[uOrD * 4 + 0] = points_cry_wrap_CEPA[uOrD * 4 + 0]; // alveoli 1, first corner of crystal 1
         points_inn_CEPA[uOrD * 4 + 1] = points_cry_wrap_CEPA[1 * 8 + uOrD * 4 + 1]; // second corner of crystal 2
         points_inn_CEPA[uOrD * 4 + 2] = points_cry_wrap_CEPA[2 * 8 + uOrD * 4 + 2]; // third corner of crystal 3
@@ -767,7 +767,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     { // for 3 geometries, 2 face centers (3*2)
         center_inn_CEPA[i] = points_inn_CEPA[i * 4] + points_inn_CEPA[i * 4 + 1] + points_inn_CEPA[i * 4 + 2] +
                              points_inn_CEPA[i * 4 + 3]; // face centers
-        center_inn_CEPA[i] *= 0.25;                      // face centers
+        center_inn_CEPA[i] *= 0.25; // face centers
         // cout<< "Alv centers coordinates: "<< endl; center_inn_CEPA[i].Print(); cout<< "END OF Alv centers
         // coordinates: "<< endl;
         z_inn_uni_CEPA[i] = (points_inn_CEPA[i * 4 + 1] - points_inn_CEPA[i * 4])
@@ -776,7 +776,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
         x_inn_uni_CEPA[i] =
             points_inn_CEPA[i * 4 + 2] - points_inn_CEPA[i * 4 + 1]; // MODIFIED FROM BARREL+IPHOS DEFINITION!!!!
 
-        x_inn_uni_CEPA[i] = x_inn_uni_CEPA[i].Unit();                   // unit along X
+        x_inn_uni_CEPA[i] = x_inn_uni_CEPA[i].Unit(); // unit along X
         y_inn_uni_CEPA[i] = z_inn_uni_CEPA[i].Cross(x_inn_uni_CEPA[i]); // unit along Y
         // x_inn_uni_CEPA[i].Print();  y_inn_uni_CEPA[i].Print();   z_inn_uni_CEPA[i].Print();
         //  calculate rotation matrix for the 3 geometries (should be repeated 4 times, just checking)
@@ -873,14 +873,14 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     { // for 3 geometries, 2 face centers (3*2)
         center_CEPA[i] = points_CEPA[i * 4] + points_CEPA[i * 4 + 1] + points_CEPA[i * 4 + 2] +
                          points_CEPA[i * 4 + 3]; // face centers
-        center_CEPA[i] *= 0.25;                  // face centers
+        center_CEPA[i] *= 0.25; // face centers
         // center_CEPA[i].Print();
         z_uni_CEPA[i] =
             (points_CEPA[i * 4 + 1] - points_CEPA[i * 4]).Cross(points_CEPA[i * 4 + 2] - points_CEPA[i * 4 + 1]);
-        z_uni_CEPA[i] = z_uni_CEPA[i].Unit();                            // normal to face center
+        z_uni_CEPA[i] = z_uni_CEPA[i].Unit(); // normal to face center
         x_uni_CEPA[i] = points_CEPA[i * 4 + 2] - points_CEPA[i * 4 + 1]; // MODIFIED FROM BARREL+IPHOS DEFINITION!!!!
 
-        x_uni_CEPA[i] = x_uni_CEPA[i].Unit();               // unit along X
+        x_uni_CEPA[i] = x_uni_CEPA[i].Unit(); // unit along X
         y_uni_CEPA[i] = z_uni_CEPA[i].Cross(x_uni_CEPA[i]); // unit along Y
         // x_uni_CEPA[i].Print();  y_uni_CEPA[i].Print();   z_uni_CEPA[i].Print();
         // calculate rotation matrix for the 3 geometries (should be repeated 4 times, just checking)
@@ -903,7 +903,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
     }
 
     // location of the crystals in the alveoli
-    TVector3 cry_position_CEPA[N_CRY_TYPES_CEPA];       // 14 types of crystals
+    TVector3 cry_position_CEPA[N_CRY_TYPES_CEPA]; // 14 types of crystals
     TVector3 cry_position_local_CEPA[N_CRY_TYPES_CEPA]; // 14 types of crystals
 
     // Relative Crystal rotation in each alveoli. Obtained from the crystal unit vector in
@@ -988,7 +988,7 @@ void create_califa_geo_selector(const char* expNumber = "nominal", TString geoTa
 
     // Redefinition of vertices for the construction of the Crystals, using TGeoArb8
     // In this version, points correspond to the crystal and the wrapping should be added
-    Double_t* vertices_Cry_CEPA[N_CRY_TYPES_CEPA];      // (14 crystal types)
+    Double_t* vertices_Cry_CEPA[N_CRY_TYPES_CEPA]; // (14 crystal types)
     Double_t* vertices_Cry_Wrap_CEPA[N_CRY_TYPES_CEPA]; // (14 crystal types)
     for (Int_t i = 0; i < N_CRY_TYPES_CEPA; i++)
     {

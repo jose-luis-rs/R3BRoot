@@ -117,11 +117,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pSi->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
         // <DB> trick to remove too much internal
         // tracking in the Aladin magnet yoke
@@ -162,11 +162,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pLiH->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pVac = static_cast<TGeoMedium*>(gGeoManager->GetMedium("vacuum"));
@@ -197,11 +197,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pVac->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pGold = static_cast<TGeoMedium*>(gGeoManager->GetMedium("gold"));
@@ -232,11 +232,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pGold->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pM = static_cast<TGeoMedium*>(gGeoManager->GetMedium("mylar"));
@@ -267,11 +267,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pM->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pM->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pM->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pM->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pAl = static_cast<TGeoMedium*>(gGeoManager->GetMedium("aluminium"));
@@ -302,11 +302,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pAl->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pC = static_cast<TGeoMedium*>(gGeoManager->GetMedium("carbon"));
@@ -337,11 +337,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pC->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pC->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pC->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pC->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
 
         TGeoMedium* pHe = static_cast<TGeoMedium*>(gGeoManager->GetMedium("helium"));
@@ -372,11 +372,11 @@ void R3BAlpide::SetSpecialPhysicsCuts()
             TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "CUTNEU", cutE); /** neutral hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "CUTHAD", cutE); /** charged hadrons (GeV)*/
             TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "CUTMUO", cutE); /** muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "BCUTE", cutE);  /** electron bremsstrahlung (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "BCUTM", cutE);  /** muon and hadron bremsstrahlung(GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "DCUTE", cutE);  /** delta-rays by electrons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "DCUTM", cutE);  /** delta-rays by muons (GeV)*/
-            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "PPCUTM", -1.);  /** direct pair production by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "BCUTE", cutE); /** electron bremsstrahlung (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "BCUTM", cutE); /** muon and hadron bremsstrahlung(GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "DCUTE", cutE); /** delta-rays by electrons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "DCUTM", cutE); /** delta-rays by muons (GeV)*/
+            TVirtualMC::GetMC()->Gstpar(pHe->GetId(), "PPCUTM", -1.); /** direct pair production by muons (GeV)*/
         }
     } //! gGeoManager
 }

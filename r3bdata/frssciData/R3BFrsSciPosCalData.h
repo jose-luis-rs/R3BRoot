@@ -35,10 +35,10 @@ class R3BFrsSciPosCalData : public TObject
 
   private:
     UShort_t fDetector;
-    Double_t fRawTimeNs;       // 0.5 * (Tright + Tleft) after selection of the multiplicity
+    Double_t fRawTimeNs; // 0.5 * (Tright + Tleft) after selection of the multiplicity
     Double_t fRawTimeNs_wTref; // 0.5 * (Tright + Tleft) - Ttrig
-    Float_t fRawPosNs;         // Tright - Tleft: x increasing for right to left
-    Float_t fCalPosMm;         // calibrated position in Mm
+    Float_t fRawPosNs; // Tright - Tleft: x increasing for right to left
+    Float_t fCalPosMm; // calibrated position in Mm
 
   public:
     ClassDef(R3BFrsSciPosCalData, 3)

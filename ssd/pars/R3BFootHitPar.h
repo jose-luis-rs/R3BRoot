@@ -60,8 +60,8 @@ class R3BFootHitPar : public FairParGenericSet
     inline void SetNumParsFit(int npar) { fNumParsFit = npar; }
 
   private:
-    int fNumDets = 8;     // Number of detectors
-    int fNumParsFit = 2;  // Number of parameters of for the calibration
+    int fNumDets = 8; // Number of detectors
+    int fNumParsFit = 2; // Number of parameters of for the calibration
     TArrayF* fCharCalPar; // Parameters for the calibration charge vs energy
 
     const R3BFootHitPar& operator=(const R3BFootHitPar&);

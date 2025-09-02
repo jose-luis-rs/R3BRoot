@@ -13,8 +13,8 @@
 
 #pragma once
 
-#define MAX_TACQUILA_SAM 7     // 0 .. 7
-#define MAX_TACQUILA_GTB 1     // 0 and 1
+#define MAX_TACQUILA_SAM 7 // 0 .. 7
+#define MAX_TACQUILA_GTB 1 // 0 and 1
 #define MAX_TACQUILA_MODULE 20 // 0 .. 20
 #define TACQUILA_NUM_GEOM ((MAX_TACQUILA_SAM + 1) * (MAX_TACQUILA_GTB + 1) * (MAX_TACQUILA_MODULE + 1))
 
@@ -140,8 +140,8 @@ class R3BTCalEngine : public TObject
     TH1F* fhData[N_PLANE_MAX][N_PADDLE_MAX][N_SIDE_MAX]; /**< An array of histograms to store raw TDC distributions. */
     TH1F* fhTime[N_PLANE_MAX][N_PADDLE_MAX]
                 [N_SIDE_MAX]; /**< An array of histograms to store unparametrized bin-by-bin calibration. */
-    R3BTCalPar* fCal_Par;     /**< A pointer to the parameter container. */
-    Double_t fClockFreq;      /**< A clock cycle in [ns]. */
+    R3BTCalPar* fCal_Par; /**< A pointer to the parameter container. */
+    Double_t fClockFreq; /**< A clock cycle in [ns]. */
 
   public:
     ClassDef(R3BTCalEngine, 1)

@@ -1526,8 +1526,8 @@ void R3BFiberTrackingOnlineSpectra::Exec(Option_t* option)
                             // if(1==i) ypoints = xposback;
                             // if(2==i) ypoints = xmean;
 
-                            xsum = xsum + xpoints[i];           // calculate sigma(xi)
-                            ysum = ysum + ypoints[i];           // calculate sigma(yi)
+                            xsum = xsum + xpoints[i]; // calculate sigma(xi)
+                            ysum = ysum + ypoints[i]; // calculate sigma(yi)
                             x2sum = x2sum + pow(xpoints[i], 2); // calculate sigma(x^2i)
                             y2sum = y2sum + pow(ypoints[i], 2);
                             xysum = xysum + xpoints[i] * ypoints[i]; // calculate sigma(xi*yi)
@@ -1599,7 +1599,7 @@ void R3BFiberTrackingOnlineSpectra::Exec(Option_t* option)
 
                         fh_X_fib_vs_tofd_no_cut->Fill(xmean, intercept + slope * 1138.5);
                         fh_X_fib_vs_tofd_ang_no_cut->Fill(xmean,
-                                                          xposback - (angX) * 602.95 / 100. + (angX) * 1138.5 / 100.);
+                                                          xposback - (angX)*602.95 / 100. + (angX)*1138.5 / 100.);
 
                         if (q > qmin && q < qmax /*q>5.6 && q<6.5*/)
                         {
@@ -1652,7 +1652,7 @@ void R3BFiberTrackingOnlineSpectra::Exec(Option_t* option)
                         if (!(q > qmin && q < qmax /*q>5.6 && q<6.5*/) /*r*r < 0.9*/)
                             return;
                         fh_X_fib_vs_tofd->Fill(xmean, intercept + slope * 1138.5);
-                        fh_X_fib_vs_tofd_ang->Fill(xmean, xposback - (angX) * 602.95 / 100. + (angX) * 1138.5 / 100.);
+                        fh_X_fib_vs_tofd_ang->Fill(xmean, xposback - (angX)*602.95 / 100. + (angX)*1138.5 / 100.);
 
                         if ((v2(1) > -0.2 && v2(1) < 0.2) || 1)
                         {
@@ -1672,7 +1672,7 @@ void R3BFiberTrackingOnlineSpectra::Exec(Option_t* option)
                                     // fh2_fibtracking_planeXZ->Fill(zrand, xpos32 - angX * 434.1 /1000. + angX
                                     // * zrand /1000.); fh2_fibtracking_planeXZ->Fill(zrand, b + m * zrand);
                                     fh2_fibtracking_planeXZ_nocuts->Fill(
-                                        zrand, xposback - (angX) * 602.95 / 100. + (angX)*zrand / 100.);
+                                        zrand, xposback - (angX)*602.95 / 100. + (angX)*zrand / 100.);
                                     fh2_fibtracking_planeXZ->Fill(zrand, intercept + slope * zrand);
                                 }
                             }

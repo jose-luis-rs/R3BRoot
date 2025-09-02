@@ -207,39 +207,39 @@ std::string R3BCalifaGeometry::GetCrystalVolumePath(int iD)
     if (iD >= 1 && iD <= fNumCrystals / 2)
     {
         if (iD < 33)
-        {                          // First ring in BARREL (single crystal per alveolus)
-            alvType = 1;           // Alveolus type 1
+        { // First ring in BARREL (single crystal per alveolus)
+            alvType = 1; // Alveolus type 1
             alveolusCopy = iD - 1; // copy from 0 to 31
-            cryType = 1;           // Only one crystal type (1)
+            cryType = 1; // Only one crystal type (1)
         }
         else if (iD < 2337)
-        {                                                                // All 4-crystals alveoli in BARREL and iPhos
-            alvType = (Int_t)((iD - 33) / 128) + 2;                      // Alveolus type (2, ..., 19)
+        { // All 4-crystals alveoli in BARREL and iPhos
+            alvType = (Int_t)((iD - 33) / 128) + 2; // Alveolus type (2, ..., 19)
             alveolusCopy = (Int_t)((iD - 33 - (alvType - 2) * 128) / 4); // copy from 0 to 31
             cryType = iD - 33 - (alvType - 2) * 128 - alveolusCopy * 4 + 1; // Four crystal types (1,2,3,4)
         }
         else if (iD < 2433)
-        {                                                                     // 3-crystals alveoli in iPhos
-            alvType = (Int_t)((iD - 2337) / 24) + 20;                         // Alveolus type (20, 21, 22, 23)
-            alveolusCopy = (Int_t)((iD - 2337 - (alvType - 20) * 24) / 3);    // copy from 0 to 7
+        { // 3-crystals alveoli in iPhos
+            alvType = (Int_t)((iD - 2337) / 24) + 20; // Alveolus type (20, 21, 22, 23)
+            alveolusCopy = (Int_t)((iD - 2337 - (alvType - 20) * 24) / 3); // copy from 0 to 7
             cryType = iD - 2337 - (alvType - 20) * 24 - alveolusCopy * 3 + 1; // Three crystal types (1,2,3)
         }
         else if (iD < 2465) // CEPA_CsI, four crystals alveoli (iD from 2433 to 2464)
         {
             alvType = 1;
-            alveolusCopy = (Int_t)((iD - 2433) / 4);    // copy from 0 to 7
+            alveolusCopy = (Int_t)((iD - 2433) / 4); // copy from 0 to 7
             cryType = iD - 2433 - alveolusCopy * 4 + 1; // Four crystal types (1,2,3,4)
         }
         else if (iD < 2513) // CEPA_CsI, six crystals alveoli (iD from 2465 to 2512)
         {
             alvType = 2;
-            alveolusCopy = (Int_t)((iD - 2465) / 6);    // copy from 0 to 7
+            alveolusCopy = (Int_t)((iD - 2465) / 6); // copy from 0 to 7
             cryType = iD - 2465 - alveolusCopy * 6 + 1; // Four crystal types (1,2,3,4,5,6)
         }
         else if (iD < 2545) // CEPA_CsI, four crystals alveoli (iD from 2513 to 2544)
         {
             alvType = 3;
-            alveolusCopy = (Int_t)((iD - 2513) / 4);    // copy from 0 to 7
+            alveolusCopy = (Int_t)((iD - 2513) / 4); // copy from 0 to 7
             cryType = iD - 2513 - alveolusCopy * 4 + 1; // Four crystal types (1,2,3,4)
         }
 
@@ -358,9 +358,9 @@ int R3BCalifaGeometry::GetCrystalId(const std::string volumePath)
 
     int crystalId = 0;
     bool isCCSI = m[1].str() == "Alveolus_CCSI"; // Adding CEPA CSI
-    int alvType = std::stoi(m[2].str());         // converting to int the alveolus type
-    int alveolusCopy = std::stoi(m[3].str());    // converting to int the alveolus copy
-    int cryType = std::stoi(m[5].str());         // converting to int the crystal type
+    int alvType = std::stoi(m[2].str()); // converting to int the alveolus type
+    int alveolusCopy = std::stoi(m[3].str()); // converting to int the alveolus copy
+    int cryType = std::stoi(m[5].str()); // converting to int the crystal type
     bool invalid = kFALSE;
 
     // cryType runs from 1 to 4 while alvType runs from 1 to 23, otherwise invaled

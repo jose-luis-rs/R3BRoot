@@ -113,8 +113,8 @@ class R3BAmsMapped2StripCalPar : public FairTask
     Double_t fMean;
     Bool_t fPrint;
 
-    R3BAmsMappingPar* fMap_Par;     /**< Parameter container with mapping. >*/
-    R3BAmsStripCalPar* fStrip_Par;  /**< Parameter container. >*/
+    R3BAmsMappingPar* fMap_Par; /**< Parameter container with mapping. >*/
+    R3BAmsStripCalPar* fStrip_Par; /**< Parameter container. >*/
     TClonesArray* fAmsMappedDataCA; /**< Array with AMS Mapped input data. >*/
 
     TH1F** fh_Map_energy_strip;

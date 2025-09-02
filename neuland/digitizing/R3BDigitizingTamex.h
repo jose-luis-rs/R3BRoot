@@ -36,17 +36,17 @@ namespace R3B::Digitizing::Neuland::Tamex
     struct Params
     {
         // NOLINTBEGIN
-        double fPMTThresh = 1.;                // [MeV]
+        double fPMTThresh = 1.; // [MeV]
         double fSaturationCoefficient = 0.012; // Saturation coefficient of PMTs
         bool fExperimentalDataIsCorrectedForSaturation = true;
         double fTimeRes = 0.15; // time + Gaus(0., fTimeRes) [ns]
         double fEResRel = 0.05; // Gaus(e, fEResRel * e) []
         double fEnergyGain = 15.0;
         double fPedestal = 14.0;
-        double fTimeMax = 1000.;          // ns
-        double fTimeMin = 1.;             // ns
+        double fTimeMax = 1000.; // ns
+        double fTimeMin = 1.; // ns
         double fPileUpTimeWindow = 1000.; // ns
-        double fPileUpDistance = 100.;    // ns
+        double fPileUpDistance = 100.; // ns
         double fQdcMin = 0.067;
         TRandom3* fRnd = nullptr;
         // NOLINTEND
@@ -129,9 +129,9 @@ namespace R3B::Digitizing::Neuland::Tamex
         explicit operator Digitizing::Channel::Signal() const;
 
       private:
-        double width_ = 0.0;              // the temperal width of the TmxPeak in [ns]
-        double qdc_ = 0.0;                // the qdc value in [MeV] (without threshold)
-        double leading_edge_time_ = 0.0;  // leading edge of the TmxPeak in [ns]
+        double width_ = 0.0; // the temperal width of the TmxPeak in [ns]
+        double qdc_ = 0.0; // the qdc value in [MeV] (without threshold)
+        double leading_edge_time_ = 0.0; // leading edge of the TmxPeak in [ns]
         double trailing_edge_time_ = 0.0; // tailing edge of the TmxPeak
         Channel* channel_ptr_ = nullptr;
     };

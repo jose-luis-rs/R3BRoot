@@ -99,13 +99,13 @@ void R3BNeulandMappedHist::Exec(Option_t* option)
 
                 fh_neuland_mapped_cle->Fill(hitmapped->GetCoarseTime(0, 0)); // PM1 LE
                 fh_neuland_mapped_cte->Fill(hitmapped->GetCoarseTime(0, 1)); // PM1 TE
-                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(0, 0));   // PM1 LE
-                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(0, 1));   // PM1 TE
+                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(0, 0)); // PM1 LE
+                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(0, 1)); // PM1 TE
 
                 fh_neuland_mapped_cle->Fill(hitmapped->GetCoarseTime(1, 0)); // PM2 LE
                 fh_neuland_mapped_cte->Fill(hitmapped->GetCoarseTime(1, 1)); // PM2 TE
-                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(1, 0));   // PM2 LE
-                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(1, 1));   // PM2 TE
+                fh_neuland_mapped_fle->Fill(hitmapped->GetFineTime(1, 0)); // PM2 LE
+                fh_neuland_mapped_fte->Fill(hitmapped->GetFineTime(1, 1)); // PM2 TE
                 //        cout<<"in ana: "<<hitmapped->GetPlaneId()<<"  "<<hitmapped->GetBarId()<<endl;
             }
         }

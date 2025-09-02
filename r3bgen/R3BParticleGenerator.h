@@ -42,13 +42,13 @@ class R3BParticleGenerator : public FairGenerator, public R3BParticleSelector
     void addParticle(const int pdgCode, const double mass) override;
 
   private:
-    R3BDistribution<3> fVertex_cm;   //!
+    R3BDistribution<3> fVertex_cm; //!
     R3BDistribution<2> fSpread_mRad; //!
     R3BDistribution<1> fEnergy_AMeV; //!
 
-    int fPDGCode;     // The PDG Code of the Particle
+    int fPDGCode; // The PDG Code of the Particle
     double fMass_GeV; // The Mass of the Particle
-    TRandom3 fRNG;    // the RNG
+    TRandom3 fRNG; // the RNG
 
     ClassDefOverride(R3BParticleGenerator, 1)
 };

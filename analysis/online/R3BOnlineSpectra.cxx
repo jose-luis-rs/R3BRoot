@@ -378,8 +378,8 @@ InitStatus R3BOnlineSpectra::Init()
         fh_los_pos_ToT->GetYaxis()->SetTitle("Y position / cm");
         fh_los_dt_hits_ToT =
             new TH2F("los_dt_ToT", "LOS ToT dt ", 6000, 0, 3000, 2000, 0, 200.); // 6000,0,3000,2000,0,200.
-        fh_los_dt_hits_ToT->GetXaxis()->SetTitle("dt between two hits / usec");  // dt between two hits / ns
-        fh_los_dt_hits_ToT->GetYaxis()->SetTitle("ToT / ns");                    // ToT / ns
+        fh_los_dt_hits_ToT->GetXaxis()->SetTitle("dt between two hits / usec"); // dt between two hits / ns
+        fh_los_dt_hits_ToT->GetYaxis()->SetTitle("ToT / ns"); // ToT / ns
         fh_los_dt_first_ToT = new TH2F("los_dt_events_ToT", "LOS ToT dtevents ", 5000, 0, 50000, 500, 0, 200.);
         fh_los_dt_first_ToT->GetXaxis()->SetTitle("dt between two events / usec");
         fh_los_dt_first_ToT->GetYaxis()->SetTitle("ToT / ns");
@@ -1261,9 +1261,9 @@ void R3BOnlineSpectra::Exec(Option_t* option)
             if (!hit)
                 continue;
 
-            IC = hit->GetIC();           // negative values if offset not high enough
+            IC = hit->GetIC(); // negative values if offset not high enough
             SEETRAM = hit->GetSEETRAM(); // negative values if offset not high enough
-            TOFDOR = hit->GetTOFDOR();   // only positive values possible
+            TOFDOR = hit->GetTOFDOR(); // only positive values possible
 
             //     unsigned long long time = header->GetTimeStamp();
 
@@ -1357,7 +1357,7 @@ void R3BOnlineSpectra::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
+            Int_t iCha = hit->GetChannel(); // 1..
 
             if (iDet < 2)
                 fh_rolu_channels->Fill(iCha); // ROLU 1
@@ -1487,7 +1487,7 @@ void R3BOnlineSpectra::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
+            Int_t iCha = hit->GetChannel(); // 1..
 
             fh_los_channels->Fill(iCha);
         }
@@ -1760,7 +1760,7 @@ void R3BOnlineSpectra::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel();  // 1..
+            Int_t iCha = hit->GetChannel(); // 1..
 
             fh_sci8_channels->Fill(iCha);
         }
@@ -1959,13 +1959,13 @@ void R3BOnlineSpectra::Exec(Option_t* option)
                 if (hit->IsMAPMT() && hit->IsLeading())
                 {
                     fh_channels_Fib[ifibcount]->Fill(iCha); // Fill which clockTDC channel has events
-                    ++mapmt_num.at(hit->GetChannel() - 1);  // multihit of a given clockTDC channel
+                    ++mapmt_num.at(hit->GetChannel() - 1); // multihit of a given clockTDC channel
                 }
 
                 if (!hit->IsMAPMT() && hit->IsLeading())
                 {
                     fh_channels_single_Fib[ifibcount]->Fill(iCha); // Fill which single PMT channel has events
-                    ++spmt_num.at(hit->GetChannel() - 1);          // multihit of a given PADI channel
+                    ++spmt_num.at(hit->GetChannel() - 1); // multihit of a given PADI channel
                 }
             }
 
@@ -2110,8 +2110,8 @@ void R3BOnlineSpectra::Exec(Option_t* option)
                 continue; // should not happen
 
             Int_t const iPlane = mapped->GetDetectorId(); // 1..n
-            Int_t const iBar = mapped->GetBarId();        // 1..n
-            Int_t const iSide = mapped->GetSideId();      // 1..n
+            Int_t const iBar = mapped->GetBarId(); // 1..n
+            Int_t const iSide = mapped->GetSideId(); // 1..n
             Int_t const iEdge = mapped->GetEdgeId();
 
             if (iPlaneMem != iPlane)
@@ -2170,7 +2170,7 @@ void R3BOnlineSpectra::Exec(Option_t* option)
                 continue; // should not happen
 
             Int_t const iPlane = cal->GetDetectorId(); // 1..n
-            Int_t const iBar = cal->GetBarId();        // 1..n
+            Int_t const iBar = cal->GetBarId(); // 1..n
 
             //      std::cout << iPlane << ' ' << iBar <<
             //          ',' << cal->GetTimeBL_ns() <<
@@ -2243,7 +2243,7 @@ void R3BOnlineSpectra::Exec(Option_t* option)
                     if (Bar_present[jm][ipl][ibr])
                     {
                         Int_t iPlane = ipl + 1; // 1..n
-                        Int_t iBar = ibr + 1;   // 1..n
+                        Int_t iBar = ibr + 1; // 1..n
 
                         fh_tofd_multihit[ipl]->Fill(ibr + 1, jmult[ipl][ibr]);
 
