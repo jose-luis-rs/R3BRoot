@@ -387,7 +387,7 @@ void R3BLosCal2HitPar::Exec(Option_t* option)
                 } // if iLosType
 
             } // for iPart
-        }     // for iDet
+        } // for iDet
     }
 
     for (Int_t i = 0; i < fStats; i++)

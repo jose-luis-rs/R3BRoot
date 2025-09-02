@@ -318,7 +318,7 @@ void R3BNeulandMCMon::Exec(Option_t*)
                 }
                 // Get Energy py particle where the mother is a primary neutron
                 fhmEPdg[mcTrack->GetPdgCode()]->Fill(point->GetLightYield() * 1000.); // point->GetEnergyLoss()*1000.);
-            }                                                                         // end primary neutron mother
+            } // end primary neutron mother
 
             // Sum energy per particle type per event
             if (!EtotPDG[mcTrack->GetPdgCode()])

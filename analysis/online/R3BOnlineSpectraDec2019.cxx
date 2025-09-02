@@ -2555,17 +2555,17 @@ void R3BOnlineSpectraDec2019::Exec(Option_t* option)
                     fh_ToT_single_Fib[ifibcount]->Fill(1, hit->GetSPMTToT_ns());
 
                 } // end for (lhit)
-            }     // end for(ihit)
-                  /*
-                              fh_fibers_Fib[ifibcount]->Fill(iFibMax_MA);
-                              fh_ToT_s_Fib[ifibcount]->Fill(iFibMax_MA, totMax_S);
-                              fh_ToT_m_Fib[ifibcount]->Fill(iFibMax_MA, totMax_MA);
-                              fh_time_Fib[ifibcount]->Fill(iFibMax_MA, yposMax);
-                              fh_Fib_ToF[ifibcount]->Fill(iFibMax_MA, tof_fibMax);
-                              fh_Fib_pos_xy[ifibcount]->Fill(xpos, ypos);
-                              fh_Fib_vs_Events[ifibcount]->Fill(fNEvents, iFibMax_MA);
-                              fh_ToT_single_Fib[ifibcount]->Fill(1, totMax_S);
-                  */
+            } // end for(ihit)
+            /*
+                        fh_fibers_Fib[ifibcount]->Fill(iFibMax_MA);
+                        fh_ToT_s_Fib[ifibcount]->Fill(iFibMax_MA, totMax_S);
+                        fh_ToT_m_Fib[ifibcount]->Fill(iFibMax_MA, totMax_MA);
+                        fh_time_Fib[ifibcount]->Fill(iFibMax_MA, yposMax);
+                        fh_Fib_ToF[ifibcount]->Fill(iFibMax_MA, tof_fibMax);
+                        fh_Fib_pos_xy[ifibcount]->Fill(xpos, ypos);
+                        fh_Fib_vs_Events[ifibcount]->Fill(fNEvents, iFibMax_MA);
+                        fh_ToT_single_Fib[ifibcount]->Fill(1, totMax_S);
+            */
             if (ifibcount == 0 && iFibMax_MA > 120 && iFibMax_MA < 136)
             {
                 fib1a_cut = true;

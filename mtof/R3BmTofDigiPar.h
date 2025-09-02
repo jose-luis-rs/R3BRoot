@@ -26,8 +26,8 @@ class R3BmTofDigiPar : public FairParGenericSet
     R3BmTofDigiPar(const char* name = "R3BmTofDigiParTest",
                    const char* title = "Tutorial  parameter",
                    const char* context = "TestDefaultContext");
-    ~R3BmTofDigiPar(void){};
-    void clear(void){};
+    ~R3BmTofDigiPar(void) {};
+    void clear(void) {};
     void putParams(FairParamList* list);
     Bool_t getParams(FairParamList* list);
 

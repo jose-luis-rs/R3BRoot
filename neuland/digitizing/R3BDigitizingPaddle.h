@@ -30,7 +30,7 @@ namespace R3B::Digitizing
         Type right{};
         LRPair(Type p_left, Type p_right)
             : left(p_left)
-            , right(p_right){};
+            , right(p_right) {};
         LRPair() = default;
     };
 
@@ -102,17 +102,17 @@ namespace R3B::Digitizing
         // virtual std::function<indexMapFunc> IndexMapFunc() const { return ConstructIndexMapByTime; }
         virtual auto ConstructPaddelSignals(const Channel::Signals& firstSignals,
                                             const Channel::Signals& secondSignals) const -> Signals;
-        virtual auto ComputeTime(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
-            -> double = 0;
-        virtual auto ComputeEnergy(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
-            -> double = 0;
-        virtual auto ComputePosition(const Channel::Signal& rightSignal, const Channel::Signal& leftSignal) const
-            -> double = 0;
+        virtual auto ComputeTime(const Channel::Signal& firstSignal,
+                                 const Channel::Signal& secondSignal) const -> double = 0;
+        virtual auto ComputeEnergy(const Channel::Signal& firstSignal,
+                                   const Channel::Signal& secondSignal) const -> double = 0;
+        virtual auto ComputePosition(const Channel::Signal& rightSignal,
+                                     const Channel::Signal& leftSignal) const -> double = 0;
         virtual auto ComputeChannelHits(const Hit& hit) const -> Pair<Channel::Hit> = 0;
 
       public:
-        static auto SignalCouplingByTime(const Channel::Signals& firstSignals, const Channel::Signals& secondSignals)
-            -> std::vector<ChannelSignalPair>;
+        static auto SignalCouplingByTime(const Channel::Signals& firstSignals,
+                                         const Channel::Signals& secondSignals) -> std::vector<ChannelSignalPair>;
     };
 } // namespace R3B::Digitizing
 #endif

@@ -707,7 +707,7 @@ void R3BGlobalAnalysisS454::Exec(Option_t* option)
             */
 
         } // end if chi2
-    }     // end if trackHits>1
+    } // end if trackHits>1
 
     // second, old version of analysis
     if (is_carbon && is_alpha && 1 == 0)
@@ -1099,7 +1099,7 @@ void R3BGlobalAnalysisS454::Exec(Option_t* option)
             fh_pz_pz_cm->Fill(pHez_cm, pCz_cm);
 
         } // end if chi2
-    }     // end if trackHits>1
+    } // end if trackHits>1
 
     fNEvents += 1;
     return;

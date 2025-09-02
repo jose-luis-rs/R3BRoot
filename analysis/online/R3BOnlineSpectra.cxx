@@ -2091,7 +2091,7 @@ void R3BOnlineSpectra::Exec(Option_t* option)
                 fh_mult_Fib[ifibcount]->Fill(nHits);
 
         } // end if(aHit[ifibcount])
-    }     // end for(ifibcount)
+    } // end for(ifibcount)
 
     //----------------------------------------------------------------------
     // TOFD

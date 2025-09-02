@@ -27,12 +27,12 @@ namespace R3B::Digitizing::Neuland
         explicit NeulandPaddle(uint16_t paddleID);
 
       private:
-        [[nodiscard]] auto ComputeTime(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
-            -> double override;
-        [[nodiscard]] auto ComputeEnergy(const Channel::Signal& firstSignal, const Channel::Signal& secondSignal) const
-            -> double override;
-        [[nodiscard]] auto ComputePosition(const Channel::Signal& leftSignal, const Channel::Signal& rightSignal) const
-            -> double override;
+        [[nodiscard]] auto ComputeTime(const Channel::Signal& firstSignal,
+                                       const Channel::Signal& secondSignal) const -> double override;
+        [[nodiscard]] auto ComputeEnergy(const Channel::Signal& firstSignal,
+                                         const Channel::Signal& secondSignal) const -> double override;
+        [[nodiscard]] auto ComputePosition(const Channel::Signal& leftSignal,
+                                           const Channel::Signal& rightSignal) const -> double override;
         auto ComputeChannelHits(const Hit& hit) const -> Pair<Channel::Hit> override;
 
       public:

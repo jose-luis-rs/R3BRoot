@@ -641,13 +641,12 @@ void R3BOnlineSpectraBMON_S494::FinishEvent()
 void R3BOnlineSpectraBMON_S494::FinishTask()
 {
     R3BLOG(info,
-           "\n"
-               << "nEvents total " << fNEvents << "\n"
-               << "nEvents Rolu " << fNEventsRolu << "\n"
-               << "Time_start      : " << time_begin << "\n"
-               << "Time end        : " << time_end << "\n"
-               << "Time duration   : " << (double)(time_end - time_begin) / 1.e9 << " sec \n"
-               << "nSpill          : " << fNSpills);
+           "\n" << "nEvents total " << fNEvents << "\n"
+                << "nEvents Rolu " << fNEventsRolu << "\n"
+                << "Time_start      : " << time_begin << "\n"
+                << "Time end        : " << time_end << "\n"
+                << "Time duration   : " << (double)(time_end - time_begin) / 1.e9 << " sec \n"
+                << "nSpill          : " << fNSpills);
 
     if (fMappedItems.at(DET_ROLU))
     {
