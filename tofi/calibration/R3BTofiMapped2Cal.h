@@ -116,21 +116,21 @@ class R3BTofiMapped2Cal : public FairTask
   private:
     size_t GetCalLookupIndex(R3BTofiMappedData const&) const;
 
-    TClonesArray* fMappedItems; /**< Array with mapped items - input data. */
+    TClonesArray* fMappedItems;        /**< Array with mapped items - input data. */
     TClonesArray* fMappedTriggerItems; /**< Array with mapped items - input data. */
-    TClonesArray* fCalItems; /**< Array with cal items - output data. */
-    TClonesArray* fCalTriggerItems; /**< Array with cal trigger items - output data. */
+    TClonesArray* fCalItems;           /**< Array with cal items - output data. */
+    TClonesArray* fCalTriggerItems;    /**< Array with cal trigger items - output data. */
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
 
     UInt_t fNofPlanes;
     UInt_t fPaddlesPerPlane; /**< Number of paddles per plane. */
-    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    Double_t fClockFreq;     /**< Clock cycle in [ns]. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
 
     // Fast lookup for matching mapped data.
     std::vector<std::vector<R3BTofiCalData*>> fCalLookup;

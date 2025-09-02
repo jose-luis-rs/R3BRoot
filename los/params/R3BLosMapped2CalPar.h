@@ -115,8 +115,8 @@ class R3BLosMapped2CalPar : public FairTask
     Int_t Icounttrig[16][3];
 
     UInt_t fNofDetectors = 1; // Number of LOS detectors
-    UInt_t fNofChannels = 8; // Number of channels per detector
-    UInt_t fNofTypes = 3; // Number of time-types per channel (VFTX, TAMEX leading/trailing)
+    UInt_t fNofChannels = 8;  // Number of channels per detector
+    UInt_t fNofTypes = 3;     // Number of time-types per channel (VFTX, TAMEX leading/trailing)
     UInt_t fNofModules = fNofDetectors * fNofChannels * fNofTypes; // Total number of modules (=edges) to calibrate
 
     unsigned int fNEvents = 0;

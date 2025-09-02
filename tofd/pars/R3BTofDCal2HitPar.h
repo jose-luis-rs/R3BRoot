@@ -198,19 +198,19 @@ class R3BTofDCal2HitPar : public FairTask
 
     Int_t fParameter = 1;
     Int_t fMinStats = 10000; /* Minimum statistics required per module. */
-    Int_t fTrigger = -1; /* Trigger value. */
+    Int_t fTrigger = -1;     /* Trigger value. */
     Int_t fTpat = -1;
     TString fZfitType = "pol1";
-    UInt_t fNofPlanes = 4; /* Number of planes. */
-    UInt_t fPaddlesPerPlane = 44; /* Number of bars per plane. */
+    UInt_t fNofPlanes = 4;                              /* Number of planes. */
+    UInt_t fPaddlesPerPlane = 44;                       /* Number of bars per plane. */
     UInt_t fNofModules = fNofPlanes * fPaddlesPerPlane; /* Total number of modules (=edges) to calibrate */
 
     UInt_t fNEvents = 0; /* Event counter. */
     R3BTofDMappingPar* fMapPar = nullptr;
-    R3BTofDHitPar* fHitPar = nullptr; /* Parameter container. */
-    TClonesArray* fCalData = nullptr; /* Array with mapped data - input data. */
+    R3BTofDHitPar* fHitPar = nullptr;         /* Parameter container. */
+    TClonesArray* fCalData = nullptr;         /* Array with mapped data - input data. */
     TClonesArray* fCalTriggerItems = nullptr; /* Array with trigger Cal items - input data. */
-    R3BEventHeader* fHeader = nullptr; /* Event header  */
+    R3BEventHeader* fHeader = nullptr;        /* Event header  */
     Double_t fTofdY = 0.;
     Double_t fTofdQ = 0.;
     Double_t fMaxQ = 1600.;

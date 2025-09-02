@@ -129,11 +129,11 @@ class R3BTofiHitPar : public FairParGenericSet
 
   private:
     const R3BTofiHitPar& operator=(const R3BTofiHitPar&); /**< an assignment operator */
-    R3BTofiHitPar(const R3BTofiHitPar&); /**< a copy constructor */
+    R3BTofiHitPar(const R3BTofiHitPar&);                  /**< a copy constructor */
 
     TObjArray* fHitParams; /**< an array with parameter containers of all modules */
 
-    Bool_t fMapInit; /**< a boolean flag for indication whether the indexing map is initialized */
+    Bool_t fMapInit;             /**< a boolean flag for indication whether the indexing map is initialized */
     map<Int_t, Int_t> fIndexMap; /**< a map between index of a container in array and plane,paddle,side */
 
     ClassDef(R3BTofiHitPar, 1);

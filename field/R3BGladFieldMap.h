@@ -173,11 +173,11 @@ class R3BGladFieldMap : public FairField
     /** Variables for temporary storage
      ** Used in the very frequently called method GetFieldValue  **/
     Double_t fHa[2][2][2]; //! Field at corners of a grid cell
-    Double_t fHb[2][2]; //! Interpolated field (2-dim)
-    Double_t fHc[2]; //! Interpolated field (1-dim)
+    Double_t fHb[2][2];    //! Interpolated field (2-dim)
+    Double_t fHc[2];       //! Interpolated field (1-dim)
 
     // local transformation
-    TRotation* gRot; //!
+    TRotation* gRot;  //!
     TVector3* gTrans; //!
 
     // TTree with the map data when reading a ROOT file

@@ -23,8 +23,8 @@ class R3BNeulandNeutronsRValue : public FairTask
   private:
     const double fEkinRefMeV;
     const TString fInputMultName;
-    const R3BNeulandMultiplicity* fMultiplicity; //!
-    TCAInputConnector<R3BNeulandCluster> fClusters; //!
+    const R3BNeulandMultiplicity* fMultiplicity;     //!
+    TCAInputConnector<R3BNeulandCluster> fClusters;  //!
     TCAOutputConnector<R3BNeulandNeutron> fNeutrons; //!
 
     void SortClustersByRValue(std::vector<R3BNeulandCluster*>&) const;

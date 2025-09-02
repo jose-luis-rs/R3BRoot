@@ -97,16 +97,16 @@ class R3BRpc : public R3BDetector
   private:
     /** Track information to be stored until the track leaves the
     active volume. **/
-    Int_t fTrackID; //!  track index
-    Int_t fTrackPID; //!  particle identification
-    Int_t fVolumeID; //!  volume id
-    Int_t fStripID; //!  strip id
+    Int_t fTrackID;        //!  track index
+    Int_t fTrackPID;       //!  particle identification
+    Int_t fVolumeID;       //!  volume id
+    Int_t fStripID;        //!  strip id
     TLorentzVector fPosIn; //!  position
     TLorentzVector fMomIn; //!  momentum
-    Double32_t fTime; //!  time
-    Double32_t fLength; //!  length
-    Double32_t fELoss; //!  energy loss
-    Int_t fPosIndex; //!
+    Double32_t fTime;      //!  time
+    Double32_t fLength;    //!  length
+    Double32_t fELoss;     //!  energy loss
+    Int_t fPosIndex;       //!
 
     TClonesArray* fRpcCollection; //!  The point collection
 

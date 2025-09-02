@@ -131,26 +131,26 @@ class R3BNeulandMapped2Cal : public FairTask
   private:
     void SetParameter();
 
-    Int_t fNEvents; /**< Event counter. */
-    Bool_t fPulserMode; /**< Running with pulser data. */
+    Int_t fNEvents;      /**< Event counter. */
+    Bool_t fPulserMode;  /**< Running with pulser data. */
     Bool_t fWalkEnabled; /**< Enable / Disable walk correction. */
 
-    TClonesArray* fMapped; /**< Array with raw items - input data. */
+    TClonesArray* fMapped;        /**< Array with raw items - input data. */
     TClonesArray* fMappedTrigger; /**< Array with raw items - input data. */
-    TClonesArray* fCal; /**< Array with time items - output data. */
-    Int_t fNPmt; /**< Number of produced time items per event. */
+    TClonesArray* fCal;           /**< Array with time items - output data. */
+    Int_t fNPmt;                  /**< Number of produced time items per event. */
 
     R3BNeulandMappingPar* fMapPar;
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
 
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
 
-    Int_t fNofPlanes; /**< Number of photomultipliers. */
+    Int_t fNofPlanes;       /**< Number of photomultipliers. */
     Int_t fNofBarsPerPlane; /**< Number of photomultipliers. */
-    Int_t fNofPMTs; /**< Number of photomultipliers. */
+    Int_t fNofPMTs;         /**< Number of photomultipliers. */
 
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
 

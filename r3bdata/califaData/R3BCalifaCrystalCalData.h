@@ -74,11 +74,11 @@ class R3BCalifaCrystalCalData : public TObject
 
   protected:
     uint16_t fCrystalId = 0; // crystal unique identifier
-    double fEnergy = 0; // total energy in the crystal
-    double fNf = 0; // total Nf in the crystal
-    double fNs = 0; // total Nf in the crystal
-    ULong64_t fTime = 0; // time of the interaction
-    double fToT_Energy = 0; // total energy in the crystal from ToT
+    double fEnergy = 0;      // total energy in the crystal
+    double fNf = 0;          // total Nf in the crystal
+    double fNs = 0;          // total Nf in the crystal
+    ULong64_t fTime = 0;     // time of the interaction
+    double fToT_Energy = 0;  // total energy in the crystal from ToT
 
   public:
     ClassDefOverride(R3BCalifaCrystalCalData, 2)

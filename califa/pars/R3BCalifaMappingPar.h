@@ -87,25 +87,25 @@ class R3BCalifaMappingPar : public FairParGenericSet
 
   private:
     int fNumCrystals = 5088; // number of crystals
-    TArrayI* fHalf; // half (1 Wixhausen side or RIGHT side, 2 Messel side or LEFT side)
-    TArrayI* fRing; // ring from 1 to 5 (5 is iPhos)
-    TArrayI* fPreamp; // preamp from 1 to 16
-    TArrayI* fChannel; // preamp channel from 1 to 16
-    TArrayI* fCrystal_type; // crystal type (crystal engineering model)
-    TArrayI* fApd_number; // APD number attached to the crystal
-    TArrayF* fVoltage; // nominal voltage for gain=50 (volts)
-    TArrayI* fFebex_pc; // FEBEX pc from 0 to 1
-    TArrayI* fFebex_slot; // FEBEX spf from 0 to 3
-    TArrayI* fFebex_mod; // FEBEX module from 0 to 15 (0 to f)
+    TArrayI* fHalf;          // half (1 Wixhausen side or RIGHT side, 2 Messel side or LEFT side)
+    TArrayI* fRing;          // ring from 1 to 5 (5 is iPhos)
+    TArrayI* fPreamp;        // preamp from 1 to 16
+    TArrayI* fChannel;       // preamp channel from 1 to 16
+    TArrayI* fCrystal_type;  // crystal type (crystal engineering model)
+    TArrayI* fApd_number;    // APD number attached to the crystal
+    TArrayF* fVoltage;       // nominal voltage for gain=50 (volts)
+    TArrayI* fFebex_pc;      // FEBEX pc from 0 to 1
+    TArrayI* fFebex_slot;    // FEBEX spf from 0 to 3
+    TArrayI* fFebex_mod;     // FEBEX module from 0 to 15 (0 to f)
     TArrayI* fFebex_channel; // FEBEX channel from 0 to 15
-    TArrayI* fLab; // 1:LUND 2:TUD 3:USC
-    TArrayI* fMrcc_module; // Slow Control MRCC module 0 to 1
-    TArrayI* fMrcc_bus; // Slow Control MRCC bus  (0 or 1)
-    TArrayI* fMrcc_preamp; // Slow Control MRCC bus from 0 to 15 (0 to f)
-    TArrayI* fIn_use; // 1: crystal installed and ready  0:otherwise
+    TArrayI* fLab;           // 1:LUND 2:TUD 3:USC
+    TArrayI* fMrcc_module;   // Slow Control MRCC module 0 to 1
+    TArrayI* fMrcc_bus;      // Slow Control MRCC bus  (0 or 1)
+    TArrayI* fMrcc_preamp;   // Slow Control MRCC bus from 0 to 15 (0 to f)
+    TArrayI* fIn_use;        // 1: crystal installed and ready  0:otherwise
 
     const R3BCalifaMappingPar& operator=(const R3BCalifaMappingPar&); /*< an assignment operator>*/
-    R3BCalifaMappingPar(const R3BCalifaMappingPar&); /*< a copy constructor >*/
+    R3BCalifaMappingPar(const R3BCalifaMappingPar&);                  /*< a copy constructor >*/
 
   public:
     ClassDef(R3BCalifaMappingPar, 1);

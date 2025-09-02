@@ -192,20 +192,20 @@ class R3BTofiHisto2HitPar : public FairTask
 
   private:
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats; /**< Minimum statistics required per module. */
-    Int_t fTrigger; /**< Trigger value. */
-    Int_t fParameter; /**< Parameter #. */
+    Int_t fMinStats;   /**< Minimum statistics required per module. */
+    Int_t fTrigger;    /**< Trigger value. */
+    Int_t fParameter;  /**< Parameter #. */
 
-    UInt_t fNofPlanes; /**< Number of planes. */
+    UInt_t fNofPlanes;       /**< Number of planes. */
     UInt_t fPaddlesPerPlane; /**< Number of bars per plane. */
-    UInt_t fNofModules; /**< Total number of modules (=edges) to calibrate */
+    UInt_t fNofModules;      /**< Total number of modules (=edges) to calibrate */
 
-    Int_t fNEvents; /**< Event counter. */
-    R3BTofiHitPar* fCal_Par; /**< Parameter container. */
+    Int_t fNEvents;             /**< Event counter. */
+    R3BTofiHitPar* fCal_Par;    /**< Parameter container. */
     TClonesArray* fCalItemsLos; /**< Array with cal items. */
-    TClonesArray* fCalData; /**< Array with mapped data - input data. */
-    R3BEventHeader* header; /**< Event header - input data. */
-    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    TClonesArray* fCalData;     /**< Array with mapped data - input data. */
+    R3BEventHeader* header;     /**< Event header - input data. */
+    Double_t fClockFreq;        /**< Clock cycle in [ns]. */
     Double_t fTofiY;
     Double_t fTofiQ;
     Double_t fTofiTotLow;

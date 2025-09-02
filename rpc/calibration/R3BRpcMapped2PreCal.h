@@ -70,15 +70,15 @@ class R3BRpcMapped2PreCal : public FairTask
     UInt_t fNofTCalPars; /**< Number of modules in parameter file. */
 
     UInt_t fNofDetectors; /**< Number of detectors. */
-    UInt_t fNofChannels; /**< Number of channels per detector. */
-    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    UInt_t fNofChannels;  /**< Number of channels per detector. */
+    Double_t fClockFreq;  /**< Clock cycle in [ns]. */
     UInt_t fNEvent;
     // Don't store data for online
     Bool_t fOnline;
     TString fFpgaCorrelationFile;
-    R3BTCalPar* fTCalPar; /**< Parameter container. >*/
-    std::vector<int> lut[46][2]; /**<look up table.>*/
-    TClonesArray* fMappedDataCA; /**< Array with RPC Mapped-input data. >*/
+    R3BTCalPar* fTCalPar;           /**< Parameter container. >*/
+    std::vector<int> lut[46][2];    /**<look up table.>*/
+    TClonesArray* fMappedDataCA;    /**< Array with RPC Mapped-input data. >*/
     TClonesArray* fRpcPreCalDataCA; /**< Array with RPC Cal- output data. >*/
 
     struct Entry

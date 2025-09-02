@@ -77,7 +77,7 @@ class R3BINCLRootGenerator : public FairGenerator
   private:
     TString fFileName; // Input file name
     TFile* fInput;
-    bool fOnlyFission = false; // True if we want to simulate only fission events
+    bool fOnlyFission = false;    // True if we want to simulate only fission events
     bool fOnlyP2pFission = false; // True if we want to simulate only p2p-fission events
     bool fOnlySpallation = false; // True if we want to simulate only spallation events
 
@@ -99,10 +99,10 @@ class R3BINCLRootGenerator : public FairGenerator
     Float_t fThetaPrime[160];
     Float_t fPhi[160];
 
-    Double32_t fX = 0., fY = 0., fZ = 0.; // Point vertex coordinates [cm]
-    bool fPointVtxIsSet = false; // True if point vertex is set
+    Double32_t fX = 0., fY = 0., fZ = 0.;    // Point vertex coordinates [cm]
+    bool fPointVtxIsSet = false;             // True if point vertex is set
     Double32_t fDX = 0., fDY = 0., fDZ = 0.; // Point vertex coordinates [cm]
-    bool fBoxVtxIsSet = false; // True if point vertex is set
+    bool fBoxVtxIsSet = false;               // True if point vertex is set
 
   public:
     ClassDefOverride(R3BINCLRootGenerator, 0); // NOLINT

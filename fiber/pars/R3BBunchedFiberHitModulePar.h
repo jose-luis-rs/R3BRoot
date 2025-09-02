@@ -92,11 +92,11 @@ class R3BBunchedFiberHitModulePar : public FairParGenericSet
     void SetVeff(Double_t v) { fVeff = v; }
 
   private:
-    Int_t fFiber; /**< Index of a fiber. */
+    Int_t fFiber;      /**< Index of a fiber. */
     Double_t fOffset1; /**< time offset of PM1 */
     Double_t fOffset2; /**< time offset of PM2 */
-    Double_t fVeff; /**< effective velocity of light in paddle for position determination */
-    Double_t fSync; /**< time offset between paddles */
+    Double_t fVeff;    /**< effective velocity of light in paddle for position determination */
+    Double_t fSync;    /**< time offset between paddles */
     Double_t fGainMA;
     Double_t fGainS;
 

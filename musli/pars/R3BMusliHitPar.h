@@ -78,8 +78,8 @@ class R3BMusliHitPar : public FairParGenericSet
 
   private:
     Int_t fNumGroups; // number of anodes groups at CAL level
-    Int_t fNumTypes; // number of types (1 type per group of anodes)
-    Int_t fMaxMult; // maximum number of hits per group of anodes
+    Int_t fNumTypes;  // number of types (1 type per group of anodes)
+    Int_t fMaxMult;   // maximum number of hits per group of anodes
     Int_t fNumParamsEcorrBetaFit;
     Int_t fNumParamsZFit;
 

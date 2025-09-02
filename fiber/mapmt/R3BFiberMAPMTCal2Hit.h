@@ -73,7 +73,7 @@ class R3BFiberMAPMTCal2Hit : public FairTask
                                   int v = 1, // verbosity
                                   Direction dir = HORIZONTAL,
                                   uint32_t fnb = 512, // fiber number
-                                  bool iscal = false // is calib
+                                  bool iscal = false  // is calib
     );
 
     virtual ~R3BFiberMAPMTCal2Hit();
@@ -141,7 +141,7 @@ class R3BFiberMAPMTCal2Hit : public FairTask
     R3BFiberMappingPar* fMapPar = nullptr;
     R3BFiberMAPMTHitPar* fCalPar = nullptr; // Parameter container
     R3BFiberMAPMTHitPar* fHitPar = nullptr; // Hit parameter container
-    int fNofHitPars = 0; // Number of modules in parameter file
+    int fNofHitPars = 0;                    // Number of modules in parameter file
     // [0=bottom,1=top][Channel].
     std::vector<Channel> fChannelArray[2];
 

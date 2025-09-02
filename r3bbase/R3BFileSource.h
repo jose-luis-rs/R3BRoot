@@ -143,11 +143,11 @@ class R3BFileSource : public FairSource
     /** Current Entry number */
     Int_t fCurrentEntryNr; //!
     /** List of all files added with AddFriend */
-    std::list<TString> fFriendFileList; //!
-    std::list<TString> fInputChainList; //!
-    std::map<TString, TChain*> fFriendTypeList; //!
-    std::map<TString, std::list<TString>*> fCheckInputBranches; //!
-    std::list<TString> fInputLevel; //!
+    std::list<TString> fFriendFileList;                               //!
+    std::list<TString> fInputChainList;                               //!
+    std::map<TString, TChain*> fFriendTypeList;                       //!
+    std::map<TString, std::list<TString>*> fCheckInputBranches;       //!
+    std::list<TString> fInputLevel;                                   //!
     std::map<TString, std::multimap<TString, TArrayI>> fRunIdInfoAll; //!
     /**Input Chain */
     TChain* fInChain;

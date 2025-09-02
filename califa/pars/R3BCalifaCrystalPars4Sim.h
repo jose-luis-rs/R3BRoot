@@ -63,7 +63,7 @@ class R3BCalifaCrystalPars4Sim : public FairParGenericSet
     TArrayI* fThresholdArray;
     TArrayF* fResolutionArray;
 
-    Int_t fNumCrystals; /* Number of crystals */
+    Int_t fNumCrystals;   /* Number of crystals */
     Int_t fNumParams4Sim; /* Number of Simulation parameters in the Sim (CrystalID, Resolution, Threshold, NonUni...) */
 
     const R3BCalifaCrystalPars4Sim& operator=(const R3BCalifaCrystalPars4Sim&); /*< an assignment operator>*/

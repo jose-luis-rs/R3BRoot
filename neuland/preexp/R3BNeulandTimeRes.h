@@ -101,12 +101,12 @@ class R3BNeulandTimeRes : public FairTask
     inline void SetNeededStat(Int_t nevents) { fNEventsNeeded = nevents; }
 
   private:
-    UInt_t fNofPlanes; /**< Number of planes. */
+    UInt_t fNofPlanes;       /**< Number of planes. */
     UInt_t fNofBarsPerPlane; /**< Number of bars per plane. */
 
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fTrigger; /**< Trigger value. */
-    Int_t fNEvents; /**< Event counter. */
+    Int_t fTrigger;    /**< Trigger value. */
+    Int_t fNEvents;    /**< Event counter. */
 
     Int_t fNEventsNeeded;
 
@@ -119,7 +119,7 @@ class R3BNeulandTimeRes : public FairTask
     TH1F* hTimeRes[60][50];
     TH2F* hTimeResQ[60][50];
 
-    TClonesArray* fPmt; /**< Array with time items - input data. */
+    TClonesArray* fPmt;     /**< Array with time items - input data. */
     R3BEventHeader* header; /**< Event header - input data. */
 
     Double_t wlk(Double_t x);

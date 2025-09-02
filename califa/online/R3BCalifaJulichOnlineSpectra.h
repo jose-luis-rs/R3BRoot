@@ -107,9 +107,9 @@ class R3BCalifaJulichOnlineSpectra : public FairTask
     TClonesArray* fMappedItemsSi; // Array with mapped items.
 
     R3BEventHeader* header; // Event header.
-    Int_t fTrigger; // Trigger value.
-    Int_t fNEvents; // Event counter.
-    Int_t fNbDet; // Number of AMS detectors.
+    Int_t fTrigger;         // Trigger value.
+    Int_t fNEvents;         // Event counter.
+    Int_t fNbDet;           // Number of AMS detectors.
 
     // Histograms for map data
     std::vector<TH2F*> fh2_EnergyVsStrip;

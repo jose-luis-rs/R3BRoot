@@ -121,10 +121,10 @@ class R3BOnlineSpectraFrsSci : public FairTask
     R3BEventHeader* fEventHeader; /**< Event header.      */
 
     TClonesArray* fMapped; /**< Array with R3BFrsSciMappedData */
-    TClonesArray* fTcal; /**< Array with R3BFrsSciTcalData */
+    TClonesArray* fTcal;   /**< Array with R3BFrsSciTcalData */
     TClonesArray* fPosCal; /**< Array with R3BFrsSciPosCalData */
     TClonesArray* fTofCal; /**< Array with R3BFrsSciTofCalData */
-    Int_t fNEvents; /**< Event counter.     */
+    Int_t fNEvents;        /**< Event counter.     */
     UShort_t fNbDets;
     UShort_t fNbPmts;
     UShort_t fNbTofs;
@@ -136,8 +136,8 @@ class R3BOnlineSpectraFrsSci : public FairTask
 
     // Histograms at Mapped level
     TH1I** fh1_Map_finetime; // [fNbDets * NbPmts]
-    TH1I** fh1_Map_mult; // [fNbDets * fNbPmts]
-    TH2I** fh2_Map_mult; // [fNbDets]
+    TH1I** fh1_Map_mult;     // [fNbDets * fNbPmts]
+    TH2I** fh2_Map_mult;     // [fNbDets]
     TH2I** fh2_Map_multRvsL; // [fNbDets! / (2! * (fNbDets-2)!]
 
     // Canvas at Tcal level
@@ -146,8 +146,8 @@ class R3BOnlineSpectraFrsSci : public FairTask
     TCanvas* cTcal_DTcal;
 
     // Histograms at Tcal level
-    TH1D** fh1_Tcal1Hit_PosRaw; // [fNbDets]
-    TH1D** fh1_Tcal1Hit_TofRaw; // [fNbTofs]
+    TH1D** fh1_Tcal1Hit_PosRaw;    // [fNbDets]
+    TH1D** fh1_Tcal1Hit_TofRaw;    // [fNbTofs]
     TH1D** fh1_Tcal1Hit_DeltaTcal; // [fNbDets*(NbPmts-1)] TPmt_i -TPmt_ref
 
     // Canvas at Cal level
@@ -161,17 +161,17 @@ class R3BOnlineSpectraFrsSci : public FairTask
     TCanvas* cCal_AoQVsPos;
 
     // Histograms at Tcal level
-    TH1D** fh1_Cal_PosRaw; // [fNbDets]
-    TH1D** fh1_Cal_PosCal; // [fNbDets]
-    TH1D** fh1_Cal_TofRaw; // [fNbTofs]
-    TH1D** fh1_Cal_TofCal; // [fNbTofs]
-    TH1D** fh1_Cal_Beta; // [fNbTofs]
-    TH1D** fh1_Cal_BRho; // [fNbTofs]
-    TH1D** fh1_Cal_AoQ; // [fNbTofs]
+    TH1D** fh1_Cal_PosRaw;       // [fNbDets]
+    TH1D** fh1_Cal_PosCal;       // [fNbDets]
+    TH1D** fh1_Cal_TofRaw;       // [fNbTofs]
+    TH1D** fh1_Cal_TofCal;       // [fNbTofs]
+    TH1D** fh1_Cal_Beta;         // [fNbTofs]
+    TH1D** fh1_Cal_BRho;         // [fNbTofs]
+    TH1D** fh1_Cal_AoQ;          // [fNbTofs]
     TH2D** fh2_Cal_BRhoVsPosSta; // [fNbTofs]
     TH2D** fh2_Cal_BRhoVsPosSto; // [fNbTofs]
-    TH2D** fh2_Cal_AoQVsPosSta; // [fNbTofs]
-    TH2D** fh2_Cal_AoQVsPosSto; // [fNbTofs]
+    TH2D** fh2_Cal_AoQVsPosSta;  // [fNbTofs]
+    TH2D** fh2_Cal_AoQVsPosSto;  // [fNbTofs]
 
     // Define ranges
     float fpos_range_min;

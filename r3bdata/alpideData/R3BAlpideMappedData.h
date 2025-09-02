@@ -56,11 +56,11 @@ class R3BAlpideMappedData : public TObject
 
   protected:
     uint16_t fSenId = 0; // Sensor unique identifier
-    uint16_t fReg = 0; // Region identifier from 1 to 32
-    uint16_t fAds = 0; // Address identifier from 1 to 1024 or Mosaic ID from 1 to 8
-    uint16_t fChip = 0; // Chip identifier
-    uint16_t fRow = 0; // Row identifier from 1 to 512
-    uint16_t fCol = 0; // Column identifier from 1 to 1024
+    uint16_t fReg = 0;   // Region identifier from 1 to 32
+    uint16_t fAds = 0;   // Address identifier from 1 to 1024 or Mosaic ID from 1 to 8
+    uint16_t fChip = 0;  // Chip identifier
+    uint16_t fRow = 0;   // Row identifier from 1 to 512
+    uint16_t fCol = 0;   // Column identifier from 1 to 1024
 
   public:
     ClassDefOverride(R3BAlpideMappedData, 2)

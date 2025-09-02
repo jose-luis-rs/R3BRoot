@@ -54,10 +54,10 @@ class R3BNeulandMCMon : public FairTask
     ~R3BNeulandMCMon() override = default;
 
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeulandMCMon(const R3BNeulandMCMon&) = delete; // copy constructor
-    R3BNeulandMCMon(R3BNeulandMCMon&&) = delete; // move constructor
+    R3BNeulandMCMon(const R3BNeulandMCMon&) = delete;            // copy constructor
+    R3BNeulandMCMon(R3BNeulandMCMon&&) = delete;                 // move constructor
     R3BNeulandMCMon& operator=(const R3BNeulandMCMon&) = delete; // copy assignment
-    R3BNeulandMCMon& operator=(R3BNeulandMCMon&&) = delete; // move assignment
+    R3BNeulandMCMon& operator=(R3BNeulandMCMon&&) = delete;      // move assignment
 
   protected:
     InitStatus Init() override;

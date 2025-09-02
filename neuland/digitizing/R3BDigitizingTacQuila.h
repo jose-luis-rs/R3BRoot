@@ -22,11 +22,11 @@ namespace R3B::Digitizing::Neuland::TacQuila
 {
     struct Params
     {
-        double fPMTThresh; // [MeV]
+        double fPMTThresh;             // [MeV]
         double fSaturationCoefficient; //
         Bool_t fExperimentalDataIsCorrectedForSaturation;
-        double fTimeRes; // time + Gaus(0., fTimeRes) [ns]
-        double fEResRel; // Gaus(e, fEResRel * e) []
+        double fTimeRes;         // time + Gaus(0., fTimeRes) [ns]
+        double fEResRel;         // Gaus(e, fEResRel * e) []
         double fIntegrationTime; // [ns]
         std::shared_ptr<TRandom3> fRnd;
 

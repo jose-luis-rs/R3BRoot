@@ -73,7 +73,7 @@ class R3BNeutronTracker : public FairTask
   private:
     TLorentzVector fPosIn, fPosOut; //!  position
     TLorentzVector fMomIn, fMomOut; //!  momentum
-    Double32_t fTime; //!  time
+    Double32_t fTime;               //!  time
 
     R3BNeutronTrack* AddHit(TVector3 pos_in, TVector3 pos_out, TVector3 momOut, Double_t time);
 
@@ -139,12 +139,12 @@ class R3BNeutronTracker : public FairTask
 
     Double_t beamEnergy;
     Double_t beamBeta;
-    Double_t plength; // half length of paddle
-    Double_t att; // light attenuation factor [1/cm]
-    Double_t amu; // atomic mass unit in MeV/c**2
+    Double_t plength;  // half length of paddle
+    Double_t att;      // light attenuation factor [1/cm]
+    Double_t amu;      // atomic mass unit in MeV/c**2
     Double_t mNeutron; // mass of neutron in amu
     Double_t c;
-    Double_t cMedia; // speed of light in material in cm/ns
+    Double_t cMedia;    // speed of light in material in cm/ns
     Double_t calFactor; // calibration factor energy of LAND paddles
     Int_t eventNo;
     PM_HIT* PM_hit;

@@ -64,8 +64,8 @@ class R3BPspxPrecalPar : public FairParGenericSet
 
   private:
     Int_t fNumDetectors; // number of detectors
-    TArrayI fNumStrips; // number of strips per detector
-    TArrayF fPrecalPar; // calibration parameters for each strip
+    TArrayI fNumStrips;  // number of strips per detector
+    TArrayF fPrecalPar;  // calibration parameters for each strip
 
     R3BPspxPrecalPar(const R3BPspxPrecalPar&);
     R3BPspxPrecalPar& operator=(const R3BPspxPrecalPar&);

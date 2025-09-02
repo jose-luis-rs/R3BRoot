@@ -128,7 +128,7 @@ void R3BRoluCal2Hit::Exec(Option_t* option)
     // min,max,Nbins for ToT spectra
     double fhQmin = 0.;
     double fhQmax = 200; // 300.; //150
-    int fhQbin = 4000; // 0; //3000; //1500
+    int fhQbin = 4000;   // 0; //3000; //1500
     for (int iDet = 0; iDet < fNofDetectors; iDet++)
     {
         if (NULL == fhQ_R[iDet])

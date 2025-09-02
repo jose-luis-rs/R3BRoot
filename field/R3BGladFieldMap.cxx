@@ -399,8 +399,8 @@ void R3BGladFieldMap::WriteAsciiFile(const TString& fileName)
                 mapFile << fBx->At(index) / factor << " " << fBy->At(index) / factor << " " << fBz->At(index) / factor
                         << endl;
             } // z-Loop
-        } // y-Loop
-    } // x-Loop
+        }     // y-Loop
+    }         // x-Loop
     R3BLOG(info, "   " << index + 1 << " written");
     mapFile.close();
 }
@@ -593,8 +593,8 @@ void R3BGladFieldMap::ReadAsciiFile(const TString& fileName)
                     break;
                 }
             } // z-Loop
-        } // y-Loop
-    } // x-Loop
+        }     // y-Loop
+    }         // x-Loop
 
     R3BLOG(info, "   " << index + 1 << " read");
     mapFile.close();

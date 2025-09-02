@@ -58,11 +58,11 @@ class R3BFrsSciTcal2Cal : public FairTask
 
   private:
     UInt_t fNevent;
-    TClonesArray* fTcal; // input data - FrsSci
+    TClonesArray* fTcal;      // input data - FrsSci
     R3BFrsSciCalPar* fCalPar; // cal parameters container - FrsSci
-    TClonesArray* fPosCal; // output data for position per detector
-    TClonesArray* fTofCal; // output data for Tof
-    Bool_t fOnline; // Don't store data for online
+    TClonesArray* fPosCal;    // output data for position per detector
+    TClonesArray* fTofCal;    // output data for Tof
+    Bool_t fOnline;           // Don't store data for online
 
     TRandom3 rand;
 

@@ -134,11 +134,11 @@ class R3BNeutronTracker2D : public FairTask
     Int_t fNNeutrons;
     Double_t beamEnergy;
     Double_t beamBeta;
-    Double_t plength; // half length of paddle
-    Double_t att; // light attenuation factor [1/cm]
-    Double_t amu; // atomic mass unit in MeV/c**2
-    Double_t mNeutron; // mass of neutron in amu
-    Double_t cMedia; // speed of light in material in cm/ns
+    Double_t plength;   // half length of paddle
+    Double_t att;       // light attenuation factor [1/cm]
+    Double_t amu;       // atomic mass unit in MeV/c**2
+    Double_t mNeutron;  // mass of neutron in amu
+    Double_t cMedia;    // speed of light in material in cm/ns
     Double_t calFactor; // calibration factor energy of LAND paddles
     Int_t eventNo;
     R3BPrimPart** PRIM_part;

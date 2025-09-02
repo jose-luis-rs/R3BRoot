@@ -93,11 +93,11 @@ void R3BMusliMapped2Cal::SetParContainers()
 void R3BMusliMapped2Cal::SetParameters()
 {
     //--- Parameter Container ---
-    fNumSignals = fCal_Par->GetNumSignals(); // Number of signals at Mapped
+    fNumSignals = fCal_Par->GetNumSignals();           // Number of signals at Mapped
     fNumGroupsAnodes = fCal_Par->GetNumGroupsAnodes(); // Number of groups of anodes
     fNumParamsEneFit = fCal_Par->GetNumParamsEneFit(); // Number of ene calib params per group of anodes
     fNumParamsPosFit = fCal_Par->GetNumParamsPosFit(); // Number of pos calib params per group of anodes
-    fMaxMult = fCal_Par->GetMaxMult(); // maximum number of hit per output channel
+    fMaxMult = fCal_Par->GetMaxMult();                 // maximum number of hit per output channel
 
     Int_t array_ene = fNumGroupsAnodes * fNumParamsEneFit; // array of ene calibration parameters
     fEneCalParams = new TArrayF();

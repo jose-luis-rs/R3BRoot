@@ -141,18 +141,18 @@ class R3BTofiChangePar : public FairTask
     virtual void changeWalk(Int_t plane, Int_t bar, Int_t pm, Double_t*);
 
   private:
-    Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats; /**< Minimum statistics required per module. */
-    Int_t fTrigger; /**< Trigger value. */
-    UInt_t fNofPlanes; /**< Number of planes. */
-    UInt_t fPaddlesPerPlane; /**< Number of bars per plane. */
-    UInt_t fNofModules; /**< Total number of modules (=edges) to calibrate */
-    Int_t fNEvents; /**< Event counter. */
-    R3BTofiHitPar* fCal_Par; /**< Parameter container. */
+    Int_t fUpdateRate;          /**< An update rate. */
+    Int_t fMinStats;            /**< Minimum statistics required per module. */
+    Int_t fTrigger;             /**< Trigger value. */
+    UInt_t fNofPlanes;          /**< Number of planes. */
+    UInt_t fPaddlesPerPlane;    /**< Number of bars per plane. */
+    UInt_t fNofModules;         /**< Total number of modules (=edges) to calibrate */
+    Int_t fNEvents;             /**< Event counter. */
+    R3BTofiHitPar* fCal_Par;    /**< Parameter container. */
     TClonesArray* fCalItemsLos; /**< Array with cal items. */
-    TClonesArray* fCalData; /**< Array with mapped data - input data. */
-    R3BEventHeader* header; /**< Event header - input data. */
-    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    TClonesArray* fCalData;     /**< Array with mapped data - input data. */
+    R3BEventHeader* header;     /**< Event header - input data. */
+    Double_t fClockFreq;        /**< Clock cycle in [ns]. */
     TString fParaFile;
 
   public:

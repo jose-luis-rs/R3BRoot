@@ -84,8 +84,8 @@ class R3BAmsMapped2StripCal : public FairTask
 
     Bool_t fOnline; // Don't store data for online
 
-    R3BAmsStripCalPar* fCal_Par; /**< Parameter container. >*/
-    TClonesArray* fAmsMappedDataCA; /**< Array with AMS Mapped input data. >*/
+    R3BAmsStripCalPar* fCal_Par;      /**< Parameter container. >*/
+    TClonesArray* fAmsMappedDataCA;   /**< Array with AMS Mapped input data. >*/
     TClonesArray* fAmsStripCalDataCA; /**< Array with AMS Cal output data. >*/
 
     /** Private method AddCalData **/

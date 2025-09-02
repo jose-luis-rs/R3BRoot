@@ -425,7 +425,7 @@ void R3BOnlineSpectraBMON_S494::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel(); // 1..
+            Int_t iCha = hit->GetChannel();  // 1..
 
             if (iDet < 2)
                 fh_rolu_channels->Fill(iCha); // ROLU 1
@@ -526,7 +526,7 @@ void R3BOnlineSpectraBMON_S494::Exec(Option_t* option)
             IC = hit->GetIC(); // negative values if offset not high enough
             counts_IC += (double)IC;
 
-            SEETRAM_raw = hit->GetSEETRAM(); // raw counts
+            SEETRAM_raw = hit->GetSEETRAM();           // raw counts
             SEETRAM = (double)SEETRAM_raw * calib_SEE; // calibrated SEETRAM counts
             // cout<<SEETRAM_raw<<" "<<calib_SEE<<" "<<SEETRAM<<"\n";
             counts_SEE += SEETRAM;

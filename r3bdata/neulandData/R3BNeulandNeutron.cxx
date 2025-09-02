@@ -14,8 +14,8 @@
 #include "R3BNeulandNeutron.h"
 #include <cmath>
 
-static const Double_t massNeutron = 939.565379; // MeV/c²
-static const Double_t c = 29.9792458; // cm/ns
+static const Double_t massNeutron = 939.565379;   // MeV/c²
+static const Double_t c = 29.9792458;             // cm/ns
 static const Double_t c2 = 898.75517873681758374; // cm²/ns²
 
 R3BNeulandNeutron::R3BNeulandNeutron(Int_t paddle, Double_t time, const TVector3& pos, const TVector3& pix)

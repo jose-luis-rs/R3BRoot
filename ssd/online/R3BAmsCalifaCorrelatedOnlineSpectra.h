@@ -97,7 +97,7 @@ class R3BAmsCalifaCorrelatedOnlineSpectra : public FairTask
     void Reset_AMS_CALIFA_Histo();
 
   private:
-    TClonesArray* fHitItemsAms; /**< Array with AMS hit items. */
+    TClonesArray* fHitItemsAms;    /**< Array with AMS hit items. */
     TClonesArray* fHitItemsCalifa; /**< Array with CALIFA hit items. */
     TClonesArray* fCalItemsLos;
 
@@ -105,8 +105,8 @@ class R3BAmsCalifaCorrelatedOnlineSpectra : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
-    Int_t fNEvents; /**< Event counter. */
+    Int_t fTrigger;         /**< Trigger value. */
+    Int_t fNEvents;         /**< Event counter. */
 
     TCanvas *cMap1, *cMap2;
     TCanvas *cAMSangles, *cHitone, *cHittwo, *cHitPhis;

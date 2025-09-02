@@ -15,9 +15,9 @@
 
 #include <FairTask.h>
 
-#include <Rtypes.h> // for Double_t, etc
+#include <Rtypes.h>              // for Double_t, etc
 #include <TEveTrackPropagator.h> // IWYU pragma: keep needed by cint
-#include <TString.h> // for TString
+#include <TString.h>             // for TString
 
 class FairEventManager;
 class TClonesArray;
@@ -57,7 +57,7 @@ class R3BMCTracks : public FairTask
     TEveTrackPropagator* fTrPr;
     FairEventManager* fEventManager; //!
     TObjArray* fEveTrList;
-    TString fEvent; //!
+    TString fEvent;         //!
     TEveTrackList* fTrList; //!
     // TEveElementList *fTrackCont;
 

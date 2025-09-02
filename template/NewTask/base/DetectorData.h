@@ -27,7 +27,7 @@ namespace R3B
             : TNamed(name.data(), ""){};
 
         int module_num = 0; // starts from 1
-        int module_id = 0; // starts from 0
+        int module_id = 0;  // starts from 0
         double energy = 0.;
         uint32_t tpat = 0U;
 

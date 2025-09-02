@@ -84,10 +84,10 @@ class R3BMusliMapped2Cal : public FairTask
     Double_t winR;
 
     Bool_t fUseMultHit;
-    R3BEventHeader* fHeader; // Event header
-    R3BMusliCalPar* fCal_Par; /**< Parameter container. > */
+    R3BEventHeader* fHeader;          // Event header
+    R3BMusliCalPar* fCal_Par;         /**< Parameter container. > */
     TClonesArray* fMusliMappedDataCA; /**< Array with Musli Mapped-input data. >*/
-    TClonesArray* fMusliCalDataCA; /**< Array with Musli Cal-output data. >*/
+    TClonesArray* fMusliCalDataCA;    /**< Array with Musli Cal-output data. >*/
 
     Bool_t fOnline; // Don't store data for online
 

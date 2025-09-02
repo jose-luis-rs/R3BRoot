@@ -138,15 +138,15 @@ class R3BTofDHitModulePar : public FairParGenericSet
     void SetPar3Walk2(Double_t par3Walk2) { fPar3walk2 = par3Walk2; }
 
   private:
-    Int_t fPlane = 0; /**< Index of a plane. */
-    Int_t fPaddle = 0; /**< Index of a paddle. */
-    Double_t fOffset1 = 0.; /**< time offset of PM1 */
-    Double_t fOffset2 = 0.; /**< time offset of PM2 */
-    Double_t fToTOffset1 = 1.; /**< ToT offset of PM1 */
-    Double_t fToTOffset2 = 1.; /**< ToT offset of PM2 */
-    Double_t fVeff = 1.; /**< effective velocity of light in paddle for position determination */
-    Double_t fLambda = 1.; /**< light attenuation in paddle for position determination */
-    Double_t fSync = 0.; /**< time offset between paddles */
+    Int_t fPlane = 0;             /**< Index of a plane. */
+    Int_t fPaddle = 0;            /**< Index of a paddle. */
+    Double_t fOffset1 = 0.;       /**< time offset of PM1 */
+    Double_t fOffset2 = 0.;       /**< time offset of PM2 */
+    Double_t fToTOffset1 = 1.;    /**< ToT offset of PM1 */
+    Double_t fToTOffset2 = 1.;    /**< ToT offset of PM2 */
+    Double_t fVeff = 1.;          /**< effective velocity of light in paddle for position determination */
+    Double_t fLambda = 1.;        /**< light attenuation in paddle for position determination */
+    Double_t fSync = 0.;          /**< time offset between paddles */
     Double_t fTofSyncOffset = 0.; /**< tof alignment with respect to the start detector */
     Double_t fPar1a = 0., fPar1b = 0., fPar1c = 0.,
              fPar1d = 0.; /**< double exponential parameters for position dependent charge */

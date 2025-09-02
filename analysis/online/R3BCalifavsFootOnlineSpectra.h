@@ -140,21 +140,21 @@ class R3BCalifavsFootOnlineSpectra : public FairTask
 
     // Check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header.  */
-    Int_t fNEvents; /**< Event counter. */
+    Int_t fNEvents;         /**< Event counter. */
     Int_t fTpat;
 
-    Int_t fNbCalifaCrystals; /**< Number of Crystals in Califa. */
-    Int_t fNumSides; /**< Number of Sides, left and right.   */
-    Int_t fNumRings; /**< Number of Rings.   */
-    Int_t fNumPreamps; /**< Number of Preamps per ring.   */
-    Int_t fNumCrystalPreamp; /**< Number of Crystals/Channels per Preamp. */
-    Int_t fBinsChannelFebex; /**< Number of Bins per Febex channel. */
+    Int_t fNbCalifaCrystals;   /**< Number of Crystals in Califa. */
+    Int_t fNumSides;           /**< Number of Sides, left and right.   */
+    Int_t fNumRings;           /**< Number of Rings.   */
+    Int_t fNumPreamps;         /**< Number of Preamps per ring.   */
+    Int_t fNumCrystalPreamp;   /**< Number of Crystals/Channels per Preamp. */
+    Int_t fBinsChannelFebex;   /**< Number of Bins per Febex channel. */
     Int_t fMaxBinChannelFebex; /**< Maximum bin for Febex histograms. */
-    Float_t fMinProtonE; /**< Min proton energy (in keV) to calculate the opening angle */
+    Float_t fMinProtonE;       /**< Min proton energy (in keV) to calculate the opening angle */
 
     Int_t fMaxEnergyBarrel; /**< Max. energy for Barrel histograms at CAL level. */
-    Int_t fMaxEnergyIphos; /**< Max. energy for Iphos histograms at CAL level. */
-    Bool_t fRaw2Cal; /**< Mapped or Cal selector. */
+    Int_t fMaxEnergyIphos;  /**< Max. energy for Iphos histograms at CAL level. */
+    Bool_t fRaw2Cal;        /**< Mapped or Cal selector. */
 
     TH2F* fh2_Califa_theta_phi[2]; // 0: all, 1: with foot
     TCanvas* cCalifa_angles;

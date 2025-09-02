@@ -71,10 +71,10 @@ class R3BMusicHitPar : public FairParGenericSet
 
   private:
     TArrayF* fDetZHitParams; // Calibration Parameters for charge Z
-    TArrayI* fIn_use; // 1: anode ready, 0:otherwise
-    TArrayF* fAnode_pos; // Position of each anode along the beam direction
-    Int_t fNumAnodes; // Number of anodes
-    Int_t fNumParamsZFit; // number of hit parameters in the fit for charge Z
+    TArrayI* fIn_use;        // 1: anode ready, 0:otherwise
+    TArrayF* fAnode_pos;     // Position of each anode along the beam direction
+    Int_t fNumAnodes;        // Number of anodes
+    Int_t fNumParamsZFit;    // number of hit parameters in the fit for charge Z
     TArrayF* fAngCorParams;
 
     const R3BMusicHitPar& operator=(const R3BMusicHitPar&); /*< an assignment operator>*/

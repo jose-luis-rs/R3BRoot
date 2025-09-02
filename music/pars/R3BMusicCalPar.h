@@ -71,12 +71,12 @@ class R3BMusicCalPar : public FairParGenericSet
 
   private:
     TArrayF* fAnodeCalParams; // Energy calibration parameters for anodes
-    TArrayF* fPosParams; // Position calibration parameters for anodes
-    TArrayI* fIn_use; // 1: anode ready, 0:otherwise
-    Int_t fNumAnodes; // number of anodes
-    Int_t fNumParamsEFit; /* number of cal parameters in the fit
-                            gaus: A_fit & B_fit & C_fit*/
-    Int_t fNumParamsPosFit; // number of parameters for position calibration
+    TArrayF* fPosParams;      // Position calibration parameters for anodes
+    TArrayI* fIn_use;         // 1: anode ready, 0:otherwise
+    Int_t fNumAnodes;         // number of anodes
+    Int_t fNumParamsEFit;     /* number of cal parameters in the fit
+                                gaus: A_fit & B_fit & C_fit*/
+    Int_t fNumParamsPosFit;   // number of parameters for position calibration
 
     const R3BMusicCalPar& operator=(const R3BMusicCalPar&); /*< an assignment operator>*/
 

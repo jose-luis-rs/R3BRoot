@@ -841,7 +841,7 @@ void R3BBunchedFiberCal2Hit::Standard()
                         fName == "Fi3b")
                     {
                         Float_t fiber_thickness = 0.021000 * 2.; // s remove *2 when taking SPMT into analysis
-                        Int_t fiber_nbr = 512 / 2; // s remove /2 when taking SPMT into analysis
+                        Int_t fiber_nbr = 512 / 2;               // s remove /2 when taking SPMT into analysis
                         Float_t dead_layer = 0.9;
                         Float_t air_layer = 0.01; // relative to fiber_thickness
                         Float_t detector_width = fiber_nbr * fiber_thickness * (1 + air_layer);

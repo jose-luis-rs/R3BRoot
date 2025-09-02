@@ -80,7 +80,7 @@ class R3BNeulandCheckMapping : public FairTask
     }
 
   private:
-    UInt_t fNofPlanes; /**< Number of planes. */
+    UInt_t fNofPlanes;       /**< Number of planes. */
     UInt_t fPaddlesPerPlane; /**< Number of bars per plane. */
 
     Int_t fTrigger; /**< Trigger value. */
@@ -106,7 +106,7 @@ class R3BNeulandCheckMapping : public FairTask
 
     UInt_t cntOk[60][50][2];
 
-    TClonesArray* fMapped; /**< Array with mapped data - input data. */
+    TClonesArray* fMapped;  /**< Array with mapped data - input data. */
     R3BEventHeader* header; /**< Event header - input data. */
 
     TH1F* h_countsok;

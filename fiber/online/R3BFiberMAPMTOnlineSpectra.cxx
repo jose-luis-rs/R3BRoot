@@ -50,7 +50,7 @@ using namespace std;
 namespace
 {
     double c_fiber_coincidence_ns = 20; // nanoseconds.
-    double c_tot_coincidence_ns = 100; // nanoseconds
+    double c_tot_coincidence_ns = 100;  // nanoseconds
 } // namespace
 
 R3BFiberMAPMTOnlineSpectra::R3BFiberMAPMTOnlineSpectra()

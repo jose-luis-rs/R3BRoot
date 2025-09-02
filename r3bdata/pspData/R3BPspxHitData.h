@@ -41,7 +41,7 @@ class R3BPspxHitData : public TObject
 
   private:
     Float_t fEnergy; // Energy/Collected charge in MeV
-    Float_t fPos; // Position in x cm in the range [-l/2:l/2]
+    Float_t fPos;    // Position in x cm in the range [-l/2:l/2]
 
   public:
     ClassDef(R3BPspxHitData, 7)

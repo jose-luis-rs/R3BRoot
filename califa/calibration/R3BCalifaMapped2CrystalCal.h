@@ -71,8 +71,8 @@ class R3BCalifaMapped2CrystalCal : public FairTask
     // Don't store data for online
     bool fOnline = false;
 
-    R3BCalifaCrystalCalPar* fCal_Par = nullptr; // Parameter container
-    R3BCalifaTotCalPar* fTotCal_Par = nullptr; // Tot Parameter container
+    R3BCalifaCrystalCalPar* fCal_Par = nullptr;  // Parameter container
+    R3BCalifaTotCalPar* fTotCal_Par = nullptr;   // Tot Parameter container
     TClonesArray* fCalifaMappedDataCA = nullptr; // Array with CALIFA Mapped-> input data
     TClonesArray* fCalifaCryCalDataCA = nullptr; // Array with CALIFA Cal-> output data
 

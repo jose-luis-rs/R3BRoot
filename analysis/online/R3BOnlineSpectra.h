@@ -210,7 +210,7 @@ class R3BOnlineSpectra : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat;
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t fNofPlanes;
@@ -243,10 +243,10 @@ class R3BOnlineSpectra : public FairTask
     Double_t tdiff = 0.;
     Double_t fNorm = 1.;
     Int_t iclear_count = 1;
-    UInt_t reset_time; // time after which bmon spectra are reseted
-    Double_t read_time; // step in which scalers are read, in sec
+    UInt_t reset_time;         // time after which bmon spectra are reseted
+    Double_t read_time;        // step in which scalers are read, in sec
     Int_t fsens_SEE, fsens_IC; // SEETRAM and IC sensitivity, between -4 and -10
-    Double_t calib_SEE = 1.; // SEETRAM calibration factor
+    Double_t calib_SEE = 1.;   // SEETRAM calibration factor
     Double_t see_offset = 7.1; // SEETRAM offset in kHz
 
     unsigned long fNEvents = 0, fNEvents_start = 0; /**< Event counter. */
@@ -327,17 +327,17 @@ class R3BOnlineSpectra : public FairTask
     TH1F* fh_ptof_TotPm1[N_PADDLE_MAX_PTOF];
     TH1F* fh_ptof_TotPm2[N_PADDLE_MAX_PTOF];
 
-    TH1F* fh_pspx_channel_x[N_PSPX]; /**< PSPX x channel profile on mapped level */
-    TH1F* fh_pspx_channel_y[N_PSPX]; /**< PSPX y channel profile on mapped level */
+    TH1F* fh_pspx_channel_x[N_PSPX];      /**< PSPX x channel profile on mapped level */
+    TH1F* fh_pspx_channel_y[N_PSPX];      /**< PSPX y channel profile on mapped level */
     TH1F* fh_pspx_multiplicity_x[N_PSPX]; /**< PSPX x multiplicity on mapped level */
     TH1F* fh_pspx_multiplicity_y[N_PSPX]; /**< PSPX y multiplicity on mapped level */
-    TH1F* fh_pspx_mapped_energy[N_PSPX]; /**< PSPX energy on mapped level as first check */
+    TH1F* fh_pspx_mapped_energy[N_PSPX];  /**< PSPX energy on mapped level as first check */
 
-    TH2F* fh_pspx_strips_position[N_PSPX]; /**< PSPX 2D position on mapped level */
-    TH2F* fh_pspx_hit_position[N_PSPX]; /**< PSPX 2D position on hit level */
+    TH2F* fh_pspx_strips_position[N_PSPX];  /**< PSPX 2D position on mapped level */
+    TH2F* fh_pspx_hit_position[N_PSPX];     /**< PSPX 2D position on hit level */
     TH2F* fh_pspx12_strips_position_corr_x; // correlation between x1 vs x2
     TH2F* fh_pspx12_strips_position_corr_y; // and y1 vs y2, ONLY valid for 2 detectors at the moment
-    TH2F* fh_pspx12_cal_energy_corr; // correlation between en1 und en2
+    TH2F* fh_pspx12_cal_energy_corr;        // correlation between en1 und en2
 
     TH1F* fh_pspx_hit_energy[N_PSPX]; /**< PSPX energy on hit level */
 

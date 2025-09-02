@@ -160,8 +160,8 @@ void R3BRoluMapped2Cal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         unsigned int iDet = hit->GetDetector(); // 1..
-        unsigned int iCha = hit->GetChannel(); // 1..4
-        unsigned int iType = hit->GetType(); // 0,1
+        unsigned int iCha = hit->GetChannel();  // 1..4
+        unsigned int iType = hit->GetType();    // 0,1
 
         if ((iDet < 1) || (iDet > fNofDetectors))
         {

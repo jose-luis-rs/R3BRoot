@@ -84,8 +84,8 @@ namespace R3B::Digitizing
 
       private:
         virtual auto ConstructSignals() -> Signals = 0;
-        Paddle* fPaddle = nullptr; // pointer to the paddle who owns this channel
-        ChannelSide fSide; // side of the channel
+        Paddle* fPaddle = nullptr;           // pointer to the paddle who owns this channel
+        ChannelSide fSide;                   // side of the channel
         mutable Validated<Signals> fSignals; // output signals from the channel
         mutable Validated<double> fTrigTime;
     };

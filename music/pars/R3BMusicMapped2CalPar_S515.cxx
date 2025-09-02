@@ -42,7 +42,7 @@
 // R3BMusicMapped2CalPar_S515: Default Constructor --------------------------
 R3BMusicMapped2CalPar_S515::R3BMusicMapped2CalPar_S515()
     : FairTask("R3B Music Angle Calibrator", 1)
-    , fNumAnodes(MAX_NB_MUSICANODE) // 8 anodes
+    , fNumAnodes(MAX_NB_MUSICANODE)   // 8 anodes
     , fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
     , fMaxMult(MAX_MULT_MUSIC_CAL)
     , fMinStadistics(1000)
@@ -71,7 +71,7 @@ R3BMusicMapped2CalPar_S515::R3BMusicMapped2CalPar_S515(const TString& name,
                                                        const TString& namedeta,
                                                        const TString& namedetb)
     : FairTask(name, iVerbose)
-    , fNumAnodes(MAX_NB_MUSICANODE) // 8 anodes
+    , fNumAnodes(MAX_NB_MUSICANODE)   // 8 anodes
     , fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
     , fMaxMult(MAX_MULT_MUSIC_CAL)
     , fMinStadistics(1000)

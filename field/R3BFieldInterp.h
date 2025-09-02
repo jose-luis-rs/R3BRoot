@@ -55,8 +55,8 @@ class R3BFieldInterp
   public:
     int _np[3];
     int _max_ic[3]; // _max_ic[i] = _np[i] - 1
-    int _m1, _m2; // _m1 = _np[1] * _np[2] ; _m2 = _np[2]
-    int _n; // _n = _np[0] * _np[1] * _np[2]
+    int _m1, _m2;   // _m1 = _np[1] * _np[2] ; _m2 = _np[2]
+    int _n;         // _n = _np[0] * _np[1] * _np[2]
     float* _data;
 
     float get_data_pt(int i0, int i1, int i2) { return _data[i0 * _m1 + i1 * _m2 + i2]; }

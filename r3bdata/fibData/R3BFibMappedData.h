@@ -67,14 +67,14 @@ class R3BFibMappedData : public TObject
   public:
     // PM1:
     Int_t fCoarseTime1LE; //... coarse time of leading edge
-    Int_t fFineTime1LE; //... fine time of leading edge
+    Int_t fFineTime1LE;   //... fine time of leading edge
     Int_t fCoarseTime1TE; //... coarse time of trailing edge
-    Int_t fFineTime1TE; //... fine time of trailing edge
+    Int_t fFineTime1TE;   //... fine time of trailing edge
     // PM2:
     Int_t fCoarseTime2LE; //... coarse time of leading edge
-    Int_t fFineTime2LE; //... fine time of leading edge
+    Int_t fFineTime2LE;   //... fine time of leading edge
     Int_t fCoarseTime2TE; //... coarse time of trailing edge
-    Int_t fFineTime2TE; //... fine time of trailing edge
+    Int_t fFineTime2TE;   //... fine time of trailing edge
 
   public:
     ClassDef(R3BFibMappedData, 1)

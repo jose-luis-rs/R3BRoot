@@ -20,9 +20,9 @@
 using namespace std;
 
 R3BBeamMonitorMappedData::R3BBeamMonitorMappedData()
-    : fIC(-1) // IC
+    : fIC(-1)      // IC
     , fSEETRAM(-1) // SEETRAM
-    , fTOFDOR(-1) // TOFD or
+    , fTOFDOR(-1)  // TOFD or
 {
 }
 

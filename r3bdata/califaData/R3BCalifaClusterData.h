@@ -70,13 +70,13 @@ class R3BCalifaClusterData : public TObject
 
   protected:
     std::vector<uint16_t> fCrystalList; // List with crystals inside the cluster. First one is the mother crystal
-    double fEnergy = 0; // total energy deposited
-    double fNf = 0; // total Nf deposited
-    double fNs = 0; // total Ns deposited
-    double fTheta = 0; // reconstructed theta
-    double fPhi = 0; // reconstructed phi
-    ULong64_t fTime = 0; // WR time stamp
-    uint8_t fClusterType = 0; // Cluster type: 0 proton, 1 gamma, 2 saturation
+    double fEnergy = 0;                 // total energy deposited
+    double fNf = 0;                     // total Nf deposited
+    double fNs = 0;                     // total Ns deposited
+    double fTheta = 0;                  // reconstructed theta
+    double fPhi = 0;                    // reconstructed phi
+    ULong64_t fTime = 0;                // WR time stamp
+    uint8_t fClusterType = 0;           // Cluster type: 0 proton, 1 gamma, 2 saturation
 
   public:
     ClassDefOverride(R3BCalifaClusterData, 4);

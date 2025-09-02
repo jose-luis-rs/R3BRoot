@@ -64,9 +64,9 @@ class R3BMwpc0Mapped2Cal : public FairTask
 
     bool fOnline = false; // Don't store data for online
 
-    R3BMwpc0CalPar* fCal_Par = nullptr; // Parameter container
+    R3BMwpc0CalPar* fCal_Par = nullptr;        // Parameter container
     TClonesArray* fMwpcMappedDataCA = nullptr; // Array with Mapped input data
-    TClonesArray* fMwpcCalDataCA = nullptr; // Array with Cal output data
+    TClonesArray* fMwpcCalDataCA = nullptr;    // Array with Cal output data
 
     // Private method AddCalData
     R3BMwpcCalData* AddCalData(Int_t plane, Int_t pad, Float_t charge);

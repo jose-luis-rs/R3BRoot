@@ -126,22 +126,22 @@ class R3BSci8Mapped2Cal : public FairTask
   private:
     // std::map<Int_t, R3BTCalModulePar*> fMapPar; /**< Map for matching mdoule ID with parameter container. */
     TClonesArray* fMappedItems; /**< Array with mapped items - input data. */
-    TClonesArray* fCalItems; /**< Array with cal items - output data. */
-    Int_t fNofCalItems; /**< Number of produced time items per event. */
+    TClonesArray* fCalItems;    /**< Array with cal items - output data. */
+    Int_t fNofCalItems;         /**< Number of produced time items per event. */
     Int_t Icounts_good = 0;
     Int_t Icounts_tot = 0;
 
     R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    UInt_t fNofTcalPars; /**< Number of modules in parameter file. */
+    UInt_t fNofTcalPars;  /**< Number of modules in parameter file. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
 
     UInt_t fNofDetectors; /**< Number of detectors. */
-    UInt_t fNofChannels; /**< Number of channels per detector. */
+    UInt_t fNofChannels;  /**< Number of channels per detector. */
     UInt_t fNofTypes = 3;
-    UInt_t fNofModules; /**< Total number of channels. */
+    UInt_t fNofModules;  /**< Total number of channels. */
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t fNEvent;
 

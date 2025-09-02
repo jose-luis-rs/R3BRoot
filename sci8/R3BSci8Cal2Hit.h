@@ -112,8 +112,8 @@ class R3BSci8Cal2Hit : public FairTask
   private:
     TClonesArray* fCalItems; /* < Array with Cal items - input data. */
     TClonesArray* fHitItems; /* < Array with Hit items - output data. */
-    UInt_t fNofHitItems; /* < Number of hit items for cur event. */
-    Double_t fClockFreq; /* < Clock cycle in [ns]. */
+    UInt_t fNofHitItems;     /* < Number of hit items for cur event. */
+    Double_t fClockFreq;     /* < Clock cycle in [ns]. */
     Double_t fsci8VeffX;
     Double_t fsci8OffsetX;
     Double_t fsci8OffsetXT;

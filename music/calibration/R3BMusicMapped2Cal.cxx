@@ -44,7 +44,7 @@ R3BMusicMapped2Cal::R3BMusicMapped2Cal()
 // R3BMusicMapped2CalPar: Standard Constructor --------------------------
 R3BMusicMapped2Cal::R3BMusicMapped2Cal(const char* name, Int_t iVerbose)
     : FairTask(name, iVerbose)
-    , fNumAnodes(MAX_NB_MUSICANODE) // 8 anodes
+    , fNumAnodes(MAX_NB_MUSICANODE)   // 8 anodes
     , fNumAnodesRef(MAX_NB_MUSICTREF) // 1 anode for TREF + 1 for trigger
     , fMaxMult(MAX_MULT_MUSIC_CAL)
     , fNumParams(3)
@@ -93,8 +93,8 @@ void R3BMusicMapped2Cal::SetParContainers()
 void R3BMusicMapped2Cal::SetParameters()
 {
     //--- Parameter Container ---
-    fNumAnodes = fCal_Par->GetNumAnodes(); // Number of anodes
-    fNumParams = fCal_Par->GetNumParamsEFit(); // Number of Parameters
+    fNumAnodes = fCal_Par->GetNumAnodes();          // Number of anodes
+    fNumParams = fCal_Par->GetNumParamsEFit();      // Number of Parameters
     fNumPosParams = fCal_Par->GetNumParamsPosFit(); // Number of Parameters
 
     LOG(info) << "R3BMusicMapped2Cal::SetParameters() Nb anodes: " << fNumAnodes;

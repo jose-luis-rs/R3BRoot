@@ -42,7 +42,7 @@ class R3BTofdHitData : public R3BHit
 
     UInt_t GetBarId() const;
     Double_t GetTimeRaw() const; // Get paddle time without trigger
-    Double_t GetTof() const; // Time-of-flight with respect to LOS detector
+    Double_t GetTof() const;     // Time-of-flight with respect to LOS detector
 
   private:
     UInt_t fBarId;

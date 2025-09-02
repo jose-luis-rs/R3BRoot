@@ -107,8 +107,8 @@ class R3BCalifaMapped2CrystalCalPar : public FairTask
     TArrayF* fEnergyPeaks = nullptr;
     Double_t* fChannelPeaks;
 
-    R3BCalifaMappingPar* fMap_Par = nullptr; // Parameter container with mapping
-    R3BCalifaCrystalCalPar* fCal_Par = nullptr; // Container for Cal parameters
+    R3BCalifaMappingPar* fMap_Par = nullptr;     // Parameter container with mapping
+    R3BCalifaCrystalCalPar* fCal_Par = nullptr;  // Container for Cal parameters
     TClonesArray* fCalifaMappedDataCA = nullptr; // Array with CALIFA Mapped-input data
 
     TH1F** fh1_Map_energy_crystal;

@@ -62,10 +62,10 @@ class R3Bp2pevtGenerator : public FairGenerator
     Bool_t ReadEvent(FairPrimaryGenerator* primGen) override;
 
     void SetHeavyNucleus(int A, double M_def, double M_res); // Set Mass of heavy nucleus and Mass Defect
-    void SetInverse(bool inverse); // Set Inverse or direct kinematics
-    void SetIsotropic(bool isotropic); // Set Isotropic or parametric cross section for proton emission
-    void SetMomDistrib(double mom); // Set Sigma of momentum distribution
-    void SetExcitation(double exe); // Set Excitation energy
+    void SetInverse(bool inverse);                           // Set Inverse or direct kinematics
+    void SetIsotropic(bool isotropic);          // Set Isotropic or parametric cross section for proton emission
+    void SetMomDistrib(double mom);             // Set Sigma of momentum distribution
+    void SetExcitation(double exe);             // Set Excitation energy
     void SetLightNucleus(double ma, double mi); // Set Incoming outgoing particle mass
     void SetBeamEnergy(double E);
     void PrintInfo();

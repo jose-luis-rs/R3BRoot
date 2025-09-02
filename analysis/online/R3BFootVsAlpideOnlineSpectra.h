@@ -103,15 +103,15 @@ class R3BFootVsAlpideOnlineSpectra : public FairTask
     void Reset_FOOT_ALPIDE_Histo();
 
   private:
-    TClonesArray* fHitItemsFoot; /**< Array with FOOT hit items. */
+    TClonesArray* fHitItemsFoot;   /**< Array with FOOT hit items. */
     TClonesArray* fHitItemsAlpide; /**< Array with ALPIDE hit items. */
 
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger = -1; /**< Trigger value. */
-    Int_t fNEvents; /**< Event counter. */
+    Int_t fTrigger = -1;    /**< Trigger value. */
+    Int_t fNEvents;         /**< Event counter. */
     Int_t fTpat1 = -1;
     Int_t fTpat2 = -1;
 

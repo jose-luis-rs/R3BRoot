@@ -143,7 +143,7 @@ Bool_t R3BTra::ProcessHits(FairVolume* vol)
     if (gMC->IsTrackExiting() || gMC->IsTrackStop() || gMC->IsTrackDisappeared())
     {
         fTrackID = gMC->GetStack()->GetCurrentTrackNumber();
-        fVolumeID = vol->getMCid(); // getCopyNo(); //getMCid();
+        fVolumeID = vol->getMCid();    // getCopyNo(); //getMCid();
         fDetCopyID = vol->getCopyNo(); // added by Marc
         gMC->TrackPosition(fPosOut);
         gMC->TrackMomentum(fMomOut);
@@ -348,37 +348,37 @@ void R3BTra::ConstructGeometry()
     Int_t nel, numed;
 
     Double_t PI = 3.141592654;
-    Int_t NSide1 = 6; // Nb of detector in Layer 1
-    Double_t WidthMax1 = 7.945; // Max width of detector (cm)
-    Double_t WidthMin1 = 2.25; // Max width of detector (cm)
+    Int_t NSide1 = 6;            // Nb of detector in Layer 1
+    Double_t WidthMax1 = 7.945;  // Max width of detector (cm)
+    Double_t WidthMin1 = 2.25;   // Max width of detector (cm)
     Double_t Thickness1 = 0.005; // Half thickness of detector (cm)
-    Double_t Length1 = 19.03; // length of detector (cm
-    Double_t InclAng1 = 14.9; // angle d'inclinaison with respect to z axis (deg)
-    Double_t Rmin1 = 2.; // beam clearance 2cm radius
-    Double_t AngRangeMin1 = 7; // Min theta angle covered (deg)
-    Double_t AngTrap1 = atan((WidthMax1 / 2 - WidthMin1 / 2) / Length1); // (rad)
+    Double_t Length1 = 19.03;    // length of detector (cm
+    Double_t InclAng1 = 14.9;    // angle d'inclinaison with respect to z axis (deg)
+    Double_t Rmin1 = 2.;         // beam clearance 2cm radius
+    Double_t AngRangeMin1 = 7;   // Min theta angle covered (deg)
+    Double_t AngTrap1 = atan((WidthMax1 / 2 - WidthMin1 / 2) / Length1);         // (rad)
     Double_t WidthHalf1 = WidthMax1 - (Length1 / cos(AngTrap1)) * sin(AngTrap1); // width of detector at Length/2
 
-    Int_t NSide2 = 12; // Nb of detector in Layer 1
-    Double_t WidthMax2 = 10.4; // Max width of detector (cm)
-    Double_t WidthMin2 = 1.3; // Max width of detector (cm)
+    Int_t NSide2 = 12;           // Nb of detector in Layer 1
+    Double_t WidthMax2 = 10.4;   // Max width of detector (cm)
+    Double_t WidthMin2 = 1.3;    // Max width of detector (cm)
     Double_t Thickness2 = 0.015; // half thickness of detector (cm)
-    Double_t Length2 = 30.6; // length of detector (cm
-    Double_t InclAng2 = 33.7; // angle d'inclinaison with respect to z axis (deg)
-    Double_t Rmin2 = 2.5; // beam clearance 3cm radius
-    Double_t AngRangeMin2 = 7.; // Min theta angle covered (deg)
-    Double_t AngTrap2 = atan((WidthMax2 / 2 - WidthMin2 / 2) / Length2); // (rad)
+    Double_t Length2 = 30.6;     // length of detector (cm
+    Double_t InclAng2 = 33.7;    // angle d'inclinaison with respect to z axis (deg)
+    Double_t Rmin2 = 2.5;        // beam clearance 3cm radius
+    Double_t AngRangeMin2 = 7.;  // Min theta angle covered (deg)
+    Double_t AngTrap2 = atan((WidthMax2 / 2 - WidthMin2 / 2) / Length2);         // (rad)
     Double_t WidthHalf2 = WidthMax2 - (Length2 / cos(AngTrap2)) * sin(AngTrap2); // width of detector at Length/2
 
-    Int_t NSide3 = 12; // Nb of detector in Layer 1
-    Double_t WidthMax3 = 10.4; // Max width of detector (cm)
-    Double_t WidthMin3 = 1.3; // Max width of detector (cm)
+    Int_t NSide3 = 12;           // Nb of detector in Layer 1
+    Double_t WidthMax3 = 10.4;   // Max width of detector (cm)
+    Double_t WidthMin3 = 1.3;    // Max width of detector (cm)
     Double_t Thickness3 = 0.015; // half thickness of detector (cm)
-    Double_t Length3 = 30.6; // length of detector (cm
-    Double_t InclAng3 = 33.7; // angle d'inclinaison with respect to z axis (deg)
-    Double_t Rmin3 = 2.685; // beam clearance 3cm radius
-    Double_t AngRangeMin3 = 7; // Min theta angle covered (deg)
-    Double_t AngTrap3 = atan((WidthMax3 / 2 - WidthMin3 / 2) / Length2); // (rad)
+    Double_t Length3 = 30.6;     // length of detector (cm
+    Double_t InclAng3 = 33.7;    // angle d'inclinaison with respect to z axis (deg)
+    Double_t Rmin3 = 2.685;      // beam clearance 3cm radius
+    Double_t AngRangeMin3 = 7;   // Min theta angle covered (deg)
+    Double_t AngTrap3 = atan((WidthMax3 / 2 - WidthMin3 / 2) / Length2);         // (rad)
     Double_t WidthHalf3 = WidthMax3 - (Length3 / cos(AngTrap3)) * sin(AngTrap3); // width of detector at Length/2
 
     /****************************************************************************/

@@ -252,7 +252,7 @@ class R3BOnlineSpectraDec2019 : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat;
     Int_t fSamp;
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
@@ -297,9 +297,9 @@ class R3BOnlineSpectraDec2019 : public FairTask
     Double_t tdiff = 0.;
     Double_t fNorm = 1.;
     Int_t iclear_count = 1;
-    UInt_t reset_time; // time after which bmon spectra are reseted
-    Double_t read_time; // step in which scalers are read, in sec
-    Double_t calib_SEE = 1.; // SEETRAM calibration factor
+    UInt_t reset_time;         // time after which bmon spectra are reseted
+    Double_t read_time;        // step in which scalers are read, in sec
+    Double_t calib_SEE = 1.;   // SEETRAM calibration factor
     Double_t see_offset = 7.1; // SEETRAM offset in kHz
     Double_t fSpillLength;
     Double_t fDAQ_dead_time;
@@ -388,12 +388,12 @@ class R3BOnlineSpectraDec2019 : public FairTask
     TH1F* fh_ptof_TotPm1[N_PADDLE_MAX_PTOF];
     TH1F* fh_ptof_TotPm2[N_PADDLE_MAX_PTOF];
 
-    TH1F* fh_pspx_channel_x[N_PSPX]; /**< PSPX x channel profile on mapped level */
-    TH1F* fh_pspx_channel_y[N_PSPX]; /**< PSPX y channel profile on mapped level */
+    TH1F* fh_pspx_channel_x[N_PSPX];      /**< PSPX x channel profile on mapped level */
+    TH1F* fh_pspx_channel_y[N_PSPX];      /**< PSPX y channel profile on mapped level */
     TH1F* fh_pspx_multiplicity_x[N_PSPX]; /**< PSPX x multiplicity on mapped level */
     TH1F* fh_pspx_multiplicity_y[N_PSPX]; /**< PSPX y multiplicity on mapped level */
 
-    TH2F* fh_pspx_strips_position[N_PSPX]; /**< PSPX 2D position on mapped level */
+    TH2F* fh_pspx_strips_position[N_PSPX];        /**< PSPX 2D position on mapped level */
     TH2F* fh_pspx_hit_position[(N_PSPX + 1) / 2]; /**< PSPX 2D position on hit level */
 
     TH1F* fh_pspx_hit_energy[(N_PSPX + 1) / 2]; /**< PSPX energy on hit level */

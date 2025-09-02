@@ -282,10 +282,10 @@ namespace Neuland
 
             input->num_rows = numberOfEquations;
             input->num_cols = nBars;
-            input->damp_val = 0.; // we want damping (i.e. in this case average of all solution vars = 0)
+            input->damp_val = 0.;         // we want damping (i.e. in this case average of all solution vars = 0)
             input->rel_mat_err = 1.0e-10; // TODO: this should be set to something reasonable
             input->rel_rhs_err = 1.0e-10; // TODO: this should be set to something reasonable
-            input->cond_lim = 0.; // 10.0 * act_mat_cond_num;
+            input->cond_lim = 0.;         // 10.0 * act_mat_cond_num;
             input->max_iter = input->num_rows + input->num_cols + 50;
             input->lsqr_fp_out = nullptr;
 

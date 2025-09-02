@@ -118,11 +118,11 @@ class R3BTofDHitPar : public FairParGenericSet
 
   private:
     const R3BTofDHitPar& operator=(const R3BTofDHitPar&); /**< an assignment operator */
-    R3BTofDHitPar(const R3BTofDHitPar&); /**< a copy constructor */
+    R3BTofDHitPar(const R3BTofDHitPar&);                  /**< a copy constructor */
 
     TObjArray* fHitParams; /**< an array with parameter containers of all modules */
 
-    Bool_t fMapInit; /**< a boolean flag for indication whether the indexing map is initialized */
+    Bool_t fMapInit;                  /**< a boolean flag for indication whether the indexing map is initialized */
     std::map<Int_t, Int_t> fIndexMap; /**< a map between index of a container in array and plane,paddle,side */
 
   public:

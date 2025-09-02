@@ -86,7 +86,7 @@ class R3BIonGenerator : public FairGenerator
     R3BBeamProperties Beam; //!
 
   private:
-    Int_t fMult; // Multiplicity per event
+    Int_t fMult;   // Multiplicity per event
     FairIon* fIon; // Pointer to the FairIon to be generated
 
     TRandom3 fRNG; // the RNG

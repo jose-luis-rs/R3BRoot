@@ -343,7 +343,7 @@ void R3BFragmentFitterChi2::Init(R3BTPropagator* prop, Bool_t energyLoss)
 
     // set tolerance , etc...
     fMinimum->SetMaxFunctionCalls(1000000); // for Minuit/Minuit2
-    fMinimum->SetMaxIterations(10000); // for GSL
+    fMinimum->SetMaxIterations(10000);      // for GSL
     fMinimum->SetTolerance(10.);
     fMinimum->SetPrintLevel(0);
     fMinimum->SetStrategy(0);
@@ -363,7 +363,7 @@ Int_t R3BFragmentFitterChi2::FitTrack(R3BTrackingParticle* particle, R3BTracking
 
     // set tolerance , etc...
     minimum->SetMaxFunctionCalls(1000000); // for Minuit/Minuit2
-    minimum->SetMaxIterations(10000); // for GSL
+    minimum->SetMaxIterations(10000);      // for GSL
     minimum->SetTolerance(0.0001);
     minimum->SetPrintLevel(0);
 
@@ -411,7 +411,7 @@ Int_t R3BFragmentFitterChi2::FitTrackBeta(R3BTrackingParticle* particle, R3BTrac
 
     // set tolerance , etc...
     minimum->SetMaxFunctionCalls(1000000); // for Minuit/Minuit2
-    minimum->SetMaxIterations(10000); // for GSL
+    minimum->SetMaxIterations(10000);      // for GSL
     minimum->SetTolerance(0.001);
     minimum->SetPrintLevel(0);
 

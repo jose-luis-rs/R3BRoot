@@ -73,14 +73,14 @@ class R3BAmsMappingPar : public FairParGenericSet
     void SetOffsetY(Float_t value, Int_t det) { fOffsetY->AddAt(value, det - 1); }
 
   private:
-    Int_t fGeo; // geometry of the ams detectors per year: 2019 or 2020
-    Int_t fNumDet; // number of ams detectors (from 1 to 6 for 2020 experiments)
-    TArrayI* fSam; // sam number (4 or 5)
-    TArrayI* fGtb; // gtb number (0 or 1)
-    TArrayI* fSiderem; // siderem number (1 or 2)
+    Int_t fGeo;                // geometry of the ams detectors per year: 2019 or 2020
+    Int_t fNumDet;             // number of ams detectors (from 1 to 6 for 2020 experiments)
+    TArrayI* fSam;             // sam number (4 or 5)
+    TArrayI* fGtb;             // gtb number (0 or 1)
+    TArrayI* fSiderem;         // siderem number (1 or 2)
     TArrayF* fDistance2target; // Distance to target
-    TArrayF* fAngleTheta; // Angle with respect to beam direction (-45 and 45 degrees)
-    TArrayF* fOffsetY; // offset for y (-20, 0 or 20 mm)
+    TArrayF* fAngleTheta;      // Angle with respect to beam direction (-45 and 45 degrees)
+    TArrayF* fOffsetY;         // offset for y (-20, 0 or 20 mm)
 
     const R3BAmsMappingPar& operator=(const R3BAmsMappingPar&);
     R3BAmsMappingPar(const R3BAmsMappingPar&);

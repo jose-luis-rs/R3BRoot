@@ -57,7 +57,7 @@ class R3BTofdReader : public R3BReader
     // Skip trigger times
     bool fSkiptriggertimes = false;
     // Output array
-    TClonesArray* fArray; /**< Output array. */
+    TClonesArray* fArray;        /**< Output array. */
     TClonesArray* fArrayTrigger; /**< Output array for triggers. */
 
   public:

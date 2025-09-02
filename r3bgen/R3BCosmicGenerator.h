@@ -66,13 +66,13 @@ class R3BCosmicGenerator : public FairGenerator
 
   private:
     R3BDistribution<3> fVertexPositionDist_cm; //!
-    R3BDistribution<2> fAngularDist_Rad; //!
-    R3BDistribution<1> fEnergyDist_GeV; //!
+    R3BDistribution<2> fAngularDist_Rad;       //!
+    R3BDistribution<1> fEnergyDist_GeV;        //!
 
     TRandom3 fRngGen;
 
     Int_t fPDGType; // Particle type (PDG encoding)
-    Int_t fMult; // Multiplicity
+    Int_t fMult;    // Multiplicity
 
     Double_t fPDGMass; // Particle mass [GeV]
 

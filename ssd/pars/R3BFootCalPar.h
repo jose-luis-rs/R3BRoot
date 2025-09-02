@@ -66,11 +66,11 @@ class R3BFootCalPar : public FairParGenericSet
     /** Create more Methods if you need them! **/
 
   private:
-    int fNumDets = 16; // Number of detectors
-    int fNumStrips = 640; // Number of strips
-    int fNumParsFit = 2; // Number of parameters for the fit
+    int fNumDets = 16;        // Number of detectors
+    int fNumStrips = 640;     // Number of strips
+    int fNumParsFit = 2;      // Number of parameters for the fit
     TArrayF* fStripCalParams; // Calibration Parameters of strip
-    TArrayF* fFineSigmas; // Fine sigma parameters
+    TArrayF* fFineSigmas;     // Fine sigma parameters
 
     const R3BFootCalPar& operator=(const R3BFootCalPar&);
     R3BFootCalPar(const R3BFootCalPar&);

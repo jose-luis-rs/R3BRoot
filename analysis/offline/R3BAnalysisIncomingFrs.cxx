@@ -364,8 +364,8 @@ void R3BAnalysisIncomingFrs::Exec(Option_t* option)
 
             // channel numbers are stored 1-based (1..n)
             Int_t iDet = hit->GetDetector(); // 1..
-            Int_t iCha = hit->GetChannel(); // 1..
-            Int_t iTyp = hit->GetType(); // 0,1,2,3
+            Int_t iCha = hit->GetChannel();  // 1..
+            Int_t iTyp = hit->GetType();     // 0,1,2,3
         }
     }
 
@@ -693,7 +693,7 @@ void R3BAnalysisIncomingFrs::Exec(Option_t* option)
                 Beta_m1 = Velo_m1 / 0.299792458;
                 Gamma_m1 = 1. / (TMath::Sqrt(1. - TMath::Power(Beta_m1, 2)));
                 PosRaw_m1 = iRawTimeNs[0][0] - iRawTimeNs[1][0]; // [ns]
-                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1; // [mm] at S2
+                PosCal_m1 = fPos_p0 + fPos_p1 * PosRaw_m1;       // [mm] at S2
                 Brho_m1 = fBrho0_S2toCC * (1. - PosCal_m1 / fDispersionS2);
                 AoQ_m1 = Brho_m1 / (3.10716 * Beta_m1 * Gamma_m1);
                 if (Zmusic > 0.)

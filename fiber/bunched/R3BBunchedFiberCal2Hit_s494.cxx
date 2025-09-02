@@ -462,7 +462,7 @@ void R3BBunchedFiberCal2Hit_s494::Exec(Option_t* option)
                     Double_t t_spmt = spmt_tot.lead_ns;
 
                     Double_t t_mapmt1 = mapmt_tot.lead->GetTime_ns(); // MAPMT time without subtraction of trigger time
-                    Double_t t_spmt1 = spmt_tot.lead->GetTime_ns(); // SAPMT time without subtraction of trigger time
+                    Double_t t_spmt1 = spmt_tot.lead->GetTime_ns();   // SAPMT time without subtraction of trigger time
 
                     // cout << "ToT fiber_SA_ch: " << tot_spmt << "  ToT multi: " << tot_mapmt << endl;
                     // cout << "Time fiber_SA_ch: " << t_spmt << "  Time multi: " << t_mapmt

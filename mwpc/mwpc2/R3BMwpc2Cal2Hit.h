@@ -75,8 +75,8 @@ class R3BMwpc2Cal2Hit : public FairTask
     R3BEventHeader* header; /**< Event header. */
 
     Double_t fSize; // Detector size in X and Y
-    Double_t fwx; // Pad width in X
-    Double_t fwy; // Pad width in Y
+    Double_t fwx;   // Pad width in X
+    Double_t fwy;   // Pad width in Y
     // vector<pair<Int_t, Int_t>> fPairX;
     // vector<pair<Int_t, Int_t>> fPairY;
     Int_t fx[Mw2PadsX], fx_p1[Mw2PadsX], fx_p2[Mw2PadsX], fy[Mw2PadsY];

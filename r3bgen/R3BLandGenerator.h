@@ -83,7 +83,7 @@ class R3BLandGenerator : public FairGenerator
     TLeaf* lz;
 
     const char* fFileName; //! Input file Name
-    TDatabasePDG* fPDG; //!  PDG database
+    TDatabasePDG* fPDG;    //!  PDG database
 
     Double_t PDGo, Mo, Zo, Eo, po, thetao, phio;
     Double_t xo, yo, zo, pxo, pyo, pzo;

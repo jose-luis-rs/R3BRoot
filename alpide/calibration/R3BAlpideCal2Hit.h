@@ -65,7 +65,7 @@ class R3BAlpideCal2Hit : public FairTask
     void FindClusters();
 
     const double fPixelSize_ls = 0.0292968; // long side
-    const double fPixelSize_ss = 0.02695; // short side
+    const double fPixelSize_ss = 0.02695;   // short side
     int fNbSensors = 108;
     bool fOnline = false;
 

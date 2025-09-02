@@ -31,9 +31,9 @@ class R3BTofdMappedData : public TObject
 
   private:
     UInt_t fDetector; // 1..n
-    UInt_t fSide; // 1 = bottom, 2 = top
-    UInt_t fBar; // 1..n
-    UInt_t fEdge; // 1 = leading, 2 = trailing
+    UInt_t fSide;     // 1 = bottom, 2 = top
+    UInt_t fBar;      // 1..n
+    UInt_t fEdge;     // 1 = leading, 2 = trailing
     UInt_t fTimeCoarse;
     UInt_t fTimeFine;
 

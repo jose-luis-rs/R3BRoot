@@ -118,10 +118,10 @@ Bool_t R3Bp2pevtGenerator::ReadEvent(FairPrimaryGenerator* primGen)
         //-------------- The reaction 11C(p,pn)10C --------------------
         const double Tkin = E * A_BEAM; // Total kinetic energy (MeV) of the projectile nucleus
         //--------------------- Beam parameters -----------------------------
-        const double PA = sqrt(Tkin * (Tkin + 2 * MA)); // Total 3-momentum of the beam
-        const double EA = sqrt(MA * MA + PA * PA); // Total energy of the beam
-        const double bA = -PA / EA; // Beta of the beam
-        const double gA = 1 / sqrt(1 - bA * bA); // Gamma of the beam
+        const double PA = sqrt(Tkin * (Tkin + 2 * MA));         // Total 3-momentum of the beam
+        const double EA = sqrt(MA * MA + PA * PA);              // Total energy of the beam
+        const double bA = -PA / EA;                             // Beta of the beam
+        const double gA = 1 / sqrt(1 - bA * bA);                // Gamma of the beam
         const double S_first = (EA + Mi) * (EA + Mi) - PA * PA; // Invariant mass (Mandelstam S-variable)
         const double sigma = MOM_SIGMA; // Internal momentum spread of the cluster "a" inside "A"
 
@@ -167,11 +167,11 @@ Bool_t R3Bp2pevtGenerator::ReadEvent(FairPrimaryGenerator* primGen)
             //------- Lorentz transformations into laboratory system ---------
             std::pair<double, double> lora = R3Bp2pevtGenerator::Lorentz(gA, bA, Ea, Pa.Z());
             double EaL = lora.first; // cluster energy in lab
-            Pa.SetZ(lora.second); // cluster Pz in lab
+            Pa.SetZ(lora.second);    // cluster Pz in lab
 
             std::pair<double, double> lorB = R3Bp2pevtGenerator::Lorentz(gA, bA, EB, PB.Z());
             double EBL = lorB.first; // energy of the residual B in lab
-            PB.SetZ(lorB.second); // Pz of the residual B in lab
+            PB.SetZ(lorB.second);    // Pz of the residual B in lab
 
             //---------- Generating CM scattering process ----------
             double S = Ma_off * Ma_off + Mi * Mi + 2 * Mi * EaL; // Mandelstam invariant
@@ -217,11 +217,11 @@ Bool_t R3Bp2pevtGenerator::ReadEvent(FairPrimaryGenerator* primGen)
     else if (!INVERSE)
     {
         //--------------------- Beam parameters -----------------------------
-        const Double_t Tkin = E; // Total kinetic energy (MeV) of the projectile
+        const Double_t Tkin = E;                          // Total kinetic energy (MeV) of the projectile
         const Double_t Pi = sqrt(Tkin * (Tkin + 2 * Mi)); // Total 3-momentum of the beam
-        const Double_t Ei = sqrt(Mi * Mi + Pi * Pi); // Total energy of the beam
-        const Double_t bi = -Pi / Ei; // Beta of the beam
-        const Double_t gi = 1 / sqrt(1 - bi * bi); // Gamma of the beam
+        const Double_t Ei = sqrt(Mi * Mi + Pi * Pi);      // Total energy of the beam
+        const Double_t bi = -Pi / Ei;                     // Beta of the beam
+        const Double_t gi = 1 / sqrt(1 - bi * bi);        // Gamma of the beam
 
         std::cout << "\n****** Beam parameters ********";
         std::cout << "\nTotal momentum:\t" << Pi << " MeV/c";
@@ -438,10 +438,10 @@ cm_values R3Bp2pevtGenerator::CENMASS(double s, double m2off, double m1, double 
 double R3Bp2pevtGenerator::momentum_CM(double TLAB, double M1, double M2)
 {
     // Particle M2 is assumed to be in rest
-    double PLAB = sqrt(TLAB * (TLAB + 2 * M1)); //  Total 3-momentum of an incident particle in Lab
-    double ELAB = sqrt(PLAB * PLAB + M1 * M1); //  Total energy of an incident particle in lab
+    double PLAB = sqrt(TLAB * (TLAB + 2 * M1));      //  Total 3-momentum of an incident particle in Lab
+    double ELAB = sqrt(PLAB * PLAB + M1 * M1);       //  Total energy of an incident particle in lab
     double SLAB = M1 * M1 + M2 * M2 + 2 * M2 * ELAB; // Mandelstam invariant S in lab
-    double PCM = PLAB * M2 / sqrt(SLAB); // Momentum of both particles in CM frame
+    double PCM = PLAB * M2 / sqrt(SLAB);             // Momentum of both particles in CM frame
     return PCM;
 }
 
@@ -467,7 +467,7 @@ double R3Bp2pevtGenerator::get_T(double sm, double max)
 
     // double Tmax = -2*pCM*pCM*(1 - cos(PI))*0.000001; //in (GeV/c)�
     Double_t rr = fRandom.Uniform(-1., 1.); // to randomize wrt 90 degrees
-    double mandels = sm * 0.000001; // in GeV�
+    double mandels = sm * 0.000001;         // in GeV�
     // cout << "\nMandelstam S = " << mandels << "\t Tmax/2 = " << Tmax/2 << "\t Random: " << rr;
 
     // Probability function from the parameterization

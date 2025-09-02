@@ -22,10 +22,10 @@ using namespace std;
 // for the data analysis of the Sci8 detector.
 
 R3BSci8MappedData::R3BSci8MappedData()
-    : fDetector(0) // Detector number: 1...n
-    , fChannel(0) // Channel number:  1,2
-    , fType(0) // Type: 0 = VFTX time, 1 = TAMEX leading edge, 2 = TAMEX trailing edge
-    , fTimeFine(-1) // Fine time
+    : fDetector(0)    // Detector number: 1...n
+    , fChannel(0)     // Channel number:  1,2
+    , fType(0)        // Type: 0 = VFTX time, 1 = TAMEX leading edge, 2 = TAMEX trailing edge
+    , fTimeFine(-1)   // Fine time
     , fTimeCoarse(-1) // Coarse time
 {
 }

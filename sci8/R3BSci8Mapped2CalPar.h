@@ -123,18 +123,18 @@ class R3BSci8Mapped2CalPar : public FairTask
 
   private:
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats; /**< Minimum statistics required per module. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fMinStats;   /**< Minimum statistics required per module. */
+    Int_t fTrigger;    /**< Trigger value. */
     Int_t Icount[2][3]{};
 
     UInt_t fNofDetectors; /**< Number of detectors. */
-    UInt_t fNofChannels; /**< Number of channels per detector. */
+    UInt_t fNofChannels;  /**< Number of channels per detector. */
     UInt_t fNofTypes = 3; /**< Number of time-types per channel (VFTX, TAMEX leading/trailing). */
-    UInt_t fNofModules; /**< Total number of modules (=edges) to calibrate */
+    UInt_t fNofModules;   /**< Total number of modules (=edges) to calibrate */
 
-    Int_t fNEvents; /**< Event counter. */
-    R3BTCalPar* fCal_Par; /**< Parameter container. */
-    TClonesArray* fMapped; /**< Array with mapped data - input data. */
+    Int_t fNEvents;         /**< Event counter. */
+    R3BTCalPar* fCal_Par;   /**< Parameter container. */
+    TClonesArray* fMapped;  /**< Array with mapped data - input data. */
     R3BEventHeader* header; /**< Event header - input data. */
 
     R3BTCalEngine* fEngine; /**< Instance of the TCAL engine. */

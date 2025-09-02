@@ -59,8 +59,8 @@ class R3BFrsSciTcalPar : public FairParGenericSet
     Double_t GetOneTcalParam(UInt_t rank) { return (Double_t)fAllTcalParams->GetAt(rank); }
 
   private:
-    int fNumDets = 3; // number of FrsSci detectors
-    int fNumPmts = 3; // number of Pmts  (=3)
+    int fNumDets = 3;    // number of FrsSci detectors
+    int fNumPmts = 3;    // number of Pmts  (=3)
     int fNumPars = 1000; // 1000 parameters per signal for VFTX calibration
     int fMinStat = 0;
     std::unique_ptr<TArrayD> fAllTcalParams; // Calibration Parameters for all signals of all detectors

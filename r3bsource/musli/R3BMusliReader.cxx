@@ -97,7 +97,7 @@ Bool_t R3BMusliReader::ReadData(EXT_STR_h101_MUSLI_onion* data)
     // --- ---------------------------- --- //
     // --- NUMBER OF CHANNELS WITH HITS --- //
     // --- ---------------------------- --- //
-    UShort_t nTref = data->MUSLI_TREFM; // should always be 1
+    UShort_t nTref = data->MUSLI_TREFM;   // should always be 1
     UShort_t nTtrig = data->MUSLI_TTRIGM; // should always be 0 or 1
     UShort_t nEnergy = data->MUSLI_EM;
     UShort_t nTime = data->MUSLI_TM;

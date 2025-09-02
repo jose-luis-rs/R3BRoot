@@ -94,12 +94,12 @@ class R3BOnlineSpectraPdc : public FairTask
 
   private:
     TClonesArray* fMappedItems; /**< Array with Cal items - input data. */
-    TClonesArray* fCalItems; /**< Array with Cal items - input data. */
-    TClonesArray* fHitItems; /**< Array with Cal items - input data. */
+    TClonesArray* fCalItems;    /**< Array with Cal items - input data. */
+    TClonesArray* fHitItems;    /**< Array with Cal items - input data. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat;
     Int_t fSamp;
     Int_t fNEvents;

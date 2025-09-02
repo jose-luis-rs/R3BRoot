@@ -73,7 +73,7 @@ int main(int argc, const char** argv)
     // Primary particle generator
     auto gen = std::make_unique<R3BPhaseSpaceGenerator>();
 
-    constexpr auto beam_energy = 883.; // MeV
+    constexpr auto beam_energy = 883.;      // MeV
     constexpr auto rel_energy_max = 10000.; // keV
     constexpr auto Sn_atomic_number = 50;
     constexpr auto Sn_mass = 123;

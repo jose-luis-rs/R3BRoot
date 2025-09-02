@@ -168,14 +168,14 @@ class R3BLosCal2Hit : public FairTask
   private:
     void SetParameter();
     R3BLosHitPar* fLosHit_Par; // Parameter container
-    TClonesArray* fCalItems; /**< Array with Cal items - input data. */
-    TClonesArray* fHitItems; /**< Array with Hit items - output data. */
+    TClonesArray* fCalItems;   /**< Array with Cal items - input data. */
+    TClonesArray* fHitItems;   /**< Array with Hit items - output data. */
     Float_t fp0, fp1;
     Bool_t fOnline; // Don't store data for online
 
     // check for trigger
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat;
 
     UInt_t fNofHitItems; /**< Number of hit items for cur event. */
@@ -193,7 +193,7 @@ class R3BLosCal2Hit : public FairTask
     Double_t flosOffsetXT;
     Double_t flosOffsetYT;
     Double_t walk_par[16][11]{}; // Array containing walk parameters: x=PM, y=min,max,p0...p9; MCFD and TAMEX considered
-    Double_t tot_par[8][4]{}; // Array containing walk parameters: x=PM, y=p0...p3;
+    Double_t tot_par[8][4]{};    // Array containing walk parameters: x=PM, y=p0...p3;
     Bool_t fOptHisto;
     std::string fwalk_param_file;
     std::string ftot_param_file;

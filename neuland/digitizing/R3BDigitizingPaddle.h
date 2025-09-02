@@ -50,8 +50,8 @@ namespace R3B::Digitizing
 
     struct PaddleHit
     {
-        double time; // ns
-        double LightDep; // MeV
+        double time;               // ns
+        double LightDep;           // MeV
         double DistToPaddleCenter; // cm
     };
 

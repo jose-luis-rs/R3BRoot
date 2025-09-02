@@ -63,11 +63,11 @@ class R3BCalifaTotCalPar : public FairParGenericSet
     /** Create more Methods if you need them! **/
 
   private:
-    TArrayF* fCryCalParams; /*< Calibration Parameters of Crystals>*/
+    TArrayF* fCryCalParams;  /*< Calibration Parameters of Crystals>*/
     int fNumCrystals = 5088; /*< number of crystals>*/
-    int fNumParamsFit = 2; /*< number of cal parameters in the fit
-               pol1: A_fit & B_fit
-               pol2: A_fit, B_fit & C_fit>*/
+    int fNumParamsFit = 2;   /*< number of cal parameters in the fit
+                 pol1: A_fit & B_fit
+                 pol2: A_fit, B_fit & C_fit>*/
 
     const R3BCalifaTotCalPar& operator=(const R3BCalifaTotCalPar&);
     R3BCalifaTotCalPar(const R3BCalifaTotCalPar&);

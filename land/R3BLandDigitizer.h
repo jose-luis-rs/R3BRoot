@@ -114,7 +114,7 @@ class R3BLandDigitizer : public FairTask
     Int_t nplanes;
     Int_t paddle_per_plane;
     Double_t plength; // half length of paddle
-    Double_t att; // light attenuation factor [1/cm]
+    Double_t att;     // light attenuation factor [1/cm]
     Double_t c;
     Double_t cMedia; // speed of light in material in cm/ns
     Double_t fBeamEnergy;

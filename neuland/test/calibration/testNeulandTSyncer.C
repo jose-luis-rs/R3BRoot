@@ -14,7 +14,7 @@
 // FIXME Root Problem remove this as soon as Fairsoft is using Root >=6.20.00
 namespace Neuland
 {
-    constexpr auto CLight = 29.9792458; // Speed of light [cm/ns]
+    constexpr auto CLight = 29.9792458;     // Speed of light [cm/ns]
     constexpr auto InvCLight = 1. / CLight; // Speed of light [cm/ns]>
 
     // Electronics Constans
@@ -23,17 +23,17 @@ namespace Neuland
 
     // Geometry & Material Constants
 
-    constexpr auto BarSize_XY = 5.0; // cm NeuLAND parameter
-    constexpr auto BarUncertainty_XY = BarSize_XY / __sqrt12; // cm NeuLAND parameter
-    constexpr auto BarSize_Z = 5.0; // cm NeuLAND parameter
-    constexpr auto BarUncertainty_Z = BarSize_Z / __sqrt12; // cm NeuLAND parameter
-    constexpr auto BarLength = 250.0; // cm NeuLAND parameter
-    constexpr auto LightGuideLength = 10.0; // cm NeuLAND parameter
+    constexpr auto BarSize_XY = 5.0;                                  // cm NeuLAND parameter
+    constexpr auto BarUncertainty_XY = BarSize_XY / __sqrt12;         // cm NeuLAND parameter
+    constexpr auto BarSize_Z = 5.0;                                   // cm NeuLAND parameter
+    constexpr auto BarUncertainty_Z = BarSize_Z / __sqrt12;           // cm NeuLAND parameter
+    constexpr auto BarLength = 250.0;                                 // cm NeuLAND parameter
+    constexpr auto LightGuideLength = 10.0;                           // cm NeuLAND parameter
     constexpr auto TotalBarLength = BarLength + 2 * LightGuideLength; // cm NeuLAND parameter, Bar including Light Guide
 
-    constexpr auto ScintillatorDensity = 1.032; // g / cm^3
+    constexpr auto ScintillatorDensity = 1.032;        // g / cm^3
     constexpr auto MIPStoppingPowerPerDensity = 1.956; // MeV cm^2 / g
-    constexpr auto MIPStoppingPower = 1.73; // MeV / cm
+    constexpr auto MIPStoppingPower = 1.73;            // MeV / cm
 
     constexpr auto FirstHorizontalPlane = 0;
     constexpr auto BarsPerPlane = 50;
@@ -46,10 +46,10 @@ namespace Neuland
 
     // Average Parameters
 
-    constexpr auto AvgTimeResolution = 0.150; // ns
-    constexpr auto AvgEffectiveCLight = -7.95; // cm / ns
-    constexpr auto AvgGain = 15; // MeV / ns
-    constexpr auto AvgThreshold = 1.75; // MeV
+    constexpr auto AvgTimeResolution = 0.150;   // ns
+    constexpr auto AvgEffectiveCLight = -7.95;  // cm / ns
+    constexpr auto AvgGain = 15;                // MeV / ns
+    constexpr auto AvgThreshold = 1.75;         // MeV
     constexpr auto AvgAttenuationLength = 400.; // cm
 } // namespace Neuland
 

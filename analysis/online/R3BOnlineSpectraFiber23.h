@@ -127,7 +127,7 @@ class R3BOnlineSpectraFiber23 : public FairTask
     Double_t n_fiber[NOF_FIB_DET] = { 384., 384. };
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat1, fTpat2;
     Int_t fSamp;
     Double_t fClockFreq; /**< Clock cycle in [ns]. */

@@ -80,13 +80,13 @@ class R3BNeuland : public R3BDetector
     Bool_t CheckIfSensitive(std::string name) override;
 
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeuland(const R3BNeuland&) = delete; // copy constructor
-    R3BNeuland(R3BNeuland&&) = delete; // move constructor
+    R3BNeuland(const R3BNeuland&) = delete;            // copy constructor
+    R3BNeuland(R3BNeuland&&) = delete;                 // move constructor
     R3BNeuland& operator=(const R3BNeuland&) = delete; // copy assignment
-    R3BNeuland& operator=(R3BNeuland&&) = delete; // move assignment
+    R3BNeuland& operator=(R3BNeuland&&) = delete;      // move assignment
 
   private:
-    TClonesArray* fNeulandPoints; //!
+    TClonesArray* fNeulandPoints;     //!
     R3BNeulandGeoPar* fNeulandGeoPar; //!
 
     /** Track information to be stored until the track leaves the active volume. */

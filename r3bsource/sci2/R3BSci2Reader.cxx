@@ -361,9 +361,9 @@ Bool_t R3BSci2Reader::R3BRead()
                     //                                                                ,
 
                     new ((*fArray)[fArray->GetEntriesFast()])
-                        R3BSci2MappedData(d + 1, // detector number
+                        R3BSci2MappedData(d + 1,    // detector number
                                           pmtid_TF, // channel number: 1-8
-                                          0, // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
+                                          0,        // VFTX (0),TAMEX leading (1), TAMEX trailing (2)
                                           data->SCITWO_VTFv[hit],
                                           data->SCITWO_VTCv[hit]);
                 }

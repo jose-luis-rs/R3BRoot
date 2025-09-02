@@ -108,7 +108,7 @@ class R3BTwimvsFootOnlineSpectra : public FairTask
     TClonesArray* fHitItemsFoot; /* Array with hit-Foot items. */
 
     R3BEventHeader* fEventHeader; /* Event header.      */
-    Int_t fNEvents; /* Event counter.     */
+    Int_t fNEvents;               /* Event counter.     */
 
     // Histograms for Hit data
     std::vector<TH2F*> fh2_hit_e;

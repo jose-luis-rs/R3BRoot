@@ -36,8 +36,8 @@ class R3BSci8HitData : public TObject
   private:
     UChar_t fDetector; // 1..n
     Double_t fTime_ns; // average time of the scintillators
-    Double_t fX_cm; // position in cm
-    Double_t fZ; // Charge
+    Double_t fX_cm;    // position in cm
+    Double_t fZ;       // Charge
 
   public:
     ClassDef(R3BSci8HitData, 1)

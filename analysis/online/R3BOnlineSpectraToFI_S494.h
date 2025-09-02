@@ -131,7 +131,7 @@ class R3BOnlineSpectraToFI_S494 : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat1, fTpat2;
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
     UInt_t fNofPlanes;

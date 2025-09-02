@@ -588,7 +588,7 @@ void R3BAmsOnlineSpectra::Exec(Option_t* option)
         {
             Emaxhit[i] = 0.;
             Thetamaxhit[i] = 0.; // at 0 degrees we have nothing!
-            Phimaxhit[i] = 90.; // at 90 degrees we have nothing!
+            Phimaxhit[i] = 90.;  // at 90 degrees we have nothing!
         }
 
         Int_t nHits = fHitItemsAms->GetEntriesFast();

@@ -105,8 +105,8 @@ namespace Neuland
         constexpr auto CalibrationLogSize = 16 * 1024;
         constexpr auto LogInitialSize = 128;
 
-        constexpr auto MinEnergyDeposit = 1.; // MeV
-        constexpr auto MaxTSyncError = 0.05; // ns
+        constexpr auto MinEnergyDeposit = 1.;     // MeV
+        constexpr auto MaxTSyncError = 0.05;      // ns
         constexpr auto TimeJumpThreshold = 0.075; // ns
         constexpr auto MaxFastTDiffError = 0.05;
 

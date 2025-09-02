@@ -450,11 +450,11 @@ void R3BTPropagator::update_particle(R3BTrackingParticle* particle,
 Double_t R3BTPropagator::Energy_loss_in_air(double beta, double step, double charge, double mass)
 {
     // Values taken from https://pdg.lbl.gov/2022/AtomicNuclearProperties/HTML/air_dry_1_atm.html
-    constexpr double me = 0.51099895; // NOLINT // MeV/c^2 (electron mass)
+    constexpr double me = 0.51099895;  // NOLINT // MeV/c^2 (electron mass)
     constexpr double ZoAair = 0.49919; // mol/g (A over Z for air)
-    constexpr double I = 85.7e-6; // NOLINT // MeV (mean excitation energy taken from PDG site)
-    constexpr double rho = 0.001205; // g/cm^3 (density of air at STP)
-    constexpr double K = 0.307075; // NOLINT // MeV mol^-1 cm^2 (constant factor)
+    constexpr double I = 85.7e-6;      // NOLINT // MeV (mean excitation energy taken from PDG site)
+    constexpr double rho = 0.001205;   // g/cm^3 (density of air at STP)
+    constexpr double K = 0.307075;     // NOLINT // MeV mol^-1 cm^2 (constant factor)
     const double gamma = 1 / (sqrt(1 - pow(beta, 2)));
     const double Tmax =
         (2 * me * pow(beta * gamma, 2)) /

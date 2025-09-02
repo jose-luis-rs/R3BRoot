@@ -52,7 +52,7 @@ class R3BPspxReader : public R3BReader
 
   private:
     EXT_STR_h101_PSP* fData; /**< Reader specific data structure from ucesb */
-    size_t fOffset; /**< Data Offset */
+    size_t fOffset;          /**< Data Offset */
     // Don't store data for online
     Bool_t fOnline;
     std::vector<TClonesArray*> fMappedItems; /**< Array holding output (Mapped) data */

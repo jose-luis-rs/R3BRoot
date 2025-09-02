@@ -46,7 +46,7 @@ class R3BAmsMappedData : public TObject
 
   protected:
     Int_t fDetId, fStripId; // detector and strip unique identifiers
-    Int_t fEnergy; // total energy in the strip
+    Int_t fEnergy;          // total energy in the strip
 
   public:
     ClassDef(R3BAmsMappedData, 1)

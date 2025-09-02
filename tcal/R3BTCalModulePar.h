@@ -121,13 +121,13 @@ class R3BTCalModulePar : public FairParGenericSet
     void SetOffsetAt(Double_t offset, Int_t i) { fOffset[i] = offset; }
 
   private:
-    Int_t fPlane; /**< Index of a plane. */
-    Int_t fPaddle; /**< Index of a paddle. */
-    Int_t fSide; /**< Side of a module: for NeuLAND - L/R PMT. */
-    Int_t fNofChannels; /**< Number of calibration parameters. */
-    Int_t fBinLow[NCHMAX]; /**< Lower TDC range of a linear segment. */
-    Int_t fBinUp[NCHMAX]; /**< Upper TDC range of a linear segment. */
-    Double_t fSlope[NCHMAX]; /**< Slope of liear interpolation. */
+    Int_t fPlane;             /**< Index of a plane. */
+    Int_t fPaddle;            /**< Index of a paddle. */
+    Int_t fSide;              /**< Side of a module: for NeuLAND - L/R PMT. */
+    Int_t fNofChannels;       /**< Number of calibration parameters. */
+    Int_t fBinLow[NCHMAX];    /**< Lower TDC range of a linear segment. */
+    Int_t fBinUp[NCHMAX];     /**< Upper TDC range of a linear segment. */
+    Double_t fSlope[NCHMAX];  /**< Slope of liear interpolation. */
     Double_t fOffset[NCHMAX]; /**< Offset of linear interpolation [ns]. */
 
   public:

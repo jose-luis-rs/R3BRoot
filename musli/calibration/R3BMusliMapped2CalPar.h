@@ -83,8 +83,8 @@ class R3BMusliMapped2CalPar : public FairTask
     TString fNameDetA;
     TString fNameDetB;
 
-    Int_t multMap[18]; // mapped data
-    Double_t fEneMap[20][18]; // mapped data
+    Int_t multMap[18];         // mapped data
+    Double_t fEneMap[20][18];  // mapped data
     Double_t fTimeMap[20][18]; // mapped data
 
     Double_t fXA; // hit data of MwA
@@ -95,8 +95,8 @@ class R3BMusliMapped2CalPar : public FairTask
     R3BTGeoPar* fMwAGeo_Par;
     R3BTGeoPar* fMwBGeo_Par;
     TClonesArray* fMusliMappedDataCA; /**< Array with Musli Mapped-input data. >*/
-    TClonesArray* fMwAHitDataCA; /**< Array with hit items. */
-    TClonesArray* fMwBHitDataCA; /**< Array with hit items. */
+    TClonesArray* fMwAHitDataCA;      /**< Array with hit items. */
+    TClonesArray* fMwBHitDataCA;      /**< Array with hit items. */
 
     TH2D** fh2_XvsDT;
 

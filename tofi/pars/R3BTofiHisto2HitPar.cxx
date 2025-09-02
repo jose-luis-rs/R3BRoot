@@ -199,8 +199,8 @@ void R3BTofiHisto2HitPar::FinishTask()
             LOG(warn) << "Calling function smiley";
             Double_t para2[4];
             Double_t min2 = -50.; // -40 effective bar length
-            Double_t max2 = 50.; // 40 effective bar length = 80 cm
-                                 // we will use 50 here for some fit safety margin
+            Double_t max2 = 50.;  // 40 effective bar length = 80 cm
+                                  // we will use 50 here for some fit safety margin
             for (Int_t i = 0; i < fNofPlanes; i++)
             {
                 for (Int_t j = 0; j < fPaddlesPerPlane; j++)
@@ -232,7 +232,7 @@ void R3BTofiHisto2HitPar::FinishTask()
             LOG(warn) << "Calling function doubleExp";
             Double_t para[4];
             Double_t min = -40.; // effective bar length
-            Double_t max = 40.; // effective bar length = 80 cm
+            Double_t max = 40.;  // effective bar length = 80 cm
 
             for (Int_t i = 0; i < fNofPlanes; i++)
             {

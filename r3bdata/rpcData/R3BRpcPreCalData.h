@@ -48,11 +48,11 @@ class R3BRpcPreCalData : public FairMultiLinkedData
     inline UShort_t GetSide() const { return fSide; }
 
   protected:
-    UShort_t fDetId; // Channel unique identifier
+    UShort_t fDetId;     // Channel unique identifier
     UShort_t fChannelId; // Channel unique identifier
-    double fTime; // Fine time
-    double fTot; // Coarse time
-    Short_t fSide; // Top Or Bottom
+    double fTime;        // Fine time
+    double fTot;         // Coarse time
+    Short_t fSide;       // Top Or Bottom
 
   public:
     ClassDef(R3BRpcPreCalData, 1)

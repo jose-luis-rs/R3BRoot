@@ -278,7 +278,7 @@ void R3BTrackingS515::Exec(Option_t* option)
     double track_offset = (f11_point.X() - track_slope * f11_point.Z());
     // Extrapolate final X and Z position in f12
     f12_point.SetZ((track_offset - f12_offset) / (f12_slope - track_slope)); // extrapolated
-    f12_point.SetX(track_slope * f12_point.Z() + track_offset); // extrapolated
+    f12_point.SetX(track_slope * f12_point.Z() + track_offset);              // extrapolated
 
     // Calculate all necessary MDF values
     // preserve the order, it is expected by the MDF function!
@@ -440,7 +440,7 @@ void R3BTrackingS515::Alignment()
     Double_t precision = 1e-10; // 0 - default precision will be automaticalle determined
     Double_t tolerance = 0.02;
     minimizer->SetMaxFunctionCalls(1000000000); // for Minuit/Minuit2
-    minimizer->SetMaxIterations(100); // for GSL
+    minimizer->SetMaxIterations(100);           // for GSL
     minimizer->SetTolerance(tolerance);
     minimizer->SetPrecision(precision);
     minimizer->SetPrintLevel(2);

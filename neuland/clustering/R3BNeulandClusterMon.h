@@ -44,10 +44,10 @@ class R3BNeulandClusterMon : public FairTask
     ~R3BNeulandClusterMon() override = default;
 
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeulandClusterMon(const R3BNeulandClusterMon&) = delete; // copy constructor
-    R3BNeulandClusterMon(R3BNeulandClusterMon&&) = delete; // move constructor
+    R3BNeulandClusterMon(const R3BNeulandClusterMon&) = delete;            // copy constructor
+    R3BNeulandClusterMon(R3BNeulandClusterMon&&) = delete;                 // move constructor
     R3BNeulandClusterMon& operator=(const R3BNeulandClusterMon&) = delete; // copy assignment
-    R3BNeulandClusterMon& operator=(R3BNeulandClusterMon&&) = delete; // move assignment
+    R3BNeulandClusterMon& operator=(R3BNeulandClusterMon&&) = delete;      // move assignment
 
   protected:
     InitStatus Init() override;

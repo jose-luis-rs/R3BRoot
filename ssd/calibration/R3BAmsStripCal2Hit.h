@@ -84,9 +84,9 @@ class R3BAmsStripCal2Hit : public FairTask
     Int_t fMaxNumDet, fMaxNumClusters;
     TH1F* hams[16];
 
-    R3BAmsMappingPar* fMap_Par; /**< Parameter container with mapping. >*/
+    R3BAmsMappingPar* fMap_Par;       /**< Parameter container with mapping. >*/
     TClonesArray* fAmsStripCalDataCA; /**< Array with AMS Cal-input data. >*/
-    TClonesArray* fAmsHitDataCA; /**< Array with AMS Hit-output data. >*/
+    TClonesArray* fAmsHitDataCA;      /**< Array with AMS Hit-output data. >*/
 
     Bool_t fOnline; // Don't store data for online
     Double_t* fChannelPeaks;

@@ -92,17 +92,17 @@ class R3BFootStripCal2Hit : public FairTask
     std::vector<TH1F*> hssd;
     TArrayF* HitCalParams = nullptr;
 
-    std::vector<int> ClusterMult; // Cluster multiplicity
-    std::vector<std::vector<double>> ClusterPos; // Position of Cluster from Weighted Average
-    std::vector<std::vector<double>> Eta; // Decimal part of the average position of the cluster
+    std::vector<int> ClusterMult;                 // Cluster multiplicity
+    std::vector<std::vector<double>> ClusterPos;  // Position of Cluster from Weighted Average
+    std::vector<std::vector<double>> Eta;         // Decimal part of the average position of the cluster
     std::vector<std::vector<double>> ClusterESum; // Sum of Energies in the Cluster
     // std::vector<std::vector<double>> Nu;       // Nu for Energy/Position correction
-    std::vector<std::vector<int>> ClusterNStrip; // Number of Strips in Cluster
+    std::vector<std::vector<int>> ClusterNStrip;            // Number of Strips in Cluster
     std::vector<std::vector<std::vector<double>>> ClusterI; // Id Strip in Cluster
     std::vector<std::vector<std::vector<double>>> ClusterE; // Energy of Strip in Cluster
 
     R3BFootMappingPar* fMap_Par = nullptr; // Parameter container with mapping
-    R3BFootHitPar* fHit_Par = nullptr; // Parameter container with hit params
+    R3BFootHitPar* fHit_Par = nullptr;     // Parameter container with hit params
 
     TClonesArray* fFootCalData = nullptr; // Array with FOOT Cal-input data
     TClonesArray* fFootHitData = nullptr; // Array with FOOT Hit-output data

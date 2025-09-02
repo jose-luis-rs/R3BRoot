@@ -217,7 +217,7 @@ void R3BAmsStripCal2Hit::Exec(Option_t* option)
                 if (fMap_Par->GetGeometry() == 2019)
                 {
                     if (i == 0)
-                    { // top
+                    {                                                           // top
                         z = fMap_Par->GetDist2target(i + 1) + clusterS[mul][1]; // FIXME:Fix offsets for s444_2019
                         y = fKcen + 1.;
                         x = fKcen - clusterK[mul][1];
@@ -303,7 +303,7 @@ void R3BAmsStripCal2Hit::Exec(Option_t* option)
                         y = clusterK[mul][1] - fKcen;
                     }
                     else if (i == 1)
-                    { // top
+                    {                                                           // top
                         z = fMap_Par->GetDist2target(i + 1) + clusterS[mul][1]; // FIXME:Fix offsets for s515_2021
                         y = fKcen + 1.;
                         x = fKcen - clusterK[mul][1];

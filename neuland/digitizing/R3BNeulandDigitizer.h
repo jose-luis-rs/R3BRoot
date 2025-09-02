@@ -68,10 +68,10 @@ class R3BNeulandDigitizer : public FairTask
     ~R3BNeulandDigitizer() override = default;
 
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeulandDigitizer(const R3BNeulandDigitizer&) = delete; // copy constructor
-    R3BNeulandDigitizer(R3BNeulandDigitizer&&) = delete; // move constructor
+    R3BNeulandDigitizer(const R3BNeulandDigitizer&) = delete;            // copy constructor
+    R3BNeulandDigitizer(R3BNeulandDigitizer&&) = delete;                 // move constructor
     R3BNeulandDigitizer& operator=(const R3BNeulandDigitizer&) = delete; // copy assignment
-    R3BNeulandDigitizer& operator=(R3BNeulandDigitizer&&) = delete; // move assignment
+    R3BNeulandDigitizer& operator=(R3BNeulandDigitizer&&) = delete;      // move assignment
 
   protected:
     InitStatus Init() override;

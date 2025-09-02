@@ -95,9 +95,9 @@ class R3BMusliVsMwpcOnlineSpectra : public FairTask
     virtual void Reset_Histo();
 
   private:
-    TClonesArray* fMapMusli; /**< Array with mapped level items. */
-    TClonesArray* fCalMusli; /**< Array with cal level items. */
-    TClonesArray* fHitMusli; /**< Array with hit level items. */
+    TClonesArray* fMapMusli;    /**< Array with mapped level items. */
+    TClonesArray* fCalMusli;    /**< Array with cal level items. */
+    TClonesArray* fHitMusli;    /**< Array with hit level items. */
     TClonesArray* fHitMwpcDet1; /**< Array with hit items of mwpc */
     TClonesArray* fHitMwpcDet2; /**< Array with hit items of mwpc */
     R3BTGeoPar* fMw1Geo_Par;
@@ -105,7 +105,7 @@ class R3BMusliVsMwpcOnlineSpectra : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header.      */
-    Int_t fNEvents; /**< Event counter.     */
+    Int_t fNEvents;         /**< Event counter.     */
     TString fNameDet1;
     TString fNameDet2;
 

@@ -109,11 +109,11 @@ class R3BTwimHitPar : public FairParGenericSet
 
   private:
     TArrayF* fDetZHitParams; // Calibration Parameters for charge Z
-    TArrayF* fTofHitParams; // Tof calibration parameters for charge Z
-    TArrayI* fIn_use; // 1: anode ready, 0:otherwise
-    TArrayF* fAnode_pos; // Position of each anode along the beam direction
+    TArrayF* fTofHitParams;  // Tof calibration parameters for charge Z
+    TArrayI* fIn_use;        // 1: anode ready, 0:otherwise
+    TArrayF* fAnode_pos;     // Position of each anode along the beam direction
     Int_t fNumSec;
-    Int_t fNumAnodes; // Number of anodes
+    Int_t fNumAnodes;     // Number of anodes
     Int_t fNumParamsZFit; // number of hit parameters in the fit for charge Z
 
     std::vector<Float_t> fEmean_tof;
@@ -122,7 +122,7 @@ class R3BTwimHitPar : public FairParGenericSet
     std::vector<R3BTsplinePar*> fSpline;
 
     const R3BTwimHitPar& operator=(const R3BTwimHitPar&); /*< an assignment operator>*/
-    R3BTwimHitPar(const R3BTwimHitPar&); /*< a copy constructor >*/
+    R3BTwimHitPar(const R3BTwimHitPar&);                  /*< a copy constructor >*/
 
     ClassDef(R3BTwimHitPar, 1);
 };

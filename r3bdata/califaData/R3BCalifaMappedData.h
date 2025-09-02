@@ -68,15 +68,15 @@ class R3BCalifaMappedData : public TObject
 
   protected:
     UShort_t fCrystalId; // Crystal unique identifier
-    int16_t fEnergy; // Total energy in the crystal
-    int16_t fNf; // Total fast amplitude in the crystal
-    int16_t fNs; // Total slow amplitude in the crystal
+    int16_t fEnergy;     // Total energy in the crystal
+    int16_t fNf;         // Total fast amplitude in the crystal
+    int16_t fNs;         // Total slow amplitude in the crystal
     uint64_t fFebexTime; // Internal febex time
-    uint64_t fWrts; // Timestamp per crystal
-    uint32_t fOverFlow; // Overflow bits
-    uint16_t fPileup; // Pileup bits
-    uint16_t fDiscard; // Discard bits
-    uint16_t fTot; // Time-over-treshold
+    uint64_t fWrts;      // Timestamp per crystal
+    uint32_t fOverFlow;  // Overflow bits
+    uint16_t fPileup;    // Pileup bits
+    uint16_t fDiscard;   // Discard bits
+    uint16_t fTot;       // Time-over-treshold
 
   public:
     ClassDefOverride(R3BCalifaMappedData, 4)

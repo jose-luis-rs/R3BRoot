@@ -128,10 +128,10 @@ void create_target_area_2023_geo(const TString geoTag = "v2023.1")
     Double_t offsetZ = -0.75; // offset with respect to LH2 target cell, entrance
                               // at (0,0,-0.75) cm
     // Mylar windows for LH2 target
-    Double_t thinMylar1 = 0.012 / 2.0; // 120micra entrance window
-    Double_t thinMylar2 = 0.018 / 2.0; // 180micra exit window
+    Double_t thinMylar1 = 0.012 / 2.0;            // 120micra entrance window
+    Double_t thinMylar2 = 0.018 / 2.0;            // 180micra exit window
     Double_t LH2targetR = 1.5 - thinMylar2 * 2.0; // Radius of 1.5 cm - mylar cylindre
-    Double_t LH2targetL = 1.5; // Length 1.5cm
+    Double_t LH2targetL = 1.5;                    // Length 1.5cm
 
     // Defintion of the Mother Volume
     auto Part1 = new TGeoTube("Part1", 0., 27., 64. / 2.0);
@@ -453,21 +453,21 @@ void create_target_area_2023_geo(const TString geoTag = "v2023.1")
 
     // ALPIDE two arm configuration
     const int nbsensorpermultilayer = 6; // ALPIDE detectors per multilayer flex
-    const int nbmultilayers = 3; // Multi-layers per plane
-    const int nbplanes = 6; // 3 per arms
+    const int nbmultilayers = 3;         // Multi-layers per plane
+    const int nbplanes = 6;              // 3 per arms
 
     float thAlpide = 0.0050; // 50 um
 
     // Multilayer
     float Multilayerlength = 15.0; // cm
-    float MultilayerWd = 3.0; // cm
-    float thcoolingPlate = 0.5; // 5 mm of Al
-    float thcoolingRing = 0.2; // 2 mm of Al
+    float MultilayerWd = 3.0;      // cm
+    float thcoolingPlate = 0.5;    // 5 mm of Al
+    float thcoolingRing = 0.2;     // 2 mm of Al
 
     // Frame
     float Alframelength = 13.4; // cm
-    float AlframeWd = 0.4; // cm
-    float AlRingWd = 0.2; // cm
+    float AlframeWd = 0.4;      // cm
+    float AlRingWd = 0.2;       // cm
 
     auto frame = new TGeoBBox("Frame", Alframelength / 2., Alframelength / 2., AlframeWd / 2.);
     auto frameinner = new TGeoBBox("Frameinner", 10.6 / 2., 10.6 / 2., AlframeWd);

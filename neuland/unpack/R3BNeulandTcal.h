@@ -116,16 +116,16 @@ class R3BNeulandTcal : public FairTask
     }
 
   private:
-    Int_t fNEvents; /**< Event counter. */
-    R3BEventHeader* header; /**< Event header. */
+    Int_t fNEvents;           /**< Event counter. */
+    R3BEventHeader* header;   /**< Event header. */
     TClonesArray* fMappedHit; /**< Array with raw items - input data. */
-    TClonesArray* fPmt; /**< Array with time items - output data. */
-    Int_t fNPmt; /**< Number of produced time items per event. */
-    R3BTCalPar* fTcalPar; /**< TCAL parameter container. */
-    Int_t fTrigger; /**< Trigger value. */
-    Int_t fNofPlanes; /**< Number of planes. */
-    Int_t fNofBars; /**< Number of bars per plane. */
-    Int_t fNof17; /**< Number of channels with stop signal. */
+    TClonesArray* fPmt;       /**< Array with time items - output data. */
+    Int_t fNPmt;              /**< Number of produced time items per event. */
+    R3BTCalPar* fTcalPar;     /**< TCAL parameter container. */
+    Int_t fTrigger;           /**< Trigger value. */
+    Int_t fNofPlanes;         /**< Number of planes. */
+    Int_t fNofBars;           /**< Number of bars per plane. */
+    Int_t fNof17;             /**< Number of channels with stop signal. */
     //    std::map<Int_t, Bool_t> fMap17Seen;         /**< Map with flag of observed stop signal. */
     //    std::map<Int_t, Double_t> fMapStopTime;     /**< Map with value of stop time. */
     //    std::map<Int_t, Int_t> fMapStopClock;       /**< Map with value of stop clock. */

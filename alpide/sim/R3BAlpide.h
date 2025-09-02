@@ -97,21 +97,21 @@ class R3BAlpide : public R3BDetector
   private:
     /** Track information to be stored until the track leaves the
     active volume. **/
-    Int_t fTrackID; //  track index
-    Int_t fBarrelID; //  barrel id
-    Int_t fSensorID; //  sensor id
-    Int_t fsector; //  volume id
+    Int_t fTrackID;                 //  track index
+    Int_t fBarrelID;                //  barrel id
+    Int_t fSensorID;                //  sensor id
+    Int_t fsector;                  //  volume id
     TLorentzVector fPosIn, fPosOut; //  position
     TLorentzVector fMomIn, fMomOut; //  momentum
-    Double32_t fTime_in; //  time when entering active volume
-    Double32_t fTime_out; //  time when exiting active volume
-    Double32_t fTime; //  time
-    Double32_t fLength_in; //  length when entering active volume
-    Double32_t fLength_out; //  length when exiting active volume
-    Double32_t fLength; //  length
-    Double32_t fELoss; //  energy loss
-    TClonesArray* fAlpidePoint; //  The hit collection
-    R3BAlpideMappingPar* fMap_Par; /**< Parameter container. >*/
+    Double32_t fTime_in;            //  time when entering active volume
+    Double32_t fTime_out;           //  time when exiting active volume
+    Double32_t fTime;               //  time
+    Double32_t fLength_in;          //  length when entering active volume
+    Double32_t fLength_out;         //  length when exiting active volume
+    Double32_t fLength;             //  length
+    Double32_t fELoss;              //  energy loss
+    TClonesArray* fAlpidePoint;     //  The hit collection
+    R3BAlpideMappingPar* fMap_Par;  /**< Parameter container. >*/
     R3BAlpideGeometry* fAlpideGeo;
     Int_t fGeoversion;
 

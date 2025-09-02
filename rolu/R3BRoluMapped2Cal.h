@@ -116,21 +116,21 @@ class R3BRoluMapped2Cal : public FairTask
     void SetSkipTrigger(bool skip) { fSkipTrigger = skip; }
 
   private:
-    TClonesArray* fMappedItems{}; /**< Array with mapped items - input data. */
+    TClonesArray* fMappedItems{};        /**< Array with mapped items - input data. */
     TClonesArray* fMappedTriggerItems{}; /**< Array with mapped items - input data. */
-    TClonesArray* fCalItems; /**< Array with cal items - output data. */
-    TClonesArray* fCalTriggerItems{}; /**< Array with cal items - output data. */
-    int fNofCalItems = 0; /**< Number of produced time items per event. */
+    TClonesArray* fCalItems;             /**< Array with cal items - output data. */
+    TClonesArray* fCalTriggerItems{};    /**< Array with cal items - output data. */
+    int fNofCalItems = 0;                /**< Number of produced time items per event. */
 
-    R3BTCalPar* fTcalPar{}; /**< TCAL parameter container. */
+    R3BTCalPar* fTcalPar{};        /**< TCAL parameter container. */
     unsigned int fNofTcalPars = 0; /**< Number of modules in parameter file. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header{}; /**< Event header. */
-    int fTrigger = 1; /**< Trigger value. */
+    int fTrigger = 1;         /**< Trigger value. */
 
     bool fSkipTrigger = false;
-    unsigned int fNofDetectors = 1; /**< Number of detectors. */
+    unsigned int fNofDetectors = 1;                    /**< Number of detectors. */
     double fClockFreq = (1. / VFTX_CLOCK_MHZ * 1000.); /**< Clock cycle in [ns]. */
     unsigned int fNEvent = 0;
     // Don't store data for online

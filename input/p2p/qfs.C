@@ -29,10 +29,10 @@ void run(TString fname)
     //--------------------- Beam parameters -----------------------------
     const double Tkin = ENERGY * A; // Total kinetic energy (MeV) of the projectile
     //
-    const double PA = sqrt(Tkin * (Tkin + 2 * MA)); // Total 3-momentum of the beam
-    const double EA = sqrt(MA * MA + PA * PA); // Total energy of the beam
-    const double bA = -PA / EA; // Beta of the beam
-    const double gA = 1 / sqrt(1 - bA * bA); // Gamma of the beam
+    const double PA = sqrt(Tkin * (Tkin + 2 * MA));         // Total 3-momentum of the beam
+    const double EA = sqrt(MA * MA + PA * PA);              // Total energy of the beam
+    const double bA = -PA / EA;                             // Beta of the beam
+    const double gA = 1 / sqrt(1 - bA * bA);                // Gamma of the beam
     const double S_first = (EA + Mi) * (EA + Mi) - PA * PA; // Invariant mass (A+i) (Mandelstam S)
 
     double target_depth;
@@ -48,7 +48,7 @@ void run(TString fname)
 
     // Random number generators of ROOT
     auto gRandom = new TRandom3(); // default
-    gRandom->SetSeed(0); // using computer time
+    gRandom->SetSeed(0);           // using computer time
     TRandom3 r1;
     r1.SetSeed(0);
 
@@ -58,7 +58,7 @@ void run(TString fname)
     outfile_ascii.open("quasi_ascii.txt");
     char tooutfile[300];
 
-    int events = 0; // generated event counter
+    int events = 0;            // generated event counter
     while (events < MAX_STORY) // eventloop
     {
         //------------ Internal momentum of a cluster -------------------
@@ -92,15 +92,15 @@ void run(TString fname)
         //------- Lorentz transformations into laboratory system ---------
         std::pair<double, double> lora = Lorentz(gA, bA, Ea, Pa.Z());
         double EaL = lora.first; // cluster energy in lab
-        Pa.SetZ(lora.second); // cluster Pz in lab
+        Pa.SetZ(lora.second);    // cluster Pz in lab
 
         std::pair<double, double> lorB = Lorentz(gA, bA, EB, PB.Z());
         double EBL = lorB.first; // energy of the residual B in lab
-        PB.SetZ(lorB.second); // Pz of the residual B in lab
+        PB.SetZ(lorB.second);    // Pz of the residual B in lab
 
         //---------- Generating CM scattering process ----------
         double S = Ma_off * Ma_off + Mi * Mi + 2 * Mi * EaL; // Mandelstam invariant
-        auto Mandelstam_S = S; // filling tree variable
+        auto Mandelstam_S = S;                               // filling tree variable
         // Now generate CM scattering kinematics
         cm_values CM = CENMASS(S, Ma_off, Mi, Ma, ISOTROPIC);
         if (!CM.good)
@@ -354,10 +354,10 @@ cm_values CENMASS(double s, double m2off, double m1, double m2, bool isotropic)
 double momentum_CM(double TLAB, double M1, double M2)
 {
     // Particle M2 is assumed to be in rest
-    double PLAB = sqrt(TLAB * (TLAB + 2 * M1)); //  Total 3-momentum of an incident particle in Lab
-    double ELAB = sqrt(PLAB * PLAB + M1 * M1); //  Total energy of an incident particle in lab
+    double PLAB = sqrt(TLAB * (TLAB + 2 * M1));      //  Total 3-momentum of an incident particle in Lab
+    double ELAB = sqrt(PLAB * PLAB + M1 * M1);       //  Total energy of an incident particle in lab
     double SLAB = M1 * M1 + M2 * M2 + 2 * M2 * ELAB; // Mandelstam invariant S in lab
-    double PCM = PLAB * M2 / sqrt(SLAB); // Momentum of both particles in CM frame
+    double PCM = PLAB * M2 / sqrt(SLAB);             // Momentum of both particles in CM frame
     return PCM;
 }
 
@@ -383,7 +383,7 @@ double get_T(double sm, double max)
 
     // double Tmax = -2*pCM*pCM*(1 - cos(PI))*0.000001; //in (GeV/c)
     Double_t rr = gRandom->Uniform(-1., 1.); // to randomize wrt 90 degrees
-    double mandels = sm * 0.000001; // in GeV
+    double mandels = sm * 0.000001;          // in GeV
     // cout << "\nMandelstam S = " << mandels << "\t Tmax/2 = " << Tmax/2 << "\t Random: " << rr;
 
     // Probability function from the parameterization

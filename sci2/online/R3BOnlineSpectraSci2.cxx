@@ -428,7 +428,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
 
     Int_t nHits;
     Int_t iDet; // 0-based
-    Int_t iCh; // 0-based
+    Int_t iCh;  // 0-based
     Float_t iRawPos;
     Float_t RawPos[fNbDetectors];
 
@@ -480,7 +480,7 @@ void R3BOnlineSpectraSci2::Exec(Option_t* option)
                 multTcal[iDet * fNbChannels + iCh]++;
                 iRawTimeNs[iDet * fNbChannels + iCh] = hittcal->GetRawTimeNs();
             } // --- end of loop over Tcal data --- //
-        } //--- end of if Tcal data --- //
+        }     //--- end of if Tcal data --- //
 
         // --- ----------------------------------------- --- //
         // --- filling some histogramms outside the loop --- //

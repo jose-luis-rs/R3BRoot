@@ -86,8 +86,8 @@ void R3BMwpc2Mapped2Cal::SetParContainers()
 void R3BMwpc2Mapped2Cal::SetParameter()
 {
     //--- Parameter Container ---
-    NumPadX = fCal_Par->GetNumPadsX(); // Number of Pads in X
-    NumPadY = fCal_Par->GetNumPadsY(); // Number of Pads in Y
+    NumPadX = fCal_Par->GetNumPadsX();           // Number of Pads in X
+    NumPadY = fCal_Par->GetNumPadsY();           // Number of Pads in Y
     NumParams = fCal_Par->GetNumParametersFit(); // Number of parameters in the Fit
 
     LOG(info) << "R3BMwpc2Mapped2Cal: NumPadX: " << NumPadX;

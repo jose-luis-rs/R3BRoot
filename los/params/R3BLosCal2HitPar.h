@@ -129,7 +129,7 @@ class R3BLosCal2HitPar : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat;
     Int_t fidentDet; /**< Number of LOS detectors. */
     Int_t fStats;

@@ -145,15 +145,15 @@ class R3BFrsSciCalPar : public FairParGenericSet
 
     // parameters to calibrate all Tofs
     TArrayD* fTofCalOffsets; // size = fNumTofs
-    TArrayD* fTofCalGains; // size = fNumTofs
+    TArrayD* fTofCalGains;   // size = fNumTofs
 
     // parameters to calibrate the position in Mm
     TArrayF* fPosCalOffsets; // 1 offset per per detector
-    TArrayF* fPosCalGains; // 1 gain per per detector
+    TArrayF* fPosCalGains;   // 1 gain per per detector
 
     // parameters to get AoQ
     TArrayD* fBRho0; // one BRho0 per ToF
-    TArrayD* fDisp; // one dispersion per detector (in fact per focal plane)
+    TArrayD* fDisp;  // one dispersion per detector (in fact per focal plane)
 
     const R3BFrsSciCalPar& operator=(const R3BFrsSciCalPar&);
     R3BFrsSciCalPar(const R3BFrsSciCalPar&);

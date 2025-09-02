@@ -78,8 +78,8 @@ class R3BBunchedFiberCal2Hit : public FairTask
                            UInt_t,
                            UInt_t,
                            UInt_t,
-                           Bool_t, // is calib
-                           Bool_t, // is gain
+                           Bool_t,  // is calib
+                           Bool_t,  // is gain
                            Bool_t); // is tsync
 
     /**
@@ -171,7 +171,7 @@ class R3BBunchedFiberCal2Hit : public FairTask
     R3BFiberMappingPar* fMapPar;
     R3BBunchedFiberHitPar* fCalPar; /**< Parameter container. */
     R3BBunchedFiberHitPar* fHitPar; /**< Hit parameter container. */
-    Int_t fNofHitPars; /**< Number of modules in parameter file. */
+    Int_t fNofHitPars;              /**< Number of modules in parameter file. */
     Int_t fNofHitItems;
     // [0=MAPMT,1=SPMT][Channel].
     std::vector<Channel> fChannelArray[2];

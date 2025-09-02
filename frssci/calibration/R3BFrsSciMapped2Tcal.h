@@ -54,10 +54,10 @@ class R3BFrsSciMapped2Tcal : public FairTask
 
   private:
     UInt_t fNevent;
-    TClonesArray* fMapped; // input data - FrsSci
+    TClonesArray* fMapped;      // input data - FrsSci
     R3BFrsSciTcalPar* fTcalPar; // tcal parameters container - FrsSci
-    TClonesArray* fTcal; // output data
-    Bool_t fOnline; // Don't store data for online
+    TClonesArray* fTcal;        // output data
+    Bool_t fOnline;             // Don't store data for online
 
     TRandom3 rand;
 

@@ -83,7 +83,7 @@ class R3BMwpc1Mapped2CalPar : public FairTask
     // Minimum stadistics and parameters
     Int_t fMinStadistics;
 
-    R3BMwpc1CalPar* fPad_Par; /**< Parameter container. >*/
+    R3BMwpc1CalPar* fPad_Par;        /**< Parameter container. >*/
     TClonesArray* fMwpcMappedDataCA; /**< Array with Mapped-input data. >*/
 
     TH1F** fh_Map_q_pad;

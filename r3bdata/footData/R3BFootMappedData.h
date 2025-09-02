@@ -42,9 +42,9 @@ class R3BFootMappedData : public TObject
     [[nodiscard]] inline const int& GetEnergy() const { return fEnergy; }
 
   protected:
-    uint8_t fDetId = 0; // Detector unique identifiers
+    uint8_t fDetId = 0;    // Detector unique identifiers
     uint16_t fStripId = 0; // Strip unique identifiers
-    int fEnergy = 0; // Energy per strip
+    int fEnergy = 0;       // Energy per strip
 
   public:
     ClassDefOverride(R3BFootMappedData, 1)

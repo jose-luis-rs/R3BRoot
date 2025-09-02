@@ -30,8 +30,8 @@ class R3BPdcMappedData : public TObject
 
   private:
     UInt_t fPlane; // 1..n
-    UInt_t fWire; // 1..n
-    UInt_t fEdge; // 1 = leading, 2 = trailing
+    UInt_t fWire;  // 1..n
+    UInt_t fEdge;  // 1 = leading, 2 = trailing
     UInt_t fTimeCoarse;
     UInt_t fTimeFine;
 

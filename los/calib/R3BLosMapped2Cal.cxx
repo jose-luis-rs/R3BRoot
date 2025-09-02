@@ -48,7 +48,7 @@
 #define LOS_COINC_WINDOW_V_NS 200;
 #define LOS_COINC_WINDOW_TL_NS 200; // leading
 #define LOS_COINC_WINDOW_TT_NS 400; // trailing, longer because of pileup
-#define LOS_COINC_WINDOW_M_NS 400; // 200  // ???
+#define LOS_COINC_WINDOW_M_NS 400;  // 200  // ???
 #define IS_NAN(x) TMath::IsNaN(x)
 
 R3BLosMapped2Cal::R3BLosMapped2Cal()
@@ -165,8 +165,8 @@ void R3BLosMapped2Cal::Exec(Option_t* option)
 
         // channel numbers are stored 1-based (1..n)
         UInt_t iDet = hit->GetDetector(); // 1..
-        UInt_t iCha = hit->GetChannel(); // 1..
-        UInt_t iType = hit->GetType(); // 0,1,2,3
+        UInt_t iCha = hit->GetChannel();  // 1..
+        UInt_t iType = hit->GetType();    // 0,1,2,3
 
         //   cout<<"Mapped info: "<<ihit<<"; "<<iDet<<", "<<iCha<<"; "<<iType<<", timeFine "<<hit->GetTimeFine()<<endl;
 

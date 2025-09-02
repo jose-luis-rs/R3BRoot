@@ -19,12 +19,12 @@
 
 // Standard constructur
 R3BCoarseTimeStitch::R3BCoarseTimeStitch()
-    : fRange1(2048 * 1000. / 200.) // ns
-    , fRange2(2048 * 1000. / 200.) // ns
-    , fRangeTamex(2048 * 1000. / 200.) // ns
-    , fRangeTrb(2048 * 1000. / 200.) // ns
-    , fRangeVftx(8192 * 1000. / 200.) // ns
-    , fRangeClockTDC(4096 * 1000. / 250.) // ns
+    : fRange1(2048 * 1000. / 200.)           // ns
+    , fRange2(2048 * 1000. / 200.)           // ns
+    , fRangeTamex(2048 * 1000. / 200.)       // ns
+    , fRangeTrb(2048 * 1000. / 200.)         // ns
+    , fRangeVftx(8192 * 1000. / 200.)        // ns
+    , fRangeClockTDC(4096 * 1000. / 250.)    // ns
     , fRangeClockTDC150(4096 * 1000. / 150.) // ns
 {
 }

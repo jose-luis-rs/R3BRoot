@@ -130,7 +130,7 @@ class R3BOnlineSpectraBMON_S494 : public FairTask
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fTrigger;         /**< Trigger value. */
     Int_t fTpat1, fTpat2;
     Int_t fSamp;
     Double_t fClockFreq; /**< Clock cycle in [ns]. */
@@ -161,13 +161,13 @@ class R3BOnlineSpectraBMON_S494 : public FairTask
     Int_t counterWrongTrigger = 0;
     Double_t fNorm = 1.;
     Int_t iclear_count = 1;
-    UInt_t reset_time; // time after which bmon spectra are reseted
-    Double_t read_time; // step in which scalers are read, in sec
+    UInt_t reset_time;         // time after which bmon spectra are reseted
+    Double_t read_time;        // step in which scalers are read, in sec
     Int_t fsens_SEE, fsens_IC; // SEETRAM and IC sensitivity, between -4 and -10
-    Double_t calib_SEE = 1.; // SEETRAM calibration factor
+    Double_t calib_SEE = 1.;   // SEETRAM calibration factor
     Double_t see_offset = 0.2; // SEETRAM offset in kHz
-    Double_t calib_IC = 1.; // SEETRAM calibration factor
-    Double_t ic_offset = 0; // SEETRAM offset in kHz
+    Double_t calib_IC = 1.;    // SEETRAM calibration factor
+    Double_t ic_offset = 0;    // SEETRAM offset in kHz
     Int_t in_spill_off = 0;
     unsigned long seeLastSpill = 0, time_lastSpill = 0;
     UInt_t num_spills = 0;

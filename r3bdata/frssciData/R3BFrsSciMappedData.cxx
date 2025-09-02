@@ -7,10 +7,10 @@
 using namespace std;
 
 R3BFrsSciMappedData::R3BFrsSciMappedData()
-    : fDetector(0) // Detector number: 1...n
-    , fPmt(0) // Pmt number:  1..3 [4 reserved for sync check]
+    : fDetector(0)    // Detector number: 1...n
+    , fPmt(0)         // Pmt number:  1..3 [4 reserved for sync check]
     , fTimeCoarse(-1) // Coarse time
-    , fTimeFine(-1) // Fine time
+    , fTimeFine(-1)   // Fine time
 {
 }
 

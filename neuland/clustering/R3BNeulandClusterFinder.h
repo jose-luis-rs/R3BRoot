@@ -44,10 +44,10 @@ class R3BNeulandClusterFinder : public FairTask
     ~R3BNeulandClusterFinder() override = default;
 
     // No copy and no move is allowed (Rule of three/five)
-    R3BNeulandClusterFinder(const R3BNeulandClusterFinder&) = delete; // copy constructor
-    R3BNeulandClusterFinder(R3BNeulandClusterFinder&&) = delete; // move constructor
+    R3BNeulandClusterFinder(const R3BNeulandClusterFinder&) = delete;            // copy constructor
+    R3BNeulandClusterFinder(R3BNeulandClusterFinder&&) = delete;                 // move constructor
     R3BNeulandClusterFinder& operator=(const R3BNeulandClusterFinder&) = delete; // copy assignment
-    R3BNeulandClusterFinder& operator=(R3BNeulandClusterFinder&&) = delete; // move assignment
+    R3BNeulandClusterFinder& operator=(R3BNeulandClusterFinder&&) = delete;      // move assignment
 
   protected:
     InitStatus Init() override;

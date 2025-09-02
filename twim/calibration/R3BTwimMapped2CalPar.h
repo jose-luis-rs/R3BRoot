@@ -102,16 +102,16 @@ class R3BTwimMapped2CalPar : public FairTask
     Float_t fPosMwpcA; // Position in the beam direction in mm
     TString fNameDetB;
     Float_t fPosMwpcB; // Position in the beam direction in mm
-    Float_t fPosTwim; // Position in the beam direction in mm
+    Float_t fPosTwim;  // Position in the beam direction in mm
 
     Int_t mulanode[4][16 + 2];
     Double_t fE[4][20][16 + 2];
     Double_t fDT[4][20][16 + 2];
 
-    R3BTwimCalPar* fCal_Par; /**< Parameter container. >*/
+    R3BTwimCalPar* fCal_Par;         /**< Parameter container. >*/
     TClonesArray* fTwimMappedDataCA; /**< Array with Twim Mapped-input data. >*/
-    TClonesArray* fHitItemsMwpcA; /**< Array with hit items. */
-    TClonesArray* fHitItemsMwpcB; /**< Array with hit items. */
+    TClonesArray* fHitItemsMwpcA;    /**< Array with hit items. */
+    TClonesArray* fHitItemsMwpcB;    /**< Array with hit items. */
 
     TGraph** fg_anode;
 

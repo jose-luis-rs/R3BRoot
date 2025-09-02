@@ -105,16 +105,16 @@ class R3BCalifaDigitizer : public FairTask
     //  Array to store output data
     TClonesArray* fCalifaCryCalDataCA = nullptr;
 
-    double fNonUniformity = 1.; // Experimental non-uniformity parameter
-    double fResolution = 0.; // Experimental resolution
-    double fGammaResolution = 0.; // Experimental resolution @ 1 MeV
-    double fProtonResolution = 0.; // Experimental resolution for protons
-    double fComponentRes = 0.; // Experimental resolution for Nf and Ns
-    double fThreshold = 0.; // Minimum energy requested to create a Cal
-    double fGammaSaturation = 31.; // MeV
+    double fNonUniformity = 1.;      // Experimental non-uniformity parameter
+    double fResolution = 0.;         // Experimental resolution
+    double fGammaResolution = 0.;    // Experimental resolution @ 1 MeV
+    double fProtonResolution = 0.;   // Experimental resolution for protons
+    double fComponentRes = 0.;       // Experimental resolution for Nf and Ns
+    double fThreshold = 0.;          // Minimum energy requested to create a Cal
+    double fGammaSaturation = 31.;   // MeV
     double fProtonSaturation = 322.; // MeV
-    bool fRealConfig = false; // Real Configuration in CALIFA
-    bool fFullProtonRange = false; // Full proton range configuration
+    bool fRealConfig = false;        // Real Configuration in CALIFA
+    bool fFullProtonRange = false;   // Full proton range configuration
     int fNumberOfParams = 0;
     int fNumCrystals = 2544; // Real number of crystals, since Feb. 2024
 

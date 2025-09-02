@@ -80,7 +80,7 @@ class R3BMusicCal2Hit : public FairTask
     bool fSim;
     Bool_t fOnline; // Don't store data for online
 
-    R3BMusicHitPar* fCal_Par; /**< Parameter container. >*/
+    R3BMusicHitPar* fCal_Par;      /**< Parameter container. >*/
     TClonesArray* fMusicCalDataCA; /**< Array with Music Cal-input data. >*/
     TClonesArray* fMusicHitDataCA; /**< Array with Music Hit-output data. >*/
 

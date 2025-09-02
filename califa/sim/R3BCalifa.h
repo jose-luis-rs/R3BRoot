@@ -110,16 +110,16 @@ class R3BCalifa : public R3BDetector
   private:
     /** Track information to be stored until the track leaves the
     active volume. **/
-    int fTrackID = 0; //!  track index
+    int fTrackID = 0;  //!  track index
     int fVolumeID = 0; //!  volume id
     int fTrackPID = 0;
-    TLorentzVector fPosIn; //!  position
-    TLorentzVector fMomIn; //!  momentum
-    double fTime = 0.; //!  time
+    TLorentzVector fPosIn;                 //!  position
+    TLorentzVector fMomIn;                 //!  momentum
+    double fTime = 0.;                     //!  time
     double fLength = 0., fLengthzero = 0.; //!  length
-    double fELoss = 0.; //!  energy loss
-    int fPosIndex = 0; //!
-    int fNSteps = 0; //!  Number of steps in the active volume
+    double fELoss = 0.;                    //!  energy loss
+    int fPosIndex = 0;                     //!
+    int fNSteps = 0;                       //!  Number of steps in the active volume
 
     TClonesArray* fCalifaCollection; //!  The point collection
 

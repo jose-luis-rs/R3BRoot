@@ -95,7 +95,7 @@ class R3BSingleAlpideCorrelationOnlineSpectra : public FairTask
     TClonesArray* fHitItems; /**< Array with hit items. */
 
     R3BEventHeader* header; /**< Event header.      */
-    Int_t fNEvents; /**< Event counter.     */
+    Int_t fNEvents;         /**< Event counter.     */
     Int_t fId1, fId2;
     TString fNameDet1, fNameDet2;
 

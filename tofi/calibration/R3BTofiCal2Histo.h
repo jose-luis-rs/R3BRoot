@@ -163,20 +163,20 @@ class R3BTofiCal2Histo : public FairTask
 
   private:
     Int_t fUpdateRate; /**< An update rate. */
-    Int_t fMinStats; /**< Minimum statistics required per module. */
-    Int_t fTrigger; /**< Trigger value. */
+    Int_t fMinStats;   /**< Minimum statistics required per module. */
+    Int_t fTrigger;    /**< Trigger value. */
     Int_t fTpat;
 
-    UInt_t fNofPlanes; /**< Number of planes. */
+    UInt_t fNofPlanes;       /**< Number of planes. */
     UInt_t fPaddlesPerPlane; /**< Number of bars per plane. */
-    UInt_t fNofModules; /**< Total number of modules (=edges) to calibrate */
+    UInt_t fNofModules;      /**< Total number of modules (=edges) to calibrate */
 
-    UInt_t fNEvents; /**< Event counter. */
-    R3BTofiHitPar* fCal_Par; /**< Parameter container. */
-    TClonesArray* fCalData; /**< Array with mapped data - input data. */
+    UInt_t fNEvents;                /**< Event counter. */
+    R3BTofiHitPar* fCal_Par;        /**< Parameter container. */
+    TClonesArray* fCalData;         /**< Array with mapped data - input data. */
     TClonesArray* fCalTriggerItems; /**< Array with trigger Cal items - input data. */
-    R3BEventHeader* header; /**< Event header - input data. */
-    Double_t fClockFreq; /**< Clock cycle in [ns]. */
+    R3BEventHeader* header;         /**< Event header - input data. */
+    Double_t fClockFreq;            /**< Clock cycle in [ns]. */
     Double_t fTofiY;
     Double_t fTofiQ;
     Bool_t fTofiSmiley;

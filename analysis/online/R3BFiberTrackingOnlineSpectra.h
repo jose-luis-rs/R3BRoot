@@ -115,11 +115,11 @@ class R3BFiberTrackingOnlineSpectra : public FairTask
     }
 
     int linreg(int n, const double x[], const double y[], double* m, double* b, double* r)
-    { // Funktion for Linear regression
-        double sumx = 0.0; /* sum of x     */
+    {                       // Funktion for Linear regression
+        double sumx = 0.0;  /* sum of x     */
         double sumx2 = 0.0; /* sum of x**2  */
         double sumxy = 0.0; /* sum of x * y */
-        double sumy = 0.0; /* sum of y     */
+        double sumy = 0.0;  /* sum of y     */
         double sumy2 = 0.0; /* sum of y**2  */
 
         for (int i = 0; i < n; i++)

@@ -52,10 +52,10 @@ class R3BFootCalData : public TObject
     inline void SetSigma(double sigma) { fSigma = sigma; }
 
   protected:
-    uint8_t fDetId = 0; // detector unique identifier
-    uint16_t fStripId = 0; // strip unique identifier
+    uint8_t fDetId = 0;            // detector unique identifier
+    uint16_t fStripId = 0;         // strip unique identifier
     double fEnergy = std::nan(""); // total energy in the strip
-    double fSigma = std::nan(""); // sigma of the energy after corrections
+    double fSigma = std::nan("");  // sigma of the energy after corrections
 
   public:
     ClassDefOverride(R3BFootCalData, 1)

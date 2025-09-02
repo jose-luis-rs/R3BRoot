@@ -86,7 +86,7 @@ class R3BMwpcVsMusliCorrelationOnlineSpectra : public FairTask
     virtual void Reset_Histo();
 
   private:
-    TClonesArray* fCalItemsMwpc = nullptr; /**< Array with Mwpc cal items. */
+    TClonesArray* fCalItemsMwpc = nullptr;  /**< Array with Mwpc cal items. */
     TClonesArray* fMapItemsMusli = nullptr; /**< Array with Musli cal items. */
     TClonesArray* fCalItemsMusli = nullptr; /**< Array with Musli cal items. */
 

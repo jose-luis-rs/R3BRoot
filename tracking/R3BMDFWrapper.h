@@ -25,7 +25,7 @@ using namespace std;
 class R3BMDFWrapper : public TObject
 {
   public:
-    R3BMDFWrapper(); // default constructor
+    R3BMDFWrapper();                     // default constructor
     R3BMDFWrapper(const char* mdf_file); // standard constructor
     virtual ~R3BMDFWrapper();
     //~R3BMDFWrapper() override=default;

@@ -138,12 +138,12 @@ class R3BTttxCal2Hit : public FairTask
     int NumDets = 2;
     int NumPars = 2;
 
-    bool fOnline = false; // Don't store data for online
-    bool fRequireTref = false; // Requires Tref in the cluster
+    bool fOnline = false;                  // Don't store data for online
+    bool fRequireTref = false;             // Requires Tref in the cluster
     bool fStoreOnlyTwoDetHitEvent = false; // Store only events with two detectors have hits
-    double ffixedbeta = 0.7; // Velocity for the fixed analysis
-    double ftimewindow = 1.e4; // in nano seconds. Default = 10 us.
-    uint fneighbours = 2; // Num of neighbouring strips, if 0, no clustering
+    double ffixedbeta = 0.7;               // Velocity for the fixed analysis
+    double ftimewindow = 1.e4;             // in nano seconds. Default = 10 us.
+    uint fneighbours = 2;                  // Num of neighbouring strips, if 0, no clustering
 
     R3BTttxHitPar* fHit_Par = nullptr;
     TArrayF* HitParams = nullptr;

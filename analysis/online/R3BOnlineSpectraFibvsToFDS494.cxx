@@ -990,7 +990,7 @@ void R3BOnlineSpectraFibvsToFDS494::Exec(Option_t* option)
                     R3BTofiHitData* hitTofi = dynamic_cast<R3BTofiHitData*>(detHitTofi->At(ihitTofi));
                     randx = (std::rand() / (float)RAND_MAX) - 0.5;
                     x1[det] = hitTofi->GetX() + 0.5 * randx; // cm
-                    y1[det] = hitTofi->GetY(); // cm
+                    y1[det] = hitTofi->GetY();               // cm
                     z1[det] = 0.;
                     q1[det] = hitTofi->GetEloss();
 
@@ -1034,7 +1034,7 @@ void R3BOnlineSpectraFibvsToFDS494::Exec(Option_t* option)
                 R3BFiberMAPMTHitData* hit33 = dynamic_cast<R3BFiberMAPMTHitData*>(detHit33->At(ihit33));
                 randx = (std::rand() / (float)RAND_MAX) - 0.5;
                 x1[det] = hit33->GetX() + 0.1 * randx; // cm
-                y1[det] = hit33->GetY(); // cm
+                y1[det] = hit33->GetY();               // cm
                 z1[det] = 0.;
                 q1[det] = hit33->GetEloss();
 

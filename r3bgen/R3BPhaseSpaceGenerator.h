@@ -33,10 +33,10 @@ struct R3BPhaseSpaceGenParticleInfo
 {
     R3BPhaseSpaceGenParticleInfo() = default;
     int pdg_code = 0;
-    double mass = 0.; // GeV
-    double kinetic_energy = 0.; // GeV. Defintion: E-m
+    double mass = 0.;                   // GeV
+    double kinetic_energy = 0.;         // GeV. Defintion: E-m
     ROOT::Math::PxPyPzMVector momentum; // GeV
-    ROOT::Math::XYZTVector position; // cm
+    ROOT::Math::XYZTVector position;    // cm
 
     ClassDefNV(R3BPhaseSpaceGenParticleInfo, 1);
 };

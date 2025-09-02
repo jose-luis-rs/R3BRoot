@@ -51,7 +51,7 @@ R3BTwimMapped2CalPar::R3BTwimMapped2CalPar(const TString& name,
                                            const TString& namedetb)
     : FairTask(name, iVerbose)
     , fNumSec(4)
-    , fNumAnodes(16) // 16 anodes
+    , fNumAnodes(16)   // 16 anodes
     , fNumAnodesRef(2) // 2 anode for TREF
     , fMaxMult(20)
     , fMinStadistics(1000)
@@ -137,14 +137,14 @@ InitStatus R3BTwimMapped2CalPar::Init()
     if (fExpId == 444 || fExpId == 467)
     {
         fNumSec = 1;
-        fNumAnodes = 16; // 16 anodes
+        fNumAnodes = 16;   // 16 anodes
         fNumAnodesRef = 2; // 2 anode for TREF
         fMaxMult = 10;
     }
     else
     {
         fNumSec = 4;
-        fNumAnodes = 16; // 16 anodes
+        fNumAnodes = 16;   // 16 anodes
         fNumAnodesRef = 1; // 1 anode for TREF
         fMaxMult = 20;
     }
@@ -228,7 +228,7 @@ void R3BTwimMapped2CalPar::Exec(Option_t* option)
             mulanode[secId][anodeId]++;
         }
         else if (anodeId >= fNumAnodes)
-        { // Ref. Time
+        {                                                                             // Ref. Time
             fDT[secId][mulanode[secId][anodeId]][anodeId] = mappedData[i]->GetTime(); // Ref. Time
             mulanode[secId][anodeId]++;
         }

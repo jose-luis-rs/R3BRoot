@@ -71,12 +71,12 @@ class R3BAmsStripCalPar : public FairParGenericSet
 
   private:
     TArrayF* fStripCalParams; // Calibration Parameters of strip
-    Int_t fNumDets; // number of detectors
-    Int_t fNumStrips; // number of strips
-    Int_t fNumStripsS; // number of strips S-side
-    Int_t fNumStripsK; // number of strips K-side
-    Int_t fNumParamsFit; /* number of cal parameters in the fit
-               gaus: A_fit & B_fit & C_fit*/
+    Int_t fNumDets;           // number of detectors
+    Int_t fNumStrips;         // number of strips
+    Int_t fNumStripsS;        // number of strips S-side
+    Int_t fNumStripsK;        // number of strips K-side
+    Int_t fNumParamsFit;      /* number of cal parameters in the fit
+                    gaus: A_fit & B_fit & C_fit*/
 
     const R3BAmsStripCalPar& operator=(const R3BAmsStripCalPar&);
     R3BAmsStripCalPar(const R3BAmsStripCalPar&);

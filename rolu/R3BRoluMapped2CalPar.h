@@ -112,21 +112,21 @@ class R3BRoluMapped2CalPar : public FairTask
 
   private:
     int fUpdateRate = 1000000; /**< An update rate. */
-    int fMinStats = 100000; /**< Minimum statistics required per module. */
-    int fTrigger = -1; /**< Trigger value. */
+    int fMinStats = 100000;    /**< Minimum statistics required per module. */
+    int fTrigger = -1;         /**< Trigger value. */
 
     unsigned int fNofDetectors = 1; /**< Number of detectors. */
-    unsigned int fNofChannels = 4; /**< Number of channels per detector. */
-    unsigned int fNofTypes = 2; /**< Number of time-types per channel ( TAMEX leading/trailing). */
+    unsigned int fNofChannels = 4;  /**< Number of channels per detector. */
+    unsigned int fNofTypes = 2;     /**< Number of time-types per channel ( TAMEX leading/trailing). */
 
     bool fSkipTrigger = false;
 
     int counter = 0;
-    int fNEventsi = 0; /**< Event counter. */
-    R3BTCalPar* fCal_Par{}; /**< Parameter container. */
-    TClonesArray* fMapped{}; /**< Array with mapped data - input data. */
+    int fNEventsi = 0;              /**< Event counter. */
+    R3BTCalPar* fCal_Par{};         /**< Parameter container. */
+    TClonesArray* fMapped{};        /**< Array with mapped data - input data. */
     TClonesArray* fMappedTrigger{}; /**< Array with mapped trigger data - input data. */
-    R3BEventHeader* header{}; /**< Event header - input data. */
+    R3BEventHeader* header{};       /**< Event header - input data. */
 
     R3BTCalEngine* fEngine; /**< Instance of the TCAL engine. */
 

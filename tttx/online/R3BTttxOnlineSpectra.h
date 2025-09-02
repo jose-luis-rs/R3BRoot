@@ -106,12 +106,12 @@ class R3BTttxOnlineSpectra : public FairTask
 
   private:
     TClonesArray* fMappedItemsTttx; /**< Array with mapped items. */
-    TClonesArray* fCalItemsTttx; /**< Array with cal items. */
-    TClonesArray* fHitItemsTttx; /**< Array with hit items. */
+    TClonesArray* fCalItemsTttx;    /**< Array with cal items. */
+    TClonesArray* fHitItemsTttx;    /**< Array with hit items. */
 
     // check for trigger should be done globablly (somewhere else)
     R3BEventHeader* header; /**< Event header.      */
-    Int_t fNEvents; /**< Event counter.     */
+    Int_t fNEvents;         /**< Event counter.     */
     Int_t fExpId;
     Int_t fNbDets;
     Int_t fNbStrips;

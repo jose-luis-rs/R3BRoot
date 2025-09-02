@@ -50,10 +50,10 @@ class R3BAsciiGenerator : public FairGenerator
     void SetDxDyDz(Double32_t sx = 0, Double32_t sy = 0, Double32_t sz = 0);
 
   private:
-    const std::string fFileName; //! Input file name
-    std::ifstream fFile; //! Input file handle
+    const std::string fFileName;                                         //! Input file name
+    std::ifstream fFile;                                                 //! Input file handle
     boost::iostreams::filtering_streambuf<boost::iostreams::input> fBuf; //! Streambuf for decompression
-    std::istream fInput; //! Input stream
+    std::istream fInput;                                                 //! Input stream
 
     /** Private method RegisterIons. Goes through the input file and registers
      ** any ion needed. TODO: Should not be needed by FairRoot. **/
@@ -61,10 +61,10 @@ class R3BAsciiGenerator : public FairGenerator
 
     void OpenOrRewindFile();
 
-    Double32_t fX = 0., fY = 0., fZ = 0.; // Point vertex coordinates [cm]
-    bool fPointVtxIsSet = false; // True if point vertex is set
+    Double32_t fX = 0., fY = 0., fZ = 0.;    // Point vertex coordinates [cm]
+    bool fPointVtxIsSet = false;             // True if point vertex is set
     Double32_t fDX = 0., fDY = 0., fDZ = 0.; // Point vertex coordinates [cm]
-    bool fBoxVtxIsSet = false; // True if point vertex is set
+    bool fBoxVtxIsSet = false;               // True if point vertex is set
 
   public:
     ClassDefOverride(R3BAsciiGenerator, 0); // NOLINT

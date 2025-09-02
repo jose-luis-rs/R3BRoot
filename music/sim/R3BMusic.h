@@ -70,16 +70,16 @@ class R3BMusic : public R3BDetector
   private:
     /** Track information to be stored until the track leaves the
         active volume. **/
-    Int_t fTrackID; //!  track index
-    Int_t fTrackPID; //!  particle identification
-    Int_t fVolumeID; //!  volume id
-    Int_t fDetCopyID; //!  Det volume id
-    Int_t fParentTrackID; //!  parent track index
+    Int_t fTrackID;                 //!  track index
+    Int_t fTrackPID;                //!  particle identification
+    Int_t fVolumeID;                //!  volume id
+    Int_t fDetCopyID;               //!  Det volume id
+    Int_t fParentTrackID;           //!  parent track index
     TLorentzVector fPosIn, fPosOut; //!  position
     TLorentzVector fMomIn, fMomOut; //!  momentum
-    Double32_t fTime; //!  time
-    Double32_t fLength; //!  length
-    Double32_t fELoss; //!  energy loss
+    Double32_t fTime;               //!  time
+    Double32_t fLength;             //!  length
+    Double32_t fELoss;              //!  energy loss
     Int_t fPosIndex;
 
     TClonesArray* fMusicCollection; //!  The point collection

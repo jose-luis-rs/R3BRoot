@@ -301,7 +301,7 @@ void R3BMusliCal2Hit::Exec(Option_t* option)
                 // starts the theta calculation in the middle of the second pair
                 //                              i.e.  125 mm. upstream GetPosZ()
                 musliZpos[i] = fMusliGeo_Par->GetPosZ() * 10. - 125. + i * 50.; // [mm]
-                musliXpos[i] = dt_cal[0][i + 1]; // only mult_cal[i] == 1 is selected
+                musliXpos[i] = dt_cal[0][i + 1];                                // only mult_cal[i] == 1 is selected
             }
             TVectorD VectX;
             VectX.Use(6, musliXpos);
