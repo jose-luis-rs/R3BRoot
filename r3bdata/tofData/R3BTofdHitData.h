@@ -11,10 +11,12 @@
  * or submit itself to any jurisdiction.                                      *
  ******************************************************************************/
 
-#ifndef R3BTOFDHITDATA_H
-#define R3BTOFDHITDATA_H 1
+#pragma once
 
 #include "R3BHit.h"
+
+#include <cmath>
+#include <cstdint>
 
 // for the data analysis of the Tofd detectors.
 // Introduced by M.Heil, May 2016
@@ -23,7 +25,7 @@ class R3BTofdHitData : public R3BHit
 {
   public:
     // Default Constructor
-    R3BTofdHitData();
+    R3BTofdHitData() = default;
 
     // Standard Constructor
     R3BTofdHitData(Double_t t,
@@ -38,18 +40,19 @@ class R3BTofdHitData : public R3BHit
                    Double_t tof = 0.);
 
     // Destructor
-    virtual ~R3BTofdHitData() {}
+    ~R3BTofdHitData() = default;
 
     UInt_t GetBarId() const;
     Double_t GetTimeRaw() const; // Get paddle time without trigger
     Double_t GetTof() const;     // Time-of-flight with respect to LOS detector
+    [[nodiscard]] inline Double_t GetChargeZ() const { return fCharge; }
 
   private:
-    UInt_t fBarId;
-    Double_t fTimeRaw;
-    Double_t fTof;
+    UInt_t fBarId = 0;
+    Double_t fTimeRaw = std::nan("");
+    Double_t fTof = std::nan("");
+    Double_t fCharge = std::nan("");
 
-    ClassDef(R3BTofdHitData, 3)
+  public:
+    ClassDef(R3BTofdHitData, 4);
 };
-
-#endif

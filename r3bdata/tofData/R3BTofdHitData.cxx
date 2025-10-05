@@ -16,12 +16,6 @@
 // for the data analysis of the Tofd detector.
 // Introduced by M.Heil, May 2016
 
-R3BTofdHitData::R3BTofdHitData()
-    : fBarId(0)
-    , fTof(0.)
-{
-}
-
 R3BTofdHitData::R3BTofdHitData(Double_t t,
                                Double_t x,
                                Double_t y,
@@ -36,6 +30,7 @@ R3BTofdHitData::R3BTofdHitData(Double_t t,
     , fBarId(iBar)
     , fTimeRaw(traw)
     , fTof(tof)
+    , fCharge(Z)
 {
 }
 
