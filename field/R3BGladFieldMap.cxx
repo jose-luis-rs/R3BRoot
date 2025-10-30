@@ -62,18 +62,18 @@ R3BGladFieldMap::R3BGladFieldMap(const TString& mapName, const TString& fileType
     // Default field positions (in cm) in lab:
     // between target position (0,0,0) and GLAD rotation point (field origin)
     // Override these values by calling SetPosition(x,y,z) before Init()
-    fPosX = 0.;
-    fPosY = 1.75;
-    fPosZ = 163.4;
+    fPosX = 0.79;   // according to Valerii's report
+    fPosY = 0.22;   // according to Valerii's report
+    fPosZ = 164.84; // according to Valerii's report
 
     // Default translation vector of the local filed coordinates
     gTrans = new TVector3(-fPosX, -fPosY, -fPosZ);
 
     // Default Euler rotations of the local field (in degrees)
     // Override these values by calling SetXAngle(), SetYAngle(), SetZAngle() before Init()
-    fXAngle = 0.;
-    fYAngle = -14.;
-    fZAngle = 0.;
+    fXAngle = -0.11;
+    fYAngle = -14.08;
+    fZAngle = -0.83;
 
     fXmin = 0;
     fYmin = 0;
@@ -138,7 +138,7 @@ R3BGladFieldMap::R3BGladFieldMap(R3BFieldPar* fieldPar)
     fNy = 0;
     fNz = 0;
     fScale = 1.;
-    fBx = fBy = fBz = NULL;
+    fBx = fBy = fBz = nullptr;
     if (!fieldPar)
     {
         R3BLOG(warn, "empty parameter container!");
