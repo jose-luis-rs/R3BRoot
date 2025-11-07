@@ -261,8 +261,8 @@ class R3BActafOnlineSpectra : public FairTask
     int max_second_for_rate = 600;
     int max_rate = 1000;
 
-    int nbEventsFilled = 3;
-    int updateRate = 500;
+    int nbEventsFilled = 1;
+    int updateRate = 10;
 
     std::vector<uint64_t> pre_timestamp{ 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 

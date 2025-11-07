@@ -19,11 +19,11 @@
 // ROOT headers
 #include <TClonesArray.h>
 #include <TMath.h>
+#include <array>
 #include <iostream>
 #include <numeric>
 #include <utility>
 #include <vector>
-#include <array>
 
 // FAIR headers
 #include <FairLogger.h>
@@ -34,11 +34,10 @@
 #include "R3BActafCalData.h"
 #include "R3BActafCalPar.h"
 #include "R3BActafMapped2Cal.h"
-#include "R3BActafMappedData.h"
 #include "R3BLogger.h"
 
 template <class Cont>
-double IntegratePulse(const Cont& signal, int maxIdx, double baseline)
+double IntegratePulse(const Cont& signal, int maxIdx, double baseline = 0.)
 {
     int left = maxIdx, right = maxIdx;
     const int size = static_cast<int>(signal.size());
@@ -155,7 +154,7 @@ InitStatus R3BActafMapped2Cal::ReInit()
     return kSUCCESS;
 }
 
-inline void ApplySGFilter(std::array<double, ACTAF_BINS>& signal, std::vector<double> coeffs)
+void R3BActafMapped2Cal::ApplySGFilter(std::array<double, ACTAF_BINS>& signal, std::vector<double> coeffs)
 {
     auto n = signal.size(), m = coeffs.size();
     int half = m / 2;
@@ -203,32 +202,28 @@ void R3BActafMapped2Cal::Exec(Option_t*)
             synTagTime = mappedData->GetLeadingEdgeTime() * fConversionCh2ns; // in ns
     }
 
-    // Apply the SG filter to the trace
     for (size_t index = 0; index < nHits; ++index)
     {
         auto mappedData = dynamic_cast<R3BActafMappedData const*>(fActafMappedData->At(index));
         auto pad = mappedData->GetPad();
-        if (pad >= 129)
-            continue; // syn-time
+        if (pad >= 129 || pad == fPulserCh) // syn-time or pulser channel
+            continue;
 
-        std::array<double, ACTAF_BINS> trace = mappedData->GetTrace();
-        ApplySGFilter(trace, fSgCoeffs);
-        
-        constexpr int N = 1;
-        std::array<double,N> integral{};
-        
-        integral[0] = IntegratePulse(trace, mappedData->GetMaxpos(), mappedData->GetBaseline());
+        std::array<double, ACTAF_BINS> waveform = mappedData->GetTrace();
+        // Apply the SG filter to the waveform
+        if (fApplySGFilter)
+            ApplySGFilter(waveform, fSgCoeffs);
 
-        auto energy = integral[0]* fEGain[pad - 1];
+        auto integral = IntegratePulse(waveform, mappedData->GetMaxpos());
+        auto energy = integral * fEGain[pad - 1];
         auto energyMaxAmpl = mappedData->GetMaxampl() * fEGain[pad - 1];
+
         auto drift = mappedData->GetLeadingEdgeTime() * fConversionCh2ns; // in ns
         auto zpos = drift * fVelocity;                                    // in cm
         auto syntime = drift - synTagTime;                                // in ns
 
-        //if (energy >= fEThr[pad - 1])
-            AddCalData(pad, energy, energyMaxAmpl, drift, zpos, syntime, trace);
-        //else if (energy < fEThr[pad - 1] && fDisplayTrace)
-        //    AddCalData(pad, 0, 0, 0, 0, 0, trace);
+        if (energyMaxAmpl >= fEThr[pad - 1] && energy < fMaxE)
+            AddCalData(pad, energy, energyMaxAmpl, drift, zpos, syntime, waveform);
     }
     return;
 }
