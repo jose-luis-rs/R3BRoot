@@ -87,7 +87,7 @@ void R3BAlpide::SetSpecialPhysicsCuts()
 {
     R3BLOG(info, "Adding customized Physics cut.");
 
-    if (gGeoManager)
+    if (false)
     {
         TGeoMedium* pSi = static_cast<TGeoMedium*>(gGeoManager->GetMedium("silicon"));
         if (pSi)

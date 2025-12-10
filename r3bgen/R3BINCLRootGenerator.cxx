@@ -158,6 +158,7 @@ bool R3BINCLRootGenerator::ReadEvent(FairPrimaryGenerator* primGen)
                     py = pt * TMath::Sin(fPhi[j] * TMath::DegToRad());
                 }
                 R3BLOG(debug, "PDG:Px:Py:Pz " << pdg << " " << px << " " << py << " " << pz);
+                if (pdg>1000200)
                 primGen->AddTrack(pdg, px, py, pz, vx, vy, vz);
             }
         }

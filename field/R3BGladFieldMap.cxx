@@ -72,7 +72,7 @@ R3BGladFieldMap::R3BGladFieldMap(const TString& mapName, const TString& fileType
     // Default Euler rotations of the local field (in degrees)
     // Override these values by calling SetXAngle(), SetYAngle(), SetZAngle() before Init()
     fXAngle = -0.11;
-    fYAngle = -14.08;
+    fYAngle = -8.0;
     fZAngle = -0.83;
 
     fXmin = 0;
