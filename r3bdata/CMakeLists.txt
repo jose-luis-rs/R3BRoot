@@ -98,6 +98,7 @@ set(SRCS
     R3BMCStack.cxx
     R3BMCTrack.cxx
     R3BTrack.cxx
+    R3BDummyDetector.cxx
     roluData/R3BRoluCalData.cxx
     roluData/R3BRoluHitData.cxx
     roluData/R3BRoluMappedData.cxx
@@ -234,6 +235,7 @@ set(HEADERS
     R3BMCStack.h
     R3BMCTrack.h
     R3BTrack.h
+    R3BDummyDetector.h
     roluData/R3BRoluCalData.h
     roluData/R3BRoluHitData.h
     roluData/R3BRoluMappedData.h

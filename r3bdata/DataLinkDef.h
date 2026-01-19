@@ -24,6 +24,7 @@
 #pragma link C++ class R3BHit+;
 #pragma link C++ class R3BDouble+;
 #pragma link C++ class R3BTrack+;
+#pragma link C++ class R3BDummyDetector+;
 
 #pragma link C++ class R3BCalifaMappedData+;
 #pragma link C++ class R3BCalifaCrystalCalData+;
