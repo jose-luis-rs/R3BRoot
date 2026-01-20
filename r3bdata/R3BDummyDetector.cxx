@@ -66,7 +66,7 @@ void R3BDummyDetector::Initialize()
     FairDetector::Initialize();
 
     R3BLOG(info, "");
-    R3BLOG(debug, "Vol (McId) def " << gMC->VolId("Paddle"));
+    R3BLOG(info, "Vol (McId) def " << gMC->VolId("Paddle"));
 
     return;
 }
@@ -85,6 +85,8 @@ Bool_t R3BDummyDetector::ProcessHits(FairVolume* vol)
 
     // Sum energy loss for all steps in the active volume
     fELoss += TVirtualMC::GetMC()->Edep();
+    
+    std::cout <<fPlaneID<<" "<<fLength_in << std::endl;
     
     // Charge and mass are now obtained from PDG Code
     Double_t fZ_in = int(gMC->TrackPid() / 10000) - 100000.;
@@ -105,11 +107,13 @@ Bool_t R3BDummyDetector::ProcessHits(FairVolume* vol)
         fPlaneID = std::stoi(m[1].str());
         fPaddleID = vol->getCopyNo();
         
+        std::cout <<fPlaneID<<" "<<fPaddleID << std::endl;
+        
         gMC->TrackPosition(fPosOut);
         gMC->TrackMomentum(fMomOut);
         if (fELoss == 0.)
         {
-            return kFALSE;
+          //  return kFALSE;
         }
 
         fTime_out =
@@ -151,7 +155,7 @@ void R3BDummyDetector::EndOfEvent()
 }
 
 // -----   Public method Register   -------------------------------------------
-void R3BDummyDetector::Register() { FairRootManager::Instance()->Register("ActafPoint", GetName(), fCollection, kTRUE); }
+void R3BDummyDetector::Register() { FairRootManager::Instance()->Register("DummyPoint", GetName(), fCollection, kTRUE); }
 
 // -----   Public method GetCollection   --------------------------------------
 TClonesArray* R3BDummyDetector::GetCollection(Int_t iColl) const
@@ -169,7 +173,7 @@ TClonesArray* R3BDummyDetector::GetCollection(Int_t iColl) const
 // -----   Public method Print   ----------------------------------------------
 void R3BDummyDetector::Print(Option_t* option) const
 {
-    Int_t nHits = fCollection->GetEntriesFast();
+    auto nHits = fCollection->GetEntriesFast();
     R3BLOG(info, nHits << " points registered in this event");
 }
 
@@ -216,7 +220,7 @@ Bool_t R3BDummyDetector::CheckIfSensitive(std::string name)
     }
     return kFALSE;
 }
-
+/*
 void R3BDummyDetector::ConstructGeometry()
 {
     R3BLOG(info, "");
@@ -233,7 +237,7 @@ void R3BDummyDetector::ConstructGeometry()
     auto med = gGeoManager->GetMedium("vacuum");
     R3BLOG_IF(fatal, !med, "TGeoMedium vacuum not found");
 
- /*   double dx = 500.; // 5 m
+   double dx = 500.; // 5 m
     double dy = 100.;   // 1 m
     double dz = 1.; // 1 cm
 
@@ -244,7 +248,7 @@ void R3BDummyDetector::ConstructGeometry()
     double zPos = 600.;
 
     auto* top = gGeoManager->GetTopVolume();
-    top->AddNode(floor, 1, new TGeoTranslation(0., yPos, zPos));*/
+    top->AddNode(floor, 1, new TGeoTranslation(0., yPos, zPos));
     
     auto fRefRot = new TGeoRotation();
     
@@ -302,6 +306,6 @@ void R3BDummyDetector::ConstructGeometry()
     }
 
     pWorld->AddNode(tofd, 1, &fCombi);
-}
+}*/
 
 ClassImp(R3BDummyDetector)

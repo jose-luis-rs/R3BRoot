@@ -125,7 +125,7 @@ class R3BDummyDetector : public R3BDetector
      **/
     void ResetParameters();
     
-    void ConstructGeometry() override;
+    //void ConstructGeometry() override;
 
   public:
     ClassDefOverride(R3BDummyDetector, 1);

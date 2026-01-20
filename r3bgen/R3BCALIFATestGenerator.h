@@ -157,10 +157,10 @@ class R3BCALIFATestGenerator : public FairGenerator
     bool fThetaRangeIsSet = true; // True if theta range is set
     bool fCosThetaIsSet = false;  // True if uniform distribution in
                                   // cos(theta) is set (default -> not set)
-    bool fPtRangeIsSet;           // True if transverse momentum range is set
-    bool fPRangeIsSet;            // True if abs.momentum range is set
-    bool fPointVtxIsSet;          // True if point vertex is set
-    bool fBoxVtxIsSet;            // True if box vertex is set
+    bool fPtRangeIsSet=false;           // True if transverse momentum range is set
+    bool fPRangeIsSet=false;            // True if abs.momentum range is set
+    bool fPointVtxIsSet=false;          // True if point vertex is set
+    bool fBoxVtxIsSet=false;            // True if box vertex is set
     bool fDebug = false;          // Debug switch
 
     // SPECIFIC OF CALIFA
