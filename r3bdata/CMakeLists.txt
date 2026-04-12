@@ -1,6 +1,6 @@
 ##############################################################################
 #   Copyright (C) 2019 GSI Helmholtzzentrum für Schwerionenforschung GmbH    #
-#   Copyright (C) 2019-2025 Members of R3B Collaboration                     #
+#   Copyright (C) 2019-2026 Members of R3B Collaboration                     #
 #                                                                            #
 #             This software is distributed under the terms of the            #
 #                 GNU General Public Licence (GPL) version 3,                #
@@ -149,7 +149,8 @@ set(SRCS
     twimData/R3BTwimMappedData.cxx
     twimData/R3BTwimPoint.cxx
     vetoData/R3BVetoPoint.cxx
-    wrData/R3BWRData.cxx)
+    wrData/R3BWRData.cxx
+    ppacData/NTOFPpacsPoint.cxx)
 
 set(HEADERS
     #cmake-format: sortable
@@ -285,7 +286,8 @@ set(HEADERS
     twimData/R3BTwimMappedData.h
     twimData/R3BTwimPoint.h
     vetoData/R3BVetoPoint.h
-    wrData/R3BWRData.h)
+    wrData/R3BWRData.h
+    ppacData/NTOFPpacsPoint.h)
 
 set(DIRS
     actafData
@@ -319,7 +321,8 @@ set(DIRS
     tttxData
     twimData
     vetoData
-    wrData)
+    wrData
+    ppacData)
 
 add_library_with_dictionary(
     LIBNAME
