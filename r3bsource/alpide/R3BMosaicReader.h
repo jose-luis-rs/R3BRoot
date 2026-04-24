@@ -33,6 +33,9 @@ typedef struct EXT_STR_h101_MOSAIC202506_onion_t EXT_STR_h101_MOSAIC202506_onion
 struct EXT_STR_h101_MOSAIC202507_t;
 typedef struct EXT_STR_h101_MOSAIC202507_onion_t EXT_STR_h101_MOSAIC202507_onion;
 
+struct EXT_STR_h101_MOSAIC202606_t;
+typedef struct EXT_STR_h101_MOSAIC202606_onion_t EXT_STR_h101_MOSAIC202606_onion;
+
 class ext_data_struct_info;
 
 class R3BMosaicReader : public R3BReader
@@ -42,6 +45,7 @@ class R3BMosaicReader : public R3BReader
     R3BMosaicReader(EXT_STR_h101_MOSAIC202402_onion*, size_t);
     R3BMosaicReader(EXT_STR_h101_MOSAIC202506_onion*, size_t);
     R3BMosaicReader(EXT_STR_h101_MOSAIC202507_onion*, size_t);
+    R3BMosaicReader(EXT_STR_h101_MOSAIC202606_onion*, size_t);
 
     // Destructor
     virtual ~R3BMosaicReader();
@@ -72,7 +76,8 @@ class R3BMosaicReader : public R3BReader
     {
         v202402 = 202402,
         v202506 = 202506,
-        v202507 = 202507
+        v202507 = 202507,
+        v202606 = 202606
     };
     // Read data from S091, S118 and S111 setups
     auto R3BRead202402() -> bool;
@@ -80,6 +85,8 @@ class R3BMosaicReader : public R3BReader
     auto R3BRead202506() -> bool;
     // Read data from Super-FRS setup
     auto R3BRead202507() -> bool;
+    // Read data from Heidelberg test
+    auto R3BRead202606() -> bool;
 
     // An event counter
     unsigned int fNEvent = 1;
@@ -87,6 +94,7 @@ class R3BMosaicReader : public R3BReader
     EXT_STR_h101_MOSAIC202402_onion* fData2402 = nullptr;
     EXT_STR_h101_MOSAIC202506_onion* fData2506 = nullptr;
     EXT_STR_h101_MOSAIC202507_onion* fData2507 = nullptr;
+    EXT_STR_h101_MOSAIC202606_onion* fData2606 = nullptr;
     // Number of Mosaics
     int fNbMosaic = 1;
     // Data offset

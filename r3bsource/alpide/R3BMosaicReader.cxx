@@ -25,6 +25,8 @@
 /**
  ** ext_h101_mosaic.h was created by running
  ** $unpacker --ntuple=STRUCT_HH,RAW:MOSAIC,id=h101_MOSAIC,NOTRIGEVENTNO,ext_h101_mosaic.h
+ ** ext_h101_mosaic202606.h was created by running
+ ** $unpacker --ntuple=STRUCT_HH,RAW:MOSAIC,id=h101_MOSAIC202606,NOTRIGEVENTNO,ext_h101_mosaic202606.h
  **/
 
 extern "C"
@@ -33,6 +35,7 @@ extern "C"
 #include "ext_h101_mosaic202402.h"
 #include "ext_h101_mosaic202506.h"
 #include "ext_h101_mosaic202507.h"
+#include "ext_h101_mosaic202606.h"
 }
 
 R3BMosaicReader::R3BMosaicReader(EXT_STR_h101_MOSAIC202402_onion* data, size_t offset)
@@ -61,6 +64,17 @@ R3BMosaicReader::R3BMosaicReader(EXT_STR_h101_MOSAIC202507_onion* data, size_t o
     , fArray(new TClonesArray("R3BAlpideMappedData"))
     , fArray_TS(new TClonesArray("R3BWRData"))
     , fVersion(UnpackerMosaicVersion::v202507)
+{
+}
+
+R3BMosaicReader::R3BMosaicReader(EXT_STR_h101_MOSAIC202606_onion* data, size_t offset)
+    : R3BReader("R3BMosaicReader")
+    , fData2606(data)
+    , fNbMosaic(sizeof(fData2606->MOSAIC) / sizeof(fData2606->MOSAIC[0]))
+    , fOffset(offset)
+    , fArray(new TClonesArray("R3BAlpideMappedData"))
+    , fArray_TS(new TClonesArray("R3BWRData"))
+    , fVersion(UnpackerMosaicVersion::v202606)
 {
 }
 
@@ -96,6 +110,11 @@ Bool_t R3BMosaicReader::Init(ext_data_struct_info* a_struct_info)
         EXT_STR_h101_MOSAIC202507_ITEMS_INFO(okay, *a_struct_info, fOffset, EXT_STR_h101_MOSAIC202507, 0);
         memset(fData2507, 0, sizeof(*fData2507));
     }
+    else if (fVersion == UnpackerMosaicVersion::v202606)
+    {
+        EXT_STR_h101_MOSAIC202606_ITEMS_INFO(okay, *a_struct_info, fOffset, EXT_STR_h101_MOSAIC202606, 0);
+        memset(fData2606, 0, sizeof(*fData2606));
+    }
 
     R3BLOG_IF(fatal, !okay, "Failed to setup structure information.");
 
@@ -122,6 +141,10 @@ Bool_t R3BMosaicReader::R3BRead()
     else if (fVersion == UnpackerMosaicVersion::v202507)
     {
         return R3BRead202507();
+    }
+    else if (fVersion == UnpackerMosaicVersion::v202606)
+    {
+        return R3BRead202606();
     }
     else
     {
@@ -262,6 +285,34 @@ bool R3BMosaicReader::R3BRead202507()
     new ((*fArray_TS)[fArray_TS->GetEntriesFast()]) R3BWRData(timestamp_m9, 9);
     new ((*fArray_TS)[fArray_TS->GetEntriesFast()]) R3BWRData(timestamp_m10, 10);
 
+    return kTRUE;
+}
+
+bool R3BMosaicReader::R3BRead202606()
+{
+    // MOSAICs
+    for (int mosid = 0; mosid < fNbMosaic; mosid++)
+    {
+        // Si data
+        for (int hits = 0; hits < fData2606->MOSAIC[mosid].CHIP; hits++)
+        {
+            int fChipId = fData2606->MOSAIC[mosid].CHIPv[hits];
+
+            // fNb_sensors_flex -> 9
+            int fAlpideId = mosid * 9 + (fChipId + 1); // 1-base
+            R3BLOG_IF(error, fAlpideId < 1, "Wrong fAlpideId: " << fAlpideId);
+
+            new ((*fArray)[fArray->GetEntriesFast()]) R3BAlpideMappedData(fAlpideId,
+                                                                          0,
+                                                                          mosid + 1,
+                                                                          fChipId,
+                                                                          fData2606->MOSAIC[mosid].ROWv[hits],
+                                                                          fData2606->MOSAIC[mosid].COLv[hits]);
+        }
+        // reading timestamps
+        uint64_t timestamp = ((uint64_t)fData2606->MOSAIC[mosid].T_HI << 32) | (fData2606->MOSAIC[mosid].T_LO);
+        new ((*fArray_TS)[fArray_TS->GetEntriesFast()]) R3BWRData(timestamp, mosid + 1);
+    }
     return kTRUE;
 }
 

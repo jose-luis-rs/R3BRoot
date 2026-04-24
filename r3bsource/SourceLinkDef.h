@@ -155,6 +155,7 @@
 #pragma link C++ class EXT_STR_h101_MOSAIC202402_onion_t;
 #pragma link C++ class EXT_STR_h101_MOSAIC202506_onion_t;
 #pragma link C++ class EXT_STR_h101_MOSAIC202507_onion_t;
+#pragma link C++ class EXT_STR_h101_MOSAIC202606_onion_t;
 #pragma link C++ class EXT_STR_h101_HMP_onion_t;
 #pragma link C++ class EXT_STR_h101_ACTAF2023_onion_t;
 #pragma link C++ class EXT_STR_h101_ACTAF2025_onion_t;
