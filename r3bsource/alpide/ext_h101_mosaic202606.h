@@ -53,14 +53,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC1CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC1CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC1CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC1CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC1CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC1CHIP /* [0,32767] */;
-    uint32_t MOSAIC1CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC1CHIP)] /* [0,255] */;
-    uint32_t MOSAIC1COL /* [0,32767] */;
-    uint32_t MOSAIC1COLv[32767 EXT_STRUCT_CTRL(MOSAIC1COL)] /* [0,65535] */;
-    uint32_t MOSAIC1ROW /* [0,32767] */;
-    uint32_t MOSAIC1ROWv[32767 EXT_STRUCT_CTRL(MOSAIC1ROW)] /* [0,65535] */;
-    uint32_t MOSAIC1SNUM /* [0,32767] */;
-    uint32_t MOSAIC1SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC1SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC1CHIP /* [0,2000] */;
+    uint32_t MOSAIC1CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC1CHIP)] /* [0,255] */;
+    uint32_t MOSAIC1COL /* [0,2000] */;
+    uint32_t MOSAIC1COLv[2000 EXT_STRUCT_CTRL(MOSAIC1COL)] /* [0,65535] */;
+    uint32_t MOSAIC1ROW /* [0,2000] */;
+    uint32_t MOSAIC1ROWv[2000 EXT_STRUCT_CTRL(MOSAIC1ROW)] /* [0,65535] */;
+    uint32_t MOSAIC1SNUM /* [0,2000] */;
+    uint32_t MOSAIC1SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC1SNUM)] /* [0,65535] */;
     uint32_t MOSAIC2T_HI /* [-1,-1] */;
     uint32_t MOSAIC2T_LO /* [-1,-1] */;
     uint32_t MOSAIC2T_SYNC /* [-1,-1] */;
@@ -73,14 +73,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC2CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC2CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC2CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC2CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC2CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC2CHIP /* [0,32767] */;
-    uint32_t MOSAIC2CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC2CHIP)] /* [0,255] */;
-    uint32_t MOSAIC2COL /* [0,32767] */;
-    uint32_t MOSAIC2COLv[32767 EXT_STRUCT_CTRL(MOSAIC2COL)] /* [0,65535] */;
-    uint32_t MOSAIC2ROW /* [0,32767] */;
-    uint32_t MOSAIC2ROWv[32767 EXT_STRUCT_CTRL(MOSAIC2ROW)] /* [0,65535] */;
-    uint32_t MOSAIC2SNUM /* [0,32767] */;
-    uint32_t MOSAIC2SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC2SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC2CHIP /* [0,2000] */;
+    uint32_t MOSAIC2CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC2CHIP)] /* [0,255] */;
+    uint32_t MOSAIC2COL /* [0,2000] */;
+    uint32_t MOSAIC2COLv[2000 EXT_STRUCT_CTRL(MOSAIC2COL)] /* [0,65535] */;
+    uint32_t MOSAIC2ROW /* [0,2000] */;
+    uint32_t MOSAIC2ROWv[2000 EXT_STRUCT_CTRL(MOSAIC2ROW)] /* [0,65535] */;
+    uint32_t MOSAIC2SNUM /* [0,2000] */;
+    uint32_t MOSAIC2SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC2SNUM)] /* [0,65535] */;
     uint32_t MOSAIC3T_HI /* [-1,-1] */;
     uint32_t MOSAIC3T_LO /* [-1,-1] */;
     uint32_t MOSAIC3T_SYNC /* [-1,-1] */;
@@ -93,14 +93,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC3CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC3CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC3CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC3CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC3CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC3CHIP /* [0,32767] */;
-    uint32_t MOSAIC3CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC3CHIP)] /* [0,255] */;
-    uint32_t MOSAIC3COL /* [0,32767] */;
-    uint32_t MOSAIC3COLv[32767 EXT_STRUCT_CTRL(MOSAIC3COL)] /* [0,65535] */;
-    uint32_t MOSAIC3ROW /* [0,32767] */;
-    uint32_t MOSAIC3ROWv[32767 EXT_STRUCT_CTRL(MOSAIC3ROW)] /* [0,65535] */;
-    uint32_t MOSAIC3SNUM /* [0,32767] */;
-    uint32_t MOSAIC3SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC3SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC3CHIP /* [0,2000] */;
+    uint32_t MOSAIC3CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC3CHIP)] /* [0,255] */;
+    uint32_t MOSAIC3COL /* [0,2000] */;
+    uint32_t MOSAIC3COLv[2000 EXT_STRUCT_CTRL(MOSAIC3COL)] /* [0,65535] */;
+    uint32_t MOSAIC3ROW /* [0,2000] */;
+    uint32_t MOSAIC3ROWv[2000 EXT_STRUCT_CTRL(MOSAIC3ROW)] /* [0,65535] */;
+    uint32_t MOSAIC3SNUM /* [0,2000] */;
+    uint32_t MOSAIC3SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC3SNUM)] /* [0,65535] */;
     uint32_t MOSAIC4T_HI /* [-1,-1] */;
     uint32_t MOSAIC4T_LO /* [-1,-1] */;
     uint32_t MOSAIC4T_SYNC /* [-1,-1] */;
@@ -113,14 +113,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC4CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC4CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC4CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC4CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC4CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC4CHIP /* [0,32767] */;
-    uint32_t MOSAIC4CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC4CHIP)] /* [0,255] */;
-    uint32_t MOSAIC4COL /* [0,32767] */;
-    uint32_t MOSAIC4COLv[32767 EXT_STRUCT_CTRL(MOSAIC4COL)] /* [0,65535] */;
-    uint32_t MOSAIC4ROW /* [0,32767] */;
-    uint32_t MOSAIC4ROWv[32767 EXT_STRUCT_CTRL(MOSAIC4ROW)] /* [0,65535] */;
-    uint32_t MOSAIC4SNUM /* [0,32767] */;
-    uint32_t MOSAIC4SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC4SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC4CHIP /* [0,2000] */;
+    uint32_t MOSAIC4CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC4CHIP)] /* [0,255] */;
+    uint32_t MOSAIC4COL /* [0,2000] */;
+    uint32_t MOSAIC4COLv[2000 EXT_STRUCT_CTRL(MOSAIC4COL)] /* [0,65535] */;
+    uint32_t MOSAIC4ROW /* [0,2000] */;
+    uint32_t MOSAIC4ROWv[2000 EXT_STRUCT_CTRL(MOSAIC4ROW)] /* [0,65535] */;
+    uint32_t MOSAIC4SNUM /* [0,2000] */;
+    uint32_t MOSAIC4SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC4SNUM)] /* [0,65535] */;
     uint32_t MOSAIC5T_HI /* [-1,-1] */;
     uint32_t MOSAIC5T_LO /* [-1,-1] */;
     uint32_t MOSAIC5T_SYNC /* [-1,-1] */;
@@ -133,14 +133,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC5CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC5CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC5CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC5CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC5CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC5CHIP /* [0,32767] */;
-    uint32_t MOSAIC5CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC5CHIP)] /* [0,255] */;
-    uint32_t MOSAIC5COL /* [0,32767] */;
-    uint32_t MOSAIC5COLv[32767 EXT_STRUCT_CTRL(MOSAIC5COL)] /* [0,65535] */;
-    uint32_t MOSAIC5ROW /* [0,32767] */;
-    uint32_t MOSAIC5ROWv[32767 EXT_STRUCT_CTRL(MOSAIC5ROW)] /* [0,65535] */;
-    uint32_t MOSAIC5SNUM /* [0,32767] */;
-    uint32_t MOSAIC5SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC5SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC5CHIP /* [0,2000] */;
+    uint32_t MOSAIC5CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC5CHIP)] /* [0,255] */;
+    uint32_t MOSAIC5COL /* [0,2000] */;
+    uint32_t MOSAIC5COLv[2000 EXT_STRUCT_CTRL(MOSAIC5COL)] /* [0,65535] */;
+    uint32_t MOSAIC5ROW /* [0,2000] */;
+    uint32_t MOSAIC5ROWv[2000 EXT_STRUCT_CTRL(MOSAIC5ROW)] /* [0,65535] */;
+    uint32_t MOSAIC5SNUM /* [0,2000] */;
+    uint32_t MOSAIC5SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC5SNUM)] /* [0,65535] */;
     uint32_t MOSAIC6T_HI /* [-1,-1] */;
     uint32_t MOSAIC6T_LO /* [-1,-1] */;
     uint32_t MOSAIC6T_SYNC /* [-1,-1] */;
@@ -153,14 +153,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC6CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC6CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC6CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC6CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC6CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC6CHIP /* [0,32767] */;
-    uint32_t MOSAIC6CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC6CHIP)] /* [0,255] */;
-    uint32_t MOSAIC6COL /* [0,32767] */;
-    uint32_t MOSAIC6COLv[32767 EXT_STRUCT_CTRL(MOSAIC6COL)] /* [0,65535] */;
-    uint32_t MOSAIC6ROW /* [0,32767] */;
-    uint32_t MOSAIC6ROWv[32767 EXT_STRUCT_CTRL(MOSAIC6ROW)] /* [0,65535] */;
-    uint32_t MOSAIC6SNUM /* [0,32767] */;
-    uint32_t MOSAIC6SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC6SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC6CHIP /* [0,2000] */;
+    uint32_t MOSAIC6CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC6CHIP)] /* [0,255] */;
+    uint32_t MOSAIC6COL /* [0,2000] */;
+    uint32_t MOSAIC6COLv[2000 EXT_STRUCT_CTRL(MOSAIC6COL)] /* [0,65535] */;
+    uint32_t MOSAIC6ROW /* [0,2000] */;
+    uint32_t MOSAIC6ROWv[2000 EXT_STRUCT_CTRL(MOSAIC6ROW)] /* [0,65535] */;
+    uint32_t MOSAIC6SNUM /* [0,2000] */;
+    uint32_t MOSAIC6SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC6SNUM)] /* [0,65535] */;
     uint32_t MOSAIC7T_HI /* [-1,-1] */;
     uint32_t MOSAIC7T_LO /* [-1,-1] */;
     uint32_t MOSAIC7T_SYNC /* [-1,-1] */;
@@ -173,14 +173,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC7CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC7CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC7CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC7CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC7CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC7CHIP /* [0,32767] */;
-    uint32_t MOSAIC7CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC7CHIP)] /* [0,255] */;
-    uint32_t MOSAIC7COL /* [0,32767] */;
-    uint32_t MOSAIC7COLv[32767 EXT_STRUCT_CTRL(MOSAIC7COL)] /* [0,65535] */;
-    uint32_t MOSAIC7ROW /* [0,32767] */;
-    uint32_t MOSAIC7ROWv[32767 EXT_STRUCT_CTRL(MOSAIC7ROW)] /* [0,65535] */;
-    uint32_t MOSAIC7SNUM /* [0,32767] */;
-    uint32_t MOSAIC7SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC7SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC7CHIP /* [0,2000] */;
+    uint32_t MOSAIC7CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC7CHIP)] /* [0,255] */;
+    uint32_t MOSAIC7COL /* [0,2000] */;
+    uint32_t MOSAIC7COLv[2000 EXT_STRUCT_CTRL(MOSAIC7COL)] /* [0,65535] */;
+    uint32_t MOSAIC7ROW /* [0,2000] */;
+    uint32_t MOSAIC7ROWv[2000 EXT_STRUCT_CTRL(MOSAIC7ROW)] /* [0,65535] */;
+    uint32_t MOSAIC7SNUM /* [0,2000] */;
+    uint32_t MOSAIC7SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC7SNUM)] /* [0,65535] */;
     uint32_t MOSAIC8T_HI /* [-1,-1] */;
     uint32_t MOSAIC8T_LO /* [-1,-1] */;
     uint32_t MOSAIC8T_SYNC /* [-1,-1] */;
@@ -193,14 +193,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC8CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC8CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC8CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC8CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC8CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC8CHIP /* [0,32767] */;
-    uint32_t MOSAIC8CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC8CHIP)] /* [0,255] */;
-    uint32_t MOSAIC8COL /* [0,32767] */;
-    uint32_t MOSAIC8COLv[32767 EXT_STRUCT_CTRL(MOSAIC8COL)] /* [0,65535] */;
-    uint32_t MOSAIC8ROW /* [0,32767] */;
-    uint32_t MOSAIC8ROWv[32767 EXT_STRUCT_CTRL(MOSAIC8ROW)] /* [0,65535] */;
-    uint32_t MOSAIC8SNUM /* [0,32767] */;
-    uint32_t MOSAIC8SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC8SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC8CHIP /* [0,2000] */;
+    uint32_t MOSAIC8CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC8CHIP)] /* [0,255] */;
+    uint32_t MOSAIC8COL /* [0,2000] */;
+    uint32_t MOSAIC8COLv[2000 EXT_STRUCT_CTRL(MOSAIC8COL)] /* [0,65535] */;
+    uint32_t MOSAIC8ROW /* [0,2000] */;
+    uint32_t MOSAIC8ROWv[2000 EXT_STRUCT_CTRL(MOSAIC8ROW)] /* [0,65535] */;
+    uint32_t MOSAIC8SNUM /* [0,2000] */;
+    uint32_t MOSAIC8SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC8SNUM)] /* [0,65535] */;
     uint32_t MOSAIC9T_HI /* [-1,-1] */;
     uint32_t MOSAIC9T_LO /* [-1,-1] */;
     uint32_t MOSAIC9T_SYNC /* [-1,-1] */;
@@ -213,14 +213,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC9CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC9CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC9CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC9CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC9CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC9CHIP /* [0,32767] */;
-    uint32_t MOSAIC9CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC9CHIP)] /* [0,255] */;
-    uint32_t MOSAIC9COL /* [0,32767] */;
-    uint32_t MOSAIC9COLv[32767 EXT_STRUCT_CTRL(MOSAIC9COL)] /* [0,65535] */;
-    uint32_t MOSAIC9ROW /* [0,32767] */;
-    uint32_t MOSAIC9ROWv[32767 EXT_STRUCT_CTRL(MOSAIC9ROW)] /* [0,65535] */;
-    uint32_t MOSAIC9SNUM /* [0,32767] */;
-    uint32_t MOSAIC9SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC9SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC9CHIP /* [0,2000] */;
+    uint32_t MOSAIC9CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC9CHIP)] /* [0,255] */;
+    uint32_t MOSAIC9COL /* [0,2000] */;
+    uint32_t MOSAIC9COLv[2000 EXT_STRUCT_CTRL(MOSAIC9COL)] /* [0,65535] */;
+    uint32_t MOSAIC9ROW /* [0,2000] */;
+    uint32_t MOSAIC9ROWv[2000 EXT_STRUCT_CTRL(MOSAIC9ROW)] /* [0,65535] */;
+    uint32_t MOSAIC9SNUM /* [0,2000] */;
+    uint32_t MOSAIC9SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC9SNUM)] /* [0,65535] */;
     uint32_t MOSAIC10T_HI /* [-1,-1] */;
     uint32_t MOSAIC10T_LO /* [-1,-1] */;
     uint32_t MOSAIC10T_SYNC /* [-1,-1] */;
@@ -233,14 +233,14 @@ typedef struct EXT_STR_h101_MOSAIC202606_t
     uint32_t MOSAIC10CHIPSVALUEv[27 EXT_STRUCT_CTRL(MOSAIC10CHIPSVALUE)] /* [-1,-1] */;
     uint32_t MOSAIC10CHIPSSTROBE /* [0,27] */;
     uint32_t MOSAIC10CHIPSSTROBEv[27 EXT_STRUCT_CTRL(MOSAIC10CHIPSSTROBE)] /* [-1,-1] */;
-    uint32_t MOSAIC10CHIP /* [0,32767] */;
-    uint32_t MOSAIC10CHIPv[32767 EXT_STRUCT_CTRL(MOSAIC10CHIP)] /* [0,255] */;
-    uint32_t MOSAIC10COL /* [0,32767] */;
-    uint32_t MOSAIC10COLv[32767 EXT_STRUCT_CTRL(MOSAIC10COL)] /* [0,65535] */;
-    uint32_t MOSAIC10ROW /* [0,32767] */;
-    uint32_t MOSAIC10ROWv[32767 EXT_STRUCT_CTRL(MOSAIC10ROW)] /* [0,65535] */;
-    uint32_t MOSAIC10SNUM /* [0,32767] */;
-    uint32_t MOSAIC10SNUMv[32767 EXT_STRUCT_CTRL(MOSAIC10SNUM)] /* [0,65535] */;
+    uint32_t MOSAIC10CHIP /* [0,2000] */;
+    uint32_t MOSAIC10CHIPv[2000 EXT_STRUCT_CTRL(MOSAIC10CHIP)] /* [0,255] */;
+    uint32_t MOSAIC10COL /* [0,2000] */;
+    uint32_t MOSAIC10COLv[2000 EXT_STRUCT_CTRL(MOSAIC10COL)] /* [0,65535] */;
+    uint32_t MOSAIC10ROW /* [0,2000] */;
+    uint32_t MOSAIC10ROWv[2000 EXT_STRUCT_CTRL(MOSAIC10ROW)] /* [0,65535] */;
+    uint32_t MOSAIC10SNUM /* [0,2000] */;
+    uint32_t MOSAIC10SNUMv[2000 EXT_STRUCT_CTRL(MOSAIC10SNUM)] /* [0,65535] */;
 
 } EXT_STR_h101_MOSAIC202606;
 
@@ -268,13 +268,13 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
         uint32_t CHIPSSTROBE;
         uint32_t CHIPSSTROBEv[27 /* CHIPSSTROBE */];
         uint32_t CHIP;
-        uint32_t CHIPv[32767 /* CHIP */];
+        uint32_t CHIPv[2000 /* CHIP */];
         uint32_t COL;
-        uint32_t COLv[32767 /* COL */];
+        uint32_t COLv[2000 /* COL */];
         uint32_t ROW;
-        uint32_t ROWv[32767 /* ROW */];
+        uint32_t ROWv[2000 /* ROW */];
         uint32_t SNUM;
-        uint32_t SNUMv[32767 /* SNUM */];
+        uint32_t SNUMv[2000 /* SNUM */];
     } MOSAIC[10];
 
 } EXT_STR_h101_MOSAIC202606_onion;
@@ -322,19 +322,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC1CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC1CHIP, UINT32, "MOSAIC1CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC1CHIP, UINT32, "MOSAIC1CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC1CHIPv, UINT32, "MOSAIC1CHIPv", "MOSAIC1CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC1COL, UINT32, "MOSAIC1COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC1COL, UINT32, "MOSAIC1COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC1COLv, UINT32, "MOSAIC1COLv", "MOSAIC1COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC1ROW, UINT32, "MOSAIC1ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC1ROW, UINT32, "MOSAIC1ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC1ROWv, UINT32, "MOSAIC1ROWv", "MOSAIC1ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC1SNUM, UINT32, "MOSAIC1SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC1SNUM, UINT32, "MOSAIC1SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC1SNUMv, UINT32, "MOSAIC1SNUMv", "MOSAIC1SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC2T_HI, UINT32, "MOSAIC2T_HI", 0 /*flags*/);       \
@@ -373,19 +373,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC2CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC2CHIP, UINT32, "MOSAIC2CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC2CHIP, UINT32, "MOSAIC2CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC2CHIPv, UINT32, "MOSAIC2CHIPv", "MOSAIC2CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC2COL, UINT32, "MOSAIC2COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC2COL, UINT32, "MOSAIC2COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC2COLv, UINT32, "MOSAIC2COLv", "MOSAIC2COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC2ROW, UINT32, "MOSAIC2ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC2ROW, UINT32, "MOSAIC2ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC2ROWv, UINT32, "MOSAIC2ROWv", "MOSAIC2ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC2SNUM, UINT32, "MOSAIC2SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC2SNUM, UINT32, "MOSAIC2SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC2SNUMv, UINT32, "MOSAIC2SNUMv", "MOSAIC2SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC3T_HI, UINT32, "MOSAIC3T_HI", 0 /*flags*/);       \
@@ -424,19 +424,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC3CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC3CHIP, UINT32, "MOSAIC3CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC3CHIP, UINT32, "MOSAIC3CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC3CHIPv, UINT32, "MOSAIC3CHIPv", "MOSAIC3CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC3COL, UINT32, "MOSAIC3COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC3COL, UINT32, "MOSAIC3COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC3COLv, UINT32, "MOSAIC3COLv", "MOSAIC3COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC3ROW, UINT32, "MOSAIC3ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC3ROW, UINT32, "MOSAIC3ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC3ROWv, UINT32, "MOSAIC3ROWv", "MOSAIC3ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC3SNUM, UINT32, "MOSAIC3SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC3SNUM, UINT32, "MOSAIC3SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC3SNUMv, UINT32, "MOSAIC3SNUMv", "MOSAIC3SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC4T_HI, UINT32, "MOSAIC4T_HI", 0 /*flags*/);       \
@@ -475,19 +475,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC4CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC4CHIP, UINT32, "MOSAIC4CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC4CHIP, UINT32, "MOSAIC4CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC4CHIPv, UINT32, "MOSAIC4CHIPv", "MOSAIC4CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC4COL, UINT32, "MOSAIC4COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC4COL, UINT32, "MOSAIC4COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC4COLv, UINT32, "MOSAIC4COLv", "MOSAIC4COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC4ROW, UINT32, "MOSAIC4ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC4ROW, UINT32, "MOSAIC4ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC4ROWv, UINT32, "MOSAIC4ROWv", "MOSAIC4ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC4SNUM, UINT32, "MOSAIC4SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC4SNUM, UINT32, "MOSAIC4SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC4SNUMv, UINT32, "MOSAIC4SNUMv", "MOSAIC4SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC5T_HI, UINT32, "MOSAIC5T_HI", 0 /*flags*/);       \
@@ -526,19 +526,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC5CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC5CHIP, UINT32, "MOSAIC5CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC5CHIP, UINT32, "MOSAIC5CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC5CHIPv, UINT32, "MOSAIC5CHIPv", "MOSAIC5CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC5COL, UINT32, "MOSAIC5COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC5COL, UINT32, "MOSAIC5COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC5COLv, UINT32, "MOSAIC5COLv", "MOSAIC5COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC5ROW, UINT32, "MOSAIC5ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC5ROW, UINT32, "MOSAIC5ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC5ROWv, UINT32, "MOSAIC5ROWv", "MOSAIC5ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC5SNUM, UINT32, "MOSAIC5SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC5SNUM, UINT32, "MOSAIC5SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC5SNUMv, UINT32, "MOSAIC5SNUMv", "MOSAIC5SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC6T_HI, UINT32, "MOSAIC6T_HI", 0 /*flags*/);       \
@@ -577,19 +577,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC6CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC6CHIP, UINT32, "MOSAIC6CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC6CHIP, UINT32, "MOSAIC6CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC6CHIPv, UINT32, "MOSAIC6CHIPv", "MOSAIC6CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC6COL, UINT32, "MOSAIC6COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC6COL, UINT32, "MOSAIC6COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC6COLv, UINT32, "MOSAIC6COLv", "MOSAIC6COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC6ROW, UINT32, "MOSAIC6ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC6ROW, UINT32, "MOSAIC6ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC6ROWv, UINT32, "MOSAIC6ROWv", "MOSAIC6ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC6SNUM, UINT32, "MOSAIC6SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC6SNUM, UINT32, "MOSAIC6SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC6SNUMv, UINT32, "MOSAIC6SNUMv", "MOSAIC6SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC7T_HI, UINT32, "MOSAIC7T_HI", 0 /*flags*/);       \
@@ -628,19 +628,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC7CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC7CHIP, UINT32, "MOSAIC7CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC7CHIP, UINT32, "MOSAIC7CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC7CHIPv, UINT32, "MOSAIC7CHIPv", "MOSAIC7CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC7COL, UINT32, "MOSAIC7COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC7COL, UINT32, "MOSAIC7COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC7COLv, UINT32, "MOSAIC7COLv", "MOSAIC7COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC7ROW, UINT32, "MOSAIC7ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC7ROW, UINT32, "MOSAIC7ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC7ROWv, UINT32, "MOSAIC7ROWv", "MOSAIC7ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC7SNUM, UINT32, "MOSAIC7SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC7SNUM, UINT32, "MOSAIC7SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC7SNUMv, UINT32, "MOSAIC7SNUMv", "MOSAIC7SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC8T_HI, UINT32, "MOSAIC8T_HI", 0 /*flags*/);       \
@@ -679,19 +679,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC8CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC8CHIP, UINT32, "MOSAIC8CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC8CHIP, UINT32, "MOSAIC8CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC8CHIPv, UINT32, "MOSAIC8CHIPv", "MOSAIC8CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC8COL, UINT32, "MOSAIC8COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC8COL, UINT32, "MOSAIC8COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC8COLv, UINT32, "MOSAIC8COLv", "MOSAIC8COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC8ROW, UINT32, "MOSAIC8ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC8ROW, UINT32, "MOSAIC8ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC8ROWv, UINT32, "MOSAIC8ROWv", "MOSAIC8ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC8SNUM, UINT32, "MOSAIC8SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC8SNUM, UINT32, "MOSAIC8SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC8SNUMv, UINT32, "MOSAIC8SNUMv", "MOSAIC8SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC9T_HI, UINT32, "MOSAIC9T_HI", 0 /*flags*/);       \
@@ -730,19 +730,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC9CHIPSSTROBE",                                                                   \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC9CHIP, UINT32, "MOSAIC9CHIP", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC9CHIP, UINT32, "MOSAIC9CHIP", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC9CHIPv, UINT32, "MOSAIC9CHIPv", "MOSAIC9CHIP", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC9COL, UINT32, "MOSAIC9COL", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC9COL, UINT32, "MOSAIC9COL", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC9COLv, UINT32, "MOSAIC9COLv", "MOSAIC9COL", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC9ROW, UINT32, "MOSAIC9ROW", 32767, 0 /*flags*/);                \
+            ok, si, offset, struct_t, printerr, MOSAIC9ROW, UINT32, "MOSAIC9ROW", 2000, 0 /*flags*/);                \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC9ROWv, UINT32, "MOSAIC9ROWv", "MOSAIC9ROW", 0 /*flags*/);        \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC9SNUM, UINT32, "MOSAIC9SNUM", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC9SNUM, UINT32, "MOSAIC9SNUM", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC9SNUMv, UINT32, "MOSAIC9SNUMv", "MOSAIC9SNUM", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2(ok, si, offset, struct_t, printerr, MOSAIC10T_HI, UINT32, "MOSAIC10T_HI", 0 /*flags*/);     \
@@ -791,19 +791,19 @@ typedef struct EXT_STR_h101_MOSAIC202606_onion_t
                                "MOSAIC10CHIPSSTROBE",                                                                  \
                                0 /*flags*/);                                                                           \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC10CHIP, UINT32, "MOSAIC10CHIP", 32767, 0 /*flags*/);            \
+            ok, si, offset, struct_t, printerr, MOSAIC10CHIP, UINT32, "MOSAIC10CHIP", 2000, 0 /*flags*/);            \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC10CHIPv, UINT32, "MOSAIC10CHIPv", "MOSAIC10CHIP", 0 /*flags*/);  \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC10COL, UINT32, "MOSAIC10COL", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC10COL, UINT32, "MOSAIC10COL", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC10COLv, UINT32, "MOSAIC10COLv", "MOSAIC10COL", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC10ROW, UINT32, "MOSAIC10ROW", 32767, 0 /*flags*/);              \
+            ok, si, offset, struct_t, printerr, MOSAIC10ROW, UINT32, "MOSAIC10ROW", 2000, 0 /*flags*/);              \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC10ROWv, UINT32, "MOSAIC10ROWv", "MOSAIC10ROW", 0 /*flags*/);     \
         EXT_STR_ITEM_INFO2_LIM(                                                                                        \
-            ok, si, offset, struct_t, printerr, MOSAIC10SNUM, UINT32, "MOSAIC10SNUM", 32767, 0 /*flags*/);            \
+            ok, si, offset, struct_t, printerr, MOSAIC10SNUM, UINT32, "MOSAIC10SNUM", 2000, 0 /*flags*/);            \
         EXT_STR_ITEM_INFO2_ZZP(                                                                                        \
             ok, si, offset, struct_t, printerr, MOSAIC10SNUMv, UINT32, "MOSAIC10SNUMv", "MOSAIC10SNUM", 0 /*flags*/);  \
                                                                                                                        \
