@@ -83,8 +83,8 @@ void R3BAlpideFoot::Initialize()
     FairDetector::Initialize();
 
     R3BLOG(info, " ");
-    R3BLOG(debug, "Sens. Vol. (McId) " << TVirtualMC::GetMC()->VolId("Alpide"));
-    R3BLOG(debug, "Sens. Vol. (McId) " << TVirtualMC::GetMC()->VolId("Foot"));
+    R3BLOG(info, "Sens. Vol. (McId) " << TVirtualMC::GetMC()->VolId("Alpide"));
+    R3BLOG(info, "Sens. Vol. (McId) " << TVirtualMC::GetMC()->VolId("Foot"));
 
     SetParameter();
     fAlpideGeo = R3BAlpideGeometry::Instance();
@@ -410,6 +410,8 @@ Bool_t R3BAlpideFoot::ProcessHits(FairVolume*)
     {
         fTrackID = TVirtualMC::GetMC()->GetStack()->GetCurrentTrackNumber();
         R3BLOG(debug, TVirtualMC::GetMC()->CurrentVolPath());
+
+        // TODO: This code has to be changed according to the foot and alpide geometry and volume names ++++++
         fBarrelID = fAlpideGeo->GetBarrelId(TVirtualMC::GetMC()->CurrentVolPath());
         fSensorID = fAlpideGeo->GetSensorId(TVirtualMC::GetMC()->CurrentVolPath());
 
@@ -421,8 +423,20 @@ Bool_t R3BAlpideFoot::ProcessHits(FairVolume*)
         }
 
         AddHitAlpide(fTrackID,
-               fBarrelID,
-               fSensorID,
+                     fBarrelID,
+                     fSensorID,
+                     TVector3(fPosIn.X(), fPosIn.Y(), fPosIn.Z()),
+                     TVector3(fPosOut.X(), fPosOut.Y(), fPosOut.Z()),
+                     TVector3(fMomIn.Px(), fMomIn.Py(), fMomIn.Pz()),
+                     TVector3(fMomOut.Px(), fMomOut.Py(), fMomOut.Pz()),
+                     fTime,
+                     fLength,
+                     fELoss,
+                     TVirtualMC::GetMC()->TrackPid());
+
+        /*  AddHitFoot(fTrackID,
+               fVolumeID,
+               fDetCopyID,
                TVector3(fPosIn.X(), fPosIn.Y(), fPosIn.Z()),
                TVector3(fPosOut.X(), fPosOut.Y(), fPosOut.Z()),
                TVector3(fMomIn.Px(), fMomIn.Py(), fMomIn.Pz()),
@@ -431,6 +445,8 @@ Bool_t R3BAlpideFoot::ProcessHits(FairVolume*)
                fLength,
                fELoss,
                TVirtualMC::GetMC()->TrackPid());
+        */
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // Increment number of AlpidePoints for this track
         R3BStack* stack = static_cast<R3BStack*>(TVirtualMC::GetMC()->GetStack());
@@ -453,9 +469,9 @@ void R3BAlpideFoot::EndOfEvent()
 // ----------------------------------------------------------------------------
 
 // -----   Public method Register   -------------------------------------------
-void R3BAlpideFoot::Register() 
-{ 
-    FairRootManager::Instance()->Register("AlpidePoint", GetName(), fAlpidePoint, kTRUE); 
+void R3BAlpideFoot::Register()
+{
+    FairRootManager::Instance()->Register("AlpidePoint", GetName(), fAlpidePoint, kTRUE);
     FairRootManager::Instance()->Register("FootPoint", GetName(), fFootPoint, kTRUE);
 }
 // ----------------------------------------------------------------------------
@@ -491,16 +507,16 @@ void R3BAlpideFoot::Reset()
 
 // -----   Private method AddHit   --------------------------------------------
 R3BAlpidePoint* R3BAlpideFoot::AddHitAlpide(Int_t trackID,
-                                  Int_t detID,
-                                  Int_t detCopyID,
-                                  TVector3 posIn,
-                                  TVector3 posOut,
-                                  TVector3 momIn,
-                                  TVector3 momOut,
-                                  Double_t time,
-                                  Double_t length,
-                                  Double_t eLoss,
-                                  Int_t pdgcode)
+                                            Int_t detID,
+                                            Int_t detCopyID,
+                                            TVector3 posIn,
+                                            TVector3 posOut,
+                                            TVector3 momIn,
+                                            TVector3 momOut,
+                                            Double_t time,
+                                            Double_t length,
+                                            Double_t eLoss,
+                                            Int_t pdgcode)
 {
     TClonesArray& clref = *fAlpidePoint;
     Int_t size = clref.GetEntriesFast();
@@ -510,16 +526,16 @@ R3BAlpidePoint* R3BAlpideFoot::AddHitAlpide(Int_t trackID,
 
 // -----   Private method AddHit   --------------------------------------------
 R3BTraPoint* R3BAlpideFoot::AddHitFoot(Int_t trackID,
-                            Int_t detID,
-                            Int_t detCopyID,
-                            TVector3 posIn,
-                            TVector3 posOut,
-                            TVector3 momIn,
-                            TVector3 momOut,
-                            Double_t time,
-                            Double_t length,
-                            Double_t eLoss,
-                            Int_t pdgcode)
+                                       Int_t detID,
+                                       Int_t detCopyID,
+                                       TVector3 posIn,
+                                       TVector3 posOut,
+                                       TVector3 momIn,
+                                       TVector3 momOut,
+                                       Double_t time,
+                                       Double_t length,
+                                       Double_t eLoss,
+                                       Int_t pdgcode)
 {
     TClonesArray& clref = *fFootPoint;
     Int_t size = clref.GetEntriesFast();
@@ -532,12 +548,12 @@ Bool_t R3BAlpideFoot::CheckIfSensitive(std::string name)
 {
     if (TString(name).Contains("Alpide"))
     {
-        // LOG(info) << "Found geometry from ROOT file: " << name;
+        LOG(info) << "Found geometry from ROOT file: " << name;
         return kTRUE;
     }
     else if (TString(name).Contains("Foot"))
     {
-        // LOG(info) << "Found geometry from ROOT file: " << name;
+        LOG(info) << "Found geometry from ROOT file: " << name;
         return kTRUE;
     }
     return kFALSE;

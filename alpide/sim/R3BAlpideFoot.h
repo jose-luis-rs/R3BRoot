@@ -122,28 +122,28 @@ class R3BAlpideFoot : public R3BDetector
      ** Adds a AlpidePoint to the HitCollection
      **/
     R3BAlpidePoint* AddHitAlpide(Int_t trackID,
-                           Int_t detID,
-                           Int_t detCopyID,
-                           TVector3 posIn,
-                           TVector3 pos_out,
-                           TVector3 momIn,
-                           TVector3 momOut,
-                           Double_t time,
-                           Double_t length,
-                           Double_t eLoss,
-                           Int_t pdgcode);
-                           
+                                 Int_t detID,
+                                 Int_t detCopyID,
+                                 TVector3 posIn,
+                                 TVector3 pos_out,
+                                 TVector3 momIn,
+                                 TVector3 momOut,
+                                 Double_t time,
+                                 Double_t length,
+                                 Double_t eLoss,
+                                 Int_t pdgcode);
+
     R3BTraPoint* AddHitFoot(Int_t trackID,
-                        Int_t detID,
-                        Int_t detCopyID,
-                        TVector3 posIn,
-                        TVector3 pos_out,
-                        TVector3 momIn,
-                        TVector3 momOut,
-                        Double_t time,
-                        Double_t length,
-                        Double_t eLoss,
-                        Int_t pdgcode);
+                            Int_t detID,
+                            Int_t detCopyID,
+                            TVector3 posIn,
+                            TVector3 pos_out,
+                            TVector3 momIn,
+                            TVector3 momOut,
+                            Double_t time,
+                            Double_t length,
+                            Double_t eLoss,
+                            Int_t pdgcode);
 
     /** Private method ResetParameters
      ** Resets the private members for the track parameters
